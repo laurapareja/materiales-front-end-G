@@ -13,7 +13,7 @@ CSS es un lenguaje de estilo y con él decimos cómo tiene que verse nuestro HTM
 ## Transiciones
 Las transiciones son "transiciones" entre dos estados de un elemento, bueno, entre propiedades de un selector. Por ejemplo, con el `:hover` de un enlace podemos tener un efecto donde aplicamos unos estilos al enlace y otros cuando el usuario ponga el cursor por encima. Por si no lo tenemos en la cabeza es esto:  
 
-![Hover básico](assets/images/3-3/hover.png)
+![Hover básico](assets/images/1-13/hover.png)
 
 Bien, con las transiciones podemos controlar el paso entre dos valores de una propiedad CSS.  
 > [Ejemplo en Codepen](https://codepen.io/adalab/pen/baEmxK)
@@ -70,7 +70,7 @@ En este [Codepen](https://codepen.io/adalab/pen/goPZep) usamos javascript para q
 
 ¿Cómo os veis para hacer un botón central que al hacer click haga que "popup" entre despacito desde abajo de la ventana del navegador y se coloque en el centro?
 
-![Ejemplo](assets/images/3-3/popup-transition.png)
+![Ejemplo](assets/images/1-13/popup-transition.png)
 * * *
 
 ## Animaciones
@@ -135,5 +135,5 @@ Tenéis la documentación completa de las sub propiedades de `animation` en la M
 Vamos a hacer algo más del día a día: partiendo de un contenedor que ocupe el 100% de la pantalla (en alto y ancho) con una imagen de fondo y un título centrado...
 Tendremos que hacer que el título tenga una animación que lo haga entrar suavemente desde la parte superior del navegador y quedarse en el centro de su contenedor.
 
-![Ejemplo](assets/images/3-3/title-animation.png)
+![Ejemplo](assets/images/1-13/title-animation.png)
 * * *

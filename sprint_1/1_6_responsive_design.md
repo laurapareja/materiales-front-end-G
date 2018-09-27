@@ -72,7 +72,7 @@ Para el tema de la tipografía hay varias escuelas y formas de afrontarlo según
 
 `em`: 1em es el tamaño de fuente del elemento actual (es el ancho de la letra M mayúscula). El tamaño de fuente por defecto que los navegadores usan antes de aplicar CSS es de 16 píxeles, lo que significa que este es el valor asignado por defecto a un elemento (1em). Ojo — los tamaños de fuente de los elementos se heredan de los padres, por lo que si a los padres se les aplica otros tamaños de fuente, la equivalencia en píxel de un em puede complicarse.
 
-![Cómo funcionan los em](assets/images/em.png)
+![Cómo funcionan los em](assets/images/1-6/em.png)
 * * *
 ###### EJERCICIO 1:
 
@@ -225,7 +225,7 @@ Vamos a hacer algo más "real". En un html tendremos un contenedor con:
 
 Y vamos a plantear 3 escenarios (de pequeño a grande) según esta guía:
 
-![Guía](assets/images/1-7-ejercicio-7.png)
+![Guía](assets/images/1-6/ejercicio-7.png)
 
 Vamos a empezar con el CSS de móvil e iremos ajustando los estilos según dispongamos de mayores tamaños de pantalla:
 
@@ -293,15 +293,15 @@ Dados los siguientes diseños, maquetar la web aplicando las mediaqueries necesa
 
 Aspecto de la web en una pantalla de 480px
 
-![Pantalla completa](assets/images/ej0203.png)
+![Pantalla completa](assets/images/1-6/ejercicio-9-1.png)
 
 Aspecto de la web en una pantalla entre 480px y 1000px
 
-![Pantalla completa](assets/images/ej0202.png)
+![Pantalla completa](assets/images/1-6/ejercicio-9-2.png)
 
 Aspecto de la web a pantalla completa (por encima de 1000px)
 
-![Pantalla completa](assets/images/ej0201.png)
+![Pantalla completa](assets/images/1-6/ejercicio-9-3.png)
 
 * * *
 ###### EJERCICIO 10:
