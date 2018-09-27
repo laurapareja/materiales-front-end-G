@@ -28,22 +28,22 @@ Luego, `live server`, se ocupará de recargar el navegador cuando el css haya si
 ### Koala
 Koala es una aplicación de multiplatadorma (Linux, Mac y Windows) que se encarga de procesar nuestros archivos SASS y generar los CSS finales.
 
-![Hi!](assets/images/3-1/koala-app.png)  
+![Hi!](assets/images/1-10/koala-app.png)  
 Un proyecto de ejemplo tendría nuestro CSS enlazado desde el HTML como siempre pero esta vez partiríamos de la carpeta `scss`, con un `main.scss` dentro (por ejemplo).
 
-![Proyecto Sass](assets/images/3-1/proyecto-sass.png)
+![Proyecto Sass](assets/images/1-10/proyecto-sass.png)
 
 Entonces, desde la aplicación Koala añadimos nuestra carpeta de proyecto  
-![Koala App 01](assets/images/3-1/koala-01.png)  
-![Koala App 02](assets/images/3-1/koala-02.png)  
+![Koala App 01](assets/images/1-10/koala-01.png)  
+![Koala App 02](assets/images/1-10/koala-02.png)  
 Y el programa nos detecta los archivos procesables, en este caso `main.scss` y nos propone una ruta donde generarlo, normalmente en la misma carpeta. Nosotros lo vamos a querer en otra porque estos son nuestros archivos de trabajo y cuando luego queramos entregarlos nos interesará que no estén mezclados.  
-![Koala App 03](assets/images/3-1/koala-03.png)  
+![Koala App 03](assets/images/1-10/koala-03.png)  
 Con clic derecho seleccionamos dónde queremos que se coloque el CSS procesado, por ejemplo en nuestra carpeta `css`, y lo llamaremos con su nombre correcto, en este caso `main.css`:  
-![Koala App 04](assets/images/3-1/koala-04.png)  
-![Koala App 05](assets/images/3-1/koala-05.png)  
+![Koala App 04](assets/images/1-10/koala-04.png)  
+![Koala App 05](assets/images/1-10/koala-05.png)  
 Con esto ya estaría aunque podemos tocar alguna cosa más, como el estilo de procesado. Hay 4: nested, expanded, compact, compressed. Por ahora usaremos `expanded` y ya habrá tiempo de ver los otros [estilos de procesado](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#Output_Style).  
 
-![Koala App 06](assets/images/3-1/koala-06.png)  
+![Koala App 06](assets/images/1-10/koala-06.png)  
 
 Ahora ya tenemos listo nuestro proyecto. Cada vez que guardemos los cambios en nuestro `main.scss` se generará un nuevo `main.css` y **live server** se encargará de recargar el navegador.
 

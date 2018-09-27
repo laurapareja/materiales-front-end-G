@@ -25,7 +25,7 @@ Con una herramienta como Gulp, vamos a poder hacer que nuestro código Sass se c
 
 ## Gulp
 
-![Gulp](assets/images/1-14/logo-gulp.png)
+![Gulp](assets/images/1-9/logo-gulp.png)
 
 Gulp es una herramienta de automatización de tareas que está programada con JavaScript. Gulp, a diferencia de Koala, no tiene interfaz gráfica sino que se ejecuta desde la terminal de comandos, al igual que sucede con Git. Primero vamos a ver cómo instalarla y después la configuraremos para ayudarnos con algunas tareas.
 

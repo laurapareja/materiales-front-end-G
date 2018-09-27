@@ -21,7 +21,7 @@ Un sistema de grid o rejilla, nos permite disponer los elementos de una página 
 
 Un sistema de grid nos sirve para posicionar los elementos de la página alineados. Se usa en un montón de webs, por ejemplo, este ejemplo de Google.
 
-![Grid de Google Plus](assets/images/1-13/grid-example.png)
+![Grid de Google Plus](assets/images/1-12/grid-example.png)
 
 Podemos ver que los elementos están dispuestos en filas y columnas. Hay 4 columnas que se ven claramente, con un elemento que se expande en 2. Aunque a simple vista parecen no estar alineados en filas, todas las cajas tienen una altura proporcional a una base.
 
@@ -76,7 +76,7 @@ También podemos indicar el tamaño del espaciado de elementos en el contenedor 
 
 Partiendo del ejemplo de codepen, conseguid una composición como la de la imagen.
 
-![Exercise 1](assets/images/1-13/exercise-1.png)
+![Exercise 1](assets/images/1-12/exercise-1.png)
 
 * * *
 
@@ -98,7 +98,7 @@ Vamos a modificar el ejercicio anterior para usar `span` en vez de punto inicial
 
 Vamos a crear un grid de 12 columnas y 3 filas, la primera y la última ocupan el 20% del alto del viewport. Crearemos la composición de la imagen.
 
-![Exercise 3](assets/images/1-13/exercise-3.png)
+![Exercise 3](assets/images/1-12/exercise-3.png)
 
 * * *
 
@@ -117,7 +117,7 @@ Y lo podemos usar junto con `grid-auto-flow`, que fuerza una única dirección (
 
 Con estas propiedades ya podemos empezar a controlar un poco el comportamiento de nuestra rellija. Para completar un poco esta introducción a grid faltaría ver la posibilidad de definir áreas con nombres más cercanos al humano:
 
-![Grid areas](assets/images/1-13/grid-area.png)
+![Grid areas](assets/images/1-12/grid-area.png)
 
 
 El grid que hay debajo es de 2x3, y para definirlo usaríamos:
@@ -213,7 +213,7 @@ Vamos a crear la composición del **ejercicio 3** con Bootstrap para ver las dif
 
 COn bootstrap, vamos a crear la típica distribución de columnas que se usa para mostrar cómo funciona un grid:
 
-![Distribución de columnas](assets/images/1-13/grid-1.png)
+![Distribución de columnas](assets/images/1-12/grid-1.png)
 
 Con suficientes divs (las cajas verdes) vamos a mostrar las columnas y opciones que nos ofrece bootstrap:
 1. 12 columnas
@@ -226,17 +226,17 @@ Con suficientes divs (las cajas verdes) vamos a mostrar las columnas y opciones 
 #### EJERCICIO 7:
 Ahora iremos a un paso más y, usando las 12 columnas de nuevo con bootstrap, intentaremos replicar el siguiente hexagrama:
 
-![Distribución de columnas](assets/images/1-13/grid-2.png)
+![Distribución de columnas](assets/images/1-12/grid-2.png)
 
 * * *
 #### EJERCICIO 8:
 
 Vamos a acercarnos a algo más real y probemos a usar los breakpoints de Bootstrap:
-![Distribución de columnas](assets/images/1-13/grid-3.png)
+![Distribución de columnas](assets/images/1-12/grid-3.png)
 
 Los breakpoints que usaremos son Extra small, Medium y Large ;)
 
-> las imágenes de los gaticos están en [este zip](assets/images/1-13/cats.zip)
+> las imágenes de los gaticos están en [este zip](assets/images/1-12/cats.zip)
 
 * * *
 #### EJERCICIO 9:

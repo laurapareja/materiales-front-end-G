@@ -91,7 +91,7 @@ Ya tenemos nuestro formulario con los dos campos necesarios para que funcione, p
 </form>
 ```
 
-![Ejemplo de formulario con botón de enviar](assets/images/1-8-submit.png)
+![Ejemplo de formulario con botón de enviar](assets/images/1-11/submit.png)
 
 ***
 
@@ -113,7 +113,7 @@ Para decirle al navegador que nuestra etiqueta `<label>` está relacionada con u
 </form>
 ```
 
-![Ejemplo de cómo se muestran los labels](assets/images/1-8-labels.png)
+![Ejemplo de cómo se muestran los labels](assets/images/1-11/labels.png)
 
 > **Nota:**  
 > Es importante apreciar que dentro del input el atributo `name` y el `id` pueden ser distintos, pero el `for` del label siempre debe coincidir con el `id` del input.
@@ -132,7 +132,7 @@ El atributo `placeholder` se puede asignar a un input y sirve para establecer el
 </form>
 ```
 
-![Ejemplo de placeholder para un campo de texto](assets/images/1-8-placeholder.png)
+![Ejemplo de placeholder para un campo de texto](assets/images/1-11/placeholder.png)
 
 ***
 
@@ -151,11 +151,11 @@ Bien, continuemos introduciendo campos. Este ejemplo tiene se empieza a parecer 
 
 A simple vista, parece que no hay diferencia entre los tipos `email` y `text` pero sí que la hay, lo que pasa es que es difícilmente perceptible. La diferencia entre ambos es que cuando usamos el tipo `email`, al pulsar el botón de enviar en el formulario, se comprobará primero que el mail introducido es una dirección de correo válida y si es así se enviará y si no es correcta se mostrará un mensaje como el que aparece en la imagen que se muestra a continuación.
 
-![Validación de email](assets/images/1-8-form-email-validation.png)
+![Validación de email](assets/images/1-11/form-email-validation.png)
 
 Otra diferencia entre el tipo `email` y el tipo `text` es que si abrimos la página web del formulario desde un móvil, al pulsar sobre el campo del tipo `email` se abrirá un teclado diferente al que se muestra cuando pulsamos en el campo del tipo `text`. Este teclado es especial para escribir direcciones de correo electrónico y, por ejemplo, facilita escribir el símbolo `@`.
 
-![Teclado que se muestra en móvil para los campos del tipo "email"](assets/images/1-8-form-email-keyboard.jpg)
+![Teclado que se muestra en móvil para los campos del tipo "email"](assets/images/1-11/form-email-keyboard.jpg)
 
 Bien, tenemos el nombre y el email, vamos con el siguiente, el teléfono. Para el campo teléfono sucede lo mismo que para el del email. En vez de usar `type="text"` utilizaremos `type="tel"`. En este caso no nos validará el teléfono antes de enviarlo porque hay teléfonos muy raros y en muchos casos también van acompañados de guiones o puntos y es complejo de gestionar. Aún así si utilizamos `type="tel"` si que nos mostrará un teclado numérico en el teléfono para facilitarnos el trabajo a la hora de escribir la información como se puede ver en la captura de pantalla.
 
@@ -169,7 +169,7 @@ Bien, tenemos el nombre y el email, vamos con el siguiente, el teléfono. Para e
 </form>
 ```
 
-![Captura de pantalla del teclado que se muestra en un campo del tipo teléfono](assets/images/1-8-form-telephone-keyboard.jpg)
+![Captura de pantalla del teclado que se muestra en un campo del tipo teléfono](assets/images/1-11/form-telephone-keyboard.jpg)
 
 Tenemos prácticamente todo pero nos quedaría algo bastante importante, la contraseña. Para crear un campo para nuestra contraseña continuamos con el mismo procedimiento que en los anteriores campos, esta vez usando `type="password"` como atributo para definir el tipo de campo. Los campos tipo password tienen una diferencia frente al resto y es que sustituyen el texto que contienen por asteriscos (\*) para aumentar la seguridad y que la contraseña no sea visible.
 
@@ -186,14 +186,14 @@ Otra peculiaridad de los campos del tipo `password` es que su contenido se borra
 </form>
 ```
 
-![El contenido de los campos del tipo contraseña se sustituye por asteriscos](assets/images/1-8-password.png)
+![El contenido de los campos del tipo contraseña se sustituye por asteriscos](assets/images/1-11/password.png)
 
 ***
 ###### EJERCICIO 1
 
 Sin que sirva de precedente, vamos a realizar este ejercicio directamente en Codepen. Esto nos permitirá comprobar cuales son los datos que se envían en el formulario ya que cuando creamos un formulario en Codepen, al enviarlo, nos muestra una ventana con la información que le llegaría al servidor. Esto nos permite comprobar que funciona correctamente y ver qué es lo que llegaría en cada caso. Es importante que dejemos el atributo `action` de la etiqueta `<form>` vacío y que el método sea del tipo `post`.
 
-![Codepen Form Result](assets/images/1-8-codepen-form-result.png)
+![Codepen Form Result](assets/images/1-11/codepen-form-result.png)
 
 Vamos a crear un formulario de envío con los siguientes campos:
 
@@ -222,7 +222,7 @@ Además de los atributos que hemos visto hasta ahora, existen otra serie de atri
 
 El atributo required sirve para establecer que un campo es obligatorio y debe ser rellenado antes de enviarse el formulario. Por defecto muchos navegadores antes de enviar un formulario comprueban que los campos con el atributo required están asignados antes de enviarlos y, en caso de no estarlo, muestran un mensaje de error informando al usuario de que estos campos son obligatorios. Para establecer un campo como obligatorio sólo debemos de añadirle el atributo `required`.
 
-![Error cuando un elemento es obligatorio y está vacío](assets/images/1-8-required-form.png)
+![Error cuando un elemento es obligatorio y está vacío](assets/images/1-11/required-form.png)
 
 > **Nota:**  
 > El atributo required sólo puede ser verdadero o falso, por lo tanto no tendrá un valor asignado. Simplemente si una etiqueta tiene el atributo `required` (sin más) indicará que este elemento es obligatorio y si no lo tiene indicará que no lo es.
@@ -372,7 +372,7 @@ Por defecto las etiquetas ocultas se muestran con el atributo `display: none;` a
 
 En este ejercicio vamos a crear el formulario de Facebook. Para crearlo utilizaremos lo que hemos visto hasta ahora de formularios. El formulario en sí será el que se muestra en la imagen inferior. El objetivo es crear sólo el HTML pero si te atreves puedes probar también a realizar un CSS similar.
 
-![Formulario de Facebook](assets/images/1-8-facebook-form.png)
+![Formulario de Facebook](assets/images/1-11/facebook-form.png)
 
 Además de lo que se ve, vamos a crear los siguientes campos:
 
@@ -457,7 +457,7 @@ input {
 
 Crea un formulario similar al de la imagen, que es el de registro de Gmail.
 
-![Formulario Gmail](assets/images/1-r-2-gmail-signup-form.png)
+![Formulario Gmail](assets/images/1-11/gmail-signup-form.png)
 
 Modifica el formulario anterior para que se hagan las siguientes validaciones:
 

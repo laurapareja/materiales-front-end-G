@@ -75,7 +75,7 @@ Lo normal a la hora de pasar un sistema a código es empezar por los estilos gen
 
 En esta caso, empezaremos por los colores de nuestra página. Imaginemos que tenemos la siguiente paleta de colores, extraída del [sistema de diseño de Carbon creado por IBM](http://carbondesignsystem.com/):
 
-![Paleta de colores del sistema Carbon de IBM](assets/images/3-2/paleta-de-colores-carbon.png)
+![Paleta de colores del sistema Carbon de IBM](assets/images/1-14/paleta-de-colores-carbon.png)
 
 Para definir estos colores, lo que haremos será crear variables en `Sass` para cada uno de ellos, para esto hay dos formas distintas de crear las variables, usando un map (que sería similar a un objeto de JavaScript) o usando multiples variables:
 
@@ -117,8 +117,8 @@ $color-info: #5aaafa;
 
 Esa sería la opción de usar variables para definir los colores. Estas variables las generaremos en el archivo `core/_variables.scss` y luego las utilizaremos en otros archivos, para dar estilos a nuestra página. Por ejemplo, imaginemos que tanto para los enlaces como para los botones de nuestro formulario usamos el mismo color `$color-primary`, uno para el texto (enlace) y el otro para el fondo (botón).
 
-![Botón de Carbon](assets/images/3-2/button.png)
-![Link de Carbon](assets/images/3-2/link.png)
+![Botón de Carbon](assets/images/1-14/button.png)
+![Link de Carbon](assets/images/1-14/link.png)
 
 Utilizaríamos los siguientes estilos:
 
@@ -387,7 +387,7 @@ scss
 
 Bien, una vez creado el archivo vamos a crear un par de clases para nuestro botón. La idea es que, tras crear todas las clases CSS, tengamos los estilos suficientes para poder obtener el resultado que aparece en la imagen siguiente sin tener que añadir ni una linea de CSS adicional.
 
-![Estilos de botones](assets/images/3-2/button-styles.png)
+![Estilos de botones](assets/images/1-14/button-styles.png)
 
 En primer lugar crearemos la clase `.btn` que será general y se aplicará a todos los botones y añade estilos como el color del texto, su alineación, el margen, etc... Además añadiremos otra clase `.btn-default` para aplicar los estilos del botón por defecto.
 
@@ -667,7 +667,7 @@ Puedes partir de este [CodePen](https://codepen.io/anon/pen/vRjLbK) cómo base
 
 En este ejercicio vamos a crear los estilos para un componente input. Este componente, como se puede ver en la imagen tendrá distintos estados (activo, hover, etc.) y distintos formatos (con y sin icono a la derecha)
 
-![Inputs](assets/images/3-2/inputs.png)
+![Inputs](assets/images/1-14/inputs.png)
 
 A continuación generaremos un HTML en el que probaremos que funciona cada uno de los estados y cada una de las variantes. La idea es que usando un HTML como el siguiente los estilos se apliquen correctamente:
 
@@ -774,6 +774,6 @@ A partir de la siguiente imagen. Crea el HTML y los archivos de Sass necesario p
 
 La tipografía es Roboto Slab y puedes obtenerla de Google Fonts.
 
-![Botón de Carbon](assets/images/3-2/ui.png)
+![Botón de Carbon](assets/images/1-14/ui.png)
 
 * * *
