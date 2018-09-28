@@ -12,16 +12,6 @@
 
 ## Cómo funciona la web
 
-Three or more...
-
----
-
-Hyphens
-
-***
-
-Asterisks
-
 Internet es algo que utilizamos de forma cotidiana ya sea para consultar información, hacer una reserva, comprar entradas o mandar a tu grupo de toda la vida el vídeo del pingüino que le da una colleja al otro pingüino. ¿Y cómo funciona por dentro? Pues al final de todo son dos ordenadores que se comunican, uno hace de cliente y el otro de servidor.
 
 La respuesta corta a **cómo funciona Internet** es que funciona conectando dos ordenadores, un servidor y un cliente.
