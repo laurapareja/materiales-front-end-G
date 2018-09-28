@@ -2,7 +2,7 @@
 
 ## Antes de comenzar
 
-A lo largo de este documento se mostrarán ejemplos de código. Te recomendamos sin lugar a dudas, que pruebes dichos ejemplos (más adelante te enseñaremos cómo hacerlo). La idea de estas pequeñas partes de código es que juegues con ellas en el navegador y así puedas ver cómo funcionan y probar qué pasaría si las modificas, todo esto hará que interiorices mejor el aprendizaje. Se trata de descubrir los horizontes de la programación y saber cómo funciona el lenguaje de JavaScript en concreto, saber qué se puede hacer y qué no.
+A lo largo de estas lecciones se mostrarán ejemplos de código. Te recomendamos sin lugar a dudas, que pruebes dichos ejemplos (más adelante te enseñaremos cómo hacerlo). La idea de estas pequeñas partes de código es que juegues con ellas en el navegador y así puedas ver cómo funcionan y probar qué pasaría si las modificas, todo esto hará que interiorices mejor el aprendizaje. Se trata de descubrir los horizontes de la programación y saber cómo funciona el lenguaje de JavaScript en concreto, saber qué se puede hacer y qué no.
 
 ## ¿Qué es programar?
 
@@ -33,8 +33,8 @@ Algunos ejemplos en los que se ven claramente estos pasos:
 
 - Cámara de un teléfono:
   1. Recibimos unos datos captados por el sensor de la cámara de fotos del teléfono
-  1. El teléfono realiza una serie de operaciones para convertir esos datos en una imagen y corregir los desperfectos
-  1. Obtenemos la imagen como resultado
+  2. El teléfono realiza una serie de operaciones para convertir esos datos en una imagen y corregir los desperfectos
+  3. Obtenemos la imagen como resultado
 
 Podemos hacer este tipo de cosas y otras más complejas pero visuales como esta [demo](https://codepen.io/trhino/pen/JFmiK?limit=all&page=2&q=canvas). En este caso los datos iniciales que recibe son colores, a partir de estos se realizan operaciones que generan círculos con tamaño y posición aleatoria y el resultado son los distintos círculos que se muestran en la pantalla.
 
@@ -42,7 +42,7 @@ Si pensamos en cualquier aplicación, veremos que todas ellas siguen este patró
 
 Queda claro con esto que programar es decir a un ordenador lo que tiene que hacer paso a paso, esto es lo más parecido a la magia que vamos a tener en nuestra vida, pero no es otra cosa que operaciones realizadas por máquinas que son muy tontas pero muy rápidas y precisas. ¿Y por qué digo que son tontas? Porque pueden realizar millones de operaciones por segundo pero no saben qué operaciones realizar a no ser que se lo digamos nosotros mediante código.
 
-Hasta ahora hemos estado trabajando con HTML y CSS y, aunque mucha gente se refiere a ellos como lenguajes de programación, realmente son un lenguaje de marcado y un lenguaje de estilos respectivamente. Estos lenguajes encapsulan datos y estilos que el navegador web traduce en páginas pero tenemos que tener claro que HTML y CSS no son lenguajes de programación y no permiten programar sino estructurar una información y darle estilos. Ahora es el momento de meternos de lleno en un lenguaje de programación como tal, JavaScript.
+Hasta ahora hemos estado trabajando con HTML y CSS y, aunque mucha gente se refiere a ellos como lenguajes de programación, realmente son un lenguaje de marcado y un lenguaje de estilos respectivamente. Estos lenguajes encapsulan datos y estilos que el navegador web traduce en páginas pero tenemos que tener claro que HTML y CSS no son lenguajes de programación y no permiten programar sino estructurar información y darle estilos. Ahora es el momento de meternos de lleno en un lenguaje de programación como tal, JavaScript.
 
 ## ¿Qué es JavaScript?
 
@@ -127,22 +127,17 @@ Bien, ya hemos visto cómo enlazar JavaScript en nuestra página, ahora es el mo
 document.querySelector('h1').innerHTML = '¡Hola mundo!';
 ```
 
-Si has realizado los pasos anteriores y has copiado el código correctamente se mostrará una ventana en tu navegador con el mensaje "Hello world". Si es así, ¡enhorabuena! acabas de crear tu primer código JavaScript.
+Si has realizado los pasos anteriores y has copiado el código correctamente se mostrará una ventana en tu navegador con el mensaje "¡Hola mundo!". Si es así, ¡enhorabuena! acabas de crear tu primer código JavaScript.
 
 En este momento estarás pensando «sí, lo he escrito pero no tengo ni idea de cómo funciona». No te preocupes, vamos a entender cómo funciona ahora mismo.
 
-La primera línea del archivo JavaScript (`'use strict';`) sirve para mejorar la rapidez de ejecución del código y hará que el navegador nos muestre errores que, de no ponerlo, no lo haría y por tanto nuestro código será más estable o, dicho de otra forma, menos propenso a fallos. Como norma general, escribiremos siempre esta linea al comienzo de todos nuestros archivos JavaScript y para que funcione correctamente deberá ser la primera línea del documento (sin contar los comentarios y las líneas en blanco).
+La primera línea del archivo JavaScript (`'use strict';`) sirve para mejorar la rapidez de ejecución del código y hará que el navegador nos muestre errores que, de no ponerlo, no lo haría y por tanto nuestro código será más estable o, dicho de otra forma, menos propenso a fallos. Como norma general, escribiremos SIEMPRE esta linea al comienzo de todos nuestros archivos JavaScript y para que funcione correctamente deberá ser la primera línea del documento (sin contar los comentarios y las líneas en blanco).
 
-La otra línea (`document.querySelector('h1').innerHTML = '¡Hola mundo!';`) describe una acción o _statement_. En programación un _statement_ es la unidad mínima que expresa una acción a llevar a cabo, en este caso, por el navegador. Básicamente le decimos "Hey navegador, haz esto."
+La segunda línea (`document.querySelector('h1').innerHTML = '¡Hola mundo!';`) describe una acción o _statement_. En programación un _statement_ es la unidad mínima que expresa una acción a llevar a cabo, en este caso, por el navegador. Básicamente le decimos "Hey navegador, haz esto."
 
-De momento para la sintaxis utilizada en `document.querySelector('h1').innerHTML = '¡Hola mundo!';`, solo comentaremos que permite cambiar el texto de una etiqueta determinada. Para escribir un texto en JavaScript y que lo entienda como tal, debemos escribirlo entre comillas simples (`''`) o comillas dobles (`""`). Podéis utilizar la que queráis de éstas, ya que ambas funcionan exactamente igual. El único requisito es que siempre debe coincidir el estilo de la comilla de apertura con la de cierre:
+De momento para la sintaxis utilizada en `document.querySelector('h1').innerHTML = '¡Hola mundo!';`, solo comentaremos que permite cambiar el texto de una etiqueta de HTML determinada, en este caso el primer `h1` de nuestro documento HTML. 
 
-```
-'esto es un texto válido'
-'esto no es válido"
-```
-
-Otro aspecto a destacar del código, es que escribimos cada orden en una línea y ponemos un punto y coma al final de ésta. En JavaScript se pueden escribir varias órdenes en una misma línea si se separan por un punto y coma (`;`), por ejemplo `'use strict';document.querySelector('h1').innerHTML = '¡Hola mundo!';` sería válido. Esto es totalmente desaconsejable y evitaremos hacerlo para que nuestro código sea más fácil de leer. Escribiremos como máximo una orden por línea y siempre añadiremos el punto y coma al final de esta para evitar posibles problemas.
+Otro aspecto a destacar del código, es que escribimos cada orden en una línea y ponemos un punto y coma al final de ésta. En JavaScript se pueden escribir varias órdenes en una misma línea si se separan por un punto y coma (`;`), por ejemplo `'use strict';document.querySelector('h1').innerHTML='¡Hola mundo!';` sería válido. Esto es totalmente desaconsejable y evitaremos hacerlo para que nuestro código sea más fácil de leer. Escribiremos como máximo una orden por línea y siempre añadiremos el punto y coma al final de esta para evitar posibles problemas.
 
 Puede que en este punto aún sigas perdida y no te haya quedado muy claro cómo usar realmente JavaScript pero no te preocupes, de momento sólo debes entender que programar no es otra cosa que pensar en los pasos para resolver un problema y traducirlo a órdenes con un lenguaje que entienda el navegador (JavaScript). Por tanto, lo que tenemos que hacer es practicar la lógica, familiarizarnos con la sintaxis de JavaScript y aprender a traducir pasos a este lenguaje para ir poco a poco mejorando y cogiendo soltura.
 
@@ -158,18 +153,26 @@ Una vez que lo hayáis realizado podéis enviárselo a algún amigo o familiar y
 ## Variables
 
 Uno de los problemas que no sabemos resolver aún es como guardar los datos de una operación o un texto para poder utilizarlo en otra operación posterior. JavaScript tiene un recurso para poder hacer esto, las variables. 
+
 <!--
-@TODO: review this explanation
+@TODO: revisar la siguiente explicación, revisar el concepto etiqueta
 -->
-Para tener una idea de que es una variable, podríamos pensar en ella como si fuese una caja con una etiqueta, dentro de la que guardamos algo. Para crearla creamos la caja con la etiqueta, para guardar algo metemos esa información dentro de la caja y para obtener la información utilizamos la etiqueta de la caja.
+Para tener una idea de que es una variable, podríamos pensar en ella como si fuese una caja con una etiqueta, dentro de la que guardamos algo. 
+
+1. Para crearla, creamos la caja con la etiqueta.
+2. Para guardar algo metemos esa información dentro de la caja.
+3. Para obtener la información utilizamos la etiqueta de la caja.
 
 Una cosa importante a saber es que las variables permiten guardar información de forma temporal y estarán disponibles hasta que la página web en donde se está ejecutando el código se cierre o se recargue.
 
 Veamos cómo trabajar con variables en JavaScript.
 
-### Crear una variable
+### Crear o declarar una variable
 
-El primer paso a la hora de utilizar variables es crearlas. Para crear una variable, escribimos `let` seguido de un espacio y posteriormente del nombre que queremos dar a la variable. Vamos a crear por ejemplo una variable para la dirección postal de una oficina y la llamaremos `officeAddress`:
+A la creación de una variable en Javascript se le llama declaración. 
+
+El primer paso a la hora de utilizar variables es declararlas. 
+Para declarar una variable, escribimos `let` seguido de un espacio y posteriormente del nombre que queremos dar a la variable. Vamos a declarar por ejemplo una variable para la dirección postal de una oficina y la llamaremos `officeAddress`:
 
 ```js
 let officeAddress;
@@ -180,19 +183,19 @@ Existen una serie de reglas importantes a la hora de establecer el nombre de una
 - Las escribiremos en inglés como todo nuestro código JavaScript porque es el lenguaje que utilizan prácticamente todas las empresas
 - Deberán empezar por una letra y podrán contener letras y números
 - No podremos usar espacios ni puntos para separar los nombres de variables
-- Utilizaremos el estilo [_camel case_](https://es.wikipedia.org/wiki/CamelCase) para nombrar las variables. Este estilo se basa en juntar varias palabras en una haciendo que cada palabra empiece por mayúscula excepto la primera de todas ellas (ej: `'myCoolVarName'`)
+- Utilizaremos el estilo [_camel case_](https://es.wikipedia.org/wiki/CamelCase) para nombrar las variables. Este estilo se basa en juntar varias palabras en una haciendo que cada palabra empiece por mayúscula excepto la primera de todas ellas (ej: `'myCoolVariableName'`)
 
 
 ### Asignar un valor a una variable
 
-Una vez hemos creado una variable, es el momento de asignarle un valor. Este sería el paso en el que guardamos algo dentro de la caja para poder luego cogerlo y utilizarlo cuantas veces queramos. Para asignar un valor a una variable, escribiremos el nombre de la variable seguido del símbolo `=` y finalmente el valor que queremos almacenar.
+Una vez hemos declarado una variable, es el momento de asignarle un valor. Este sería el paso en el que guardamos algo dentro de la caja para poder luego cogerlo y utilizarlo cuantas veces queramos. Para asignar un valor a una variable, escribiremos el nombre de la variable seguido del símbolo `=` y finalmente el valor que queremos almacenar.
 
 ```js
 let officeAddress;
 officeAddress = 'Calle Leganitos, 24';
 ```
 
-> **Nota:** Es importante que creemos una variable siempre antes de asignarle un valor.
+> **Nota:** Es importante que declares una variable siempre antes de asignarle un valor.
 
 Cosas importantes a tener en cuenta a la hora de asignar una variable:
 
@@ -203,13 +206,13 @@ let totalHours;
 totalHours = 10 + 20 + 30;
 ```
 
-- Los pasos para crear una variable y asignarle un valor pueden combinarse y realizarse en una única linea:
+- Los pasos para declarar una variable y asignarle un valor pueden combinarse y realizarse en una única linea:
 
 ```js
 let officeAddress = 'Calle Leganitos, 24';
 ```
 
-Normalmente utilizaremos esta combinación de creación y asignación para hacer más sencillo y más claro nuestro código y porque, no nos engañemos, a nadie le gusta escribir de más cuando es innecesario.
+Normalmente utilizaremos esta combinación de declaración y asignación para hacer más sencillo y más claro nuestro código y porque, no nos engañemos, a nadie le gusta escribir de más cuando es innecesario.
 
 - Las variables pueden ser reasignadas, por lo que podemos cambiar el valor que almacenan las veces que queramos.
 
@@ -220,74 +223,106 @@ officeAddress = 'Calle Mayor, 7';
 officeAddress = 'Calle Embajadores, 7';
 ```
 
-### Variables constantes
 
-`const` nos permite declarar una variable cuyo valor nunca cambia una vez lo asignemos. Una "variable" que nunca varía recibe el nombre de **constante**.
+### Utilizar variables
+
+Hemos creado nuestra cajita y hemos guardado la información en ella. Hasta ahí todo bien, pero nada de esto tiene sentido si no podemos utilizar posteriormente eso que hemos guardado en la cajita. Para utilizar ese valor, lo que tenemos que hacer es escribir el nombre de la variable en el lugar en el que queramos utilizar su valor:
+
+```js
+let earnings = 12020;
+let expenses = 5342;
+let benefits = earnings - expenses;
+```
+
+En el momento en el que se ejecuta el código, las variables se sustituyen por los valores que almacenan. En el ejemplo anterior, la linea final se convertiría en `let benefits = 12020 - 5342;`.
+
+## Constantes
+
+Una "variable" cuyo valor nunca varía recibe el nombre de **constante**.
+
+Las constantes funcionan de manera similar a las variables, pero su valor no puede ser reasignado. 
+En JavaScript utilizamos `const` para declarar y asignar una constante. 
 
 ```js
 const officeAddress = 'Calle Leganitos, 24';
 ```
 
-A veces no tendremos claro si el valor de nuestra variable va a cambiar el algún momento o no, ante la duda, es una buena práctica usar siempre `const`. Si en algún momento intentamos reasignar una variable declarada con `const`, javascript no lo permitirá y nos mostrará un error. Esto nos permitirá evitar errores si no era nuestra intención cambiar el valor, o cambiar ese `const` por un `let` si decidimos que que finalmente no es un valor constante.
+A veces no tendremos claro cuando utilizar una variable y cuando una constante, ya que puede ser que a priori no estemos seguras de si el valor que vamos a guardar va a cambiar el algún momento o no. 
+Ante la duda, es una buena práctica usar siempre `const`. Si en algún momento intentamos reasignar el valor de una constante, JavaScript no lo permitirá y nos mostrará un error. Esto nos permitirá evitar errores si no era nuestra intención cambiar el valor, o cambiar ese `const` por un `let` si finalmente decidimos que nuestro valor no debería ser constante.
 
-<!--
-ejercicio con const
-cambiar valor
-abrir consola por primera ver y ver el error
-cambiar a let y ver como el error desaparece
--->
+Con esto tendríamos la información necesaria para poder trabajar con variables y constantes sin problemas.
 
-
-### Utilizar una variable
-
-Hemos creado nuestra cajita y hemos guardado la información en ella. Hasta ahí todo bien, pero nada de esto tiene sentido si no podemos utilizar posteriormente eso que hemos guardado en la cajita. Para utilizar ese valor, lo que tenemos que hacer es escribir el nombre de la variable en el lugar en el que queramos utilizar su valor:
-
-```js
-var earnings = 12020;
-var expenses = 5342;
-var benefits = earnings - expenses;
-```
-
-En el momento en el que se ejecuta el código, las variables se sustituyen por los valores que almacenan. En el ejemplo anterior, la linea final se convertiría en `var benefits = 12020 - 5342`.
-
-
-Con esto tendríamos la información necesaria para poder trabajar con variables sin problemas.
-
-Para finalizar, una de las cualidades fundamentales que las variables nos aportan es la capacidad de poder poner nombres descriptivos a nuestro código y poder dividir en varias partes las operaciones que realizamos. Un ejemplo:
+Para finalizar, una de las cualidades fundamentales que las variables y las constantes nos aportan es la capacidad de poder poner nombres descriptivos a nuestro código y poder dividir en varias partes las operaciones que realizamos. Un ejemplo:
 
 ```js
 (620 - 72 - 24) / 4
 ```
 
-¿Sabrías decir para qué sirve el código anterior? Yo probablemente en el momento de crearlo sí pero pasada una semana estaría en la misma situación que tú. ¿Por qué? Porque el código no es descriptivo y no sabemos qué representa cada número. En ese caso estaríamos realizando un mal código porque si estamos trabajando en una empresa y nos cambiamos y le toca trabajar con esto a otra persona probablemente tarde mucho tiempo en poder entenderlo para modificarlo o incluso no pueda y la empresa se vaya a pique (cosa que ha pasado en varias ocasiones en la realidad). Tenemos que tener en cuenta que el código se escribe para que otra persona (o nosotros mismos dentro de un tiempo) pueda entenderlo. Veamos cómo las variables nos pueden ayudar en esto:
+¿Sabrías decir para qué sirve el código anterior? Yo probablemente en el momento de crearlo sí pero pasada una semana estaría en la misma situación que tú. ¿Por qué? Porque el código no es descriptivo y no sabemos qué representa cada número. En ese caso estaríamos realizando un mal código porque si estamos trabajando en una empresa y cambiamos de proyecto le toca trabajar con esto a otra persona, y probablemente tarde mucho tiempo en poder entenderlo para modificarlo o incluso no pueda y la empresa se vaya a pique (cosa que ha pasado en varias ocasiones en la realidad). Tenemos que tener en cuenta que el código se escribe para que otras personas (o nosotras mismas dentro de un tiempo) puedan entenderlo. Veamos cómo las variables y las constantes nos pueden ayudar en esto:
 
 ```js
-var headerHeight = 72;
-var subheaderHeight = 24;
-var screenHeight = 620;
-var remainingSpace = screenHeight - headerHeight - subheaderHeight;
-var sections = 4;
-var sectionSize = remainingSpace / sections;
+const headerHeight = 72;
+const subHeaderHeight = 24;
+const screenHeight = 620;
+const remainingSpace = screenHeight - headerHeight - subHeaderHeight;
+const sections = 4;
+const sectionSize = remainingSpace / sections;
 ```
 
-En este caso el código es mucho más verboso y más largo pero se entiende mucho mejor para que sirve - establecer la altura de una sección en función de la altura de la pantalla sin tener en cuenta la cabecera y la subcabecera. La idea es que nuestro código sea así, semántico y que se entienda perfectamente qué queremos hacer en cada momento. Por eso, a partir de ahora, todos nuestro ejercicios en JavaScript deberán intentar parecerse a este lo máximo posible para adquirir esta buena práctica muy bien valorada en las empresas.
+En este caso el código es mucho más verboso y más largo pero se entiende mucho mejor para que sirve -> establecer la altura de una sección en función de la altura de la pantalla sin tener en cuenta la cabecera y la subcabecera. La idea es que nuestro código sea así, semántico y que se entienda perfectamente qué queremos hacer en cada momento. Por eso, a partir de ahora, todos nuestro ejercicios en JavaScript deberán intentar parecerse a este lo máximo posible para adquirir esta buena práctica muy bien valorada en las empresas.
 
+<!--
+@TODO:
+ejercicios variables y constantes 
+-->
 
 * * *
-#### EJERCICIO 7
 
-Utilizar variables para mejorar nuestro código
+#### EJERCICIO 2
 
-Vamos a reescribir los ejercicios de la fruta y de la cena de Navidad utilizando variables para que sean más semánticos y por tanto aumentemos su calidad.
+Arreglando errores
 
-También vamos a reescribir los ejercicios del año bisiesto y del cálculo de horas vividas.
+Declarar una constante y asignale como valor la dirección nuestra dirección. En la siguiente linea, reasignar el valor por la dirección de la compañera. 
+Abrir las herramientas para desarrolladoras y seleccionar la pestaña de la console (Console). Encontraremos un mensaje en rojo que nos dirá `Uncaught TypeError: <aquí veremos explicación de que está causando el error>`. 
+
+Hay que leer la explicación y cambiar el código para que desaparezca el error. 
+
 * * *
+
 
 ## Programación en la web
 
-### Obtener información del contenido de un elemento y modificarlo
+Ahora que hemos visto como funcionan las constantes y las variables para trabajar con valores, vamos a continuar aprendiendo como utilizar JavaScript para modificar el contenido y los estilos de nuestras páginas de formar ordenada. 
 
-La operación más básica a la hora de trabajar con nuestra página web es obtener información acerca de su contenido y modificarlo bien sea para añadir algo a su contenido, modificarlo o eliminarlo directamente. Cuando hablamos de modificar el contenido de un elemento, nos referimos a cambiar lo que habría entre la etiqueta de apertura de un elemento HTML y la de cierre. Para realizar este tipo de operaciones utilizaremos la propiedad `innerHTML`.
+La operación más básica a la hora de trabajar con nuestra página web es obtener información acerca de su contenido y modificarlo bien sea para añadir algo a su contenido, modificarlo o eliminarlo directamente. En JavaScript nos referimos a las etiquetas de HTML como elementos ( en futuras lecciones veremos el porqué de esto ).
+
+Como vimos al principio de la lección con `document.querySelector('h1').innerHTML = '¡Hola Mundo!'` cambiabamos el texto de a la etiqueta `h1` del documento HTML. Vamos a desgranar esto un poco para entenderlo mejor.
+
+### Obtener una etiqueta o elemento de HTML
+
+Con`document.querySelector('h1')` obtenemos al primer elemento `h1` que hayamos escrito en nuestro HTML.
+Podemos usar esta instrucción o 'statement' para recoger un elemento de HTML y guardarlo en una constante.
+
+Como sucedia en las hojas de estilo, acceder a las etiquetas por su nombre puede ser problematico y no es la mejor práctica. `document.querySelector()` nos permite acceder a los elementos de HTML utilizando los selectores de CSS:
+
+**selector de etiqueta**
+```js
+const mainTitle = document.querySelector('h1');
+```
+
+**selector de id**
+```js
+const mainTitle = document.querySelector('#mainTitle');
+```
+
+**selector de clase**
+```js
+const mainTitle = document.querySelector('.mainTitle');
+```
+
+### Modificar el contenido de una etiqueta o elemento de HTML
+
+Cuando hablamos de modificar el contenido de un elemento HTML, nos referimos a cambiar lo que habría entre la etiqueta de apertura de un elemento HTML y la de cierre. Para realizar este tipo de operaciones utilizaremos `innerHTML`.
 
 Imaginemos que tenemos el siguiente código HTML con un `h1` para el título y este contiene el texto "binvenida" (si, con una errata).
 
@@ -307,9 +342,10 @@ Imaginemos que tenemos el siguiente código HTML con un `h1` para el título y e
 Imaginemos que queremos cambiar ese texto por un texto sin la errata usando JavaScript. Lo haríamos de la siguiente manera:
 
 ```js
-// Obtenemos la referencia del elemento con el que queremos trabajar usando document.querySelector()
-var titleElem = document.querySelector('.title');
+// Obtenemos el elemento con el que queremos trabajar usando document.querySelector()
+const titleElem = document.querySelector('.title');
 
+// Cambiamos su contenido con innerHTML
 titleElem.innerHTML = 'Bienvenida';
 ```
 
@@ -319,11 +355,11 @@ De esta forma el contenido de h1 pasaría de ser _"Binvenida"_ a _"Bienvenida"_ 
 
 Ahora supongamos que tras cambiar con JavaScript el texto de _"Binvenida"_ a _"Bienvenida"_ queremos hacerlo más personal y queremos que ponga _"Bienvenida, adalaber"_ en vez de un soso _"Bienvenida"_.
 
-En este caso deberemos coger el contenido actual del elemento y añadirle ", adalaber". Para coger el contenido actual del elemento, dado que `innerHTML` es una propiedad y funciona como cualquier otra propiedad de un objeto podremos utilizar `titleElem.innerHTML` para obtener el valor de esa propiedad, que será `'Bienvenida'`. Sabiendo esto, el código que tendremos que escribir en este caso sería el siguiente:
+En este caso deberemos coger el contenido actual del elemento y añadirle ", adalaber". Aquí viene un concepto interesante, con `innerHTML` cambiamos el contendio de una etiqueta, pero también nos permite recoger el contenido de la misma, vamos a verlo:
 
 ```js
 /*
-Obtenemos la referencia del elemento con el que queremos trabajar usando
+Obtenemos el elemento con el que queremos trabajar usando
 document.querySelector()
 */
 var titleElem = document.querySelector('.title');
@@ -336,28 +372,40 @@ que sería lo mismo
 */
 ```
 
-Bien, ya sabemos cómo obtener cuál será el contenido de un elemento y cómo modificarlo. Vamos a hacer un par de ejercicios para practicarlo.
+Bien, ya sabemos cómo obtener un elemento y cómo modificarlo. Vamos a hacer un par de ejercicios para practicarlo.
 
 * * *
 
-#### EJERCICIO 1
+#### EJERCICIO 3
 
-Crear una página HTML con un párrafo en el que ponga Hola y, usando JavaScript, cambiar ese texto por "Hello".
+Crear una página HTML con un párrafo en el que ponga "Hola" y, usando JavaScript, cambiar ese texto por "Hello".
 
 * * *
 
-#### EJERCICIO 2
+#### EJERCICIO 4
 
-Crear una página HTML con un párrafo en el que ponga "Mi contraseña es: Ada2018" y, usando JavaScript, cambiar ese texto por un texto vacío.
+Crear una página HTML un listado con tu nombre y el de tu compañera, y un título que diga "La Adalaber seleccionada es: ". Usando JavaScript, cambiar el título añadiendo un nombre del listado.
+
+```
+La Adalaber seleccionada es: Lola
+```
+
+Realizar la misma acción con otro nombre del listado.
+
+* * *
+
+#### EJERCICIO 5
+
+Crear una página HTML en la que ponga "Mi contraseña es: Ada2018" y, usando JavaScript, cambiar el texto 'Ada2018' por '****'.
 
 * * *
 
 Una cosa importante de `innerHTML` es que nos permite cambiar el contenido de un elemento y como en JavaScript podemos meter HTML dentro de HTML, `innerHTML` también nos lo va a permitir, por lo que, si tuviésemos un HTML con una lista vacía (`<ul class="list"></ul>`) y quisiéramos introducir dos `li`s cada uno con un enlace, podríamos hacerlo de la siguiente manera:
 
 ```js
-var listElem = document.querySelector('.list');
+const listElem = document.querySelector('.list');
 
-var content = '<li><a href="#">Home</a></li><li><a href="#">Contact</a></li>';
+const content = '<li><a href="#">Home</a></li><li><a href="#">Contact</a></li>';
 
 listElem.innerHTML = content;
 ```
@@ -368,15 +416,15 @@ Con esto ya podemos trabajar editando el contenido de nuestra página. A partir 
 
 * * *
 
-#### EJERCICIO 4
+#### EJERCICIO 6
 
-Crear una página HTML con un div que contenga un `h1` con el texto "Lorem ipsum" y, usando JavaScript, añadir una imagen con el src `http://via.placeholder.com/350x150` y un párrafo con el texto "Lorem ipsum dolor sit amet, consectetur adipisicing elit".
+Crear una página HTML con un div, y usando JavaScript, añadir un h1 con el texto "Lorem ipsum", una imagen con el src `http://via.placeholder.com/350x150` y un párrafo con el texto "Lorem ipsum dolor sit amet, consectetur adipisicing elit".
 
 * * *
 
-#### EJERCICIO 5
+#### EJERCICIO 7
 
-Crear una página HTML con una lista `ul` vacía y, usando JavaScript y un bucle `for`, añadir al contenido de esa lista tres `li`, el primero tendrá como texto 1, el segundo 2 y el tercero 3.
+Crear una página HTML con una lista ul vacía y, usando JavaScript, añadir al contenido de esa lista tres li, el primero tendrá como texto 1, el segundo 2 y el tercero 3.
 
 * * *
 
@@ -405,10 +453,9 @@ Si queremos ocultar la sección B, lo que haremos será añadirle la clase `.hid
 
 ```js
 /*
-Como siempre que queremos trabajar con un elemento, obtenemos la referencia del
-elemento con el que queremos trabajar usando document.querySelector()
+Como siempre que queremos trabajar con un elemento de HTML lo obtenemos con document.querySelector() y lo asignamos a una constante.
 */
-var sectionB = document.querySelector('.section-b');
+const sectionB = document.querySelector('.section-b');
 
 sectionB.classList.add('hidden');
 
@@ -437,16 +484,67 @@ Lo único nuevo de ese código sería `classList.remove()`. Como se puede deduci
 sectionB.classList.remove('hidden', 'otraClase', 'otraMas');
 ```
 
+* * *
+
+#### EJERCICIO 8
+
+Crear dos botones con los mismos estilos (padding, borde, color) y, usando JavaScript, al segundo añadirle una clase para que parezca que esta desactivado (por ejemplo, aplicarle una [opacidad](https://developer.mozilla.org/es/docs/Web/CSS/opacity) menor).
+
+* * *
+
 ## Bonus 
 
 ### getElementById
 
+Hemos visto como usar `querySelector` para obtener un elemento de HTML usando selectores. Como siempre existen varias formas de hacer lo mismo, cuando el selector al que queremos acceder es un `id` también podemos utilizar `getElementById`.
+
+```js
+const mainTitle = document.getElementById('mainTitle');
+```
+
+Observa como en esta variante`mainTitle` no va precedido de `#`, no es necesario ya que con `getElementById` ya estamos indicando que el selector será un id.
+
+Este es un método muy usado, y lo encontrareis en muchos ejemplos online.
+
 ### var
+
+En 2015 apareció una nueva versión de JavaScript (llamada ES2015 o ES6) y todas las frontends del mundo bailamos la conga durante 7 dias y 7 noches seguidas e hicimos montones de animaciones como ofrenda para agradecer a la Virgen del Front, ya que esta versión traía un montón de novedades geniales que nos facilitaban la vida, entre ellas `let` y `const`.
+
+Entonces, ¿cómo escribiamos variables y constantes antes de esta versión?
+
+Con la palabra clave `var`.
+
+```js
+var pageBgColor;
+pageBgColor = '#3d7e9a';
+```
+
+¿Pero y como diferenciabais si el valor podía variar o era constante? Con truquillos de la abuela, como por ejemplo nombrar las constantes en mayuscula.
+
+```js
+var DAYS_PER_WEEK = 7;
+```
+
+> Es una convención entre programadoras utilizar nombres en UPPER_SNAKE_CASE para [valores constantes](https://eslint.org/docs/developer-guide/code-conventions#naming). Muchas programadoras continuan usando esta convención con `const`.
+
+Esto implica que vamos a encontrar montones de ejemplos con `var`, e incluso puede ser que nos toque trabajar en algún proyecto antiguo dónde aun se use.
+
 
 ## Resumen
 
 Como hemos visto durante esta sesión, programar es simplemente dar órdenes al ordenador para conseguir un resultado a partir de unos datos previos. Para trabajar con el navegador lo que haremos será aprender a darle esas órdenes en código.
 
-Aparte de ver qué es programar también hemos visto usar variables en JavaScript para guardar valores y poder utilizarlos después.
+Aparte de ver qué es programar también hemos visto:
 
-Con esto hemos iniciado nuestro viaje en el mundo de la programación y hemos empezado a aprender las bases pero ya podemos crear pequeños programas que tienen utilidad, todo en el primer día con este lenguaje de programación.
+- Como usar variables y constantes en JavaScript para guardar valores y poder utilizarlos después.
+
+- Como leer y modificar el contenido de las etiquetas de HTML.
+
+- Como añadir y quitar clases de las etiquetas de HTML.
+
+### Recursos
+<!--
+@TODO: 
+-->
+
+
