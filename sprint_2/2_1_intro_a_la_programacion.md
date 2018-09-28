@@ -283,7 +283,7 @@ ejercicios variables y constantes
 Arreglando errores
 
 Declarar una constante y asignale como valor la dirección nuestra dirección. En la siguiente linea, reasignar el valor por la dirección de la compañera. 
-Abrir las herramientas para desarrolladoras y seleccionar la pestaña de la console (Console). Encontraremos un mensaje en rojo que nos dirá `Uncaught TypeError: <aquí veremos explicación de que está causando el error>`. 
+Abrir las herramientas para desarrolladoras y seleccionar la pestaña de la consola (Console). Encontraremos un mensaje en rojo que nos dirá `Uncaught TypeError: <aquí veremos explicación de que está causando el error>`. 
 
 Hay que leer la explicación y cambiar el código para que desaparezca el error. 
 
@@ -296,14 +296,14 @@ Ahora que hemos visto como funcionan las constantes y las variables para trabaja
 
 La operación más básica a la hora de trabajar con nuestra página web es obtener información acerca de su contenido y modificarlo bien sea para añadir algo a su contenido, modificarlo o eliminarlo directamente. En JavaScript nos referimos a las etiquetas de HTML como elementos ( en futuras lecciones veremos el porqué de esto ).
 
-Como vimos al principio de la lección con `document.querySelector('h1').innerHTML = '¡Hola Mundo!'` cambiabamos el texto de a la etiqueta `h1` del documento HTML. Vamos a desgranar esto un poco para entenderlo mejor.
+Como vimos al principio de la lección con `document.querySelector('h1').innerHTML = '¡Hola Mundo!'` cambiábamos el texto de a la etiqueta `h1` del documento HTML. Vamos a desgranar esto un poco para entenderlo mejor.
 
 ### Obtener una etiqueta o elemento de HTML
 
 Con`document.querySelector('h1')` obtenemos al primer elemento `h1` que hayamos escrito en nuestro HTML.
 Podemos usar esta instrucción o 'statement' para recoger un elemento de HTML y guardarlo en una constante.
 
-Como sucedia en las hojas de estilo, acceder a las etiquetas por su nombre puede ser problematico y no es la mejor práctica. `document.querySelector()` nos permite acceder a los elementos de HTML utilizando los selectores de CSS:
+Como sucedia en las hojas de estilo, acceder a las etiquetas por su nombre puede ser problemático y no es la mejor práctica. `document.querySelector()` nos permite acceder a los elementos de HTML utilizando los selectores de CSS:
 
 **selector de etiqueta**
 ```js
@@ -355,7 +355,7 @@ De esta forma el contenido de h1 pasaría de ser _"Binvenida"_ a _"Bienvenida"_ 
 
 Ahora supongamos que tras cambiar con JavaScript el texto de _"Binvenida"_ a _"Bienvenida"_ queremos hacerlo más personal y queremos que ponga _"Bienvenida, adalaber"_ en vez de un soso _"Bienvenida"_.
 
-En este caso deberemos coger el contenido actual del elemento y añadirle ", adalaber". Aquí viene un concepto interesante, con `innerHTML` cambiamos el contendio de una etiqueta, pero también nos permite recoger el contenido de la misma, vamos a verlo:
+En este caso deberemos coger el contenido actual del elemento y añadirle ", adalaber". Aquí viene un concepto interesante, con `innerHTML` cambiamos el contenido de una etiqueta, pero también nos permite recoger el contenido de la misma, vamos a verlo:
 
 ```js
 /*
@@ -510,7 +510,7 @@ Este es un método muy usado, y lo encontrareis en muchos ejemplos online.
 
 En 2015 apareció una nueva versión de JavaScript (llamada ES2015 o ES6) y todas las frontends del mundo bailamos la conga durante 7 dias y 7 noches seguidas e hicimos montones de animaciones como ofrenda para agradecer a la Virgen del Front, ya que esta versión traía un montón de novedades geniales que nos facilitaban la vida, entre ellas `let` y `const`.
 
-Entonces, ¿cómo escribiamos variables y constantes antes de esta versión?
+Entonces, ¿cómo escribíamos variables y constantes antes de esta versión?
 
 Con la palabra clave `var`.
 
@@ -519,13 +519,13 @@ var pageBgColor;
 pageBgColor = '#3d7e9a';
 ```
 
-¿Pero y como diferenciabais si el valor podía variar o era constante? Con truquillos de la abuela, como por ejemplo nombrar las constantes en mayuscula.
+¿Pero y como diferenciabais si el valor podía variar o era constante? Con truquillos de la abuela, como por ejemplo nombrar las constantes en mayúscula.
 
 ```js
 var DAYS_PER_WEEK = 7;
 ```
 
-> Es una convención entre programadoras utilizar nombres en UPPER_SNAKE_CASE para [valores constantes](https://eslint.org/docs/developer-guide/code-conventions#naming). Muchas programadoras continuan usando esta convención con `const`.
+> Es una convención entre programadoras utilizar nombres en UPPER_SNAKE_CASE para [valores constantes](https://eslint.org/docs/developer-guide/code-conventions#naming). Muchas programadoras continúan usando esta convención con `const`.
 
 Esto implica que vamos a encontrar montones de ejemplos con `var`, e incluso puede ser que nos toque trabajar en algún proyecto antiguo dónde aun se use.
 

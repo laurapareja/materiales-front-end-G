@@ -12,7 +12,7 @@ En las herramientas para desarrolladoras de Chrome (las DevTools) hay una pesta�
 
 * * *
 
-Con la consola también podemos interactuar desde nuestro programa JavaScript, es decir, desde el código que escribimos en nuestro fichero `.js`. Una de las cosas que podemos hacer es escribir información, esto se denomina comúnmente *loguear* información. Lo hacemos mediantes la función `console.log()` en la que lo que pongamos entre paréntesis será lo que se escriba en la consola. 
+Con la consola también podemos interactuar desde nuestro programa JavaScript, es decir, desde el código que escribimos en nuestro fichero `.js`. Una de las cosas que podemos hacer es escribir información, esto se denomina comúnmente *loguear* información. Lo hacemos mediante la función `console.log()` en la que lo que pongamos entre paréntesis será lo que se escriba en la consola. 
 
 ```js
 console.log('Hola');
@@ -109,7 +109,7 @@ Imagina que vamos a la frutería y compramos lo siguiente:
 - 3 kilos de peras conferencia (no una cualquiera) a 2€/kg
 - medio kilo de uvas a 4€/kg
 
-Con lo que hemos visto durante los ejemplos y textos anteriores y usando JavaScript, vamos a calcular el precio total como si lo hiciesemos en una hoja de toda la vida pero de manera mucho más guay. El resultado debe mostrarse en la consola del navegador.
+Con lo que hemos visto durante los ejemplos y textos anteriores y usando JavaScript, vamos a calcular el precio total como si lo hiciésemos en una hoja de toda la vida pero de manera mucho más guay. El resultado debe mostrarse en la consola del navegador.
 
 * * *
 
@@ -149,7 +149,7 @@ Otra regla es que debe coincidir el estilo de la comilla de apertura con la de c
 'esto no es válido"
 ```
 
-**Nota:** Como sabemos que os gustan las normas y las cosas claras, a la hora de trabajar con distintos tipos de comillas, la opción recomendable es usar un único tipo a lo largo de todo el código de tu programa y usar `\` para "escapar" (convertir a un caracter normal) las comillas anidadas (ej: `'What\'s up!'`).
+**Nota:** Como sabemos que os gustan las normas y las cosas claras, a la hora de trabajar con distintos tipos de comillas, la opción recomendable es usar un único tipo a lo largo de todo el código de tu programa y usar `\` para "escapar" (convertir a un carácter normal) las comillas anidadas (ej: `'What\'s up!'`).
 
 Ejemplos de `string`s válidos en JavaScript:
 
@@ -260,7 +260,7 @@ console.log('Mozilla is ' + browserName.length + ' code units long');
 ### EJERCICIO 8
 
 Con todo lo aprendido hasta ahora vamos a hacer un programa que pinte en HTML lo siguiente:
-`El nombre de mi compañera es Leticia Fernández Sánchez, y está compuesto por 23 carácteres`.
+`El nombre de mi compañera es Leticia Fernández Sánchez, y está compuesto por 23 caracteres`.
 
 * * *
 
@@ -280,7 +280,7 @@ Vamos a duplicar el ejercicio 5 y a modificarlo, recogiendo la edad con la que v
 * * *
 #### EJERCICIO 8
 
-Copia y pega en la consola la siguiente operacion:
+Copia y pega en la consola la siguiente operación:
 
 ```js
 2 + 3 + '5'
