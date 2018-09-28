@@ -119,7 +119,7 @@ En el caso de enlazar un JavaScript externo, utilizaremos también la etiqueta `
 
 Por el momento y como norma general, utilizaremos la opción de enlazar un JavaScript externo en todos los ejercicios que realicemos.
 
-Bien, ya hemos visto cómo enlazar JavaScript en nuestra página, ahora es el momento de ver nuestro primer código JavaScript. Partiendo del código que mostrabamos en el ejemplo anterior con los archivo `main.js` e `index.html`, vamos a añadir el código que aparece a continuación en el archivo `main.js`. Una vez añadido, abre desde tu navegador web el archivo HTML donde has enlazado ese JavaScript y observa qué sucede.
+Bien, ya hemos visto cómo enlazar JavaScript en nuestra página, ahora es el momento de ver nuestro primer código JavaScript. Partiendo del código que mostrábamos en el ejemplo anterior con los archivo `main.js` e `index.html`, vamos a añadir el código que aparece a continuación en el archivo `main.js`. Una vez añadido, abre desde tu navegador web el archivo HTML donde has enlazado ese JavaScript y observa qué sucede.
 
 ```js
 'use strict';
@@ -282,7 +282,7 @@ ejercicios variables y constantes
 
 Arreglando errores
 
-Declarar una constante y asignale como valor la dirección nuestra dirección. En la siguiente linea, reasignar el valor por la dirección de la compañera. 
+Declarar una constante y asígnale como valor la dirección nuestra dirección. En la siguiente linea, reasignar el valor por la dirección de la compañera. 
 Abrir las herramientas para desarrolladoras y seleccionar la pestaña de la consola (Console). Encontraremos un mensaje en rojo que nos dirá `Uncaught TypeError: <aquí veremos explicación de que está causando el error>`. 
 
 Hay que leer la explicación y cambiar el código para que desaparezca el error. 
