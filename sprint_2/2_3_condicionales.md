@@ -271,21 +271,6 @@ Te habrá pasado varias veces de ir por la calle y que alguien te pregunte "perd
 
 * * *
 
-## La consola de JavaScript
-
-En las herramientas para desarrolladores de Chrome (las DevTools) la segunda pestaña es una consola JavaScript. Una consola nos permite escribir instrucciones JavaScript que al dar al Enter se ejecutan. En la consola puedes probar a hacer sumas, declarar variables, funciones, etc.
-
-Con la consola también podemos interactuar desde nuestro programa JavaScript, es decir, desde el código que escribimos en nuestro fichero `.js`. Una de las cosas que podemos hacer es escribir datos que comúnmente se denomina *loguear* datos. Lo hacemos mediantes una función `console.log()` en la que lo que pongamos entre paréntesis será lo que se escriba en la consola. A priori puede parecer que esto no tiene mucha utilidad ya que en nuestra página web no veremos nada, solo si abrimos las herramientas de desarrolladores. Pero con el tiempo le irás comprobando lo útil que es, por ejemplo, para depurar (resolver) errores en el código.
-
-```js
-console.log('Hola');
-
-var num = 56;
-console.log(num);
-```
-
-> Prueba a abrir la consola y escribe instrucciones para que veas cómo puedes ejercutar JS. También prueba a escribir datos en la consola desde tu programa con `console.log`
-
 
 ## Bucles
 
