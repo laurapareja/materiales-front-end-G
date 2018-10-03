@@ -56,7 +56,7 @@ Dado este HTML:
 Para empezar, tendremos que localizar en el DOM el elemento sobre el que queremos escuchar eventos. Para ello, usaremos nuestro ya habitual `querySelector`.
 
 ```javascript
-var button = document.querySelector('.alert');
+const button = document.querySelector('.alert');
 ```
 
 A continuación, vamos a usar el método `addEventListener` de los elementos del DOM para escuchar eventos. Le pasaremos 2 parámetros: el tipo de evento a escuchar y la función que tiene que ejecutar cuando sucede el evento. Primero vamos a definir la función, y luego registramos la función escuchadora.
@@ -66,7 +66,7 @@ function showAlert(){
   alert('Alerta');
 }
 
-var button = document.querySelector('.alert');
+const button = document.querySelector('.alert');
 button.addEventListener('click', showAlert);
 ```
 [Aquí podéis jugar con el ejemplo en codepen](https://codepen.io/adalab/pen/RjvLXe?editors=1010).
@@ -81,7 +81,7 @@ Vamos a detenernos un momento aquí: **el parámetro es una función**. Y es que
 Debido a esto, también vamos a poder declarar la propia función cuando se la estemos pasando como parámetro al `addEventListener`, en forma de función anónima. Vamos a ver un ejemplo anterior pero usando una función anónima (sin nombre).
 
 ```javascript
-var button = document.querySelector('.alert');
+const button = document.querySelector('.alert');
 button.addEventListener('click', function(){
   alert('Alerta');
 });
@@ -99,7 +99,7 @@ Existen otras formas de escuchar eventos que veréis por Internet, y que aunque 
 O desde JavaScript:
 
 ```javascript
-var button = document.querySelector('.alert');
+const button = document.querySelector('.alert');
 button.onclick = function(){
   alert('Alerta');
 }
@@ -174,8 +174,8 @@ Partimos de este HTML:
 Vamos a por el JavaScript.
 
 ```javascript
-var fruits = document.querySelectorAll('.fruits li');
-for (var i = 0; i < fruits.length; i++) {
+const fruits = document.querySelectorAll('.fruits li');
+for (let i = 0; i < fruits.length; i++) {
   fruits[i].addEventListener('click', showAlertWithFruit);
 }
 
@@ -206,7 +206,7 @@ Crear una página vacía que al pulsar la tecla 'r' se ponga el fondo rojo y al 
 
 Vamos a partir de un HTML con un botón 'Empezar'. Al hacer click, vamos a pintar en el HTML un listado de películas que tenemos en JavaScript:
 ```javascript
-var movies = {
+const movies = {
   '0': 'Inception',
   '1': 'The butterfly effect',
   '2': 'Eternal sunshine of the spotless mind',
@@ -240,7 +240,7 @@ Vamos a ver un ejemplo. Partimos del ejemplo anterior de la fruta usando atribut
 ```
 En nuestro JavaScript tenemos un objeto con el listado de precios de las frutas, de forma que el primero corresponde a la fresa, el segundo al plátano y el tercero al kiwi.
 ```javascript
-var prices = {
+const prices = {
   '0': 10,
   '1': 2,
   '2': 5,
@@ -261,7 +261,7 @@ Desde la función de callback accedemos al elemento mediante `currentTarget` y c
 Partimos del ejercicio anterior de las películas. Ahora tenemos un objeto `movies` con más información de cada peli en un objeto JavaScript. Vamos a modificar el código para que, al hacer click sobre el nombre de la película en el listado, mostremos una alerta con el título, director y año de la película.
 
 ```javascript
-var movies = {
+const movies = {
   '0': {title: 'Inception', director: 'Christopher Nolan', year: 2010},
   '1': {title: 'The butterfly effect', director: 'Eric Bress, J. Mackye Gruber', year: 2004},
   '2': {title: 'Eternal sunshine of the spotless mind', director: 'Michel Gondry', year: 2004},
@@ -277,7 +277,7 @@ var movies = {
 Puede llegar un punto en que queramos dejar de escuchar eventos sobre un elemento. Para eso usaremos la función `removeEventListener` pasándole los mismo parámetros que al registrarlo. Para poder hacer esto no podremos haber usado una función anónima porque será imposible de volver a referenciar.
 
 ```javascript
-var button = document.querySelector('.alert');
+const button = document.querySelector('.alert');
 button.removeEventListener('click', showAlert);
 ```
 
