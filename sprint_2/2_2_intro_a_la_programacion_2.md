@@ -106,7 +106,7 @@ Y de este JavaScript:
 const superWave = document.querySelector('.super-wave');
 ``` 
 
-Tenemos que crear una clase nueva para destacar el texto `OLA!` y añadirla con JavaScript al elemento con clase `superWave`.
+Tenemos que crear una clase nueva para destacar el texto `OLA!` y añadirla con JavaScript al elemento con clase `super-wave`.
 A por ello!
 
 * * *
