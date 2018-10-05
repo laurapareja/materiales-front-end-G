@@ -1,6 +1,6 @@
 # Eventos
 
-<!-- TOC depthFrom:4 depthTo:6 -->
+<!-- TOC depthFrom:4 depthTo:4 -->
 
 - [EJERCICIO 1](#ejercicio-1)
 - [EJERCICIO 2](#ejercicio-2)
@@ -38,8 +38,8 @@ Vamos a entender cómo actuamos en JavaScript con los ejemplos anteriores:
 
 ## Escuchando eventos desde JavaScript
 
-Vamos a ver cómo traducimos lo anterior a JavaScript. Escuchar un evento es decirle al navegador: vigila un determinado elemento de HTML (por ejemplo un botón con la clase `.form__send-button`), y cuando alguien haga, por ejemplo `click` sobre el ejecuta esta función que he preparado (por ejemplo `sendForm`). 
-Técnicamente, registramos en el navegador una `función escuchadora` o `listener` sobre un elemento para que ejecute una `función manejadora de eventos` o `handler`. 
+Vamos a ver cómo traducimos lo anterior a JavaScript. Escuchar un evento es decirle al navegador: vigila un determinado elemento de HTML, y cuando alguien haga `click` sobre él, ejecuta esta función que he preparado. 
+Técnicamente, registramos en el navegador una `función escuchadora` o `listener` sobre un elemento para que ejecute una `función manejadora de eventos` o `handler` cuando el evento suceda. 
 
 Vamos a ver el ejemplo de mostrar una alerta pulsando un botón.
 
@@ -60,11 +60,11 @@ Dado este HTML:
 ```
 Para empezar, tendremos recoger de HTML el elemento sobre el que queremos escuchar eventos. Para ello, usaremos nuestro ya habitual `querySelector`.
 
-```javascript
+```js
 const button = document.querySelector('.alert');
 ```
 
-A continuación, vamos a usar el método `addEventListener` de los elementos de HTML para escuchar eventos. Le pasaremos 2 parámetros: el tipo de evento a escuchar y la función que tiene que ejecutar cuando sucede el evento. Primero vamos a definir la función manejadora (`handler`), y luego registramos la función escuchadora (`listener`).
+A continuación, vamos a usar el método `addEventListener` de los elementos de HTML para escuchar eventos. Le pasaremos 2 parámetros: el tipo de evento a escuchar y la función que tiene que ejecutar cuando suceda el evento. Primero vamos a definir la función manejadora (`handler`), y luego registramos la función escuchadora (`listener`).
 
 ```js
 // elemento de HTML
@@ -79,7 +79,7 @@ button.addEventListener('click', showAlert);
 [Aquí podéis jugar con el ejemplo en codepen](https://codepen.io/adalab/pen/RjvLXe?editors=1010).
 
 De esta forma, cuando hagamos click sobre el botón se ejecutará la función `showAlert`. Es importante que os fijéis en algunos detalles importantes:
-- la función `addEventListener` lo registramos sobre `button` que es un elemento de HTML (en este caso un botón)
+- la función `addEventListener` la registramos sobre `button` que es un elemento de HTML (en este caso un botón)
 - el primer argumento que le pasamos a `addEventListener` es una cadena con el nombre del evento, en este caso `click`
 - el segundo argumento que le pasamos a `addEventListener` es una función, es decir, ponemos el nombre de la función pero no la ejecutamos (no ponemos paréntesis al final);
 
@@ -94,7 +94,7 @@ y el nombre de una función
 
 Esto os puede parecer un poco raro y complejo al principio, pero iremos descubriendo en el curso que es muy útil. A este tipo de funciones que se pasan como argumentos a otras, se les llama **callbacks**
 
-Por lo tanto la `función manejadora` o `handler` que le pasamos a `addEventListener` como segundo argumento es un `callback`, ya que no la ejecutamos nosotras, es ejecutada por `addEventListener` cuando sucede el evento.
+Por lo tanto la función que le pasamos a `addEventListener` como segundo argumento es un `callback`, no la ejecutamos nosotras, es ejecutada por `addEventListener` cuando sucede el evento.
 
 Para pasar un *callback* como argumento, podemos utilizar el nombre de una función ya declarada (como vimos en el ejemplo anterior), o podemos declararla directamente cuando la pasemos como argumento. Son dos maneras diferentes de hacer lo mismo. Vamos a ver el ejemplo anterior, pero declarando la función cuando la pasamos como argumento.
 
@@ -127,7 +127,7 @@ button.onclick = function(){
   alert('Alerta');
 }
 ```
-A partir de ahora usaremos **siempre, siempre, siempre** la forma correcta, es decir, el `addEventListener`.
+A partir de ahora usaremos **siempre, siempre, siempre** la forma correcta, es decir, `addEventListener`.
 
 * * *
 
@@ -194,7 +194,7 @@ const buttonElement = document.querySelector('.button');
 ** pasándole como argumento un objeto con información sobre el evento
 */
 function handleButtonClick(event) {
-  console.log('Infomación acerca el evento: ', event);
+  console.dir(event);
 }
 
 buttonElement.addEventListener('click', handleButtonClick);
@@ -202,18 +202,25 @@ buttonElement.addEventListener('click', handleButtonClick);
 ```
 Vamos a ver alguna de la información útil que que nos devuelve este parámetro:
 
-### currentTarget
+### event.currentTarget
 
-En **event.currentTarget** encontraremos el elemento de HTML **sobre el que pusimos el `listener**.
+En **`event.currentTarget`** encontraremos el **elemento sobre el que pusimos el listener**.
+
+```html
+<button class="button__add-one">
+0
+</button>
+```
 
 ```js
-const plusOneButtonElement = document.querySelector('button__addOne');
+
+const plusOneButtonElement = document.querySelector('.button__add-one');
 
 function handlePlusOneButton(event) {
   // Recogemos el elemento sobre el que pusimos el listener
-  // Y lo asignamos a una constante
+  // y lo asignamos a una constante
   const buttonElement = event.currentTarget;
-  buttonElement.innerHTML = parseInt(button.innerHTML) + 1;
+  buttonElement.innerHTML = parseInt(buttonElement.innerHTML) + 1;
 }
 
 plusOneButtonElement.addEventListener('click', handlePlusOneButton);
@@ -221,7 +228,7 @@ plusOneButtonElement.addEventListener('click', handlePlusOneButton);
 ```
 Como ya habrás notado en el ejemplo anterior las constantes `plusOneButtonElement` y `buttonElement` tienen asignado el mismo elemento de HTML. 
 Entonces ¿para qué queremos `currentTarget`, si nosotras hemos puesto el listener y por lo tanto ya sabemos cual es elemento botón?
-Para poder diferenciar entre dos elementos que tienen un listener con el mismo `handler` o `callback`. Así podemos tener una sola `función manejadora` para dominarlos a todos :)
+Para poder diferenciar entre dos elementos que tienen un listener con el mismo `handler`. Así podemos tener una sola `función manejadora` para dominarlos a todos :)
 
 Un caso muy claro sería un listado de elementos en el que queremos que, al pinchar sobre un elemento, este y solo este cambie de estilo. 
 
@@ -249,9 +256,9 @@ Después vamos a escuchar eventos sobre cada elemento de la lista, de forma que 
 
 **Favoritos**
 
-Hemos preparado un [HTML](https:/[Introduction to event listeners]/codepen.io/adalab/pen/xyEwVj) con tres tarjetas. Tenemos que hacer que al pinchar en una cambie su color de fondo y el texto del span 'Añadir' cambie a 'Quitar'.
+Hemos preparado un [HTML]('https://codepen.io/adalab/pen/xyEwVj') con tres tarjetas. Tenemos que hacer que al pinchar en una cambie su color de fondo y el texto del span 'Añadir' cambie a 'Quitar'.
 
-> **Nota**: con `querySelector` buscamos un elemento dentro de otro. Hasta ahora lo habíamos usado para buscar dentro`document` (todo nuestro documento HTML), con `document.querySelector()`. Si tuviéramos una constante llamada por ejemplo `sectionAboutElement`, podríamos buscar dentro un determinado elemento, ta l que así `sectionAboutElement.querySelector()`.
+> **Nota**: con `querySelector` buscamos un elemento dentro de otro. Hasta ahora lo habíamos usado para buscar dentro de `document` (todo nuestro documento HTML), con `document.querySelector()`. Si tuviéramos una constante llamada, por ejemplo, `sectionAboutElement` con un elemento podríamos buscar dentro de este un determinado elemento, tal que así `sectionAboutElement.querySelector()`.
 
 * * *
 
@@ -259,15 +266,15 @@ Hemos preparado un [HTML](https:/[Introduction to event listeners]/codepen.io/ad
 
 **Jugando con el teclado**
 
-Tenemos que crear una página vacía. Al pulsar la tecla 'r' su color de fondo cambia a rojo y al pulsar la 'm' a morado. Vamos a escuchar un evento de teclado (directamente sobre el elemento `document`). En el objeto evento podemos [consultar la propiedad `key`](https://keycode.info/) para saber qué tecla se ha pulsado.
+Tenemos que crear una página vacía. Al pulsar la tecla 'r' su color de fondo cambia a rojo y al pulsar la 'm' a morado. Vamos a escuchar un evento de teclado (directamente sobre el elemento `document`). En el evento podemos [consultar la propiedad `key`](https://keycode.info/) para saber qué tecla se ha pulsado.
 
 * * *
 
-### target
+### event.target
 
-En **event.target** encontraremos el elemento de HTML **sobre el que ha sucedido el evento**. Este elemento no tiene por que ser el mismo sobre el que pusimos el listener. 
+En **`event.target`** encontraremos el **elemento sobre el que ha sucedido el evento**. Este elemento no tiene por que ser el mismo sobre el que pusimos el listener. 
 
-Recordemos que en HTML se anidan las etiquetas, de manera que si ponemos un listener de `click` sobre un `div padre` que contenga varios `spans hijos`, al hacer click sobre cualquiera de los hijos, **en target estará el span hijo sobre el que se ha hecho click** y **en currentTarget el div sobre el que pusimos el listener**.
+Recordemos que en HTML se anidan las etiquetas, de manera que si ponemos un listener de `click` sobre un `div padre` que contenga varios `spans hijos`, al hacer click sobre cualquiera de los hijos, **en target estará el span hijo sobre el que se ha hecho click** y **en currentTarget el div padre sobre el que pusimos el listener**.
 
 * * *
 
@@ -275,23 +282,24 @@ Recordemos que en HTML se anidan las etiquetas, de manera que si ponemos un list
 
 **Delegando eventos**
 
-Vamos a `refactorizar` el [EJERCICIO 4](#ejercicio-4) para mejorarlo utilizando la técnica `event delegation`. Tenemos que reemplazar ese mogollón de listeners en los `lis` y reemplazarlos por uno solo en la etiqueta madre (`ul`).
+Vamos a `refactorizar` el [EJERCICIO 4](#ejercicio-4) para mejorarlo utilizando la técnica `event delegation`. Tenemos que quitar ese mogollón de listeners en los `lis` y reemplazarlos por uno solo en la etiqueta madre (`ul`).
 A por ello!
 
 * * *
 
 
-### preventDefault()
+### event.preventDefault()
 Algunos elementos de HTML tienen comportamientos por defecto ante eventos, por ejemplo:
 
-- al hacer click en un input de tipo checkbox este marca/desmarca
+- al hacer click en un input de tipo checkbox este se marca/desmarca
 - al hacer click en un botón o un input de tipo submit que se encuentra en un formulario el navegador intenta enviar los datos al servidor
+- al hacer click en un enlace navegamos al mismo
 
-El método `event.preventDefault()` nos permite prevenir estos comportamientos por defecto desde javascript
+El método **`event.preventDefault()` nos permite prevenir** estos **comportamientos por defecto** desde javascript
 
-Uno de los casos más comunes es prevenir el envío de un formulario. Normalmente vamos a querer evitar que lo envíe el navegador ya que esto, entre otras, cosas hace que la página se recarge. 
+Uno de los casos más comunes es prevenir el envío de un formulario.
 
-Aunque aún no hemos visto como enviar un formulario desde JavaScript, este sería el primer paso para poder controlarlo validando sus datos, enviándolos al servidor desde JavaScript y mostrando 'feedback' a la usuaria.
+Aunque aún no hemos visto como enviar un formulario desde JavaScript, prevenir que lo envíe el navegador sería el primer paso para poder controlarlo, validando sus datos, enviándolos al servidor desde JavaScript y mostrando 'feedback' a la usuaria sobre el proceso.
 
 - [botón submit en un formulario](https://codepen.io/adalab/pen/bjwJGv)
 
@@ -301,7 +309,7 @@ Aunque aún no hemos visto como enviar un formulario desde JavaScript, este ser�
 
 **Para ese link**
 
-¿Recuerdas el proyecto del sprint uno? Los enlaces de la cabecera de nuestra página tenían un problemilla, como nuestra cabecera era flotante, al hacer click parte del contenido quedaba oculto. 
+¿Recuerdas el proyecto del sprint uno? Los enlaces de la cabecera de nuestra página tenían un problema, como nuestra cabecera era flotante, al navegar a una sección parte del contenido de quedaba oculto tras la cabecera. 
 
 Vamos a animarnos y a preparar un HTML muy sencillo con :
 - una cabecera flotante que contenga un menu con tres enlaces 
@@ -317,7 +325,7 @@ Hhhmm, pero entonces no pasa nada al hacer click... Correcto, ¡ejercicio termin
 
 ## Dejando de escuchar eventos
 
-Puede llegar un punto en que queramos dejar de escuchar eventos sobre un elemento. Para eso usaremos la función `removeEventListener` pasandole los mismo parámetros que al registrarlo. Para poder hacer esto no podremos haber usado una función anónima porque será imposible de volver a referenciar.
+Puede llegar un punto en que queramos dejar de escuchar eventos sobre un elemento. Para eso usaremos la función `removeEventListener` pasándole los mismo parámetros que al registrarlo.
 
 ```js
 const buttonElement = document.querySelector('.alert');
@@ -332,17 +340,32 @@ Cada vez que sucede un evento sobre un elemento de HTML, este 'burbujea' hacia a
 
 Aunque no lo vemos, esto está sucediendo continuamente en el navegador, por ejemplo cada vez que movemos el ratón, o hacemos click en cualquier sitio. este comportamiento hace que:
  - podamos 'escuchar' un evento en un elemento, sin que esto implique que se haya iniciado en el.
- - podemos poner listeners con handlers en varios padres y todos se ejecutarán si sucede un evento en un hijo común
+ - podamos poner `listeners` con `handlers` en varios padres y que todos se ejecuten si sucede un evento en un hijo común
 
-Pincha en los divs de este [codepen](https://codepen.io/adalab/pen/MPjyyW?editors=1010) y observa como se comportan.
+Pincha en los `divs` de este [codepen](https://codepen.io/adalab/pen/MPjyyW?editors=1010) y observa como se comportan.
 
-Esto nos permite técnicas tan interesantes como `event delegation` que prácticaremos en el [EJERCICIO 7](#ejercicio-7), con la cual podemos poner un listener en un ul y así manejar los eventos sobre sus hijos `lis`.
+Esto nos permite técnicas tan interesantes como `event delegation` que prácticaremos en el [EJERCICIO 7](#ejercicio-7), con la cual podemos poner un listener en un `ul` y así manejar los eventos sobre sus hijos `lis`.
 
 En este [pen](https://codepen.io/adalab/pen/zLKwwP) puedes ver como manejar eventos anidados sin que entren en conflicto.
 
 ## Resumen
 
+En esta sesión hemos visto: como hacer nuestras webs interactivas de verdad, escuchando eventos y reaccionando a ellos gracias a `addEventListener(type, handler)`. Como utilizar información que nos devuelve el navegador sobre los eventos:
 
+- `event.currentTarget`: elemento con el listener
+- `event.target`; elemento sobre el que sucede el evento
+- `event.preventDefault()`: método para prevenir el comportamiento por defecto de un evento sobre un elemento
+
+También, nos hemos acercado a los conceptos: 
+
+- `event bubbling`: los eventos pasan de unos elementos a otros de manera ascendente
+- `event delegation`: gracias al burbujeo de los eventos podemos poner `listeners` a elementos padres para controlar eventos en hijos
+
+Y hemos visto nueva información que no es exclusiva de los eventos como:
+
+- `classList.toggle`: quita o añade una clase de css
+- `element.value`: nos devuelve el valor de un input
+- `callback`: una función ejecutada por otra función
 
 ## Recursos externos
 
