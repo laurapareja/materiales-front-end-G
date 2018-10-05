@@ -194,7 +194,7 @@ const buttonElement = document.querySelector('.button');
 ** pasándole como argumento un objeto con información sobre el evento
 */
 function handleButtonClick(event) {
-  console.dir(event);
+  console.log(event);
 }
 
 buttonElement.addEventListener('click', handleButtonClick);
