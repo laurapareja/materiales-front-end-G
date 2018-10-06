@@ -256,7 +256,9 @@ Después vamos a escuchar eventos sobre cada elemento de la lista, de forma que 
 
 **Favoritos**
 
-Hemos preparado un [HTML](https://codepen.io/adalab/pen/xyEwVj) con tres tarjetas. Tenemos que hacer que al pinchar en una cambie su color de fondo y el texto del span 'Añadir' cambie a 'Quitar'.
+Hemos preparado un [HTML](https://codepen.io/adalab/pen/xyEwVj) con tres tarjetas. 
+Tenemos que hacer que al pinchar en un elemento del listado se añada la clase `.teacher--selected` si no la tiene o se la quite si la tiene.
+Y que el texto del span `.favorite` cambie de 'Añadir' a 'Quitar' y viceversa.
 
 > **Nota**: con `querySelector` buscamos un elemento dentro de otro. Hasta ahora lo habíamos usado para buscar dentro de `document` (todo nuestro documento HTML), con `document.querySelector()`. Si tuviéramos una constante llamada, por ejemplo, `sectionAboutElement` con un elemento podríamos buscar dentro de este un determinado elemento, tal que así `sectionAboutElement.querySelector()`.
 
