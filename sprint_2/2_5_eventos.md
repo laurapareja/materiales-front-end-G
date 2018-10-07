@@ -179,20 +179,14 @@ Crear una página HTML con un párrafo con `lorem ipsum`. Al poner el ratón sob
 
 ## Información sobre el evento
 
-Como hemos visto, cuando registramos un listener para escuchar un evento, es el navegador quien ejecuta la función `handler` o `callback`. 
+Como hemos visto, cuando registramos un listener para escuchar un evento, es el navegador quien ejecuta la función `handler`. 
 
-Al ejecutarla, le pasa unos argumentos que podremos recoger si definimos parámetros en nuestra función `handler` o `callback`. El primero de ellos es un objeto que se suele denominar [`event`](https://developer.mozilla.org/en-US/docs/Web/API/Event) y que contiene información acerca del evento. 
+Al ejecutarla, le pasa unos argumentos que podremos recoger si definimos parámetros en nuestra función `handler`. El primero de ellos es un objeto que se suele denominar y que contiene información acerca del evento. 
 Aun no hemos visto los objetos, pero ahora mismo basta decir que son como una variable con muchas variables dentro.
 
 ```js
 const buttonElement = document.querySelector('.button');
 
-/*
-** En nuestra función handler o callback preparamos un parámetro `event`
-** Cuando la usuaria haga click sobre el elemento con clase '.button'
-** el navegador ejecutará la función handleButtonClick 
-** pasándole como argumento un objeto con información sobre el evento
-*/
 function handleButtonClick(event) {
   console.log(event);
 }
@@ -200,7 +194,7 @@ function handleButtonClick(event) {
 buttonElement.addEventListener('click', handleButtonClick);
 
 ```
-Vamos a ver alguna de la información útil que que nos devuelve este parámetro:
+Vamos a ver alguna de la información útil que contiene:
 
 ### event.currentTarget
 
