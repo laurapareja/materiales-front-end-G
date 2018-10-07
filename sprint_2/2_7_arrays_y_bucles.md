@@ -12,7 +12,7 @@
 
 ## Introducción
 
-Los arrays, también llamados arreglos o listas, nos permiten guardar una lista de ordenada de datos en JavaScript. Algunos ejemplos: una lista de espera de un hospital, los objetos de una cesta de la compra, los usuarios que han dado like a nuestra foto, etc.
+Los arrays, también llamados arreglos o listas, nos permiten guardar una lista de ordenada de datos en JavaScript. Algunos ejemplos: una lista de espera de un hospital, los objetos de una cesta de la compra, los usuarios que han dado *like* a nuestra foto, etc.
 
 ```js
 // Array con la lista de espera de los pacientes de un hospital
@@ -75,7 +75,6 @@ var madrid = {
 }
 ```
 
-
 ## ¿Para qué sirven?
 
 Los arrays se utilizan principalmente para almacenar una lista de datos relacionados entre sí. En esa lista de datos el orden suele ser importante: clasificación, posiciones, productos ordenados de más barato a más caro, etc.
@@ -91,26 +90,25 @@ Algunas de las aplicaciones más típicas de los arrays son los resultados de b�
 
 Todos estos ejemplos anteriores se suelen almacenar en arrays para poderlos modificar (por ejemplo ordenar por orden alfabético o añadir un nuevo elemento), trabajar con ellos de forma sencilla y mostrarlos en nuestra web.
 
-
 ## Trabajando con arrays
 
 A continuación vamos a ver cómo trabajar con arrays, cuales son sus principales propiedades y métodos y cómo realizar operaciones básicas con ellos.
 
 ### Declaración de un array
 
-Al igual que los strings y los números, podemos usar un array sin asignarlo a una variable `[1, 2, 3]`, pero normalmente crearemos una variable para guardar su valor.
+Al igual que las cadenas y los números, podemos usar un `array` sin asignarlo a una variable `[1, 2, 3]`, pero normalmente crearemos una variable para guardar su valor.
 
 La sintaxis para declarar una variable y asignarle como valor un array es la siguiente:
 
 ```js
 // Crea una variable con un array vacío
-var arr1 = [];
+const arr1 = [];
 
 // Crea un array con dos números
-var arr2 = [1, 2];
+const arr2 = [1, 2];
 
 // Crea un array con cuatro datos
-var arr3 = [
+const arr3 = [
   'Laura',
   'Pedro',
   'Marta',
@@ -118,8 +116,7 @@ var arr3 = [
 ];
 ```
 
->**NOTA:** Cuando un array contiene varios elementos suele ponerse en cada uno de ellos en una nueva línea como se ve en `arr3`.
-
+>**NOTA:** Cuando un array contiene varios elementos suele ponerse en cada uno de ellos en una nueva línea como se ve en `arr3`, para facilitar su lectura.
 
 ### Obtener información de un array
 
@@ -128,7 +125,7 @@ Bien, ahora que sabemos cómo crear un array, es el momento de descubrir cómo p
 Sabiendo esto, si queremos obtener el valor que hay en una posición concreta de un índice, lo único que deberemos hacer será indicar la variable que contiene el array seguida del índice del valor que buscamos, que irá entre corchetes:
 
 ```js
-var fruits = [
+const fruits = [
   'pera', 
   'manzana', 
   'naranja', 
@@ -141,42 +138,52 @@ console.log(fruits[3]); // Muestra 'plátano'
 
 Un dato importante es que para obtener el valor que queremos del array podemos utilizar una variable en vez de un número. Imaginemos que queremos hacer una aplicación que simule el típico sorteo en el que cada uno de los participantes saca un papelito de una urna y tiene un premio asociado. Si quisiéramos hacerlo con JavaScript, podríamos hacer algo parecido a lo siguiente:
 
+```html
+<label for="lotteryNumber">Introduce un número del 1 al 4</label>
+<input id="lotteryNumber" type="text">
+```
+
 ```js
-var options = [
+const options = [
   'coche', 
   'viaje', 
   'crucero', 
   'llavero'
 ];
-var selection = prompt('Introduce un número del 1 al 4');
-var selectedNumber = parseInt(selection);
-var index = selectedNumber - 1; // El índice empieza en 0
+const lotteryNumberInput = document.querySelector('#lotteryNumber');
 
-var result = options[index]; // Utilizamos una variable que contiene un número como valor
-console.log('Premio:', result);
+function handleLotteryNumberChange (event) {
+  const input = event.currentTarget;
+  const selectedNumber = parseInt(input.value);
+  const ind = selectedNumber - 1; // El índice empieza en 0
+  const result = options[ind]; // Utilizamos una variable que contiene un número como valor
+  console.log('Premio:', result);
+}
+
+lotteryNumberInput.addEventListener('keyup', handleLotteryNumberChange);
+
 ```
-
 
 ## Modificar un array
 
-Dentro de un array podemos añadir nuevos elementos o cambiar elementos ya existentes. Más adelante cuando veamos métodos y propiedades de los arrays veremos cómo eliminar un elemento de un array y otras formas de modificar la información que contienen.
+Dentro de un array podemos añadir nuevos elementos o cambiar elementos ya existentes. Más adelante cuando veamos métodos y propiedades de los arrays aprenderemos cómo eliminar un elemento de un array y otras formas de modificar la información que contienen.
 
 ### Añadir un elemento
 
 Para añadir un elemento simplemente asignaremos un valor a un índice de un array:
 
 ```js
-var arr = []; // Creamos un array vacío
+const arr = []; // Creamos un array vacío
 arr[0] = 'Hola'; // Añadimos un elemento en el índice 0, la primera posición del array
 arr[1] = '¿qué tal?'; // Añadimos un elemento en el índice 1, la segunda posición del array
 
 // Tras los pasos anteriores arr será igual a  ['Hola', '¿qué tal?']
 ```
 
-**NOTA:** Es importante saber que si asignamos un valor a un índice más alto que la longitud del array, se crearán espacios vacíos:
+> **NOTA:** Es importante saber que si asignamos un valor a un índice más alto que la longitud del array, se crearán espacios vacíos:
 
 ```js
-var arr = [1, 2, 3];
+const arr = [1, 2, 3];
 arr[8] = 24; // Saltamos del índice 2 al 7 (5 espacios) para añadir un valor en el 8
 
 console.log(arr); // Muestra 1,2,3,,,,,,24 (un array con 5 espacios vacíos)
@@ -184,52 +191,53 @@ console.log(arr); // Muestra 1,2,3,,,,,,24 (un array con 5 espacios vacíos)
 
 ### Modificar un valor
 
-Para modificar unos de los valores del array utilizaremos la misma sintaxis que para añadir un nuevo elemento. A la hora de escribirlo no habrá diferencia, pero el funcionamiento será distinto ya que en este caso estaremos sobreescribiendo el valor anterior.
+Para modificar unos de los valores del array utilizaremos la misma sintaxis que para añadir un nuevo elemento. A la hora de escribirlo no habrá diferencia, pero el funcionamiento será distinto ya que en este caso estaremos sobrescribiendo el valor anterior.
 
 ```js
-var arr = [
+const arr = [
   'plátano', 
   'manzana', 
   'pera'
 ]; // Creamos un array con tres elementos
-arr[1] = 'limón'; // Sobreescribimos el valor que hay en la segunda posición del array
+arr[1] = 'limón'; // Sobrescribimos el valor que hay en la segunda posición del array
 
 // Tras los pasos anteriores arr será igual a  ['plátano', 'limón', 'pera']
 ```
 
 ### Los arrays son un tipo de datos especial
 
-Una cosa importante a tener en cuenta es que cuando asignamos un array a una variable realmente no asignamos a la variable ese valor sino que sería más bien creamos un array y esa variable apuntará a ese array que hemos creado. Es exactamente lo mismo que nos sucedía con los objetos, ¿lo recuerdas? En el caso de los arrays creamos un dato y la variable en vez de almacenar ese dato almacenará la dirección (enlace) que apunta al dato. Por hacer un símil, cuando creamos un array es como si construyeramos un edificio y la variable guardará la dirección del edificio.
+Una cosa importante a tener en cuenta es que cuando asignamos un array a una constante (o variable) realmente no asignamos a la constante ese valor sino que sería más bien creamos un array y esa constante apuntará a ese array que hemos creado. Es exactamente lo mismo que nos sucedía con los objetos, ¿lo recuerdas? Y es que ¡los arrays son un tipo de objeto! 
+En el caso de los arrays creamos un dato y la constante en lugar de almacenar ese dato almacenará la dirección (enlace) que apunta al dato. Por hacer un símil, cuando creamos un array es como si construyéramos un edificio y la constante guardara la dirección del edificio.
 
 Y te estarás preguntando, ¿y en qué me afecta esto a mí? Imaginemos que creamos un array llamado `arr`:
 
 ```js
-var arr = [1, 2, 3, 4];
+const arr = [1, 2, 3, 4];
 ```
 
-En ese caso estaremos creando un array `[1, 2, 3, 4]` y la variable `arr` apuntará a ese array.
+En ese caso estaremos creando un array `[1, 2, 3, 4]` y la constante `arr` apuntará a ese array.
 
-Si más tarde guardamos `arr` en otra variable llamada `arr2` de esta forma:
+Si más tarde guardamos `arr` en otra constante llamada `arr2` de esta forma:
 
 ```js
-var arr2 = arr;
+const arr2 = arr;
 ```
 
 Lo que estamos diciendo es que `arr2` va a guardar la información que tiene `arr` y por tanto, al igual que `arr` apuntará al array que hemos creado posteriormente.
 
-Bien, el problema viene ahora, ambas variables apuntan al mismo array por lo que si modificamos una estaremos modificando también la otra, ya que lo que va a hacer JavaScript es modificar el array al que apunta.
+Bien, el problema viene ahora, ambas constantes apuntan al mismo array por lo que si modificamos una estaremos modificando también la otra, ya que lo que va a hacer JavaScript es modificar el array al que apunta.
 
 ```js
-var arr = [1, 2, 3, 4];
-var arr2 = arr;
+const arr = [1, 2, 3, 4];
+const arr2 = arr;
 
 arr[4] = 5;
 
-console.log(arr[4]);// Imprime 5 en la consola
-console.log(arr2[4]);// Imprime también 5 en la consola
+console.log(arr[4]); // Imprime 5 en la consola
+console.log(arr2[4]); // Imprime también 5 en la consola
 ```
 
-Este tipo de comportamiento de guardar la dirección a un dato en vez del dato como tal se llama asignación por referencia y así es como almacena JavaScript los arrays. Tener esto en cuenta es muy importante ya que si lo aprendemos evitaremos bastantes problemas en el futuro a la hora de guardar arrays en variables y copiar arrays.
+Este tipo de comportamiento de guardar la dirección a un dato en vez del dato como tal se llama asignación por referencia y así es como almacena JavaScript los arrays. Tener esto en cuenta es muy importante ya que si lo aprendemos evitaremos bastantes problemas en el futuro a la hora de guardar arrays en constantes (o variables) y copiar arrays.
 
 * * *
 #### EJERCICIO 1
@@ -238,40 +246,40 @@ Este tipo de comportamiento de guardar la dirección a un dato en vez del dato c
 
 Vamos a hacer este ejercicio en parejas. ¿Listas? La primera de la pareja con el teclado va a crear un array `movies` con un listado de 3 películas que le gusten. Será un array de cadenas (`strings`).
 
-Ahora toma el teclado la otra compañera y añade al array anterior otra película más que le guste. No vale modificar la declaración del array, sino que añadiremos la nueva peli metiéndola en la posición 3 del array (recordad que se empiezan a numerar desde el 0). Para comprobar que funciona, tienes que mostrar en la consola el nombre de la última película del array.
+Ahora toma el teclado la otra compañera y añade al array anterior otra película más que le guste. No vale modificar la declaración del array, sino que añadiremos la nueva peli en la posición 3 del array (recordad que se empiezan a numerar desde el 0). Para comprobar que funciona, tienes que mostrar en la consola el nombre de la última película del array.
 
 El teclado vuelve a la primera de la pareja. Tienes que modificar la peli que menos te guste de las que hay en el array (¿podría ser la que ha puesto tu compañera? :P) por el nombre de otra que te guste más. Para comprobar que funciona, tienes que mostrar el array completo en la consola.
 
 El teclado vuelve a la segunda de la pareja. Ahora es tu turno de modificar la peli que menos te guste del array por otra. De nuevo, muestra el array completo en la consola para comprobar que funcionó.
 
-Para terminar este ejericicio, vamos a encapsular todo el código que hemos creado en una función que no toma parámetros y que llamaremos `workWithMovies`. Ejercutamos la función para comprobar que se muestran los mensajes en la consola correspondientes.
+Para terminar este ejercicio, vamos a encapsular todo el código que hemos creado en una función que no toma parámetros y que llamaremos `workWithMovies`. Ejecutamos la función para comprobar que se muestran los mensajes en la consola correspondientes.
 
 * * *
 
 ### La propiedad length
 
-Los arrays (como veíamos con `String` y `Number`) son un tipo especial de objetos y, al igual que estos, pueden tener propiedades y métodos. Como hemos visto anteriormente, gracias a las propiedades podremos obtener información del array y gracias a los métodos podremos generar acciones sobre ellas para modificar sus datos u obtener un nuevo resultado.
+Los arrays son un tipo especial de objetos y, así que tienen propiedades y métodos. Gracias a las propiedades podremos obtener información del array y gracias a los métodos podremos generar acciones sobre ellos para modificar sus datos u obtener un nuevo resultado.
 
 La propiedad `length` sirve para obtener la longitud del array o en otras palabras cuántos elementos contiene. Como cualquier otra propiedad, para utilizarla simplemente escribiremos el nombre del array seguido por un punto y a continuación `length`:
 
 ```js
-var arr = [1, 2, 3];
+const arr = [1, 2, 3];
 
 console.log(arr.length) // Mostrará un mensaje con la longitud del array (3)
 ```
 
->**NOTA:** Un error que suele producirse a menudo es que escribimos _lenght_ en vez de _length_. La segunda sería la forma correcta. Es importante tener cuidado con esto porque es un error que es difícil de percibir y bastante molesto.
+> **NOTA:** Un error que suele producirse a menudo es que escribimos _lenght_ en lugar de _length_. La segunda sería la forma correcta. Es importante tener cuidado, y cuando sea posible utilizar el autocompletado de nuestro editor, porque es un error que es difícil de percibir y bastante molesto.
 
 ### Iterando sobre los elementos de un array
 
 Cuando trabajamos con arrays es muy común que tengamos que realizar alguna operación sobre todos sus elementos para modificarlos o generar un nuevo array a partir de ellos. Por eso es muy normal que veamos usos de arrays combinados con el uso de bucles `for`. Veamos un ejemplo en el que combinaremos ambos. En este ejemplo, vamos a tener una lista de puntuaciones y vamos a sumarlas para saber cuál será la puntuación final obtenida:
 
 ```js
-var scores = [4, 2, 7, 8, 6, 7, 9, 1, 2, 6, 7];
+const scores = [4, 2, 7, 8, 6, 7, 9, 1, 2, 6, 7];
 
 // Creamos una variable fuera del bucle para que no se sobreescriba en cada iteración
 // En esta variable iremos sumando cada una de las puntuaciones
-var result = 0;
+let result = 0;
 
 // La i empieza en 0 porque el índice de los arrays empieza en 0 también
 for (var i = 0; i < scores.length; i++) {
@@ -302,7 +310,7 @@ Como comentábamos anteriormente, en JavaScript los arrays funcionan como un tip
 
 ```js
 // Lista de contactos (array con objetos dentro)
-var contacts = [
+const contacts = [
   {
     name: 'Raquel',
     phone: '915552323',
@@ -325,7 +333,7 @@ contacts[2].email = 'laura@inbox.com'; // Cambia el email del tercer contacto
 console.log(contacts[2].email);  // Muestra el email del tercer contacto ('laura@inbox.com')
 
 // Tarea con participantes (objeto con array dentro)
-var task = {
+const task = {
   name: 'Crear un repositorio',
   participants: [
     'Raquel',
@@ -370,7 +378,7 @@ Según vayáis creando las funciones, debéis ir probando que funcionan invocán
 Hemos creado una aplicación para gestionar un listado de tareas: ¡somos gente muy ocupada! Para eso, hemos pedido los datos de tareas a un servidor y nos ha devuelto la información en un objeto JSON (u objeto literal) con el listado de tareas y su estado. Nuestra misión es pintar todas las tareas en pantalla, de forma que las tareas ya realizadas aparezcan tachadas. Vamos a partir de este array de datos en nuestro fichero JavaScript:
 
 ```js
-var tasks = [
+const tasks = [
   {name: 'Recoger setas en el campo', completed: true},
   {name: 'Comprar pilas', completed: true},
   {name: 'Poner una lavadora de blancos', completed: true},
@@ -394,7 +402,7 @@ Como hemos visto en sesiones anteriores, para seleccionar un elemento del DOM ut
 
 ```js
 // Guardamos una lista de todos los parrafos
-var paragraphs = document.querySelectorAll('p');
+const paragraphs = document.querySelectorAll('p');
 
 // Modificamos el primer párrafo
 paragraphs[0].innerHTMl = 'Soy el primero';
@@ -418,14 +426,14 @@ A continuación veremos algunos de los métodos básicos que más se utilizan pa
 El método `push()` es uno de los más importantes y sirve para agregar uno o más elementos al final de un array. Es una forma común en JavaScript de añadir elementos a un array. Este método tras agregar los elementos al array devuelve la nueva longitud de éste.
 
 ```js
-var arr = [1, 2, 3];
-var newLength = arr.push(3, 5, 6, 7);
+const arr = [1, 2, 3];
+const newLength = arr.push(3, 5, 6, 7);
 
 console.log(newLength); // Muestra 7, la nueva longitud de arr
 console.log(arr); // Muestra 1,2,3,3,5,6,7
 ```
 
-**NOTA:** Pocas veces es necesario guardar el resultado del método `push()` en una variable ya que podremos acceder a este valor cuando queramos usando la propiedad `length`. Nosotros normalmente no guardaremos ese valor en una variable, pero es bueno que sepamos cómo funciona exactamente el método.
+> **NOTA:** Pocas veces es necesario guardar el resultado del método `push()` en una variable ya que podremos acceder a este valor cuando queramos usando la propiedad `length`. Nosotros normalmente no guardaremos ese valor en una variable, pero es bueno que sepamos cómo funciona exactamente el método.
 
 Como podemos ver, para agregar elementos, pasaremos estos como argumentos del método. Podemos pasar todos los argumentos que queramos sin problema:
 
@@ -439,7 +447,7 @@ arr.push(3, 5, 6, 7, 23, 34, 35, 34, 54, 34, 3434, 34); // Esto es totalmente v�
 El método reverse() invierte el orden de un array. El primer elemento pasará a ser colocarse en la última posición, el segundo pasará a colocarse en la penúltima y así sucesivamente. Este método modifica directamente el array sobre el que se ha utilizado y devuelve ese array actualizado.
 
 ```js
-var arr = [1, 2, 3];
+const arr = [1, 2, 3];
 console.log(arr.reverse()); // Muestra 3,2,1
 console.log(arr); // Muestra también 3,2,1 porque reverse modifica directamente arr
 ```
@@ -449,11 +457,11 @@ console.log(arr); // Muestra también 3,2,1 porque reverse modifica directamente
 Este método se utiliza para obtener, a partir de dos o más arrays, uno que combine a todos ellos. Este método no modifica ninguno de los arrays que utiliza para combinarlos en uno nuevo, sino que devuelve un array, como sucede con las operaciones que hacemos con números, por ejemplo. Para concatenar varios arrays con el método `concat()` lo haremos de la siguiente manera:
 
 ```js
-var letters = ['a', 'b', 'c'];
-var numbers = [1, 2, 3];
-var booleans = [true, false];
+const letters = ['a', 'b', 'c'];
+const numbers = [1, 2, 3];
+const booleans = [true, false];
 
-var result = letters.concat(numbers, booleans);
+const result = letters.concat(numbers, booleans);
 
 // result tendrá ['a', 'b', 'c', 1, 2, 3, true, false]
 ```
@@ -472,7 +480,7 @@ Algunas estructuras como una array de coordenadas requieren crear arrays dentro 
 Partiendo del ejemplo citado anteriormente del array de coordenadas, vamos a declarar un array anidado en JavaScript:
 
 ```js
-var coordinates = [
+const coordinates = [
   [4,3],
   [9,2],
   [2,6]
@@ -482,7 +490,7 @@ var coordinates = [
 Como se puede observar, para crear un array anidado simplemente añadiremos un array dentro de otro. De esta forma podemos crear arrays con varios niveles de anidación pero normalmente se darán pocos casos en los que necesitemos más allá de dos niveles de anidación:
 
 ```js
-var coordinates = [
+const coordinates = [
   [
     [4,5],
     [2,9]
@@ -497,7 +505,7 @@ var coordinates = [
 La explicación a esto es que en JavaScript un array puede utilizarse como cualquier otro tipo de dato y por tanto podemos perfectamente meter arrays dentro de otros o incluso combinar arrays anidados con números o strings
 
 ```js
-var randomData = [
+const randomData = [
   [4,5],
   'hello',
   123123123
@@ -509,21 +517,21 @@ var randomData = [
 Cuando tenemos estructuras de datos anidadas, como en el caso de arrays anidados, lo que se hace para acceder a los valores es algo así como establecer una hoja de ruta, será como decirle al programa _"Del array X quiero el elemento Y y dentro de ese elemento quiero el elemento Z "_. Veamos cómo se traduce esto en código:
 
 ```js
-var coordinates = [
+const coordinates = [
   [4,3],
   [9,2],
   [2,6]
 ];
 
-var firstcoordinate = coordinates[1]; // De las coordenadas obtenemos el segundo valor ([9,2])
-var x = firstcoordinate[0]; // De la primera coordenada obtenemos el primer valor (9)
+const firstcoordinate = coordinates[1]; // De las coordenadas obtenemos el segundo valor ([9,2])
+const x = firstcoordinate[0]; // De la primera coordenada obtenemos el primer valor (9)
 
 /*
 Ese mismo proceso podemos hacerlo en un paso:
 De las coordenadas obtenemos el primer valor y de ese valor obtenemos el primer valor también
 */
 
-var firstElemX = coordinates[1][0]; // firstElemX es igual a 9
+const firstElemX = coordinates[1][0]; // firstElemX es igual a 9
 ```
 
 En el código del ejemplo, si tuviésemos otro nivel más de anidación simplemente tendríamos que añadir otro corchete con el índice del elemento que queremos obtener `deepNestedArr[1][2][1]` y así sucesivamente.
