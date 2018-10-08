@@ -65,7 +65,7 @@ De la primera forma agrupamos todo dentro del contador y es más fácil ver la r
 
 ## ¿Para qué sirve lo que vamos a ver en esta sesión?
 
-Lo que vamos a ver en esta sesión es fundamental. Los objetos están presentes en todo momento en la web y toda ella se compone de objetos con los que interactuaremos en un futuro. Por ejemplo, la ventana (*window*) de la web es un objeto, la página (*document*) es un objeto, cada elemento HTML es un objeto. Estos tienen las mismas características que cualquier otro, tienen propiedades y métodos, y nos servirán para obtener información de éstos y ejecutar acciones sobre ellos. cada elemento HTML es un objeto.
+Lo que vamos a ver en esta sesión es fundamental. Los objetos están presentes en todo momento en la web y toda ella se compone de objetos con los que interactuaremos en un futuro. Por ejemplo, la ventana (*window*) de la web es un objeto, la página (*document*) es un objeto, cada elemento HTML es un objeto. Estos tienen las mismas características que cualquier otro, tienen propiedades y métodos, y nos servirán para obtener información y ejecutar acciones sobre ellos.
 
 Otro de los beneficios de entender los objetos es que aprenderemos a crear un código de mayor calidad ya que creamos abstracciones para que en vez de leer cien líneas de código leamos una y entendamos qué hace. Uno de los beneficios de los *métodos* de los objetos es que nos permiten crear un código muy complejo con el que actuar sea algo sencillo. Por poner un símil, sería como un coche, el motor tiene miles de piezas y una complejidad que poca gente podría entender pero para interactuar con él es bastante sencillo. Giras la llave y arranca el motor, pisas el acelerador y el coche acelera, pisas el freno y frena y no hace falta entender toda la complejidad del motor. En los objetos es igual, la única diferencia es que en vez de interactuar con ellos de forma física, ejecutamos sus métodos y leemos y modificamos sus propiedades. A un contador le diremos que se aumente igual que con el coche le decimos que acelere, la interacción es diferente pero la base del concepto es la misma.
 
@@ -206,7 +206,7 @@ Ahora, vamos a añadir un nuevo método `runAMarathon` que toma un parámetro `d
 Desde un método de un objeto podemos acceder al resto de propiedades de ese objeto usando la palabra `this` antes del nombre de la propiedad. Vamos a ver un ejemplo:
 
 ```js
-var adalaber = {};
+const adalaber = {};
 adalaber.name = 'María';
 adalaber.sayHello = function (){
   return 'Hola, me llamo ' + this.name;
@@ -226,6 +226,8 @@ console.log(adalaber.sayHello());
 Partiendo del objeto `adalaber1` del ejercicio anterior, añade un método (una función) `showBio` que muestra una ventana de alerta con la frase 'Mi nombre es María, tengo 34 años y soy periodista', usando el nombre, edad y estudios que están almacenados en el objeto.
 
 Hacemos lo mismo para `adalaber2`. ¿Hemos tenido que modificar mucho el método `showBio`? ¿Ves alguna ventaja respecto a cómo hacíamos lo mismo en el ejercicio 1?
+
+> **Nota**: para que el ejercicio funcione bien debéis usar funciones normales, no _arrow funtions_. En siguientes sesiones veremos por qué cambia el `this` al usar _arrow funtions_.
 * * *
 
 ### Objetos del navegador
@@ -260,16 +262,18 @@ Investigar si la clave `type` que encontramos en él es una propiedad o un méto
 
 Un elemento de HTML es un objeto que representa una etiqueta de HTML y nos permite interaccionar con ella.
 
-`const titleElement = document.querySelector('#mainTitle');`
+```js
+const titleElement = document.querySelector('#mainTitle');
+```
 
 En anteriores lecciones hemos estado usando varios de sus métodos y propiedades como:
 
 ```js
 titleElement.innerHTML
 titleElement.value
-titleElement.querySelector('.icon-star');
+titleElement.querySelector('.icon-star')
 titleElement.classList
-titleElement.contains('.icon-star')
+titleElement.classList.contains('.icon-star')
 ```
 
 * * *
@@ -278,7 +282,7 @@ titleElement.contains('.icon-star')
 
 **Investigando los elementos**
 
-Vamos a preparar un input de tipo texto, a recogerlo desde javascript y a imprimirlo en la consola con `console.dir` para investigarlo y comenta con tu compañera estas propiedades compañera.
+Vamos a preparar un input de tipo texto, a recogerlo desde JavaScript y a imprimirlo en la consola con `console.dir` para investigarlo y comenta con tu compañera estas propiedades:
 
 - value
 - nodeName
@@ -367,14 +371,15 @@ Con la ayuda de `console.log` probaremos a usar varios métodos distintos y comp
 Vamos a crear un objeto para almacenar la información de un usuario y una variable llamada `job` donde guardaremos el valor `developer`. A continuación seguiremos los siguiente pasos
 
   Usando la notación con punto o la notación con corchetes (`[]`) (ej: `obj.prop` o `obj["prop"]`):
-    1. Añadiremos una propiedad llamada `firstname` y le asignaremos un valor.
-    2. Añadiremos una propiedad llamada `lastname` y le asignaremos un valor.
-    3. Añadiremos una propiedad llamada `age` y le asignaremos un valor numérico.
-    4. Añadiremos una propiedad `job` a la que asignaremos el valor de la variable `job`
-    5. Comprobaremos que al obtener el valor de cada una de las propiedades que hemos definido hasta ahora, este es correcto
-    6. Cambiaremos el nombre del usuario por otro distinto
-    7. Aumentaremos en 1 la edad del usuario
-    8. Comprobaremos de nuevo que todo sigue funcionando correctamente
+
+  1. Añadiremos una propiedad llamada `firstName` y le asignaremos un valor.
+  2. Añadiremos una propiedad llamada `lastName` y le asignaremos un valor.
+  3. Añadiremos una propiedad llamada `age` y le asignaremos un valor numérico.
+  4. Añadiremos una propiedad `job` a la que asignaremos el valor de la variable `job`
+  5. Comprobaremos que al obtener el valor de cada una de las propiedades que hemos definido hasta ahora, este es correcto
+  6. Cambiaremos el nombre del usuario por otro distinto
+  7. Aumentaremos en 1 la edad del usuario
+  8. Comprobaremos de nuevo que todo sigue funcionando correctamente
 
 * * *
 
