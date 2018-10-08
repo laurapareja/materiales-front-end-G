@@ -23,16 +23,15 @@ Durante esta sesión veremos cuáles son las principales características de est
 
 ## ¿Para qué sirve lo que vamos a ver en esta sesión?
 
-Las funciones son muy útiles a la hora de crear un código único para usarlo en distintas partes de nuestro código. El beneficio de esto es que si en el futuro queremos modificar algo de ese código lo haremos en un único sitio aunque se utilice en decenas de sitios diferentes. A diferencia de los bucles, estas no se ejecutan varias veces en el mismo momento sino que se ejecutan en distintos momentos y con distintas características gracias a los parámetros.
+Las funciones son muy útiles a la hora de crear un código único para usarlo en distintas partes de nuestro programa. El beneficio de esto es que si en el futuro queremos modificar algo de ese código lo haremos en un único sitio aunque se utilice en decenas de sitios diferentes. Las funciones se ejecutan en distintos momentos y con distintas características gracias a los _parámetros_.
 
 Otra de las ventajas de las funciones es que devuelven un valor, es decir, realizan una operación y pueden devolver un dato. Ese dato podemos asignárselo a una variable o usarlo dentro de otra operación. O incluso podemos prescindir de él si no nos interesa para nada.
 
 Las funciones son una forma de agrupar código que vamos a usar varias veces permitiéndonos además, pasar diferentes valores para obtener diferentes resultados.
 
-Podemos intentar hacer un paralelismo con el café, más o menos todo el mundo sabe hacer un café, desde los ingredientes a los diferentes pasos. Y cada vez que queramos uno solo necesitamos seguir todos los pasos uno a uno, y al final tendremos un café.
+Podemos intentar hacer un paralelismo con el café, más o menos todo el mundo sabe hacer un café, desde los ingredientes a los diferentes pasos. Y cada vez que queramos uno seguimos todos los pasos uno a uno, y al final tendremos un café.
 
-Ahora, las funciones serían como estas cafeteras modernas, a las que dependiendo de la cápsula que uses te hace un café diferente:
-Cuando activo la cafetera (llamo a la función) detecta qué tipo de capsula he introducido (parámetros) y me hace (me devuelve) un café u otro:
+Ahora, las funciones serían como estas cafeteras modernas, a las que dependiendo de la cápsula que uses te hace un café diferente. Cuando activo la cafetera (llamo a la función) detecta qué tipo de capsula he introducido (parámetros) y me hace (me devuelve) un café u otro:
 - Si utilizo una de estas cápsulas de hipster purista tendré un café de esos que no te dejan tomar si no llevas camisas de cuadros, patinetes y unas gafas de pasta.
 - Si utilizo una cápsula más divertida que añada espuma, caramelo y coco pues tendré que huir de los hispters de antes porque para ellos este tipo de café debería ser ilegal.
 
@@ -317,7 +316,7 @@ Para probar que funciona, ejecuta la función recogiendo el resultado en una var
 
 **Arrow functions everywhere**
 
-Vamos a rehacer alguno de los ejercicios anteriores con funciones flecha. A lo loco!
+Vamos a rehacer alguno de los ejercicios anteriores con funciones flecha. ¡A lo loco!
 
 * * *
 
@@ -326,18 +325,6 @@ Vamos a rehacer alguno de los ejercicios anteriores con funciones flecha. A lo l
 Se pueden ejecutar funciones dentro de otras funciones.
 
 Se pueden pasar funciones como argumentos para otras funciones, devolver funciones como valores de otras funciones y guardar funciones en variables.
-
-* * *
-#### EJERCICIO BONUS 1
-
-**Convertir el código del árbol de navidad en un función**
-
-Vamos a convertir el código del ejercicio del árbol de navidad de la sesión 2.2 en una función. Esta función tendrá tres parametros: número de líneas, si lleva estrella y si lleva tronco. La función debe devolver un string que represente el árbol de navidad.
-
-Si vemos que alguna de las partes del código se puede sacar a otra función, podemos hacerlo. La idea es que el código quede lo más sencillo posible para que otra persona que no haya visto el enunciado ni el código pueda entenderlo sin problemas.
-
-Probaremos a realizar tres árboles con argumentos distintos para que veamos si funciona correctamente.
-* * *
 
 ## Recursos externos
 
