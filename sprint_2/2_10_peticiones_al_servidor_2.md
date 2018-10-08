@@ -16,7 +16,7 @@ En esta sesión vamos a tratar 2 temas diferentes: 1) las APIs, concepto que ya 
 
 *API* viene de *Application Programming Interface*, es decir, es una interfaz que está pensada para ser accedida desde una aplicación de código. Dicho de otra forma, el servidor define una forma de pedirle datos, pensada para que sea una aplicación (un programa) quien los pida y él sepa enviárselos. Hay otra interfaces, como una página web, que están pensadas para ser usadas por personas. Pero las APIs están pensadas para ser usadas desde la programación, en nuestro caso desde nuestro programa JavaScript. Durante esta sesión vamos a ver varios ejemplos de APIs.
 
-Un *linter* es una herramienta que nos sirve para prevenir errores y nos ayuda a mantener un estilo homogéneo en nuestro código. Veremos cómo usar un linter para JavaScript llamado *ESLint* y cómo integrar los mensajes que nos manda en nuestro editor de código, en este caso Atom.
+Un *linter* es una herramienta que nos sirve para prevenir errores y nos ayuda a mantener un estilo homogéneo en nuestro código. Veremos cómo usar un linter para JavaScript llamado *ESLint* y cómo integrar los mensajes que nos manda en nuestro editor de código, en este caso Code.
 
 
 ## ¿Para qué sirve lo que vamos a ver en esta sesión?
@@ -114,7 +114,7 @@ Otra herramienta fundamental son las propias DevTools del navegador en la pesta�
 ***
 #### EJERCICIO 3
 
-En la página de SWAPI o en la que habéis creado en el ejercicio 2 inspecciona las petiones que has hecho al servidor. Al abrir la pestaña Network aparece vacía así que comienza a hacer peticiones con la pestaña abierta. Con la información que obtienes de esta pestaña averigua:
+En la página de SWAPI o en la que habéis creado en el ejercicio 2 inspecciona las peticiones que has hecho al servidor. Al abrir la pestaña Network aparece vacía así que comienza a hacer peticiones con la pestaña abierta. Con la información que obtienes de esta pestaña averigua:
 - dónde está el método de petición
 - el código de la respuesta (recuerda que 200 es OK)
 - en las cabeceras de la petición busca una llamada `user-agent`, ¿qué puedes decir de su contenido?
@@ -140,7 +140,7 @@ localStorage.setItem('name', 'Ana');
 Para recuperar los datos es tan sencillo como usar `getItem` y pasar el nombre que le dimos a los datos. Por ejemplo:
 
 ```js
-var name = localStorage.getItem('name');
+const  name = localStorage.getItem('name');
 console.log(name); //Ana
 ```
 
@@ -160,7 +160,7 @@ En LocalStorage solo podemos guardar datos de tipo primitivo (número, cadena, b
 Para eso existe una función en JavaScript `JSON.stringify` que convierte un objeto literal o un array en una cadena. Para realizar la acción contraria, es decir, pasar de una cadena que tiene la información de un objeto a un objeto JavaScript usamos `JSON.parse`. Vamos a ver un ejemplo:
 
 ```js
-var tasks = [
+const  tasks = [
   {name: 'Recoger setas en el campo', completed: true},
   {name: 'Comprar pilas', completed: true},
   {name: 'Poner una lavadora de blancos', completed: true},
@@ -169,7 +169,7 @@ var tasks = [
 
 localStorage.setItem('taks', JSON.stringify(tasks));
 
-var savedTasks = JSON.parse(localStorage.getItem('taks'));
+const  savedTasks = JSON.parse(localStorage.getItem('taks'));
 console.log(savedTasks.length); //4
 ```
 ***
@@ -183,7 +183,7 @@ Sobre el ejercicio 2 vamos a *cachear* las búsquedas al servidor. De forma que 
 
 Un linter es una herramienta que nos ayuda a prevenir errores y tener un formato homogéneo en nuestro código. Existen linters para varios lenguajes de programación, pero aquí veremos ESLint que es un linter para JavaScript.
 
-En un linter definimos una serie de reglas en un fichero de configuración que son las que queremos comprobar en el código. Luego el programador que usa un linter ejecutará esas reglas, normalmente el propio editor (Atom o Code) lo hace por ti, y si no se cumplen te mostrará un error o un warning (aviso).
+En un linter definimos una serie de reglas en un fichero de configuración que son las que queremos comprobar en el código. Luego el programador que usa un linter ejecutará esas reglas, normalmente el propio editor (Code) lo hace por ti, y si no se cumplen te mostrará un error o un warning (aviso).
 
 Hemos creado una configuración específica de linter para vosotras, adalabers, porque queremos que os ayude a detectar algunos errores y a escribir código con un estilo correcto. Algunas de estas reglas son:
 - da error si no se pone `;` al final de una sentencia
@@ -194,13 +194,9 @@ Hemos creado una configuración específica de linter para vosotras, adalabers, 
 Para usarlo en un proyecto, tenéis que
 - descargar el fichero de configuración `.eslintrc.json` de [este repositorio](https://github.com/Adalab/linter-adalab)
 - instalar ESLint de forma global mediante `npm install -g eslint`
-- en el editor Atom instalar el plugin `linter-eslint` y activa la opción `Use Global Eslint`
 - en el editor Code instalar el plugin `ESLint`.
 - una vez configurado, al abrir un fichero JS nos aparecen los errores y warnings.
-- En Atom para los errores solucionables, aparecerá un botón para resolverlo.
 - En Code, si abrimos la paleta de comando (Ctrl + Shift + p) y escribimos `> ESLint`, nos aparecerán las opciones disponibles, una de ellas nos permite arreglar todos los errores solucionables.
-
-![Linter Atom](assets/images/2-12/linter-atom.png)
 
 A veces nos resultará molesto tener algunos errores o warnings en el editor porque, por ejemplo, queremos usar un `console.log` para algo. Podemos deshabilitar el uso del linter en una línea concreta usando [las instrucciones de configuración](https://eslint.org/docs/user-guide/configuring).
 

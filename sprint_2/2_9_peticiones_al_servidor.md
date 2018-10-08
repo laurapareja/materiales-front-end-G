@@ -12,9 +12,9 @@
 <!-- /TOC -->
 ## Introducción
 
-En esta sesión vamos a aprender a utilizar AJAX que es el puente entre el cliente (navegador) y el servidor, entre el front-end y el back-end de nuestra aplicación. Las peticiones AJAX nos permiten acceder y manipular datos en el servidor, pero iniciando el proceso en el front-end.
+En esta sesión vamos a aprender a utilizar AJAX que es el puente entre el cliente (navegador) y el servidor, entre el frontend y el backend de nuestra aplicación. Las peticiones AJAX nos permiten acceder y manipular datos en el servidor, pero iniciando el proceso en el frontend.
 
-AJAX viene de Asynchronous JavaScript And XML porque cuando se creó servía para hacer peticiones al servidor desde JS y normalmente el formato de datos que nos devolvía era XML (una forma de escribir los datos para poder enviarlos). Pero actualemente no es así y AJAX ahora utiliza otros tipos de datos, desde texto hasta JSON que veremos más adelante. Pero el hecho de que sea *asíncrono* sí es importante. Aunque sea una palabra que asusta, asíncrono simplemente significa trabajar con eventos (como hemos visto en las sesiones anteriores), es decir, que cuando sucede un evento se ejecuta una función. Se llama asíncrono porque nosotros no ejecutamos el código de forma síncrona (una instrucción detrás de otra) sino que *el código se ejecuta cuando sucede un evento*.
+AJAX viene de Asynchronous JavaScript And XML porque cuando se creó servía para hacer peticiones al servidor desde JS y normalmente el formato de datos que nos devolvía era XML (una forma de escribir los datos para poder enviarlos). Pero actualmente no es así y AJAX ahora utiliza otros tipos de datos, desde texto hasta JSON que veremos más adelante. Pero el hecho de que sea *asíncrono* sí es importante. Aunque sea una palabra que asusta, asíncrono simplemente significa trabajar con eventos (como hemos visto en las sesiones anteriores), es decir, que cuando sucede un evento se ejecuta una función. Se llama asíncrono porque nosotros no ejecutamos el código de forma síncrona (una instrucción detrás de otra) sino que *el código se ejecuta cuando sucede un evento*.
 
 El uso de AJAX, por tanto, nos permite acceder a información en un servidor que normalmente se accede mediante un API. Veremos un API como una URL (dirección de Internet) donde podemos consultar o guardar datos de un servicio. Veremos más detalles sobre APIs en la próxima sesión.
 
@@ -90,13 +90,13 @@ Vamos a jugar un poco con el código en codepen del ejemplo anterior. Mirando la
 Para ver la diferencia del uso de callbacks y promesas (verás que con promesas el código es mucho más simple y legible), te dejo explorar este mismo ejemplo usando `XMLHttpRequest` [en este codepen](https://codepen.io/adalab/pen/yPwxgP?editors=0010):
 
 ```js
-var request = new XMLHttpRequest();
+const request = new XMLHttpRequest();
 request.open('GET', 'https://thecatapi.com/api/images/get?format=html');
 
 request.addEventListener('load', showPicture);
 
 function showPicture() {
-  var response = request.responseText;
+  const response = request.responseText;
   document.body.innerHTML = response;
 }
 
@@ -124,7 +124,7 @@ fetch('https://dog.ceo/api/breeds/image/random')
     return response.json();
   })
   .then(function(json){
-    var img = document.querySelector('img');
+    const img = document.querySelector('img');
     img.src = json.message;
   });
 ```
@@ -168,11 +168,11 @@ fetch('https://dog.ceo/api/breeds/list')
     return response.json();
   })
   .then(function(json){
-    var breeds = json.message;
-    var ul = document.querySelector('ul');
-    for (var i = 0; i < breeds.length; i++) {
-      var li = document.createElement('li');
-      var content = document.createTextNode(breeds[i]);
+    const breeds = json.message;
+    const ul = document.querySelector('ul');
+    for (let i = 0; i < breeds.length; i++) {
+      const li = document.createElement('li');
+      const content = document.createTextNode(breeds[i]);
       li.appendChild(content);
       ul.appendChild(li);
     }
@@ -187,14 +187,14 @@ fetch('https://dog.ceo/api/breeds/list')
     return breedsResponse.json();
   })
   .then(function(breedsJSON){
-    var breeds = breedsJSON.message;
+    const breeds = breedsJSON.message;
     return fetch('https://dog.ceo/api/breed/' + breeds[0] + '/images/random');
   })
   .then(function(imageResponse){
     return imageResponse.json();
   })
   .then(function(imageJSON){
-    var img = document.querySelector('img');
+    const img = document.querySelector('img');
     img.src = imageJSON.message;
   });
 
@@ -243,12 +243,12 @@ function createPromise(){
     });
 }
 
-var promises = [createPromise(), createPromise()];
+const promises = [createPromise(), createPromise()];
 
 Promise.all(promises)
   .then(function(responses){
-    for (var i = 0; i < responses.length; i++) {
-      var img = document.querySelector('.dog' + (i + 1));
+    for (let i = 0; i < responses.length; i++) {
+      const img = document.querySelector('.dog' + (i + 1));
       img.src = responses[i].message;
     }
   });
@@ -276,14 +276,14 @@ fetch('https://dog.ceo/api/breeds/list')
     return breedsResponse.json();
   })
   .then(function(breedsJSON){
-    var breeds = breedsJSON.message;
+    const breeds = breedsJSON.message;
     return fetch('https://dog.ceo/api/breed/' + breeds[0] + '/images/random');
   })
   .then(function(imageResponse){
     return imageResponse.json();
   })
   .then(function(imageJSON){
-    var img = document.querySelector('img');
+    const img = document.querySelector('img');
     img.src = imageJSON.message;
   })
   .catch(function(error){
