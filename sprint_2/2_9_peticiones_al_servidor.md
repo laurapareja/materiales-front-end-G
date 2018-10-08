@@ -1,6 +1,7 @@
-# AJAX
+# Peticiones al servidor
 
-<!-- TOC START min:4 max:4 link:true update:true -->
+<!-- TOC depthFrom:4 depthTo:4 -->
+
 - [EJERCICIO 1](#ejercicio-1)
 - [EJERCICIO 2](#ejercicio-2)
 - [EJERCICIO 3](#ejercicio-3)
@@ -8,10 +9,7 @@
 - [EJERCICIO 5](#ejercicio-5)
 - [EJERCICIO 6](#ejercicio-6)
 
-<!-- TOC END -->
-
-
-
+<!-- /TOC -->
 ## Introducción
 
 En esta sesión vamos a aprender a utilizar AJAX que es el puente entre el cliente (navegador) y el servidor, entre el front-end y el back-end de nuestra aplicación. Las peticiones AJAX nos permiten acceder y manipular datos en el servidor, pero iniciando el proceso en el front-end.

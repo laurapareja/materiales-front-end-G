@@ -1,15 +1,14 @@
-# APIs y linter
+# Peticiones al servidor 2
 
-<!-- TOC START min:4 max:4 link:true update:true -->
+<!-- TOC depthFrom:4 depthTo:4 -->
+
 - [EJERCICIO 1](#ejercicio-1)
 - [EJERCICIO 2](#ejercicio-2)
 - [EJERCICIO 3](#ejercicio-3)
 - [EJERCICIO 4](#ejercicio-4)
 - [EJERCICIO 5](#ejercicio-5)
 
-<!-- TOC END -->
-
-
+<!-- /TOC -->
 
 ## Introducción
 
