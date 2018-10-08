@@ -532,7 +532,8 @@ Puedes consultar el [listado completo de propiedades y métodos de array en MDN]
 
 ## `querySelectorAll`
 
-Como hemos visto en sesiones anteriores, para recoger un elemento del DOM utilizamos `querySelector`. En realidad `querySelector` devuelve el primer elemento en `html` que tenga el selector que indiquemos. Pero ¿y si quisieramos recoger varios elementos que, por ejemplo, tuvieran una determinada clase? `querySelectorAll` al rescate. Nos permite guardar en una constante una lista de elementos. Esta lista funciona de manera similar a un array y podemos hacer lo siguiente con ella:
+Como hemos visto en sesiones anteriores, para recoger un elemento de HTML utilizamos el método `querySelector`.  Pero ¿y si queremos recoger más de uno, por ejemplo todas las etiquetas que tengan una determinada clase? `querySelectorAll` al rescate. 
+Este método devuelve una lista de elementos que funciona de manera similar a un array. Podriamos hacer lo siguiente:
 
 ```js
 // Guardamos una lista de todos los parrafos de la página
