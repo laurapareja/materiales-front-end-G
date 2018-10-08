@@ -176,11 +176,11 @@ Por supuesto, podemos acceder a las variables del ámbito superior:
 
 ```javascript
 let globalVar = 'Ey, I\'m global';
-if (2 == 2) {
+if (2 === 2) {
   globalVar = 'Ey, I\'m STILL global';
   console.log( globalVar ); // devuelve "Ey, I'm STILL global"
 }
-console.log( globalVar ); // devuelve "Ey, I'm STILL global" si se cambió en el bloque if
+console.log( globalVar ); // devuelve "Ey, I'm STILL global" que se cambió en el bloque if
 ```
 
 De esta manera, una variable creada dentro del cuerpo de una función sólo será accesible desde dentro de esa función.
