@@ -16,7 +16,7 @@
 
 Utilizando aplicaciones y webs, muchas veces nos encontramos con casos en los que no se nos permiten determinadas acciones, por ejemplo añadir un elemento más al carro de la compra si hemos superado el límite.
 
-Las condicionales permiten tomar decisiones y realizar acciones en función de una serie de datos. Gracias a ellas diremos que pasos queremos que siga la aplicación en cada momento para que se cumpla el objetivo que deseamos alcanzar. 
+Las condicionales permiten tomar decisiones y realizar acciones en función de una serie de datos. Gracias a ellas diremos qué pasos queremos que siga la aplicación en cada momento para que se cumpla el objetivo que deseamos alcanzar. 
 
 Durante esta sesión veremos cómo controlar qué parte de nuestro código se ejecuta y cuál no. Aprenderemos a dar instrucciones a nuestros aplicaciones para realizar acciones en función de datos. Estableciendo normas al estilo si sucede esto haz esto otro y sino haz una orden alternativa. El condicional es una de las estructuras de control más básicas e importantes de la programación.
 
@@ -33,7 +33,7 @@ Veamos algunos ejemplos donde se utiliza lo que vamos a ver durante esta sesión
 
 Los booleanos se utilizan para almacenar datos verdaderos o falsos o convertir comparaciones a verdadero o falso:
   - Guardar información del estilo el usuario está registrado o no, el campo se ha rellenado o no, etc.
-  - Guardar info sobre si un número es mayor o menor, si dos strings son iguales o no, si una variable existe, si una texto está vacío, etc.
+  - Guardar info sobre si un número es mayor o menor, si dos strings son iguales o no, si una variable existe, si una cadena de texto está vacía, etc.
 
 Los condicionales se usan para realizar o no un código en función de una condición:
   - Mostrar un mensaje de error si falta un campo obligatorio por rellenar en un formulario
@@ -67,7 +67,7 @@ Los valores falsy son:
 
 ## Operadores de comparación
 
-Podemos obtener también un booleano como resultado de una operación booleana, por ejemplo, una comparación. Siempre devuelven un valor booleano (`true o false`). Vamos a ver algunos operadores de comparación que devuelven booleanos.
+Podemos obtener también un booleano como resultado de una operación booleana, por ejemplo, una comparación. Siempre devuelven un valor booleano (`true` o `false`). Vamos a ver algunos operadores de comparación que devuelven booleanos.
 
 ### Igualdad
 
@@ -155,7 +155,7 @@ La respuesta nos la dará su doble negación, `!!nameField`.
 Cuando `!!nameField` devuelve `true`, la respuesta es SI, `nameField` tiene un valor verdadero.
 Cuando `!!nameField` devuelve `false`, la respuesta es NO, `nameField` tiene un valor falso.
 
-> **Nota**: Trabajar con el operador `!` puede parecer un poco lioso al principio, no te preocupes si aun no tienes claro como aplicarlo, irá asentándose poco a poco con su uso.
+> **Nota**: Trabajar con el operador `!` puede parecer un poco lioso al principio, no te preocupes si aún no tienes claro como aplicarlo, irá asentándose poco a poco con su uso.
 
 ### _AND_
 
@@ -233,7 +233,7 @@ En JavaScript hay que preparar una constante y una variable:
 - A la constante le asignaremos como valor la url de un avatar por defecto 'http://placehold.it/300x300'
 - A la variable le asignaremos un string vacío (`''`) o no le asignaremos ningún valor (`undefined`)
 
-Con estos datos hay que hacer la lógica para añadir a la caja un avatar si o si. De manera que si no tenemos datos de la url del usuario se muestre el avatar por defecto, pero si tenemos el avatar del usuario se muestre este.
+Con estos datos hay que hacer la lógica para añadir a la caja un avatar sí o sí. De manera que si no tenemos datos de la url del usuario se muestre el avatar por defecto, pero si tenemos el avatar del usuario se muestre este.
 
 Cambia la variable vacía añadiendo esta imagen 'http://www.fillmurray.com/300/300' y comprueba que el programa funciona.
 
@@ -339,7 +339,7 @@ if (/* condición 1 */) {
 } else if (/* condición 2 */) {
   console.log('El número es negativo')
 } else if (/* condición 3 */) {
-  console.log('El número es múltiplo de 2 y de 3')
+  console.log('El número más 2 es mayor 13')
 } else if (/* condición 4 */) {
   console.log('El número es mayor que 20 pero menor que 50')
 } else {
@@ -365,7 +365,7 @@ Te habrá pasado varias veces de ir por la calle y que alguien te pregunte "perd
 
 ### classList.contains
 
-Vamos a ver un método nuevo de`classList` que muy util cuando trabajamos con condicionales, para ello vamos a plantear una posible situación. Imaginemos que tenemos un botón que sirve para mostrar y ocultar un elemento de nuestra página. De momento no vamos a ver cómo hacer que cuando pulses en un botón, se haga algo pero si vamos a ver cómo podríamos ocultar un elemento sólo en el caso de que no estuviese oculto antes. Tendríamos que tener una forma de comprobar si un elemento tiene una clase o no, aquí es donde entra en juego `classList.contains()`. Con este método podremos comprobar si un elemento contiene una clase y nos devolverá un booleano (`true` o `false`).
+Vamos a ver un método nuevo de`classList` que muy útil cuando trabajamos con condicionales, para ello vamos a plantear una posible situación. Imaginemos que tenemos un botón que sirve para mostrar y ocultar un elemento de nuestra página. De momento no vamos a ver cómo hacer que cuando pulses en un botón, se haga algo pero sí vamos a ver cómo podríamos ocultar un elemento sólo en el caso de que no estuviese oculto antes. Tendríamos que tener una forma de comprobar si un elemento tiene una clase o no, aquí es donde entra en juego `classList.contains()`. Con este método podremos comprobar si un elemento contiene una clase y nos devolverá un booleano (`true` o `false`).
 
 Veamos el caso que estábamos comentando, tenemos un elemento que puede o no tener la clase `.hidden`. Vamos a comprobar si la tiene y en caso de ser así se la quitaremos y en caso de no tenerla se la añadiremos. Esto huele a `if` ¿verdad? :). Veamos el código:
 
@@ -404,7 +404,7 @@ Cambia la clase en HTML y comprueba que el código de JavaScript funciona.
 
 ### Operador condicional o ternario
 
-Podemos pensar en el como un atajo del `if...else` más sencillo.
+Podemos pensar en él como un atajo del `if...else` más sencillo.
 
 La estructura de un ternario es la siguiente:
 - indicamos entre paréntesis `( )` una condición
@@ -413,7 +413,7 @@ La estructura de un ternario es la siguiente:
 
 ```js
 
-let theme = 'hallowen';
+const theme = 'hallowen';
 const fontColor = (theme === 'hallowen') ? '#ff5722' : '#000';
 
 ```
@@ -446,7 +446,7 @@ if (money >= avocadoPrice) {
 }
 ```
 
-Normalmente cuando JavaScript espera una sentencia podemos escribir una expresión, pero no al revés. Por ejemplo podríamos haber escrito la sentencia `if...else` con un `ternario`, pero no podemos poner entre los paréntesis del if como condición otro if, ya que aquí javascript espera una expresión que produzca un valor true/false.
+Normalmente cuando JavaScript espera una sentencia podemos escribir una expresión, pero no al revés. Por ejemplo podríamos haber escrito la sentencia `if...else` con un _ternario_, pero no podemos poner entre los paréntesis del if como condición otro if, ya que aquí JavaScript espera una expresión que produzca un valor `true`/`false`.
 Si en este punto el concepto de expresión y sentencia es confuso, no te preocupes, es natural. Es un primer acercamiento a un concepto teórico y se irá aclarando con el tiempo ;)
 
 * * *
@@ -480,9 +480,9 @@ El operador de módulo tiene el mismo orden de ejecución que los operadores de 
 
 Calcular cuál va a ser el siguiente año bisiesto
 
-Vamos a escribir un pequeño programa que nos permita saber cuál será el siguiente año bisiesto. Para aportar un poco de información, sabemos que los años bisiestos se producen cada cuatro años a partir del año 0. El primer año bisiesto fue 4, el segundo 8 y así progresivamente. La idea de este ejercicio es que, si estuviésemos en el año 3, al ejecutarlo apareciese una ventana de alerta con el texto "4", ya que el año 4 sería el siguiente año bisiesto.
+Vamos a escribir un pequeño programa que nos permita saber cuál será el siguiente año bisiesto. Para aportar un poco de información, sabemos que los años bisiestos se producen cada cuatro años a partir del año 0. El primer año bisiesto fue 4, el segundo 8 y así progresivamente. La idea de este ejercicio es que, si estuviésemos en el año 3, al ejecutarlo apareciese en la consola el texto "4", ya que el año 4 sería el siguiente año bisiesto.
 
-**Nota:** Tenemos que escribir nosotros el año en el que estamos en una constante.
+**Pista:** Tenemos que escribir el año en el que estamos en una constante.
 
 * * *
 
