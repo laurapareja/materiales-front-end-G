@@ -154,7 +154,7 @@ Vamos a crear una página en la que haya un input de texto y un botón de buscar
 - número de repositorios
 - avatar (imagen)
 
-![Screenshot buscador en GitHub](assets/images/2-10-buscador-github.png)
+![Screenshot buscador en GitHub](assets/images/2-9/buscador-github.png)
 
 ***
 
@@ -211,7 +211,7 @@ Vamos a seguir explorando el API de GitHub explorando la parte del [API para acc
 
 El objetivo de este ejercicio es mostrar en una web el listado completo de los repositorios de Adalab que hay creados en GitHub. El resultado final debería ser similar a este:
 
-![Resultado del ejercicio](assets/images/3-8/resultado-ejercicio-1-listado-de-repos.png)
+![Resultado del ejercicio](assets/images/2-9/resultado-ejercicio-1-listado-de-repos.png)
 
 Para ello vamos a hacer lo siguiente:
 
