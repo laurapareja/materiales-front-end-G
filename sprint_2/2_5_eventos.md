@@ -15,7 +15,7 @@
 
 ## Introducción
 
-Ya hemos aprendido a modificar cosas en nuestra página web mediante JavaScript: cambiar contenidos, estilos, etc. Pero hasta ahora nuestro script (código JavaScript) se ejecutaba al cargar la página. En esta sesión vamos a aprender a hacer nuestra web interactiva, es decir, que haya modificaciones también de contenidos o estilos pero en respuesta a la interacción del usuario. La forma de modelar esa interacción de la usuaria en la web es mediante *eventos*. Un evento representa una interacción, que normalmente es de la usuaria, tras la cual podemos realizar una acción. Vamos a ver algunos ejemplos de acciones que implican eventos:
+Ya hemos aprendido a modificar cosas en nuestra página web mediante JavaScript: cambiar contenidos, estilos, etc. Pero hasta ahora nuestro script (código JavaScript) se ejecutaba al cargar la página. En esta sesión vamos a aprender a hacer nuestra web interactiva, es decir, que haya modificaciones también de contenidos o estilos pero en respuesta a la interacción de la usuaria. La forma de modelar esa interacción de la usuaria en la web es mediante *eventos*. Un evento representa una interacción, que normalmente es de la usuaria, tras la cual podemos realizar una acción. Vamos a ver algunos ejemplos de acciones que implican eventos:
 - mostrar una alerta cuando la usuaria hace click en un botón
 - cambiar el tamaño de una cabecera fija cuando la usuaria llega a un punto de scroll
 - abrir una sección oculta de un formulario cuando hago click sobre un botón
@@ -81,7 +81,7 @@ button.addEventListener('click', showAlert);
 De esta forma, cuando hagamos click sobre el botón se ejecutará la función `showAlert`. Es importante que os fijéis en algunos detalles importantes:
 - la función `addEventListener` la registramos sobre `button` que es un elemento de HTML (en este caso un botón)
 - el primer argumento que le pasamos a `addEventListener` es una cadena con el nombre del evento, en este caso `click`
-- el segundo argumento que le pasamos a `addEventListener` es una función, es decir, ponemos el nombre de la función pero no la ejecutamos (no ponemos paréntesis al final);
+- el segundo argumento que le pasamos a `addEventListener` es una función, es decir, ponemos el nombre de la función pero no la ejecutamos (no ponemos paréntesis al final)
 
 Vamos a detenernos un momento aquí: **el segundo argumento es una función**. Y es que en JavaScript podemos pasar el nombre de una función como argumento de otra. Es esta función que recibe el argumento la que se encarga de ejecutarla. Podéis ver un ejemplo en este [pen](https://codepen.io/adalab/pen/xyZexZ?editors=1011).
 
@@ -141,7 +141,7 @@ Crear una página HTML con un párrafo en el que ponga Hola y un botón. Usando 
 
 #### EJERCICIO 2
 
-**¿Como te llamas?**
+**¿Cómo te llamas?**
 
 Crear una página HTML con un input de tipo texto para introducir tu nombre y un botón. Al pinchar sobre el botón, imprimir en la consola el mensaje 'Hola <nombre>', con el nombre que aparece en el input de texto.
 
@@ -254,7 +254,9 @@ Hemos preparado un [HTML](https://codepen.io/adalab/pen/xyEwVj) con tres tarjeta
 Tenemos que hacer que al pinchar en un elemento del listado se añada la clase `.teacher--selected` si no la tiene o se la quite si la tiene.
 Y que el texto del span `.favorite` cambie de 'Añadir' a 'Quitar' y viceversa.
 
-> **Nota**: con `querySelector` buscamos un elemento dentro de otro. Hasta ahora lo habíamos usado para buscar dentro de `document` (todo nuestro documento HTML), con `document.querySelector()`. Si tuviéramos una constante llamada, por ejemplo, `sectionAboutElement` con un elemento podríamos buscar dentro de este un determinado elemento, tal que así `sectionAboutElement.querySelector()`.
+> **Nota**: con `querySelector` buscamos un elemento dentro de otro. Hasta ahora lo habíamos usado para buscar dentro de `document` (todo nuestro documento HTML), con `document.querySelector()`. Si tuviéramos una constante llamada, por ejemplo, `sectionAboutElement` con un elemento podríamos buscar dentro de este un determinado elemento, tal que así `sectionAboutElement.querySelector()`
+
+> **Nota**: para facilitar añadir y quitar clases de CSS, os recomendamos usar `classList.toggle`
 
 * * *
 
@@ -278,8 +280,8 @@ Recordemos que en HTML se anidan las etiquetas, de manera que si ponemos un list
 
 **Delegando eventos**
 
-Vamos a `refactorizar` el [EJERCICIO 4](#ejercicio-4) para mejorarlo utilizando la técnica `event delegation`. Tenemos que quitar ese mogollón de listeners en los `lis` y reemplazarlos por uno solo en la etiqueta madre (`ul`).
-A por ello!
+Vamos a `refactorizar` el [EJERCICIO 4](#ejercicio-4) para mejorarlo utilizando la técnica `event delegation`. Tenemos que quitar ese mogollón de listeners en los `li`s y reemplazarlos por uno solo en la etiqueta madre (`ul`).
+¡A por ello!
 
 * * *
 
@@ -291,13 +293,13 @@ Algunos elementos de HTML tienen comportamientos por defecto ante eventos, por e
 - al hacer click en un botón o un input de tipo submit que se encuentra en un formulario el navegador intenta enviar los datos al servidor
 - al hacer click en un enlace navegamos al mismo
 
-El método **`event.preventDefault()` nos permite prevenir** estos **comportamientos por defecto** desde javascript
+El método **`event.preventDefault()` nos permite prevenir** estos **comportamientos por defecto** desde JavaScript.
 
 Uno de los casos más comunes es prevenir el envío de un formulario.
 
-Aunque aún no hemos visto como enviar un formulario desde JavaScript, prevenir que lo envíe el navegador sería el primer paso para poder controlarlo, validando sus datos, enviándolos al servidor desde JavaScript y mostrando 'feedback' a la usuaria sobre el proceso.
+Aunque aún no hemos visto como enviar un formulario desde JavaScript, prevenir que lo envíe el navegador sería el primer paso para poder controlarlo, validando sus datos, enviándolos al servidor desde JavaScript y mostrando _feedback_ a la usuaria sobre el proceso.
 
-- [botón submit en un formulario](https://codepen.io/adalab/pen/bjwJGv)
+- [Ejemplo de botón submit en un formulario](https://codepen.io/adalab/pen/bjwJGv)
 
 * * *
 
@@ -307,15 +309,15 @@ Aunque aún no hemos visto como enviar un formulario desde JavaScript, prevenir 
 
 ¿Recuerdas el proyecto del sprint uno? Los enlaces de la cabecera de nuestra página tenían un problema, como nuestra cabecera era flotante, al navegar a una sección parte del contenido de quedaba oculto tras la cabecera. 
 
-Vamos a animarnos y a preparar un HTML muy sencillo con :
+Vamos a animarnos y a preparar un HTML muy sencillo con:
 - una cabecera flotante que contenga un menu con tres enlaces 
-- tres secciones con bastante 'loreipsum' para que haya un scroll generoso.
+- tres secciones con bastante 'loreipsum' para que haya un scroll generoso
 
 El primer paso para arreglar este comportamiento es escuchar el click en los enlaces y prevenir el comportamiento por defecto.
 
 Hhhmm, pero entonces no pasa nada al hacer click... Correcto, ¡ejercicio terminado!
 
-> **Nota**: no te preocupes, veremos como hacer que esos enlaces acaben de funcionar en futuras lecciones.
+> **Nota**: no te preocupes, veremos cómo hacer que esos enlaces acaben de funcionar en futuras lecciones.
 
 * * *
 
@@ -332,15 +334,15 @@ buttonElement.removeEventListener('click', showAlert);
 
 ## Burbujeo de eventos o `event bubbling`
 
-Cada vez que sucede un evento sobre un elemento de HTML, este 'burbujea' hacia arriba. Esto quiere decir que el evento sucede en ese elemento, y después en el elemento padre, y después en el abuelo, y así hasta llegar al último ancestro, HTML.
+Cada vez que sucede un evento sobre un elemento de HTML, este 'burbujea' hacia arriba. Esto quiere decir que el evento sucede en ese elemento, y después en el elemento padre, y después en el abuelo, y así hasta llegar al último ancestro, `html`.
 
 Aunque no lo vemos, esto está sucediendo continuamente en el navegador, por ejemplo cada vez que movemos el ratón, o hacemos click en cualquier sitio. este comportamiento hace que:
- - podamos 'escuchar' un evento en un elemento, sin que esto implique que se haya iniciado en el.
+ - podamos 'escuchar' un evento en un elemento, sin que esto implique que se haya iniciado en él
  - podamos poner `listeners` con `handlers` en varios padres y que todos se ejecuten si sucede un evento en un hijo común
 
 Pincha en los `divs` de este [codepen](https://codepen.io/adalab/pen/MPjyyW?editors=1010) y observa como se comportan.
 
-Esto nos permite técnicas tan interesantes como `event delegation` que prácticaremos en el [EJERCICIO 7](#ejercicio-7), con la cual podemos poner un listener en un `ul` y así manejar los eventos sobre sus hijos `lis`.
+Esto nos permite técnicas tan interesantes como `event delegation` que practicamos en el [EJERCICIO 7](#ejercicio-7), con la cual podemos poner un listener en un `ul` y así manejar los eventos sobre sus hijos `li`s.
 
 En este [pen](https://codepen.io/adalab/pen/zLKwwP) puedes ver como manejar eventos anidados sin que entren en conflicto.
 
@@ -349,7 +351,7 @@ En este [pen](https://codepen.io/adalab/pen/zLKwwP) puedes ver como manejar even
 En esta sesión hemos visto: como hacer nuestras webs interactivas de verdad, escuchando eventos y reaccionando a ellos gracias a `addEventListener(type, handler)`. Como utilizar información que nos devuelve el navegador sobre los eventos:
 
 - `event.currentTarget`: elemento con el listener
-- `event.target`; elemento sobre el que sucede el evento
+- `event.target`: elemento sobre el que sucede el evento
 - `event.preventDefault()`: método para prevenir el comportamiento por defecto de un evento sobre un elemento
 
 También, nos hemos acercado a los conceptos: 
@@ -359,7 +361,7 @@ También, nos hemos acercado a los conceptos:
 
 Y hemos visto nueva información que no es exclusiva de los eventos como:
 
-- `classList.toggle`: quita o añade una clase de css
+- `classList.toggle`: quita o añade una clase de CSS
 - `element.value`: nos devuelve el valor de un input
 - `callback`: una función ejecutada por otra función
 
