@@ -22,7 +22,7 @@
 
 ## Sprint 2. Programando la web
 * [2.1 Intro a la programación](sprint_2/2_1_intro_a_la_programacion.md)
-* [2.2 Estructuras de control](sprint_2/2_2_estructuras_de_control.md)
+* [2.2 Estructuras de control](sprint_2/2_2_intro_a_la_programacion_2.md)
 * [2.3 Funciones](sprint_2/2_3_funciones.md)
 * [2.4 Objetos](sprint_2/2_4_objetos.md)
 * [2.5 JavaScript en la web](sprint_2/2_5_javascript_en_la_web.md)

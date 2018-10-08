@@ -140,7 +140,7 @@ Bien, ya hemos visto cómo enlazar JavaScript en nuestra página, ahora es el mo
 document.querySelector('h1').innerHTML = '¡Hola mundo!';
 ```
 
-Si has realizado los pasos anteriores y has copiado el código correctamente se mostrará una ventana en tu navegador con el mensaje "¡Hola mundo!". Si es así, ¡enhorabuena! acabas de crear tu primer código JavaScript.
+Si has realizado los pasos anteriores y has copiado el código correctamente se mostrará una ventana en tu navegador con el mensaje "¡Hola mundo!". Si es así, ¡enhorabuena! acabas de crear tu primer código JavaScript. Fíjate que en el fichero `index.html` no hay nada dentro de la etiqueta `h1`, pero el navegador nos muestra un mensaje.
 
 En este momento estarás pensando «sí, lo he escrito pero no tengo ni idea de cómo funciona». No te preocupes, vamos a entender cómo funciona ahora mismo.
 
@@ -150,7 +150,7 @@ La segunda línea (`document.querySelector('h1').innerHTML = '¡Hola mundo!';`) 
 
 De momento para la sintaxis utilizada en `document.querySelector('h1').innerHTML = '¡Hola mundo!';`, solo comentaremos que permite cambiar el texto de una etiqueta de HTML determinada, en este caso el primer `h1` de nuestro documento HTML. 
 
-Otro aspecto a destacar es que escribimos cada orden en una línea y ponemos un punto y coma al final de ésta. En JavaScript se pueden escribir varias q en una misma línea si se separan por un punto y coma (`;`), por ejemplo `'use strict';document.querySelector('h1').innerHTML='¡Hola mundo!';` sería válido. Esto es totalmente desaconsejable y evitaremos hacerlo para que nuestro código sea más fácil de leer. Escribiremos como máximo una orden por línea y siempre añadiremos el punto y coma al final de esta para evitar posibles problemas.
+Otro aspecto a destacar es que escribimos cada orden en una línea y ponemos un punto y coma al final de ésta. En JavaScript se pueden escribir varias sentencias en una misma línea si se separan por un punto y coma (`;`), por ejemplo `'use strict';document.querySelector('h1').innerHTML='¡Hola mundo!';` sería válido. Esto es totalmente desaconsejable y evitaremos hacerlo para que nuestro código sea más fácil de leer. Escribiremos como máximo una orden por línea y siempre añadiremos el punto y coma al final de esta para evitar posibles problemas.
 
 Puede que en este punto aún sigas perdida y no te haya quedado muy claro cómo usar realmente JavaScript pero no te preocupes, de momento sólo debes entender que programar no es otra cosa que pensar en los pasos para resolver un problema y traducirlo a órdenes con un lenguaje que entienda el navegador (JavaScript). Por tanto, lo que tenemos que hacer es practicar la lógica, familiarizarnos con la sintaxis de JavaScript y aprender a traducir pasos a este lenguaje para ir poco a poco mejorando y cogiendo soltura.
 
@@ -167,7 +167,7 @@ Una vez que lo hayáis realizado podéis enviárselo a algún amigo o familiar y
 
 Uno de los problemas que no sabemos resolver aún es como guardar los datos de una operación o un texto para poder utilizarlo en otra operación posterior. JavaScript tiene un recurso para poder hacer esto, las variables. 
 
-Para tener una idea de que es una variable, podríamos pensar en ella como si fuese una caja con una etiqueta que describe su contenido, en la que guardamos algo.
+Para tener una idea de qué es una variable, podríamos pensar en ella como si fuese una caja con una etiqueta que describe su contenido, en la que guardamos algo.
 
 1. Para crearla, creamos la caja con la etiqueta.
 2. Para guardar algo metemos esa información dentro de la caja.
@@ -304,7 +304,7 @@ Como vimos al principio de la lección con `document.querySelector('h1').innerHT
 
 ### Obtener una etiqueta o elemento de HTML
 
-Con `document.querySelector('h1')` obtenemos al primer elemento `h1` que hayamos escrito en nuestro HTML.
+Con `document.querySelector('h1')` obtenemos el primer elemento `h1` que hayamos escrito en nuestro HTML.
 Podemos usar esta sentencia para recoger un elemento de HTML y guardarlo en una constante.
 
 Como sucedía en las hojas de estilo, acceder a las etiquetas por su nombre puede ser problemático y no es la mejor práctica. `document.querySelector()` nos permite acceder a los elementos de HTML utilizando los selectores de CSS:
@@ -328,7 +328,7 @@ const mainTitle = document.querySelector('.mainTitle');
 
 Cuando hablamos de modificar el contenido de un elemento HTML, nos referimos a cambiar lo que hay entre la etiqueta de apertura y la de cierre. Para realizar este tipo de operaciones utilizaremos la propiedad `innerHTML`.
 
-Imaginemos que tenemos el siguiente código HTML con un `h1` para el título y este contiene el texto "binvenida" (si, con una errata).
+Imaginemos que tenemos el siguiente código HTML con un `h1` para el título y este contiene el texto "Binvenida" (sí, con una errata).
 
 ```html
 <!DOCTYPE html>
@@ -355,7 +355,7 @@ titleElement.innerHTML = 'Bienvenida';
 
 De esta forma el contenido de h1 pasaría de ser _"Binvenida"_ a _"Bienvenida"_ al cambiar el contenido de ese elemento (`.title`) el navegador automáticamente actualizará la vista de la página mostrando el texto nuevo. Esto sucede tan rápido que ni siquiera nos dará tiempo a ver la página con el texto anterior, sino que directamente aparecerá con el texto que hemos introducido mediante JavaScript.
 
->NOTA: Debemos dejar claro que la utilidad de JavaScript no es la de solucionar erratas en nuestro código. Esto lo modificaremos directamente en el HTML para corregirlo, pero creemos que este ejercicio ilustra bien cómo funciona innerHTML y para qué sirve
+>NOTA: Debemos dejar claro que la utilidad de JavaScript no es la de solucionar erratas en nuestro código. Esto lo modificaremos directamente en el HTML para corregirlo, pero creemos que este ejercicio ilustra bien cómo funciona `innerHTML` y para qué sirve
 
 Ahora supongamos que tras cambiar con JavaScript el texto de _"Binvenida"_ a _"Bienvenida"_ queremos hacerlo más personal y queremos que ponga _"Bienvenida, adalaber"_ en vez de un soso _"Bienvenida"_.
 
@@ -440,7 +440,7 @@ Crear una página HTML con una lista `ul` vacía y, usando JavaScript, añadir a
 
 ### Obtener información sobre las clases y añadir o quitar clases
 
-Hemos visto como añadir o modificar el contenido de un elemento HTML, pero aquí no se queda la cosa. Normalmente también querremos modificar otras cosas de este elemento y una de las que más se suele modificar es la clase para hacer que cambien los estilos de un elemento. Esto nos permitirá añadir clases para ocultar o mostrar un elemento, por ejemplo.
+Hemos visto cómo añadir o modificar el contenido de un elemento HTML, pero aquí no se queda la cosa. Normalmente también querremos modificar otras cosas de este elemento y una de las que más se suele modificar es la clase para hacer que cambien los estilos de un elemento. Esto nos permitirá añadir clases para ocultar o mostrar un elemento, por ejemplo.
 
 Para trabajar con clases, los elementos ofrecen una propiedad llamada `classList`. Esta contiene una serie de métodos que nos permitirán, añadir o eliminar una clase o comprobar si el elemento contiene una clase o no.
 

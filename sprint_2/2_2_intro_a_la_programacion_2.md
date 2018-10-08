@@ -1,3 +1,4 @@
+[codepen-string-interpolation]: https://codepen.io/adalab/pen/wpPZvN?editors=0010
 # Introducción a la programación 2
 
 <!-- TOC depthFrom:4 depthTo:4 -->
@@ -22,7 +23,7 @@ En la sesión anterior hablamos sobre como programar es básicamente realizar op
 
 Se aprecia con esto que la base de la información de nuestra aplicación reside en los valores. Éstos serán los encargados de representar los datos y serán sobre los que apliquemos las operaciones necesarias.
 
-Durante esta sesión vamos a ver algunos tipos de datos para poder operar con ellos de manera adecuada, y como trabajar con la consola del navegador, que es una herramienta indispensable a la hora de programar en la web. Vamos a ello!
+Durante esta sesión vamos a ver algunos tipos de datos para poder operar con ellos de manera adecuada, y como trabajar con la consola del navegador, que es una herramienta indispensable a la hora de programar en la web. ¡Vamos a ello!
 
 ## La consola de JavaScript
 
@@ -115,7 +116,7 @@ A por ello!
 
 En JavaScript existen por defecto siete tipos distintos de datos, casi todos ellos los veremos a lo largo del curso, pero por el momento vamos a centrarnos en tres: `string` (cadena de caracteres), `number` (número) y `undefined` (sin definir).
 
-Cada uno de ellos, según sus características, se utilizará para representar un tipo de valor concreto. El tipo `number`, como habrás podido deducir, se utilizará para representar números, el tipo `string` se utilizará para representar texto, compuesto de varios caracteres que unidos entre sí forman una cadena (string), y el tipo `undefined` representa un valor aun sin definir.
+Cada uno de ellos, según sus características, se utilizará para representar un tipo de valor concreto. El tipo `number`, como habrás podido deducir, se utilizará para representar números, el tipo `string` se utilizará para representar texto, compuesto de varios caracteres que unidos entre sí forman una cadena (string), y el tipo `undefined` representa un valor aún sin definir.
 
 ### Number
 
@@ -348,7 +349,7 @@ console.log('Mozilla is ' + browserName.length + ' code units long');
 Con todo lo aprendido hasta ahora vamos a hacer un programa que pinte en HTML lo siguiente:
 `El nombre de mi compañera es Leticia Fernández Sánchez, y está compuesto por 23 caracteres`, remplazando `Leticia Fernández Sánchez` por el nombre de nuestra compañera y `23` por la longitud de la cadena con su nombre.
 
-> **Nota**: tendremos que guardar el nombre de nuestra compañera en una constante para poder trabajar con el.
+> **Nota**: tendremos que guardar el nombre de nuestra compañera en una constante para poder trabajar con él.
 
 * * *
 
@@ -366,7 +367,7 @@ console.log(notDefinedVar); // undefined
 
 Es importante saber que cualquier número entre comillas, como por ejemplo `"232"`, será considerado como texto (`string`). Por tanto tenemos que estar atentos a las comillas para saber diferenciar entre uno y otro.
 
-Como hemos visto el operador `+` nos permite sumar números y concatenar strings. ¿Pero que ocurre si intentamos sumar número y string? Pues que javascript siempre convierte primero el número a string y posteriormente juntará ambos textos (ej: 5 + "5" resuelve "55")
+Como hemos visto el operador `+` nos permite sumar números y concatenar strings. ¿Pero que ocurre si intentamos sumar número y string? Pues que JavaScript siempre convierte primero el número a string y posteriormente juntará ambos textos (ej: 5 + "5" resuelve "55")
 
 ### Convirtiendo strings a números
 
