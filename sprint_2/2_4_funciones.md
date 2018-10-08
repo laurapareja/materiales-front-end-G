@@ -153,13 +153,59 @@ Para probar que funciona, ejecuta la función recogiendo el resultado en una var
 
 ## Ámbito de las variables
 
-Una variable creada dentro del cuerpo de una función sólo será accesible desde dentro de esa función.
+Por defecto, una variable definida con let o const tiene un ámbito (en inglés, _scope_) que corresponde a su bloque, es decir, van a existir dentro de su bloque.
 
-A esto se le llama ámbito (en inglés, _scope_) y permite que no se generen conflictos entre funciones con variables que tienen un nombre idéntico.
-
-Desde dentro de una función podemos utilizar las variables que se hayan definido fuera de cualquier función.
+**¿Y qué es un bloque?** Un bloque es cualquier expresión con llaves `{}` como puede ser un `if` o una función :)
 
 Por ejemplo:
+```javascript
+const globalVar = 'Ey, I\'m global';
+
+if (2 === 2) { // ejemplo para asegurarnos de que entra en el bloque if
+  const globalVar = 'Ey, I\'m not really global';
+  const notGlobalVar = 'Shirt, I\'m not global :(';
+
+  console.log( globalVar ); // devuelve "Ey, I'm not really global"
+  console.log( notGlobalVar ); // devuelve "Shirt, I'm not global :("
+}
+
+console.log( globalVar ); // devuelve "Ey, I'm global"
+console.log( notGlobalVar ); // da un error porque no está definida
+```
+
+Por supuesto, podemos acceder a las variables del ámbito superior:
+
+```javascript
+let globalVar = 'Ey, I\'m global';
+if (2 == 2) {
+  globalVar = 'Ey, I\'m STILL global';
+  console.log( globalVar ); // devuelve "Ey, I'm STILL global"
+}
+console.log( globalVar ); // devuelve "Ey, I'm STILL global" si se cambió en el bloque if
+```
+
+De esta manera, una variable creada dentro del cuerpo de una función sólo será accesible desde dentro de esa función.
+
+Desde dentro de una función podemos utilizar las variables que se hayan definido fuera de cualquier función, y gracias al ámbito de cada función también podemos crear, sin generar conflicto, nuevas variables que se llamen como variables de otras funciones.
+
+Por ejemplo:
+
+```javascript
+function f1() {
+  const item = 1;
+  return item;
+}
+
+function f2() {
+  const item = 2;
+  return item;
+}
+
+console.log( f2() ); // devuelve 2;
+console.log( f1() ); // devuelve 1;
+
+```
+
 
 Comprueba cuál será el resultado de las siguiente operaciones:
 
@@ -203,7 +249,7 @@ function mySecretLetter() {
   return secretLetter;
 }
 console.log( mySecretLetter() ); // devuelve "x"
-console.log(secretLetter); // devuelve undefined porque esta variable solo existe dentro del ámbito de la función
+console.log(secretLetter); // da un error porque la variable solo está definida dentro del bloque de la función
 ```
 
 
