@@ -109,9 +109,7 @@ const result = 5;
 (result >= 0 + 5); // true
 (result >= 4 - 5); // true
 ```
-> NOTA
->
-> Los operadores de comparación se ejecutan siempre después de los operadores numéricos, es decir, si tenemos `5 * 1 - 4 !== '3'`, primero se hará la multiplicación, luego la resta y finalmente se hará la operación de comparación.
+> **Nota**: Los operadores de comparación se ejecutan siempre después de los operadores numéricos, es decir, si tenemos `5 * 1 - 4 !== '3'`, primero se hará la multiplicación, luego la resta y finalmente se hará la operación de comparación.
 
 ## Operadores lógicos
 
@@ -235,7 +233,9 @@ En JavaScript hay que preparar una constante y una variable:
 
 Con estos datos hay que hacer la lógica para añadir a la caja un avatar sí o sí. De manera que si no tenemos datos de la url del usuario se muestre el avatar por defecto, pero si tenemos el avatar del usuario se muestre este.
 
-Cambia la variable vacía añadiendo esta imagen 'http://www.fillmurray.com/300/300' y comprueba que el programa funciona.
+> **Nota**: Cambia la variable vacía añadiendo esta imagen 'http://www.fillmurray.com/300/300' y comprueba que el programa funciona.
+
+* * *
 
 ## Condicionales
 
@@ -322,7 +322,7 @@ if ( age > 30 ){
 }
 ```
 
-> NOTA: Los bloques de un condicional son excluyentes, es decir, solo se va a ejecutar el código de un bloque (if, else if o else). En ningún momento se ejecutará el código de dos bloques ya que si se cumple una condición se ejecuta el código de su bloque y se ignoran las posteriores condiciones.
+> **Nota**: Los bloques de un condicional son excluyentes, es decir, solo se va a ejecutar el código de un bloque (if, else if o else). En ningún momento se ejecutará el código de dos bloques ya que si se cumple una condición se ejecuta el código de su bloque y se ignoran las posteriores condiciones.
 
 * * *
 
@@ -359,7 +359,7 @@ Te habrá pasado varias veces de ir por la calle y que alguien te pregunte "perd
 - El segundo año de un perro equivale a nueve años de humano
 - A partir del tercero, cada año de perro equivale a 5 años de humano.
 
-> NOTA: Prueba que el código funciona correctamente con distintos años (1, 2, 12...). Imagina el alcance de los daños si la próxima vez que te pare una persona para preguntarte por el conversor... ¡no funciona correctamente!
+> **Nota**: Prueba que el código funciona correctamente con distintos años (1, 2, 12...). Imagina el alcance de los daños si la próxima vez que te pare una persona para preguntarte por el conversor... ¡no funciona correctamente!
 
 * * *
 
