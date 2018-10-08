@@ -523,7 +523,7 @@ Este es un método muy usado, y lo encontramos en muchos ejemplos online.
 
 ### var
 
-En 2015 apareció una nueva versión de JavaScript (llamada ES2015 o ES6) y todas las frontends del mundo bailamos la conga durante 7 dias y 7 noches seguidas e hicimos montones de animaciones como ofrenda para agradecer a la Virgen del Front, ya que esta versión traía un montón de novedades geniales que nos facilitaban la vida, entre ellas `let` y `const`.
+En 2015 apareció una nueva versión de JavaScript (llamada ES2015 o ES6) y todas las frontends del mundo bailamos la conga durante 7 días y 7 noches seguidas e hicimos montones de animaciones como ofrenda para agradecer a la 'Diosa del Front', ya que esta versión traía un montón de novedades geniales que nos facilitaban la vida, entre ellas `let` y `const`.
 
 Entonces, ¿cómo escribíamos variables y constantes antes de esta versión, cuando solo existía ES5?
 
