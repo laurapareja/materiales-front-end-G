@@ -6,13 +6,22 @@
 - [EJERCICIO 2](#ejercicio-2)
 - [EJERCICIO 3](#ejercicio-3)
 - [EJERCICIO 4](#ejercicio-4)
+- [EJERCICIO 5](#ejercicio-5)
+- [EJERCICIO 6](#ejercicio-6)
+- [EJERCICIO 7](#ejercicio-7)
+- [EJERCICIO 8](#ejercicio-8)
+- [EJERCICIO 9 BONUS](#ejercicio-9-bonus)
+- [EJERCICIO 10 BONUS](#ejercicio-10-bonus)
+- [EJERCICIO 11 BONUS](#ejercicio-11-bonus)
 
 <!-- /TOC -->
 
 
 ## Introducción
 
-Los arrays, también llamados arreglos o listas, nos permiten guardar una lista de ordenada de datos en JavaScript. Algunos ejemplos: una lista de espera de un hospital, los objetos de una cesta de la compra, los usuarios que han dado *like* a nuestra foto, etc.
+En esta sesión nos centraremos en los arrays y los bucles.
+
+Los arrays, también llamados arreglos o listas, nos permiten guardar una lista ordenada de datos en JavaScript. Algunos ejemplos: una lista de espera de un hospital, los objetos de una cesta de la compra, los usuarios que han dado *like* a nuestra foto, etc.
 
 ```js
 // Array con la lista de espera de los pacientes de un hospital
@@ -27,8 +36,27 @@ Los arrays, también llamados arreglos o listas, nos permiten guardar una lista 
 
 Durante esta sesión veremos cuales son las características principales de este tipo de estructura de datos y veremos cómo trabajar con ellos, modificarlos y obtener información de ellos.
 
+También veremos los bucles, estructuras de control que, como su nombre indica, permiten repetir un código un número determinado de veces en función de si se cumple una condición. Esto es muy útil para realizar las tareas repetitivas que de otra forma tendríamos que escribir cientos de veces. Si pensamos en el típico castigo de colegio de "Escribe en una hoja 100 veces no volveré a dejarme los libros en casa", gracias al bucle for solo tendríamos que escribirlo 1 y decirle que se repita hasta que llegue a 100 veces. Imagina la cantidad de tiempo y código que permite ahorrarnos este recurso.
 
-## ¿Qué es un array?
+## ¿En qué casos se utilizan?
+
+Si pensamos en una web, la mayoría de los datos vienen en una lista (solo hace falta recordar la de `ul`s y `li`s que hemos puesto hasta ahora).
+Algunas de las aplicaciones más típicas de los arrays son:
+
+- los resultados de búsqueda
+- la lista de coordenadas de un mapa
+- los artículos de un carrito de la compra
+- las tareas de una lista de tareas
+- los contactos de una lista de contactos.
+
+Todos estos ejemplos anteriores se suelen almacenar en arrays para poderlos modificar (por ejemplo ordenar por orden alfabético o añadir un nuevo elemento), trabajar con ellos de forma sencilla y mostrarlos en nuestra web.
+
+Los bucles se utilizan para repetir código, por ejemplo:
+ - Si tenemos 48 contactos, por cada contacto mostrar una tarjeta de contacto en la página
+ - Mostrar el total de un carrito de la compra sumando todos los precios de los artículos
+ - Mostrar todas las fechas hasta la actualidad en un select de un formulario
+
+## Array
 
 Un array es la estructura que utilizamos en JavaScript para almacenar listas de datos ordenados.
 
@@ -38,7 +66,7 @@ Cada elemento dentro de un array irá asociado a un índice, ese índice nos per
 
 ```js
 // Array donde el orden es importante
-var weekdays = [
+const weekdays = [
   'Lunes',
   'Martes',
   'Miércoles',
@@ -47,48 +75,25 @@ var weekdays = [
   'Sábado',
   'Domingo'
 ];
-
-// Array con distintos tipos de datos (poco recomendable)
-var randomData = [
-  'Hola',
-  123,
-  true,
-  2323.24
-];
 ```
 
 >**NOTA:** Por lo general es poco recomendable mezclar varios datos diferentes en un array, en esos casos es mejor usar un objeto.
 
 ```js
 // Un array con distintos datos (poco recomendable)
-var madrid = [
+const madrid = [
   'Madrid',
   40.4893538,
   -3.6827461
 ];
 
 // Tiene más sentido como objeto
-var madrid = {
+const madrid = {
   name: 'Madrid',
   latitude: 40.4893538,
   longitude: -3.6827461
 }
 ```
-
-## ¿Para qué sirven?
-
-Los arrays se utilizan principalmente para almacenar una lista de datos relacionados entre sí. En esa lista de datos el orden suele ser importante: clasificación, posiciones, productos ordenados de más barato a más caro, etc.
-
-Si no sabemos cuántos elementos vamos a tener o qué nombre darle a cada elemento, lo habitual es que necesitemos un array.
-
-
-## ¿En qué casos se utilizan?
-
-Si pensamos en una web, la mayoría de los datos vienen en una lista (solo hace falta recordar la de `ul`s y `li`s que hemos puesto hasta ahora), es por eso que podemos poner infinitos ejemplos de casos de uso.
-
-Algunas de las aplicaciones más típicas de los arrays son los resultados de búsqueda, la lista de coordenadas de un mapa (cada punto es un dato de la lista), los artículos de un carrito de la compra, las tareas de una lista de tareas o los contactos de una lista de contactos.
-
-Todos estos ejemplos anteriores se suelen almacenar en arrays para poderlos modificar (por ejemplo ordenar por orden alfabético o añadir un nuevo elemento), trabajar con ellos de forma sencilla y mostrarlos en nuestra web.
 
 ## Trabajando con arrays
 
@@ -136,7 +141,7 @@ console.log(fruits[1]); // Muestra 'manzana' (recordemos que el primer índice e
 console.log(fruits[3]); // Muestra 'plátano'
 ```
 
-Un dato importante es que para obtener el valor que queremos del array podemos utilizar una variable en vez de un número. Imaginemos que queremos hacer una aplicación que simule el típico sorteo en el que cada uno de los participantes saca un papelito de una urna y tiene un premio asociado. Si quisiéramos hacerlo con JavaScript, podríamos hacer algo parecido a lo siguiente:
+Un dato importante es que para obtener el valor que queremos del array podemos utilizar una variable en vez de un número. Imaginemos que queremos hacer una aplicación que simule el típico sorteo en el que cada uno de los participantes saca un papel de una urna y tiene un premio asociado. Si quisiéramos hacerlo con JavaScript, podríamos hacer algo parecido a lo siguiente:
 
 ```html
 <label for="lotteryNumber">Introduce un número del 1 al 4</label>
@@ -163,10 +168,6 @@ function handleLotteryNumberChange (event) {
 lotteryNumberInput.addEventListener('keyup', handleLotteryNumberChange);
 
 ```
-
-## Modificar un array
-
-Dentro de un array podemos añadir nuevos elementos o cambiar elementos ya existentes. Más adelante cuando veamos métodos y propiedades de los arrays aprenderemos cómo eliminar un elemento de un array y otras formas de modificar la información que contienen.
 
 ### Añadir un elemento
 
@@ -204,10 +205,28 @@ arr[1] = 'limón'; // Sobrescribimos el valor que hay en la segunda posición de
 // Tras los pasos anteriores arr será igual a  ['plátano', 'limón', 'pera']
 ```
 
+* * *
+#### EJERCICIO 1
+
+**Películas**  
+
+Vamos a hacer este ejercicio en parejas. ¿Listas? La primera de la pareja con el teclado va a crear un array `movies` con un listado de 3 películas que le gusten. Será un array de cadenas (`strings`).
+
+Ahora toma el teclado la otra compañera y añade al array anterior otra película más que le guste. No vale modificar la declaración del array, sino que añadiremos la nueva película en la posición 3 del array (recordad que se empiezan a numerar desde el 0). Para comprobar que funciona, tienes que mostrar en la consola el nombre de la última película del array.
+
+El teclado vuelve a la primera de la pareja. Tienes que modificar la película que menos te guste de las que hay en el array (¿podría ser la que ha puesto tu compañera? :P) por el nombre de otra que te guste más. Para comprobar que funciona, tienes que mostrar el array completo en la consola.
+
+El teclado vuelve a la segunda de la pareja. Ahora es tu turno de modificar la película que menos te guste del array por otra. De nuevo, muestra el array completo en la consola para comprobar que funcionó.
+
+Para terminar este ejercicio, vamos a encapsular todo el código que hemos creado en una función que no toma parámetros y que llamaremos `workWithMovies`. Ejecutamos la función para comprobar que se muestran los mensajes en la consola correspondientes.
+
+* * *
+
 ### Los arrays son un tipo de datos especial
 
-Una cosa importante a tener en cuenta es que cuando asignamos un array a una constante (o variable) realmente no asignamos a la constante ese valor sino que sería más bien creamos un array y esa constante apuntará a ese array que hemos creado. Es exactamente lo mismo que nos sucedía con los objetos, ¿lo recuerdas? Y es que ¡los arrays son un tipo de objeto! 
-En el caso de los arrays creamos un dato y la constante en lugar de almacenar ese dato almacenará la dirección (enlace) que apunta al dato. Por hacer un símil, cuando creamos un array es como si construyéramos un edificio y la constante guardara la dirección del edificio.
+Una cosa importante a tener en cuenta es que cuando asignamos un array a una constante (o variable) realmente no asignamos a la constante ese valor sino un un _enlace a ese array_. Es exactamente lo mismo que nos sucedía con los objetos, ¿lo recuerdas? Y es que técnicamente el tipo de dato de lo arrays, las funciones y los objetos literales ¡es `object`! 
+
+Así en el caso de los arrays creamos un dato y cuando lo asignamos a una constante en lugar de almacenar ese dato almacenará la referencia (enlace) que apunta al dato.
 
 Y te estarás preguntando, ¿y en qué me afecta esto a mí? Imaginemos que creamos un array llamado `arr`:
 
@@ -223,7 +242,7 @@ Si más tarde guardamos `arr` en otra constante llamada `arr2` de esta forma:
 const arr2 = arr;
 ```
 
-Lo que estamos diciendo es que `arr2` va a guardar la información que tiene `arr` y por tanto, al igual que `arr` apuntará al array que hemos creado posteriormente.
+Lo que estamos diciendo es que `arr2` va a guardar la información que tiene `arr` y por tanto, al igual que `arr` apuntará al array que hemos creado anteriormente.
 
 Bien, el problema viene ahora, ambas constantes apuntan al mismo array por lo que si modificamos una estaremos modificando también la otra, ya que lo que va a hacer JavaScript es modificar el array al que apunta.
 
@@ -237,38 +256,88 @@ console.log(arr[4]); // Imprime 5 en la consola
 console.log(arr2[4]); // Imprime también 5 en la consola
 ```
 
-Este tipo de comportamiento de guardar la dirección a un dato en vez del dato como tal se llama asignación por referencia y así es como almacena JavaScript los arrays. Tener esto en cuenta es muy importante ya que si lo aprendemos evitaremos bastantes problemas en el futuro a la hora de guardar arrays en constantes (o variables) y copiar arrays.
-
-* * *
-#### EJERCICIO 1
-
-**Películas**  
-
-Vamos a hacer este ejercicio en parejas. ¿Listas? La primera de la pareja con el teclado va a crear un array `movies` con un listado de 3 películas que le gusten. Será un array de cadenas (`strings`).
-
-Ahora toma el teclado la otra compañera y añade al array anterior otra película más que le guste. No vale modificar la declaración del array, sino que añadiremos la nueva peli en la posición 3 del array (recordad que se empiezan a numerar desde el 0). Para comprobar que funciona, tienes que mostrar en la consola el nombre de la última película del array.
-
-El teclado vuelve a la primera de la pareja. Tienes que modificar la peli que menos te guste de las que hay en el array (¿podría ser la que ha puesto tu compañera? :P) por el nombre de otra que te guste más. Para comprobar que funciona, tienes que mostrar el array completo en la consola.
-
-El teclado vuelve a la segunda de la pareja. Ahora es tu turno de modificar la peli que menos te guste del array por otra. De nuevo, muestra el array completo en la consola para comprobar que funcionó.
-
-Para terminar este ejercicio, vamos a encapsular todo el código que hemos creado en una función que no toma parámetros y que llamaremos `workWithMovies`. Ejecutamos la función para comprobar que se muestran los mensajes en la consola correspondientes.
-
-* * *
+Este tipo de comportamiento de guardar un _enlace_ a un dato, en lugar del dato como tal, se llama asignación por referencia y así es como almacena JavaScript los arrays. Tener esto en cuenta es muy importante ya que si lo aprendemos evitaremos bastantes problemas en el futuro a la hora de guardar arrays en constantes (o variables) y copiarlos.
 
 ### La propiedad length
 
-Los arrays son un tipo especial de objetos y, así que tienen propiedades y métodos. Gracias a las propiedades podremos obtener información del array y gracias a los métodos podremos generar acciones sobre ellos para modificar sus datos u obtener un nuevo resultado.
+Como los arrays son un tipo especial de objetos,  tienen propiedades y métodos. Gracias a las propiedades podremos obtener información del array y gracias a los métodos podremos generar acciones sobre ellos para modificar sus datos u obtener un nuevo resultado.
 
 La propiedad `length` sirve para obtener la longitud del array o en otras palabras cuántos elementos contiene. Como cualquier otra propiedad, para utilizarla simplemente escribiremos el nombre del array seguido por un punto y a continuación `length`:
 
 ```js
 const arr = [1, 2, 3];
 
-console.log(arr.length) // Mostrará un mensaje con la longitud del array (3)
+console.log(arr.length); // Mostrará un mensaje con la longitud del array (3)
 ```
 
 > **NOTA:** Un error que suele producirse a menudo es que escribimos _lenght_ en lugar de _length_. La segunda sería la forma correcta. Es importante tener cuidado, y cuando sea posible utilizar el autocompletado de nuestro editor, porque es un error que es difícil de percibir y bastante molesto.
+
+## Bucles
+
+Sirven para ejecutar un mismo código un número determinado de veces. _Haz esto x veces_.
+
+### Bucle `for`
+
+Tiene la siguiente estructura:
+- podemos identificarlo por usar al comienzo la palabra `for`
+- después irá la _configuración_ del bucle entre paréntesis `( )` que tiene 3 partes, separadas por punto y coma `;`:
+  - _inicialización_ será una declaración y asignación de variable (ej: `let i = 1`)
+  - _condición_ será la condición que debe cumplirse para que se ejecute el bloque de código (ej: `i < 20`)
+  - _actualización_ será la operación que se realizará al final de cada iteración del bucle (ej: `i++`, que es la abreviación de `i = i + 1`)
+- al final definimos un _bloque de código_ entre llaves `{ }` que se va a ejecutar si se cumple la condición
+
+```js
+for (let i = 0; i < 20; i++) {
+  console.log('Me encantan los bucles 💪');
+}
+```
+
+En este ejemplo de código, hacemos aparecer 20 veces en la consola el texto `Me encantan los bucles 💪`. Funciona de la siguiente forma:
+  1. Se ejecuta el código de inicialización (`const i = 0`)
+  2. Se comprueba que la condición se cumple (`i < 20`), en este caso el resultado de `true`
+  3. Como la condición se cumple, se ejecuta el código que hay dentro del bloque entre las llaves (`{}`), es decir el `console.log`
+  4. Se ejecuta la actualización del bucle (`i++`) y la variable `i` pasa a valer 1
+  5. Vuelta al paso 2
+  6. Cuando la variable `i` llega al valor de 20, la condición ya no se cumple (20 no es menor que 20) y el bucle acaba
+
+Otro aspecto interesante de los bucles `for` es que dentro del bloque de código que se repite (el que va entre llaves `{ }`) podemos usar la variable `i`. Por ejemplo:
+
+  ```js
+  for (let i = 0; i < 20; i++) {
+    console.log('Voy por la vuelta ' + i);
+  }
+  ```
+Este ejemplo hará aparecer 20 veces, en la consola, el texto:
+- Voy por la vuelta 0
+- Voy por la vuelta 1
+- Voy por la vuelta 2
+
+...
+- Voy por la vuelta 19
+
+* * *
+
+#### EJERCICIO 2
+
+Partiendo el ejemplo anterior, crea un bucle que muestre 10 veces, en la consola, el texto `Voy por la vuelta X` siendo el número de vuelta desde 1 hasta 10 (no desde 0 hasta 9).
+
+* * *
+
+#### EJERCICIO 3
+
+Vamos a partir de una variable `acc` con valor 0. Construiremos un bucle que se ejecute 10 veces y sume 2 a la variable `acc` en cada iteración del bucle. Al acabar el bucle, mostraremos en la consola el texto `El resultado es: X`, siendo X el valor de la variable `acc`.
+
+> NOTA: Este tipo de variables como `acc` que se va actualizando y al final tiene el resultado de varias operaciones se llama _acumulador_. Puede ser de tipo numérico pero también de tipo cadena.
+
+* * *
+
+#### EJERCICIO 4
+
+**Previsión para ver la _Luna del cazador_**
+
+Cada tres años se produce una luna llena completamente iluminada por el Sol durante unos minutos. Esta luna es conocida como la “Luna del cazador”. En el año 2017 se pudo ver esta luna el 5 de octubre y mucha gente se la perdió. Para que no nos pase los siguientes años vamos a crear un código que muestre en consola cuando serán las 15 próximas lunas.
+
+* * *
 
 ### Iterando sobre los elementos de un array
 
@@ -277,36 +346,72 @@ Cuando trabajamos con arrays es muy común que tengamos que realizar alguna oper
 ```js
 const scores = [4, 2, 7, 8, 6, 7, 9, 1, 2, 6, 7];
 
-// Creamos una variable fuera del bucle para que no se sobreescriba en cada iteración
+// Creamos una variable fuera del bucle para que no se sobrescriba en cada iteración
 // En esta variable iremos sumando cada una de las puntuaciones
-let result = 0;
+let acc = 0;
 
 // La i empieza en 0 porque el índice de los arrays empieza en 0 también
-for (var i = 0; i < scores.length; i++) {
-  result += scores[i];
-  // Sumamos a result el valor actual del array en cada iteración del bucle
-  // result += arr[i] es igual a result = result + arr[i]
+for (let i = 0; i < scores.length; i++) {
+  acc += scores[i];
+  // Sumamos a `acc` el valor actual del array en cada iteración del bucle
+  // acc += arr[i] es igual a acc = acc + arr[i]
 }
 
-console.log('La puntuación final es ' + result);
+console.log('La puntuación final es ' + acc);
 ```
 
 * * *
-#### EJERCICIO 2
+#### EJERCICIO 5
 
 **La media**
 
-a) Vamos a crear un nuevo array `numbers` contendrá 5 números cualesquiera. Vamos a recorrer el array mediante un bucle que calcule la media de los números (la suma de los números dividido por cuántos hay, es decir, 5). Necesitaremos una variable (llamada *acumulador*) para ir almacenando la suma de todos los números. Para comprobar si el resultado es correcto, vamos a `loguearlo` en la consola.
+a) Vamos a crear un nuevo array `numbers` que contendrá 5 números cualesquiera. Vamos a recorrer el array mediante un bucle para calcular la media de los números (la suma de los números dividido por cuántos hay, es decir, 5). Necesitaremos una variable (*acumulador*) para ir almacenando la suma de todos los números y después poder hacerla media. Para comprobar si el resultado es correcto, vamos a `imprimirlo` en la consola.
 
-b) Ahora vamos añadir un nuevo número al array usando `push`, y repetir el cálculo de la media. En este caso, para calcular la media habrá que sumar todos y dividir entre el total, que ahora es 6.
+b) Ahora vamos añadir un nuevo número al array y repetir el cálculo de la media. En este caso, para calcular la media habrá que sumar todos y dividir entre el total, que ahora es 6.
 
-c) Vamos a generalizar el código anterior creando una función `average`. Esta función toma como parámetro un array `numbers`, calula la media del array (de cualquier longitud) y devuelve la media. Para poder trabajar con arrays de cualquier longitud, deberemos consultar la longitud del array mediante su propiedad `length`. Para comprobar que la función hace el cálculo correcto, la invocaremos (o ejecutaremos para que no suene tan esotérico) con arrays de varias longitudes y mostraremos el resultado en la consola del navegador.
+c) Vamos a generalizar el código anterior creando una función `average`. Esta función toma como parámetro un array `numbers`, calula la media del array (de cualquier longitud) y devuelve la media. Para poder trabajar con arrays de cualquier longitud, deberemos consultar la longitud del array mediante su propiedad `length`. Para comprobar que la función hace el cálculo correcto, la invocaremos(o ejecutaremos para que no suene tan esotérico) varias veces pasándole como argumento un array con diferente longitud cada vez y mostraremos el resultado en la consola del navegador.
+
+* * *
+
+## Bucle `for...of`
+
+El bucle `for...of` de ES6 nos permite recorrer un objeto iterable, como son los arrays, sin tener que escribir las condiciones de un `for`. Además, nos permite usar nombres mucho más reconocibles para los valores dentro del array.
+
+```js
+const bestAnimatedFeature2016Nominees = [
+  'Zootopia', 
+  'Kubo and the Two Strings', 
+  'La tortue rouge', 
+  'Ma vie de Courgette', 
+  'Moana'
+];
+
+// bucle for 
+for (let i = 0; i < bestAnimatedFeature2016Nominees.length; i++) {
+  console.log (`"${bestAnimatedFeature2016Nominees[i]}" was nominated to 89th Academy Awards`);  
+}
+
+// bucle for...of
+for (const movie of bestAnimatedFeature2016Nominees) {
+  console.log (`"${movie}" was nominated to 89th Academy Awards`);
+}
+```
+
+> **Nota**: si quisiéramos modificar los valores del array, tendríamos que hacer un bucle `for` como ya sabíamos. `for...of` solo nos permite leer los datos, ya que no nos da información sobre el índice.
+
+* * *
+
+#### EJERCICIO 6
+
+**Tenemos mucho en común**
+
+Vamos a hacer un pequeño programa que le pregunte a la usuaria cuáles son sus dos películas o libros favoritos. Cuando esta pulse el botón `enviar`  guardaremos la información en un array, lo recorreremos y mostraremos este mensaje por cada obra: "¡A mí también me encantó "OBRA"! Tenemos mucho en común, humana.", donde OBRA será el nombre de la obra.
 
 * * *
 
 ### Combinando arrays con objetos
 
-Como comentábamos anteriormente, en JavaScript los arrays funcionan como un tipo de dato más (con características específicas) y por tanto un array puede contener otro array dentro como si de un dato normal se tratase. Con los objetos pasa lo mismo, podemos tener arrays dentro de objetos u objetos dentro de arrays porque ambos pueden ser tratados como un valor más:
+Como comentábamos anteriormente, podemos tener arrays dentro de objetos u objetos dentro de arrays porque ambos pueden ser tratados como un valor más:
 
 ```js
 // Lista de contactos (array con objetos dentro)
@@ -347,75 +452,29 @@ task.participants.push('Diego'); // Añade un nuevo participante a la lista
 task.participants[0] = 'Andrea'; // Cambia el nombre del primer participante
 console.log(task.participants);  // Muestra Andrea, Pedro, Laura, Diego
 ```
-* * *
-#### EJERCICIO 3
 
-**Adalabers**
+#### EJERCICIO 7
+
+**A story `of` adalabers**
 
 Estamos en una clase de Adalab, y queremos conocer algunas estadísticas sobre las adalabers de esa clase. Estos son sus datos:
+
 - María, 29 años, diseñadora
 - Lucía, 31 años, ingeniera química
 - Susana, 34 años, periodista
-- Rocío, 25 años, diseñadora
-- Inmaculada, 37 años, chef
+- Rocío, 25 años, actriz
+- Inmaculada, 21 años, diseñadora
 
 En primer lugar, vamos a crear una estructura de datos en JavaScript para manejar estos datos. Usaremos arrays y objetos para crearla.
 
 Después, vamos a crear varias funciones en JavaScript que nos permitan calcular de forma automática estadísticas sobre las adalabers. Todas ellas toman como parámetro un listado de adalabers similar a nuestra estructura de datos anterior.
-1. Una función `countAdalabers` que devuelve el número de adalabers en el listado
-2. Una función `averageAge` que devuelve la media de edad de listado
-3. Una función `theYoungest` que devuelve el nombre de la adalaber más joven
-4. Una función `countDesigners` que devuelve el número de adalabers que son diseñadoras
 
-Según vayáis creando las funciones, debéis ir probando que funcionan invocándolas con nuestra estrucutra de datos como argumento y logueando en la consola el resultado que devuelven. Al final, modificad la estructura de datos para añadir, modificar o quitar adalabers. Y probad que las funciones siguen devolviendo el valor correcto.
+1. Una función `countAdalabers` que devuelve el número de adalabers en el listado.
+2. Una función `averageAge` que devuelve la media de edad de listado.
+3. Una función `theYoungest` que devuelve el nombre de la adalaber más joven.
+4. Una función `countDesigners` que devuelve el número de adalabers que son diseñadoras.
 
-* * *
-
-#### EJERCICIO 4
-
-**Mi lista de tareas**
-
-Hemos creado una aplicación para gestionar un listado de tareas: ¡somos gente muy ocupada! Para eso, hemos pedido los datos de tareas a un servidor y nos ha devuelto la información en un objeto JSON (u objeto literal) con el listado de tareas y su estado. Nuestra misión es pintar todas las tareas en pantalla, de forma que las tareas ya realizadas aparezcan tachadas. Vamos a partir de este array de datos en nuestro fichero JavaScript:
-
-```js
-const tasks = [
-  {name: 'Recoger setas en el campo', completed: true},
-  {name: 'Comprar pilas', completed: true},
-  {name: 'Poner una lavadora de blancos', completed: true},
-  {name: 'Aprender cómo funcionan los objetos de JavaScript', completed: false}
-];
-```
-
-a) **Vamos a por una tarea.** Primero vamos a pintar una tarea, solo una, en una lista de HTML. A continuación vamos a modificarla para que, dado que es una tarea completada, el texto aparezca tachado.
-
-b) **Listado de tareas.** ¡Seguimos con nuestras tareas! Ahora vamos a pintar en pantalla todas la tareas que tenemos en el listado, cada una de las tareas completadas debe aparecer tachada.
-
-c) **Vamos a darle dinamismo.** Ahora viene lo bueno: vamos a añadir la lógica necesaria para completar tareas. Para ello vamos a añadir un `input` de tipo `checkbox` al final de cada tarea que nos falte por completar. El checkbox de las tareas completadas debe aparecer marcado. Además, cuando el usuario marque la tarea como completada marcando el checkbox, deben suceder varias cosas:
-- la tarea debe mostrarse como completada (tachada)
-- debemos modificar su estado (propiedad `completed`) en el array `tasks`
-
-* * *
-
-### Trabajar con varios elementos del DOM
-
-Como hemos visto en sesiones anteriores, para seleccionar un elemento del DOM utilizaremos `querySelector`, pero ¿y si queremos modificar más de uno?. Bien en ese caso utilizaremos `querySelectorAll`, que nos permitirá guardar en una variable una lista de elementos. Esta lista funciona de manera similar a un array y podemos hacer lo siguiente con ella:
-
-```js
-// Guardamos una lista de todos los parrafos
-const paragraphs = document.querySelectorAll('p');
-
-// Modificamos el primer párrafo
-paragraphs[0].innerHTMl = 'Soy el primero';
-
-// Muestra el número de parráfos que hay en nuestra web
-console.log(paragraphs.length)
-
-// Iteramos sobre todos los párrafos para asignarles a todos un color
-for (var i = 0; i < paragraphs.length; i++) {
-  paragraphs[i].style.color = 'red';
-}
-
-```
+Según vayáis creando las funciones, debéis ir probando que funcionan invocándolas con nuestra estrucutra de datos como argumento. Al final, modificad la estructura de datos para añadir, modificar o quitar adalabers. Y probad que las funciones siguen devolviendo el valor correcto.
 
 ## Métodos de array
 
@@ -423,14 +482,14 @@ A continuación veremos algunos de los métodos básicos que más se utilizan pa
 
 ### `push`
 
-El método `push()` es uno de los más importantes y sirve para agregar uno o más elementos al final de un array. Es una forma común en JavaScript de añadir elementos a un array. Este método tras agregar los elementos al array devuelve la nueva longitud de éste.
+El método `push()` sirve para agregar uno o más elementos al final de un array. Es una forma común en JavaScript de añadir elementos a un array. Este método tras agregar los elementos al array devuelve la nueva longitud de éste.
 
 ```js
 const arr = [1, 2, 3];
 const newLength = arr.push(3, 5, 6, 7);
 
-console.log(newLength); // Muestra 7, la nueva longitud de arr
-console.log(arr); // Muestra 1,2,3,3,5,6,7
+console.log(newLength); // Loguea 7, la nueva longitud de arr
+console.log(arr); // Loguea 1,2,3,3,5,6,7
 ```
 
 > **NOTA:** Pocas veces es necesario guardar el resultado del método `push()` en una variable ya que podremos acceder a este valor cuando queramos usando la propiedad `length`. Nosotros normalmente no guardaremos ese valor en una variable, pero es bueno que sepamos cómo funciona exactamente el método.
@@ -448,13 +507,13 @@ El método reverse() invierte el orden de un array. El primer elemento pasará a
 
 ```js
 const arr = [1, 2, 3];
-console.log(arr.reverse()); // Muestra 3,2,1
-console.log(arr); // Muestra también 3,2,1 porque reverse modifica directamente arr
+console.log(arr.reverse()); // Loguea 3,2,1
+console.log(arr); // Loguea también 3,2,1 porque reverse modifica arr
 ```
 
 ### `concat`
 
-Este método se utiliza para obtener, a partir de dos o más arrays, uno que combine a todos ellos. Este método no modifica ninguno de los arrays que utiliza para combinarlos en uno nuevo, sino que devuelve un array, como sucede con las operaciones que hacemos con números, por ejemplo. Para concatenar varios arrays con el método `concat()` lo haremos de la siguiente manera:
+Este método se utiliza para obtener, a partir de dos o más arrays, uno que combine a todos ellos. Este método no modifica ninguno de los arrays que utiliza para combinarlos, sino que devuelve un **array nuevo**. Para concatenar varios arrays con el método `concat()` lo haremos de la siguiente manera:
 
 ```js
 const letters = ['a', 'b', 'c'];
@@ -471,11 +530,120 @@ El array resultante tendrá los elementos ordenados según el orden en que hemos
 
 Puedes consultar el [listado completo de propiedades y métodos de array en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array).
 
-## BONUS: Trabajar con arrays anidados
+## `querySelectorAll`
+
+Como hemos visto en sesiones anteriores, para recoger un elemento del DOM utilizamos `querySelector`. En realidad `querySelector` devuelve el primer elemento en `html` que tenga el selector que indiquemos. Pero ¿y si quisieramos recoger varios elementos que, por ejemplo, tuvieran una determinada clase? `querySelectorAll` al rescate. Nos permite guardar en una constante una lista de elementos. Esta lista funciona de manera similar a un array y podemos hacer lo siguiente con ella:
+
+```js
+// Guardamos una lista de todos los parrafos de la página
+const paragraphs = document.querySelectorAll('p');
+
+// Modificamos el primer párrafo
+paragraphs[0].innerHTMl = 'Soy el primero';
+
+// Muestra el número de parráfos que hay en nuestra web
+console.log(paragraphs.length)
+
+// Iteramos sobre todos los párrafos para asignarles a todos una clase
+for (var i = 0; i < paragraphs.length; i++) {
+  paragraphs[i].classList.add('highlight');
+}
+
+```
+
+#### EJERCICIO 8
+
+**Mi lista de tareas**
+
+Hemos creado una aplicación para gestionar un listado de tareas: ¡somos gente muy ocupada! Para eso, hemos pedido los datos de tareas a un servidor y nos ha devuelto la información en un objeto JSON (u objeto literal) con el listado de tareas y su estado. Nuestra misión es :
+1. Mostrar una frase que indique cuantas tareas hay.
+2. Pintar todas las tareas en pantalla.
+3. Tachar las ya realizadas. 
+4. Permitir marcar una tarea como 'completa' o 'incompleta'.
+
+Vamos a partir de este array de datos en nuestro fichero JavaScript:
+
+```js
+const tasks = [
+  {name: 'Recoger setas en el campo', completed: true},
+  {name: 'Comprar pilas', completed: true},
+  {name: 'Poner una lavadora de blancos', completed: true},
+  {name: 'Aprender cómo se realizan las peticiones al servidor en JavaScript', completed: false}
+];
+```
+Veamos como afrontar un ejercicio de este tipo, dónde tenemos que unir muchos de los conceptos aprendidos hasta ahora, la organización es clave:
+
+a) **Vamos a por una tarea.** Primero vamos a pintar una tarea, solo una, en una lista de HTML. A continuación vamos a preparar una clase que la modifique, de manera que si fuera una tarea completada, el texto aparezca tachado.
+
+b) **Listado de tareas.** ¡Seguimos con nuestras tareas! Ahora vamos a pintar en pantalla todas la tareas que tenemos en el listado, cada una de las tareas completadas debe aparecer tachada.
+
+c) **Vamos a darle dinamismo.** Ahora viene lo bueno: vamos a añadir la lógica necesaria para completar tareas. Para ello vamos a añadir un `input` de tipo `checkbox` al final de cada tarea que nos falte por completar. El checkbox de las tareas completadas debe aparecer marcado. Además, cuando el usuario marque la tarea como completada marcando el checkbox, deben suceder varias cosas:
+- la tarea debe mostrarse como completada (tachada)
+- debemos modificar su estado (propiedad `completed`) en el array `tasks`.
+
+d) **Tareas totales.** No nos podemos olvidar de los detalles. Añadamos por encima del listado de tareas una frase que diga: Tienes <_X_> tareas. <_Y_> completadas y <_Z_> por realizar. Cada vez que una tarea se marque/desmarque deberiamos actualizar esta información.
+
+* * *
+
+## BONUS
+
+#### EJERCICIO 9 BONUS
+
+**Crea tu árbol de Navidad**
+
+Para que no nos pille el toro esta Navidad, vamos a crear un código que muestre en consola un árbol de navidad con triángulos (▲). Nosotros le diremos la altura y creará un triángulo con un número igual de lineas que la altura que le hemos pasado. Por ejemplo si le pasamos 5, creará este árbol:
+
+```
+▲  
+▲▲
+▲▲▲
+▲▲▲▲
+▲▲▲▲▲
+```
+
+* * *
+
+#### EJERCICIO 10 BONUS
+
+**Mejora tu árbol de Navidad**
+
+Intenta ponerle una estrella y un tronco al árbol para que quede mucho más mono. Sería algo así:
+
+```
+★
+▲  
+▲▲
+▲▲▲
+▲▲▲▲
+▲▲▲▲▲
+|
+```
+
+* * *
+
+#### EJERCICIO 11 BONUS
+
+**!Esto es un abeto!**
+
+Intenta cambiar el código para que aparezca el árbol completo.
+
+```
+    ★
+    ▲  
+   ▲▲▲
+  ▲▲▲▲▲
+ ▲▲▲▲▲▲▲
+▲▲▲▲▲▲▲▲▲
+    |
+```
+
+* * *
+
+### Trabajar con arrays anidados
 
 Algunas estructuras como una array de coordenadas requieren crear arrays dentro de otros arrays, o lo que es lo mismo, arrays anidados. Si pensamos en ese caso concreto de arrays de coordenadas, vemos que tenemos un array y cada elemento posee dos coordenadas que también se pueden mostrar en array. Esto es posible de llevar a cabo en JavaScript y es una práctica común. En este apartado veremos cómo crear arrays anidados, cómo obtener un valor de ellos y cómo modificarlos.
 
-### Crear una array anidada
+### Crear un array anidado
 
 Partiendo del ejemplo citado anteriormente del array de coordenadas, vamos a declarar un array anidado en JavaScript:
 
@@ -563,3 +731,4 @@ coordinates = [
 - [3.06. Arrays II de Ada Lovelace](https://youtu.be/nVNLcw70cso)
 - [Sintaxis Básica V Arrays, Matrices, Arreglos. Píldoras informáticas](https://youtu.be/hTeFMke6F6Q)
 - [Sintaxis Básica V. Arrays, Matrices, Arreglos II. Píldoras informáticas](https://youtu.be/yn-o0rxXW0o)
+- [JSON](https://es.wikipedia.org/wiki/JSON)
