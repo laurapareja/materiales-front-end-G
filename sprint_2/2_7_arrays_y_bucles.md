@@ -62,7 +62,7 @@ Un array es la estructura que utilizamos en JavaScript para almacenar listas de 
 
 Un array puede contener cualquier tipo de dato (`string`, `number`, `boolean`, `object` incluso otros `arrays`). De hecho, un mismo array puede contener datos de distinto tipo mezclados, aunque es algo poco recomendable.
 
-Cada elemento dentro de un array irá asociado a un índice, ese índice nos permitirá obtener el dato de una determinada posición del array o modificarlo. Un dato importante a tener en cuenta es que el índice de los arrays empieza por el número 0, por lo que el primer elemento tendrá índice 0, el segundo tendrá 1, el tercero 2 y así sucesivamente.
+Cada elemento dentro de un array irá asociado a un índice, ese índice nos permitirá obtener el dato de una determinada posición del array o modificarlo. Un dato importante a tener en cuenta es que __el índice de los arrays empieza por el número 0__, por lo que el primer elemento tendrá índice 0, el segundo tendrá 1, el tercero 2 y así sucesivamente.
 
 ```js
 // Array donde el orden es importante
@@ -76,6 +76,8 @@ const weekdays = [
   'Domingo'
 ];
 ```
+En este ejemplo, 'Lunes' está en la posición 0 del array, y 'Domingo' en la posición 6.
+
 
 >**NOTA:** Por lo general es poco recomendable mezclar varios datos diferentes en un array, en esos casos es mejor usar un objeto.
 
@@ -294,7 +296,7 @@ for (let i = 0; i < 20; i++) {
 
 En este ejemplo de código, hacemos aparecer 20 veces en la consola el texto `Me encantan los bucles 💪`. Funciona de la siguiente forma:
   1. Se ejecuta el código de inicialización (`const i = 0`)
-  2. Se comprueba que la condición se cumple (`i < 20`), en este caso el resultado de `true`
+  2. Se comprueba que la condición se cumple (`i < 20`), en este caso el resultado es `true`
   3. Como la condición se cumple, se ejecuta el código que hay dentro del bloque entre las llaves (`{}`), es decir el `console.log`
   4. Se ejecuta la actualización del bucle (`i++`) y la variable `i` pasa a valer 1
   5. Vuelta al paso 2
@@ -335,7 +337,7 @@ Vamos a partir de una variable `acc` con valor 0. Construiremos un bucle que se 
 
 **Previsión para ver la _Luna del cazador_**
 
-Cada tres años se produce una luna llena completamente iluminada por el Sol durante unos minutos. Esta luna es conocida como la “Luna del cazador”. En el año 2017 se pudo ver esta luna el 5 de octubre y mucha gente se la perdió. Para que no nos pase los siguientes años vamos a crear un código que muestre en consola cuando serán las 15 próximas lunas.
+Cada tres años se produce una luna llena completamente iluminada por el Sol durante unos minutos. Esta luna es conocida como la “Luna del cazador”. En el año 2017 se pudo ver esta luna el 5 de octubre y mucha gente se la perdió. Para que no nos pase los siguientes años vamos a crear un código que muestre en consola cuándo serán las 15 próximas lunas.
 
 * * *
 
@@ -365,7 +367,7 @@ console.log('La puntuación final es ' + acc);
 
 **La media**
 
-a) Vamos a crear un nuevo array `numbers` que contendrá 5 números cualesquiera. Vamos a recorrer el array mediante un bucle para calcular la media de los números (la suma de los números dividido por cuántos hay, es decir, 5). Necesitaremos una variable (*acumulador*) para ir almacenando la suma de todos los números y después poder hacerla media. Para comprobar si el resultado es correcto, vamos a `imprimirlo` en la consola.
+a) Vamos a crear un nuevo array `numbers` que contendrá 5 números cualesquiera. Vamos a recorrer el array mediante un bucle para calcular la media de los números (la suma de los números dividido por cuántos hay, es decir, 5). Necesitaremos una variable (*acumulador*) para ir almacenando la suma de todos los números y después poder hacer la media. Para comprobar si el resultado es correcto, vamos a `loguearlo` en la consola.
 
 b) Ahora vamos añadir un nuevo número al array y repetir el cálculo de la media. En este caso, para calcular la media habrá que sumar todos y dividir entre el total, que ahora es 6.
 
@@ -405,7 +407,7 @@ for (const movie of bestAnimatedFeature2016Nominees) {
 
 **Tenemos mucho en común**
 
-Vamos a hacer un pequeño programa que le pregunte a la usuaria cuáles son sus dos películas o libros favoritos. Cuando esta pulse el botón `enviar`  guardaremos la información en un array, lo recorreremos y mostraremos este mensaje por cada obra: "¡A mí también me encantó "OBRA"! Tenemos mucho en común, humana.", donde OBRA será el nombre de la obra.
+Vamos a hacer un pequeño programa que le pregunte a la usuaria cuáles son sus dos películas o libros favoritos mediante un formulario. Cuando esta pulse el botón `enviar`  guardaremos la información en un array, lo recorreremos y mostraremos este mensaje por cada obra: "¡A mí también me encantó "OBRA"! Tenemos mucho en común, humana.", donde OBRA será el nombre de la obra.
 
 * * *
 
@@ -533,14 +535,14 @@ Puedes consultar el [listado completo de propiedades y métodos de array en MDN]
 ## `querySelectorAll`
 
 Como hemos visto en sesiones anteriores, para recoger un elemento de HTML utilizamos el método `querySelector`.  Pero ¿y si queremos recoger más de uno, por ejemplo todas las etiquetas que tengan una determinada clase? `querySelectorAll` al rescate. 
-Este método devuelve una lista de elementos que funciona de manera similar a un array. Podriamos hacer lo siguiente:
+Este método devuelve una lista de elementos que funciona de manera similar a un array. Podríamos hacer lo siguiente:
 
 ```js
 // Guardamos una lista de todos los parrafos de la página
 const paragraphs = document.querySelectorAll('p');
 
 // Modificamos el primer párrafo
-paragraphs[0].innerHTMl = 'Soy el primero';
+paragraphs[0].innerHTML = 'Soy el primero';
 
 // Muestra el número de parráfos que hay en nuestra web
 console.log(paragraphs.length)
@@ -556,8 +558,8 @@ for (var i = 0; i < paragraphs.length; i++) {
 
 **Mi lista de tareas**
 
-Hemos creado una aplicación para gestionar un listado de tareas: ¡somos gente muy ocupada! Para eso, hemos pedido los datos de tareas a un servidor y nos ha devuelto la información en un objeto JSON (u objeto literal) con el listado de tareas y su estado. Nuestra misión es :
-1. Mostrar una frase que indique cuantas tareas hay.
+Hemos creado una aplicación para gestionar un listado de tareas: ¡somos gente muy ocupada! Para eso, hemos creado un objeto literal con el listado de tareas y su estado. Nuestra misión es :
+1. Mostrar una frase que indique cuántas tareas hay.
 2. Pintar todas las tareas en pantalla.
 3. Tachar las ya realizadas. 
 4. Permitir marcar una tarea como 'completa' o 'incompleta'.
@@ -624,7 +626,7 @@ Intenta ponerle una estrella y un tronco al árbol para que quede mucho más mon
 
 #### EJERCICIO 11 BONUS
 
-**!Esto es un abeto!**
+**¡Esto es un abeto!**
 
 Intenta cambiar el código para que aparezca el árbol completo.
 
@@ -671,7 +673,7 @@ const coordinates = [
 ];
 ```
 
-La explicación a esto es que en JavaScript un array puede utilizarse como cualquier otro tipo de dato y por tanto podemos perfectamente meter arrays dentro de otros o incluso combinar arrays anidados con números o strings
+La explicación a esto es que en JavaScript un array puede utilizarse como cualquier otro tipo de dato y por tanto podemos perfectamente meter arrays dentro de otros o incluso combinar arrays anidados con números o strings (aunque no es recomendable).
 
 ```js
 const randomData = [
