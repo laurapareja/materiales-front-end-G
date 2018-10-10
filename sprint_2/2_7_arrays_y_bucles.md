@@ -734,4 +734,3 @@ coordinates = [
 - [3.06. Arrays II de Ada Lovelace](https://youtu.be/nVNLcw70cso)
 - [Sintaxis Básica V Arrays, Matrices, Arreglos. Píldoras informáticas](https://youtu.be/hTeFMke6F6Q)
 - [Sintaxis Básica V. Arrays, Matrices, Arreglos II. Píldoras informáticas](https://youtu.be/yn-o0rxXW0o)
-- [JSON](https://es.wikipedia.org/wiki/JSON)

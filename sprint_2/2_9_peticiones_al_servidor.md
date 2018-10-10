@@ -8,8 +8,10 @@
 - [EJERCICIO 4](#ejercicio-4)
 - [EJERCICIO 5](#ejercicio-5)
 - [EJERCICIO 6](#ejercicio-6)
+- [EJERCICIO 7 BONUS](#ejercicio-7-bonus)
 
 <!-- /TOC -->
+
 ## Introducción
 
 En esta sesión vamos a aprender a utilizar AJAX que es el puente entre el cliente (navegador) y el servidor, entre el frontend y el backend de nuestra aplicación. Las peticiones AJAX nos permiten acceder y manipular datos en el servidor, pero iniciando el proceso en el frontend.
@@ -21,7 +23,7 @@ El uso de AJAX, por tanto, nos permite acceder a información en un servidor que
 
 ## ¿En qué casos se utiliza?
 
-Algunos ejemplos de uso de AJAX que podemos encontrar en una webapp (aplicación web):
+Algunos ejemplos de uso de AJAX que podemos encontrar en una webApp (aplicación web):
 
 - Cuando realizamos una búsqueda de pisos en Airbnb, hacemos una petición AJAX al servidor, y cuando nos devuelve los datos de los pisos lo pintamos en el HTML
 - Cuando en nuestra app de tareas marcamos una tarea como terminada, se envía una petición al servidor para que almacene en base de datos que esa tarea ha sido completada; así, al abrir la app en nuestro móvil aparecerá como completada
@@ -31,9 +33,9 @@ En esta sesión aprenderemos también cómo trabajar en casos de asincronía com
 - realizar una acción cuando se hayan completado varios procesos asíncronos que dependen uno del otro (*peticiones encadenadas*)
 - realizar una acción cuando se hayan completado varios procesos asíncronos que se ejecutan en paralelo (*peticiones en paralelo*)
 
-Veamos algunos casos de ejemplo donde es necesario ejecutar *peticiones encadenadas* en una web:
-- cuando hago una petición a un servidor de la cual necesito algunos datos para realizar una segunda petición; por ejemplo, en una web sobre perros, hago una primera petición al servidor sobre las razas disponibles y después hago una segunda petición para pedir información de perros de una raza concreta
-- hago una petición al servidor y cuando llegan los datos, quiero almacenarlos en el navegador y cuando estén guardados, mostrar un mensaje; por ejemplo, pido los datos de un perro al servidor, cuando llegan los almaceno en `localStorage` y cuando estén guardados muestro un mensaje en la página de "Datos guardados correctamente"
+Veamos algunos casos de ejemplo donde es necesario ejecutar *peticiones encadenadas*:
+- en una web sobre perros, hago una primera petición al servidor sobre las razas disponibles y después hago una segunda petición para pedir información de perros de una raza concreta
+- en una web con área privada, cuando la usuaria introduce su email y su contraseña, hago una petición al servidor para *autenticarla*, el servidor me devuelve un `string` que identifica a la usuaria, con el hago una petición para pedir sus datos privados y mostrarlos en el área privada.
 
 Veamos algunos ejemplos en la web de *peticiones que se ejecutan en paralelo*:
 - cuando buscamos en una app de transporte cuál es la ruta más rápida entre dos puntos y necesitamos obtener información de distintas APIs web (taxis, EMT, Uber, Cabify...) y esperar a recibir la respuesta de todas para reflejar cual será la opción más rápida entre ellas
@@ -41,73 +43,67 @@ Veamos algunos ejemplos en la web de *peticiones que se ejecutan en paralelo*:
 
 ## Fetch
 
-A día de hoy la manera estándar de acceder a datos en el servidor desde nuestro front-end es `fetch`, una nueva API del navegador que funciona gracias a una nueva forma de manejar la asincronía de JavaScript llamada *Promesas*. Hasta ahora el estándar ha sido usar el objeto `XMLHttpRequest` que trabaja con callbacks y que veremos al final de esta sesión como bonus.
+A día de hoy la manera estándar de acceder a datos en el servidor desde nuestro frontend es `fetch`, una nueva API del navegador que funciona gracias a una forma moderna de manejar la asincronía de JavaScript llamada *Promesas*. Hasta ahora el estándar había sido usar el objeto `XMLHttpRequest` que trabaja con *callbacks* y que veremos al final de esta sesión como bonus.
 
 [Tutorial de MDN sobre el uso de fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch).
 
 ### Promesas
 
-Hasta ahora hemos trabajado siempre con callbacks para gestionar la asincronía. Pero nos hemos dado cuenta que si queremos hacer algo complejo como varios callbacks encadenados, el código es bastante complejo y poco intuitivo.
+Trabajar con *callbacks* para gestionar la asincronía hacía el código bastante complejo y poco intuitivo cuando necesitábamos encadenarlos.
 
-Las promesas nos ofrecen una alternativa a los callbacks para intentar escribir código más claro y limpio. Es decir, podemos hacer las mismas cosas que con callbacks pero de una forma más elegante.
+Las promesas nos ofrecen una alternativa a los *callbacks* para intentar escribir código más claro y limpio. Es decir, podemos hacer las mismas cosas que con *callbacks* pero de una forma más elegante.
 
 ### Usando fetch
 
-Vamos a realizar un ejemplo de petición usando `fetch` un API para obtener fotos de gatos aleatorias en [http://thecatapi.com/](http://thecatapi.com/).  Vamos a ver cómo queda un ejemplo de petición a este API con `fetch`:
+Vamos a realizar un ejemplo de petición usando `fetch` un API para obtener un *emoji* (piedra, papel, tijera, lagarto o spok) aleatorio en [https://rand.fun/](https://rand.fun/). Vamos a ver cómo queda un ejemplo de petición a este API con `fetch`:
 
 ```js
-fetch('https://thecatapi.com/api/images/get?format=html')
-  .then(function(response){
-    return response.text();
+fetch('https://api.rand.fun/games/rockpaperscissorslizardspock')
+  .then(function(response) {
+    return response.json();
   })
-  .then(function(html){
-    document.body.innerHTML = html;
+  .then(function(data) { 
+    document.body.innerHTML = data.result;
   });
 ```
 
-En primer lugar, vemos que a la función `fetch` solo le pasamos un parámetro: la URL a donde queremos hacer la petición, así de sencillo. La URL la hemos construido como se indica [en la documentación](http://thecatapi.com/docs.html), es decir, a la URL base 'https://thecatapi.com/' le hemos añadido '/api/images/get' para pedir una imagen aleatoria de gatete. También añadimos `?format=html` al final de la URL para que el servidor nos devuelva código HTML directamente: un enlace `<a>` con una imagen aleatoria de un gato en un `<img>`.
+Lo mismo pero con `arrow functions`:
+
+```js
+fetch('https://api.rand.fun/games/rockpaperscissorslizardspock')
+  .then(response => response.json())
+  .then(data => document.body.innerHTML = data.result);
+```
+
+
+En primer lugar, vemos que a la función `fetch` solo le pasamos un parámetro: la URL a donde queremos hacer la petición, así de sencillo. La URL la hemos construido como se indica [en la documentación](https://rand.fun/), es decir, a la URL base 'https://api.rand.fun' le hemos añadido '/games/rockpaperscissorslizardspock' para pedir una *emoji* aleatorio.
 
 Al ejecutar `fetch(URL)`, este método devuelve una promesa, es decir, algo sobre lo que podemos hacer `.then()`. Una promesa se llama así porque mientras se ejecuta el fetch (se hace la petición al servidor, responde y nos llega la respuesta) podemos trabajar con la respuesta en otra variable `response` donde 'nos prometen' que estará la respuesta del servidor cuando llegue. Es decir, que seguimos trabajando de forma asíncrona (en respuesta a eventos) pero las promesas nos ocultan esa complejidad.
 
-Entonces, sobre una promesa podemos hacer un `.then()` pero ¿para qué? Para poder indicar qué hacer cuando se complete esa promesa. Al método `then()` le tenemos que pasar una función (en este caso es anónima, pero puede ser una normal con nombre) que toma como parámetro el resultado de la promesa cuando esté resuelta. En este caso el parámetro `response` representa a la respuesta del servidor, y sobre él ejecutamos el método `.text()` que devuelve otra promesa. Esto es porque el método `text` trabaja de forma asíncrona y obtiene la respuesta del servidor en formato texto. Como trabaja de forma asíncrona necesitamos otro `then()` para recoger la respuesta. A este segundo `then()` le pasamos como parámetro otra función que toma como parámetro `html` que contiene el HTML que devuelve el servidor. En esta última función lo único que hacemos es meter el HTML en el DOM usando `innerHTML` sobre el `body` de la página.
+Entonces, sobre una promesa podemos hacer un `.then()` pero ¿para qué? Para poder indicar qué hacer cuando se complete esa promesa. Al método `then()` le tenemos que pasar una función (en este caso es anónima, pero puede ser una normal con nombre) que toma como parámetro el resultado de la promesa cuando esté resuelta. En este caso el parámetro `response` representa a la respuesta del servidor, y sobre él ejecutamos el método `.json()` que devuelve otra promesa. Esto es porque el método `json` trabaja de forma asíncrona y obtiene la respuesta del servidor en formato texto. Como trabaja de forma asíncrona necesitamos otro `then()` para recoger la respuesta. A este segundo `then()` le pasamos como parámetro otra función que toma como parámetro `data` que contiene el objeto que devuelve el servidor. En esta última función lo único que hacemos es, usando `innerHTML` sobre el `body`, añadir un *emoji* a la página.
 
 > NOTA: es **MUY IMPORTANTE** no olvidar hacer un `return` al final de la función que pasamos a `then` para encadenar con el siguiente `then`. En el último no hace falta porque ya no hay más `then` a quien tener que pasarlo.
 
-Tenéis el código del ejemplo ([en este codepen](https://codepen.io/adalab/pen/GxYVww?editors=0010)).
+Tenéis el código del ejemplo ([en este codepen](https://codepen.io/adalab/pen/qJrLxJ)).
 
-***
+* * *
 #### EJERCICIO 1
 
-Vamos a jugar un poco con el código en codepen del ejemplo anterior. Mirando la [documentación de thecatAPI](http://thecatapi.com/docs.html) podemos jugar añadiendo otros parámetros a la URL del tipo `clave=valor` separamos por `&`:
-- `results_per_page`: para mostrar más imágenes
-- `type`: probamos a mostrar sólo tipo gif
-- `size`: para indicar distintos tamaños de las imágenes
+**Numero aleatorio**
 
-***
+Vamos a jugar un poco con el código en codepen del ejemplo anterior. Mirando la [documentación de 'rand.fun'](https://rand.fun/), vamos a pedir un número entero (`integer`). 
 
-## BONUS: XMLHttpRequest
+Podemos jugar añadiendo parámetros a la URL del tipo `clave=valor`, siempre después de character `?` y separados por `&`, por ejemplo si quisieras pedir un `string` con determinada longitud, la url quedaría así `https://api.rand.fun/text/password?length=20`
 
-Para ver la diferencia del uso de callbacks y promesas (verás que con promesas el código es mucho más simple y legible), te dejo explorar este mismo ejemplo usando `XMLHttpRequest` [en este codepen](https://codepen.io/adalab/pen/yPwxgP?editors=0010):
-
-```js
-const request = new XMLHttpRequest();
-request.open('GET', 'https://thecatapi.com/api/images/get?format=html');
-
-request.addEventListener('load', showPicture);
-
-function showPicture() {
-  const response = request.responseText;
-  document.body.innerHTML = response;
-}
-
-request.send();
-```
 
 ## El formato JSON
 
-En el ejemplo anterior hemos hecho una petición a un API (thecatapi) cuyo formato de respuesta era directamente HTML que metemos en nuestra página. Pero esto no es lo habitual, porque estos servicios suelen ser usados por distintos tipos de clientes, no sólo navegadores web.
+Es formato muy habitual para el intercambio de información en la web (pronunciado en inglés como *Jason*). Son las siglas de JavaScript Object Notation, es decir, que es muy similar a como se definen los objetos literales en JavaScript... **¡¡¡algo que ya sabemos!!!** Aunque hay pequeñas diferencias:
 
-Un formato muy habitual para el intercambio de información en la web es el formato JSON (pronunciado en inglés como *Jason*). Son las siglas de JavaScript Object Notation, es decir, que es como se definen los objetos en JavaScript... **¡¡¡algo que ya sabemos!!!** Serán lo que llamamos *objetos literales*, es decir, que sólo contendrán datos (propiedades) pero nunca métodos (funciones). Esto es un ejemplo de JSON sencillo que devuelve el [Dog CEO API](https://dog.ceo/dog-api/):
+- Las claves siempre van entre comillas `{"userName": "Paco"}`
+- Los valores permitidos son: `string`, `number`, `boolean`, `array` y `json object`. Esto quiere decir que un `JSON` no podemos almacenar funciones por lo tanto nunca tendrá métodos. 
+
+Esto es un ejemplo de JSON sencillo que devuelve el [Dog CEO API](https://dog.ceo/dog-api/):
 
 ```js
 {
@@ -120,23 +116,27 @@ Como vemos, es simplemente un objeto JavaScript que tiene los datos que devuelve
 
 ```js
 fetch('https://dog.ceo/api/breeds/image/random')
-  .then(function(response){
-    return response.json();
-  })
-  .then(function(json){
+  .then((response) => response.json())
+  .then((data) => {
     const img = document.querySelector('img');
-    img.src = json.message;
+    img.src = data.message;
   });
 ```
 
-Vamos a ver los cambios respecto al ejemplo anterior de los gatos. En primer lugar, la URL en el `fetch` cambia para usar la URL de Dog API que nos da una imagen de perro aleatoria. El segundo cambio está en la función del primer `then()` ya que en lugar de recoger la respuesta del servidor y convertirla en texto, la convertimos directamente en JSON.
+Vamos a ver los cambios respecto al ejemplo anterior de los emojis. 
 
-En el segundo `then` tenemos la información que nos da el servidor convertida en JSON en el parámetro de la función `json`. Así que podemos acceder a su propiedad `message` (que es donde el servidor nos ha dejado la URL de la imagen) y asignamos su valor al atributo `src` de una `img` del HTML.
+En primer lugar, la URL en el `fetch` cambia para usar la URL de Dog API que nos da una imagen de perro aleatoria. 
+
+El segundo cambio está en la función del segundo `then()`, en el ejemplo de *emojis* el objeto `data` contenía una clave `result` con un `emoji`, y en este caso `data` tiene una clave `message` con la url de la imagen de un perro. Esto ocurre por que el **_schema_ de la respuesta** (cómo es el objeto JSON que nos devuelve el servidor, cómo se llaman sus claves, y qué contienen) lo ha definido y desarrollado una programadora como nosotras, así que debemos asumir que diferentes APIs tendrán diferentes *schemas*. De esta manera, leer la documentación y `loguear` el `JSON` que nos llega del servidor antes de operar con el siempre es una buena idea.
 
 Podéis jugar con [este ejemplo en Codepen](https://codepen.io/adalab/pen/oqQNvK?editors=1010).
 
-***
+> **Nota**: Si para recoger y modificar el contenido entre la apertura y el cierre de una etiqueta de HTML usábamos `innerHTML`, con `src` podemos recoger y modificar el atributo src de la etiqueta `img`, y lo mismo con `alt` para el texto alternativo ¡Genial!
+
+* * *
 #### EJERCICIO 2
+
+**Chihuahas, chihuahas por todas partes**
 
 Sigamos jugando un poco con el [Dog API](https://dog.ceo/dog-api/):
 
@@ -144,38 +144,39 @@ a) Vamos a modificar el ejemplo anterior para que las fotos de nuestra página s
 
 b) Vamos a encapsular toda la lógica para crear una petición en una función. Añadimos un botón a la página con el título 'Enséñame otro Chihuahua' de forma que al pulsarlo se haga otra petición al servidor de una imagen aleatoria y aparezca una nueva imagen de Chihuaua.
 
-***
+* * *
 #### EJERCICIO 3
 
 Ahora vamos a explorar un nuevo API: [el API de usuarios de GitHub](https://developer.github.com/v3/users/). La URL de este API es `https://api.github.com/users/{username}`, donde `{username}` es el nombre del usuario en GitHub. Por ejemplo, aquí tenéis la URL para obtener información del usuario de Isra `https://api.github.com/users/gootyfer`. Si ponéis esta URL en una nueva pestaña del navegador podréis observar qué datos nos devuelve el API.
 
-Vamos a crear una página en la que haya un input de texto y un botón de buscar. El usuario escribirá en el input un nombre de usuario de GitHub. Haremos una petición al API para obtener información de ese usuario y mostrarla en nuestra página:
+Vamos a crear una página en la que haya un input de texto y un botón de buscar. El usuario escribirá en el input un nombre de usuario de GitHub. Prepararemos una función que se ejecute cuando se pulse el botón buscar y que contenga una petición al API para obtener información de ese usuario y así mostrarla en nuestra página:
 - nombre
 - número de repositorios
 - avatar (imagen)
 
 ![Screenshot buscador en GitHub](assets/images/2-9/buscador-github.png)
 
-***
+* * *
 
 ## Peticiones encadenadas
 
-Comenzamos con este ejemplo en el que pedimos al API de Dog CEO el listado de razas de perro usando promesas ([el código en este codepen](https://codepen.io/adalab/pen/WdZegK?editors=1010)). El código es similar al último ejemplo, solo cambia como pintamos las razas en el DOM.
+Comenzamos con este ejemplo en el que pedimos al API de Dog CEO el listado de razas de perro usando promesas ([el código en este codepen](https://codepen.io/adalab/pen/WdZegK?editors=1010)).
 
 ```js
 fetch('https://dog.ceo/api/breeds/list')
-  .then(function(response){
-    return response.json();
-  })
-  .then(function(json){
-    const breeds = json.message;
+  .then(response => response.json())
+  .then(data => {
+    console.log('Breeds data response: ', data);
+    
     const ul = document.querySelector('ul');
-    for (let i = 0; i < breeds.length; i++) {
-      const li = document.createElement('li');
-      const content = document.createTextNode(breeds[i]);
-      li.appendChild(content);
-      ul.appendChild(li);
+    const breeds = data.message;
+    let ulContent = '';
+
+    for (const breed of breeds) {
+      const breedContent = `<li>${breed}</li>`;
+      ulContent += breedContent;
     }
+    ul.innerHTML = ulContent;
   });
 ```
 
@@ -183,70 +184,76 @@ Ahora vamos a partir del ejemplo anterior para pedir al servidor una foto de una
 
 ```js
 fetch('https://dog.ceo/api/breeds/list')
-  .then(function(breedsResponse){
-    return breedsResponse.json();
-  })
-  .then(function(breedsJSON){
-    const breeds = breedsJSON.message;
+  .then(breedsResponse => breedsResponse.json())
+  .then(breedsData => {
+    const breeds = breedsData.message;
     return fetch('https://dog.ceo/api/breed/' + breeds[0] + '/images/random');
   })
-  .then(function(imageResponse){
-    return imageResponse.json();
-  })
-  .then(function(imageJSON){
+  .then(imageResponse => imageResponse.json())
+  .then(imageData => {
     const img = document.querySelector('img');
-    img.src = imageJSON.message;
+    img.src = imageData.message;
+    img.alt = 'Un perro';
   });
 
 ```
-Una de las características principales de las promesas es que nos facilitan encadenar peticiones como en este caso, y el código resultante es muy sencillo. En el código hemos encadenado hasta 4 promesas: 1) petición al servidor de las razas, 2) convertir a JSON la respuesta, 3) segunda petición de la foto de una raza y convertir la segunda respuesta a JSON. Como hemos indicado antes, es importante que al final de los `then()` devolvamos una promesa para pasar los datos al siguiente `then()`. Así que en el segundo `then()` tenemos que devolver una promesa, es decir, el resultado del `fetch`.
+Una de las características principales de las promesas es que nos facilitan encadenar peticiones como en este caso, y el código resultante es muy sencillo. En el código hemos encadenado hasta 4 promesas: 
+ 1. petición al servidor de las razas
+ 2. convertir a JSON la respuesta
+ 3. segunda petición de la foto de una raza
+ 4. convertir la segunda respuesta a JSON
+ 
+Como hemos indicado antes, es importante que al final de los `then()` devolvamos una promesa para pasar los datos al siguiente `then()`. Así que en el segundo `then()` tenemos que devolver la promesa de `fetch`.
 
 ***
 
 #### EJERCICIO 4
 
-**Listado de repos de Adalab**
+**Listado de repos de una organización en Github**
 
 Vamos a seguir explorando el API de GitHub explorando la parte del [API para acceder a la info sobre organizaciones](https://developer.github.com/v3/orgs/). La URL de este API es `https://api.github.com/orgs/orgname`, donde `orgname` es el nombre de la organización en GitHub. Por ejemplo, aquí tenéis la URL para obtener información de la organización Adalab `https://api.github.com/orgs/Adalab`. Si ponéis esta URL en una nueva pestaña del navegador podréis observar qué datos nos devuelve el API.
 
-El objetivo de este ejercicio es mostrar en una web el listado completo de los repositorios de Adalab que hay creados en GitHub. El resultado final debería ser similar a este:
+El objetivo de este ejercicio es mostrar en una web el listado completo de los repositorios de una organización que hay creados en GitHub. Por ejemplo, para Adalab, el resultado final debería ser similar a este:
 
 ![Resultado del ejercicio](assets/images/2-9/resultado-ejercicio-1-listado-de-repos.png)
 
 Para ello vamos a hacer lo siguiente:
 
-1. acceder a la información de la organización Adalab como primera petición al servidor.
-1. recogeremos la información de la URL donde consultar la información de los repositorios de Adalab en la respuesta del servidor (en la propiedad `repos_url`) y haremos una nueva petición a esa URL.
-1. en el último `then` pintaremos en nuestra web el nombre de todos los repositorios de la organización en una lista (propiedad `name` de cada objeto repositorio).
+1. Preparar un input  con un botón para que la usuaria introduzca la organización.
+2. Cuando la usuaria pulse el botón buscar acceder a la información de la organización como primera petición al servidor.
+3. Recoger la información de la URL donde consultar la información de los repositorios de la organización en la respuesta del servidor (en la propiedad `repos_url`) y hacer una nueva petición a esa URL.
+4. En el último `then` pintar en nuestra web el nombre de todos los repositorios de la organización en una lista (propiedad `name` de cada objeto repositorio).
 
-***
+* * *
 
 #### EJERCICIO 5
 
-**Peticiones encadenadas con promesas**
+**La raza del perro**
 
-Vamos a seguir con el API de organizaciones de GitHub pero ahora vamos a acceder a él usando promesas. Vamos a acceder a la URL de los eventos de una comunidad (en la propiedad `events_url`) del [JSON de la comunidad Adalab](https://api.github.com/orgs/Adalab). Y vamos a realizar una petición nueva a esta URL para pintar en pantalla el tipo (propiedad `type`) del primer evento del array. Si el código es correcto, debería de verse en la pantalla la palabra _"PushEvent"_. ¡A darle caña!
+Vamos a realizar un ejercicio con la API de 'https://dog.ceo/dog-api/' y la api de 'https://rand.fun/'. Tenemos que pedir un listado de razas de perros, y con un número aleatorio elegir una raza del listado:
+- pintar un mensaje que muestre la raza elegida al azar. 
+- pedir una imagen aleatoria de un perro de esa raza y pintarla.
 
-***
+Si has llegado hasta aquí te proponemos otro reto, intenta que la última función sea la única que se encargue de interactuar con `html`, y sea esta la que pinte la raza y la imagen.
+¡Al turrón!
+
+* * *
 
 ## Peticiones en paralelo
 
-Ya hemos visto la utilidad de tener peticiones encadenadas, en las que una petición depende de las anteriores. Ahora vamos por qué usar petciones en paralelo, es decir, que se ejecutan a la vez pero que queremos hacer alguna acción cuando todas se han completado.
+Ya hemos visto la utilidad de tener peticiones encadenadas, en las que una petición depende de las anteriores. Ahora vamos por qué usar peticiones en paralelo, es decir, peticiones que se ejecutan a la vez para poder realizar alguna acción cuando todas se han completado.
 
-Para trabajar con varias promesas en parelelo usamos el método `Promise.all` que toma como parámetro un array de promesas y devuelve otra promesa que se resuelve cuando todas las del array se han resuelto. Por tanto, sobre el resultado podremos hacer un `then()` que recibe como parámetro un array con todos los resultados de las promesas anteriores, es decir, donde tendremos todos los JSON de la respuesta del servidor. [Veamos el ejemplo de codepen](https://codepen.io/adalab/pen/xpXGaG?editors=1010).
+Para trabajar con varias promesas en paralelo usamos el método `Promise.all` que toma como parámetro un array de promesas y devuelve otra promesa que se resuelve cuando todas las del array se han resuelto. Por tanto, sobre el resultado podremos hacer un `then()` que recibe como parámetro un array con todos los resultados de las promesas anteriores, es decir, donde tendremos todos los `JSON` de la respuesta del servidor. [Veamos el ejemplo de codepen](https://codepen.io/adalab/pen/xpXGaG?editors=1010).
 
 ```js
-function createPromise(){
-  return fetch('https://dog.ceo/api/breeds/image/random')
-    .then(function(response){
-      return response.json();
-    });
-}
+const createPromise = () => 
+  fetch('https://dog.ceo/api/breeds/image/random')
+    .then(response => response.json());
 
-const promises = [createPromise(), createPromise()];
+var promises = [createPromise(), createPromise()];
 
 Promise.all(promises)
-  .then(function(responses){
+  .then(responses => {
     for (let i = 0; i < responses.length; i++) {
       const img = document.querySelector('.dog' + (i + 1));
       img.src = responses[i].message;
@@ -254,7 +261,10 @@ Promise.all(promises)
   });
 
 ```
-Hemos creado una función `createPromise` que crea las promesas de las peticiones al servidor con `fetch` y parsea a JSON en el `then()`. Luego creamos el array de promesas ejecutando 2 veces la función anterior. Sobre ese array ejecutamos el `Promise.all` que cuando todas las peticiones al servidor hayan terminado, ejecutará la función del `then()` a la que le llegan todos los resultados mediante el parámetro  `responses`. Luego recorremos eses array para ir pintando las imágenes en los `img` del HTML.
+Hemos creado una función `createPromise` que crea las promesas de las peticiones al servidor con `fetch` y parsea a JSON en el `then()`. 
+Luego creamos el array de promesas ejecutando 2 veces la función anterior. 
+Después ejecutamos `Promise.all` pasándole como argumento el array de promesas, cuando todas las peticiones al servidor hayan terminado, se ejecutará la función del `then()` a la que le llegan todos los resultados mediante el parámetro  `responses`. 
+Finalmente recorremos el array que se encuentra en responses para ir pintando las imágenes en los `img` del HTML.
 
 ***
 
@@ -266,36 +276,76 @@ Partiendo el ejemplo anterior en codepen, vamos a modificarlo para que en lugar 
 
 ***
 
-### BONUS: Gestión de errores con promesas
+## BONUS
+
+### Gestión de errores con promesas
 
 Otra de las ventajas de las promesas es que facilitan la gestión de errores. Este es un tema que no hemos visto hasta ahora con JavaScript, pero vamos a ver cómo se hace con promesas porque facilitan mucho la vida.
 
 ```js
 fetch('https://dog.ceo/api/breeds/list')
-  .then(function(breedsResponse){
-    return breedsResponse.json();
+  .then(response => response.json())
+  .then(data => {
+    console.log('Breeds data response: ', data);
+    
+    const ul = document.querySelector('ul');
+    const breeds = data.message;
+    let ulContent = '';
+
+    for (const breed of breeds) {
+      const breedContent = `<li>${breed}</li>`;
+      ulContent += breedContent;
+    }
+    ul.innerHTML = ulContent;
   })
-  .then(function(breedsJSON){
-    const breeds = breedsJSON.message;
-    return fetch('https://dog.ceo/api/breed/' + breeds[0] + '/images/random');
-  })
-  .then(function(imageResponse){
-    return imageResponse.json();
-  })
-  .then(function(imageJSON){
-    const img = document.querySelector('img');
-    img.src = imageJSON.message;
-  })
-  .catch(function(error){
-    console.log('Ha sucedido un error: ' + error);
-  });
+  .catch(error => console.log(`Ha sucedido un error: ${error}`));
 
 ```
 
-Cuando usamos promesas podemos encadenar el final de los `then()` un `catch` que también recibe una función, que tiene como parámetro información del error que puede haber sucedido en cualquiera de los `then()` anteriores. En el ejemplo anterior, este error puede deberse a algún error del servidor o que nos devuelva un JSON con una estructura que no esperábamos y lo parseemos mal.
+Cuando usamos promesas podemos encadenar el final de los `then()` un `catch` que también recibe una función, que tiene como parámetro información del error que puede haber sucedido en cualquiera de los `then()` anteriores. En el ejemplo anterior, este error puede deberse, por ejemplo a que la usuaria haya perdido la conexión o que el servidor nos devuelva un JSON con una estructura que no esperábamos y lo parseemos mal.
+
+#### EJERCICIO 7 BONUS
+
+**Cazando errores 1**
+
+Partiendo del ejercicio 1 vamos a modificarlo para en lugar de parsear la respuesta a `JSON` (`response.json()`) lo hagamos a `html` (`response.html()`). Ahora si abrimos la consola del navegador nos encontraremos un mensaje de error, leelo para familiarizarte con él.
+
+Este error nos indica que ha sucedido un error en una de las promesas y que no lo hemos cazado, también nos da algo de información sobre el error. En este caso hemos intentado parsear a `html` la respuesta de la api de `rand.fun` que solo es parseable a `JSON`.
+
+Vamos a ponerle un `catch` a nuestra promesa y a `loguear` el error. 
+
+* * *
+
+Puede ser que trás este ejercicio no notes mucha diferencia entre el error que mostraba el navegador y nuestro `console.log`. Pero tener nuestros errores controlados es muy importante, aunque a día de hoy no vayamos a hacer nada más que `loguear` el error, ya tenemos el código preparado para en un futuro hacer otras cosas como:
+- Mostrar feedback a la usuaria sobre lo que ha ocurrido.
+- Intentar realizar la petición de nuevo pasados unos segundos en caso de errores por falta de conexión.
+- Mandar información sobre el error a un servicio que loalmacene para después investigarlo.
+
+> **Nota**: los mensaje de error en la consola del navegador no solo nos indican errores en las promesas, aparecen cada vez que hacemos algo que no debemos, aunque a estas alturas ya debes haberte dado cuenta. A partir de ahora **NUNCA** deberías dejar un mensaje de error ignorado, aunque en tu mente sepas que es por una tontería y pienses solucionarlo más tarde. Los errores en JavaScript hacen que nuestro código sea muy fragil, y pueden hacer que toda una lógica se rompa.
+
+
+### `XMLHttpRequest`
+
+Para ver la diferencia del uso de callbacks y promesas (verás que con promesas el código es mucho más simple y legible), te dejo explorar el primer ejemplo que vimos usando `XMLHttpRequest` [en este codepen](https://codepen.io/adalab/pen/yPwxgP?editors=0010):
+
+```js
+const request = new XMLHttpRequest();
+request.open('GET', 'https://api.rand.fun/games/rockpaperscissorslizardspock');
+
+request.addEventListener('load', showPicture);
+
+function showPicture() {
+  const response = JSON.parse(request.responseText).result;
+  document.body.innerHTML = response;
+}
+
+request.send();
+```
 
 ## Recursos externos
 
 - [Exploring JS: promises](http://exploringjs.com/es6/ch_promises.html)
 - [MDN: using promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)
 - [We have a problem with promises](https://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html)
+- [AJAX](https://es.wikipedia.org/wiki/AJAX)
+- [JSON](https://es.wikipedia.org/wiki/JSON)
