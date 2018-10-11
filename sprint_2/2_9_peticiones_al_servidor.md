@@ -116,10 +116,11 @@ Como vemos, es simplemente un objeto JavaScript que tiene los datos que devuelve
 
 ```js
 fetch('https://dog.ceo/api/breeds/image/random')
-  .then((response) => response.json())
-  .then((data) => {
+  .then(response => response.json())
+  .then(data => {
     const img = document.querySelector('img');
     img.src = data.message;
+    img.alt = 'Un perro';
   });
 ```
 
@@ -131,7 +132,7 @@ El segundo cambio está en la función del segundo `then()`, en el ejemplo de *e
 
 Podéis jugar con [este ejemplo en Codepen](https://codepen.io/adalab/pen/oqQNvK?editors=1010).
 
-> **Nota**: Si para recoger y modificar el contenido entre la apertura y el cierre de una etiqueta de HTML usábamos `innerHTML`, con `src` podemos recoger y modificar el atributo src de la etiqueta `img`, y lo mismo con `alt` para el texto alternativo ¡Genial!
+> **Nota**: Cuando recogemos un elemento de HTML podemos leer y modificar algunos de sus atributos directamente, como `src` y `alt` de la etiqueta `img` ¡Genial!
 
 * * *
 #### EJERCICIO 2
@@ -341,6 +342,25 @@ function showPicture() {
 
 request.send();
 ```
+
+## Resumen
+
+En esta sesión hemos visto la técnología asíncrona **AJAX** que nos permite comunicarnos con el servidor usando **`XMLHttpRequest`** basado en **callbacks** o **`fetch`** basado en **promesas**.
+
+Hemos introducido el concepto **API** (url para consultar datos de un servicio) y como comunmente estas nos devuelven una respuesta que se puede parsear a **JSON**.
+
+Hemos profundizado en el uso de `fetch` y la promesa que devuelve, viendo como podemos encadenarle un **`then`** que recibe una función como argumento, esta:
+- se ejecutará cuando la promesa se cumpla.
+- recibe como argumento la respuesta del servidor
+- puede devolver otra promesa, para continuar encadenando `then`s.
+- si esta promesa que devuelve no se resuelve y se rechaza por un error, podemos gestionarlo con `catch`
+
+Por lo tanto, gracias al funionamiento de las promesas podemos **encadenar llamadas al servidor**.
+
+También hemos visto como realizar **llamadas en paralelo** utilizando **`Promise.all`**
+
+Relacionado con los elementos de HTML ya sabemos como leer y modificar los atributos **`src`** y **`alt`** de la etiqueta imagen.
+
 
 ## Recursos externos
 

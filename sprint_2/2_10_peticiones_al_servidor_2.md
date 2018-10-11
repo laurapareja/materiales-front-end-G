@@ -50,7 +50,7 @@ La **petición**, como hemos visto en los ejemplos de la sesión anterior, siemp
 - el servicio (tipo de datos que pedimos) al que accedemos es `text/password` y nos da una cadena aleatoria (piedra, papel, tijera, lagarto o spok)
 - los parámetros `?length=20` (también llamado *querystring*) indican que la longitud de la cadena que pedimos es 20
 
-La petición HTTP también tiene asociada un *método* que indica la *intención* con la que hacemos la petición. Los métodos más usados son *GET* y *POST*. *GET* lo usamos para decir al servidor que esa petición es para consultar datos que él ya tiene, como por ejemplo las fotos de perros. *POST* lo usamos para enviar nosotros datos al servidor. Si recordáis estos mismo métodos los podíamos definir para el método de envío de un formulario HTML que sirve para enviar datos al servidor. Existen otros métodos HTTP, por ejemplo, *PUT* y *PATCH* sirven para actualizar datos ya existentes en el servidor, y *DELETE* sirve para borrar datos.
+La petición HTTP también tiene asociada un *método* que indica la *intención* con la que hacemos la petición. Los métodos (o verbos) más usados son *GET* y *POST*. *GET* lo usamos para decir al servidor que esa petición es para consultar datos que él ya tiene, como por ejemplo las fotos de perros. *POST* lo usamos para enviar nosotros datos al servidor. Si recordáis estos mismo métodos los podíamos definir para el método de envío de un formulario HTML que sirve para enviar datos al servidor. Existen otros métodos HTTP, por ejemplo, *PUT* y *PATCH* sirven para actualizar datos ya existentes en el servidor, y *DELETE* sirve para borrar datos.
 
  El método HTTP junto a la URL es lo que define la acción que queremos realizar en el servidor según la convención de REST. Aquí vemos algunos ejemplos de un API para manejar información de usuarios:
 - petición `GET` a la URL `/users`: el servidor devuelve un listado (array) de usuarios
@@ -124,11 +124,11 @@ En la página de SWAPI o en la que habéis creado en el ejercicio 2 inspecciona 
 
 ## LocalStorage
 
-Una característica muy interesante a la que podemos acceder con JavaScript es la posibilidad de guardar datos en el propio navegador. Esto se hace mediante el llamado LocalStorage o SessionStorage. El primero que permite almacenamiento permanente de datos, y el segundo solo para una sesión. Es decir, si cerramos la página se borrarán. En el curso solo vamos a explicar LocalStorage pero SessionStorage tiene un uso similar.
+Una característica muy interesante a la que podemos acceder con JavaScript es la posibilidad de guardar datos en el propio navegador. Esto se hace mediante el llamado LocalStorage o SessionStorage. El primero que permite almacenamiento permanente de datos, y el segundo solo para una sesión. Es decir, si cerramos la página se borrarán. En el curso solo vamos a explicar localStorage pero sessionStorage tiene un uso similar.
 
-Hasta ahora, la única fuente de datos que hemos usado es un API en el servidor, pero con LocalStorage podemos almacenar también datos en local, es decir, en el propio navegador del usuario. De esta forma, vamos a poder guardar algunos datos interesantes solo para este usuario y que mejore su experiencia en nuestra página. Algo habitual es *cachear* datos del servidor, es decir, guardar algunos datos que obtenemos del servidor de forma que la próxima vez que lo necesitemos no tengamos que hacer una petición sino recogerlo directamente del almacenamiento local. Por ejemplo, en mi web de perros tengo un listado de las razas que obtengo del servidor y lo guardo en local porque es algo que nunca va a cambiar. De esta forma, la próxima vez que entre en la página voy a comprobar si tengo guardada información en local y si la hay así me evito una petición al servidor y la página va más rápido.
+Hasta ahora, la única fuente de datos que hemos usado es un API en el servidor, pero con localStorage podemos almacenar también datos en local, es decir, en el propio navegador del usuario. De esta forma, vamos a poder guardar algunos datos interesantes solo para este usuario y que mejore su experiencia en nuestra página. Algo habitual es *cachear* datos del servidor, es decir, guardar algunos datos que obtenemos del servidor de forma que la próxima vez que lo necesitemos no tengamos que hacer una petición sino recogerlo directamente del almacenamiento local. Por ejemplo, en mi web de perros tengo un listado de las razas que obtengo del servidor y lo guardo en local porque es algo que nunca va a cambiar. De esta forma, la próxima vez que entre en la página voy a comprobar si tengo guardada información en local y si la hay así me evito una petición al servidor y la página va más rápido.
 
-Usar el LocalStorage es bastante sencillo: solo necesitamos un nombre (clave) y unos datos (valor).
+Usar el localStorage es bastante sencillo: solo necesitamos un nombre (clave) y unos datos (valor).
 
 Para guardar datos es tan sencillo como usar `setItem` cuyo primer parámetro es el nombre que le ponemos a los datos y luego los datos que queremos guardar, que pueden ser de cualquier tipo primitivo (cadena, número, booleano). Por ejemplo:
 
@@ -150,11 +150,11 @@ localStorage.removeItem('name');
 ```
 Podemos ver los datos guardados usando las devtools en la pestaña "Application":
 
-![DevTools LocalStorage](assets/images/2-10/devtools-localstorage.png)
+![DevTools localStorage](assets/images/2-10/devtools-localstorage.png)
 
 ### Guardando arrays y objetos
 
-En LocalStorage solo podemos guardar datos de tipo primitivo (número, cadena, booleano). ¿Qué pasa si queremos guardar un array o un objeto? Pues necesitamos convertirlo a una cadena para poder guardarlo.
+En localStorage solo podemos guardar datos de tipo primitivo (número, cadena, booleano). ¿Qué pasa si queremos guardar un array o un objeto? Pues necesitamos convertirlo a una cadena para poder guardarlo.
 
 Para eso existe una función en JavaScript `JSON.stringify` que convierte un objeto literal o un array en una cadena. Para realizar la acción contraria, es decir, pasar de una cadena que tiene la información de un objeto a un objeto JavaScript usamos `JSON.parse`. Vamos a ver un ejemplo:
 
@@ -216,7 +216,7 @@ Para el proyecto anterior de la búsqueda en SWAPI, incluye el linter y corrige 
 
 **Dame gifs de gatetes**
 
-Hay una api genial [thecatapi.com](https://thecatapi.com/docs.html) de imagenes de gatetes, como estos seres son muy particulares y nos se juntan con cualquiera tenemos que autenticarnos siempre que hacemos una petición. Pero es una autenticación sencilla, solo tenemos que registrarnos en la web, y nos mandarán al email un *token* que nos identifica, y que tendremos que añadir en todas las peticiones que hagamos.
+Hay una api genial [thecatapi.com](https://thecatapi.com/docs.html) de imágenes de gatetes, como estos seres son muy particulares y nos se juntan con cualquiera tenemos que autenticarnos siempre que hacemos una petición. Pero es una autenticación sencilla, solo tenemos que registrarnos en la web, y nos mandarán al email un *token* que nos identifica, y que tendremos que añadir en todas las peticiones que hagamos.
 
 En Adalab ya nos hemos registrado y tenemos nuestro *token*. Te dejamos [un ejemplo](https://codepen.io/adalab/pen/YJVZGJ), a partir del cual hay que:
 
@@ -251,6 +251,22 @@ fetch('https://api.github.com/repositories?since=asdf')
 Puede *trastear* este código:
 - si arreglas el parámetro `since` de la url verás como se ejecuta el segundo `then()`
 - si eliminas la excepción se ejecutará el segundo `then()` auque el estado de la respuesta no sea de tipo 200.
+
+## Resumen
+
+En esta sesión hemos profundizado en el uso de las **APIs**, conocido el protocolo **HTTP** que estandariza la comunicación entre cliente y servidor en la web estableciendo un formato para los mensajes con la siguiente estructura:
+- **Metodo HTTP** para las llamadas (POST, GET, PUT, PATCH, DELETE, OPTIONS...).
+- **Código de respuesta** (1xx, 2xx, 3xx, 4xx, 5xx) para las respuestas.
+- **Cabeceras** para incluir metadatos.
+- **Cuerpo del mensaje**.
+
+Pudiendo consultar todos estos datos para `debuggear` en la pestaña *Network* de las indispensables *DevTools* del navegador.
+
+Como bonus podemos gestionar con `fetch` las respuestas con código diferente a 2xx, mediante la propiedad `ok` presente en la respuesta.
+
+También hemos visto como **cachear** datos en el navegador de la usuaria gracias al uso de **localStorage**.
+
+Y como las buenas prácticas marcan la diferencia, a partir de ahora tendremos un código homogeneo y con menos errores gracias al uso de un **linter**.
 
 ## Recursos externos
 
