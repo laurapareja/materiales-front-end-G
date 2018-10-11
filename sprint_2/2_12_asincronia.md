@@ -5,6 +5,7 @@
 - [EJERCICIO 1](#ejercicio-1)
 - [EJERCICIO 2](#ejercicio-2)
 - [EJERCICIO 3](#ejercicio-3)
+- [EJERCICIO 3](#ejercicio-3-1)
 - [EJERCICIO 4](#ejercicio-4)
 - [EJERCICIO 5](#ejercicio-5)
 - [EJERCICIO 6](#ejercicio-6)
@@ -87,7 +88,7 @@ Otros ejemplos de uso podrían ser cerrar la sesión de una web transcurridos X 
 En JavaScript podemos crear código para que se ejecute cada determinado tiempo, para ello utilizamos `setInterval()`.
 
 Esta función recibe 2 parámetros:
-- la función a ejecutar cada cierto tiempo (sin paréntesis como hacíamos en el addEventListener)
+- la función a ejecutar cada cierto tiempo (sin paréntesis como hacíamos en addEventListener, ya que no la ejecutamos nosotras)
 - el tiempo en milisegundos
 
 Vamos a ver un ejemplo: un contador que se incrementa cada segundo y se muestra en pantalla.
@@ -98,11 +99,11 @@ Vamos a ver un ejemplo: un contador que se incrementa cada segundo y se muestra 
 En el HTML tenemos un párrafo con la clase `time`.
 
 ```javascript
-var counter = 0;
+let counter = 0;
 
-function incrementAndShowCounter(){
+const incrementAndShowCounter = () => {
   counter++;
-  var time = document.querySelector('.time');
+  const time = document.querySelector('.time');
   time.innerHTML = counter;
 }
 
@@ -119,10 +120,16 @@ Para obtener más información acerca de `setInterval`, consultaremos la documen
 
 * * *
 #### EJERCICIO 2
+En el ejemplo anterior pasamos a `setInterval` la función `incrementAndShowCounter` como argumento, sin ejecutarla. ¿Sabria decir como llamamos comúnmente a este tipo de funciones en JavaScript?
+
+* * *
+
+#### EJERCICIO 3
 
 Realizar un temporizador que empiece en 0 y cada 2 segundos se incremente.
 
 * * *
+
 #### EJERCICIO 3
 
 Todos sabemos lo que pasó en Canal Sur hace unos años, en mitad de las campanadas pusieron anuncios y aguaron la noche a millones de personas. Para estar preparados, vamos a crear un contador de uvas. Este contador empezará en 0 y cada segundo incrementará en 1, así hasta 12, en ese momento terminará la cuenta y se dejará de contar más.
@@ -132,12 +139,12 @@ La cuenta se mostrará en la pantalla con números y si lo deseas puedes añadir
 > PISTA: la función se puede seguir ejecutando con setInterval pero para que se pare en 12 basta con dejar de pintar en el HTML en el momento adecuado.
 
 * * *
+
 #### EJERCICIO 4
 
 Vamos a realizar el típico mensaje que aparece en un blog con la información de hace cuanto se escribió un post. Por ejemplo, con el texto: "escrito hace 30 segundos". Al principio escribiremos en pantalla "escrito hace 1 segundo" e iremos aumentando el número de segundos. Cuando lleve más de 59 segundos queremos que ponga "escrito hace 1 min".
 
 * * *
-
 
 ### setTimeout
 
@@ -151,15 +158,15 @@ Por ejemplo, vamos a crear un texto de aviso de que algo se ha guardado correcta
 En HTML sólo tenemos un párrafo con el mensaje de confirmación y la clase `msg`.
 
 ```javascript
-function removeMsg(){
-  var msg = document.querySelector('.msg');
+const removeMsg = () => {
+  const msg = document.querySelector('.msg');
   msg.innerHTML = '';
 }
 
-setTimeout(removeMsg, 3000);
+setTimeout(removeMsg, 6000);
 ```
 
-En JavaScript definimos la función que elimina el mensaje de la pantalla. Luego llamamos a `setTimeout` para que ejecute esa función pasados 3 segundos.
+En JavaScript definimos la función que elimina el mensaje de la pantalla. Luego llamamos a `setTimeout` para que ejecute esa función pasados 6 segundos.
 
 Podéis [jugar con este ejemplo el Codepen](https://codepen.io/adalab/pen/EbMeOM).
 
@@ -183,18 +190,19 @@ Vamos a partir del ejemplo anterior del contador que se actualizaba cada segundo
 
 ```javascript
 
-var counter = 0;
+let counter = 0;
+let temp;
 
-function incrementAndShowCounter(){
+const incrementAndShowCounter = () => {
   counter++;
-  var time = document.querySelector('.time');
+  const time = document.querySelector('.time');
   time.innerHTML = counter;
   if(counter === 10){
     clearInterval(temp);
   }
 }
 
-var temp = setInterval(incrementAndShowCounter, 1000);
+temp = setInterval(incrementAndShowCounter, 1000);
 ```
 Hemos hecho sólo un par de cambios en JavaScript. En primer lugar hemos guardado el identificador del temporizador en una variable `temp` para que luego sea accesible desde la función. El segundo cambio es que ahora en la función hacemos una comprobación y si el contador llega a 10 ejecutamos el `clearInterval` y la función deja de ejecutarse cada segundo.
 
@@ -215,3 +223,10 @@ Crear un cronómetro que vaya aumentando en segundos y cuando se pulse el botón
 Crear una página con un botón que transcurridos 10 segundos te pregunte: "¿te has dormido?". Si pulsas en el botón la cuenta volverá a cero y otra vez, si transcurren 10 segundos sin pulsar volverá a preguntar de nuevo "¿te has dormido?"
 
 * * *
+
+## Resumen
+
+En esta lección hemos profundizado un poco más en el concepto de **asíncronia** y hemos conocido los temporizadores:
+
+- **`setInterlval`** nos permite ejecutar una función cada x milisegundos, y puede ser cancelada con **`clearInterval`**
+- **`setTimeout`** nos permite ejecutar una función pasados x milisegundos, y puede ser cancelada con **`cancelTimeOut`**
