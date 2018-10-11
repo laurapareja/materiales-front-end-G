@@ -347,7 +347,7 @@ request.send();
 
 En esta sesión hemos visto la técnología asíncrona **AJAX** que nos permite comunicarnos con el servidor usando **`XMLHttpRequest`** basado en **callbacks** o **`fetch`** basado en **promesas**.
 
-Hemos introducido el concepto **API** (url para consultar datos de un servicio) y como comunmente estas nos devuelven una respuesta que se puede parsear a **JSON**.
+Hemos introducido el concepto **API** (url para consultar datos de un servicio), como comunmente estas nos devuelven una respuesta que se puede parsear a **JSON**. Y lo importante de leer la documentación.
 
 Hemos profundizado en el uso de `fetch` y la promesa que devuelve, viendo como podemos encadenarle un **`then`** que recibe una función como argumento, esta:
 - se ejecutará cuando la promesa se cumpla.
