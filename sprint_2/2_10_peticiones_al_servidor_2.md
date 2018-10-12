@@ -15,7 +15,7 @@
 
 En esta sesión vamos a tratar 2 temas diferentes: 1) las APIs, concepto que ya conocemos, pero vamos a entender un poco mejor cómo funcionan; y 2) el linter, una herramienta que nos ayuda a mejorar nuestro código JavaScript.
 
-*API* viene de *Application Programming Interface*, es decir, es una interfaz que está pensada para ser accedida desde una aplicación de código. Dicho de otra forma, el servidor define una forma de pedirle datos, pensada para que sea una aplicación (un programa) quien los pida y él sepa enviárselos. Hay otra interfaces, como una página web, que están pensadas para ser usadas por personas. Pero las APIs están pensadas para ser usadas desde la programación, en nuestro caso desde nuestro programa JavaScript. Durante esta sesión vamos a ver varios ejemplos de APIs.
+*API* viene de *Application Programming Interface*, es decir, es una interfaz que está pensada para ser accedida desde una aplicación de código. Dicho de otra forma, el servidor define una forma de pedirle datos, pensada para que sea una aplicación (un programa) quien los pida y él sepa enviárselos. Hay otras interfaces, como una página web, que están pensadas para ser usadas por personas. Pero las APIs están pensadas para ser usadas desde la programación, en nuestro caso desde nuestro programa JavaScript. Durante esta sesión vamos a ver varios ejemplos de APIs.
 
 Un *linter* es una herramienta que nos sirve para prevenir errores y nos ayuda a mantener un estilo homogéneo en nuestro código. Veremos cómo usar un linter para JavaScript llamado *ESLint* y cómo integrar los mensajes que nos manda en nuestro editor de código, en este caso Code.
 
@@ -30,7 +30,7 @@ Usar un linter en nuestro proyecto nos sirve para que mientras desarrollamos un 
 
 Las APIs van a estar presentes en prácticamente cualquier desarrollo web que hagamos porque, al final de todo, es casi seguro que tengamos que enviar y recibir datos de un servidor. Si se ha diseñado bien, en la interfaz de comunicación de ambos (frontend y backend) debería haber un API.
 
-Utilizaremos un linter en un entorno de trabajo donde varias personas estamos trabajando sobre una base de código y/o queramos mantener unas reglas de estilo concretas (cuando trabajamos en solitario sigue teniendo sentido usarlo). Por ejemplo, qué indentación de código usar o el uso de los punto y coma.
+Utilizaremos un linter en un entorno de trabajo donde una o varias personas estamos trabajando sobre una base de código y/o queramos mantener unas reglas de estilo concretas (cuando trabajamos en solitario sigue teniendo sentido usarlo). Por ejemplo, qué indentación de código usar o el uso de los punto y coma.
 
 
 ## El mundo de las APIs
@@ -47,7 +47,7 @@ La forma de funcionar de HTTP es mediante **petición y respuesta**. Un ordenado
 
 La **petición**, como hemos visto en los ejemplos de la sesión anterior, siempre lleva asociada una URL que indica dónde está el servidor y el tipo de datos que le pedimos. Por ejemplo la URL `https://api.rand.fun/text/password?length=20` de una petición a catAPI nos muestra que
 - el servidor del API está en `https://api.rand.fun/` (se le llama normalmente *URL base*)
-- el servicio (tipo de datos que pedimos) al que accedemos es `text/password` y nos da una cadena aleatoria (piedra, papel, tijera, lagarto o spok)
+- el servicio (tipo de datos que pedimos) al que accedemos es `text/password` y, en este caso, nos da una cadena aleatoria como contraseña
 - los parámetros `?length=20` (también llamado *querystring*) indican que la longitud de la cadena que pedimos es 20
 
 La petición HTTP también tiene asociada un *método* que indica la *intención* con la que hacemos la petición. Los métodos (o verbos) más usados son *GET* y *POST*. *GET* lo usamos para decir al servidor que esa petición es para consultar datos que él ya tiene, como por ejemplo las fotos de perros. *POST* lo usamos para enviar nosotros datos al servidor. Si recordáis estos mismo métodos los podíamos definir para el método de envío de un formulario HTML que sirve para enviar datos al servidor. Existen otros métodos HTTP, por ejemplo, *PUT* y *PATCH* sirven para actualizar datos ya existentes en el servidor, y *DELETE* sirve para borrar datos.
@@ -60,6 +60,7 @@ La petición HTTP también tiene asociada un *método* que indica la *intención
 Otra característica habitual de un API REST es que cuando accedo a un listado de cosas, si hay muchas, no me devuelva todas en la misma petición sino que me devuelve solo las primeras. A esto se le llama *paginación* y al hacer la petición recibiré solo *la primera página* de resultados, por ejemplo 10. Y tendré que añadir un parámetro a la *querystring* para recuperar el resto de página, por ejemplo, `?page=2`.
 
 * * *
+<a id="markdown-ejercicio-1" name="ejercicio-1"></a>
 #### EJERCICIO 1
 
 Vamos a explorar [un API abierto de información sobre el mundo Star Wars](https://swapi.co/). En esta página tenemos la documentación completa del API y un formulario que nos permite hacer peticiones a la URL que indiquemos. Identifica la siguiente información sobre SWAPI:
@@ -75,9 +76,10 @@ Vamos a explorar [un API abierto de información sobre el mundo Star Wars](https
 
 * * *
 
+<a id="markdown-ejercicio-2" name="ejercicio-2"></a>
 #### EJERCICIO 2
 
-Ahora que conocemos mejor el API de Star Wars vamos a hacer una sencilla web usándolo. En la web aparece una caja de texto donde escribimos el nombre de un personaje (o parte del nombre) y nuestra web muestra debajo un listado con los personajes que coinciden con la búsqueda indicando su nombre y género.
+Ahora que conocemos mejor el API de Star Wars vamos a hacer una sencilla web usándolo. En la web aparece una caja de texto donde escribimos el nombre de un personaje (o parte del nombre) y un botón, al hacer click, nuestra web muestra debajo un listado con los personajes que coinciden con la búsqueda indicando su nombre y género.
 
 * * *
 
@@ -111,6 +113,7 @@ Otra herramienta fundamental son las propias DevTools del navegador en la pesta�
 
 * * *
 
+<a id="markdown-ejercicio-3" name="ejercicio-3"></a>
 #### EJERCICIO 3
 
 En la página de SWAPI o en la que habéis creado en el ejercicio 2 inspecciona las peticiones que has hecho al servidor. Al abrir la pestaña Network aparece vacía así que comienza a hacer peticiones con la pestaña abierta. Con la información que obtienes de esta pestaña averigua:
@@ -122,9 +125,9 @@ En la página de SWAPI o en la que habéis creado en el ejercicio 2 inspecciona 
 
 * * *
 
-## LocalStorage
+## LocalStorage
 
-Una característica muy interesante a la que podemos acceder con JavaScript es la posibilidad de guardar datos en el propio navegador. Esto se hace mediante el llamado LocalStorage o SessionStorage. El primero que permite almacenamiento permanente de datos, y el segundo solo para una sesión. Es decir, si cerramos la página se borrarán. En el curso solo vamos a explicar localStorage pero sessionStorage tiene un uso similar.
+Una característica muy interesante a la que podemos acceder con JavaScript es la posibilidad de guardar datos en el propio navegador. Esto se hace mediante el llamado **LocalStorage** o **SessionStorage**. El primero que permite almacenamiento permanente de datos, y el segundo solo para una sesión. Es decir, si cerramos la página se borrarán. En el curso solo vamos a explicar localStorage pero sessionStorage tiene un uso similar.
 
 Hasta ahora, la única fuente de datos que hemos usado es un API en el servidor, pero con localStorage podemos almacenar también datos en local, es decir, en el propio navegador del usuario. De esta forma, vamos a poder guardar algunos datos interesantes solo para este usuario y que mejore su experiencia en nuestra página. Algo habitual es *cachear* datos del servidor, es decir, guardar algunos datos que obtenemos del servidor de forma que la próxima vez que lo necesitemos no tengamos que hacer una petición sino recogerlo directamente del almacenamiento local. Por ejemplo, en mi web de perros tengo un listado de las razas que obtengo del servidor y lo guardo en local porque es algo que nunca va a cambiar. De esta forma, la próxima vez que entre en la página voy a comprobar si tengo guardada información en local y si la hay así me evito una petición al servidor y la página va más rápido.
 
@@ -148,7 +151,7 @@ Para borrar los datos es tan sencillo como usar `removeItem` y pasar el nombre q
 ```js
 localStorage.removeItem('name');
 ```
-Podemos ver los datos guardados usando las devtools en la pestaña "Application":
+Podemos ver los datos guardados usando las devTools en la pestaña "Application":
 
 ![DevTools localStorage](assets/images/2-10/devtools-localstorage.png)
 
@@ -174,6 +177,7 @@ console.log(savedTasks.length); //4
 
 * * *
 
+<a id="markdown-ejercicio-4" name="ejercicio-4"></a>
 #### EJERCICIO 4
 
 Sobre el ejercicio 2 vamos a *cachear* las búsquedas al servidor. De forma que cuando a busquemos una cadena a través del campo de búsqueda, primero busque en localStorage si ya tenemos un resultado en local para esa cadena. Si no lo hay se pide al servidor y luego se guarda en `localStorage` usando como clave el texto de la búsqueda; si al buscarlo en `localStorage` lo encontramos pues le enseñamos el resultado directamente al usuario y nos evitamos una petición al servidor.
@@ -186,7 +190,7 @@ Un linter es una herramienta que nos ayuda a prevenir errores y tener un formato
 
 En un linter definimos una serie de reglas en un fichero de configuración que son las que queremos comprobar en el código. Luego el programador que usa un linter ejecutará esas reglas, normalmente el propio editor (Code) lo hace por ti, y si no se cumplen te mostrará un error o un warning (aviso).
 
-Hemos creado una configuración específica de linter para vosotras, adalabers, porque queremos que os ayude a detectar algunos errores y a escribir código con un estilo correcto. Algunas de estas reglas son:
+Hemos creado una configuración específica de linter para vosotras, Adalabers, porque queremos que os ayude a detectar algunos errores y a escribir código con un estilo correcto. Algunas de estas reglas son:
 - da error si no se pone `;` al final de una sentencia
 - da error si no se usa indentación correcta
 - da warning si dejáis `console.log()` en el código
@@ -202,6 +206,8 @@ Para usarlo en un proyecto, tenéis que
 A veces nos resultará molesto tener algunos errores o warnings en el editor porque, por ejemplo, queremos usar un `console.log` para algo. Podemos deshabilitar el uso del linter en una línea concreta usando [las instrucciones de configuración](https://eslint.org/docs/user-guide/configuring).
 
 * * *
+
+<a id="markdown-ejercicio-5" name="ejercicio-5"></a>
 #### EJERCICIO 5
 
 Para el proyecto anterior de la búsqueda en SWAPI, incluye el linter y corrige todos los errores detectados.
@@ -212,11 +218,12 @@ Para el proyecto anterior de la búsqueda en SWAPI, incluye el linter y corrige 
 
 * * *
 
+<a id="markdown-ejercicio-6-bonus" name="ejercicio-6-bonus"></a>
 #### EJERCICIO 6 BONUS
 
 **Dame gifs de gatetes**
 
-Hay una api genial [thecatapi.com](https://thecatapi.com/docs.html) de imágenes de gatetes, como estos seres son muy particulares y nos se juntan con cualquiera tenemos que autenticarnos siempre que hacemos una petición. Pero es una autenticación sencilla, solo tenemos que registrarnos en la web, y nos mandarán al email un *token* que nos identifica, y que tendremos que añadir en todas las peticiones que hagamos.
+Hay una api genial [thecatapi.com](https://thecatapi.com/docs.html) de imágenes de gatetes, como estos seres son muy particulares y no se juntan con cualquiera tenemos que autenticarnos siempre que hacemos una petición. Pero es una autenticación sencilla, solo tenemos que registrarnos en la web, y nos mandarán al email un *token* que nos identifica, y que tendremos que añadir en todas las peticiones que hagamos.
 
 En Adalab ya nos hemos registrado y tenemos nuestro *token*. Te dejamos [un ejemplo](https://codepen.io/adalab/pen/YJVZGJ), a partir del cual hay que:
 
@@ -248,14 +255,14 @@ fetch('https://api.github.com/repositories?since=asdf')
   .catch(err => console.log('error', err));
 ```
 
-Puede *trastear* este código:
+Puedes *trastear* este código:
 - si arreglas el parámetro `since` de la url verás como se ejecuta el segundo `then()`
-- si eliminas la excepción se ejecutará el segundo `then()` auque el estado de la respuesta no sea de tipo 200.
+- si eliminas la excepción se ejecutará el segundo `then()` aunque el estado de la respuesta no sea de tipo 200.
 
 ## Resumen
 
 En esta sesión hemos profundizado en el uso de las **APIs**, conocido el protocolo **HTTP** que estandariza la comunicación entre cliente y servidor en la web estableciendo un formato para los mensajes con la siguiente estructura:
-- **Metodo HTTP** para las llamadas (POST, GET, PUT, PATCH, DELETE, OPTIONS...).
+- **Método HTTP** para las llamadas (POST, GET, PUT, PATCH, DELETE, OPTIONS...).
 - **Código de respuesta** (1xx, 2xx, 3xx, 4xx, 5xx) para las respuestas.
 - **Cabeceras** para incluir metadatos.
 - **Cuerpo del mensaje**.

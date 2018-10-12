@@ -87,6 +87,7 @@ Entonces, sobre una promesa podemos hacer un `.then()` pero ¿para qué? Para po
 Tenéis el código del ejemplo ([en este codepen](https://codepen.io/adalab/pen/qJrLxJ)).
 
 * * *
+<a id="markdown-ejercicio-1" name="ejercicio-1"></a>
 #### EJERCICIO 1
 
 **Numero aleatorio**
@@ -135,6 +136,7 @@ Podéis jugar con [este ejemplo en Codepen](https://codepen.io/adalab/pen/oqQNvK
 > **Nota**: Cuando recogemos un elemento de HTML podemos leer y modificar algunos de sus atributos directamente, como `src` y `alt` de la etiqueta `img` ¡Genial!
 
 * * *
+<a id="markdown-ejercicio-2" name="ejercicio-2"></a>
 #### EJERCICIO 2
 
 **Chihuahas, chihuahas por todas partes**
@@ -146,6 +148,7 @@ a) Vamos a modificar el ejemplo anterior para que las fotos de nuestra página s
 b) Vamos a encapsular toda la lógica para crear una petición en una función. Añadimos un botón a la página con el título 'Enséñame otro Chihuahua' de forma que al pulsarlo se haga otra petición al servidor de una imagen aleatoria y aparezca una nueva imagen de Chihuaua.
 
 * * *
+<a id="markdown-ejercicio-3" name="ejercicio-3"></a>
 #### EJERCICIO 3
 
 Ahora vamos a explorar un nuevo API: [el API de usuarios de GitHub](https://developer.github.com/v3/users/). La URL de este API es `https://api.github.com/users/{username}`, donde `{username}` es el nombre del usuario en GitHub. Por ejemplo, aquí tenéis la URL para obtener información del usuario de Isra `https://api.github.com/users/gootyfer`. Si ponéis esta URL en una nueva pestaña del navegador podréis observar qué datos nos devuelve el API.
@@ -208,11 +211,12 @@ Como hemos indicado antes, es importante que al final de los `then()` devolvamos
 
 ***
 
+<a id="markdown-ejercicio-4" name="ejercicio-4"></a>
 #### EJERCICIO 4
 
 **Listado de repos de una organización en Github**
 
-Vamos a seguir explorando el API de GitHub explorando la parte del [API para acceder a la info sobre organizaciones](https://developer.github.com/v3/orgs/). La URL de este API es `https://api.github.com/orgs/orgname`, donde `orgname` es el nombre de la organización en GitHub. Por ejemplo, aquí tenéis la URL para obtener información de la organización Adalab `https://api.github.com/orgs/Adalab`. Si ponéis esta URL en una nueva pestaña del navegador podréis observar qué datos nos devuelve el API.
+Vamos a seguir explorando el API de GitHub explorando la parte del [API para acceder a la info sobre organizaciones](https://developer.github.com/v3/orgs/). La URL de este API es `https://api.github.com/orgs/{orgname}`, donde `{orgname}` es el nombre de la organización en GitHub. Por ejemplo, aquí tenéis la URL para obtener información de la organización Adalab `https://api.github.com/orgs/Adalab`. Si ponéis esta URL en una nueva pestaña del navegador podréis observar qué datos nos devuelve el API.
 
 El objetivo de este ejercicio es mostrar en una web el listado completo de los repositorios de una organización que hay creados en GitHub. Por ejemplo, para Adalab, el resultado final debería ser similar a este:
 
@@ -227,6 +231,7 @@ Para ello vamos a hacer lo siguiente:
 
 * * *
 
+<a id="markdown-ejercicio-5" name="ejercicio-5"></a>
 #### EJERCICIO 5
 
 **La raza del perro**
@@ -242,7 +247,7 @@ Si has llegado hasta aquí te proponemos otro reto, intenta que la última funci
 
 ## Peticiones en paralelo
 
-Ya hemos visto la utilidad de tener peticiones encadenadas, en las que una petición depende de las anteriores. Ahora vamos por qué usar peticiones en paralelo, es decir, peticiones que se ejecutan a la vez para poder realizar alguna acción cuando todas se han completado.
+Ya hemos visto la utilidad de tener peticiones encadenadas, en las que una petición depende de las anteriores. Ahora vamos a ver por qué usar peticiones en paralelo, es decir, peticiones que se ejecutan a la vez para poder realizar alguna acción cuando todas se han completado.
 
 Para trabajar con varias promesas en paralelo usamos el método `Promise.all` que toma como parámetro un array de promesas y devuelve otra promesa que se resuelve cuando todas las del array se han resuelto. Por tanto, sobre el resultado podremos hacer un `then()` que recibe como parámetro un array con todos los resultados de las promesas anteriores, es decir, donde tendremos todos los `JSON` de la respuesta del servidor. [Veamos el ejemplo de codepen](https://codepen.io/adalab/pen/xpXGaG?editors=1010).
 
@@ -269,6 +274,7 @@ Finalmente recorremos el array que se encuentra en responses para ir pintando la
 
 ***
 
+<a id="markdown-ejercicio-6" name="ejercicio-6"></a>
 #### EJERCICIO 6
 
 **Pintando varias imágenes a la vez**
@@ -305,6 +311,7 @@ fetch('https://dog.ceo/api/breeds/list')
 
 Cuando usamos promesas podemos encadenar el final de los `then()` un `catch` que también recibe una función, que tiene como parámetro información del error que puede haber sucedido en cualquiera de los `then()` anteriores. En el ejemplo anterior, este error puede deberse, por ejemplo a que la usuaria haya perdido la conexión o que el servidor nos devuelva un JSON con una estructura que no esperábamos y lo parseemos mal.
 
+<a id="markdown-ejercicio-7-bonus" name="ejercicio-7-bonus"></a>
 #### EJERCICIO 7 BONUS
 
 **Cazando errores 1**
@@ -317,12 +324,12 @@ Vamos a ponerle un `catch` a nuestra promesa y a `loguear` el error.
 
 * * *
 
-Puede ser que trás este ejercicio no notes mucha diferencia entre el error que mostraba el navegador y nuestro `console.log`. Pero tener nuestros errores controlados es muy importante, aunque a día de hoy no vayamos a hacer nada más que `loguear` el error, ya tenemos el código preparado para en un futuro hacer otras cosas como:
+Puede ser que tras este ejercicio no notes mucha diferencia entre el error que mostraba el navegador y nuestro `console.log`. Pero tener nuestros errores controlados es muy importante, aunque a día de hoy no vayamos a hacer nada más que `loguear` el error, ya tenemos el código preparado para en un futuro hacer otras cosas como:
 - Mostrar feedback a la usuaria sobre lo que ha ocurrido.
 - Intentar realizar la petición de nuevo pasados unos segundos en caso de errores por falta de conexión.
-- Mandar información sobre el error a un servicio que loalmacene para después investigarlo.
+- Mandar información sobre el error a un servicio que lo almacene para después investigarlo.
 
-> **Nota**: los mensaje de error en la consola del navegador no solo nos indican errores en las promesas, aparecen cada vez que hacemos algo que no debemos, aunque a estas alturas ya debes haberte dado cuenta. A partir de ahora **NUNCA** deberías dejar un mensaje de error ignorado, aunque en tu mente sepas que es por una tontería y pienses solucionarlo más tarde. Los errores en JavaScript hacen que nuestro código sea muy fragil, y pueden hacer que toda una lógica se rompa.
+> **Nota**: los mensajes de error en la consola del navegador no solo nos indican errores en las promesas, aparecen cada vez que hacemos algo que no debemos, aunque a estas alturas ya debes haberte dado cuenta. A partir de ahora **NUNCA** deberías dejar un mensaje de error ignorado, aunque en tu mente sepas que es por una tontería y pienses solucionarlo más tarde. Los errores en JavaScript hacen que nuestro código sea muy frágil, y pueden hacer que toda una lógica se rompa.
 
 
 ### `XMLHttpRequest`
@@ -345,9 +352,9 @@ request.send();
 
 ## Resumen
 
-En esta sesión hemos visto la técnología asíncrona **AJAX** que nos permite comunicarnos con el servidor usando **`XMLHttpRequest`** basado en **callbacks** o **`fetch`** basado en **promesas**.
+En esta sesión hemos visto la tecnología asíncrona **AJAX** que nos permite comunicarnos con el servidor usando **`XMLHttpRequest`** basado en **callbacks** o **`fetch`** basado en **promesas**.
 
-Hemos introducido el concepto **API** (url para consultar datos de un servicio), como comunmente estas nos devuelven una respuesta que se puede parsear a **JSON**. Y lo importante de leer la documentación.
+Hemos introducido el concepto **API** (url para consultar datos de un servicio), como comúnmente estas nos devuelven una respuesta que se puede parsear a **JSON**. Y lo importante de leer la documentación.
 
 Hemos profundizado en el uso de `fetch` y la promesa que devuelve, viendo como podemos encadenarle un **`then`** que recibe una función como argumento, esta:
 - se ejecutará cuando la promesa se cumpla.
@@ -355,7 +362,7 @@ Hemos profundizado en el uso de `fetch` y la promesa que devuelve, viendo como p
 - puede devolver otra promesa, para continuar encadenando `then`s.
 - si esta promesa que devuelve no se resuelve y se rechaza por un error, podemos gestionarlo con `catch`
 
-Por lo tanto, gracias al funionamiento de las promesas podemos **encadenar llamadas al servidor**.
+Por lo tanto, gracias al funcionamiento de las promesas podemos **encadenar llamadas al servidor**.
 
 También hemos visto como realizar **llamadas en paralelo** utilizando **`Promise.all`**
 
