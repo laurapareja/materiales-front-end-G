@@ -43,6 +43,7 @@ En los videos que enlazamos a continuación, se explica de forma más detallada 
 - [Asincronía en JavaScript - Parte 2 - Event loop](https://www.youtube.com/watch?v=rgmej4Jx4WM)
 
 * * *
+<a id="markdown-ejercicio-1" name="ejercicio-1"></a>
 #### EJERCICIO 1
 
 Usando la herramienta [loupe](http://latentflip.com/loupe/?code=!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D) que se utiliza en el video (ver el vídeo), realizar en JavaScript las siguientes tareas para ver en qué orden se reproducen:
@@ -119,17 +120,21 @@ Para obtener más información acerca de `setInterval`, consultaremos la documen
 - [Documentación de setInterval en MDN](https://developer.mozilla.org/es/docs/Web/API/WindowTimers/setInterval)
 
 * * *
+<a id="markdown-ejercicio-2" name="ejercicio-2"></a>
 #### EJERCICIO 2
-En el ejemplo anterior pasamos a `setInterval` la función `incrementAndShowCounter` como argumento, sin ejecutarla. ¿Sabria decir como llamamos comúnmente a este tipo de funciones en JavaScript?
+
+En el ejemplo anterior pasamos a `setInterval` la función `incrementAndShowCounter` como argumento, sin ejecutarla. ¿Sabrías decir como llamamos comúnmente a este tipo de funciones en JavaScript?
 
 * * *
 
+<a id="markdown-ejercicio-3" name="ejercicio-3"></a>
 #### EJERCICIO 3
 
 Realizar un temporizador que empiece en 0 y cada 2 segundos se incremente.
 
 * * *
 
+<a id="markdown-ejercicio-4" name="ejercicio-4"></a>
 #### EJERCICIO 4
 
 Todos sabemos lo que pasó en Canal Sur hace unos años, en mitad de las campanadas pusieron anuncios y aguaron la noche a millones de personas. Para estar preparados, vamos a crear un contador de uvas. Este contador empezará en 0 y cada segundo incrementará en 1, así hasta 12, en ese momento terminará la cuenta y se dejará de contar más.
@@ -140,6 +145,7 @@ La cuenta se mostrará en la pantalla con números y si lo deseas puedes añadir
 
 * * *
 
+<a id="markdown-ejercicio-5" name="ejercicio-5"></a>
 #### EJERCICIO 5
 
 Vamos a realizar el típico mensaje que aparece en un blog con la información de hace cuanto se escribió un post. Por ejemplo, con el texto: "escrito hace 30 segundos". Al principio escribiremos en pantalla "escrito hace 1 segundo" e iremos aumentando el número de segundos. Cuando lleve más de 59 segundos queremos que ponga "escrito hace 1 min".
@@ -175,6 +181,7 @@ Para obtener más información acerca de `setTimeout()`, consultaremos la docume
 - [Documentación de setTimeout en MDN](https://developer.mozilla.org/es/docs/Web/API/WindowTimers/setTimeout)
 
 * * *
+<a id="markdown-ejercicio-6" name="ejercicio-6"></a>
 #### EJERCICIO 6
 
 Con JavaScript, crear un código para mostrar una ventana en nuestro navegador una vez transcurridos 15 segundos que ponga "su sesión ha expirado" (creada usando HTML y CSS).
@@ -213,11 +220,13 @@ Para obtener más información:
 - [clearTimeout](https://www.w3schools.com/jsref/met_win_cleartimeout.asp)
 
 * * *
+<a id="markdown-ejercicio-7" name="ejercicio-7"></a>
 #### EJERCICIO 7
 
 Crear un cronómetro que vaya aumentando en segundos y cuando se pulse el botón de parar deje de aumentar. Cuando pulsemos el de continuar, vuelva a empezar de nuevo.
 
 * * *
+<a id="markdown-ejercicio-8" name="ejercicio-8"></a>
 #### EJERCICIO 8
 
 Crear una página con un botón que transcurridos 10 segundos te pregunte: "¿te has dormido?". Si pulsas en el botón la cuenta volverá a cero y otra vez, si transcurren 10 segundos sin pulsar volverá a preguntar de nuevo "¿te has dormido?"
@@ -226,7 +235,7 @@ Crear una página con un botón que transcurridos 10 segundos te pregunte: "¿te
 
 ## Resumen
 
-En esta lección hemos profundizado un poco más en el concepto de **asíncronia** y hemos conocido los temporizadores:
+En esta lección hemos profundizado un poco más en el concepto de **asincronía** y hemos conocido los temporizadores:
 
-- **`setInterlval`** nos permite ejecutar una función cada x milisegundos, y puede ser cancelada con **`clearInterval`**
+- **`setInterval`** nos permite ejecutar una función cada x milisegundos, y puede ser cancelada con **`clearInterval`**
 - **`setTimeout`** nos permite ejecutar una función pasados x milisegundos, y puede ser cancelada con **`cancelTimeOut`**
