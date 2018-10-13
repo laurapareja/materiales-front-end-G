@@ -1,19 +1,16 @@
-# Control de versiones en equipo
+# Trabajo colaborativo en GIT
+<!-- TOC depthFrom:4 depthTo:4 updateOnSave:true withLinks:true -->
 
-<!-- TOC START min:4 max:4 link:true update:true -->
+- [Code review](#code-review)
 - [EJERCICIO 1](#ejercicio-1)
-- [EJERCICIO 2](#ejercicio-2)
-- [EJERCICIO 3](#ejercicio-3)
-- [EJERCICIO 4](#ejercicio-4)
-- [EJERCICIO 5](#ejercicio-5)
 
-<!-- TOC END -->
+<!-- /TOC -->
 
 ## Introducción
-Normalmente vamos a tener una versión de nuestro proyecto sobre la que vamos a querer aplicar modificaciones o ampliar características. Si trabajamos con git como hasta ahora, nuestro proyecto no se podrá tocar hasta que dichas modificaciones terminen. Para solucionar esta situación tenemos las ramas, que nos permiten afrontar desarrollos paralelos como nuevas características, tareas de mantenimiento o integrar un nuevo diseño.
+Normalmente vamos a tener una versión de nuestro proyecto sobre la que vamos a querer aplicar modificaciones o ampliar características. Si trabajamos con git como hasta ahora, nuestro proyecto no se podrá tocar hasta que dichas modificaciones terminen. Para solucionar esta situación vamos a ver cómo trabajar con las ramas para que nos permitan afrontar desarrollos paralelos como nuevas características, tareas de mantenimiento o integrar un nuevo diseño.
 
 ## ¿Para qué sirve lo que vamos a ver en esta sesión?
-Una característica de git (también de otros sistema de control de versiones) es la posibilidad de ramificar el proyecto, permitiendo tener una versión principal y versiones paralelas donde aplicar nuevas secciones o características o probar funcionalidades. De esta manera si hay que hacer un pequeño cambio no tenemos que esperar a que nuestra nueva funcionalidad o sección esté acabada. Tendremos varias versiones, ramas, una donde mantener nuestro proyecto y colocar estos pequeños ajustes, y otra(s) donde realizar trabajos paralelos.
+Una característica de git (también de otros sistema de control de versiones) es la posibilidad de ramificar el proyecto, **permitiendo tener una versión principal y versiones paralelas donde aplicar nuevas secciones o características, o probar funcionalidades**. De esta manera si hay que hacer un pequeño cambio no tenemos que esperar a que nuestra nueva funcionalidad o sección esté acabada; tendremos varias versiones, ramas, una donde mantener nuestro proyecto y colocar estos pequeños ajustes, y otra(s) donde realizar trabajos paralelos.
 
 ## ¿En qué casos se utiliza?
 
@@ -29,148 +26,6 @@ Tenemos una versión de nuestro proyecto y:
 * Queremos mantener varias versiones de nuestro proyecto, la de desarrollo, la de producción y un histórico versiones completas
 * Varios equipos van a desarrollar diferentes funcionalidades sobre nuestro proyecto
 
-## Ramas
-Las ramas nos permiten crear una línea paralela de desarrollo que luego se integrará o no en la línea principal:
-
-![Trabajo sin ramas y trabajo con ramas](assets/images/2-6/trabajo-en-ramas.png)
-
-Cuando iniciamos un repositorio git se crea una primera rama, y se llama `master` por convención. Hasta ahora hemos trabajado en esa rama.
-
-Vamos a ver el trabajo en ramas a través de un ejemplo, como un mini proyecto de grupo, porque al fin y al cabo, git va de trabajar en grupo:
-
-* * *
-#### EJERCICIO 1
-
-1. Vamos crear un repositorio por pareja, donde ambas debéis tener acceso al repositorio (la que lo crea debe dar acceso al usuario de GitHub de la otra)
-2. Crearemos una primera versión de nuestra web (solo en HTML) que tendrá:
-	1. Un `<header>` con un `<h1>` con el nombre del grupo
-	2. Un `<main>` con dos secciones:
-		1. `<section class="motivacion"></section>`
-		2. `<section class="contenido"></section>`
-	3. Un `<footer>` con un `<p>` con el texto: "Maquetado en grupo en Adalab"
-3. Lo subiremos a GitHub
-
-Nos tiene que quedar algo así:
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Grupo nombre-de-grupo</title>
-</head>
-<body>
-	<header>
-		<h1>Grupo nombre-de-grupo</h1>
-	</header>
-	<main>
-		<section class="motivacion"></section>
-		<section class="contenido"></section>
-	</main>
-	<footer>
-		<p>Maquetado en grupo en Adalab</p>
-	</footer>
-</body>
-</html>
-```
-* * *
-
-### Creando ramas
-Para crear ramas escribimos `git branch nombre-de-la-rama` y nos movemos a ella con `git checkout nombre-de-la-rama`.
-
-Tenemos un atajo para crear la rama y cambiarnos a ella directamente
-```
-git checkout -b nombre-de-la-rama
-```
-
-En cualquier caso, si queremos movernos de una rama a otra usaremos `git checkout nombre-de-la-rama`, de esta manera podemos movernos a nuestra nueva rama o volver a `master` en cualquier momento.
-
-Añadir archivos y crear un commit funciona igual pero cuando queramos hacer un push usaremos:
-```
-git push -u origin nombre-de-la-rama
-```
-
-La primera vez usaremos el git push con `-u`.
-
-* * *
-#### EJERCICIO 2
-
-1. Vamos a crear una rama `footer`, a movernos a ella y a modificar un poco nuestro proyecto. Añadiremos a nuestro footer el enlace a la web de Adalab, quedando así:
-```html
-<footer>
-	<p>Maquetado en grupo en <a href="http://adalab.es">Adalab</a></p>
-	</footer>
-```
-2. Como siempre, añadimos, commiteamos y hacemos push, esta vez usando `git push -u origin footer`.
-3. Si ahora cambiamos a la rama `master` veremos que permanece como la dejamos y que el cambio del enlace solo está hecho en nuestra rama `footer`.
-
-![Resultado de los ejercicios 1 y 2](assets/images/2-6/ramas-1.png)
-* * *
-
-### Fusionar ramas
-Una vez que hemos terminado el trabajo en nuestra nueva rama y lo hemos subido al servidor remoto querremos aplicar estos cambios en nuestra rama principal, `master`.
-
-Para ello nos vamos a la rama destino (en este caso `master`) con `git checkout master`,  y escribiremos:
-```
-git merge nombre-de-la-rama
-```
-Esto nos mezclará nuestra versión local de la rama `nombre-de-la-rama` con la rama donde estemos, en este caso, `master`. Si todo va bien nos mezclará las ramas, creará un commit automático y si hacemos un `git status` nos dirá que solo queda hacer un `git push origin master` y ya.
-
-	NOTA:
-	Es importante haber hecho un `git pull` en la rama que vamos a fusionar, en este caso `nombre-de-la-rama` antes de empezar el proceso de fusión para asegurarnos de que tenemos la última versión.
-
-
-* * *
-#### EJERCICIO 3
-
-Vamos a fusionar nuestra rama `footer` con `master` para que nuestra web tenga el enlace que hemos añadido anteriormente.
-Para ello:
-1. Nos movemos a la rama `footer`
-2. Comprobamos que está correcto y tenemos la última versión
-3. Nos movemos a la rama `master` (sí, es super buena idea asegurarnos de que también tenemos la última versión)
-4. Hacermos un merge de la rama `footer`
-5. Resolvemos los conflictos si los hay
-6. Comprobamos que los cambios está hechos
-7. Y subimos al repositorio remoto
-
-```html
-<footer>
-	<p>Maquetado en grupo en <a href="http://adalab.es">Adalab</a></p>
-</footer>
-```
-
-![Resultado del ejercicio 3](assets/images/2-6/ramas-2.png)
-
-* * *
-
-#### EJERCICIO 4
-
-Ahora que hemos hecho un primer acercamiento a las ramas, vamos a hacer lo mismo pero cada miembro de la pareja por separado. Cada una estará encargada de un trabajo diferente que tendrá que realizar en una rama y posteriormente mezclar en la rama principal.
-
-![Resultado del ejercicio 4](assets/images/2-6/ramas-3.png)
-
-Como refleja la imagen vamos a hacer dos ampliaciones de contenido:
-1. una alumna de cada pareja tiene que añadir el contenido de la sección con una frase motivadora
-2. la otra alumna de la pareja tiene que añadir el contenido de la sección con un título y un pequeño párrafo
-
-**Sección con frase motivadora**
-```html
-<section class="motivacion">
-	<h2>Frase súper motivadora, ¡a tope!</h2>
-</section>
-```
-
-**Sección con frase y título**
-```html
-<section class="contenido">
-	<h2>Contenido normal</h2>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-</section>
-```
-
-Ahora realmente da igual el orden, la que acabe su trabajo, que suba su rama al repositorio remoto, y siga los pasos para fusionarlo con master. **¡A por ello!**
-
-* * *
-
 ## Flujo de trabajo con ramas
 Vale, y ahora ¿cómo trabajamos con las ramas? ¿Hacemos las que necesitemos? ¿Las llamamos como queramos? ¿Sin orden? No, claro, que no: sin orden solo hay caos.
 
@@ -179,25 +34,133 @@ Vamos a tener dos tipos de ramas, las de largo recorrido o permanentes y las de 
 ![Flujo de trabajo](assets/images/2-6/flujo-2.png)
 
 ### Ramas permanentes
-Los equipos suelen tener una o dos ramas permanentes, una donde está la versión estable de nuestro proyecto (suele ser la rama `master`), la que vamos a subir a nuestro servidor (o a GitHub Pages) y, quizás, una intermedia donde ir fusionando los diferentes cambios/mejoras (nombres comunes para esta rama son `dev`, `develop`...). Esta segunda rama no siempre tiene código estable, pero cuando lo tiene la fusionaremos hacia `master`.
+Los equipos suelen tener una o dos ramas permanentes, una donde está la versión estable de nuestro proyecto (suele ser la rama `master`), la que vamos a subir a nuestro servidor (o a GitHub Pages) y una intermedia donde ir fusionando los diferentes cambios/mejoras (nombres comunes para esta rama son `dev`, `develop`...). Esta segunda rama no siempre tiene código estable, pero **solo cuando lo tiene la fusionaremos hacia `master`**.
 
-Por ahora vamos a tener sólo una permanente: `master`.
+
+En el curso vamos a tener dos ramas permanentes: `master` y `dev`. Si se trata de un ejercicio pequeño podemos usar solo `master`.
 
 ### Ramas puntuales
 Cuando tenemos una tarea nueva (modificar o crear contenido, por ejemplo) crearemos una nueva rama solo para dicha tarea. Trabajaremos sobre ella con normalidad, haciendo los commits necesarios y subiéndola a su correspondiente rama remota como hemos venido haciendo hasta ahora con `master`.
 
 Recordad que usaremos `git push origin nombre-de-la-rama`
 
-Una vez terminada la tarea y comprobado que todo funciona correctamente la fusionaremos con `master`.
+Una vez terminada la tarea y comprobado que todo funciona correctamente ya está lista para ser fusionada con `dev`. Pero no lo haremos, todavía.
+
 
 ### Pull Request y revisión de código
-Pero todavía hay más. Hemos descrito una forma de trabajar pero hay otras. En muchas empresas el equipo que se encarga de una tarea, crea la rama, ejecuta la tarea y la sube a la rama remota, pero no la fusiona: crea un **Pull Request**. De esta forma un equipo o algún miembro del equipo se encarga de revisar el código y dar el visto bueno a la fusión.
+Aunque hay diferentes formas de trabajo con ramas en el curso vamos a ver una muy común en las empresas: el equipo que se encarga de una tarea, crea la rama, ejecuta la tarea y la sube a la rama remota, pero no la fusiona: crea un **Pull Request**. De esta forma un equipo o algún miembro del equipo se encarga de revisar el código y dar el visto bueno a la fusión.
+
+> A partir de este momento ya no vamos a hacer `$ git merge` desde la consola (salvo en un caso que veremos más adelante)
 
 La mecánica del Pull Request no es propia de git sino de quién da el servicio de git. En este caso GitHub tiene su propio sistema para gestionar los Pull Requests.
 
+<a id="markdown-code-review" name="code-review"></a>
+#### Code review
+La revisión del código no es un asunto menor sino de los más importantes. Aquí no buscamos decir Ok y a correr, no. Aquí es donde tenemos la oportunidad de, con ojos frescos, revisar el código generado por nuestro compañeros para asegurar unos mínimos de compatibilidad, homogeneidad y calidad.
+
+Cuando creamos un PR (o Pull Request) solemos asignar a alguien que será responsable de revisar nuestro código, un **reviewer**. 
+
+Un problema no menor que tenemos en el sector es que cuando nos ponemos a programar nos cuesta detectar una serie de fallos (de código o de estilo) porque estamos centrados en resolver una tarea. Estas revisiones de código permiten compensar eso y asegurar que todos trabajamos a una. Quién revise nuestro código va a poder **mirar y comentar**, en este caso desde GitHub, de manera que si algo no está claro se pueda detectar y hablar en el momento.
+
+
+### Vamos a poner todo esto en contexto: Flujo de trabajo
+Podríamos decir que a partir de este momento `dev` va a ser nuestra rama máster de desarrollo, y `master` será donde tendremos el código listo para entregar.
+
+Vamos a verlo con un ejemplo:
+**Web de transportes**
+En nuestra empresa hay un proyecto de una web de transportes, con sus ramas `master` y `dev`. Nuestro cliente nos pide una serie de cambios (a estas peticiones se les suele llamar *tickets*):
+
+- **Ticket 34**: Añadir Facebook Messenger como método de contacto con la empresa de transportes
+- **Ticket 35**: Añadir sombras a los botones de hacer login y de guardar rutas favoritas
+- **Ticket 43**: El color de los enlaces en la página de ayuda debe ser del rojo corporativo pero es morado
+
+En nuestro equipo nos organizaremos de la siguiente manera: Desde `dev` creamos nuevas ramas que se llamarán `ticket/34`, `ticket/35`y `ticket/43`, de manera que podamos desarrollar esas funcionalidades por separado.
+
+Si en lugar de usar un servicio de tickets nuestro cliente usase los issues de GitHub podríamos llamar a las ramas `issue/{número del issue}`.
+
+Hay diferentes formas de nombrar las ramas, al igual que los commits, lo haremos en inglés y con un nombre descriptivo o que identifique la tarea. 
+
+> No hay una convención de nombrado estándar pero sí que existen muchas propuestas, podéis buscar y usar una o buscar vuestro propio sistema. Si entráis en un equipo nuevo lo normal es que ya tengan un sistema de nombrado de ramas, si no, es súper buen momento para proponer al equipo tener uno que se adapte a vuestro sistema de trabajo.
+
+Ahora ya podemos ponernos a trabajar en nuestras tareas... Parece que la 43 es un error nuestro mientras que la 34 y 35 son funcionalidades nuevas. ¡Empecemos por ella!
+
+Cambiamos a nuestra rama `ticket/43` y resolvemos el problema (esta era fácil). Ahora nos creamos nuestra **pull request** contra `dev` y pedimos que una o varias compañeras la revisen.
+
+En esta PR vamos a incluir la información necesaria para que la persona encargada de la revisión entienda que había que hacer y por qué se ha resuelto de esta manera.
+
+Quien toma el papel de revisora tiene que mirar nuestro código y no solo ver que funciona como debe funcionar sino que, además, cumple con los mínimos que haya marcado el equipo de desarrollo.
+
+¿Cómo hace esto? 
+
+1. Pues primero leyendo la PR donde debería haber suficiente información para entender qué había que hacer y cómo se ha hecho.
+1. En la propia PR un espacio para revisar qué cambios se han hecho en el código y poder añadir comentarios, aceptar o rechazar la PR...
+1. Muy posiblemente quien revise tenga que pasarse a la rama y comprobar que el funcionamiento es el correcto
+
+### La Pull Request del ejemplo, paso a paso
+Tenemos que recordar que las PR no dependen de GIT sino de la plataforma que nos ofrezca el alojamiento de nuestros proyectos usando GIT. En este caso, **GitHub**.
+
+En la home de nuestro proyecto tenemos una pestaña para gestionar las Pull Requests, en esa pestaña tendremos un botón para crear una nueva, un listado de las creadas y, si hemos hecho push de una rama, un modulito resaltado en amarillo para crear una PR directamente desde esa rama. En el ejemplo vamos a usar el botón de "**New pull request**".
+
+![Crear una PR desde cero](assets/images/2-8/pr-00.png)
+
+Hay que definir desde qué rama a qué rama va a ir nuestra PR, en este caso de `ticket/43` a `dev`.
+
+![Ramas de destino y origne de la PR](assets/images/2-8/pr-01.png)
+
+Y ahora, a rellenarla y seleccionar quién va a revisarla. Luego pulsaremos "**Create pull request**".
+> El ejemplo es muy sencillo pero recordad que podemos escribir tranquilas el texto que necesitemos en nuestra PR porque no nos cobran por palabra)
+
+![Rellenar y seleccionar un reviewer](assets/images/2-8/pr-02.png)
+
+Dentro de la PR hay una pestaña que nos deja ver desde web los cambios que se han hecho (rojo para los borrados, verde para los añadidos 😉). También nos indica si las dos ramas se pueden mezclar sin conflictos 😉😉.
+
+![](assets/images/2-8/pr-03.png)
+
+Además podremos seleccionar una línea en concreto para comentarla y/o empezar una revisión.
+
+> Podemos añadir comentarios sueltos o agruparlos en una revisión que "terminará" con un comentario general y tres posibles estados: Comentario general, aprobada o solicta cambios.
+
+![](assets/images/2-8/pr-04.png)
+
+![](assets/images/2-8/pr-05.png)
+
+![](assets/images/2-8/pr-06.png)
+
+![](assets/images/2-8/pr-07.png)
+
+**Pero si tenemos a quien ha hecho el trabajo en la mesa de al lado, ¿de verdad hay que rellenar todo esto?**
+
+Sí. Todo el sistema del control de versiones es un registro exacto de nuestro trabajo y aunque nos acabemos levantando a proponer o discutir el código debemos dejarlo por escrito porque dentro de 3 meses nadie se acuerda lo que se habló en la mesa tres. O quizás el equipo que venga después quiere saber por qué se hizo tal o tal cosa.
+
+
+![](assets/images/2-8/pr-08.png)
+
+![](assets/images/2-8/pr-09.png)
+
+
+### Los conflictos
+
+A estas alturas ya habremos solucionado alguno que otro. Recordemos que los conflictos suceden porque se han tocado partes iguales de un archivo y el algoritmo de Git no sabe cómo mezclarlo automáticamente así que nos muestra las opciones para que decidamos nosotros.
+
+En este flujo de trabajo sabremos si hay conflictos cuando creemos el PR.
+
+Siguiendo con el ejemplo (PR de `ticket/43` a `dev`) si al crear el PR nos avisa de que hay conflictos procederemos de la siguiente forma:
+
+1. Salta el conflicto la crear el PR de `ticket/43` a `dev`
+1. Nos vamos a nuestro terminal y nos aseguramos de tener las últimas versiones de ambas ramas
+1. Invirtiendo el orden nos traemos `dev` a `ticket/43`: Cambiamos a `ticket/43` y lanzamos un `$ git merge dev` 
+1. Solucionamos los conflictos como haríamos normalmente
+1. Hacemos un push de `ticket/43`
+
+Esto actualizará automáticamente nuestro PR y ahora ya sí que podremos irnos a GitHub y ejecutar nuestro PR con éxito :)
+
+
 * * *
 
-#### EJERCICIO 5
+<a id="markdown-ejercicio-1" name="ejercicio-1"></a>
+#### EJERCICIO 1
+
+
 
 Vamos a hacer un Pull Request con revisión de código. Para ello seguimos estos pasos:
 1. una alumna de la pareja crea una nueva rama en el proyecto, hace algunos cambios y hace commit en esa rama
