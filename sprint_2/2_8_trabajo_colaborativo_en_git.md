@@ -1,8 +1,10 @@
 # Trabajo colaborativo en GIT
 <!-- TOC depthFrom:4 depthTo:4 updateOnSave:true withLinks:true -->
 
-- [Code review](#code-review)
 - [EJERCICIO 1](#ejercicio-1)
+- [EJERCICIO 2](#ejercicio-2)
+- [EJERCICIO 3](#ejercicio-3)
+- [EJERCICIO 4](#ejercicio-4)
 
 <!-- /TOC -->
 
@@ -54,8 +56,7 @@ Aunque hay diferentes formas de trabajo con ramas en el curso vamos a ver una mu
 
 La mecánica del Pull Request no es propia de git sino de quién da el servicio de git. En este caso GitHub tiene su propio sistema para gestionar los Pull Requests.
 
-<a id="markdown-code-review" name="code-review"></a>
-#### Code review
+### Code review
 La revisión del código no es un asunto menor sino de los más importantes. Aquí no buscamos decir Ok y a correr, no. Aquí es donde tenemos la oportunidad de, con ojos frescos, revisar el código generado por nuestro compañeros para asegurar unos mínimos de compatibilidad, homogeneidad y calidad.
 
 Cuando creamos un PR (o Pull Request) solemos asignar a alguien que será responsable de revisar nuestro código, un **reviewer**. 
@@ -155,19 +156,91 @@ Siguiendo con el ejemplo (PR de `ticket/43` a `dev`) si al crear el PR nos avisa
 Esto actualizará automáticamente nuestro PR y ahora ya sí que podremos irnos a GitHub y ejecutar nuestro PR con éxito :)
 
 
+Vamos a hacer unas Pull Request con revisión de código, ¿o qué?
+
 * * *
+Partimos de una base, html y css:
+
+**index.html**
+```html
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="main.css">
+		<title>Face time!</title>
+	</head>
+	<body>
+		<div class="page">
+			<div class="head">
+				<div class="face">:|</div>
+			</div>
+		</div>		
+	</body>
+</html>
+```
+
+**main.css**
+```css
+.head {
+  background: #fc0;
+  height: 100px;
+  position: relative;
+  width: 100px;
+}
+.face {
+  font-family: 'courier new', serif;
+  font-size: 2.5em;
+  font-weight: bold;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -60%) rotate(90deg);
+}
+```
+
+Primero hay que crear el repositorio con estos dos archivos, dar permisos a nuestra compañera y crear las ramas `master` y `dev`.
+
+A continuación hay un listado de ejercicios/tickets que habrá que ir resolviendo. Usaremos lo que hemos visto de PR pasando a `dev` cada tarea una vez completada. Cuando estén las 3 primeras en `dev`, haremos una subida a `master`, tb por pull request.
+
+> Si os queréis animar a hacer los tickets 1 y 2 a la vez, cada miembro de la pareja puede ponerse con uno.
+
+****
 
 <a id="markdown-ejercicio-1" name="ejercicio-1"></a>
 #### EJERCICIO 1
 
+**Ticket #1: Centrar al careto**
 
+Este señor está como apartado, en una esquina... eso no puede ser, debería estar centrado vertical y horizontalmente en la pantalla.
 
-Vamos a hacer un Pull Request con revisión de código. Para ello seguimos estos pasos:
-1. una alumna de la pareja crea una nueva rama en el proyecto, hace algunos cambios y hace commit en esa rama
-2. hace un push de la rama local a una remota con el mismo nombre
-3. ella entra en GitHub con su cuenta y crea un nuevo PR de la rama creada a master, y añade como revisora a la otra alumna
-4. la otra alumna de la pareja tiene que revisar el código de la compañera en GitHub, poner algunos comentarios y aprobar/rechazar el PR. Si lo aprueba, puede hacer un merge a master (y borrar la rama)
-5. una vez hecho esto, ambas vuelven en su ordenador a la rama master y hacen un pull para bajar los cambios nuevos
+* * *
+
+<a id="markdown-ejercicio-2" name="ejercicio-2"></a>
+#### EJERCICIO 2
+
+**Ticket #2: Cara redonda**
+
+Un careto.. ¿es un careto si no es redondo?. Hay que redondear esa cara para que sea un círculo perfecto.
+
+* * *
+
+<a id="markdown-ejercicio-3" name="ejercicio-3"></a>
+#### EJERCICIO 3
+
+**Ticket #3: Cara Sonriente**
+
+¿No está un poco serio? Hagamos que sonría un poco. 
+
+* * *
+
+<a id="markdown-ejercicio-4" name="ejercicio-4"></a>
+#### EJERCICIO 4
+
+**Ticket #4: Añadir funcionalidad para que guiñe**
+
+Sería genial si al hacer click el careto guiñase un ojo. Hay que tener en cuenta que al dejar de hacer hover sobre el careto tiene que volver a la posición inicial.
 
 * * *
 
