@@ -14,7 +14,7 @@
 
 A medida que vamos aprendiendo más y más JavaScript, es necesario que vayamos profundizando en conceptos un poco más técnicos pero que es fundamental que entendamos. Estos conceptos nos ayudarán a entender cómo funciona JavaScript a más bajo nivel y harán que captemos mejor el funcionamiento de un código y, por tanto, sepamos resolver mejor los errores que se producen y creemos un código más estable y mejor estructurado.
 
-En esta sesión veremos, en primer lugar, qué es el ámbito (scope) de las variables y funciones y aprenderemos a fondo cómo funciona para tenerlo en cuenta a la hora de ver dónde declarar variables y funciones en nuestro código.
+En esta sesión recordaremos, en primer lugar, qué es el ámbito (scope) de las variables y funciones, y aprenderemos a fondo cómo funciona para tenerlo en cuenta a la hora de ver dónde declarar variables y funciones en nuestro código.
 
 También veremos qué es el hoisting (que no tiene nada que ver con hosting :) ) y que describe cómo reorganiza el intérprete de JavaScript (nuestro navegador web) el código antes de ejecutarlo.
 
@@ -35,18 +35,38 @@ Aprender este tipo de conceptos un poco más avanzados te aportará conocimiento
 
 ## Ámbito o scope
 
-Bien, vamos a empezar entendiendo mejor qué es el scope o el ámbito, para ello lo mejor es ponernos en situación, entender cómo es el proceso que se lleva a cabo en nuestro navegador para entender qué sucede con el código de JavaScript que generamos y cómo este es ejecutado.
+Bien, vamos a empezar recordando qué es aquello del  ámbito o _scope_. 
+Usanmos `let` y `const` para definir nuestras variables, y por defecto tienen ámbito de bloque (un bloque es cualquier expresión con llaves `{}`, como un `if`, `for`, `function`).
 
-En primer lugar, hay que dejar claro que no vamos a ver en detalle qué sucede desde que se lee el código JavaScript hasta que se ejecuta. Pero vamos a pensar como si fuésemos el intérprete de JavaScript, la parte de nuestro navegador encargada de entender JavaScript y saber qué hacer con el código.
+Partamos del siguiente código:
+```js
+const a = 'Hi, I\'m A';
 
-Bien, imaginemos que tenemos el siguiente código:
+if (true) {
+  let b = 'I am true just here';
+}
+
+for (let c=0; c<10; c++) {
+  console.log('>>', c);
+}
+
+function f() {
+  const d = 'Help, I\'m a prisoner';
+}
+```
+
+- **a**, es una variable global, está definida en el ámbito superior de nuestro programa y accesible para todo el mundo.
+- **b** y **c**, son variables locales, cuyo ámbito o scope es el bloque donde están definidas, fuera de ese bloque no existen. **Vamos a tener especial cuidado en no definir variables dentro de un `if`**.
+- **d**, es una variable local muy común, existe dentro de la función y no está accesible fuera de ella.
+
+Veamos otro ejemplo:
 
 ```js
 
-var greeting = 'Hola';
+let greeting = 'Hola';
 
 function sayHello() {
-  var greeting = 'Hello';
+  let greeting = 'Hello';
   console.log(greeting);
 }
 
@@ -55,30 +75,24 @@ sayHello();
 
 >Como puedes ver, este código no tiene ninguna lógica, simplemente es algo sencillo para que nos sirva de ejemplo.
 
-¿Sabrías adivinar que va a mostrar? Piénsalo detenidamente (no vale ejecutar el código 👮🏻‍♀️).
+¿Sabrías adivinar que va a mostrar? Piénsalo detenidamente (no vale ejecutar el código 👮🏼‍♀️).
 
 Bien, antes de saber cuál será el resultado, vamos a ver qué pasos sigue este código.
 
 JavaScript en este caso realiza los siguientes pasos:
-1. Genera la variable `greeting` en el ámbito global y posteriormente le asigna `Hola`
+1. Genera la variable `greeting` en el ámbito global y  le asigna `Hola`
 1. Declara una función (crea la función)
 1. Ejecuta la función sayHello
 1. Al ejecutar la función `sayHello` y por tanto el código que contiene, se crea una variable `greeting` en el ámbito de la función `sayHello`
 1. Se ejecuta el `console.log`, en este caso como le hemos pasado como argumento la variable `greeting`, buscará esa variable en el ámbito más próximo y utilizará el valor que almacena
 
-Bien, la clave en estos pasos reside en una palabra, ámbito. Hemos hablado de ámbito de la función, ámbito global y ámbito más próximo, pero ¿qué es el ámbito?. En JavaScript, el ámbito (o scope) se encarga de llevar la lista de todas las variables y funciones declaradas y define una serie de reglas que establecen si esas variables son accesibles en el momento de ejecutar un código. Dentro de nuestro código podremos tener distintos ámbitos, cada uno con una serie distinta de variables a las que podemos acceder.
-
-En JavaScript, la única forma de generar un nuevo ámbito es creando una función. Dentro de esta todo lo que definamos (variables o funciones) estará encapsulado y solo se podrá acceder desde dentro de la función, desde su ámbito, fuera de este será como si no existiese.
-
->NOTA: en realidad no es 100% cierto que la única forma de crear un nuevo ámbito en JavaScript es a través de las funciones. Existe otra manera para crear un nuevo ámbito en la versión que estamos utilizando de JavaScript pero no la vamos a ver en este curso. Sí que veremos más adelante, una nueva forma de crear ámbitos en la nueva versión de JavaScript, pero por el momento pensemos que solo se puede generar un nuevo ámbito usando funciones.
-
-Por lo tanto, cada vez que creemos una nueva función estaremos generando a la par un nuevo ámbito. Todo lo que esté fuera de funciones y se defina directamente en el código, pertenecerá al denominado ámbito global, que es el que engloba todo nuestro código y es accesible desde cualquier parte.
+Recordemos que en JavaScript, el ámbito (o scope) se encarga de llevar la lista de todas las variables y funciones declaradas y define una serie de reglas que establecen si esas variables son accesibles en el momento de ejecutar un código.
 
 Como esto puede ser un poco lioso, vamos a ilustrar cuáles serían los ámbitos en el ejemplo anterior, cómo funcionan y cómo se modifican en cada paso.
 
 Bien, volviendo a los pasos anteriores, vamos a ilustrar cada uno de ellos para ver que sucede:
 
-### 1. Genera la variable `greeting` en el ámbito global y posteriormente le asigna `Hola`
+### 1. Genera la variable `greeting` en el ámbito global y le asigna `Hola`
 
 En este paso añadimos al *scope* global una variable `greeting` y guardamos el valor de `Hola` dentro de ella. El ámbito global abarcaría todo el código, como hemos comentado anteriormente, si generamos una variable o función en el scope global esta podrá ser usada en cualquier parte de nuestro JavaScript, de ahí que el alcance de este scope (donde se pueden utilizar las variables y funciones creadas en él) se extienda a todo el código.
 
@@ -145,10 +159,10 @@ Y hasta aquí sería la descripción de qué es el scope o ámbito en JavaScript
 
 A continuación vamos a poner una serie de códigos. Estos no tienen un sentido lógico más allá de practicar con lo aprendido sobre el scope. Sin ejecutarlos, intenta averiguar qué se mostrará en el `console.log` de cada uno de ellos.
 
->NOTA: Los ejercicios son parecidos pero cada uno de ellos tiene una modificación. Lo mejor es leer paso a paso que hace cada uno aunque ya lo hayamos leído antes para saber cuál será el proceso que realicen.
+>NOTA: Los ejercicios son parecidos pero cada uno de ellos tiene una modificación. Lo mejor es leer paso a paso qué hace cada uno aunque ya lo hayamos leído antes para saber cuál será el proceso que realicen.
 
 ```js
-var message = 'El resultado será A';
+let message = 'El resultado será A';
 
 function changeMessage() {
   message = 'El resultado será B';
@@ -160,7 +174,7 @@ console.log(message);
 ```
 
 ```js
-var message = 'El resultado será A';
+let message = 'El resultado será A';
 
 function changeMessage() {
   message = 'El resultado será B';
@@ -170,10 +184,10 @@ console.log(message);
 ```
 
 ```js
-var message = 'El resultado será A';
+let message = 'El resultado será A';
 
 function changeMessage() {
-  var message = 'El resultado será B';
+  let message = 'El resultado será B';
 }
 
 changeMessage();
@@ -197,68 +211,93 @@ Prueba a poner paradas tanto dentro de funciones como fuera para ver qué sucede
 
 ## Hoisting
 
-Como hemos visto hasta ahora, JavaScript genera ámbitos para determinadas partes de nuestro código, una cosa que hace para que la tarea de generar esos ámbitos sea más rápida es que todas las declaraciones (cuando creamos una variable o una función) se "mueven" al principio de su ámbito respectivo, esto es a lo que llamamos _hoisting_.
+Como hemos visto hasta ahora, JavaScript genera ámbitos para determinadas partes de nuestro código, una cosa que hace para que la tarea de generar esos ámbitos sea más rápida es que todas las declaraciones de funciones se "mueven" al principio de su ámbito respectivo, esto es a lo que llamamos _hoisting_.
 
 Imaginemos que tenemos el siguiente código:
 
 ```js
-var lower = 1;
-var upper = 100;
+const lower = 1;
+const upper = 100;
+
+const randomNumber = getRandomNumber(lower, upper);
 
 function getRandomNumber(min, max) {
   console.log('Vamos a crear un número random');
 
-  var message = 'Se ha generado un número aleatorio: ';
-  var result = Math.floor((Math.random() * (max - min)) + min);
+  const message = 'Se ha generado un número aleatorio: ';
+  const result = Math.floor((Math.random() * (max - min)) + min);
 
   console.log(message + result);
 
   return result;
 }
-
-console.log('Mensaje estúpido');
-
-var randomNumber = getRandomNumber(lower, upper);
 ```
 
-JavaScript cambiará el orden del código y lo dejará de la siguiente forma:
+Podemos usar la función `getRandomNumber()` antes de declararla gracias a que JavaScript cambiará el orden del código y lo dejará de la siguiente forma:
 
 ```js
-var lower;
-var upper;
-var randomNumber;
-
 function getRandomNumber(min, max) {
-  var message;
-  var result;
-
   console.log('Vamos a crear un número random');
 
-  message = 'Se ha generado un número aleatorio: ';
-  result = Math.floor((Math.random() * (max - min)) + min);
+  const message = 'Se ha generado un número aleatorio: ';
+  const result = Math.floor((Math.random() * (max - min)) + min);
 
   console.log(message + result);
 
   return result;
 }
 
-lower = 1;
-upper = 100;
+const lower = 1;
+const upper = 100;
 
-console.log('Mensaje estúpido');
-
-randomNumber = getRandomNumber(lower, upper);
+const randomNumber = getRandomNumber(lower, upper);
 ```
 
-Como se puede ver, lo que hace básicamente es mover las declaraciones de funciones y variables al principio del scope. Esto se ve muy claro si nos fijamos en que la declaración de variables se han colocado antes que la ejecución de los `console.log`.
+Como se puede ver, lo que hace básicamente es mover las declaraciones de funciones del scope.
 
-¡OJO! En el caso de las variables, solo se se aplica el hoisting a la declaración (`var lower`) haciendo que esta se coloque al principio del código. La asignación (`lower = 1`) no se mueve, por eso siempre se recomienda que antes de usar una variable siempre la declaremos y asignemos, para que en el momento de usarla ya tenga un valor definido.
+¡OJO! En el caso de las variables definidas con `const` y `let` el hoisting no se aplica de manera que se crean y se asignan cuando aparecen en nuestro código. Por eso siempre se recomienda que antes de usar una variable siempre la declaremos y asignemos, para que en el momento de usarla ya tenga un valor definido.
 
 Saber esto nos ayuda a entender varias cosas:
-
 - Las funciones siempre se van a mover arriba, por lo que da igual dónde las declaremos (antes o después de usarlas) siempre podremos usarlas donde queramos
-- Las declaraciones de variables siempre se "mueven" arriba, pero las asignación no. Debemos tener cuidado de siempre crear y asignar una variable antes de usarla
+- Las declaraciones de variables con `const` y `let` no se mueven: debemos tener cuidado de siempre crear y asignar una variable antes de usarla
 - JavaScript realiza una serie de operaciones antes de ejecutar el código, estas le facilitan el trabajo y optimizan la ejecución del código
+
+Recordemos que hay otra forma de escribir funciones y es asignando funciones anónimas a variables:
+
+```js
+const sum = function(a,b) {
+  return a+b;
+}
+```
+O usando funciones flecha:
+```js
+const sum = (a,b) => a+b
+```
+
+Aquí se aplicarían las mismas reglas de hoisting que se aplican a `const` y `let` por lo que NO podríamos ejecutar el siguiente código:
+
+```js
+console.log(sum(2,3));
+const sum = (a,b) = a+b;
+```
+
+mientras que con el anterior sistema de escritura de funciones sí podríamos ya que el hoisting de Javascript transformaría este código:
+
+```js
+console.log(sum(2,3));
+function sum(a,b) {
+  return a+b;
+}
+```
+
+en este otro:
+
+```js
+function sum(a,b) {
+  return a+b;
+}
+console.log(sum(2,3));
+```
 
 * * *
 
@@ -281,10 +320,11 @@ A continuación vamos a poner una serie de códigos, algunos de ellos tendrán u
 ```js
 'use strict';
 
-var message = '¡Hola!';
+const message = '¡Hola!';
 function showMessage() {
   console.log(message);
 }
+showMessage();
 ```
 
 ```js
@@ -293,41 +333,44 @@ function showMessage() {
 function showMessage() {
   console.log(message);
 }
-
-var message = '¡Hola!';
+showMessage();
+const message = '¡Hola!';
 ```
 
 ```js
 'use strict';
 
-var message;
+let message;
 
 function showMessage() {
   console.log(message);
 }
+showMessage();
+message = '¡Hola!';
+showMessage();
+```
+
+```js
+'use strict';
 
 message = '¡Hola!';
-```
-
-```js
-'use strict';
-
-message = '¡Hola!';
 
 function showMessage() {
   console.log(message);
 }
+showMessage();
 ```
 
 ```js
 'use strict';
 
 function showMessage() {
-  message = '¡Hola!';
+  let message = '¡Hola!';
   console.log(message);
 }
 
-var message;
+let message = 'Hello';
+showMessage();
 ```
 
 * * *
