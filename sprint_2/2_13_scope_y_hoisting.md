@@ -36,7 +36,7 @@ Aprender este tipo de conceptos un poco más avanzados te aportará conocimiento
 ## Ámbito o scope
 
 Bien, vamos a empezar recordando qué es aquello del  ámbito o _scope_. 
-Usanmos `let` y `const` para definir nuestras variables, y por defecto tienen ámbito de bloque (un bloque es cualquier expresión con llaves `{}`, como un `if`, `for`, `function`).
+Usamos `let` y `const` para definir nuestras variables, y por defecto tienen ámbito de bloque (un bloque es cualquier expresión con llaves `{}`, como un `if`, `for`, `function`).
 
 Partamos del siguiente código:
 ```js
@@ -118,38 +118,37 @@ El scope es algo que no podemos ver pero que debemos tener en cuenta y entender 
 
 ## Consultar el scope en las Chrome DevTools
 
-Por último, podemos saber cual es el scope local y global en un momento determinado utilizando la pestaña sources de las Chrome Dev Tools. Esta pestaña sirve para depurar nuestro código JavaScript y comprobar qué está haciendo en cada paso. En ella nos aparece un panel a la izquierda de la pantalla con la estructura de carpetas de la página. Si no nos aparece el panel, tenemos que pulsar en el icono con la flecha que apunta hacia la derecha, situado justo debajo del icono con el ratón.
+Por último, podemos saber cual es el scope local y global en un momento determinado utilizando la pestaña *Sources* de las Chrome Dev Tools. Esta pestaña sirve para depurar nuestro código JavaScript y comprobar qué está haciendo en cada paso. En ella nos aparece un panel a la izquierda de la pantalla con la estructura de carpetas de la página. Si no nos aparece el panel, tenemos que pulsar en el icono con la flecha que apunta hacia la derecha, situado justo debajo del icono con el ratón.
 
 >Vista por defecto de la pestaña de _Sources_ de las Chrome DevTools
 
-![Pestaña de _Sources_ de las herramientas de desarollo de Chrome](assets/images/3-6/empty-devtools-sources-tab.png)
+![Pestaña de _Sources_ de las herramientas de desarrollo de Chrome](assets/images/3-6/empty-devtools-sources-tab.png)
 
 A continuación seleccionaremos el archivo JavaScript que queremos depurar dentro de la estructura de carpetas y nos mostrará el código del archivo.
 
->Vista con un archivo abierto.Pestaña de _Sources_ de las herramientas de desarollo de Chrome
+>Vista con un archivo abierto. Pestaña de _Sources_ de las herramientas de desarrollo de Chrome
 
 ![Pestaña de _Sources_ con un archivo abierto](assets/images/3-6/devtools-sources-tab.png)
 
-Para comprobar cuál es el scope en un momento determinado de la ejecución de nuestro código, simplemente pulsamos en el número de una línea de código para generar una parada en el código (breakpoint), al pulsar sobre el número aparecerá un marcador azul para indicarnos que hemos generado una parada.
+Para comprobar cuál es el scope en un momento determinado de la ejecución de nuestro código, simplemente pulsamos en el número de una línea de código para generar una parada en el código (*breakpoint*), al pulsar sobre el número aparecerá un marcador azul para indicarnos que hemos generado una parada.
 
->Código con un breakpoint para parar la ejecución en una línea determinada
+>Código con un *breakpoint* para parar la ejecución en una línea determinada
 
 ![Código con un breakpoint para parar la ejecución en una línea determinada](assets/images/3-6/how-to-add-breakpoint-sources.png)
 
-Despues de generar una parada en el código, recargamos la página. Al recargarla ejecutará el código JavaScript hasta la linea en la que hemos puesto el breakpoint, donde se parará hasta que le digamos que continue.
+Después de generar una parada en el código, recargamos la página. Al recargarla ejecutará el código JavaScript hasta la linea en la que hemos puesto el breakpoint, donde se parará hasta que le digamos que continue.
 
 >Vista del código parado en un punto determinado
 
 ![Vista del código parado en un punto determinado](assets/images/3-6/javascript-execution-paused.png)
 
-En este momento podemos ver a la derecha un panel con una sección que tiene el nombre de scope. Dentro de esta podremos ver otras dos subsecciones, local y global. Local hará referencia al scope local (si se está ejecutando una función, será al scope de la función) y global hará referencia al scope global, a todas las variables y funciones disponibles a lo largo de todo nuestro código (tanto las que hemos creado nosotros como las que genera por defecto el navegador). El scope que se muestra será el que haya justo en el momento antes de ejecutar la linea de código en la que hemos realizado la parada.
+En este momento podemos ver a la derecha un panel con una sección que tiene el nombre de *Scope*. Dentro de esta podremos ver otras dos subsecciones, local y global. Local hará referencia al scope local (si se está ejecutando una función, será al scope de la función) y global hará referencia al scope global, a todas las variables y funciones disponibles a lo largo de todo nuestro código (tanto las que hemos creado nosotros como las que genera por defecto el navegador). El scope que se muestra será el que haya justo en el momento antes de ejecutar la linea de código en la que hemos realizado la parada.
 
 >Vista de la sección scope en el panel de info de Sources
 
 ![Vista de la sección scope en el panel de info de Sources](assets/images/3-6/scope-section.png)
 
 Y hasta aquí sería la descripción de qué es el scope o ámbito en JavaScript. Si no te ha quedado todo perfectamente claro y no lo has pillado a la primera no te preocupes, este concepto es algo que a veces cuesta más, la idea es explicarlo y que, a base de consultarlo y volver de vez en cuando a esta explicación se llegue a un punto de entendimiento del concepto. Por el momento, con entender que el scope determina el alcance de nuestras variables y funciones y como funciona a grandes rasgos es más que suficiente. La práctica y repaso a base de constancia con el código harán el resto para entender a fondo de qué se trata.
-
 
 * * *
 
@@ -159,7 +158,7 @@ Y hasta aquí sería la descripción de qué es el scope o ámbito en JavaScript
 
 A continuación vamos a poner una serie de códigos. Estos no tienen un sentido lógico más allá de practicar con lo aprendido sobre el scope. Sin ejecutarlos, intenta averiguar qué se mostrará en el `console.log` de cada uno de ellos.
 
->NOTA: Los ejercicios son parecidos pero cada uno de ellos tiene una modificación. Lo mejor es leer paso a paso qué hace cada uno aunque ya lo hayamos leído antes para saber cuál será el proceso que realicen.
+>NOTA: Los ejercicios son parecidos pero cada uno de ellos tiene una modificación. Lo mejor es leer paso a paso qué hace cada uno, aunque ya lo hayamos leído antes, para saber cuál será el proceso que realicen.
 
 ```js
 let message = 'El resultado será A';
