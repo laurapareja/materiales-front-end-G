@@ -106,7 +106,7 @@ En la home de nuestro proyecto tenemos una pestaña para gestionar las Pull Requ
 
 Hay que definir desde qué rama a qué rama va a ir nuestra PR, en este caso de `ticket/43` a `dev`.
 
-![Ramas de destino y origne de la PR](assets/images/2-8/pr-01.png)
+![Ramas de destino y origen de la PR](assets/images/2-8/pr-01.png)
 
 Y ahora, a rellenarla y seleccionar quién va a revisarla. Luego pulsaremos "**Create pull request**".
 > El ejemplo es muy sencillo pero recordad que podemos escribir tranquilas el texto que necesitemos en nuestra PR porque no nos cobran por palabra)
@@ -119,7 +119,7 @@ Dentro de la PR hay una pestaña que nos deja ver desde web los cambios que se h
 
 Además podremos seleccionar una línea en concreto para comentarla y/o empezar una revisión.
 
-> Podemos añadir comentarios sueltos o agruparlos en una revisión que "terminará" con un comentario general y tres posibles estados: Comentario general, aprobada o solicta cambios.
+> Podemos añadir comentarios sueltos o agruparlos en una revisión que "terminará" con un comentario general y tres posibles estados: Comentario general, aprobada o solicita cambios.
 
 ![](assets/images/2-8/pr-04.png)
 
@@ -202,7 +202,7 @@ Partimos de una base, html y css:
 
 Primero hay que crear el repositorio con estos dos archivos, dar permisos a nuestra compañera y crear las ramas `master` y `dev`.
 
-A continuación hay un listado de ejercicios/tickets que habrá que ir resolviendo. Usaremos lo que hemos visto de PR pasando a `dev` cada tarea una vez completada. Cuando estén las 3 primeras en `dev`, haremos una subida a `master`, tb por pull request.
+A continuación hay un listado de ejercicios/tickets que habrá que ir resolviendo. Usaremos lo que hemos visto de PR pasando a `dev` cada tarea una vez completada. Cuando estén las 3 primeras en `dev`, haremos una subida a `master`, también por pull request.
 
 > Si os queréis animar a hacer los tickets 1 y 2 a la vez, cada miembro de la pareja puede ponerse con uno.
 
@@ -211,7 +211,7 @@ A continuación hay un listado de ejercicios/tickets que habrá que ir resolvien
 <a id="markdown-ejercicio-1" name="ejercicio-1"></a>
 #### EJERCICIO 1
 
-**Ticket #1: Centrar al careto**
+**Ticket #1: Centrar el careto**
 
 Este señor está como apartado, en una esquina... eso no puede ser, debería estar centrado vertical y horizontalmente en la pantalla.
 
@@ -240,7 +240,7 @@ Un careto.. ¿es un careto si no es redondo?. Hay que redondear esa cara para qu
 
 **Ticket #4: Añadir funcionalidad para que guiñe**
 
-Sería genial si al hacer click el careto guiñase un ojo. Hay que tener en cuenta que al dejar de hacer hover sobre el careto tiene que volver a la posición inicial.
+Sería genial si al hacer `click` el careto guiñase un ojo. Hay que tener en cuenta que al dejar de hacer `hover` sobre el careto tiene que volver a la posición inicial.
 
 * * *
 
