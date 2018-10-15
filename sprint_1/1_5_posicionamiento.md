@@ -1,21 +1,22 @@
 # Posicionamiento
 
-## Índice de ejercicios
-<!-- TOC START min:5 max:7 link:true update:true -->
-  - [EJERCICIO 1:](#ejercicio-1)
-  - [EJERCICIO 2:](#ejercicio-2)
-  - [EJERCICIO 3:](#ejercicio-3)
-  - [EJERCICIO 4:](#ejercicio-4)
-  - [EJERCICIO 5:](#ejercicio-5)
-  - [EJERCICIO 6:](#ejercicio-6)
-  - [EJERCICIO 7:](#ejercicio-7)
-  - [EJERCICIO 8:](#ejercicio-8)
-  - [EJERCICIO 9:](#ejercicio-9)
-  - [EJERCICIO 10:](#ejercicio-10)
-  - [EJERCICIO 11:](#ejercicio-11)
-  - [EJERCICIO 12:](#ejercicio-12)
+<!-- TOC depthFrom:4 depthTo:4 -->
 
-<!-- TOC END -->
+- [EJERCICIO 1](#ejercicio-1)
+- [EJERCICIO 2](#ejercicio-2)
+- [EJERCICIO 3](#ejercicio-3)
+- [EJERCICIO 4](#ejercicio-4)
+- [EJERCICIO 5](#ejercicio-5)
+- [EJERCICIO 6](#ejercicio-6)
+- [EJERCICIO 7](#ejercicio-7)
+- [EJERCICIO 8](#ejercicio-8)
+- [EJERCICIO 9](#ejercicio-9)
+- [EJERCICIO 10](#ejercicio-10)
+- [EJERCICIO 11](#ejercicio-11)
+- [EJERCICIO 12](#ejercicio-12)
+- [EJERCICIO 13](#ejercicio-13)
+
+<!-- /TOC -->
 
 
 ## Introducción
@@ -63,7 +64,7 @@ El atributo `position` es fundamental en las webs actuales porque sin él todo e
 La propiedad `position` tiene cuatro valores posibles:
 * `static`: es el tipo de posición por defecto en todos los elementos HTML
 * `relative`: Permite modificar la posición de un elemento en función de su posición actual en la página
-* `absolute`: Saca al elemento del flujo de la página, es decir, hace que su contenedor y los elementos de antes y después no lo tengan en cuenta a la hora de posicionarse y definir su tamaño y por otro lado posiciona el elemento en función de la posición del body o en su defecto del primer elemento contenedor que tenga una posición diferente a static (posicion por defecto)
+* `absolute`: Saca al elemento del flujo de la página, es decir, hace que su contenedor y los elementos de antes y después no lo tengan en cuenta a la hora de posicionarse y definir su tamaño y por otro lado posiciona el elemento en función de la posición del body o en su defecto del primer elemento contenedor que tenga una posición diferente a static (posición por defecto)
 * `fixed`: Saca a un elemento del flujo normal de la página y permite posicionarlo en función de la ventana del navegador. Aparte, este tipo de elementos mantienen su posición cuando hacemos scroll en la página (como si se mantuviesen anclados en un mismo punto), de ahí su nombre fixed (fijo)
 
 - Video para entender el [posicionamiento web](https://www.youtube.com/watch?v=13CbCpAnvYI)
@@ -81,20 +82,49 @@ La posición Z de cada capa representa el orden de apilamiento. Podemos modifica
 
 - Video para entender [z-index](https://www.youtube.com/watch?v=u2O_ys4X1cQ)
 
-***
-###### EJERCICIO 1:
+* * *
 
-Hacer un botón con un icono alineado a la izquierda y centrado verticalmente.
+<a id="markdown-ejercicio-1" name="ejercicio-1"></a>
+#### EJERCICIO 1
 
-***
-###### EJERCICIO 2:
+**Desplazando divs relativamente**
+
+Define un documento HTML con un div padre (divPadre), dentro del cual existan otras 3 cajas contenedoras div (div1, div2 y div3), cada una de ellas con unas dimensiones de 300x300px, 40 píxeles de margin en todas direcciones, 30 píxeles de padding en todas direcciones y un background color diferente. Usando posicionamiento relativo genera un desplazamiento de los div de la siguiente manera:
+
+a) El div 1 deberá desplazarse 100 píxeles a la derecha y 50 píxeles hacia abajo respecto a lo que sería su posición normal.
+
+b) El div 2 deberá desplazarse 150 píxeles a la izquierda y 320 píxeles hacia arriba respecto a lo que sería su posición normal.
+
+c) El div 3 deberá desplazarse 180 píxeles a la derecha y 240 píxeles hacia arriba respecto a lo que sería su posición normal.
+
+* * *
+
+<a id="markdown-ejercicio-2" name="ejercicio-2"></a>
+#### EJERCICIO 2
+
+**Que no se mueva ese icono**
+
+Hacer un botón que contenga
+- con un icono alineado a la izquierda y centrado verticalmente.
+- un texto 
+
+* * *
+
+<a id="markdown-ejercicio-3" name="ejercicio-3"></a>
+#### EJERCICIO 3
+
+**Dame PDFs**
 
 Hacer un enlace de descarga de un archivo (por ejemplo PDF) con una etiqueta que refleje el tipo del archivo y que siempre esté a la derecha.
 
 ![Enlace de descarga de un pdf](assets/images/1-5/1_5_ejercicio_2_pdf.png)
 
-***
-###### EJERCICIO 3:
+* * *
+
+<a id="markdown-ejercicio-4" name="ejercicio-4"></a>
+#### EJERCICIO 4
+
+**Vente conmigo**
 
 Crear un documento HTML con una cabecera y un contenedor principal con varios párrafos que contengan suficiente texto como para que la página se muestre con scroll (barras de desplazamiento).
 
@@ -104,21 +134,11 @@ b) Haz que la cabecera no tape el contenedor principal cuando no hemos hecho scr
 
 c) Haz que al hacer scroll, la cabecera se apile o superponga por encima del contenedor principal.
 
-***
-###### EJERCICIO 4:
-
-Define un documento HTML con un div padre (divPadre), dentro del cual existan otras 3 cajas contenedoras div (div1, div2 y div3), cada una de ellas con unas dimensiones de 300x300px, 40 píxeles de margin en todas direcciones, 30 píxeles de padding en todas direcciones y un background color diferente. Usando posicionamiento relativo genera un desplazamiento de los div de la siguiente manera:S
-
-a) El div 1 deberá desplazarse 100 píxeles a la derecha y 50 píxeles hacia abajo respecto a lo que sería su posición normal.
-
-b) El div 2 deberá desplazarse 150 píxeles a la izquierda y 320 píxeles hacia arriba respecto a lo que sería su posición normal.
-
-c) El div 3 deberá desplazarse 180 píxeles a la derecha y 240 píxeles hacia arriba respecto a lo que sería su posición normal.
-
-***
+* * *
 
 ## Transform
-Otra forma interesante de modificar la posición de un elemento html es la propiedad `transform` con la que podemos realizar una serie de ajustes al elemento respecto del mismo elemento, sin embargo no saca al elemento del flujo de la página como `position: absolute` o `position: fixed`, y el resto de elementos de la página se comporta como si no hubiesemos aplicado una transformación a uno de ellos.
+
+Otra forma interesante de modificar la posición de un elemento html es la propiedad `transform` con la que podemos realizar una serie de ajustes al elemento respecto del mismo elemento, sin embargo no saca al elemento del flujo de la página como `position: absolute` o `position: fixed`, y el resto de elementos de la página se comporta como si no hubiésemos aplicado una transformación a uno de ellos.
 
 Vamos a ver varias transformaciones:  
 * Translate
@@ -134,7 +154,7 @@ Permite desplazar el elemento, una cantidad dada, horizontal y/o verticalmente:
 ```
 
 ### Scale
-Permite agrandar o reducir el elemento, propocionalmente o indicando las deformación horizontal y vertical independientemente:
+Permite agrandar o reducir el elemento, proporcionalmente o indicando las deformación horizontal y vertical independientemente:
 ```css
 .element {
 	transform: scale(2);
@@ -149,34 +169,40 @@ Permite rotar el elemento:
 }
 ```
 
-***
-###### EJERCICIO 5:
+* * *
+
+<a id="markdown-ejercicio-5" name="ejercicio-5"></a>
+#### EJERCICIO 5
 
 ¿Sabrías resolver estos ejercicios de transformaciones tras leerte [la documentación de transform](http://devdocs.io/css/transform)?  
 Ejercicios de transform: [codepen.io/adalab/pen/YLKaox](https://codepen.io/adalab/pen/YLKaox)
-***
+
+* * *
 
 `Transform` se suele usar mucho junto con posiciones fijas o absolutas para centrar elementos horizontal y verticalmente:
 
 ![Ejemplo de centrado con position y transform](assets/images/1-5/absolute-horizontal-and-vertical-centering.png)
 
-## Bonus: Devdocs
-[DevDocs](http://devdocs.io/about) va a ser nuestra página de documentación de cabecera ya que agrupa documentación oficial de diferentes temas de front: lenguajes, tecnologías, preprocesadores...
+* * *
 
-Os proponermos DevDocs porque es un agrupador de documentación oficial que te permite tener contenido para consultar sin conexión en tu navegador.
+<a id="markdown-ejercicio-6" name="ejercicio-6"></a>
+#### EJERCICIO 6
 
-***
-###### EJERCICIO 6:
+Define un documento HTML con 3 cajas contenedoras div (div1, div2 y div3), la primera con unas dimensiones de 500x500px y un background color amarillo. La segunda con dimensiones 300x300px y un background color verde. La tercera con dimensiones 150x150px y background color azul. Usando posicionamiento absoluto establece para el div2 y el div3 el mismo origen que para el div1, de modo que las cajas se superpongan y el efecto generado sea ver cuadrado azul sobre uno verde que a su vez está sobre uno amarillo.
 
-Define un documento HTML con 3 cajas contenedoras div (div1, div2 y div3), la primera con unas dimensiones de 500x500px y un background color amarillo. La segunda con dimensiones 300x300px y un background color verde. La tercera con dimensiones 150x150px y background color azul. Usando posicionamiento absoluto establece para el div2 y el div3 el mismo origen que para el div1, de modo que el efecto generado sea ver un cuadrado amarillo dentro del cual hay un cuadrado verde dentro del cual hay un cuadrado azul.
+Haz que las cajas estén centradas vertical y horizontalmente. Pon 40px de padding y 2px de borde al div1, 75px de padding al div 2 y 20px de borde de puntos al div3. Para esto usad `box-sizing: border-box;`.
 
-Haz que las cajas estén centradas vertical y horizontalmente. Pon 40px de padding y 2px de borde al div1, 75px de padding al div 2 y 20px de borde de puntos al div3. Para esto usad box-sizing border-box
-***
-###### EJERCICIO 7:
+* * *
+
+<a id="markdown-ejercicio-7" name="ejercicio-7"></a>
+#### EJERCICIO 7
 
 Define un documento HTML con varios div que contengan suficiente texto como para que la página se muestre con scroll (barras de desplazamiento). El primero de los div debe contener el texto “Esta página web utiliza cookies. Si continúa navegando acepta el uso de cookies.”, un valor height (altura) de 100 píxeles y color de fondo amarillo. Usando posicionamiento fixed, fija este div en la parte superior de la página de modo que se continúe visualizando aún cuando hagamos scroll.
-***
-###### EJERCICIO 8:
+
+* * *
+
+<a id="markdown-ejercicio-8" name="ejercicio-8"></a>
+#### EJERCICIO 8
 
 Crea una lista de cinco elementos que se muestre en línea y con espacios entre cada elemento de 12 píxeles.
 
@@ -185,12 +211,18 @@ Vista de la lista sin estilos
 
 Vista de la lista con estilos  
 ![Menu con estilos](assets/images/1-5/1_5_ejercicio_10_menu_con_estilo.png)
-***
-###### EJERCICIO 9:
 
-Crea un texto que ocupe el 86% de la pantalla y esté centrado dentro del body. Usaremos la propiedad max-width para dar un ancho máximo de 600px. [Más info acerca de max-width](http://devdocs.io/css/max-width).
-***
-###### EJERCICIO 10:
+* * *
+
+<a id="markdown-ejercicio-9" name="ejercicio-9"></a>
+#### EJERCICIO 9
+
+Crea un texto que ocupe el 86% de la pantalla y esté centrado dentro del body. Usaremos la propiedad `max-width` para dar un ancho máximo de 600px. [Más info acerca de max-width](http://devdocs.io/css/max-width).
+
+* * *
+
+<a id="markdown-ejercicio-10" name="ejercicio-10"></a>
+#### EJERCICIO 10
 
 Crea una composición similar a la de la imagen.
 
@@ -203,8 +235,11 @@ Las dimensiones de esta composición serían las siguientes:
 - El titular irá después con un tamaño de fuente de 32px y un margen inferior de 32px
 - Cada párrafo tendrá un tamaño de fuente de 18px y un margen inferior de 27px
 - El enlace tendrá un padding superior e inferior de 8px y otro izquierdo y derecho de 16px y un margen izquierdo de -16px
-***
-###### EJERCICIO 11:
+
+* * *
+
+<a id="markdown-ejercicio-11" name="ejercicio-11"></a>
+#### EJERCICIO 11
 
 La web que vamos a crear consta de las siguientes características:
 
@@ -215,8 +250,11 @@ La web que vamos a crear consta de las siguientes características:
 1. Al poner el ratón sobre cualquiera de ellas
   1. el cursor cambia para indicar que estamos obteniendo ayuda
   1. aparece un tooltip (recuadro flotante de 400px por 200px) de color blanco, con el nombre de la tecnología como título del tooltip y una breve descripción de la misma
-***
-###### EJERCICIO 12:
+
+* * *
+
+<a id="markdown-ejercicio-12" name="ejercicio-12"></a>
+#### EJERCICIO 12
 
 Vamos a crear una web simple, con las siguientes características:
 
@@ -226,7 +264,28 @@ Vamos a crear una web simple, con las siguientes características:
   1. El nombre de la empresa
   1. Un listado de redes sociales de la empresa (en formato texto o imagen) que aparezcan en línea
 1. Un texto para indicar que el sitio web usa cookies con un enlace para ver más info, que aparece en la esquina inferior derecha de la pantalla y que sigue ahí al hacer scroll
-***
+
+* * *
+
+<a id="markdown-ejercicio-13" name="ejercicio-13"></a>
+#### EJERCICIO 13
+
+Vamos a continuar desde el ejercicio 8 de la lección de flexbox
+
+Crearemos un elemento que se superponga sobre él. Ese elemento tendrá un fondo oscuro transparente y un div en su interior. Ese div entero estará centrado tanto vertical como horizontalmente y contendrá un titular, un texto y un par de botones. El resultado quedaría igual a la siguiente imagen.
+
+![Ejemplo](assets/images/1-4/ejercicio-8-3.png)
+
+En la imagen, es importante observar que la cabecera estará por debajo de la ventana emergente.
+
+* * *
+
+## Bonus
+
+### Devdocs
+[DevDocs](http://devdocs.io/about) va a ser nuestra página de documentación de cabecera ya que agrupa documentación oficial de diferentes temas de front: lenguajes, tecnologías, preprocesadores...
+
+Os proponemos DevDocs porque es un agrupador de documentación oficial que te permite tener contenido para consultar sin conexión en tu navegador.
 
 ## Recursos externos
 
