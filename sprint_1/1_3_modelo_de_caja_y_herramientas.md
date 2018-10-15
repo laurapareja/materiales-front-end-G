@@ -1,19 +1,21 @@
 
 # Modelo de caja y herramientas
 
-<!-- TOC START min:2 max:2 link:true update:true -->
-- [Introducción](#introduccin)
-- [¿Para qué sirve lo que vamos a ver en esta sesión?](#para-qu-sirve-lo-que-vamos-a-ver-en-esta-sesin)
-- [Modelo de caja](#modelo-de-caja)
-- [DevTools](#devtools)
-- [BONUS: Colores](#bonus-colores)
-- [BONUS: Background](#bonus-background)
-- [BONUS: Usando fuentes de Google Fonts](#bonus-usando-fuentes-de-google-fonts)
-- [BONUS: Paquetes de Atom que nos hacen la vida más fácil](#bonus-paquetes-de-atom-que-nos-hacen-la-vida-ms-fcil)
-- [Recursos externos](#recursos-externos)
+<!-- TOC depthFrom:4 depthTo:4 -->
 
-<!-- TOC END -->
+- [EJERCICIO 1](#ejercicio-1)
+- [EJERCICIO 2](#ejercicio-2)
+- [EJERCICIO 3](#ejercicio-3)
+- [EJERCICIO 4](#ejercicio-4)
+- [EJERCICIO 5:](#ejercicio-5)
+- [EJERCICIO 6](#ejercicio-6)
+- [EJERCICIO 7](#ejercicio-7)
+- [EJERCICIO 8:](#ejercicio-8)
+- [EJERCICIO 9](#ejercicio-9)
+- [EJERCICIO 11](#ejercicio-11)
+- [EJERCICIO 10:](#ejercicio-10)
 
+<!-- /TOC -->
 
 
 ## Introducción
@@ -33,7 +35,7 @@ El navegador Google Chrome nos ofrece una serie de herramientas llamadas Chrome 
 2. Para entender cómo se aplican las imágenes de fondo
 3. Para entender cómo se aplican los ajustes que realicemos a través de las Dev Tools
 
-### ¿En qué casos se utiliza?
+## ¿En qué casos se utiliza?
 
 * Cuando tengamos que darle un aspecto determinado al contenido, es decir, siempre :)
 * Cuando tengamos un problema en nuestra página para detectar dónde está el error.
@@ -58,7 +60,8 @@ Cada elemento tiene una *altura* (height) y *anchura* (width). Además, puede te
 - el *padding* es la distancia desde el contenido del elemento hasta el borde
 - el *margen* es la distancia desde borde del elemento hasta los elementos que están a su alrededor
 
-### Visualización (display)
+
+## Visualización (display)
 
 La propiedad CSS `display`, se encarga de definir cómo se va a visualizar un elemento HTML, cómo va a colocarse en la página y cómo se colocarán el resto de elementos respecto a este. Según el valor que tenga asignado display, un elemento puede ocupar el ancho entero de su contenedor, ocupar solo el espacio que necesite para mostrar su contenido, mostrarse como si fuese una casilla de una tabla o directamente ocultarse.
 
@@ -69,7 +72,7 @@ Los navegadores web aplican por defecto un valor `display` a todos los elementos
 * inline-block
 * none
 
-#### Block
+### Block
 
 Los elementos en bloque se muestran ocupando el ancho completo de su contenedor, en otras palabras, si tenemos un elemento en bloque dentro de una etiqueta `aside`, este ocupará el ancho completo del `aside`, si por lo contrario el elemento está directamente dentro del `body`, este ocupará el ancho del `body` y así siempre. Los elementos en bloque siempre empiezan en una nueva línea y nunca van a tener más elementos a su misma altura dentro del mismo contenedor, estarán más arriba o más abajo.
 
@@ -94,7 +97,7 @@ A continuación se muestra la lista completa de elementos HTML que, por defecto,
 > **Nota:**  
 > Como es difícil memorizar la lista completa de elementos que se muestran en bloque, podemos hacernos la siguiente pregunta para saber si un elemento se mostrará en bloque o no: _"¿Tendría sentido meter este elemento dentro de un párrafo?"_. Si la respuesta es "no", es muy probable que el elemento sea un bloque; si por lo contrario, la respuesta es sí, probablemente sea un elemento en línea. Por ejemplo, no tendría sentido meter una lista, un `aside` o un `div` dentro de un párrafo y por eso los navegadores muestran estos como bloques.
 
-#### Inline
+### Inline
 
 Los elementos en línea o _inline_ son aquellos que ocupan lo que ocupa su contenido. En estos, el tamaño será exactamente el tamaño de su contenido. Por ejemplo, si tenemos un enlace con el texto "púlsame", el ancho de ese enlace será el propio ancho del texto.
 
@@ -126,7 +129,7 @@ A continuación se muestra la lista completa de elementos HTML que, por defecto,
 > **Nota:**  
 > Aquí podemos usar la misma pregunta que comentamos en la sección de elementos en bloque para deducir si un elemento está en línea: _"¿Tendría sentido meter este elemento dentro de un párrafo?"_. Si la respuesta es "sí", es muy probable que sea un elemento en línea.
 
-#### inline-block
+### inline-block
 
 En este caso y como su nombre indica, el comportamiento de los elementos `inline-block` es una mezcla entre el comportamiento de los elementos en línea y los elementos en bloque.
 
@@ -136,7 +139,7 @@ Los elementos `inline-block` ocupan por defecto el ancho de su contenido y se co
 
 Para hacer que un elemento se comporte como `inline-block`, utilizaremos `display: inline-block;`, como hemos visto en los ejemplos con `inline` y `block`.
 
-#### Elementos ocultos
+### Elementos ocultos
 
 A veces queremos que un elemento esté oculto, por ejemplo, el típico mensaje de aviso de cookies que aparece cada vez que entramos en una página. Con JavaScript, haremos que este mensaje se muestre o se oculte dependiendo si hemos visitado antes la página o no, pero desde JavaScript lo que haremos será añadir o quitar una clase CSS, los estilos los gestionaremos siempre desde el CSS.
 
@@ -159,17 +162,41 @@ Por último, aquí tenemos un Codepen con la recopilación de los distintos tipo
 [Elementos inline, inline-block y block en Codepen](https://codepen.io/adalab/pen/QOjVye)
 
 * * *
-EJERCICIO 1:
+<a id="markdown-ejercicio-1" name="ejercicio-1"></a>
+#### EJERCICIO 1
+
+**Marcando**
 
 Usar la etiqueta `<mark>` dentro de varios párrafos y explicar para qué sirve y cómo funciona.
+
 * * *
-EJERCICIO 2:
+
+* * *
+<a id="markdown-ejercicio-2" name="ejercicio-2"></a>
+#### EJERCICIO 2
+
+**Displays**
+
+Prepara tres `div`s con un tamaño de 100x100, cambia sus displays (block, inline, inline-block, none) y observa como se comportan.
+
+* * *
+
+<a id="markdown-ejercicio-3" name="ejercicio-3"></a>
+#### EJERCICIO 3
+
+**Imagen en párrafo**
 
 Dentro de un párrafo de texto incluir una imagen de 100x100 y explicar cómo se distribuye el contenido.
+
 * * *
-EJERCICIO 3:
+
+<a id="markdown-ejercicio-4" name="ejercicio-4"></a>
+#### EJERCICIO 4
+
+**Imagen entre párrafos**
 
 Entre dos párrafos añadir una imagen de 200x200 y explicar cómo se distribuye el contenido.
+
 * * *
 
 ### Dimensiones y box-sizing
@@ -179,24 +206,38 @@ Si pensamos en el conjunto global, una página sería como un conjunto de cajas 
 
 Puedes leer una [explicación más completa sobre el modelo de caja en la documentación de la MDN](https://developer.mozilla.org/es/docs/Learn/CSS/Introduction_to_CSS/Modelo_cajas).
 
-* * *
+
 EJEMPLO:
 
 Si tengo una caja de 100x100px, con un borde de 2px y con un padding de 16px, tendría una caja de 2+16+100+16+2: 136x136px.
-* * *
 
-Con la propiedad `box-sizing` podemos cambiar el modelo de caja para un elemento (o para todos). Y podríamos asignarle `border-box`, que es el otro modelo existente.
+
+Por defecto los elementos tienen el modelo de caja `content-box` con la propiedad `box-sizing` podemos cambiarlo asignando el valor `border-box`, que es el otro modelo existente.
 En `border-box` tanto el borde como padding están incluidos en el ancho/alto del elemento, de manera que en el caso anterior nuestra caja tendría 100x100px pero el espacio para el contenido de nuestra caja no sería de 100x100 sino de 100-(2+2+16+16): 64x64px.
 
 Mira y entiende este [ejemplo de modelo de caja en Codepen](https://codepen.io/adalab/pen/qoJNyN).
 
+Si quisiéramos cambiar el modelo de caja para todos los elementos podemos usar el selector `*`, que modifica todos los elementos de la página, y por lo tanto debemos de usarlo con mucho tiento.
+
+```css
+* {
+  box-sizing: border-box
+}
+```
+
 * * *
-EJERCICIO 4:
+
+<a id="markdown-ejercicio-5" name="ejercicio-5"></a>
+#### EJERCICIO 5:
+
+**Ajustando imágenes**
 
 Hacer un `div` de 100x100px usando las propiedades `width` y `height`, incluir dentro una imagen de 100x100px y probar:
 - Añadir un padding de 10px
 - Añadir un borde de 5px
 - Cambiar el modelo de caja a `border-box` y explica qué ha pasado
+- Centrar la caja utilizando el valor `auto` en los margenes horizontales.
+
 * * *
 
 ### Overflow
@@ -213,58 +254,78 @@ Podemos controlar cómo se comporta un contenedor en los casos en que el conteni
 2. Ocultar todo lo que se salga
 3. Incluir scroll en el contenedor
 
-Podéis leer sobre la propiedad _overflow_::
+Podéis leer sobre la propiedad _overflow_:
 * [overflow](http://devdocs.io/css/overflow)
 * [overflow-x](http://devdocs.io/css/overflow-x)
 * [overflow-y](http://devdocs.io/css/overflow-y)
 
 * * *  
-EJERCICIO 5:
+<a id="markdown-ejercicio-6" name="ejercicio-6"></a>
+#### EJERCICIO 6
+
+**Todo en su caja**
 
 Con estos enlaces, ¿sabrías resolver los casos de [este Codepen](https://codepen.io/adalab/pen/KobLGM)?
 
 * * *
-> **Nota:**  
+> **NOTA:**  
 > Recordad que para que el overflow se active, el contenedor tiene que tener definidas dimensiones (o ser un elemento de bloque y que el contenido sobrepase el ancho del contenedor)
 
-## DevTools
-Desde que aparecieron las Devtools en todos los navegadores decentes, la vida del front-end es mucho más tranquila. Estas herramientas nos permiten saber qué está pasando en un módulo concreto (medidas, posicionamiento, CSS aplicados) o qué está cargando nuestra web (hojas de estilos, imágenes, vídeos/audios, JavaScript).
+### Alineando elementos en linea
 
-### Devtools: Inspector
+`text-align` nos permite alinear horizontalmente texto y elementos en linea con los valores `right`, `left`, `center` y `justify`. De esta manera cuando lo aplicamos sobre una etiqueta podemos modificar la alineación horizontal de todas sus hijas cuyas display sea *inline*.
+
+* * *
+
+<a id="markdown-ejercicio-7" name="ejercicio-7"></a>
+#### EJERCICIO 7
+
+**Equipo corchángulo**
+
+Nos vamos de hackaton, y la página con los detalles de nuestro equipo está sin terminar. La maquetadora la ha dejado preparada a falta de descomentar algunas lineas. Mira el [Codepen](https://codepen.io/adalab/pen/LrPbmb?editors=1100#0) que ha preparado y descomenta y comenta las lineas de CSS para ver como se comportan los elementos.
+
+* * *
+
+
+## DevTools
+Desde que aparecieron las *Devtools* en todos los navegadores decentes, la vida del front-end es mucho más tranquila. Estas herramientas nos permiten saber qué está pasando en un módulo concreto (medidas, posicionamiento, CSS aplicados) o qué está cargando nuestra web (hojas de estilos, imágenes, vídeos/audios, JavaScript).
+
+## Devtools: Inspector
 El inspector es una de las muchas herramientas de desarrollo que incluye el navegador web Google Chrome. Este grupo de herramientas recibe el nombre de Chrome DevTools.
 
-#### ¿Cómo lo abrimos?
+### ¿Cómo lo abrimos?
 
 Para abrir el inspector tenemos varias opciones:
 * Pulsando en el menú de tres botones de la derecha superior de Chrome > más herramientas > herramientas para desarrolladores
-* Usar `Ctrl + Mayúscula + I` en Ubuntu o Windows y `Cmd + Opción + I` en Mac
+* Usar `Ctrl+Shift+I` en Ubuntu o Windows y `Cmd+Opción+I` en Mac
 * Pulsar con el botón derecho sobre un elemento de nuestra página y seleccionar la opción *Inspeccionar*
 
-#### Si queremos cerrarlo...
+### Si queremos cerrarlo...
 
 * Pulsamos en la cruz que aparece en la esquina superior derecha del panel
-* Usamos `Ctrl + Mayúscula + I` en Ubuntu o Windows y `Cmd + Opción + I` en Mac de nuevo
+* Usamos `Ctrl++ShiftI` en Ubuntu o Windows y `Cmd+Opción+I` en Mac de nuevo
 
-#### ¿Qué es?
+### ¿Qué es?
 
 El inspector es una herramienta que viene con nuestro navegador y por tanto es parte de la aplicación del navegador, está incluida en, prácticamente, todos los navegadores más famosos (Chrome, Firefox, Safari, Internet Explorer…) y sirve para leer, añadir, editar o eliminar tanto CSS como HTML (y sus atributos) de nuestra página. Con él haremos de cirujanos de la web, veremos sus tripas y las modificaremos a nuestro antojo.
 
-El inspector nos permite indagar y modificar tanto en páginas que tengamos en nuestro ordenador como otras que estén publicadas en Internet. Cuando modifiquemos estas páginas no estaremos modificando las páginas como tal realmente, estaremos modificandolas temporalmente para ver qué sucedería si aplicamos ciertos cambios pero la web como tal, ya sea la de nuestro ordenador o la de Internet, no va a verse modificada. Esos cambios serán temporales y una vez que recarguemos la página se perderán y ésta volverá a su estado inicial.
+El inspector nos permite indagar y modificar tanto en páginas que tengamos en nuestro ordenador como otras que estén publicadas en Internet. Cuando modifiquemos estas páginas no estaremos modificando las páginas como tal realmente, solo temporalmente para ver qué sucedería si aplicamos ciertos cambios pero la web como tal, ya sea la de nuestro ordenador o la de Internet, no va a verse modificada. Esos cambios serán temporales y una vez que recarguemos la página se perderán y ésta volverá a su estado inicial.
 
 
-#### ¿Para qué nos sirve?
+### ¿Para qué nos sirve?
 
 Dado que nos permite controlar qué está pasando con una web, podemos ver los recursos que se están cargando y cuáles fallan. Nos permite ver el código tanto de nuestra página, para ver si está funcionando correctamente, como de otras, para ver cómo aplican ciertas técnicas o coger inspiración.
 
 Por otro lado nos permite investigar qué cambios queremos hacer sin guarrear nuestro CSS o HTML y corregir de forma más rápida y sencilla los errores de nuestro código.
 
 Por ejemplo, podemos ver información del modelo de caja:
-![HTML y Moodelo de caja en las DevTools](assets/images/1-3/html-inspector-modelo-de-caja.png)
+![HTML y Modelo de caja en las DevTools](assets/images/1-3/html-inspector-modelo-de-caja.png)
 
 Podemos colocarlo arriba, abajo, a la derecha o sacarlo a una nueva ventana.
 
 * * *
-EJERCICIO 6:
+<a id="markdown-ejercicio-8" name="ejercicio-8"></a>
+#### EJERCICIO 8:
 
 Entrar en [Wikipedia.org](http://wikipedia.org) y:
 * Cambiar el color de los enlaces a naranja
@@ -278,7 +339,7 @@ Entrar en [Wikipedia.org](http://wikipedia.org) y:
     * ¿Qué hay de raro con esa separación?
 * * *
 
-#### Cambiando css con el Inspector: el atributo style
+### Cambiando css con el Inspector: el atributo style
 Con el inspector no solo podemos consultar información sino cambiarla para hacer pruebas rápidas, en este ejemplo hemos reducido el margin-top de la "caja" con el encabezado principal de la página de  **GulpJS** de `50px` a `5px`:
 ![Ejemplo de edición desde el inspector](assets/images/1-3/edicion-con-el-inspector.png)
 
@@ -295,18 +356,18 @@ Usando este atributo los estilos se escriben en línea, seguidos y separados por
 ```
 
 * * *
-EJERCICIO 7:
+<a id="markdown-ejercicio-9" name="ejercicio-9"></a>
+#### EJERCICIO 9
 
-¿Sabriamos ir a la web https://duckduckgo.com, buscar el logo con el id "logo_homepage_link" y aplicarle estos estilos desde nuestro inspector?
-```
+¿Sabríamos ir a la web https://duckduckgo.com, buscar el logo con el id "logo_homepage_link" y aplicarle estos estilos desde nuestro inspector?
+```css
 background-color: black;
 border-radius: 10px;
 width: 250px;
 ```
 * * *
 
-
-### Devtools: Network
+## Devtools: Network
 Sirve para ver qué recursos carga nuestra página y ver si se ha producido algún error cargando esos recursos. Network muestra tanto las imágenes como otros recursos que se cargan (CSS, JavaScript, fuentes, etc.)
 
 Network también muestra cuánto tarda en cargarse un elemento y qué tamaño tiene. De esta forma podremos saber también si hemos metido un recurso muy pesado y si está afectando al tiempo que tarda la web en cargarse.
@@ -317,91 +378,71 @@ Otro recurso muy interesante que nos ofrece Network es que nos permite ver cuán
 
 * * *
 
-EJERCICIO 8:
+<a id="markdown-ejercicio-11" name="ejercicio-11"></a>
+#### EJERCICIO 11
 
 Entrar en [Wikipedia.org](http://wikipedia.org) y
 * Averiguar el peso total de la página principal de Wikipedia
 * Averiguar cuánto ha tardado en cargar la página
 * Averiguar cuántas imágenes usa la página principal de Wikipedia
+
 * * *
 
 De momento veremos hasta ahí. Las herramientas para desarrolladores de Google Chrome ofrecen un sinfín de posibilidades más pero iremos viendo cada una en el momento en el que la necesitemos.
 
-## BONUS: Colores
+## Colores
 
 Para empezar, vamos a ver los distintos formatos que podemos usar para indicar colores, que podemos usar por ejemplo como valor de nuestro querida propiedad CSS `color`.
 
-#### Colores con palabras clave
+### Colores con palabras clave
 
 La primera forma de indicar un color es mediante la palabra clave que indica el nombre del color. Hay un montón de palabras clave para colores que podemos usar que podéis ver en [la tabla de este artículo](http://devdocs.io/css/color_value#Color_keywords).
-* * *
-EJEMPLO:
 
 ```css
 p {
   color: fuchsia;
 }
 ```
-* * *
 
-#### Colores en hexadecimal
+### Colores en hexadecimal
 
 De forma equivalente a las palabras clave, podemos expresar un color con formato hexadecimal. En este formato declaramos un color con una almohadilla `#` y sus 3 componentes RGB - R (rojo), G (verde), B (azul). Cada uno de los componentes se representa con 2 dígitos en hexadecimal, es decir, cada dígito puede tener 16 valores, entre 0 - 9 y A - F. Por ejemplo, el color fucsia se compone de una componente máxima de rojo (ff), nada de verde (00) y máxima de azul (ff).
-
-* * *
-EJEMPLO:
 
 ```css
 p {
   color: #ff00ff;
 }
 ```
-* * *
 
 Suele ser habitual expresar algunos colores comunes de forma simplificada. Si los dígitos de cada componente son iguales (por ejemplo, `ff`) puede escribirse el color de una forma simplificada escribiendo sólo una vez el dígito repetido. Por ejemplo, el fucsia puede simplificarse porque todos los componentes tienen el dígito repetido.
-
-* * *
-EJEMPLO:
 
 ```css
 p {
   color: #f0f;
 }
 ```
-* * *
 
-#### rgb y rgba
+### rgb y rgba
 
 Como hemos visto en el caso anterior, los colores podemos expresarlos con sus componentes RGB (Red, Green, Blue). En CSS existe la posibilidad de, en lugar de usar 2 dígitos hexadecimales, expresar el color usando el valor decimal (número normal) de cada componente RGB, que tendrá un valor entre 0 y 255 (los mismos valores que podíamos indicar con 2 dígitos hexadecimales).
-
-* * *
-EJEMPLO:
 
 ```css
 p {
   color: rgb(255, 0, 255);
 }
 ```
-* * *
 
 Existe además la posibilidad de indicar un nivel de opacidad al color con el formato RGBA que añade el canal alpha o transparencia. Este último componente tiene valores decimales entre 0 (totalmente transparente) y 1 (totalmente opaco).
-
-* * *
-EJEMPLO:
 
 ```css
 p {
   color: rgba(255, 0, 255, 0.7);
 }
 ```
-* * *
 
-#### hsl y hsla
+### hsl y hsla
 
 Igual que el RGB nos permite expresar colores a partir de sus componentes de color rojo/verde/azul, existe otro sistema, HSL, que nos permite expresarlos a través de H (hue - matiz), S (saturation - saturación), L (lightness - luminosidad). El matiz se expresa con un valor numérico y tanto saturación como luminosidad con un valor en %. En este caso, también existe la posibilidad de añadir un canal alpha para indicar transparencia.
-
-* * *
-EJEMPLO:
 
 ```css
 p {
@@ -416,7 +457,8 @@ p {
 
 Para más información, consultad [la guía de colores de MDN](http://devdocs.io/css/color_value).
 
-## BONUS: Background
+### Background
+
 Una vez entendido que cada elemento se puede ver como una caja, veamos cómo añadir un fondo a dicha "caja":
 
 Gracias a la propiedad _background_ podemos rellenar el fondo de nuestro contenedor con una imagen, con un color, o ambos:
@@ -436,7 +478,7 @@ La propiedad background se construye con estos posibles valores:
   }
 ```
 
-> **Nota:**  
+> **NOTA:**  
 > El orden no tiene que ser necesariamente ese, pero os proponemos usarlo.
 
 Realmente, la propiedad _background_ es una versión acortada de estas propiedades:
@@ -446,7 +488,8 @@ Realmente, la propiedad _background_ es una versión acortada de estas propiedad
 * **background-color:** [Ver detalle](http://devdocs.io/css/background-color)
 
 * * *
-EJERCICIO 9:  
+<a id="markdown-ejercicio-10" name="ejercicio-10"></a>
+#### EJERCICIO 10:  
 
 ¿Sabrías replicar los ejemplos de fondo usando [este Codepen](https://codepen.io/adalab/pen/JLwQpz)?
 * * *
@@ -461,28 +504,27 @@ Usar estas dos propiedades produce el mismo resultado pero no son lo mismo:
 	background: green;
 }
 ```
-Mientras que en el primer caso estamos diciendo que el color de fondo sea `green`, en el segundo estamos diciendo eso y que el resto de valores pasen a su valor por defecto.
-* * *
-EJEMPLO:  
+Mientras que en el primer caso estamos diciendo que el color de fondo sea `green`, en el segundo estamos diciendo eso y que el resto de valores pasen a su valor por defecto.  
 
 ¿Sabrías adelantar el resultado de aplicar esta clase?:
+
 ```css
 .box {
 	background-image: url('https://fillmurray.com/150/1500');
 	background: red;
 }
 ```
+
 - [ ] Se verá a Bill Murray de fondo
 - [ ] Se verá a Bill Murray de fondo pero lo que no rellene la imagen será de color rojo
 - [ ] Solo se verá un color rojo de fondo
 - [ ] Otra
 
-* * *
 Cuando usamos un acortador estamos definiendo TODAS las opciones, aunque no las usemos, por eso siempre deberíamos usar las propiedades que necesitemos, y solo usar los acortadores cuando realmente estemos usando la mayoria de las propiedades que acortan :)
 
 Si solo queremos cambiar el color de fondo deberíamos usar
 `background-color`.
-Si por el contrario queremos poner una imagen, en una posicion y con una repeticion, deberíamos usar el acortador `background` ya que realmente se escribe menos:
+Si por el contrario queremos poner una imagen, en una posición y con una repetición, deberíamos usar el acortador `background` ya que realmente se escribe menos:
 
 ```css
 .box {
@@ -496,22 +538,24 @@ Si por el contrario queremos poner una imagen, en una posicion y con una repetic
 	background: url('https://fillmurray.com/150/150') left top no-repeat;
 }
 ```
-### Background-size
+## Background-size
 Desde hace tiempo hay una propiedad nueva que nos permite redimensionar la imagen de fondo y hasta definir cómo se debe ajustar a nuestro contenedor: `background-size`.
 
 Nosotros vamos a ver cómo ajustar el fondo a nuestro contenedor pero puedes consultar la [documentación completa](http://devdocs.io/css/background-size).
 
 Hay dos valores especialmente interesantes ya que permiten definir cómo se ajustará nuestra imagen de fondo al contenedor: **contain** y **cover**.  
 
-#### Contain
+### Contain
 Aumenta o reduce la imagen proporcionalmente todo lo que pueda sin deformarla para que quepa en nuestro contenedor.
 
-#### Cover
+### Cover
 Aumenta o reduce la imagen proporcionalmente para asegurarse que siempre cubre todo el área de nuestro contenedor, aunque eso signifique que parte de la imagen pueda quedar oculta.
 
 [Ejemplos de uso de Contain y Cover](https://codepen.io/adalab/pen/aGojMd)
 
-## BONUS: Usando fuentes de Google Fonts
+## BONUS
+
+### Usando fuentes de Google Fonts
 
 Para utilizar fuentes tipográficas de un sitio externo como Google Fonts, tenemos que seguir 2 sencillos pasos:
 1) Añadir una etiqueta link a nuestro body con un enlace que cargue la fuente
@@ -526,19 +570,16 @@ p{
 }
 ```
 
-#### ¿Cómo construimos la URL para enlazar la tipografía?
+### Enlazando la fuente
 
-En la propia URL añadimos `family=` y escribimos el nombre de la tipografía a usar. Si tiene espacios, los sustituimos por `+`. Si queremos importar varias fuentes, podemos cargar todas en el mismo enlace a Google Fonts poniendo los nombres separados por `|`.
+¿Cómo construimos la URL para enlazar la tipografía?
 
-* * *
-EJEMPLO:  
+En la propia URL añadimos `family=` y escribimos el nombre de la tipografía a usar. Si tiene espacios, los sustituimos por `+`. Si queremos importar varias fuentes, podemos cargar todas en el mismo enlace a Google Fonts poniendo los nombres separados por `|`. 
 
 `https://fonts.googleapis.com/css?family=Tangerine|Inconsolata|Droid+Sans`
 
 Para cada tipo de fuente se importa por defecto la fuente normal, pero puede que queramos usar la fuente con otro peso (como negrita) o estilo (como cursiva). Para esto, añadimos al final del nombre de la fuente `:` y separados por `,` los estilos o pesos extra que necesitemos. El peso puede expresarse también como valor numérico que indica el grosor (400 es normal, 700 es negrita).
-
-* * *
-EJEMPLOS:  
+ 
 ```
 https://fonts.googleapis.com/css?family=Tangerine:bold
 https://fonts.googleapis.com/css?family=Tangerine:bold,italic
@@ -547,49 +588,26 @@ https://fonts.googleapis.com/css?family=Tangerine:400,700
 * * *
 Para más información consultad la [guía de inicio de Google Fonts](https://developers.google.com/fonts/docs/getting_started).
 
-## BONUS: Paquetes de Atom que nos hacen la vida más fácil
+### Extensión `Live server` en Code 
 
-Como estáis comprobando, el editor es una de las herramientas que más usamos en nuestro día a día. Conocer algunos paquetes y trucos nos harán la vida más fácil.
-
-#### Live server
-
-Cuando creamos una web, al final será "servida" por un servidor web en Internet para que todo el mundo pueda visitarla. Por tanto, es útil tener un servidor web local en nuestro ordenador de desarrollo. En Atom, contamos con el paquete [`atom-live-server`](https://atom.io/packages/atom-live-server), que nos permite lanzar un servidor web local desde una carpeta de nuestro ordenador y ejecutándose en un puerto concreto.
+Cuando creamos una web, al final será "servida" por un servidor web en Internet para que todo el mundo pueda visitarla. Por tanto, es útil tener un servidor web local en nuestro ordenador de desarrollo. En Code, contamos con la extensión [`live-server`](https://ritwickdey.github.io/vscode-live-server/), que nos permite lanzar un servidor web local desde una carpeta de nuestro ordenador y ejecutándose en un puerto concreto.
 
 Por defecto, el servidor web se lanza con origen en la carpeta raíz que tengamos en nuestro proyecto actual. Como cualquier servidor web, busca en la raíz un fichero `index.html` como punto de entrada a la web. Si no lo encuentra, un servidor web real daría un error, pero live-server muestra una página que nos permite navegar por las subcarpetas de nuestro ordenador hasta llegar al html que queramos mostrar.
 
 Cada vez que modifiquemos los ficheros usados en la web que estamos visualizando en el navegador con Live Server, ésta se recargará *automágicamente* en el navegador.
 
-Para lanzar el servidor, podemos usar los shortcuts (`Ctrl + Alt + 3`, `Crtl + Alt + 4`, etc.) o mostrar el lanzador (`Ctrl + Shift + p`), buscar 'server' y dar Enter sobre la opción para lanzar el servidor. Si no le decimos lo contrario, el servidor se está ejecutando todo el rato en nuestro ordenador. Si cambiamos de proyecto o tenemos algún problema, es importante pararlo con `Ctrl + Alt + q` o también desde el lanzador.
+Para lanzar el servidor, podemos usar los shortcuts (`Alt+L Alt+O`), hacerlo a través (`Ctrl+Shift+P`) buscando *Live Sever*, o pulsando en el botón *Go Live* situado en la barra inferior de Code. Si no le decimos lo contrario, el servidor se está ejecutando todo el rato en nuestro ordenador. Si cambiamos de proyecto o tenemos algún problema, es importante pararlo con `Alt+L Alt+C`, desde la paleta o en la barra inferiror de Code.
 
-#### Auto-indent
-
-Desde el lanzador de comandos (`Ctrl + Shift + p`) podemos buscar una opción de auto-indent que hace que el fichero actual adquiera una indentación correcta. Como sabéis indentar el código es muy importante para su legibilidad y para que nuestros compañeros entiendan mejor nuestro código. Nos puede ayudar a encontrar fallos (por ejemplo, etiqueta no cerrada) que de otra manera nos llevarían mucho tiempo.
-
-Podéis mirar más [info del paquete de auto-indent](https://atom.io/packages/auto-indent).
-
-#### Emmet
-
-Es un lenguaje abreviado para escribir HTML, que quizá hayáis conocido en codepen. También podemos usarlo en Atom, instalando [el paquete correspondiente](https://atom.io/packages/emmet).
-
-El uso básico es escribir una porción de código en Emmet, que al finalizar se convierte (expande) a HTML usando una tecla (por defecto, la tecla `Tab`).
-
-
-Con este lenguaje abreviado podemos por ejemplo conseguir:
-- 4 párrafos con `p*4`
-- un párrafo y una imagen escribiendo `p+img`
-- un párrafo con una imagen dentro con una imagen con `p>img`
-- un párrafo con clase main con `p.main`
-- un div con clase container `.container`
-
-Podéis aprender más en la propia [web de Emmet](https://emmet.io/).
+> **NOTA**:
+> Podemos acceder al área de extensiones a través del icono `Extensiones` localizado en la barra izquierda de Code, o con el atajo `Ctrl+Shift+X`.
 
 ## Recursos externos
 
-#### Sobre el modelo de caja
+### Sobre el modelo de caja
 - [Libro Introducción a CSS - 4. Modelo de cajas](https://librosweb.es/libro/css/capitulo_4.html)
 - [Libro de Introducción a CSS - 4.1. Anchura y altura](https://librosweb.es/libro/css/capitulo_4/anchura_y_altura.html)
 
-#### Sobre las DevTools
+### Sobre las DevTools
 
 - [Explicación detallada sobre las DevTools](https://developers.google.com/web/tools/chrome-devtools/?hl=es)
 - [Videos de las herramientas para desarrolladores de Chrome - inglés](http://discover-devtools.codeschool.com/chapters/1?locale=en)
