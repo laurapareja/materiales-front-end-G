@@ -66,13 +66,13 @@ Hay una serie de secciones especiales que tienen asignado un significado semánt
 
 Estos bloques especiales se pueden usar unos dentro de otros según tenga sentido: por ejemplo, un `<article>` puede tener cabecera y pie, mientras que una cabecera no debería tener pie.
 
-	NOTA: Si usamos mal estos elementos el navegador no va a dar error, pero estaremos haciendo un favor muy pobre a aquellos usuarios que necesiten este extra semántico para navegar (por ejemplo, una usuaria ciega).
+> **NOTA**: Si usamos mal estos elementos el navegador no va a dar error, pero estaremos haciendo un favor muy pobre a aquellos usuarios que necesiten este extra semántico para navegar (por ejemplo, una usuaria ciega).
 
 ## Contenido
-Dentro de estas secciones querremos incluir nuestros contenidos. Además de los encabezados, párrafos y listas tenemos un juego importante de etiquetas:
+Dentro de estas secciones querremos incluir nuestros contenidos. Además de los encabezados, párrafos y listas tenemos un juego importante de etiquetas.
 
 ### Enlaces
-Uno de los conceptos básicos de HTML es el enlace que nos permite vincular páginas o partes de ellas de manera que la información no quede como algo aislado sino conectado:
+Uno de los conceptos básicos de HTML es el enlace que nos permite vincular páginas o partes de ellas de manera que la información no quede como algo aislado sino conectado.
 
 Un ejemplo es la wikipedia, donde en cada artículo se añaden enlaces relacionados que hacen que puedas completar la información a medida que la vas consultando.
 
@@ -137,8 +137,9 @@ Ahora podría añadir un enlace abajo del todo para ahorrarle el scroll a las us
 
 Si quisiese enlazar al contenido principal de mi página desde otra página usaría:
 
+**product.html**
 ```html
-<a href="index.html#top">Volver arriba</a>
+<a href="index.html#top">Volver arriba de la página principal</a>
 ```
 
 En estos dos casos se dice que las rutas son **relativas** porque apuntan dentro de nuestro proyecto. Si incluimos el dominio donde está alojada la página o archivo, aunque sea en nuestro dominio, diremos que la ruta es **absoluta**.
@@ -148,7 +149,7 @@ Si conocemos una página que use id, podemos enlazar directamente a esa parte de
 ```html
 <a href="https://es.wikipedia.org/wiki/Piratería#La_Edad_Media">La piratería en la edad media</a>
 ```
-Aquí el atributo href lleva la dirección de la página de la Wikipedia sobre la piratería y el id de la sección que se refiere a la edad media.
+Aquí el atributo `href` lleva la dirección de la página de la Wikipedia sobre la piratería y el `id` de la sección que se refiere a la edad media.
 
 La etiqueta `<a>` tiene otros atributos que debemos conocer:
 * `title=""`: Donde podemos añadir un texto complementario que el navegador mostrará en un pequeño tooltip cuando pongamos el cursor sobre el enlace. Me interesa usarlo cuando tengo un enlace tipo "descargar" y quiero asociarle el texto "Descargar archivo PDF".  
@@ -224,7 +225,6 @@ y en código quedaría así:
 En principio, en las tablas siempre tiene que haber igual número de celdas en cada fila.
 
 * * *
-<a id="markdown-ejercicio-1" name="ejercicio-1"></a>
 #### EJERCICIO 1
 
 **Organizando la semana**
@@ -269,7 +269,6 @@ Buscar información sobre todos estos elementos en la [MDN](https://developer.mo
 
 * * *
 
-<a id="markdown-ejercicio-2" name="ejercicio-2"></a>
 #### EJERCICIO 2
 
 **Una página clásica**
@@ -281,11 +280,11 @@ Realizar una página semántica con: un título principal, tres párrafos con el
 ## CSS
 Todos los elementos HTML tienen una apariencia que comparte cada navegador, con pequeñas variaciones. Por defecto, el tamaño de texto por defecto es de 16px, con un interlineado de 1.15. Los encabezados y párrafos tienen un margen superior e inferior relacionado con el tamaño de texto: el `<h1>` se muestra con un tamaño de 32px y tiene 22px de margen. El fondo de la página es blanco y el color del texto es negro...
 
-	NOTA:
-	La medida básica en web es el pixel o px, cada dispositivo tiene su pantalla que tiene unas dimensiones definidas en pixels, por ejemplo, la pantalla de móvil más pequeña tiene 320x480px (si no se indica lo contrario siempre es "alto por ancho").
+> **NOTA**:
+La medida básica en web es el pixel o px, cada dispositivo tiene su pantalla que tiene unas dimensiones definidas en pixels, por ejemplo, la pantalla de móvil más pequeña tiene 320x480px (si no se indica lo contrario siempre es "alto por ancho").
 
 ### Hojas de CSS reset y normalización
-Debido a las pequeñas variaciones de la apariencia por defecto de los diferentes elementos html en cada navegador existen unas hojas de estilos más o menos estándar y más o menos completas que se llaman hojas de CSS reset o normalización.
+Debido a las pequeñas variaciones de la apariencia por defecto de los diferentes elementos HTML en cada navegador existen unas hojas de estilos más o menos estándar y más o menos completas que se llaman hojas de CSS *reset* o normalización.
 Se trata de una hoja de estilos que intenta que todos los elementos se muestren igual en todos los navegadores y no hay un estándar para hacerlo.
 
 Ahora mismo hay parte de la comunidad de desarrollo que no considera que estas hojas de reset sean necesarias porque:
@@ -293,10 +292,10 @@ Ahora mismo hay parte de la comunidad de desarrollo que no considera que estas h
 * Las últimas versiones de los navegadores son bastante decentes y la época dura de los navegadores antiguos, ya paso
 * No hay un método estándar de reseteo de CSS
 
-	NOTA: Aún así, en algunos casos puede interesar usar una o incluso hacerse una propia, así que conocerlas es importante.
+> **NOTA**: Aún así, en algunos casos puede interesar usar una o incluso hacerse una propia, así que conocerlas es importante.
 
-[Reset CSS](https://es.wikipedia.org/wiki/Reset_CSS)
-[Normalice CSS](https://github.com/necolas/normalize.css)
+* [Reset CSS](https://es.wikipedia.org/wiki/Reset_CSS)
+* [Normalice CSS](https://github.com/necolas/normalize.css)
 
 ## Selectores de CSS
 Los navegadores ofrecen este aspecto por defecto pero nosotros lo podemos cambiar con CSS, creando estilos para definir la apariencia de nuestras página.
@@ -327,7 +326,7 @@ Por ejemplo: La clase "text-link" nos permite aplicar estilos particulares a los
 ```html
 <a href="#" class="text-link">Enlace de texto</a>
 ```
-En css creamos clases para aplicar a grupos de elementos como pueden ser todos los enlaces de texto, los elementos del listado de ingredientes o a los párrafos del pié de página.
+En CSS creamos clases para aplicar a grupos de elementos como pueden ser todos los enlaces de texto, los elementos del listado de ingredientes o a los párrafos del pié de página.
 La manera de indicar en css que se trata de una clase es escribiendo un `.` primero:
 ```css
 .text-link {
@@ -335,8 +334,8 @@ La manera de indicar en css que se trata de una clase es escribiendo un `.` prim
 }
 ```
 
-### Id como selector
-Ya habíamos visto que los ID eran una palabra clave que usábamos como identificador para un único elemento. En css también los podemos usar como selector, pero al no poder haber más de uno por página no es recomendable usarlo salvo en casos muy excepcionales.
+### *id* como selector
+Ya habíamos visto que los *id* eran una palabra clave que usábamos como identificador para un único elemento. En CSS también los podemos usar como selector, pero al no poder haber más de uno por página no es recomendable usarlo salvo en casos muy excepcionales.
 
 En una lista de acciones, por ejemplo, podemos tener unas clases para añadir estilos a los elementos del bloque y, ademas, añadir un identificador único para cada elemento.
 
@@ -353,7 +352,7 @@ En una lista de acciones, por ejemplo, podemos tener unas clases para añadir es
   </li>
 </ul>
 ```
-Y ahora podríamos usar el ID para cambiar el tamaño del texto de uno de los elementos. Para ello, usamos la `#` seguida de la id como selector.
+Y ahora podríamos usar el *id* para cambiar el tamaño del texto de uno de los elementos. Para ello, usamos la `#` seguida de la id como selector.
 
 ```css
 #add-user {
@@ -381,7 +380,7 @@ Y el css sería:
 	color: white;
 }
 ```
-[Codepen de ejemplo](https://codepen.io/oneeyedman/pen/wrLBQQ)
+[&rtrif; Codepen de ejemplo de hover](https://codepen.io/adalab/pen/QZmVjK)
 
 * * *
 
@@ -412,6 +411,7 @@ Por ejemplo, si tenemos una lista de botones como la anterior:
 ```
 
 Hemos eliminado el atributo `id` y hemos añadido una clase extra para cada tipo de botón. De esta manera tenemos por cada "botón" una clase general `.button` donde colocaremos los estilos comunes a todos los botones y luego una particular (`.button--new`, `.button--rename` y `.button--delete`) donde solo pondremos los ajustes particulares.
+
 Digamos que queremos que los botones tengan una caja con bordes redondeados pero que el de añadir usuario tenga fondo verde, el de renombrar azul y el de borrar, claramente, rojo muerte.
 
 ```css
@@ -438,13 +438,12 @@ Digamos que queremos que los botones tengan una caja con bordes redondeados pero
 }
 ```
 
-[Codepen de ejemplo](https://codepen.io/oneeyedman/pen/gGNpaQ)
+[&rtrif; Codepen de ejemplo de composición de clases](https://codepen.io/adalab/pen/KGoxam)
 
 ### Herencia en CSS
 Hay una serie de estilos que se heredan, es decir, que se transmiten a los hijas. Entonces, si aplicamos una de estas propiedades a una etiqueta, todos las etiquetas anidadas en ella la heredarán también.
 
 * * *
-<a id="markdown-ejercicio-3" name="ejercicio-3"></a>
 #### EJERCICIO 3
 
 **Coloreame esos links**
@@ -473,7 +472,6 @@ y al `<aside>` con clase `.links` le aplicamos una regla que ponga el texto rojo
 * [Más info sobre herencia en la MDN](https://developer.mozilla.org/es/docs/Web/CSS/inheritance)
 
 * * *
-<a id="markdown-ejercicio-4" name="ejercicio-4"></a>
 #### EJERCICIO 4
 
 **Herencia para todas**
@@ -491,17 +489,17 @@ Partiendo del [ejercicio 2](#ejercicio-2) vamos ha hacer uso de la herencia, y u
 * * *
 
 ### Cascada y especificidad de selectores
-CSS es, en español, Hojas de estilo en cascada. La "cascada" se refiere al proceso de combinación y aplicación de estilos en CSS y cómo se resuelven los conflictos entre ellos.
+CSS es, en español, "hojas de estilo en cascada". La "cascada" se refiere al proceso de combinación y aplicación de estilos en CSS y cómo se resuelven los conflictos entre ellos.
 
-Acabamos de ver que a veces varios selectores se aplican al mismo elemento, es el algoritmo de la cascada lo que decide que propiedades se aplicaran.
+Acabamos de ver que a veces varios selectores se aplican al mismo elemento, es el algoritmo de la cascada lo que decide que propiedades se aplicarán.
 
 La cascada depende de 3 factores:
 
 1. La **importancia**: hay una palabra clave (`!important`) que hace que nuestra propiedad se aplique siempre.
-2. La **especificidad**: es un arma de doble filo porque cuanto más específico sea un selector más fuerza tendrán sus reglas sobre las demás, pero el reto es escribir los selectores lo menos específicos posible.
-3. El **orden** en el archivo CSS: Si varios selectores tienen la misma "fuerza" ganarán los que estén más abajo porque el css se aplica en orden de escritura.
+2. La **especificidad**: es un arma de doble filo porque cuanto más específico sea un selector más fuerza tendrán sus reglas sobre las demás. Pero es una buena práctica escribir los selectores lo menos específicos posible.
+3. El **orden** en el archivo CSS: si varios selectores tienen la misma "fuerza" ganarán los que estén más abajo porque el CSS se aplica en orden de escritura.
 
-[En la MDN viene perfectamente explicado](https://developer.mozilla.org/es/docs/Learn/CSS/Introduction_to_CSS/Cascada_y_herencia).
+[En este enlace de la MDN viene perfectamente explicado](https://developer.mozilla.org/es/docs/Learn/CSS/Introduction_to_CSS/Cascada_y_herencia).
 
 Dos enlaces sobre la especificidad más... a menos
 
@@ -510,7 +508,6 @@ Dos enlaces sobre la especificidad más... a menos
 
 
 * * *
-<a id="markdown-ejercicio-5" name="ejercicio-5"></a>
 #### EJERCICIO 5
 
 **Conociendo la especifidad**
@@ -528,4 +525,4 @@ Partiendo de este [Codepen de ejemplo](https://codepen.io/oneeyedman/pen/vWEBex)
 
 ### Figma
 
-[Figma](https://www.figma.com/) es una herramienta online para diseñar y prototipar que permite hasta tres proyectos gratuitos. Este tipo de herramientas son muy útiles para las frontend, ya que pueden servinos para algo más complejo como diseñar nuestra web personal hasta para medir o recortar una imagen de manera ágil.
+[Figma](https://www.figma.com/) es una herramienta online para diseñar y prototipar que permite hasta tres proyectos gratuitos. Este tipo de herramientas son muy útiles para las frontend, ya que pueden servirnos para algo más complejo como diseñar nuestra web personal hasta para medir o recortar una imagen de manera ágil.
