@@ -7,13 +7,13 @@
 - [EJERCICIO 2](#ejercicio-2)
 - [EJERCICIO 3](#ejercicio-3)
 - [EJERCICIO 4](#ejercicio-4)
-- [EJERCICIO 5:](#ejercicio-5)
+- [EJERCICIO 5](#ejercicio-5)
 - [EJERCICIO 6](#ejercicio-6)
 - [EJERCICIO 7](#ejercicio-7)
-- [EJERCICIO 8:](#ejercicio-8)
+- [EJERCICIO 8](#ejercicio-8)
 - [EJERCICIO 9](#ejercicio-9)
 - [EJERCICIO 11](#ejercicio-11)
-- [EJERCICIO 10:](#ejercicio-10)
+- [EJERCICIO 10](#ejercicio-10)
 
 <!-- /TOC -->
 
@@ -26,14 +26,14 @@ Uno de los objetivos de la sesión es saber que hay dos modelos de caja, en qué
 
 El navegador Google Chrome nos ofrece una serie de herramientas llamadas Chrome Dev Tools que nos permiten obtener información sobre la página actual que tenemos y realizar pruebas y modificaciones sobre ella. Estas herramientas son las siguientes:
 
-- El inspector. Nos permite ver el código de la página y los estilos que tiene aplicados a la vez que nos ofrece la posibilidad de modificarlo y cambiar los elementos de la web de sitio
+- El inspector. Nos permite ver el código de la página y los estilos que tiene aplicados a la vez que nos ofrece la posibilidad de modificarlo y cambiar los elementos de la web de sitio.
 - La herramienta Network. Muestra cuales son los recursos que carga la web actual, su peso y el tiempo que necesita para cargarlos. Además nos mostrará errores en caso de que algún recurso no pueda ser cargado debido a un error.
 
 ## ¿Para qué sirve lo que vamos a ver en esta sesión?
 
-1. Para comprender cómo se comportan los contenedores cuando les cambiamos propiedades de apariencia como margen, borde, padding y ancho/alto. Y qué pasa cuando el contenido no cabe en nuestro contenedor.
-2. Para entender cómo se aplican las imágenes de fondo
-3. Para entender cómo se aplican los ajustes que realicemos a través de las Dev Tools
+1. Para comprender cómo se comportan los contenedores (cajas) cuando les cambiamos propiedades de apariencia como margen, borde, padding y ancho/alto. Y qué pasa cuando el contenido no cabe en nuestro contenedor.
+2. Para entender cómo se aplican las imágenes de fondo.
+3. Para entender cómo se aplican los ajustes que realicemos a través de las DevTools.
 
 ## ¿En qué casos se utiliza?
 
@@ -41,7 +41,7 @@ El navegador Google Chrome nos ofrece una serie de herramientas llamadas Chrome 
 * Cuando tengamos un problema en nuestra página para detectar dónde está el error.
 
 ## Modelo de caja
-En HTML cada elemento se representa visualmente como una caja, lo podemos ver fácilmente añadiendo un borde a un elemento html y viendo cómo lo pinta el navegador, por ejemplo:  
+En HTML cada elemento se representa visualmente como una caja, lo podemos ver fácilmente añadiendo un borde a un elemento HTML y viendo cómo lo pinta el navegador, por ejemplo:  
 
 ```html
 <h1>Encabezado 1</h1>
@@ -51,7 +51,7 @@ En HTML cada elemento se representa visualmente como una caja, lo podemos ver f�
 
 El modelo de caja es una especificación que define las características específicas de esa caja y como infieren en el resto de elementos de la página; es el que le dice al navegador cómo debe pintar cada caja (elemento).
 
-Antes de entrar en profundidad con los modelos de caja tenemos que ver conceptos básicos (alto, ancho, borde, margen y padding) y las formas básicas de visualización de los elementos HTML:
+Antes de entrar en profundidad con los modelos de caja tenemos que ver conceptos básicos (alto, ancho, borde, margen y padding) y las formas básicas de visualización de los elementos HTML.
 
 ### Height, width, border, padding y margin
 
@@ -74,15 +74,15 @@ Los navegadores web aplican por defecto un valor `display` a todos los elementos
 
 ### Block
 
-Los elementos en bloque se muestran ocupando el ancho completo de su contenedor, en otras palabras, si tenemos un elemento en bloque dentro de una etiqueta `aside`, este ocupará el ancho completo del `aside`, si por lo contrario el elemento está directamente dentro del `body`, este ocupará el ancho del `body` y así siempre. Los elementos en bloque siempre empiezan en una nueva línea y nunca van a tener más elementos a su misma altura dentro del mismo contenedor, estarán más arriba o más abajo.
+Los elementos *en bloque* se muestran ocupando el ancho completo de su contenedor. En otras palabras, si tenemos un elemento en bloque dentro de una etiqueta `aside`, este ocupará el ancho completo del `aside`, si por lo contrario el elemento está directamente dentro del `body`, este ocupará el ancho del `body` y así siempre. Los elementos en bloque siempre empiezan en una nueva línea y nunca van a tener más elementos a su misma altura dentro del mismo contenedor, estarán más arriba o más abajo.
 
 Como hemos comentado antes, los navegadores asignan automáticamente un modo de visualización por defecto a todos los elementos HTML. Algunos elementos como los párrafos (`p`), los `div`s o las listas (`ol` y `ul`) por defecto se muestran en bloque debido a esos estilos que aplica el navegador.
 
-[Elementos en bloque en Codepen](https://codepen.io/adalab/pen/WXQgrq)
+[&rtrif; Elementos en bloque en Codepen](https://codepen.io/adalab/pen/WXQgrq)
 
 Este Codepen representa cómo funcionan los elementos en bloque. En el resultado se ha puesto un fondo azul para que se vea el ancho total de cada elemento. Como se puede ver, en el caso del enlace, este ocupa el ancho de su contenido (del texto) mientras que los párrafos ocupan el ancho total del contenedor. El texto de los párrafos cabría perfectamente uno al lado del otro pero al ser bloques y ocupar ambos todo el ancho del contenedor, se muestran cada uno en una línea.
 
-Usando CSS podemos hacer que un elemento que no se muestra en bloque cambie y se muestre de esta manera. Para ello aplicaremos `display: block` en el elemento. De esta forma, si queremos hacer que una clase imaginaria `.block` se muestre en bloque, utilizaremos el siguiente código:
+Usando CSS podemos hacer que un elemento que no se muestra en bloque cambie y se muestre de esta manera. Para ello aplicaremos `display: block` en el elemento. De esta forma, si queremos hacer que un elemento con la clase `block` se muestre en bloque, utilizaremos el siguiente código:
 
 ```css
 .block {
@@ -99,22 +99,22 @@ A continuación se muestra la lista completa de elementos HTML que, por defecto,
 
 ### Inline
 
-Los elementos en línea o _inline_ son aquellos que ocupan lo que ocupa su contenido. En estos, el tamaño será exactamente el tamaño de su contenido. Por ejemplo, si tenemos un enlace con el texto "púlsame", el ancho de ese enlace será el propio ancho del texto.
+Los elementos en línea o _inline_ son aquellos que ocupan lo que ocupa su contenido. En estos, el tamaño será exactamente el tamaño de su contenido. Por ejemplo, si tenemos un enlace con el texto "púlsame", el ancho de ese enlace será el mismo ancho que el texto.
 
-Debido a que los elementos en línea solo ocupan el ancho de su contenido, estos pueden colocarse uno al lado del otro hasta que no quede más espacio restante en la fila, en cuyo caso se colocarán en la fila siguiente. Cuando un elemento es muy largo y no cabe completamente en una línea, la parte que no cabe se baja a la línea siguiente. Por poner un ejemplo claro, un elemento en línea se comportaría como una letra más dentro de un texto, de hecho, estos también respetan los espacios entre ellos como se puede comprobar en el siguiente enlace de Codepen.
+Debido a que los elementos en línea solo ocupan el ancho de su contenido, estos pueden colocarse uno al lado del otro hasta que no quede más espacio restante en la fila, en cuyo caso se colocarán en la fila siguiente. Cuando un elemento es muy largo y no cabe completamente en una línea, la parte que no cabe se baja a la línea siguiente. Por poner un ejemplo claro, un elemento en línea se comportaría como una letra más dentro de un texto, de hecho, estos también respetan los espacios entre ellos como se puede comprobar en el siguiente ejemplo.
 
-[Elementos en línea en Codepen](https://codepen.io/adalab/pen/vWNzLj)
+[&rtrif; Elementos en línea en Codepen](https://codepen.io/adalab/pen/vWNzLj)
 
 Al ocupar solo el ancho de su contenido, los elementos en línea permiten colocar un elemento al lado del otro siempre y cuando ambos quepan en la misma fila, como sucede con los elementos en línea. Aquí también se respetarán los espacios entre los elementos en línea como si se tratasen de palabras normales y corrientes.
-
-> **Nota:**  
-> Las imágenes son un tipo especial de elemento en línea que por sus características actúa como una mezcla de elemento en línea y elemento en bloque, ya que pueden tener márgenes y padding verticales y se les pueden asignar un ancho y un alto.
 
 Como norma general, los elementos `inline` no deberían contener otros elementos de bloque.
 
 Una regla muy importante que se aplica sobre los elementos en línea es que estos no pueden cambiar su ancho ni su alto, no pueden tener márgenes horizontales y se puede aplicar margen y padding vertical pero este no se tiene en cuenta a la hora de definir su altura y su posición vertical. Esto los diferencia de los elementos en bloque, que permiten tener un ancho y un alto específico y márgenes y padding tanto vertical como horizontal. Veremos la importancia de esto en esta misma sesión, cuando hablemos del modelo de cajas.
 
-Usando CSS podemos cambiar la visualización de un elemento para hacer que se muestre en línea. Para ello aplicaremos `display: inline` en el elemento. Si quisiéramos hacer que una clase imaginaria `.inline` se muestre en bloque, utilizaríamos el siguiente código:
+> **Nota:**  
+> Las imágenes son un tipo especial de elemento en línea que por sus características actúa como una mezcla de elemento en línea y elemento en bloque, ya que pueden tener márgenes y padding verticales y se les pueden asignar un ancho y un alto.
+
+Usando CSS podemos cambiar la visualización de un elemento para hacer que se muestre en línea. Para ello aplicaremos `display: inline` en el elemento. Si quisiéramos hacer que un elemento con la clase `inline` se muestre en bloque, utilizaríamos el siguiente código:
 
 ```css
 .inline {
@@ -127,7 +127,7 @@ A continuación se muestra la lista completa de elementos HTML que, por defecto,
 `<a>`, `<b>`, `<big>`, `<i>`, `<small>`, `<tt>`, `<abbr>`, `<acronym>`, `<cite>`, `<code>`, `<dfn>`, `<em>`, `<kbd>`, `<strong>`, `<samp>`, `<time>`, `<var>`, `<bdo>`, `<br>`, `<img>`, `<map>`, `<object>`, `<q>`, `<script>`, `<span>`, `<sub>`, `<sup>`, `<button>`, `<input>`, `<label>`, `<select>` y `<textarea>`
 
 > **Nota:**  
-> Aquí podemos usar la misma pregunta que comentamos en la sección de elementos en bloque para deducir si un elemento está en línea: _"¿Tendría sentido meter este elemento dentro de un párrafo?"_. Si la respuesta es "sí", es muy probable que sea un elemento en línea.
+> Aquí podemos usar la misma pregunta que comentamos en la sección de elementos en bloque para deducir si un elemento está en línea: _"¿Tendría sentido meter este elemento dentro de un párrafo?"_. Si la respuesta es *sí*, es muy probable que sea un elemento en línea.
 
 ### inline-block
 
@@ -135,7 +135,7 @@ En este caso y como su nombre indica, el comportamiento de los elementos `inline
 
 Los elementos `inline-block` ocupan por defecto el ancho de su contenido y se comportan como si se tratase de una palabra más dentro de un texto, al igual que los elementos en línea, pero permiten tener un ancho, un alto, padding y márgenes verticales, como sucede con los elementos en bloque.
 
-[Elementos inline-block en Codepen](https://codepen.io/adalab/pen/KydxdP)
+[&rtrif; Elementos inline-block en Codepen](https://codepen.io/adalab/pen/KydxdP)
 
 Para hacer que un elemento se comporte como `inline-block`, utilizaremos `display: inline-block;`, como hemos visto en los ejemplos con `inline` y `block`.
 
@@ -143,7 +143,7 @@ Para hacer que un elemento se comporte como `inline-block`, utilizaremos `displa
 
 A veces queremos que un elemento esté oculto, por ejemplo, el típico mensaje de aviso de cookies que aparece cada vez que entramos en una página. Con JavaScript, haremos que este mensaje se muestre o se oculte dependiendo si hemos visitado antes la página o no, pero desde JavaScript lo que haremos será añadir o quitar una clase CSS, los estilos los gestionaremos siempre desde el CSS.
 
-Entonces, para poder ocultar un elemento (imaginemos que es una clase `hidden`) lo haremos desde el CSS. Para ello, haremos lo siguiente:
+Entonces, para poder ocultar un elemento (imaginemos que tiene una clase `hidden`) lo haremos desde el CSS.
 
 ```css
 .hidden {
@@ -151,18 +151,17 @@ Entonces, para poder ocultar un elemento (imaginemos que es una clase `hidden`) 
 }
 ```
 
-Este código lo que hace es ocultar por completo cualquier elemento al que le añadamos la clase `.hidden`. Será como si ese elemento no existiese ya que no se mostrará y el resto de elementos de la página lo ignorarán.
+Este código lo que hace es ocultar por completo cualquier elemento al que le añadamos la clase `hidden`. Será como si ese elemento no existiese ya que no se mostrará, y el resto de elementos de la página lo ignorarán.
 
 Puedes ver un ejemplo en el siguiente Codepen:
 
-[Elementos ocultos](https://codepen.io/adalab/pen/GOpXmw)
+[&rtrif; Elementos ocultos](https://codepen.io/adalab/pen/GOpXmw)
 
 Por último, aquí tenemos un Codepen con la recopilación de los distintos tipos de visualización que hemos visto ahora.
 
-[Elementos inline, inline-block y block en Codepen](https://codepen.io/adalab/pen/QOjVye)
+[&rtrif; Elementos inline, inline-block y block en Codepen](https://codepen.io/adalab/pen/QOjVye)
 
 * * *
-<a id="markdown-ejercicio-1" name="ejercicio-1"></a>
 #### EJERCICIO 1
 
 **Marcando**
@@ -172,7 +171,6 @@ Usar la etiqueta `<mark>` dentro de varios párrafos y explicar para qué sirve 
 * * *
 
 * * *
-<a id="markdown-ejercicio-2" name="ejercicio-2"></a>
 #### EJERCICIO 2
 
 **Displays**
@@ -181,7 +179,6 @@ Prepara tres `div`s con un tamaño de 100x100, cambia sus displays (block, inlin
 
 * * *
 
-<a id="markdown-ejercicio-3" name="ejercicio-3"></a>
 #### EJERCICIO 3
 
 **Imagen en párrafo**
@@ -190,7 +187,6 @@ Dentro de un párrafo de texto incluir una imagen de 100x100 y explicar cómo se
 
 * * *
 
-<a id="markdown-ejercicio-4" name="ejercicio-4"></a>
 #### EJERCICIO 4
 
 **Imagen entre párrafos**
@@ -212,10 +208,9 @@ EJEMPLO:
 Si tengo una caja de 100x100px, con un borde de 2px y con un padding de 16px, tendría una caja de 2+16+100+16+2: 136x136px.
 
 
-Por defecto los elementos tienen el modelo de caja `content-box` con la propiedad `box-sizing` podemos cambiarlo asignando el valor `border-box`, que es el otro modelo existente.
-En `border-box` tanto el borde como padding están incluidos en el ancho/alto del elemento, de manera que en el caso anterior nuestra caja tendría 100x100px pero el espacio para el contenido de nuestra caja no sería de 100x100 sino de 100-(2+2+16+16): 64x64px.
+Por defecto los elementos tienen el modelo de caja `content-box`. Con la propiedad CSS `box-sizing` podemos cambiarlo asignando el valor `border-box`, que es el otro modelo existente. En `border-box` tanto el borde como padding están incluidos en el ancho/alto del elemento, de manera que en el caso anterior nuestra caja tendría 100x100px pero el espacio para el contenido de nuestra caja no sería de 100x100 sino de 100-(2+2+16+16): 64x64px. Mira y entiende el siguiente ejemplo.
 
-Mira y entiende este [ejemplo de modelo de caja en Codepen](https://codepen.io/adalab/pen/qoJNyN).
+[&rtrif; Ejemplo de modelo de caja en Codepen](https://codepen.io/adalab/pen/qoJNyN).
 
 Si quisiéramos cambiar el modelo de caja para todos los elementos podemos usar el selector `*`, que modifica todos los elementos de la página, y por lo tanto debemos de usarlo con mucho tiento.
 
@@ -227,8 +222,7 @@ Si quisiéramos cambiar el modelo de caja para todos los elementos podemos usar 
 
 * * *
 
-<a id="markdown-ejercicio-5" name="ejercicio-5"></a>
-#### EJERCICIO 5:
+#### EJERCICIO 5
 
 **Ajustando imágenes**
 
@@ -247,7 +241,7 @@ Pueden pasar dos cosas, que el contenido se pueda adaptar, como pasa con el text
 
 ![Overflow básico](assets/images/1-3/overflow-basico.png)
 
-[Mira este ejemplo en Codepen](https://codepen.io/adalab/pen/WzLBwq)
+[&rtrif; Mira este ejemplo en Codepen](https://codepen.io/adalab/pen/WzLBwq)
 
 Podemos controlar cómo se comporta un contenedor en los casos en que el contenido se salga, tenemos 3 opciones:
 1. No hacer nada y lidiar con las consecuencias
@@ -260,7 +254,6 @@ Podéis leer sobre la propiedad _overflow_:
 * [overflow-y](http://devdocs.io/css/overflow-y)
 
 * * *  
-<a id="markdown-ejercicio-6" name="ejercicio-6"></a>
 #### EJERCICIO 6
 
 **Todo en su caja**
@@ -277,7 +270,6 @@ Con estos enlaces, ¿sabrías resolver los casos de [este Codepen](https://codep
 
 * * *
 
-<a id="markdown-ejercicio-7" name="ejercicio-7"></a>
 #### EJERCICIO 7
 
 **Equipo corchángulo**
@@ -324,8 +316,7 @@ Por ejemplo, podemos ver información del modelo de caja:
 Podemos colocarlo arriba, abajo, a la derecha o sacarlo a una nueva ventana.
 
 * * *
-<a id="markdown-ejercicio-8" name="ejercicio-8"></a>
-#### EJERCICIO 8:
+#### EJERCICIO 8
 
 Entrar en [Wikipedia.org](http://wikipedia.org) y:
 * Cambiar el color de los enlaces a naranja
@@ -339,14 +330,14 @@ Entrar en [Wikipedia.org](http://wikipedia.org) y:
     * ¿Qué hay de raro con esa separación?
 * * *
 
-### Cambiando css con el Inspector: el atributo style
+### Cambiando CSS con el Inspector: el atributo `style`
 Con el inspector no solo podemos consultar información sino cambiarla para hacer pruebas rápidas, en este ejemplo hemos reducido el margin-top de la "caja" con el encabezado principal de la página de  **GulpJS** de `50px` a `5px`:
 ![Ejemplo de edición desde el inspector](assets/images/1-3/edicion-con-el-inspector.png)
 
-Esta edición rápida es posible gracias al atributo `style=""` que es otra forma de aplicar estilos y que se puede añadir a cualquier etiqueta html.
+Esta edición rápida es posible gracias al atributo `style=""` que es otra forma de aplicar estilos y que se puede añadir a cualquier etiqueta HTML.
 
 > **Nota:**  
-> En principio no se deben aplicar estilos usando este atributo, en su lugar usaremos selectores css desde la hoja de estilos correspondiente.
+> En principio no se deben aplicar estilos usando este atributo, en su lugar usaremos selectores CSS desde la hoja de estilos correspondiente.
 
 Es una forma de aplicar estilos que ha quedado para usar principalmente desde programación (ya lo veremos más adelante) pero desde el inspector nos permite hacer cambios rápidos.
 
@@ -356,7 +347,6 @@ Usando este atributo los estilos se escriben en línea, seguidos y separados por
 ```
 
 * * *
-<a id="markdown-ejercicio-9" name="ejercicio-9"></a>
 #### EJERCICIO 9
 
 ¿Sabríamos ir a la web https://duckduckgo.com, buscar el logo con el id "logo_homepage_link" y aplicarle estos estilos desde nuestro inspector?
@@ -378,7 +368,6 @@ Otro recurso muy interesante que nos ofrece Network es que nos permite ver cuán
 
 * * *
 
-<a id="markdown-ejercicio-11" name="ejercicio-11"></a>
 #### EJERCICIO 11
 
 Entrar en [Wikipedia.org](http://wikipedia.org) y
@@ -488,8 +477,7 @@ Realmente, la propiedad _background_ es una versión acortada de estas propiedad
 * **background-color:** [Ver detalle](http://devdocs.io/css/background-color)
 
 * * *
-<a id="markdown-ejercicio-10" name="ejercicio-10"></a>
-#### EJERCICIO 10:  
+#### EJERCICIO 10
 
 ¿Sabrías replicar los ejemplos de fondo usando [este Codepen](https://codepen.io/adalab/pen/JLwQpz)?
 * * *
