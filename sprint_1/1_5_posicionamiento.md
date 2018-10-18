@@ -40,7 +40,7 @@ Algunos casos concretos son:
 
 ## Objetivos de la sesión
 1. Recordar los principales modos de presentación de los elementos HTML: inline, inline-block y block
-1. Conocer los modos de posicionamiento: static, relative, absolute y fixed.
+1. Conocer los modos de posicionamiento: static, relative, absolute y fixed
 
 ## Visualización (display)
 Antes de meternos con el posicionamiento recordemos [los modos de presentación que vimos en la sesión 1.3](./1_3_modelo_de_caja_y_herramientas.md):
@@ -67,6 +67,7 @@ La propiedad `position` tiene cuatro valores posibles:
 * `absolute`: Saca al elemento del flujo de la página, es decir, hace que su contenedor y los elementos de antes y después no lo tengan en cuenta a la hora de posicionarse y definir su tamaño y por otro lado posiciona el elemento en función de la posición del body o en su defecto del primer elemento contenedor que tenga una posición diferente a static (posición por defecto)
 * `fixed`: Saca a un elemento del flujo normal de la página y permite posicionarlo en función de la ventana del navegador. Aparte, este tipo de elementos mantienen su posición cuando hacemos scroll en la página (como si se mantuviesen anclados en un mismo punto), de ahí su nombre fixed (fijo)
 
+Algunos recursos en video:
 - Video para entender el [posicionamiento web](https://www.youtube.com/watch?v=13CbCpAnvYI)
 - Video para entender [position: static](https://www.youtube.com/watch?v=whqnlupzpNk)
 - Video para entender [position: relative](https://www.youtube.com/watch?v=X6lG1biGJa8)
@@ -74,7 +75,7 @@ La propiedad `position` tiene cuatro valores posibles:
 
 Como hemos visto, cuando posicionamos una caja con cualquier valor que no sea static y modificamos su posición horizontal y/o vertical (top, right, bottom, left) esta se puede superponer visualmente por encima de otras.
 
-Esto ocurre porque, adicionalmente a sus posiciones horizontales y verticales, las cajas se apilan a lo largo de un "eje-z".
+Esto ocurre porque, adicionalmente a sus posiciones horizontales y verticales, las cajas se apilan a lo largo de un "eje z".
 
 Cuando las cajas se superponen por encima de otras, se están posicionando en capas adicionales a la capa normal de renderizado (capa 0).
 
@@ -84,7 +85,6 @@ La posición Z de cada capa representa el orden de apilamiento. Podemos modifica
 
 * * *
 
-<a id="markdown-ejercicio-1" name="ejercicio-1"></a>
 #### EJERCICIO 1
 
 **Desplazando divs relativamente**
@@ -99,18 +99,16 @@ c) El div 3 deberá desplazarse 180 píxeles a la derecha y 240 píxeles hacia a
 
 * * *
 
-<a id="markdown-ejercicio-2" name="ejercicio-2"></a>
 #### EJERCICIO 2
 
 **Que no se mueva ese icono**
 
 Hacer un botón que contenga
-- con un icono alineado a la izquierda y centrado verticalmente.
+- un icono alineado a la izquierda y centrado verticalmente
 - un texto 
 
 * * *
 
-<a id="markdown-ejercicio-3" name="ejercicio-3"></a>
 #### EJERCICIO 3
 
 **Dame PDFs**
@@ -121,7 +119,6 @@ Hacer un enlace de descarga de un archivo (por ejemplo PDF) con una etiqueta que
 
 * * *
 
-<a id="markdown-ejercicio-4" name="ejercicio-4"></a>
 #### EJERCICIO 4
 
 **Vente conmigo**
@@ -138,7 +135,7 @@ c) Haz que al hacer scroll, la cabecera se apile o superponga por encima del con
 
 ## Transform
 
-Otra forma interesante de modificar la posición de un elemento html es la propiedad `transform` con la que podemos realizar una serie de ajustes al elemento respecto del mismo elemento, sin embargo no saca al elemento del flujo de la página como `position: absolute` o `position: fixed`, y el resto de elementos de la página se comporta como si no hubiésemos aplicado una transformación a uno de ellos.
+Otra forma interesante de modificar la posición de un elemento HTML es la propiedad `transform` con la que podemos realizar una serie de ajustes al elemento respecto a sí mismo. Sin embargo no saca al elemento del flujo de la página como `position: absolute` o `position: fixed`, y el resto de elementos de la página se comporta como si no hubiésemos aplicado una transformación a uno de ellos.
 
 Vamos a ver varias transformaciones:  
 * Translate
@@ -171,11 +168,11 @@ Permite rotar el elemento:
 
 * * *
 
-<a id="markdown-ejercicio-5" name="ejercicio-5"></a>
 #### EJERCICIO 5
 
-¿Sabrías resolver estos ejercicios de transformaciones tras leerte [la documentación de transform](http://devdocs.io/css/transform)?  
-Ejercicios de transform: [codepen.io/adalab/pen/YLKaox](https://codepen.io/adalab/pen/YLKaox)
+¿Sabrías resolver estos ejercicios de transformaciones tras leerte [la documentación de transform](http://devdocs.io/css/transform)?
+
+[&rtrif; Los ejercicios de transform en codepen](https://codepen.io/adalab/pen/YLKaox)
 
 * * *
 
@@ -185,23 +182,20 @@ Ejercicios de transform: [codepen.io/adalab/pen/YLKaox](https://codepen.io/adala
 
 * * *
 
-<a id="markdown-ejercicio-6" name="ejercicio-6"></a>
 #### EJERCICIO 6
 
-Define un documento HTML con 3 cajas contenedoras div (div1, div2 y div3), la primera con unas dimensiones de 500x500px y un background color amarillo. La segunda con dimensiones 300x300px y un background color verde. La tercera con dimensiones 150x150px y background color azul. Usando posicionamiento absoluto establece para el div2 y el div3 el mismo origen que para el div1, de modo que las cajas se superpongan y el efecto generado sea ver cuadrado azul sobre uno verde que a su vez está sobre uno amarillo.
+Define un documento HTML con 3 cajas contenedoras `div` (div1, div2 y div3), la primera con unas dimensiones de 500x500px y un background color amarillo. La segunda con dimensiones 300x300px y un background color verde. La tercera con dimensiones 150x150px y background color azul. Usando posicionamiento absoluto establece para el div2 y el div3 el mismo origen que para el div1, de modo que las cajas se superpongan y el efecto generado sea ver cuadrado azul sobre uno verde que a su vez está sobre uno amarillo.
 
 Haz que las cajas estén centradas vertical y horizontalmente. Pon 40px de padding y 2px de borde al div1, 75px de padding al div 2 y 20px de borde de puntos al div3. Para esto usad `box-sizing: border-box;`.
 
 * * *
 
-<a id="markdown-ejercicio-7" name="ejercicio-7"></a>
 #### EJERCICIO 7
 
-Define un documento HTML con varios div que contengan suficiente texto como para que la página se muestre con scroll (barras de desplazamiento). El primero de los div debe contener el texto “Esta página web utiliza cookies. Si continúa navegando acepta el uso de cookies.”, un valor height (altura) de 100 píxeles y color de fondo amarillo. Usando posicionamiento fixed, fija este div en la parte superior de la página de modo que se continúe visualizando aún cuando hagamos scroll.
+Define un documento HTML con varios `div` que contengan suficiente texto como para que la página se muestre con scroll (barras de desplazamiento). El primero de los div debe contener el texto *"Esta página web utiliza cookies. Si continúa navegando acepta el uso de cookies."*, un valor `height` (altura) de 100 píxeles y color de fondo amarillo. Usando posicionamiento fixed, fija este `div` en la parte superior de la página de modo que se continúe visualizando aún cuando hagamos scroll.
 
 * * *
 
-<a id="markdown-ejercicio-8" name="ejercicio-8"></a>
 #### EJERCICIO 8
 
 Crea una lista de cinco elementos que se muestre en línea y con espacios entre cada elemento de 12 píxeles.
@@ -214,14 +208,12 @@ Vista de la lista con estilos
 
 * * *
 
-<a id="markdown-ejercicio-9" name="ejercicio-9"></a>
 #### EJERCICIO 9
 
 Crea un texto que ocupe el 86% de la pantalla y esté centrado dentro del body. Usaremos la propiedad `max-width` para dar un ancho máximo de 600px. [Más info acerca de max-width](http://devdocs.io/css/max-width).
 
 * * *
 
-<a id="markdown-ejercicio-10" name="ejercicio-10"></a>
 #### EJERCICIO 10
 
 Crea una composición similar a la de la imagen.
@@ -230,7 +222,7 @@ Crea una composición similar a la de la imagen.
 
 Las dimensiones de esta composición serían las siguientes:
 - El body tendrá un borde de 8px
-- El contenido estará centrado dentro del body e irá dentro de un div que tendrá 106px de margen superior
+- El contenido estará centrado dentro del body e irá dentro de un `div` que tendrá 106px de margen superior
 - En el primer texto irá el nombre del autor con una fuente de 18px y un margen inferior de 40px
 - El titular irá después con un tamaño de fuente de 32px y un margen inferior de 32px
 - Cada párrafo tendrá un tamaño de fuente de 18px y un margen inferior de 27px
@@ -238,12 +230,11 @@ Las dimensiones de esta composición serían las siguientes:
 
 * * *
 
-<a id="markdown-ejercicio-11" name="ejercicio-11"></a>
 #### EJERCICIO 11
 
 La web que vamos a crear consta de las siguientes características:
 
-1. Toda la web usa una tipografía sin serifa (sans-serif)
+1. Toda la web usa una tipografía sin serifa (`sans-serif`)
 1. Tiene como título "Tecnologías web"
 1. Tiene un párrafo que describe qué son las tecnologías web
 1. Al final del párrafo, tiene un listado de tecnologías compuesto por: HTML, CSS y JavaScript, cada una de las cuales aparece subrayada para indicar que se puede interactuar
@@ -253,7 +244,6 @@ La web que vamos a crear consta de las siguientes características:
 
 * * *
 
-<a id="markdown-ejercicio-12" name="ejercicio-12"></a>
 #### EJERCICIO 12
 
 Vamos a crear una web simple, con las siguientes características:
@@ -267,12 +257,11 @@ Vamos a crear una web simple, con las siguientes características:
 
 * * *
 
-<a id="markdown-ejercicio-13" name="ejercicio-13"></a>
 #### EJERCICIO 13
 
-Vamos a continuar desde el ejercicio 8 de la lección de flexbox
+Vamos a continuar desde el ejercicio 8 de la lección de flexbox.
 
-Crearemos un elemento que se superponga sobre él. Ese elemento tendrá un fondo oscuro transparente y un div en su interior. Ese div entero estará centrado tanto vertical como horizontalmente y contendrá un titular, un texto y un par de botones. El resultado quedaría igual a la siguiente imagen.
+Crearemos un elemento que se superponga sobre él. Ese elemento tendrá un fondo oscuro transparente y un `div` en su interior. Ese `div` entero estará centrado tanto vertical como horizontalmente y contendrá un titular, un texto y un par de botones. El resultado debe ser similar a la siguiente imagen.
 
 ![Ejemplo](assets/images/1-4/ejercicio-8-3.png)
 
