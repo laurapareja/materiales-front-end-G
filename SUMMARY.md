@@ -5,6 +5,7 @@
 ## Sprint 1. Hola Mundo
 
 * [1.1. Intro a la web](sprint_1/1_1_intro_a_la_web.md)
+<!--
 * [1.2. Mi primera página web](sprint_1/1_2_mi_primera_web.md)
 * [1.3. Modelo de caja y herramientas](sprint_1/1_3_modelo_de_caja_y_herramientas.md)
 * [1.4 Flexbox](sprint_1/1_4_posicionamiento_con_flexbox.md)
@@ -59,16 +60,17 @@
 * [Proyecto 3. Un caso de código heredado](proyectos/P3_proyecto_sprint_3.md)
 * [Anexo. Documentación del API de Awesome Profile Cards](proyectos/P2_anexo.md)
 * [Anexo. Diseña tu web desde cero](proyectos/P1_anexo_diseno.md)
+-->
 
 <!-- ## Evaluaciones
 
 * Evaluación intermedia 1
 * Evaluación final 1
 -->
-
+<!--
 ## Guías
 * [Instalar un linter de JavaScript](guias/instalar_linter_js.md)
-<!-- * [Guía paso a paso de git](guias/empezar_con_git.md) -->
 
 ## Extra
 * [E.1 Repaso de flexbox y position](extra/e1-flexbox-y-position.md)
+-->
