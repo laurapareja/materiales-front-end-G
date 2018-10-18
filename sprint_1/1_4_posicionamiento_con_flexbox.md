@@ -19,12 +19,12 @@
 Durante esta sesión veremos 
 
 - Algunas unidades de medida nuevas: `%`, `vh` y `vw`.
-- Las propiedades `min-width`, `max-width`, `min-height` y `max-height`
+- Las propiedades `min-width`, `max-width`, `min-height` y `max-height`.
 - Cómo distribuir los elementos en una página usando **Flexbox**.
 
 ## Unidades
 
-En la lección anterior vimos los píxels (px), unidades absolutas, cuyo tamaño no varía. Un pixel siempre es un pixel. Veamos algunas unidades más:
+En la lección anterior vimos los píxels (`px`), unidades absolutas, cuyo tamaño no varía. Un píxel siempre es un píxel. Veamos algunas unidades más.
 
 ## Unidades relativas al *viewport*
 
@@ -42,14 +42,14 @@ El *viewport* mide `100vw` de ancho y `100vh` de alto siempre, en la pantalla pe
 La unidad de `%` nos permite ajustar tamaños para que sean un porcentaje del tamaño de su etiqueta madre.
 
 ```css
-.div {
+.hero {
 	height: 33.3%;
 }
 ```
 
 ## Tamaños mínimos y máximos
 
-Con `max-width`, `min-width`, `max-height` y `min-height` podemos controlar los tamaños de las etiquetas para que sean fluidas, y se comporten como nostras queremos frente a diferentes tamaños de ventanas del navegador.
+Con `max-width`, `min-width`, `max-height` y `min-height` podemos controlar los tamaños de los elemento para que sean fluidos, y se comporten como nosotras queremos frente a diferentes tamaños de ventanas del navegador.
 
 ```css
 .box {
@@ -67,22 +67,21 @@ Hasta que apareció Flexbox la única manera de distribuir elementos en horizont
 
 Con flexbox podemos disponer de un bloque flexible que de manera natural se ajuste dentro de unos parámetros que le indiquemos.
 
-Vamos a seguir esta guía y a ir planteando unos ejercicios para cada propiedad que veamos: [Guía completa de flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+Vamos a seguir esta guía y a ir planteando unos ejercicios para cada propiedad. Lee esta [guía completa de flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) para poder realizar los ejercicios.
 
 
 ## Para qué sirve
 
-Flexbox es una herramienta imprescindible en la maquetación actual y nos permite tener elementos html que se ajusten a las diferentes pantallas de los diferentes dispositivos.
+Flexbox es una herramienta imprescindible en la maquetación actual y nos permite tener elementos HTML que se ajusten a las diferentes pantallas de los diferentes dispositivos.
 
 
-## En que casos se utiliza
+## En qué casos se utiliza
 
-Pues hay casos muy evidentes, como hacer un pié fijo cuando hay poco contenido, o un panel lateral con una parte fija y otra flexible. Pero también hay otros más simples como un menú horizontal, un listado de iconos de redes sociales o una noticia donde queremos que a veces la imagen vaya arriba o tras el texto.
+Pues hay casos muy evidentes, como hacer un pie fijo cuando hay poco contenido, o un panel lateral con una parte fija y otra flexible. Pero también hay otros más simples como un menú horizontal, un listado de iconos de redes sociales o una noticia donde queremos que a veces la imagen vaya arriba o tras el texto.
 Básicamente lo podemos/querremos usar en cualquier estructura que se distribuya en vertical u horizontal y sobre la que queramos controlar el espaciado, orden o alineamiento.
 
 * * *
 
-<a id="markdown-ejercicio-1" name="ejercicio-1"></a>
 #### EJERCICIO 1
 
 **FLEX y FLEX DIRECTION**
@@ -95,7 +94,6 @@ Básicamente lo podemos/querremos usar en cualquier estructura que se distribuya
 
 * * *
 
-<a id="markdown-ejercicio-2" name="ejercicio-2"></a>
 #### EJERCICIO 2
 
 **FLEX WRAP**
@@ -106,7 +104,6 @@ Teniendo una lista de 10 a 15 imágenes de 200x100 px, hacer un bloque flexbox d
 
 * * *
 
-<a id="markdown-ejercicio-3" name="ejercicio-3"></a>
 #### EJERCICIO 3
 
 **JUSTIFY CONTENT y ALIGN ITEMS**
@@ -126,7 +123,6 @@ Teniendo una lista de 10 a 15 imágenes de 200x100 px, hacer un bloque flexbox d
 
 * * *
 
-<a id="markdown-ejercicio-4" name="ejercicio-4"></a>
 #### EJERCICIO 4
 
 **ORDER**
@@ -139,7 +135,6 @@ Teniendo una lista de 10 a 15 imágenes de 200x100 px, hacer un bloque flexbox d
 
 * * *
 
-<a id="markdown-ejercicio-5" name="ejercicio-5"></a>
 #### EJERCICIO 5 
 
 **FLEX/GROW/SHRINK/BASIS**
@@ -154,7 +149,6 @@ Si hubiese mucho contenido el footer debe colocarse tras el main, de forma natur
 
 * * *
 
-<a id="markdown-ejercicio-6" name="ejercicio-6"></a>
 #### EJERCICIO 6
 
 ![Ejemplo](assets/images/1-4/ejercicio-6.png)
@@ -167,7 +161,6 @@ Convertir la imagen anterior a código usando HTML y CSS y lo que habéis aprend
 
 * * *
 
-<a id="markdown-ejercicio-7" name="ejercicio-7"></a>
 #### EJERCICIO 7
 
 ![Ejemplo](assets/images/1-4/ejercicio-7.png)
@@ -178,13 +171,12 @@ Convertir la imagen anterior a código usando HTML y CSS y lo que habéis aprend
 * El ancho del conjunto entero debe ser del	 100% con un ancho máximo de 840px
 Para el bloque gris de la izquierda debéis buscar una imagen cuadrada y colocarla ahí
 * No os preocupeis por el tamaño de cada elemento, lo importante es que el resultado tenga una composición similar
-* Para redondear los bordes debéis usar border-radius con unidades en pixel (por ejemplo, border-radius: 5px)
+* Para redondear los bordes debéis usar border-radius con unidades en píxel (por ejemplo, border-radius: 5px)
 
 Si tenéis cualquier duda, preguntad.
 
 * * *
 
-<a id="markdown-ejercicio-8" name="ejercicio-8"></a>
 #### EJERCICIO 8
 
 Crear una página con un texto simple centrado que ocupe el 100% de la pantalla hasta un máximo de 600 píxeles. Este texto deberá tener un título, un autor y una fecha de creación organizado de la siguiente forma.
@@ -206,7 +198,6 @@ Es importante utilizar flexbox para los elementos del header de la página y el 
 ## BONUS
 
 * * *
-<a id="markdown-ejercicio-9-bonus" name="ejercicio-9-bonus"></a>
 #### EJERCICIO 9 BONUS
 
 En el siguiente [codepen](https://codepen.io/adalab/pen/BmQaQa) variad las dimensiones en vw y vh para:
