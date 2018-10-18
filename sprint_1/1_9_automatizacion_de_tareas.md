@@ -256,7 +256,7 @@ La forma más cómoda es:
 1. crear nuestro repositorio vacío en GitHub
 2. clonarlo a nuestro equipo
 3. descargar/clonar el kit a otra carpeta
-4. copiar o mover los archivos (los ocultos también) y carpetas a nuestro proyecto **SIN OLVIDAR EL ARCHIVO OCULTO .GITIGNORE** (podemos obviar el `README.md`).
+4. copiar o mover los archivos y carpetas a nuestro proyecto **SIN OLVIDAR EL ARCHIVO .GITIGNORE Y EL RESTO DE ARCHIVOS OCULTOS (empiezan por `.`)** (podemos obviar el `README.md`).
 5. Desde nuestro proyecto ya podemos ejecutar `npm install`, y ya estamos listas
 
 ### BONUS: Más plugins de Gulp
@@ -271,7 +271,7 @@ Podéis ver un ejemplo de cómo trabajar con esto en este repositorio que prepar
 
 ##### Plugins de linting
 
-Un *linter* es un programa que detecta errores de uso y/o estilo en un código. Ahora mismo en el propio Atom tenemos instalados varios linters que nos informan de errores en el código o en su estilo (llaves que no cierran, etc.). También podemos usar esos linters desde una tareas de Gulp, de forma que nos digan errores antes de, por ejemplo, subir un código a producción. Algunos ejemplos son [JSLint](http://www.jslint.com/) o [CSSLint](http://csslint.net/).
+Un *linter* es un programa que detecta errores de uso y/o estilo en un código. Ahora mismo en el propio Code tenemos instalados varios linters que nos informan de errores en el código o en su estilo (llaves que no cierran, etc.). También podemos usar esos linters desde una tareas de Gulp, de forma que nos digan errores antes de, por ejemplo, subir un código a producción. Algunos ejemplos son [JSLint](http://www.jslint.com/) o [CSSLint](http://csslint.net/).
 
 ##### Plugins para trabajar con imágenes
 
