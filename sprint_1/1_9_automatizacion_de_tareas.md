@@ -1,11 +1,13 @@
 # Automatización de tareas
 
-<!-- TOC START min:4 max:4 link:true update:true -->
+<!-- TOC depthFrom:6 depthTo:6 -->
+
 - [EJERCICIO 1:](#ejercicio-1)
 - [EJERCICIO 2:](#ejercicio-2)
 - [EJERCICIO 3:](#ejercicio-3)
 - [EJERCICIO 4:](#ejercicio-4)
-<!-- TOC END -->
+
+<!-- /TOC -->
 
 ## Introducción
 
@@ -131,10 +133,11 @@ Ahora usaremos este gulpfile:
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 
-gulp.task('default', function () {
+gulp.task('default', function(done) {
   gulp.src('scss/index.scss') // Leo el archivo scss
     .pipe(sass()) // Convierto el contenido del archivo index.scss a CSS
     .pipe(gulp.dest('css')); // El CSS generado lo guardamos en la carpeta css
+  done();
 });
 ```
 
@@ -169,16 +172,18 @@ Vamos a crear una tarea `watch` que está todo el rato observando nuestros fiche
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 
-gulp.task('default', function () {
+gulp.task('default', function(done) {
   gulp.src('scss/index.scss') // Leo el archivo scss
     .pipe(sass()) // Convierto el contenido del archivo index.scss a CSS
     .pipe(gulp.dest('css')); // El CSS generado lo guardamos en la carpeta css
+    done();
 });
 
 // Tarea que observa cambios en 'scss'
 // En su primera ejecución lanzará también las tareas que pasamos como segundo parámetro en la función, default en este caso
-gulp.task('watch', ['default'], function () {
+gulp.task('watch', ['default'], function(done) {
   gulp.watch('scss/*.scss', ['default']);  // Lanza la tarea 'default' cuando observa cambios en cualquier scss
+  done();
 });
 ```
 
@@ -187,7 +192,8 @@ Ahora ejecutamos nuestra nueva tarea `gulp watch`. Una vez ejecutada, lo primero
 Prueba a modificar el fichero Sass y ver que el CSS se modifica automáticamente. Igual que Koala pero con un toque más de programadora pro, ¿verdad?
 
 * * *
-#### EJERCICIO 1:
+<a id="markdown-ejercicio-1" name="ejercicio-1"></a>
+###### EJERCICIO 1:
 
 Ahora vamos a trabajar con un proyecto que ya tiene configurado Gulp. Primero tendremos que clonarlo en nuestro ordenador y en la carpeta ejecutar `npm install` para instalar las dependencias.
 
@@ -200,37 +206,49 @@ Luego probamos a ejecutar la tarea por defecto `gulp` y la tarea `gulp watch`. O
 Ahora os hemos preparado un proyecto que os podéis descargar y donde integrar vuestros proyecto y ejercicios en Adalab:  
 [Adalab Web Starter Kit](https://github.com/Adalab/Adalab-web-starter-kit)
 
+## Adalab Web Starter Kit
+Hemos preparado una base para hacer proyectos o ejercicios durante el curso.
+Usa Gulp para ejecutar una serie de tareas (procesar los scss, gestionar las imágenes, los JS...) y vamos a tener una estructura un poco diferente, más adaptada a un proyecto real.
+
+Tendremos tres carpetas (por defecto solo viene una en el kit):
+- **_src/**: Donde tendremos nuestros archivos de trabajo: html, scss, js e imágenes
+- **public/**: será donde se genere una versión de desarrollo, nosotras trabajaremos sobre los archivos de trabajo y gulp se encargará de pasarlos correctamente a esta carpeta. El servidor web se ejecutará aquí.
+- **docs/**: esta es opcional y nos dejará generar una versión de producción de nuestro proyecto para que activemos GitHub Pages.
+
 * * *
 
-#### EJERCICIO 2:
+<a id="markdown-ejercicio-2" name="ejercicio-2"></a>
+###### EJERCICIO 2:
 
 ¿Quién sabe decir qué hace la tarea **styles**?
 
 * * *
 
-#### EJERCICIO 3:
+<a id="markdown-ejercicio-3" name="ejercicio-3"></a>
+###### EJERCICIO 3:
 
 ¿Quién sabe decir qué hace la tarea **scripts**?
 
 * * *
 
-#### EJERCICIO 4:
+<a id="markdown-ejercicio-4" name="ejercicio-4"></a>
+###### EJERCICIO 4:
 
-¿Que diferencias hay entre la tarea **styles** y **styles-min**?
+¿Que diferencias hay entre la tarea **styles** y **styles-dist**?
 
 * * *
 
 ### Tareas incluidas
 En el archivo `README.md` del proyecto tenéis información más detallada pero en resumen este kit tiene dos tareas principales:
 * `gulp`
-* `gulp deploy`
+* `gulp docs`
 
 ### `gulp`
-La tarea por defecto lanza un servidor web con BrowserSync y varios watchers estarán pendientes de los archivos SCSS/JS/HTML para recargar el navegador cuando se necesite.
+La tarea por defecto lanza un servidor web con BrowserSync y varios watchers estarán pendientes de los archivos SCSS/JS/HTML de la nueva carpeta **public/** para recargar el navegador cuando se necesite.
 Además, aplica automáticamente autoprefixer a nuestros estilos y agrupa todas la mediaqueries que hayamos creado en los SCSS y las coloca al final del documento CSS, de esta manera podemos escribir mediaqueries donde las necesitemos y ya Gulp se ocupará de agruparlas y colocarlas en su sitio.
 
-### `gulp deploy`
-Esta tarea se ejecuta una sola vez y no lanza servidores web ni watchers, pero minimiza nuestros archivos CSS y JS de manera que ocupen menos y tengamos una versión lista para subir a nuestro servidor de producción.
+### `gulp docs`
+Esta tarea se ejecuta una sola vez y no lanza servidores web ni watchers, pero genera una versión lista para producción (para subirla a un servidor, activar GitHub Pages o enviar a nuestra clienta) en la carpeta **docs/**.
 
 
 ## Cómo usar el kit en nuestros proyectos
@@ -238,7 +256,7 @@ La forma más cómoda es:
 1. crear nuestro repositorio vacío en GitHub
 2. clonarlo a nuestro equipo
 3. descargar/clonar el kit a otra carpeta
-4. copiar o mover los archivos y carpetas a nuestro proyecto **SIN OLVIDAR EL ARCHIVO OCULTO .GITIGNORE** (podemos obviar el `README.md`).
+4. copiar o mover los archivos (los ocultos también) y carpetas a nuestro proyecto **SIN OLVIDAR EL ARCHIVO OCULTO .GITIGNORE** (podemos obviar el `README.md`).
 5. Desde nuestro proyecto ya podemos ejecutar `npm install`, y ya estamos listas
 
 ### BONUS: Más plugins de Gulp
