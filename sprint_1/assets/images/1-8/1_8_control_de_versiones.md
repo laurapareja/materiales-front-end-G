@@ -1,18 +1,36 @@
+<a id="markdown-control-de-versiones" name="control-de-versiones"></a>
 # Control de versiones
-<!-- TOC depthFrom:4 depthTo:6 -->
+<!-- TOC depthFrom:1 depthTo:6 -->
 
-- [EJERCICIO 1](#ejercicio-1)
-- [EJERCICIO 2](#ejercicio-2)
-- [EJERCICIO 3](#ejercicio-3)
-- [EJERCICIO 4](#ejercicio-4)
-- [EJERCICIO 5](#ejercicio-5)
-- [EJERCICIO 6](#ejercicio-6)
-- [EJERCICIO 7](#ejercicio-7)
-- [EJERCICIO 8.1](#ejercicio-81)
-- [EJERCICIO 8.2](#ejercicio-82)
+- [Control de versiones](#control-de-versiones)
+  - [Introducción](#introducción)
+  - [Repaso del proceso de creación de un proyecto Git](#repaso-del-proceso-de-creación-de-un-proyecto-git)
+    - [Inicio de un repositorio desde Github](#inicio-de-un-repositorio-desde-github)
+    - [Inicio de repositorio desde un proyecto existente](#inicio-de-repositorio-desde-un-proyecto-existente)
+    - [README.md](#readmemd)
+    - [.gitignore](#gitignore)
+    - [Licencia](#licencia)
+  - [Compartir código con mi equipo](#compartir-código-con-mi-equipo)
+    - [Modificar archivos en local y subir a remoto los cambios](#modificar-archivos-en-local-y-subir-a-remoto-los-cambios)
+    - [¿Qué pasa cuando hacemos un `git pull`?](#¿qué-pasa-cuando-hacemos-un-git-pull)
+    - [¿Qué pinta tiene un conflicto?](#¿qué-pinta-tiene-un-conflicto)
+  - [Ramas](#ramas)
+    - [Madre de CROM, qué es una rama???](#madre-de-crom-qué-es-una-rama)
+      - [EJERCICIO 1](#ejercicio-1)
+  - [Entonces, ¿cómo se supone que tengo que trabajar con Git?](#entonces-¿cómo-se-supone-que-tengo-que-trabajar-con-git)
+  - [Oh, dios mío! He hecho un commit que no quería hacer!!](#oh-dios-mío-he-hecho-un-commit-que-no-quería-hacer)
+  - [Issues](#issues)
+  - [¿Qué vamos a hacer hoy?](#¿qué-vamos-a-hacer-hoy)
+          - [EJERCICIO 1: Crear repositorio en GitHub](#ejercicio-1-crear-repositorio-en-github)
+          - [EJERCICIO 2: Clonar repositorio](#ejercicio-2-clonar-repositorio)
+          - [EJERCICIO 3: Eliminar un repositorio](#ejercicio-3-eliminar-un-repositorio)
+          - [EJERCICIO 4.1: Crear un repositorio local y conectarlo con remoto](#ejercicio-41-crear-un-repositorio-local-y-conectarlo-con-remoto)
+          - [EJERCICIO 4.2: Solucionar un conflicto](#ejercicio-42-solucionar-un-conflicto)
+  - [BONUS: Paquete de Code para Git](#bonus-paquete-de-code-para-git)
 
 <!-- /TOC -->
 
+<a id="markdown-introducción" name="introducción"></a>
 ## Introducción
 
 Hasta ahora hemos hecho una primera aproximación a Git, nada menor.
@@ -25,8 +43,10 @@ También vimos como publicar nuestro trabajo a través del sistema de hosting pr
 
 Hoy vamos a ver como trabajar en grupo sobre el mismo proyecto y sus archivos.
 
+<a id="markdown-repaso-del-proceso-de-creación-de-un-proyecto-git" name="repaso-del-proceso-de-creación-de-un-proyecto-git"></a>
 ## Repaso del proceso de creación de un proyecto Git
 
+<a id="markdown-inicio-de-un-repositorio-desde-github" name="inicio-de-un-repositorio-desde-github"></a>
 ### Inicio de un repositorio desde Github
 Lo más sencillo es crear el proyecto de cero desde nuestro servicio de Git, en este caso, GitHub:
 1. Vamos a nuestro perfil
@@ -40,6 +60,7 @@ Lo más sencillo es crear el proyecto de cero desde nuestro servicio de Git, en 
 	1. Desde la terminal voy a la carpeta donde quiero clonar el proyecto y, con la url que me da github para clonar, escribo: `git clone url-del-repositorio-que-me-da-github`.
 	2. Si quiero clonarlo y usar un nombre específico para la carpeta de mi repositorio sigo el paso uno pero escribo: `git clone url-del-repositorio-que-me-da-github nuevo-nombre-de-carpeta`
 
+<a id="markdown-inicio-de-repositorio-desde-un-proyecto-existente" name="inicio-de-repositorio-desde-un-proyecto-existente"></a>
 ### Inicio de repositorio desde un proyecto existente
 ¿Cómo? ¿Que ya teníamos un proyecto local y queremos subirlo a GitHub? Bueno, tampoco es tan malo:
 
@@ -54,6 +75,7 @@ Lo más sencillo es crear el proyecto de cero desde nuestro servicio de Git, en 
 
 ![Instrucciones para añadir el repositorio remoto](assets/images/1-8/new-repo-instructions.png)
 
+<a id="markdown-readmemd" name="readmemd"></a>
 ### README.md
 El archivo `README.md` es un documento escrito en [markdown](https://es.wikipedia.org/wiki/Markdown) que se presenta en la página principal del repositorio y tiene como objeto aportar una primera documentación o presentación del proyecto.  
 Esto es una convención, pero hay que tenerla en cuenta.
@@ -65,6 +87,7 @@ Ejemplos de readme.md:
 * [Editor de código VSCode](https://github.com/Microsoft/vscode)
 * [Gulp (Automatizador de tareas)](https://github.com/gulpjs/gulp)
 
+<a id="markdown-gitignore" name="gitignore"></a>
 ### .gitignore
 Git tiene un sistema para poder ignorar archivos de un proyecto.  
 **¿Y por qué querríamos hacer esto?** Porque habrá archivos que necesitemos en nuestra carpeta de trabajo local pero que no queramos subir al repositorio ni controlar sus cambios.
@@ -77,17 +100,20 @@ Estos archivos, que no tiene sentido tener "controlados" pero que en nuestra car
 
 En [gitignore.io](https://www.gitignore.io) podemos encontrar una serie de configuraciones ya hechas que nos ayudan a ignorar tipos de archivos comunes según el Sistema operativo o el lenguaje en el que trabajemos.
 
+<a id="markdown-licencia" name="licencia"></a>
 ### Licencia
 Uno de los puntos claves un entorno social donde poner al alcance de todos tus proyectos es indicar cómo y en qué términos se deben usar. Para esto están las licencias, que son archivos legales que especifican qué se puede y qué no se puede hacer con los archivos asociados.
 
 GitHub nos ofrece un enlace donde nos intenta orientar sobre qué licencia elegir en cada caso: [choosealicense.com](https://choosealicense.com).
 
 
+<a id="markdown-compartir-código-con-mi-equipo" name="compartir-código-con-mi-equipo"></a>
 ## Compartir código con mi equipo
 Otras de las bondades de Git es que hace que trabajar en grupo sea seguro y más fácil. Nos evita por ejemplo: tener que compartir archivos a través del email, perder código cuando una compañera lo sobreescribe por error...
 
 Desde la página de nuestro repositorio accedemos a `settings` y desde allí a `Collaborators & teams` donde podremos añadir a nuestras colaboradoras favoritas, o a las que nos toquen ;)
 
+<a id="markdown-modificar-archivos-en-local-y-subir-a-remoto-los-cambios" name="modificar-archivos-en-local-y-subir-a-remoto-los-cambios"></a>
 ### Modificar archivos en local y subir a remoto los cambios
 Ya lo hemos ido viendo estos días:
 1. Se modifican archivos y se guardan los cambios en el editor.
@@ -103,6 +129,7 @@ Hasta aquí todo normal. Ahora llega el momento de subir el commit (o los commit
 > Antes de comenzar a trabajar (antes de empezar a hacer cambios en nuestros archivos) es una buena práctica hacer `git pull` y actualizar nuestro repositorio local con los cambios que otras personas han subido al repositorio remoto. Aun así, ocurrirá que tras hacer nuestros cambios y commitearlos, al intentar hacer `git push` el terminal nos indique que tenemos que hacer `git pull` primero, esto ocurre por que alguna compañera ha subido cambios mientras nosotras trabajábamos.
 
 
+<a id="markdown-¿qué-pasa-cuando-hacemos-un-git-pull" name="¿qué-pasa-cuando-hacemos-un-git-pull"></a>
 ### ¿Qué pasa cuando hacemos un `git pull`?
 Pasan varias cosas:
 1. Git comprueba si en el repositorio remoto hay una versión posterior (más nueva) a la que se encuentra en nuestro repositorio local.
@@ -115,6 +142,7 @@ Y aquí tenemos dos escenarios diferentes:
 > **NOTA:**
 > En el primer caso podremos cambiar el mensaje del commit automático o poner uno nuevo. Guardamos aceptando el nombre que nos propone, salimos, y hacemos un push (se subirá el commit con nuestros cambios y el commit con el merge o mezcla).
 
+<a id="markdown-¿qué-pinta-tiene-un-conflicto" name="¿qué-pinta-tiene-un-conflicto"></a>
 ### ¿Qué pinta tiene un conflicto?
 Un conflicto ocurre cuando el git se encuentra con dos versiones del mismo bloque de código. Entonces, marca en el documento que hay un conflicto y muestra las dos opciones para que nosotros elijamos qué hacer:
 ```
@@ -131,10 +159,12 @@ La manera de afrontar este conflicto es elegir lo que queremos que ponga en ese 
 
 Los conflictos más pequeños los resolveremos sobre la marcha, en los más complicados tendremos que hablar con la compañera que haya hecho los cambios para decidir qué hacer.
 
+<a id="markdown-ramas" name="ramas"></a>
 ## Ramas
 
 Cuando subimos los commits habréis visto que escribimos `$ git push origin master`, lo que estamos diciendo es que suba muestra **rama master** al repositorio remoto.
 
+<a id="markdown-madre-de-crom-qué-es-una-rama" name="madre-de-crom-qué-es-una-rama"></a>
 ### Madre de CROM, qué es una rama???
 Git nos permite crear versiones paralelas de nuestro proyecto para poder desarrollar o probar varias funcionalidades a la vez sin miedo a perder lo hecho hasta ahora:
 
@@ -145,7 +175,6 @@ Cuando iniciamos un repositorio git se crea una primera rama, y se llama `master
 Vamos a ver el trabajo en ramas a través de un ejemplo, como un mini proyecto de grupo, porque al fin y al cabo, git va de trabajar en grupo:
 
 * * *
-
 <a id="markdown-ejercicio-1" name="ejercicio-1"></a>
 #### EJERCICIO 1
 
@@ -180,128 +209,19 @@ Nos tiene que quedar algo así:
 </body>
 </html>
 ```
-
-* * *
-
-### Creando ramas
-Para crear ramas escribimos `git branch nombre-de-la-rama` y nos movemos a ella con `git checkout nombre-de-la-rama`.
-
-Tenemos un atajo para crear la rama y cambiarnos a ella directamente
-```
-git checkout -b nombre-de-la-rama
-```
-
-En cualquier caso, si queremos movernos de una rama a otra usaremos `git checkout nombre-de-la-rama`, de esta manera podemos movernos a nuestra nueva rama o volver a `master` en cualquier momento.
-
-> Para poder movernos entre ramas debemos tener todos los archivos modificados, al menos, añadidos a un futuro commit. Si modifico un archivo y me intento cambiar de rama no me dejará.
-
-Añadir archivos y crear un commit funciona igual pero cuando queramos hacer un push usaremos:
-```
-git push origin nombre-de-la-rama
-```
-
-La primera vez usaremos el git push con `-u`:
-```
-git push -u origin nombre-de-la-rama
-```
-
-* * *
-<a id="markdown-ejercicio-2" name="ejercicio-2"></a>
-#### EJERCICIO 2
-
-1. Una de la psreja creará una rama `footer`, nos movernos a ella y modificamos un poco nuestro proyecto. Añadiremos a nuestro footer el enlace a la web de Adalab, quedando así:
-```html
-<footer>
-	<p>Maquetado en grupo en <a href="http://adalab.es">Adalab</a></p>
-</footer>
-```
-2. Como siempre, añadimos, commiteamos y hacemos push, esta vez usando `git push -u origin footer`.
-3. Si ahora cambiamos a la rama `master` veremos que permanece como la dejamos y que el cambio del enlace solo está hecho en nuestra rama `footer`.
-
-![Resultado de los ejercicios 1 y 2](assets/images/1-8/ramas-1.png)
-
 * * *
 
 
-### Fusionar ramas
-Una vez que hemos terminado el trabajo en nuestra nueva rama y lo hemos subido al servidor remoto querremos aplicar estos cambios en nuestra rama principal, `master`.
-
-Para ello nos vamos a la rama destino (en este caso `master`) con `git checkout master`,  y escribiremos:
-
-```
-git merge nombre-de-la-rama
-```
-
-Esto nos mezclará nuestra versión local de la rama `nombre-de-la-rama` con la rama donde estemos, en este caso, `master`. Si todo va bien nos mezclará las ramas, creará un commit automático y si hacemos un `git status` nos dirá que solo queda hacer un `git push origin master` y ya.
-
-	NOTA:
-	Es importante haber hecho un `git pull` en la rama que vamos a fusionar, en este caso `nombre-de-la-rama` antes de empezar el proceso de fusión para asegurarnos de que tenemos la última versión en ambas ramas.
-
-
-* * *
-
-<a id="markdown-ejercicio-3" name="ejercicio-3"></a>
-#### EJERCICIO 3
-
-Vamos a fusionar nuestra rama `footer` con `master` para que nuestra web tenga el enlace que hemos añadido anteriormente.
-Para ello:
-
-1. Nos movemos a la rama `footer`
-2. Comprobamos que está correcto y tenemos la última versión
-3. Nos movemos a la rama `master` (sí, es super buena idea asegurarnos de que también tenemos la última versión)
-4. Hacermos un merge de la rama `footer`
-5. Resolvemos los conflictos si los hay
-6. Comprobamos que los cambios está hechos
-7. Y subimos al repositorio remoto
-
-```html
-<footer>
-	<p>Maquetado en grupo en <a href="http://adalab.es">Adalab</a></p>
-</footer>
-```
-
-![Resultado del ejercicio 3](assets/images/1-8/ramas-2.png)
-
-* * *
-
-<a id="markdown-ejercicio-4" name="ejercicio-4"></a>
-#### EJERCICIO 4
-
-Ahora que hemos hecho un primer acercamiento a las ramas, vamos a hacer lo mismo pero cada miembro de la pareja por separado. Cada una estará encargada de un trabajo diferente que tendrá que realizar en una rama y posteriormente mezclar en la rama principal.
-
-![Resultado del ejercicio 4](assets/images/1-8/ramas-3.png)
-
-Como refleja la imagen vamos a hacer dos ampliaciones de contenido:
-1. una alumna de cada pareja tiene que añadir el contenido de la sección con una frase motivadora
-2. la otra alumna de la pareja tiene que añadir el contenido de la sección con un título y un pequeño párrafo
-
-**Sección con frase motivadora**
-```html
-<section class="motivacion">
-	<h2>Frase súper motivadora, ¡a tope!</h2>
-</section>
-```
-
-**Sección con frase y título**
-```html
-<section class="contenido">
-	<h2>Contenido normal</h2>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-</section>
-```
-
-Ahora realmente da igual el orden, la que acabe su trabajo, que suba su rama al repositorio remoto, y siga los pasos para fusionarlo con master. **¡A por ello!**
-
-* * *
-
+<a id="markdown-entonces-¿cómo-se-supone-que-tengo-que-trabajar-con-git" name="entonces-¿cómo-se-supone-que-tengo-que-trabajar-con-git"></a>
 ## Entonces, ¿cómo se supone que tengo que trabajar con Git?
 Lo normal es que antes de empezar a trabajar comprobemos si tenemos la última versión. También puede no hacerse y seguir trabajando en lo que se estuviese trabajando.
 En cualquier caso, podemos comprobar si hay una versión nueva del proyecto con `git fetch` o comprobar y descargar una versión nueva con `git pull`.
 
-Luego seguimos trabajando con normalidad, recordando guardar frecuentemente con `Ctrl+S`. y cuando creamos conveniente 'stageamos' (añadimos los cambios) con `git add` y 'commiteamos' (creamos nueva version) con `git commit`. **Siempre es buena idea hacer commit tras pequeñas tareas o cambios**.
+Luego seguimos trabajando con normalidad, recordando guardar frecuentemente con `Ctrl+S`. y cuando creamos conveniente 'stageamos' (añadimos los cambios) con `git add` y 'commiteamos' (creamos nueva version) con `git commit`. Siempre es buena idea hacer commit tras pequeñas tareas o cambios.
 
 Y pusheamos (subimos los commits) con `git push` cuando terminemos la tarea que nos toca.
 
+<a id="markdown-oh-dios-mío-he-hecho-un-commit-que-no-quería-hacer" name="oh-dios-mío-he-hecho-un-commit-que-no-quería-hacer"></a>
 ## Oh, dios mío! He hecho un commit que no quería hacer!!
 ¿Qué pasa si hago un cambio, lo añado, hago commit y luego... querría no haberlo hecho? Pues no pasa nada, para eso trabajamos con un control de versiones.
 
@@ -330,15 +250,18 @@ Si ahora hacemos un `git log` podemos ver cómo queda el historial de commits:
 ![Git revert paso 3](assets/images/1-8/commit-revert-3.png)
 
 
+<a id="markdown-issues" name="issues"></a>
 ## Issues
 Github, como otros servicios de control de versiones tienen un sistema de tickets, los issues. Te permiten crear pequeñas tareas donde solicitas información, avisar de un problema o de alguna mejora. Además, nos permiten asignar responsables, clasificarlas por etiquetas...
 
+<a id="markdown-¿qué-vamos-a-hacer-hoy" name="¿qué-vamos-a-hacer-hoy"></a>
+## ¿Qué vamos a hacer hoy?
+Hoy vamos a repasar la creación de repositorios, gestión de conflictos y algún issue.
+Como otras veces, los haremos por parejas e iremos alternando quién va a los mandos.
 
 * * *
-<a id="markdown-ejercicio-5" name="ejercicio-5"></a>
-#### EJERCICIO 5
-
-**Crear repositorio en GitHub**
+<a id="markdown-ejercicio-1-crear-repositorio-en-github" name="ejercicio-1-crear-repositorio-en-github"></a>
+###### EJERCICIO 1: Crear repositorio en GitHub
 
 Hay que crear un repositorio vacío en GitHub:
 - ¿Qué licencia hemos elegido?
@@ -346,28 +269,22 @@ Hay que crear un repositorio vacío en GitHub:
 
 * * *
 
-<a id="markdown-ejercicio-6" name="ejercicio-6"></a>
-#### EJERCICIO 6
-
-**Clonar repositorio**
+<a id="markdown-ejercicio-2-clonar-repositorio" name="ejercicio-2-clonar-repositorio"></a>
+###### EJERCICIO 2: Clonar repositorio
 
 Clonaremos el repositorio de nuestra compañera y le pondremos o abriremos un issue a través de la web de Github para que nos añada como colaboradora con permisos de escritura.
 
 * * *
 
-<a id="markdown-ejercicio-7" name="ejercicio-7"></a>
-#### EJERCICIO 7
-
-**Eliminar un repositorio**
+<a id="markdown-ejercicio-3-eliminar-un-repositorio" name="ejercicio-3-eliminar-un-repositorio"></a>
+###### EJERCICIO 3: Eliminar un repositorio
 
 No es tan habitual pero de tanto en tanto querremos hacer limpieza en nuestra cuenta de GitHub. ¿Seremos capaces de borrar el repositorio que acabamos de crear? ¿Sí, no? :)
 
 * * *
 
-<a id="markdown-ejercicio-81" name="ejercicio-81"></a>
-#### EJERCICIO 8.1
-
-**Crear un repositorio local y conectarlo con remoto**
+<a id="markdown-ejercicio-41-crear-un-repositorio-local-y-conectarlo-con-remoto" name="ejercicio-41-crear-un-repositorio-local-y-conectarlo-con-remoto"></a>
+###### EJERCICIO 4.1: Crear un repositorio local y conectarlo con remoto
 
 Ahora vamos a trabajar de una manera menos habitual y un poco más complicada, pero a veces pasa: crearemos un proyecto en nuestro equipo, algo sencillito, podemos elegir entre:
 - Un html básico con un "hola, mundo" centrado en la ventana del navegador
@@ -386,15 +303,14 @@ Y ahora, ¿no sería genial conectarlo con un repositorio remoto y tenerlo siemp
 
 * * *
 
-<a id="markdown-ejercicio-82" name="ejercicio-82"></a>
-#### EJERCICIO 8.2
-
-**Solucionar un conflicto**
+<a id="markdown-ejercicio-42-solucionar-un-conflicto" name="ejercicio-42-solucionar-un-conflicto"></a>
+###### EJERCICIO 4.2: Solucionar un conflicto
 
 Una vez que tenemos las dos el repositorio en nuestro equipo vamos a modificar index.html a la vez. Cada miembro del equipo hará un cambio, su commit y lo subirá. El conflicto lo resolveréis entre las dos :)
 
 * * *
 
+<a id="markdown-bonus-paquete-de-code-para-git" name="bonus-paquete-de-code-para-git"></a>
 ## BONUS: Paquete de Code para Git
 
 Code trae por defecto un paquete para integración con Git y GitHub que nos ayuda con las tareas de control de versiones de nuestro día a día.
@@ -410,7 +326,5 @@ También en el panel principal, el editor del fichero que estamos editando, apar
 - verde las líneas nuevas desde el último commit
 
 Este paquete también facilita una herramienta gráfica para resolver conflictos, que ayuda a elegir la versión del código que nos interesa mantener.
-
-Además nos permite ver qué se ha modificado en nuestro proyecto solo haciendo click en el icono lateral
 
 Podéis leer más sobre las posibilidades de [VS Code y Git](https://code.visualstudio.com/docs/introvideos/versioncontrol).
