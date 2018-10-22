@@ -1,4 +1,4 @@
-# Proyecto 1: Web grupal
+# Proyecto 1: Contact us!
 
 <!-- TOC START min:2 max:2 link:true update:true -->
 - [Resumen (TL;DR)](#resumen-tldr)
@@ -21,7 +21,7 @@ En este proyecto vamos a desarrollar nuestra primera web colaborativa. Para ello
 1. Consolidar el aprendizaje de las tecnologías del sprint Hola Mundo (HTML, CSS, diseño responsive, GitHub pages, Sass, grid, gulp)
 1. Utilizar control de versiones en equipo para aprender las ventajas y conflictos que genera
 1. Mejorar la comunicación de quiénes sois y cómo os proyectáis como equipo
-1. Mejorar vuestras habilidades de comunicación en público al exponer el proyecto en la sesión de retrospectiva
+1. Mejorar vuestras habilidades de comunicación en público al exponer el proyecto en la sesión final
 
 
 ## Caso de uso
@@ -32,7 +32,7 @@ Con esta web del equipo podréis ilustrar este primer proyecto realizado en Adal
 ## Especificaciones
 
 Se desarrollará una página web con las siguientes características:
-- Uso de HTML y Sass (al principio usaréis CSS pero la versión final debe usarlo)
+- Uso de HTML y Sass (al principio usaréis CSS pero la versión final debe usar Sass)
 - Uso de mediaqueries y otras técnicas de diseño *responsive* para que la web se adapte al tamaño de pantalla de distintos dispositivos
 - Uso de git para el control de versiones del proyecto
 - Publicación del resultado en Internet usando GitHub Pages
@@ -91,13 +91,13 @@ Os proponemos una serie de hitos como sugerencia para dividir las fases de este 
 
 ### Primero. Arranque del proyecto (kickoff)
 
-- 2 días de trabajo
+- 2 sesiones de trabajo
 - Organizar el trabajo a realizar usando Trello, e ir asignando tareas y responsables
 - Establecer la organización del trabajo: qué tareas realizar en clase juntas y cuáles por separado en casa
 
 ### Segundo. Versión móvil de la web
 
-- 1 semana de trabajo
+- 4 sesiones de trabajo
 - Desarrollar la versión para móvil de la web (página principal y contacto, sin el formulario de momento) con HTML y CSS
 - Crear el contenido de la web: textos e imágenes
 - Crear la infraestructura necesaria: repositorio en GitHub y con acceso para todos los miembros del equipo
@@ -107,13 +107,13 @@ Para considerar terminado este hito y todos los siguientes debéis tener publica
 
 ### Tercero. Versión responsive de la web
 
-- 1 semana de trabajo.
+- 4 sesiones de trabajo
 - Hacer la web para el resto de tamaños de pantalla (tablet, desktop)
 - Realizar el formulario de contacto para todos los dispositivos
 
 ### Cuarto. Versión final
 
-- 1 semana de trabajo.
+- 4 sesiones de trabajo
 - Aplicar las técnicas avanzadas aprendidas en la parte final del curso:
   - Sass
   - Grid en la sección de "quiénes somos"
@@ -122,7 +122,7 @@ Para considerar terminado este hito y todos los siguientes debéis tener publica
 
 ### Quinto. Presentación final
 
-- 2 días de trabajo
+- 2 sesiones de trabajo
 - El último día del sprint presentaréis la versión final de este proyecto. Para ello tendréis que dejarlo publicado y acabado con tiempo, y organizaros para realizar la presentación.
 
 
@@ -146,7 +146,7 @@ Por último, para acompañar a la entrega del proyecto, el equipo realizará una
 - Cuál de las tareas o los puntos ha sido el que más esfuerzo ha requerido
 - Cuál de las tareas o partes de la web es la que hace que el equipo esté más orgulloso
 
-Al final de esta presentación habrá un turno breve de preguntas, de manera informal, tanto por parte de otras compañeras como por parte de los profesores.
+Al final de esta presentación habrá un turno de preguntas tanto por parte de otras compañeras como por parte de lass profesoras del curso.
 
 
 ## Recursos
