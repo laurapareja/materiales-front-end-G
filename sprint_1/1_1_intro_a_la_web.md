@@ -312,7 +312,7 @@ El aceite de oliva, vinagre, agua y sal son el resto de ingredientes. Suelen emp
 
 * * *
 
-### CSS
+## CSS
 La maquetación web tiene mucha relación con la maquetación en papel de toda la vida, donde se utilizan los estilos para definir la apariencia que tendrá un cierto contenido.
 
 En la web tenemos CSS (del inglés "Cascading Style Sheets" o, en español, "Hojas de estilo en cascada") que es un lenguaje de estilos para definir la presentación de un documento escrito en un lenguaje de marcado, como HTML.
@@ -420,7 +420,7 @@ Añadir hoja de estilos al ejercicio anterior donde:
 
 * * *
 
-### Pair programming
+## Pair programming
 
 Es una técnica de desarrollo ágil de software muy valorada en las empresas de desarrollo digital y que estaremos practicando durante todo el curso de Adalab. Veamos de qué se trata y sus beneficios:
 
