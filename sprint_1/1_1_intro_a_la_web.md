@@ -1,14 +1,13 @@
 # Intro a la web
 
-<!-- TOC depthFrom:4 depthTo:4 withLinks:true -->
-
 - [EJERCICIO 1](#ejercicio-1)
 - [EJERCICIO 2](#ejercicio-2)
 - [EJERCICIO 3](#ejercicio-3)
 - [EJERCICIO 4](#ejercicio-4)
 - [EJERCICIO 5](#ejercicio-5)
 
-<!-- /TOC -->
+
+
 
 ## Cómo funciona la web
 
@@ -37,6 +36,7 @@ Estos ordenadores son los **servidores DNS** ([DNS](https://es.wikipedia.org/wik
 
 Ahora vamos a nuestros dispositivos (ordenadores, móviles, tablets, etc.). Estos son los **clientes** y están también conectados a esa red de servidores pero a través de unas empresas proveedoras de servicios: Movistar, Vodafone, etc.
 
+<a id="markdown-cómo-se-conecta-todo-esto" name="cómo-se-conecta-todo-esto"></a>
 ### Cómo se conecta todo esto
 
 Cuándo escribimos una dirección web en el navegador (Chrome, Firefox, Edge, Safari...) como por ejemplo *google.es*, pasan varias cosas:
@@ -52,6 +52,7 @@ El servidor responde con la información necesaria para mostrar en el navegador 
     Práctica:
     Escribir en un navegador la dirección IP 216.58.211.206
 
+<a id="markdown-partes-de-una-dirección-web-o-url" name="partes-de-una-dirección-web-o-url"></a>
 ### Partes de una dirección web o URL
 
 En el día a día escribimos versiones cortas de las URL, como por ejemplo `google.es`, y es el navegador quien las interpreta en su forma completa:
@@ -86,6 +87,7 @@ Queremos acceder al archivo `BY1617.html` que se encuentra en la ruta de directo
 
 Hasta ahora hablamos de consultar páginas web que ya están hechas y colocadas en un servidor al que accedemos desde el navegador de nuestro ordenador.
 
+<a id="markdown-pero-¿cómo-vemos-una-página-web-que-hayamos-creado-nosotros" name="pero-¿cómo-vemos-una-página-web-que-hayamos-creado-nosotros"></a>
 ### Pero ¿cómo vemos una página web que hayamos creado nosotros?
 Como introducción, una página web es un archivo con un nombre y una extensión `html` que estará en nuestro ordenador:
 
@@ -110,6 +112,7 @@ Un valor importante en una desarrolladora es la organización. Normalmente solem
 
 > **Nota**: El nombre de esta carpeta es personal, y cada desarrolladora elige el que mejor le encaja, algunas ideas: `Projects`, `Work`, `Trabajo`... 
 
+<a id="markdown-creando-un-proyecto" name="creando-un-proyecto"></a>
 ### Creando un proyecto
 
 Vamos a ver los pasos básicos para empezar a trabajar en un proyecto sencillo de `html`:
@@ -128,7 +131,7 @@ Vamos a ver los pasos básicos para empezar a trabajar en un proyecto sencillo d
 
 * * *
 <a id="markdown-ejercicio-1" name="ejercicio-1"></a>
-#### EJERCICIO 1
+### EJERCICIO 1
 
 **Mi primer 'Hola Mundo'**
 
@@ -175,6 +178,7 @@ A los elementos HTML los vamos a llamar "etiquetas", para abreviar.
 
 Podríamos decir que hay dos tipos de etiquetas: las que definen el documento y las que definen el contenido.
 
+<a id="markdown-etiquetas-de-página" name="etiquetas-de-página"></a>
 ### Etiquetas de página
 Una página web empieza con una etiqueta que indica que es una página HTML, `<html>`. Dentro va una cabecera o `<head>` (donde se definen aspectos relativos al contenido, metainformación como el título, descripción o palabras claves) y un cuerpo o `<body>` (donde incluiremos el contenido de nuestra página).
 
@@ -212,6 +216,7 @@ En el siguiente ejemplo vemos la misma página, un poco más definida, con su do
 
 > **NOTA**: `<meta>` es una de esas etiquetas que no necesita cerrarse.
 
+<a id="markdown-codificación-de-una-página-html" name="codificación-de-una-página-html"></a>
 ### Codificación de una página HTML
 
 Vamos a detenernos un momento en este punto: podemos usar varios juegos de caracteres al crear nuestra página, cada juego tiene más o menos caracteres así que podría pasar que nuestras tildes o caracteres especiales no estén disponibles.
@@ -225,6 +230,7 @@ La codificación de un documento se indica en dos pasos:
 > **NOTA**: Code (y la mayoría de editores de código) ya guardan los documentos en `utf-8` por defecto. Esto es más algo a comprobar ;).
 
 
+<a id="markdown-etiquetas-de-contenido" name="etiquetas-de-contenido"></a>
 ### Etiquetas de contenido
 El navegador lee las etiquetas en orden de escritura, de arriba a abajo, y va a intentar mostrarlas en ese orden.
 
@@ -238,6 +244,7 @@ El buen uso de estas etiquetas hace que se añada al contenido una valoración s
 
 Vamos a ver nuestros primeros elementos en HTML:
 
+<a id="markdown-títulos-o-encabezados" name="títulos-o-encabezados"></a>
 ### Títulos o encabezados
 Se indican con las etiquetas `<h1>` a `<h6>`, de más relevancia a menos.
 
@@ -250,6 +257,7 @@ Se indican con las etiquetas `<h1>` a `<h6>`, de más relevancia a menos.
 <h6>Encabezado de nivel 6</h6>
 ```
 
+<a id="markdown-párrafo" name="párrafo"></a>
 ### Párrafo
 Con la etiqueta `<p>` definiremos una etiqueta del tipo párrafo e indicaremos que su contenido va a ser un párrafo de texto.
 
@@ -257,6 +265,7 @@ Con la etiqueta `<p>` definiremos una etiqueta del tipo párrafo e indicaremos q
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 ```
 
+<a id="markdown-lista-de-elementos" name="lista-de-elementos"></a>
 ### Lista de elementos
 En algún momento vamos a necesitar añadir una serie de elementos e indicar que están relacionados: tenemos las listas ordenadas `<ol>` y las desordenadas `<ul>`. En ambas usamos `<li>` para marcar un elemento de la lista.
 
@@ -277,7 +286,7 @@ La lista ordenada produce una lista numerando cada ítem por orden de escritura 
 
 * * *
 <a id="markdown-ejercicio-2" name="ejercicio-2"></a>
-#### EJERCICIO 2
+### EJERCICIO 2
 
 Con estos elementos vamos a crear nuestra primera página:
 
@@ -297,6 +306,7 @@ El gazpacho denominado andaluz por su popularidad, suele ser definido por alguno
 ## Composición del gazpacho actual
 El gazpacho dispone de unas características organolépticas peculiares de sabor, aroma y color debido a la variedad de verduras que lo componen. El gazpacho andaluz emplea como ingredientes un conjunto de cinco hortalizas, que pueden variar en proporción según los gustos de la localidad, del cocinero o de la familia.
 
+<a id="markdown-ingredientes" name="ingredientes"></a>
 ### Ingredientes
 
 * **Tomates**, deben ser bien maduros para que aporten dulzura, antes eran sólo posibles en otoño, pero en la actualidad con el desarrollo de invernaderos y del transporte desde otras latitudes, es posible tener tomates curados casi durante todo el año. Esta hortaliza es la que brinda el color rojo al gazpacho debido a su contenido en licopeno (colorante natural en la piel y carne del tomate). Su exclusión o inclusión como ingrediente hace que se hable de "gazpachos blancos" o de "gazpachos rojos", respectivamente. En algunos períodos de escasez se ha empleado pimentón en lugar del tomate para lograr el color rojo.
@@ -414,7 +424,7 @@ Al abrir nuestra web en un navegador, la etiqueta link indica al navegador que d
 * * *
 
 <a id="markdown-ejercicio-3" name="ejercicio-3"></a>
-#### EJERCICIO 3
+### EJERCICIO 3
 
 Añadir hoja de estilos al ejercicio anterior donde:
 - El color de fondo de la página tiene que ser `#f3f4f5`
@@ -483,7 +493,7 @@ Code tiene una paleta de comandos que nos permite acceder a los comandos del edi
 * * *
 
 <a id="markdown-ejercicio-4" name="ejercicio-4"></a>
-#### EJERCICIO 4
+### EJERCICIO 4
 
 **Quita ese scroll loco**
 
@@ -499,6 +509,7 @@ Vamos a abrir la paleta de comandos de Code para abrir a los *settings* (ajustes
 
 Con `Ctrl+P` podemos abrir el explorador de archivos de code, conforme vayamos escribiendo Code nos irá mostrando la coincidencias, y al seleccionar un archivo lo abrirá.
 
+<a id="markdown-indentando-el-código" name="indentando-el-código"></a>
 ### Indentando el código
 
 Indentar es mover un bloque de código hacía la derecha, separándolo del margen izquierdo. No afecta al resultado final, si no a la legibilidad del código.
@@ -508,6 +519,7 @@ A partir de ahora **vamos a indentar siempre** nuestro código conforme vayamos 
 
 * [Explicación de indentación en wikipedia](https://es.wikipedia.org/wiki/Indentaci%C3%B3n)
 
+<a id="markdown-auto-indent-en-code" name="auto-indent-en-code"></a>
 ### Auto-indent en Code
 
 Aunque vayamos indentando a la par que escribimos, a veces se nos queda alguna línea dónde no debe, o tenemos fallos que no vemos como una etiqueta no cerrada, para solucionarlo podemos apoyarnos en la funcionalidad auto-indent de Code.
@@ -518,7 +530,7 @@ Aunque vayamos indentando a la par que escribimos, a veces se nos queda alguna l
 * * *
 
 <a id="markdown-ejercicio-5" name="ejercicio-5"></a>
-#### EJERCICIO 5
+### EJERCICIO 5
 
 **Todo indentado**
 
@@ -526,6 +538,7 @@ Vamos a indentar el ejercicio del Gazpacho con auto-indent.
 
 * * *
 
+<a id="markdown-atajos-de-teclado" name="atajos-de-teclado"></a>
 ### Atajos de teclado 
 
 Hoy hemos visto un montón de atajos de teclado, en este momento puede que sientas un poco de resistencia a utilizarlos porque:
