@@ -234,6 +234,8 @@ Hacer una tabla con la comida de cada día de la semana usando `<th>` para las c
 
 * * *
 
+### La MDN
+
 Buscar información sobre todos estos elementos en la [MDN](https://developer.mozilla.org/es/docs/Web/HTML/Elemento) para ir conociéndolos y familiarizándote con ellos
 
 * Definición de página
