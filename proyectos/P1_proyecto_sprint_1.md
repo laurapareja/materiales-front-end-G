@@ -146,7 +146,7 @@ Por último, para acompañar a la entrega del proyecto, el equipo realizará una
 - Cuál de las tareas o los puntos ha sido el que más esfuerzo ha requerido
 - Cuál de las tareas o partes de la web es la que hace que el equipo esté más orgulloso
 
-Al final de esta presentación habrá un turno de preguntas tanto por parte de otras compañeras como por parte de lass profesoras del curso.
+Al final de esta presentación habrá un turno de preguntas tanto por parte de otras compañeras como por parte de las profesoras del curso.
 
 
 ## Recursos
