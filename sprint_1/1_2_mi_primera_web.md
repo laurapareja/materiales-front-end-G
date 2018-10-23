@@ -225,6 +225,7 @@ y en código quedaría así:
 En principio, en las tablas siempre tiene que haber igual número de celdas en cada fila.
 
 * * *
+<a id="markdown-ejercicio-1" name="ejercicio-1"></a>
 #### EJERCICIO 1
 
 **Organizando la semana**
@@ -269,6 +270,7 @@ Buscar información sobre todos estos elementos en la [MDN](https://developer.mo
 
 * * *
 
+<a id="markdown-ejercicio-2" name="ejercicio-2"></a>
 #### EJERCICIO 2
 
 **Una página clásica**
@@ -444,6 +446,7 @@ Digamos que queremos que los botones tengan una caja con bordes redondeados pero
 Hay una serie de estilos que se heredan, es decir, que se transmiten a los hijas. Entonces, si aplicamos una de estas propiedades a una etiqueta, todos las etiquetas anidadas en ella la heredarán también.
 
 * * *
+<a id="markdown-ejercicio-3" name="ejercicio-3"></a>
 #### EJERCICIO 3
 
 **Coloreame esos links**
@@ -472,6 +475,7 @@ y al `<aside>` con clase `.links` le aplicamos una regla que ponga el texto rojo
 * [Más info sobre herencia en la MDN](https://developer.mozilla.org/es/docs/Web/CSS/inheritance)
 
 * * *
+<a id="markdown-ejercicio-4" name="ejercicio-4"></a>
 #### EJERCICIO 4
 
 **Herencia para todas**
@@ -508,6 +512,7 @@ Dos enlaces sobre la especificidad más... a menos
 
 
 * * *
+<a id="markdown-ejercicio-5" name="ejercicio-5"></a>
 #### EJERCICIO 5
 
 **Conociendo la especifidad**
