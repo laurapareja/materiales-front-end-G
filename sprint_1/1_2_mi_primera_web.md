@@ -276,7 +276,6 @@ Buscar información sobre todos estos elementos en la [MDN](https://developer.mo
 **Una página clásica**
 
 Realizar una página semántica con: un título principal, tres párrafos con el contenido, dos párrafos con anuncios secundarios, y un texto de copy (© 2018)
-
 * * *
 
 ## CSS
