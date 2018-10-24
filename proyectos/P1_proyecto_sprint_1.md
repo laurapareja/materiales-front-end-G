@@ -70,7 +70,7 @@ Podéis descargar un [archivo ZIP](assets/zip/proyecto1.zip) con los diseños e 
 
 ### Logo, iconos tipografía y paleta
 
-El logo de Adalab se puede descargar de [aquí](http://adalab.es/wp-content/uploads/2016/08/logo_adalab_80px.png)
+El logo de Adalab se puede descargar de [aquí](assets/images/logo-adalab.png)
 
 Los iconos sociales los podéis sacar de [Font Awesome](https://fontawesome.com/), donde también podéis aprender a cómo usarla.
 
