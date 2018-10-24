@@ -58,7 +58,7 @@ a {
 ```
 El uso de variables nos da una serie de ventajas. Podemos definir al principio del documento todas nuestras variables y si una vez avanzados, o terminados, nuestros estilos queremos cambiar algún valor pues se cambia el valor de la variable que toque y se vuelve a generar el CSS.
 
-¿Qué podemos usar como variables? Lo que queramos de los valores de las propiedades CSS.
+¿Qué podemos usar como variables? Lo que queramos de los **valores** de las propiedades CSS.
 ```scss
 $headerHeight: 100px;
 $fontText: 'Roboto', arial, sans-serif;
@@ -74,7 +74,6 @@ body {
 ```
 **¡Vamos a ponerlo en práctica!**
 ***
-<a id="markdown-ejercicio-1" name="ejercicio-1"></a>
 ##### EJERCICIO 1
 
 En el siguiente [codepen](https://codepen.io/adalab/pen/aVrxYY) tenemos un ejemplo en css que vamos a reescribir a SCSS y modificar un poco.
@@ -88,11 +87,12 @@ En el siguiente [codepen](https://codepen.io/adalab/pen/aVrxYY) tenemos un ejemp
 	5. Alto de header y footer a `50px`
 	6. Fondo de `.main` a `cyan`
 ***
-> **Cuándo hacemos variables y cuánto no?**  
-> Quizás el primer impulso es empezar a crear variables como si no hubiera mañana pero el truco está en ver qué valores reutilizamos (misma altura para diferentes elementos, algunos márgenes, colores) y empezar creando sólo esas.
 
-> **Sobre los colores**
-> Lo ideal es usar variables que indiquen el tipo de elemento al que se va a aplicar un color y no tanto el color en sí. Es mejor `$colorLink` en lugar de variables tipo `$colorBlue` que tarde o temprano acaban valiendo un color diferente y va a desconcertar a quien coja el proyecto después. Aunque hay un término médio: definimos nuestros colores como el color que son y asignamos nuesta variable a otra variable que indique el elemento donde se va a usar.
+**Cuándo hacemos variables y cuánto no?**  
+Quizás el primer impulso es empezar a crear variables como si no hubiera mañana pero el truco está en ver qué valores reutilizamos (misma altura para diferentes elementos, algunos márgenes, colores) y empezar creando sólo esas.
+
+**Sobre los colores**
+Lo ideal es usar variables que indiquen el tipo de elemento al que se va a aplicar un color y no tanto el color en sí. Es mejor `$colorLink` en lugar de variables tipo `$colorBlue` que tarde o temprano acaban valiendo un color diferente y va a desconcertar a quien coja el proyecto después. Aunque hay un término médio: definimos nuestros colores como el color que son y asignamos nuestra variable a otra variable que indique el elemento donde se va a usar.
 
 ```scss
 $colorBlue: blue;
@@ -128,7 +128,7 @@ Esto nos generará el siguiente CSS:
 El anidado nos permite anidar bloques asimilándose un poco a la jerarquía visual de HTML. Esto nos permite ver algunos bloques más claros o agrupar clases que nos interese ver juntas. Pero atención: anidar genera estilos más específicos y hay que usarlo con mucho cuidado.
 Una buena regla es, cuando vayamos añadir un cuarto nivel de anidación, pararnos a repensar si realmente es necesario. Pero con el uso iremos viendo cuándo usarlo y cuándo no ;)
 
-> El anidado es algo que podemos hacer, no que debamos hacer. Lo ideal es tener un buen sistema de nombrado de clases para no tener que encadenar estilos salvo en contadas ocasiones. Si queréis saber más sobre el tema podéis buscar sistemas de nombrado de clases como [BEM](http://getbem.com) o [SMACSS](https://smacss.com).
+> **NOTA**: El anidado es algo que podemos hacer, no que debamos hacer. Lo ideal es tener un buen sistema de nombrado de clases para no tener que encadenar estilos salvo en contadas ocasiones. Si queréis saber más sobre el tema podéis buscar sistemas de nombrado de clases como [BEM](http://getbem.com) o [SMACSS](https://smacss.com).
 
 #### Referenciando al selector padre o madre: `&`
 ¡Pero no todo es tener cuidado! Una de las ventajas que nos ofrece el anidado es poder referenciar al selector padre o madre. Por ejemplo: queremos que los enlaces de nuestra página sean rojos, y el hover en azul, pero los enlaces del footer deben ser naranjas con el hover en verde.
@@ -254,9 +254,8 @@ En nuestro `main.scss` llamaríamos a todos estos archivos en orden:
 > **NOTA 2:**  
 > Es importante saber que el orden de los imports es importante y que tal como se carguen será como se importen y como se ejecuten para convertirse a CSS. ¡Recordad la cascada de CSS!
 
-Una ventaja directa de trabajar con parciales es la cantidad de conflictos de git que nos vamos a ahorrar ;)
+Una ventaja directa de trabajar con parciales es la cantidad de conflictos de git que nos vamos a ahorrar por no estar modificando el mismo fichero ;)
 ***
-<a id="markdown-ejercicio-2" name="ejercicio-2"></a>
 ##### EJERCICIO 2
 
 Vamos a crearnos un proyecto con nuestra estructura de imports de SASS. Usaremos el kit de Adalab. Recordad que **iremos haciendo parciales conforme los vayamos necesitando** y que **en cada carpeta estarán solo los que necesitemos**.
@@ -266,7 +265,7 @@ Para el ejercicio querremos:
 	- Una sección principal que ocupe la mitad del alto de la pantalla con un texto en el centro
 	- Una sección con un título y un botón rojo, con bordes de 5px de radio y 45px de altura
 
-> Por ejemplo: En la carpeta `core` siempre tendremos nuestras variables pero si no tenemos mixins o funciones pues no tendremos esos parciales.
+> Por ejemplo: En la carpeta `core` siempre tendremos nuestras variables pero si no tenemos mixins o funciones pues no existirán esos parciales.
 ***
 
 Y hasta aquí el contenido de la sesión, pero si quieres saber más tenemos contenido extra...
@@ -336,7 +335,7 @@ Que generará el siguiente CSS:
 ```
 #### Funciones
 SASS viene con un un [juego de funciones](http://sass-lang.com/documentation/Sass/Script/Functions.html) y además podemos crear las nuestras propias.
-Por ejemplo, vamos a crear una función para poder escribir nuestras unidades en rem, pero elegantemente. O qué?
+Por ejemplo, vamos a crear una función para poder escribir nuestras unidades en rem, pero elegantemente. ¿O qué?
 
 Recordemos que `rem` es una medida relativa al tamaño de fuente especificado en nuestra etiqueta `<html>`, por defecto este tamaño es de 16px.
 
@@ -366,7 +365,7 @@ p {
 }
 ```
 
-Mola, o qué?
+Mola, ¿o qué?
 
 
 ### Autoprefixer
@@ -377,7 +376,6 @@ Pero, escribir todos los prefijos es un un trabajo muy tedioso, y estar pendient
 > Por dejar claro, autoprefixer sería un post-procesador. Como hemos visto, SASS lo que hace es convertir un código con una sintaxis a CSS. Autoprefixer, en cambio, parte de un código CSS y lo post-procesa para convertirlo en un CSS con una serie de propiedades añadidas.
 
 ***
-<a id="markdown-ejercicio-bonus-1" name="ejercicio-bonus-1"></a>
 ##### EJERCICIO BONUS 1
 
 Autoprefixer viene configurado en el Kit, ¿sabrías encontrar donde se configura? Pista: empieza por G y acaba por ulpfile.js ;)
