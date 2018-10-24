@@ -21,9 +21,9 @@ Hasta ahora hemos hecho una primera aproximación a Git, nada menor.
 1. Pero no solo eso, también hemos aprendido a conectar nuestro proyecto local con un repositorio remoto alojado en GitHub con `git remote add`
 1. O directamente, a crearlo en Github y clonarlo en nuestro equipo con `git clone`.
 
-También vimos como publicar nuestro trabajo a través del sistema de hosting propio de GitHub: **GitHub Pages**.
+También vimos cómo publicar nuestro trabajo a través del sistema de hosting propio de GitHub: **GitHub Pages**.
 
-Hoy vamos a ver como trabajar en grupo sobre el mismo proyecto y sus archivos.
+Hoy vamos a ver cómo trabajar en grupo sobre el mismo proyecto y sus archivos.
 
 ## Repaso del proceso de creación de un proyecto Git
 
@@ -58,7 +58,7 @@ Lo más sencillo es crear el proyecto de cero desde nuestro servicio de Git, en 
 El archivo `README.md` es un documento escrito en [markdown](https://es.wikipedia.org/wiki/Markdown) que se presenta en la página principal del repositorio y tiene como objeto aportar una primera documentación o presentación del proyecto.  
 Esto es una convención, pero hay que tenerla en cuenta.
 
-	Markdown es un lenguaje de marcado como HTML pero más simple.
+> **NOTA**: Markdown es un lenguaje de marcado como HTML pero más simple.
 
 Ejemplos de readme.md:
 * [Sistema de plantillas PUG](https://github.com/pugjs/pug)
@@ -69,13 +69,13 @@ Ejemplos de readme.md:
 Git tiene un sistema para poder ignorar archivos de un proyecto.  
 **¿Y por qué querríamos hacer esto?** Porque habrá archivos que necesitemos en nuestra carpeta de trabajo local pero que no queramos subir al repositorio ni controlar sus cambios.
 
-En proyectos pequeños como los que tenemos ahora vamos a querer siempre subir al repositorio remoto todos nuestros archivos pero podría pasar que tuviésemos una carpeta con los archivos de diseño de ciertas partes del proyecto o archivos comprimidos que usamos para enviar a nuestro cliente los avances.
+En proyectos pequeños como los que tenemos ahora vamos a querer siempre subir al repositorio remoto todos nuestros archivos. Pero podría pasar que tuviésemos una carpeta con los archivos de diseño de ciertas partes del proyecto o archivos comprimidos que usamos para enviar a nuestro cliente los avances.
 
-	Es muy común que el propio sistema operativo cree en cada carpeta una serie de archivos o carpetas ocultas que le ayudan a realizar tareas como la búsqueda de archivos.
+> **NOTA**:	Es muy común que el propio sistema operativo cree en cada carpeta una serie de archivos o carpetas ocultas que le ayudan a realizar tareas como la búsqueda de archivos.
 
 Estos archivos, que no tiene sentido tener "controlados" pero que en nuestra carpeta local queremos mantener, se listan en este archivo especial, `.gitignore` para decirle al algoritmo de Git que no los tenga en cuenta.
 
-En [gitignore.io](https://www.gitignore.io) podemos encontrar una serie de configuraciones ya hechas que nos ayudan a ignorar tipos de archivos comunes según el Sistema operativo o el lenguaje en el que trabajemos.
+En [gitignore.io](https://www.gitignore.io) podemos encontrar una serie de configuraciones ya hechas que nos ayudan a ignorar tipos de archivos comunes según el sistema operativo o el lenguaje en el que trabajemos.
 
 ### Licencia
 Uno de los puntos claves un entorno social donde poner al alcance de todos tus proyectos es indicar cómo y en qué términos se deben usar. Para esto están las licencias, que son archivos legales que especifican qué se puede y qué no se puede hacer con los archivos asociados.
@@ -99,8 +99,7 @@ Hasta aquí todo normal. Ahora llega el momento de subir el commit (o los commit
 1. Que se suba bien, sin problemas ni conflictos. Yay!
 2. Que no podamos subir nuestros cambios porque no estemos trabajando con la última versión. En este caso tendremos que hacer `git pull` para actualizar nuestro repositorio local con la última versión que se encuentra en remoto, es decir, nos traeremos los últimos cambios hechos por otras personas a nuestro ordenador.
 
-> **NOTA :**  
-> Antes de comenzar a trabajar (antes de empezar a hacer cambios en nuestros archivos) es una buena práctica hacer `git pull` y actualizar nuestro repositorio local con los cambios que otras personas han subido al repositorio remoto. Aun así, ocurrirá que tras hacer nuestros cambios y commitearlos, al intentar hacer `git push` el terminal nos indique que tenemos que hacer `git pull` primero, esto ocurre por que alguna compañera ha subido cambios mientras nosotras trabajábamos.
+> **NOTA**: Antes de comenzar a trabajar (antes de empezar a hacer cambios en nuestros archivos) es una buena práctica hacer `git pull` y actualizar nuestro repositorio local con los cambios que otras personas han subido al repositorio remoto. Aun así, ocurrirá que tras hacer nuestros cambios y commitearlos, al intentar hacer `git push` el terminal nos indique que tenemos que hacer `git pull` primero, esto ocurre por que alguna compañera ha subido cambios mientras nosotras trabajábamos.
 
 
 ### ¿Qué pasa cuando hacemos un `git pull`?
@@ -109,14 +108,13 @@ Pasan varias cosas:
 2. Si encuentra cambios posteriores, se los baja e la intenta mezclarlos con los de nuestros commits.
 
 Y aquí tenemos dos escenarios diferentes:
-1. Los cambios que se han bajado de remoto (realizados por mis compañeras) y los mios se pueden mezclar (o mergear) automaticamente, Git crea un commit automático con esta mezcla (o merge) y nos lo muestra usando el editor por defecto que tenemos configurado en nuestra terminal (NANO, vim...).
+1. Los cambios que se han bajado de remoto (realizados por mis compañeras) y los míos se pueden mezclar (o mergear) automaticamente, Git crea un commit automático con esta mezcla (o merge) y nos lo muestra usando el editor por defecto que tenemos configurado en nuestra terminal (NANO, vim...).
 2. Otra posibilidad es que Git no pueda mezclar los cambios automáticamente. Entonces nos avisa de que hay conflictos que tendremos que resolver nosotras manualmente. Nos mostrará una lista de archivos donde encuentran los conflictos.
 
-> **NOTA:**
-> En el primer caso podremos cambiar el mensaje del commit automático o poner uno nuevo. Guardamos aceptando el nombre que nos propone, salimos, y hacemos un push (se subirá el commit con nuestros cambios y el commit con el merge o mezcla).
+> **NOTA**: En el primer caso podremos cambiar el mensaje del commit automático o poner uno nuevo. Guardamos aceptando el nombre que nos propone, salimos, y hacemos un push (se subirá el commit con nuestros cambios y el commit con el merge o mezcla).
 
 ### ¿Qué pinta tiene un conflicto?
-Un conflicto ocurre cuando el git se encuentra con dos versiones del mismo bloque de código. Entonces, marca en el documento que hay un conflicto y muestra las dos opciones para que nosotros elijamos qué hacer:
+Un conflicto ocurre cuando git se encuentra con dos versiones del mismo bloque de código. Entonces, marca en el documento que hay un conflicto y muestra las dos opciones para que nosotros elijamos qué hacer:
 ```
 2ª versión del bloque en conflicto
 ```
@@ -127,7 +125,7 @@ Un conflicto ocurre cuando el git se encuentra con dos versiones del mismo bloqu
 
 Aquí puede pasar que queramos la primera opción, la segunda, las dos, o una mezcla de las dos.
 
-La manera de afrontar este conflicto es elegir lo que queremos que ponga en ese bloque, quitar los separadores que añade Git, guardar el archivo y hacer add, commit y push con normalidad.
+La manera de **afrontar este conflicto** es elegir lo que queremos que ponga en ese bloque, quitar los separadores que añade Git, guardar el archivo y hacer add, commit y push con normalidad.
 
 Los conflictos más pequeños los resolveremos sobre la marcha, en los más complicados tendremos que hablar con la compañera que haya hecho los cambios para decidir qué hacer.
 
@@ -135,18 +133,17 @@ Los conflictos más pequeños los resolveremos sobre la marcha, en los más comp
 
 Cuando subimos los commits habréis visto que escribimos `$ git push origin master`, lo que estamos diciendo es que suba muestra **rama master** al repositorio remoto.
 
-### Madre de CROM, qué es una rama???
+### Madre de CROM, ¿¿qué es una rama???
 Git nos permite crear versiones paralelas de nuestro proyecto para poder desarrollar o probar varias funcionalidades a la vez sin miedo a perder lo hecho hasta ahora:
 
 ![Trabajo sin ramas y trabajo con ramas](assets/images/1-8/trabajo-en-ramas.png)
 
-Cuando iniciamos un repositorio git se crea una primera rama, y se llama `master` por convención. Ayer trabajamos en esa rama.
+Cuando iniciamos un repositorio git se crea una primera rama, y se llama `master` por convención. En la última sesión trabajamos en esa rama.
 
-Vamos a ver el trabajo en ramas a través de un ejemplo, como un mini proyecto de grupo, porque al fin y al cabo, git va de trabajar en grupo:
+Vamos a ver el trabajo en ramas a través de un ejemplo, como un mini proyecto de grupo, porque al fin y al cabo, git va de trabajar en grupo.
 
 * * *
 
-<a id="markdown-ejercicio-1" name="ejercicio-1"></a>
 #### EJERCICIO 1
 
 1. Vamos crear un repositorio por pareja, donde ambas debéis tener acceso al repositorio (la que lo crea debe dar acceso al usuario de GitHub de la otra)
@@ -193,7 +190,7 @@ git checkout -b nombre-de-la-rama
 
 En cualquier caso, si queremos movernos de una rama a otra usaremos `git checkout nombre-de-la-rama`, de esta manera podemos movernos a nuestra nueva rama o volver a `master` en cualquier momento.
 
-> Para poder movernos entre ramas debemos tener todos los archivos modificados, al menos, añadidos a un futuro commit. Si modifico un archivo y me intento cambiar de rama no me dejará.
+> **NOTA**: Para poder movernos entre ramas debemos tener todos los archivos modificados, al menos, añadidos a un futuro commit. Si modifico un archivo y me intento cambiar de rama no me dejará.
 
 Añadir archivos y crear un commit funciona igual pero cuando queramos hacer un push usaremos:
 ```
@@ -206,10 +203,9 @@ git push -u origin nombre-de-la-rama
 ```
 
 * * *
-<a id="markdown-ejercicio-2" name="ejercicio-2"></a>
 #### EJERCICIO 2
 
-1. Una de la psreja creará una rama `footer`, nos movernos a ella y modificamos un poco nuestro proyecto. Añadiremos a nuestro footer el enlace a la web de Adalab, quedando así:
+1. Una de la pareja creará una rama `footer`, nos movemos a ella y modificamos un poco nuestro proyecto. Añadiremos a nuestro footer el enlace a la web de Adalab, quedando así:
 ```html
 <footer>
 	<p>Maquetado en grupo en <a href="http://adalab.es">Adalab</a></p>
@@ -234,13 +230,11 @@ git merge nombre-de-la-rama
 
 Esto nos mezclará nuestra versión local de la rama `nombre-de-la-rama` con la rama donde estemos, en este caso, `master`. Si todo va bien nos mezclará las ramas, creará un commit automático y si hacemos un `git status` nos dirá que solo queda hacer un `git push origin master` y ya.
 
-	NOTA:
-	Es importante haber hecho un `git pull` en la rama que vamos a fusionar, en este caso `nombre-de-la-rama` antes de empezar el proceso de fusión para asegurarnos de que tenemos la última versión en ambas ramas.
+> **NOTA**:	Es importante haber hecho un `git pull origin nombre-de-la-rama` en la rama que vamos a fusionar, en este caso `nombre-de-la-rama` antes de empezar el proceso de fusión para asegurarnos de que tenemos la última versión en ambas ramas.
 
 
 * * *
 
-<a id="markdown-ejercicio-3" name="ejercicio-3"></a>
 #### EJERCICIO 3
 
 Vamos a fusionar nuestra rama `footer` con `master` para que nuestra web tenga el enlace que hemos añadido anteriormente.
@@ -264,7 +258,6 @@ Para ello:
 
 * * *
 
-<a id="markdown-ejercicio-4" name="ejercicio-4"></a>
 #### EJERCICIO 4
 
 Ahora que hemos hecho un primer acercamiento a las ramas, vamos a hacer lo mismo pero cada miembro de la pareja por separado. Cada una estará encargada de un trabajo diferente que tendrá que realizar en una rama y posteriormente mezclar en la rama principal.
@@ -290,6 +283,8 @@ Como refleja la imagen vamos a hacer dos ampliaciones de contenido:
 </section>
 ```
 
+> **NOTA**: Elegid bien el nombre de las nuevas ramas ;)
+
 Ahora realmente da igual el orden, la que acabe su trabajo, que suba su rama al repositorio remoto, y siga los pasos para fusionarlo con master. **¡A por ello!**
 
 * * *
@@ -302,12 +297,12 @@ Luego seguimos trabajando con normalidad, recordando guardar frecuentemente con 
 
 Y pusheamos (subimos los commits) con `git push` cuando terminemos la tarea que nos toca.
 
-## Oh, dios mío! He hecho un commit que no quería hacer!!
+## ¡Oh, dios mío! ¡¡He hecho un commit que no quería hacer!!
 ¿Qué pasa si hago un cambio, lo añado, hago commit y luego... querría no haberlo hecho? Pues no pasa nada, para eso trabajamos con un control de versiones.
 
-Esto pasará de vez en cuando, unas veces por inexperiencia, otras por descuido y otras por otras razones, pero no hay miedo porque cada commit queda registrado y siempre podemos volver a consultar uno anterior o revertir el último. Vamos a ver cómo:
+Esto pasará de vez en cuando, unas veces por inexperiencia, otras por descuido y otras por otras razones, pero no hay miedo porque cada commit queda registrado y siempre podemos volver a consultar uno anterior o revertir el último. Vamos a ver cómo.
 
-Si queremos ver nuestra actividad en el proyecto usaremos `git log`, esto nos mostrará un listado de los commits realizados:  
+Si queremos ver nuestra actividad en el proyecto usaremos `git log`, esto nos mostrará un listado de los commits realizados. 
 
 ![Ejemplo de Git log](assets/images/1-8/git-log.png)
 
@@ -335,7 +330,6 @@ Github, como otros servicios de control de versiones tienen un sistema de ticket
 
 
 * * *
-<a id="markdown-ejercicio-5" name="ejercicio-5"></a>
 #### EJERCICIO 5
 
 **Crear repositorio en GitHub**
@@ -346,16 +340,14 @@ Hay que crear un repositorio vacío en GitHub:
 
 * * *
 
-<a id="markdown-ejercicio-6" name="ejercicio-6"></a>
 #### EJERCICIO 6
 
 **Clonar repositorio**
 
-Clonaremos el repositorio de nuestra compañera y le pondremos o abriremos un issue a través de la web de Github para que nos añada como colaboradora con permisos de escritura.
+Clonaremos el repositorio de nuestra compañera y le pondremos o abriremos un issue a través de la web de GitHub para que nos añada como colaboradora con permisos de escritura.
 
 * * *
 
-<a id="markdown-ejercicio-7" name="ejercicio-7"></a>
 #### EJERCICIO 7
 
 **Eliminar un repositorio**
@@ -364,12 +356,11 @@ No es tan habitual pero de tanto en tanto querremos hacer limpieza en nuestra cu
 
 * * *
 
-<a id="markdown-ejercicio-81" name="ejercicio-81"></a>
 #### EJERCICIO 8.1
 
 **Crear un repositorio local y conectarlo con remoto**
 
-Ahora vamos a trabajar de una manera menos habitual y un poco más complicada, pero a veces pasa: crearemos un proyecto en nuestro equipo, algo sencillito, podemos elegir entre:
+Ahora vamos a trabajar de una manera menos habitual y un poco más complicada, pero a veces pasa: crearemos un proyecto en nuestro equipo, algo sencillito. Podemos elegir entre:
 - Un html básico con un "hola, mundo" centrado en la ventana del navegador
 - Un html básico con una sonrisa centrada en la ventana -> :) o :D
 
@@ -386,7 +377,6 @@ Y ahora, ¿no sería genial conectarlo con un repositorio remoto y tenerlo siemp
 
 * * *
 
-<a id="markdown-ejercicio-82" name="ejercicio-82"></a>
 #### EJERCICIO 8.2
 
 **Solucionar un conflicto**
