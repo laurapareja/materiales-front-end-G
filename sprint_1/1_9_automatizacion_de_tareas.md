@@ -252,14 +252,18 @@ La forma más cómoda es:
 1. crear nuestro repositorio vacío en GitHub
 2. clonarlo a nuestro equipo
 3. descargar/clonar el kit a otra carpeta
-4. copiar o mover los archivos y carpetas a nuestro proyecto **SIN OLVIDAR EL ARCHIVO .GITIGNORE Y EL RESTO DE ARCHIVOS OCULTOS (empiezan por `.`)** (podemos obviar el `README.md`).
+4. copiar o mover los archivos y carpetas a nuestro proyecto **SIN OLVIDAR EL ARCHIVO .GITIGNORE Y EL RESTO DE ARCHIVOS OCULTOS (empiezan por `.`)** (podemos obviar el `README.md`)
 5. Desde nuestro proyecto ya podemos ejecutar `npm install`, y ya estamos listas
 
 * * *
 
 ###### EJERCICIO 5
 
-Seguiremos los pasos anteriores para crear un nuevo proyecto usando el kit de Adalab. Después, en esta misma carpeta meteremos un ejercicio de la sesión de responsive para probar que se lanza el navegador que se actualiza solo con los cambios que hacemos en el HTML o CSS.
+Seguiremos los pasos anteriores para crear un nuevo proyecto usando el kit de Adalab. Después, en esta misma carpeta meteremos un ejercicio de la sesión de responsive para probar que se lanza el navegador que se actualiza solo con los cambios que hacemos en el HTML o CSS. Comprobad que la carpeta donde debemos meter el código de nuestro proyecto es **_src**.
+
+Una vez terminado, vamos a probar una opción muy chula del kit: la posibilidad de trabajar con ficheros parciales de HTML. Para eso, mirad el ejemplo de la carpeta `_src/templates` donde hay un fichero `index.html` que carga 2 ficheros parciales con trozos de HTML. En vuestro proyecto cread esta misma estructura y sacad la cabecera y el pie de página de la web a un parcial.
+
+Para terminar, vamos a publicar la web usando GitHub Pages. Para eso usaremos la tarea `gulp docs` que general una carpeta docs con la web preparada para subirla a GitHub Pages.
 
 * * *
 
