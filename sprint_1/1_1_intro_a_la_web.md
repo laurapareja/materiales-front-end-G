@@ -127,7 +127,6 @@ Vamos a ver los pasos básicos para empezar a trabajar en un proyecto sencillo d
 6. Volvemos a *Code* y continuamos trabajando, guardando frecuentemente con `Ctrl+S` y comprobando que los cambios se reflejan en el navegador, yendo a este y pulsando `Ctrl+R` para refrescar la página.
 
 * * *
-<a id="markdown-ejercicio-1" name="ejercicio-1"></a>
 #### EJERCICIO 1
 
 **Mi primer 'Hola Mundo'**
@@ -276,12 +275,11 @@ En algún momento vamos a necesitar añadir una serie de elementos e indicar que
 La lista ordenada produce una lista numerando cada ítem por orden de escritura y la desordenada añade un símbolo (por defecto pinta un círculo) delante de cada elemento de la lista, también por orden de escritura.
 
 * * *
-<a id="markdown-ejercicio-2" name="ejercicio-2"></a>
 #### EJERCICIO 2
 
 Con estos elementos vamos a crear nuestra primera página:
 
-# GAZPACHO
+## GAZPACHO
 
 El **gazpacho** es una sopa fría con ingredientes como el aceite de oliva, vinagre y hortalizas crudas: generalmente tomates, pepinos, pimientos, cebollas y ajo.
 
@@ -414,7 +412,6 @@ Al abrir nuestra web en un navegador, la etiqueta link indica al navegador que d
 
 * * *
 
-<a id="markdown-ejercicio-3" name="ejercicio-3"></a>
 #### EJERCICIO 3
 
 Añadir hoja de estilos al ejercicio anterior donde:
@@ -483,7 +480,6 @@ Code tiene una paleta de comandos que nos permite acceder a los comandos del edi
 
 * * *
 
-<a id="markdown-ejercicio-4" name="ejercicio-4"></a>
 #### EJERCICIO 4
 
 **Quita ese scroll loco**
@@ -518,7 +514,6 @@ Aunque vayamos indentando a la par que escribimos, a veces se nos queda alguna l
 
 * * *
 
-<a id="markdown-ejercicio-5" name="ejercicio-5"></a>
 #### EJERCICIO 5
 
 **Todo indentado**
