@@ -381,7 +381,7 @@ Y el css sería:
 	color: white;
 }
 ```
-[&rtrif; Codepen de ejemplo de hover](https://codepen.io/adalab/pen/QZmVjK)
+[&rtrif; Codepen con ejemplo de hover](https://codepen.io/adalab/pen/QZmVjK)
 
 * * *
 
