@@ -202,10 +202,8 @@ Si pensamos en el conjunto global, una página sería como un conjunto de cajas 
 
 Puedes leer una [explicación más completa sobre el modelo de caja en la documentación de la MDN](https://developer.mozilla.org/es/docs/Learn/CSS/Introduction_to_CSS/Modelo_cajas).
 
-
-  EJEMPLO:
-  Si tengo una caja de 100x100px, con un borde de 2px y con un padding de 16px, tendría una caja de 2+16+100+16+2: 136x136px.
-
+	EJEMPLO:
+	Si tengo una caja de 100x100px, con un borde de 2px y con un padding de 16px, tendría una caja de 2+16+100+16+2: 136x136px.
 
 Por defecto los elementos tienen el modelo de caja `content-box`. Con la propiedad CSS `box-sizing` podemos cambiarlo asignando el valor `border-box`, que es el otro modelo existente. En `border-box` tanto el borde como padding están incluidos en el ancho/alto del elemento, de manera que en el caso anterior nuestra caja tendría 100x100px pero el espacio para el contenido de nuestra caja no sería de 100x100 sino de 100-(2+2+16+16): 64x64px. Mira y entiende el siguiente ejemplo.
 
