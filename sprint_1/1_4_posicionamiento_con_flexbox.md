@@ -28,8 +28,10 @@ En la lección anterior vimos los píxels (`px`), unidades absolutas, cuyo tama�
 
 ## Unidades relativas al *viewport*
 
+El *viewport* es la zona visible en una web. Mide `100vw` de ancho y `100vh` de alto siempre, en la pantalla pequeña de un móvil o en la grande de un portátil.
+
 Las unidades`vw` y `vh` nos permiten ajustar ancho y alto de manera relativa al *viewport*.
-El *viewport* mide `100vw` de ancho y `100vh` de alto siempre, en la pantalla pequeña de un móvil o en la grande en el navegador del ordenador.
+
 
 ```css
 .wrapper {

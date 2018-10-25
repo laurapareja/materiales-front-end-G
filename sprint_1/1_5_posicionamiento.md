@@ -31,16 +31,17 @@ Para saber las diferentes opciones que tenemos de colocar los elementos según e
 
 Cuando tengamos que darle un aspecto determinado al contenido, es decir, siempre :)
 Algunos casos concretos son:
-1. Un listado de elementos distribuidos por columnas
-1. El típico módulo que lleva el corazón de "like" en una esquina
-1. Una galería donde las flechas de anterior/siguiente estén, una cada lado, y centradas verticalmente
-1. El típico módulo de precios "desde 5€ al mes" donde el diseñador ha desplegado toda su creatividad compositiva con un diseño con elementos a diferentes tamaños.
-1. El menú que se mantiene en la parte superior del navegador al hacer scroll
-1. El menú que aparece por uno de los laterales
+
+* Un listado de elementos distribuidos por columnas.
+* El típico módulo que lleva el corazón de "like" en una esquina.
+* Una galería donde las flechas de anterior/siguiente estén, una cada lado, y centradas verticalmente.
+* El típico módulo de precios "desde 5€ al mes" donde el diseñador ha desplegado toda su creatividad compositiva con un diseño con elementos a diferentes tamaños.
+* El menú que se mantiene en la parte superior del navegador al hacer *scroll*.
+* El menú que aparece por uno de los laterales.
 
 ## Objetivos de la sesión
-1. Recordar los principales modos de presentación de los elementos HTML: inline, inline-block y block
-1. Conocer los modos de posicionamiento: static, relative, absolute y fixed
+  1. Recordar los principales modos de presentación de los elementos HTML: `inline`, `inline-block` y `block`.
+  2. Conocer los modos de posicionamiento: `static`, `relative`, `absolute` y `fixed`.
 
 ## Visualización (display)
 Antes de meternos con el posicionamiento recordemos [los modos de presentación que vimos en la sesión 1.3](./1_3_modelo_de_caja_y_herramientas.md):
@@ -52,20 +53,20 @@ Los navegadores web aplican por defecto un valor `display` a todos los elementos
 * **Block:** Los elementos en bloque se muestran ocupando el ancho completo de su contenedor. Los elementos en bloque siempre empiezan en una nueva línea y nunca van a tener más elementos a su misma altura dentro del mismo contenedor, estarán más arriba o más abajo. Se les puede aplicar margin, padding, alto y ancho.
 * **Inline:** Los elementos en línea o inline son aquellos que ocupan lo que ocupa su contenido. En estos, el tamaño será exactamente el tamaño de su contenido y no podremos asignarle un tamaño diferente, ni tendrá efecto un margin vertical.
 * **Inline-block:** Los elementos inline-block ocupan por defecto el ancho de su contenido y se comportan como si se tratase de un elemento en línea, pero permiten tener un ancho, un alto y relleno y márgenes verticales, como sucede con los elementos en bloque.
-* **None**: Ocultar por completo cualquier elemento al que se lo apliquemos, será como si ese elemento no existiese ya que no se mostrará y el resto de elementos de la página lo ignorarán.
+* **None**: Oculta por completo cualquier elemento al que se lo apliquemos, será como si ese elemento no existiese ya que no se mostrará y el resto de elementos de la página lo ignorarán.
 
 ## Posicionamiento de elementos
 Aparte de modificar esa distribución, podremos hacer que cambien su comportamiento a la hora de hacer scroll en la página y que modifiquen la posición de otros objetos al modificar la suya propia.
 
 La propiedad `position` de CSS será la que nos permita modificar la forma en la que se distribuyen los objetos a través de una página web.
 
-El atributo `position` es fundamental en las webs actuales porque sin él todo el contenido sería lineal, es decir, no podríamos tener ciertas superposiciones y no podríamos sacar a un elemento del flujo de la página, el resto de elementos (contenedor y elementos hermanos) no lo tienen en cuenta, lo ignoran.
+El atributo `position` es fundamental en las webs actuales porque sin él todo el contenido sería lineal, es decir, no podríamos tener ciertas superposiciones y no podríamos sacar a un elemento del flujo de la página para que el resto de elementos (contenedor y elementos hermanos) no lo tengan en cuenta y lo ignoren.
 
 La propiedad `position` tiene cuatro valores posibles:
-* `static`: es el tipo de posición por defecto en todos los elementos HTML
-* `relative`: Permite modificar la posición de un elemento en función de su posición actual en la página
-* `absolute`: Saca al elemento del flujo de la página, es decir, hace que su contenedor y los elementos de antes y después no lo tengan en cuenta a la hora de posicionarse y definir su tamaño y por otro lado posiciona el elemento en función de la posición del body o en su defecto del primer elemento contenedor que tenga una posición diferente a static (posición por defecto)
-* `fixed`: Saca a un elemento del flujo normal de la página y permite posicionarlo en función de la ventana del navegador. Aparte, este tipo de elementos mantienen su posición cuando hacemos scroll en la página (como si se mantuviesen anclados en un mismo punto), de ahí su nombre fixed (fijo)
+* `static`: Es el tipo de posición por defecto en todos los elementos HTML.
+* `relative`: Permite modificar la posición de un elemento en función de su posición actual en la página.
+* `absolute`: Saca al elemento del flujo de la página, es decir, hace que su contenedor y los elementos de antes y después no lo tengan en cuenta a la hora de posicionarse y definir su tamaño y por otro lado posiciona el elemento en función de la posición del body o en su defecto del primer elemento contenedor que tenga una posición diferente a static (posición por defecto).
+* `fixed`: Saca a un elemento del flujo normal de la página y permite posicionarlo en función de la ventana del navegador. Aparte, este tipo de elementos mantienen su posición cuando hacemos *scroll* en la página (como si se mantuviesen anclados en un mismo punto), de ahí su nombre fixed (fijo).
 
 Algunos recursos en video:
 - Video para entender el [posicionamiento web](https://www.youtube.com/watch?v=13CbCpAnvYI)
@@ -125,11 +126,11 @@ Hacer un enlace de descarga de un archivo (por ejemplo PDF) con una etiqueta que
 
 Crear un documento HTML con una cabecera y un contenedor principal con varios párrafos que contengan suficiente texto como para que la página se muestre con scroll (barras de desplazamiento).
 
-a) Haz una cabecera con fondo morado que se mantenga fija arriba.
+a) Añadir fondo morado a la cabecera y hacer que se mantenga fija arriba.
 
-b) Haz que la cabecera no tape el contenedor principal cuando no hemos hecho scroll, sin utilizar margin ni padding (PISTA: posiciona el contenedor principal).
+b) Hacer que la cabecera no tape el contenedor principal cuando no hemos hecho scroll, sin utilizar `margin` ni `padding` (PISTA: posiciona el contenedor principal).
 
-c) Haz que al hacer scroll, la cabecera se apile o superponga por encima del contenedor principal.
+c) Hacer que al cuando la usuaria haga scroll, la cabecera se apile o superponga por encima del contenedor principal.
 
 * * *
 
@@ -170,6 +171,8 @@ Permite rotar el elemento:
 
 #### EJERCICIO 5
 
+**Transformers**
+
 ¿Sabrías resolver estos ejercicios de transformaciones tras leerte [la documentación de transform](http://devdocs.io/css/transform)?
 
 [&rtrif; Los ejercicios de transform en codepen](https://codepen.io/adalab/pen/YLKaox)
@@ -184,19 +187,39 @@ Permite rotar el elemento:
 
 #### EJERCICIO 6
 
-Define un documento HTML con 3 cajas contenedoras `div` (div1, div2 y div3), la primera con unas dimensiones de 500x500px y un background color amarillo. La segunda con dimensiones 300x300px y un background color verde. La tercera con dimensiones 150x150px y background color azul. Usando posicionamiento absoluto establece para el div2 y el div3 el mismo origen que para el div1, de modo que las cajas se superpongan y el efecto generado sea ver cuadrado azul sobre uno verde que a su vez está sobre uno amarillo.
+**Cajas sobre cajas**
 
-Haz que las cajas estén centradas vertical y horizontalmente. Pon 40px de padding y 2px de borde al div1, 75px de padding al div 2 y 20px de borde de puntos al div3. Para esto usad `box-sizing: border-box;`.
+Vamos a definir un documento HTML con 3 cajas contenedoras `div` (div1, div2 y div3):
+* La primera con unas dimensiones de 500x500px y color de fondo amarillo.
+* La segunda con dimensiones 300x300px y color de fondo verde.
+* La tercera con dimensiones 150x150px y color de fondo azul. 
+
+Usando posicionamiento absoluto establecemos para el div2 y el div3 el mismo origen que para el div1, de modo que las cajas se superpongan y el efecto generado sea ver cuadrado azul sobre uno verde que a su vez está sobre uno amarillo.
+
+Ahora tenemos que hacer que las cajas estén centradas vertical y horizontalmente añadiendo:
+* 40px de padding y 2px de borde al div1.
+* 75px de padding al div2.
+* 20px de borde de puntos al div3. 
+
+Para esto usad `box-sizing: border-box;`.
 
 * * *
 
 #### EJERCICIO 7
 
-Define un documento HTML con varios `div` que contengan suficiente texto como para que la página se muestre con scroll (barras de desplazamiento). El primero de los div debe contener el texto *"Esta página web utiliza cookies. Si continúa navegando acepta el uso de cookies."*, un valor `height` (altura) de 100 píxeles y color de fondo amarillo. Usando posicionamiento fixed, fija este `div` en la parte superior de la página de modo que se continúe visualizando aún cuando hagamos scroll.
+**Aviso de cookies**
+
+Vamos a definir un documento HTML con varios `div`s que contengan suficiente texto como para que la página se muestre con scroll (barras de desplazamiento). El último de los `div`s debe:
+* contener el texto *"Esta página web utiliza cookies. Si continúa navegando acepta el uso de cookies."*.
+* un valor `height` (altura) de 100 píxeles y color de fondo amarillo. 
+
+Usando posicionamiento fixed, tenemos que fijar este `div` en la parte inferior de la página de modo que se visualize siempre, aún cuando hagamos scroll.
 
 * * *
 
 #### EJERCICIO 8
+
+**Listas horizontales**
 
 Crea una lista de cinco elementos que se muestre en línea y con espacios entre cada elemento de 12 píxeles.
 
@@ -210,11 +233,15 @@ Vista de la lista con estilos
 
 #### EJERCICIO 9
 
+**Ese texto necesita aire**
+
 Crea un texto que ocupe el 86% de la pantalla y esté centrado dentro del body. Usaremos la propiedad `max-width` para dar un ancho máximo de 600px. [Más info acerca de max-width](http://devdocs.io/css/max-width).
 
 * * *
 
 #### EJERCICIO 10
+
+**Esto es un artículo**
 
 Crea una composición similar a la de la imagen.
 
@@ -232,34 +259,40 @@ Las dimensiones de esta composición serían las siguientes:
 
 #### EJERCICIO 11
 
+**Tecnologías web**
+
 La web que vamos a crear consta de las siguientes características:
 
 1. Toda la web usa una tipografía sin serifa (`sans-serif`)
-1. Tiene como título "Tecnologías web"
-1. Tiene un párrafo que describe qué son las tecnologías web
-1. Al final del párrafo, tiene un listado de tecnologías compuesto por: HTML, CSS y JavaScript, cada una de las cuales aparece subrayada para indicar que se puede interactuar
-1. Al poner el ratón sobre cualquiera de ellas
+2. Tiene como título "Tecnologías web"
+3. Tiene un párrafo que describe qué son las tecnologías web
+4. Al final del párrafo, tiene un listado de tecnologías compuesto por: HTML, CSS y JavaScript, cada una de las cuales aparece subrayada para indicar que se puede interactuar
+5. Al poner el ratón sobre cualquiera de ellas:
   1. el cursor cambia para indicar que estamos obteniendo ayuda
-  1. aparece un tooltip (recuadro flotante de 400px por 200px) de color blanco, con el nombre de la tecnología como título del tooltip y una breve descripción de la misma
+  2. aparece un tooltip (recuadro flotante de 400px por 200px) de color blanco, con el nombre de la tecnología como título del tooltip y una breve descripción de la misma
 
 * * *
 
 #### EJERCICIO 12
 
-Vamos a crear una web simple, con las siguientes características:
+**Una web sencilla**
+
+Vamos a crear una web sencilla, con las siguientes características:
 
 1. Una cabecera que consta únicamente de un título
-1. Un cuerpo principal que consta de un montón de párrafos, tantos como para que la página tenga scroll
-1. Un pie de página con
+2. Un cuerpo principal que consta de un montón de párrafos, tantos como para que la página tenga scroll
+3. Un pie de página con
   1. El nombre de la empresa
-  1. Un listado de redes sociales de la empresa (en formato texto o imagen) que aparezcan en línea
-1. Un texto para indicar que el sitio web usa cookies con un enlace para ver más info, que aparece en la esquina inferior derecha de la pantalla y que sigue ahí al hacer scroll
+  2. Un listado de redes sociales de la empresa (en formato texto o imagen) que aparezcan en línea
+4. Un texto para indicar que el sitio web usa cookies con un enlace para ver más info, que aparece en la esquina inferior derecha de la pantalla y que sigue ahí al hacer scroll
 
 * * *
 
 #### EJERCICIO 13
 
-Vamos a continuar desde el ejercicio 8 de la lección de flexbox.
+**Con buenos modales**
+
+Vamos a continuar desde el ejercicio 8 de la lección de flexbox y vamos a añadir una modal.
 
 Crearemos un elemento que se superponga sobre él. Ese elemento tendrá un fondo oscuro transparente y un `div` en su interior. Ese `div` entero estará centrado tanto vertical como horizontalmente y contendrá un titular, un texto y un par de botones. El resultado debe ser similar a la siguiente imagen.
 
