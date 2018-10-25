@@ -76,7 +76,7 @@ fetch('https://api.rand.fun/games/rockpaperscissorslizardspock')
 ```
 
 
-En primer lugar, vemos que a la función `fetch` solo le pasamos un parámetro: la URL a donde queremos hacer la petición, así de sencillo. La URL la hemos construido como se indica [en la documentación](https://rand.fun/), es decir, a la URL base 'https://api.rand.fun' le hemos añadido '/games/rockpaperscissorslizardspock' para pedir una *emoji* aleatorio.
+En primer lugar, vemos que a la función `fetch` solo le pasamos un parámetro: la URL a donde queremos hacer la petición, así de sencillo. La URL la hemos construido como se indica [en la documentación](https://rand.fun/), es decir, a la URL base 'https://api.rand.fun' le hemos añadido '/games/rockpaperscissorslizardspock' para pedir un *emoji* aleatorio.
 
 Al ejecutar `fetch(URL)`, este método devuelve una promesa, es decir, algo sobre lo que podemos hacer `.then()`. Una promesa se llama así porque mientras se ejecuta el fetch (se hace la petición al servidor, responde y nos llega la respuesta) podemos trabajar con la respuesta en otra variable `response` donde 'nos prometen' que estará la respuesta del servidor cuando llegue. Es decir, que seguimos trabajando de forma asíncrona (en respuesta a eventos) pero las promesas nos ocultan esa complejidad.
 
@@ -87,7 +87,6 @@ Entonces, sobre una promesa podemos hacer un `.then()` pero ¿para qué? Para po
 Tenéis el código del ejemplo ([en este codepen](https://codepen.io/adalab/pen/qJrLxJ)).
 
 * * *
-<a id="markdown-ejercicio-1" name="ejercicio-1"></a>
 #### EJERCICIO 1
 
 **Numero aleatorio**
@@ -129,14 +128,13 @@ Vamos a ver los cambios respecto al ejemplo anterior de los emojis.
 
 En primer lugar, la URL en el `fetch` cambia para usar la URL de Dog API que nos da una imagen de perro aleatoria. 
 
-El segundo cambio está en la función del segundo `then()`, en el ejemplo de *emojis* el objeto `data` contenía una clave `result` con un `emoji`, y en este caso `data` tiene una clave `message` con la url de la imagen de un perro. Esto ocurre por que el **_schema_ de la respuesta** (cómo es el objeto JSON que nos devuelve el servidor, cómo se llaman sus claves, y qué contienen) lo ha definido y desarrollado una programadora como nosotras, así que debemos asumir que diferentes APIs tendrán diferentes *schemas*. De esta manera, leer la documentación y `loguear` el `JSON` que nos llega del servidor antes de operar con el siempre es una buena idea.
+El segundo cambio está en la función del segundo `then()`, en el ejemplo de *emojis* el objeto `data` contenía una clave `result` con un `emoji`, y en este caso `data` tiene una clave `message` con la url de la imagen de un perro. Esto ocurre porque el **_schema_ de la respuesta** (cómo es el objeto JSON que nos devuelve el servidor, cómo se llaman sus claves, y qué contienen) lo ha definido y desarrollado una programadora como nosotras, así que debemos asumir que diferentes APIs tendrán diferentes *schemas*. De esta manera, leer la documentación y `loguear` el `JSON` que nos llega del servidor antes de operar con el siempre es una buena idea.
 
 Podéis jugar con [este ejemplo en Codepen](https://codepen.io/adalab/pen/oqQNvK?editors=1010).
 
 > **Nota**: Cuando recogemos un elemento de HTML podemos leer y modificar algunos de sus atributos directamente, como `src` y `alt` de la etiqueta `img` ¡Genial!
 
 * * *
-<a id="markdown-ejercicio-2" name="ejercicio-2"></a>
 #### EJERCICIO 2
 
 **Chihuahas, chihuahas por todas partes**
@@ -148,7 +146,6 @@ a) Vamos a modificar el ejemplo anterior para que las fotos de nuestra página s
 b) Vamos a encapsular toda la lógica para crear una petición en una función. Añadimos un botón a la página con el título 'Enséñame otro Chihuahua' de forma que al pulsarlo se haga otra petición al servidor de una imagen aleatoria y aparezca una nueva imagen de Chihuaua.
 
 * * *
-<a id="markdown-ejercicio-3" name="ejercicio-3"></a>
 #### EJERCICIO 3
 
 Ahora vamos a explorar un nuevo API: [el API de usuarios de GitHub](https://developer.github.com/v3/users/). La URL de este API es `https://api.github.com/users/{username}`, donde `{username}` es el nombre del usuario en GitHub. Por ejemplo, aquí tenéis la URL para obtener información del usuario de Isra `https://api.github.com/users/gootyfer`. Si ponéis esta URL en una nueva pestaña del navegador podréis observar qué datos nos devuelve el API.
@@ -211,7 +208,6 @@ Como hemos indicado antes, es importante que al final de los `then()` devolvamos
 
 ***
 
-<a id="markdown-ejercicio-4" name="ejercicio-4"></a>
 #### EJERCICIO 4
 
 **Listado de repos de una organización en Github**
@@ -231,7 +227,6 @@ Para ello vamos a hacer lo siguiente:
 
 * * *
 
-<a id="markdown-ejercicio-5" name="ejercicio-5"></a>
 #### EJERCICIO 5
 
 **La raza del perro**
@@ -274,7 +269,6 @@ Finalmente recorremos el array que se encuentra en responses para ir pintando la
 
 ***
 
-<a id="markdown-ejercicio-6" name="ejercicio-6"></a>
 #### EJERCICIO 6
 
 **Pintando varias imágenes a la vez**
@@ -311,12 +305,11 @@ fetch('https://dog.ceo/api/breeds/list')
 
 Cuando usamos promesas podemos encadenar el final de los `then()` un `catch` que también recibe una función, que tiene como parámetro información del error que puede haber sucedido en cualquiera de los `then()` anteriores. En el ejemplo anterior, este error puede deberse, por ejemplo a que la usuaria haya perdido la conexión o que el servidor nos devuelva un JSON con una estructura que no esperábamos y lo parseemos mal.
 
-<a id="markdown-ejercicio-7-bonus" name="ejercicio-7-bonus"></a>
 #### EJERCICIO 7 BONUS
 
 **Cazando errores 1**
 
-Partiendo del ejercicio 1 vamos a modificarlo para en lugar de parsear la respuesta a `JSON` (`response.json()`) lo hagamos a `html` (`response.html()`). Ahora si abrimos la consola del navegador nos encontraremos un mensaje de error, leelo para familiarizarte con él.
+Partiendo del ejercicio 1 vamos a modificarlo para en lugar de parsear la respuesta a `JSON` (`response.json()`) lo hagamos a `html` (`response.html()`). Ahora si abrimos la consola del navegador nos encontraremos un mensaje de error, léelo para familiarizarte con él.
 
 Este error nos indica que ha sucedido un error en una de las promesas y que no lo hemos cazado, también nos da algo de información sobre el error. En este caso hemos intentado parsear a `html` la respuesta de la api de `rand.fun` que solo es parseable a `JSON`.
 
@@ -354,7 +347,7 @@ request.send();
 
 En esta sesión hemos visto la tecnología asíncrona **AJAX** que nos permite comunicarnos con el servidor usando **`XMLHttpRequest`** basado en **callbacks** o **`fetch`** basado en **promesas**.
 
-Hemos introducido el concepto **API** (url para consultar datos de un servicio), como comúnmente estas nos devuelven una respuesta que se puede parsear a **JSON**. Y lo importante de leer la documentación.
+Hemos introducido el concepto **API** (URL para consultar datos de un servicio), como comúnmente estas nos devuelven una respuesta que se puede parsear a **JSON**. Y lo importante de leer la documentación.
 
 Hemos profundizado en el uso de `fetch` y la promesa que devuelve, viendo como podemos encadenarle un **`then`** que recibe una función como argumento, esta:
 - se ejecutará cuando la promesa se cumpla.
