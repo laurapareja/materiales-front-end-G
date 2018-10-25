@@ -1,8 +1,13 @@
 # Sass
 
+<!-- TOC depthFrom:5 depthTo:5 -->
+
 - [EJERCICIO 1](#ejercicio-1)
 - [EJERCICIO 2](#ejercicio-2)
 - [EJERCICIO BONUS 1](#ejercicio-bonus-1)
+
+<!-- /TOC -->
+
 
 ## Introducción
 Con CSS podemos personalizar al píxel el aspecto de nuestra página y como hemos visto tiene una serie de reglas y de formas de hacer todo esto. Sin embargo el sector ha ido madurando y nos encontramos con que necesitaríamos poder trabajar con las hojas de estilos de una manera más ágil: permitiendo el uso de variables, pudiendo dividir los archivos en bloques más pequeños, pudiendo crear bloques de estilos que se repitan o incluso pequeñas funciones simples. Esto es posible con los preprocesadores CSS.
@@ -21,31 +26,11 @@ Actualmente hay varios preprocesadores, realmente lo que los diferencia es la si
 Nosotros vamos a usar SASS, concretamente SCSS, que es la sintaxis nueva :)
 
 ## Vale, ¿y esto cómo funciona?
-Pues esto se instala y se ejecuta por terminal, pero para no sufrir vamos a empezar usando una aplicación, [Koala](http://koala-app.com), que se va a encargar de procesar nuestro archivo de SCSS y a generar los CSS correspondientes.
 
-Luego, `live server`, se ocupará de recargar el navegador cuando el css haya sido generado.
+Pues esto se instala y se ejecuta por terminal, pero para no sufrir lo tenemos integrado en el [Starter Kit de Adalab](https://github.com/Adalab/Adalab-web-starter-kit). Yay!
 
-### Koala
-Koala es una aplicación de multiplatadorma (Linux, Mac y Windows) que se encarga de procesar nuestros archivos SASS y generar los CSS finales.
+Al arrancarlo todo el SCSS de la carpeta **_src/assets/scss** se procesará en la carpeta **public/assets/css**, automáticamente y se recargará el navegador.
 
-![Hi!](assets/images/1-10/koala-app.png)  
-Un proyecto de ejemplo tendría nuestro CSS enlazado desde el HTML como siempre pero esta vez partiríamos de la carpeta `scss`, con un `main.scss` dentro (por ejemplo).
-
-![Proyecto Sass](assets/images/1-10/proyecto-sass.png)
-
-Entonces, desde la aplicación Koala añadimos nuestra carpeta de proyecto  
-![Koala App 01](assets/images/1-10/koala-01.png)  
-![Koala App 02](assets/images/1-10/koala-02.png)  
-Y el programa nos detecta los archivos procesables, en este caso `main.scss` y nos propone una ruta donde generarlo, normalmente en la misma carpeta. Nosotros lo vamos a querer en otra porque estos son nuestros archivos de trabajo y cuando luego queramos entregarlos nos interesará que no estén mezclados.  
-![Koala App 03](assets/images/1-10/koala-03.png)  
-Con clic derecho seleccionamos dónde queremos que se coloque el CSS procesado, por ejemplo en nuestra carpeta `css`, y lo llamaremos con su nombre correcto, en este caso `main.css`:  
-![Koala App 04](assets/images/1-10/koala-04.png)  
-![Koala App 05](assets/images/1-10/koala-05.png)  
-Con esto ya estaría aunque podemos tocar alguna cosa más, como el estilo de procesado. Hay 4: nested, expanded, compact, compressed. Por ahora usaremos `expanded` y ya habrá tiempo de ver los otros [estilos de procesado](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#Output_Style).  
-
-![Koala App 06](assets/images/1-10/koala-06.png)  
-
-Ahora ya tenemos listo nuestro proyecto. Cada vez que guardemos los cambios en nuestro `main.scss` se generará un nuevo `main.css` y **live server** se encargará de recargar el navegador.
 
 ### Me estás liando, ¿SASS o SCSS?
 El preprocesador CSS que vamos a usar se llama SASS (Syntactically Awesome StyleSheets) pero tiene dos sintaxis, SASS y SCSS. Usaremos SCSS porque es más parecida a CSS y no depende tantísimo de estar todo bien tabulado ya que usa las mismas llaves a las que estamos acostumbrados ya. Así que diremos `sass` pero usaremos `scss` ;)
@@ -73,7 +58,7 @@ a {
 ```
 El uso de variables nos da una serie de ventajas. Podemos definir al principio del documento todas nuestras variables y si una vez avanzados, o terminados, nuestros estilos queremos cambiar algún valor pues se cambia el valor de la variable que toque y se vuelve a generar el CSS.
 
-¿Qué podemos usar como variables? Lo que queramos de los valores de las propiedades CSS.
+¿Qué podemos usar como variables? Lo que queramos de los **valores** de las propiedades CSS.
 ```scss
 $headerHeight: 100px;
 $fontText: 'Roboto', arial, sans-serif;
@@ -89,7 +74,7 @@ body {
 ```
 **¡Vamos a ponerlo en práctica!**
 ***
-#### EJERCICIO 1
+##### EJERCICIO 1
 
 En el siguiente [codepen](https://codepen.io/adalab/pen/aVrxYY) tenemos un ejemplo en css que vamos a reescribir a SCSS y modificar un poco.
 1. Lo primero es configurarlo para usar SCSS: en la rueda de CSS, desplegar las opciones y elegir SCSS como preprocesador
@@ -102,11 +87,12 @@ En el siguiente [codepen](https://codepen.io/adalab/pen/aVrxYY) tenemos un ejemp
 	5. Alto de header y footer a `50px`
 	6. Fondo de `.main` a `cyan`
 ***
-> **Cuándo hacemos variables y cuánto no?**  
-> Quizás el primer impulso es empezar a crear variables como si no hubiera mañana pero el truco está en ver qué valores reutilizamos (misma altura para diferentes elementos, algunos márgenes, colores) y empezar creando sólo esas.
 
-> **Sobre los colores**
-> Lo ideal es usar variables que indiquen el tipo de elemento al que se va a aplicar un color y no tanto el color en sí. Es mejor `$colorLink` en lugar de variables tipo `$colorBlue` que tarde o temprano acaban valiendo un color diferente y va a desconcertar a quien coja el proyecto después. Aunque hay un término médio: definimos nuestros colores como el color que son y asignamos nuesta variable a otra variable que indique el elemento donde se va a usar.
+**Cuándo hacemos variables y cuánto no?**  
+Quizás el primer impulso es empezar a crear variables como si no hubiera mañana pero el truco está en ver qué valores reutilizamos (misma altura para diferentes elementos, algunos márgenes, colores) y empezar creando sólo esas.
+
+**Sobre los colores**
+Lo ideal es usar variables que indiquen el tipo de elemento al que se va a aplicar un color y no tanto el color en sí. Es mejor `$colorLink` en lugar de variables tipo `$colorBlue` que tarde o temprano acaban valiendo un color diferente y va a desconcertar a quien coja el proyecto después. Aunque hay un término médio: definimos nuestros colores como el color que son y asignamos nuestra variable a otra variable que indique el elemento donde se va a usar.
 
 ```scss
 $colorBlue: blue;
@@ -139,8 +125,10 @@ Esto nos generará el siguiente CSS:
 .content p {color:blue;}
 .content p a {color:red;}
 ```
-El anidado nos permite anidar bloques asimilandose un poco a la jerarquía visual de HTML. Esto nos permite ver algunos bloques más claros o agrupar clases que nos interese ver juntas. Pero atención: anidar genera estilos más específicos y hay que usarlo con mucho cuidado.
+El anidado nos permite anidar bloques asimilándose un poco a la jerarquía visual de HTML. Esto nos permite ver algunos bloques más claros o agrupar clases que nos interese ver juntas. Pero atención: anidar genera estilos más específicos y hay que usarlo con mucho cuidado.
 Una buena regla es, cuando vayamos añadir un cuarto nivel de anidación, pararnos a repensar si realmente es necesario. Pero con el uso iremos viendo cuándo usarlo y cuándo no ;)
+
+> **NOTA**: El anidado es algo que podemos hacer, no que debamos hacer. Lo ideal es tener un buen sistema de nombrado de clases para no tener que encadenar estilos salvo en contadas ocasiones. Si queréis saber más sobre el tema podéis buscar sistemas de nombrado de clases como [BEM](http://getbem.com) o [SMACSS](https://smacss.com).
 
 #### Referenciando al selector padre o madre: `&`
 ¡Pero no todo es tener cuidado! Una de las ventajas que nos ofrece el anidado es poder referenciar al selector padre o madre. Por ejemplo: queremos que los enlaces de nuestra página sean rojos, y el hover en azul, pero los enlaces del footer deben ser naranjas con el hover en verde.
@@ -235,7 +223,7 @@ scss
 
 Tendríamos cuatro bloques de archivos: los de **core** como son las variables, nuestros mixins y funciones; el bloque principal de **layout** con la estructura del site y los componentes principales como header y footer; los diferentes **componentes** como puede ser un boque de noticias, el formulario de contacto o los botones; y por último el bloque de **páginas** donde tendríamos los ajustes particulares de cada página.
 
-En nuesto `main.scss` llamaríamos a todos estos archivos en orden:
+En nuestro `main.scss` llamaríamos a todos estos archivos en orden:
 ```scss
 // Core
 @import 'core/functions';
@@ -266,18 +254,18 @@ En nuesto `main.scss` llamaríamos a todos estos archivos en orden:
 > **NOTA 2:**  
 > Es importante saber que el orden de los imports es importante y que tal como se carguen será como se importen y como se ejecuten para convertirse a CSS. ¡Recordad la cascada de CSS!
 
-Una ventaja directa de trabajar con parciales es la cantidad de conflictos de git que nos vamos a ahorrar ;)
+Una ventaja directa de trabajar con parciales es la cantidad de conflictos de git que nos vamos a ahorrar por no estar modificando el mismo fichero ;)
 ***
-#### EJERCICIO 2
+##### EJERCICIO 2
 
-Vamos a crearnos un proyecto con nuestra estructura de imports de SASS. Recordad que iremos haciendo parciales conforme los vayamos necesitando y que en cada carpeta estarán solo los que necesitemos.
+Vamos a crearnos un proyecto con nuestra estructura de imports de SASS. Usaremos el kit de Adalab. Recordad que **iremos haciendo parciales conforme los vayamos necesitando** y que **en cada carpeta estarán solo los que necesitemos**.
 Para el ejercicio querremos:
 - Un header de 75 de alto en móvil, 100 en tablet (768px) y 110 en desktop (1280px)
 - Una home con 2 bloques:
 	- Una sección principal que ocupe la mitad del alto de la pantalla con un texto en el centro
 	- Una sección con un título y un botón rojo, con bordes de 5px de radio y 45px de altura
 
-> Por ejemplo: En la carpeta `core` siempre tendremos nuestras variables pero si no tenemos mixins o funciones pues no tendremos esos parciales.
+> Por ejemplo: En la carpeta `core` siempre tendremos nuestras variables pero si no tenemos mixins o funciones pues no existirán esos parciales.
 ***
 
 Y hasta aquí el contenido de la sesión, pero si quieres saber más tenemos contenido extra...
@@ -287,7 +275,9 @@ Y hasta aquí el contenido de la sesión, pero si quieres saber más tenemos con
 ### Mixins y funciones
 Vale, ¿qué es esto de mixins y funciones? ¡Lo mejor!
 
+
 #### Mixins
+
 Los **mixins** son bloques de código que vamos a querer reutilizar y/o personalizar. Veamos un ejemplo.
 ```scss
 @mixin absoluteCentered() {
@@ -345,33 +335,49 @@ Que generará el siguiente CSS:
 ```
 #### Funciones
 SASS viene con un un [juego de funciones](http://sass-lang.com/documentation/Sass/Script/Functions.html) y además podemos crear las nuestras propias.
-Por ejemplo, vamos a crear una función para poder escribir nuestos `line-height` en porcentajes sabiendo las medidas en píxeles de `line-height` y `font-size`. Supongamos que tenemos un párrafo con la fuente a 18px y 24px de alto de línea.
+Por ejemplo, vamos a crear una función para poder escribir nuestras unidades en rem, pero elegantemente. ¿O qué?
+
+Recordemos que `rem` es una medida relativa al tamaño de fuente especificado en nuestra etiqueta `<html>`, por defecto este tamaño es de 16px.
+
+Vamos a crear una función a la que le pasemos los pixels que queremos y que ella se busque la vida para transformarlo a los `rem` correctos.
+
+
 ```scss
-@function lh($lineHeight, $fontSize) {
-  @return ($lineHeight * 100% / $fontSize);
+// Esta es la variable que usaremos como tamaño por defecto
+$defaultFontSize: 16;
+
+// la función acepta un número de pixels (los que vayamos a usar). Y nos devuelve el cálculo en unidades `rem` :)
+@function rem($pixels) {
+	@return ( $pixels / $defaultFontSize * 1rem );
 }
-p {
-	font-size: 18px;
-	line-height: lh(24, 18);
+// esta función iría en su archivo dentro de la carpeta core/ que luego podríamos usar así:
+
+p {	
+	font-size: rem(18);
+	margin: 0 rem(10);
 }
 ```
 Y generará:
 ```css
 p {
-	font-size: 18px;
-	line-height: 133.33%
+	font-size: 1.125rem;
+	margin: 0 0.625rem;
 }
 ```
 
+Mola, ¿o qué?
+
+
 ### Autoprefixer
-Para entender **Autoprefixer**, primero tenemos que entender qué son los vendor-prefixers. Son prefijos que utilizan los navegadores en propiedades experimentales o que no son estándar. Esto lo hacen para permitir a los desarrolladores probar funcionalidades de CSS antes de que se estandaricen. El caso es que al final un montón de navegadores antiguos necesitan estos prefijos en las propiedades para que éstas funcionen correctamente.
+Para entender **Autoprefixer**, primero tenemos que entender qué son los _vendor-prefixers_. Son prefijos que utilizan los navegadores en propiedades experimentales o que no son estándar. Esto lo hacen para permitir a los desarrolladores probar funcionalidades de CSS antes de que se estandaricen. El caso es que al final un montón de navegadores antiguos necesitan estos prefijos en las propiedades para que éstas funcionen correctamente.
 
 Pero, escribir todos los prefijos es un un trabajo muy tedioso, y estar pendiente de cuál necesitamos para cada navegador sería muy agotador. Por suerte tenemos **Autoprefixer** que hace este trabajo por nosotros. Nos permite olvidarnos de ese problema pudiendo especificar cuántos navegadores o versiones de navegador queremos que controle y, una vez que se genere nuestro CSS, colocará los prefijos necesarios en cada caso.
 
 > Por dejar claro, autoprefixer sería un post-procesador. Como hemos visto, SASS lo que hace es convertir un código con una sintaxis a CSS. Autoprefixer, en cambio, parte de un código CSS y lo post-procesa para convertirlo en un CSS con una serie de propiedades añadidas.
 
 ***
-#### EJERCICIO BONUS 1
+##### EJERCICIO BONUS 1
 
-Configurar Autoprefixer en Koala para que tenga en cuenta las 5 últimas versiones de los navegadores (pista: se hace en la parte de css).
+Autoprefixer viene configurado en el Kit, ¿sabrías encontrar donde se configura? Pista: empieza por G y acaba por ulpfile.js ;)
+Hagamos que tenga en cuenta las 5 últimas versiones de los navegadores.
 ***
