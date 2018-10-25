@@ -12,8 +12,8 @@
 - [EJERCICIO 7](#ejercicio-7)
 - [EJERCICIO 8](#ejercicio-8)
 - [EJERCICIO 9](#ejercicio-9)
-- [EJERCICIO 11](#ejercicio-11)
 - [EJERCICIO 10](#ejercicio-10)
+- [EJERCICIO 11](#ejercicio-11)
 
 <!-- /TOC -->
 
@@ -365,7 +365,7 @@ Otro recurso muy interesante que nos ofrece Network es que nos permite ver cuán
 
 * * *
 
-#### EJERCICIO 11
+#### EJERCICIO 10
 
 Entrar en [Wikipedia.org](http://wikipedia.org) y
 * Averiguar el peso total de la página principal de Wikipedia
@@ -474,7 +474,7 @@ Realmente, la propiedad _background_ es una versión acortada de estas propiedad
 * **background-color:** [Ver detalle](http://devdocs.io/css/background-color)
 
 * * *
-#### EJERCICIO 10
+#### EJERCICIO 11
 
 ¿Sabrías replicar los ejemplos de fondo usando [este Codepen](https://codepen.io/adalab/pen/JLwQpz)?
 * * *
