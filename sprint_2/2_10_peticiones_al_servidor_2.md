@@ -1,6 +1,6 @@
 # Peticiones al servidor 2
 
-<!-- TOC depthFrom:4 depthTo:4 -->
+<!-- TOC depthFrom:4 depthTo:4 insertAnchor:true updateOnSave:true withLinks:true -->
 
 - [EJERCICIO 1](#ejercicio-1)
 - [EJERCICIO 2](#ejercicio-2)
@@ -13,7 +13,7 @@
 
 ## Introducción
 
-En esta sesión vamos a tratar 2 temas diferentes: 1) las APIs, concepto que ya conocemos, pero vamos a entender un poco mejor cómo funcionan; y 2) el linter, una herramienta que nos ayuda a mejorar nuestro código JavaScript.
+En esta sesión vamos a tratar varios temas diferentes: 1) las APIs, concepto que ya conocemos, pero vamos a entender un poco mejor cómo funcionan; 2) el localStorage, un sistema de almacenamiento de datos en el navegador y 3) el linter, una herramienta que nos ayuda a mejorar nuestro código JavaScript.
 
 *API* viene de *Application Programming Interface*, es decir, es una interfaz que está pensada para ser accedida desde una aplicación de código. Dicho de otra forma, el servidor define una forma de pedirle datos, pensada para que sea una aplicación (un programa) quien los pida y él sepa enviárselos. Hay otras interfaces, como una página web, que están pensadas para ser usadas por personas. Pero las APIs están pensadas para ser usadas desde la programación, en nuestro caso desde nuestro programa JavaScript. Durante esta sesión vamos a ver varios ejemplos de APIs.
 
@@ -21,7 +21,7 @@ Un *linter* es una herramienta que nos sirve para prevenir errores y nos ayuda a
 
 ## ¿Para qué sirve lo que vamos a ver en esta sesión?
 
-Entender mejor el concepto de API y ver ejemplos nos ayudará a entender mejor cómo trabajar con ellas. Además, entenderemos mejor cómo están construidas y cómo se espera que las usemos gracias a conocer mejor el protocolo HTTP que es el usado en Internet.
+Entender mejor el concepto de API y ver ejemplos nos ayudarán a entender mejor cómo trabajar con ellas. Además, entenderemos mejor cómo están construidas y cómo se espera que las usemos gracias a conocer mejor el protocolo HTTP que es el usado en Internet.
 
 Usar un linter en nuestro proyecto nos sirve para que mientras desarrollamos un código JavaScript mantengamos una coherencia de estilos con el resto del equipo. También nos sirve para poder detectar errores típicos al escribir código, por ejemplo, si tengo variables no usadas o estoy usando variables antes de declararlas.
 
@@ -45,7 +45,7 @@ Las máquinas que están conectadas a Internet para entenderse entre ellas utili
 
 La forma de funcionar de HTTP es mediante **petición y respuesta**. Un ordenador hace una petición (el que llamamos cliente, en nuestro caso desde navegador) y otro ordenador (el que llamamos servidor) recibe esa petición, la procesa (hace cosas) y envía de vuelta una respuesta.
 
-La **petición**, como hemos visto en los ejemplos de la sesión anterior, siempre lleva asociada una URL que indica dónde está el servidor y el tipo de datos que le pedimos. Por ejemplo la URL `https://api.rand.fun/text/password?length=20` de una petición a catAPI nos muestra que
+La **petición**, como hemos visto en los ejemplos de la sesión anterior, siempre lleva asociada una URL que indica dónde está el servidor y el tipo de datos que le pedimos. Por ejemplo la URL `https://api.rand.fun/text/password?length=20` de una petición a RandAPI nos muestra que
 - el servidor del API está en `https://api.rand.fun/` (se le llama normalmente *URL base*)
 - el servicio (tipo de datos que pedimos) al que accedemos es `text/password` y, en este caso, nos da una cadena aleatoria como contraseña
 - los parámetros `?length=20` (también llamado *querystring*) indican que la longitud de la cadena que pedimos es 20
@@ -57,7 +57,7 @@ La petición HTTP también tiene asociada un *método* que indica la *intención
 - petición `GET` a la URL `/users/1`: el servidor devuelve un la información del usuario cuyo id es 1
 - petición `POST` a la URL `/users` con los datos de un usuario: el servidor crea un usuario nuevo
 
-Otra característica habitual de un API REST es que cuando accedo a un listado de cosas, si hay muchas, no me devuelva todas en la misma petición sino que me devuelve solo las primeras. A esto se le llama *paginación* y al hacer la petición recibiré solo *la primera página* de resultados, por ejemplo 10. Y tendré que añadir un parámetro a la *querystring* para recuperar el resto de página, por ejemplo, `?page=2`.
+Otra característica habitual de un API REST es que cuando accedo a un listado de cosas, si hay muchas, no me devuelva todas en la misma petición sino que me devuelve solo las primeras. A esto se le llama *paginación* y al hacer la petición recibiré solo *la primera página* de resultados, por ejemplo 10. Y tendré que añadir un parámetro a la *querystring* para recuperar el resto de páginas, por ejemplo, `?page=2`.
 
 * * *
 <a id="markdown-ejercicio-1" name="ejercicio-1"></a>
@@ -142,7 +142,7 @@ localStorage.setItem('name', 'Ana');
 Para recuperar los datos es tan sencillo como usar `getItem` y pasar el nombre que le dimos a los datos. Por ejemplo:
 
 ```js
-const  name = localStorage.getItem('name');
+const name = localStorage.getItem('name');
 console.log(name); //Ana
 ```
 
@@ -229,7 +229,7 @@ En Adalab ya nos hemos registrado y tenemos nuestro *token*. Te dejamos [un ejem
 
 - Registrarse en la web y generar un token personal para sustituirlo por el de Adalab, que eso de impersonar a otros no es bonito.
 - Pintar la imagen aleatoria del gato que nos devuelve la petición.
-- !Espera¡ ¿Esto no iba de gifs? Vamos a ver si podemos hacer que la imagen que nos devuelve sea un gif.
+- ¡Espera! ¿Esto no iba de gifs? Vamos a ver si podemos hacer que la imagen que nos devuelve sea un gif.
 
 > **Nota**: esta api es muy chachi, y una vez que nos autenticamos nos permite hacer cosas interesantes como guardar nuestras propias imágenes de gatetes, añadir a favoritos, eliminar nuestras imágenes... etc. Os animamos a leer la documentación y hacer diferentes pruebas con ella.
 
