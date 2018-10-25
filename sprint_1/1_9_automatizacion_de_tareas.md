@@ -1,11 +1,14 @@
 # Automatización de tareas
 
-<!-- TOC START min:4 max:4 link:true update:true -->
-- [EJERCICIO 1:](#ejercicio-1)
-- [EJERCICIO 2:](#ejercicio-2)
-- [EJERCICIO 3:](#ejercicio-3)
-- [EJERCICIO 4:](#ejercicio-4)
-<!-- TOC END -->
+<!-- TOC depthFrom:6 depthTo:6 -->
+
+- [EJERCICIO 1](#ejercicio-1)
+- [EJERCICIO 2](#ejercicio-2)
+- [EJERCICIO 3](#ejercicio-3)
+- [EJERCICIO 4](#ejercicio-4)
+- [EJERCICIO 5](#ejercicio-5)
+
+<!-- /TOC -->
 
 ## Introducción
 
@@ -17,7 +20,7 @@ En esta sesión usaremos herramientas para automatización de tareas en nuestro 
 
 ## ¿En qué casos se utiliza?
 
-En nuestro flujo de trabajo realizamos algunas tareas repetitivas. Por ejemplo, convertir el Sass en CSS, lo que implica añadir cada nuevo proyecto a Koala, especificar la carpeta de destino para el CSS, etc.
+En nuestro flujo de trabajo realizamos algunas tareas repetitivas. Por ejemplo, convertir el Sass en CSS. Sass es una tecnología que veremos en la próxima sesión y escribimos el código en un lenguaje que luego se convierte en CSS.
 
 Otra tarea habitual que se suele hacer es optimizar los ficheros CSS y JavaScript antes de subir la web al servidor (a GitHub en nuestro caso). Esta optimización se realiza para que el navegador pueda cargar y ejecutar los archivos más rápido y mostrar la página con más rapidez.
 
@@ -27,15 +30,15 @@ Con una herramienta como Gulp, vamos a poder hacer que nuestro código Sass se c
 
 ![Gulp](assets/images/1-9/logo-gulp.png)
 
-Gulp es una herramienta de automatización de tareas que está programada con JavaScript. Gulp, a diferencia de Koala, no tiene interfaz gráfica sino que se ejecuta desde la terminal de comandos, al igual que sucede con Git. Primero vamos a ver cómo instalarla y después la configuraremos para ayudarnos con algunas tareas.
+Gulp es una herramienta de automatización de tareas que está programada con JavaScript. Gulp no tiene interfaz gráfica sino que se ejecuta desde la terminal de comandos, al igual que sucede con Git. Primero vamos a ver cómo instalarla y después la configuraremos para ayudarnos con algunas tareas.
 
-Bien, sabemos que decir que Gulp lo usaremos a través del terminal, que no tiene interfaz gráfica y que la configuración te la tienes que hacer tú mismo hace difícil el venderlo como algo mejor, pero la clave de Gulp reside en esa última característica, la de configurarlo a través de JavaScript. La clave de usar una herramienta de automatización de tareas como Gulp es que podemos configurarla a nuestra manera y añadir procesos y tareas a medida que las necesitemos e ir mejorando poco a poco estos para adaptarlos a nuestras necesidades, esto es lo que hace que lo que ofrece Koala se quede corto y es el motivo principal por el que en la mayoría de las empresas tienen automatizadas las tareas con herramientas como Gulp. En esta sesión veremos alguna novedad como poder visualizar nuestra página directamente desde el móvil sin tener que subirla al servidor, pero esto es solo la punta del iceberg, existen cientos de utilidades que podremos utilizar con Gulp y que nos facilitarán mucho la tarea de desarrollar páginas web.
+Bien, sabemos que decir que Gulp lo usaremos a través del terminal, que no tiene interfaz gráfica y que la configuración te la tienes que hacer tú mismo hace difícil el venderlo como algo mejor, pero la clave de Gulp reside en esa última característica, la de configurarlo a través de JavaScript. La clave de usar una herramienta de automatización de tareas como Gulp es que podemos configurarla a nuestra manera y añadir procesos y tareas a medida que las necesitemos e ir mejorando poco a poco estos para adaptarlos a nuestras necesidades, esto es el motivo principal por el que en la mayoría de las empresas tienen automatizadas las tareas con herramientas como Gulp. En esta sesión veremos alguna novedad como poder visualizar nuestra página directamente desde el móvil sin tener que subirla al servidor, pero esto es solo la punta del iceberg, existen cientos de utilidades que podremos utilizar con Gulp y que nos facilitarán mucho la tarea de desarrollar páginas web.
 
 ### Node
 
 Para poder usar *Gulp* en nuestro ordenador, necesitamos tener instalado *Node.js*. Node es una plataforma que nos permite ejecutar código JavaScript en nuestro ordenador o un servidor, ya sea para programar un back-end o para ejecutar pequeños programas de código que nos sirvan de herramientas, llamados scripts, y todo ello usando código JavaScript, fantástico ¿no?
 
-No os vamos a poner a instalar Node en el ordenador, ya está instalado y vamos a comprobarlo. Para ello como suele ser común, escribiremos en la terminal el nombre del comando, seguido de `-v` o similar, como hemos hecho anteriormente con git, en este caso escribiremos:
+No nos vamos a poner a instalar Node en el ordenador, ya está instalado y vamos a comprobarlo. Para ello como suele ser común, escribiremos en la terminal el nombre del comando, seguido de `-v` o similar, como hemos hecho anteriormente con git, en este caso escribiremos:
 
 ```shell
 node --version
@@ -65,11 +68,11 @@ El `-g` indica que se instala de forma global y se puede usar la utilidad de Gul
 
 Ahora que ya tenemos todo instalado, vamos a utilizar Gulp en nuestro proyecto. Vamos a crear un nuevo proyecto, para ello creamos una nueva carpeta (podemos hacerlo desde la terminal con `mkdir <nombre_carpeta>`). **Y nos movemos dentro de la carpeta con `cd <nombre_carpeta>`**.
 
-Para indicar que en este proyecto vamos a usar npm, necesitamos crear un fichero llamado `package.json` que indica la configuración de npm del proyecto. Es un fichero en formato JSON, tiene el aspecto de un objeto de JavaScript que tiene solo propiedades pero no métodos (funciones). La forma más sencilla de crear este fichero es ejecutando desde la terminal:
+Para indicar que en este proyecto vamos a usar npm, necesitamos crear un fichero llamado `package.json` que indica la configuración de npm del proyecto. Es un fichero en formato JSON, tiene el aspecto de un objeto de JavaScript que ya veremos en el próximo sprint. La forma más sencilla de crear este fichero es ejecutando desde la terminal:
 
 `npm init`
 
-Al hacerlo, nos irá pidiendo información sobre el proyecto: nombre, descripción, etc. Podemos escribir esta información o pulsar la tecla `Enter` para aceptar la información que viene por defecto y que aparece entre paréntesis al lado de donde escribimos. Una vez haya terminado de hacer preguntas, creará el archivo `package.json` en nuestra carpeta, si lo abrimos veremos que la pinta del `package.json` es algo así:
+Al hacerlo, nos irá pidiendo información sobre el proyecto: nombre, descripción, etc. Podemos escribir esta información o pulsar la tecla `Enter` para aceptar la información que viene por defecto y que aparece entre paréntesis al lado de donde escribimos. Una vez haya terminado de hacer preguntas, creará el archivo `package.json` en nuestra carpeta, si lo abrimos veremos que la pinta algo así:
 
 ```json
 {
@@ -85,8 +88,7 @@ Al hacerlo, nos irá pidiendo información sobre el proyecto: nombre, descripci�
 }
 ```
 
-> **Nota:**
-> Es importante recordad que NUNCA debemos llamar a nuestro proyecto "gulp" o "node"
+> **Nota**: Es importante recordad que NUNCA debemos llamar a nuestro proyecto "gulp" o "node"
 
 Ahora tenemos que instalar Gulp de forma local en nuestro proyecto. Para eso ejecutamos:
 
@@ -106,20 +108,20 @@ El `package.json` se usa para saber qué paquetes (dependencias) tiene el proyec
 Ahora solo nos falta crear el fichero de configuración de Gulp llamado `gulpfile.js`. Vamos a crear un fichero con ese nombre y meter este código de configuración (si miráis con atención ¡es JavaScript!):
 
 ```javascript
-var gulp = require('gulp');
+const gulp = require('gulp');
 
 gulp.task('default', function() {
   console.log('Hola Gulp');
 });
 ```
 
->NOTA: No vamos a entrar por el momento en detalle ni explicaciones, simplemente queremos que lo probéis y os vayáis familiarizando
+>**NOTA**: No vamos a entrar por el momento en detalle ni explicaciones, simplemente queremos que lo probéis y os vayáis familiarizando
 
 Para probar el código anterior, en la terminal escribiremos el siguiente comando:
 
 `gulp`
 
-Como resultado aparecerá el mensaje 'Hola Gulp' en nuestra terminal. Lo que hace el comando `gulp` es buscar el archivo `gulpfile.js` en la ruta en la que estamos situados desde la terminal y si existe ejecutará la función asociada a la tarea `'default'` de Gulp, que en este caso hace un `console.log`.
+Como resultado aparecerá el mensaje 'Hola Gulp' en nuestra terminal. Lo que hace el comando `gulp` es buscar el archivo `gulpfile.js` en la ruta en la que estamos situados desde la terminal. Si existe ejecutará la función asociada a la tarea `'default'` de Gulp, que en este caso hace un `console.log`.
 
 Pero esto no es muy útil. Vamos a usar ahora otro *gulpfile* más complejo que nos permita convertir Sass a CSS. Pero primera tendremos que instalar otro paquete que nos permite hacer esto:
 
@@ -128,13 +130,14 @@ Pero esto no es muy útil. Vamos a usar ahora otro *gulpfile* más complejo que 
 Ahora usaremos este gulpfile:
 
 ```javascript
-var gulp = require('gulp');
-var sass = require('gulp-sass');
+const gulp = require('gulp');
+const sass = require('gulp-sass');
 
-gulp.task('default', function () {
+gulp.task('default', function(done) {
   gulp.src('scss/index.scss') // Leo el archivo scss
     .pipe(sass()) // Convierto el contenido del archivo index.scss a CSS
     .pipe(gulp.dest('css')); // El CSS generado lo guardamos en la carpeta css
+  done();
 });
 ```
 
@@ -159,35 +162,37 @@ body {
 
 ### Tareas con *watch*
 
-Hasta ahora hemos creado una tarea que convierte nuestro Sass a CSS, pero sólo una vez. Si volvemos a modificar el fichero Sass tendremos que volver a ejecutar el comando `gulp` para convertirlo a CSS. ¿Pero esto es un poco rollo, no?
+Hasta ahora hemos creado una tarea que convierte nuestro Sass a CSS, pero solo una vez. Si volvemos a modificar el fichero Sass tendremos que volver a ejecutar el comando `gulp` para convertirlo a CSS. ¿Pero esto es un poco rollo, no?
 
-Escribiendo en la terminal `gulp` en realidad hemos ejecutado la tarea por defecto (`default`) del archivo `gulpfile.js`. Si veis en el `gulpfile`, creamos una tarea con `gulp.task` y el primer parámetro es una cadena con el nombre de la tarea. La tarea por defecto tiene el nombre especial `default`. Pero podemos ejecutar otras tareas con `gulp nombre_tarea`.
+Escribiendo en la terminal `gulp` en realidad hemos ejecutado la tarea por defecto (`default`) del archivo `gulpfile.js`. Si veis en el `gulpfile`, creamos una tarea con `gulp.task` y el nombre de la tarea. La tarea por defecto tiene el nombre especial `default`. Pero podemos ejecutar otras tareas con `gulp nombre_tarea`.
 
 Vamos a crear una tarea `watch` que está todo el rato observando nuestros ficheros Sass y al modificarlos genera a partir de su contenido un archivo CSS. Para eso, usamos este `gulpfile`:
 
 ```javascript
-var gulp = require('gulp');
-var sass = require('gulp-sass');
+const gulp = require('gulp');
+const sass = require('gulp-sass');
 
-gulp.task('default', function () {
+gulp.task('default', function(done) {
   gulp.src('scss/index.scss') // Leo el archivo scss
     .pipe(sass()) // Convierto el contenido del archivo index.scss a CSS
     .pipe(gulp.dest('css')); // El CSS generado lo guardamos en la carpeta css
+    done();
 });
 
 // Tarea que observa cambios en 'scss'
 // En su primera ejecución lanzará también las tareas que pasamos como segundo parámetro en la función, default en este caso
-gulp.task('watch', ['default'], function () {
+gulp.task('watch', ['default'], function(done) {
   gulp.watch('scss/*.scss', ['default']);  // Lanza la tarea 'default' cuando observa cambios en cualquier scss
+  done();
 });
 ```
 
 Ahora ejecutamos nuestra nueva tarea `gulp watch`. Una vez ejecutada, lo primero que hará será ejecutar `default` porque le hemos dicho que lo ejecute antes de comenzar `watch`. Tras ejecutar `default`, el proceso se quedará corriendo en la terminal y si realizamos algún cambio en alguno de los archivos Sass de nuestro proyecto veremos cómo en la terminal aparecen unos mensajes que muestran que se ha vuelto a ejecutar la tarea de default. Si en algún momento queremos parar este proceso, podremos pulsar `Ctrl + C` en el teclado y el proceso terminará en ese momento.
 
-Prueba a modificar el fichero Sass y ver que el CSS se modifica automáticamente. Igual que Koala pero con un toque más de programadora pro, ¿verdad?
+Prueba a modificar el fichero Sass y ver que el CSS se modifica automáticamente.
 
 * * *
-#### EJERCICIO 1:
+###### EJERCICIO 1
 
 Ahora vamos a trabajar con un proyecto que ya tiene configurado Gulp. Primero tendremos que clonarlo en nuestro ordenador y en la carpeta ejecutar `npm install` para instalar las dependencias.
 
@@ -200,37 +205,46 @@ Luego probamos a ejecutar la tarea por defecto `gulp` y la tarea `gulp watch`. O
 Ahora os hemos preparado un proyecto que os podéis descargar y donde integrar vuestros proyecto y ejercicios en Adalab:  
 [Adalab Web Starter Kit](https://github.com/Adalab/Adalab-web-starter-kit)
 
+## Adalab Web Starter Kit
+Hemos preparado una base para hacer proyectos o ejercicios durante el curso.
+Usa Gulp para ejecutar una serie de tareas (procesar los scss, gestionar las imágenes, los JS...) y vamos a tener una estructura un poco diferente, más adaptada a un proyecto real.
+
+Tendremos tres carpetas (por defecto solo viene una en el kit):
+- **_src/**: Donde tendremos nuestros archivos de trabajo: html, scss, js e imágenes
+- **public/**: será donde se genere una versión de desarrollo, nosotras trabajaremos sobre los archivos de trabajo y gulp se encargará de pasarlos correctamente a esta carpeta. El servidor web se ejecutará aquí.
+- **docs/**: esta es opcional y nos dejará generar una versión de producción de nuestro proyecto para que activemos GitHub Pages.
+
 * * *
 
-#### EJERCICIO 2:
+###### EJERCICIO 2
 
 ¿Quién sabe decir qué hace la tarea **styles**?
 
 * * *
 
-#### EJERCICIO 3:
+###### EJERCICIO 3
 
 ¿Quién sabe decir qué hace la tarea **scripts**?
 
 * * *
 
-#### EJERCICIO 4:
+###### EJERCICIO 4
 
-¿Que diferencias hay entre la tarea **styles** y **styles-min**?
+¿Que diferencias hay entre la tarea **styles** y **styles-dist**?
 
 * * *
 
 ### Tareas incluidas
 En el archivo `README.md` del proyecto tenéis información más detallada pero en resumen este kit tiene dos tareas principales:
 * `gulp`
-* `gulp deploy`
+* `gulp docs`
 
 ### `gulp`
-La tarea por defecto lanza un servidor web con BrowserSync y varios watchers estarán pendientes de los archivos SCSS/JS/HTML para recargar el navegador cuando se necesite.
-Además, aplica automáticamente autoprefixer a nuestros estilos y agrupa todas la mediaqueries que hayamos creado en los SCSS y las coloca al final del documento CSS, de esta manera podemos escribir mediaqueries donde las necesitemos y ya Gulp se ocupará de agruparlas y colocarlas en su sitio.
+La tarea por defecto lanza un servidor web con BrowserSync y varios watchers estarán pendientes de los archivos SCSS/JS/HTML de la nueva carpeta **public/** para recargar el navegador cuando se necesite.
+Además, aplica automáticamente autoprefixer a nuestros estilos, es decir, que añade todos los vendor prefixes adecuados `moz-`, `webkit-`, etc. Además agrupa todas la mediaqueries que hayamos creado en los SCSS y las coloca al final del documento CSS, de esta manera podemos escribir mediaqueries donde las necesitemos y ya Gulp se ocupará de agruparlas y colocarlas en su sitio.
 
-### `gulp deploy`
-Esta tarea se ejecuta una sola vez y no lanza servidores web ni watchers, pero minimiza nuestros archivos CSS y JS de manera que ocupen menos y tengamos una versión lista para subir a nuestro servidor de producción.
+### `gulp docs`
+Esta tarea se ejecuta una sola vez y no lanza servidores web ni watchers, pero genera una versión lista para producción (para subirla a un servidor, activar GitHub Pages o enviar a nuestra clienta) en la carpeta **docs/**.
 
 
 ## Cómo usar el kit en nuestros proyectos
@@ -238,8 +252,20 @@ La forma más cómoda es:
 1. crear nuestro repositorio vacío en GitHub
 2. clonarlo a nuestro equipo
 3. descargar/clonar el kit a otra carpeta
-4. copiar o mover los archivos y carpetas a nuestro proyecto **SIN OLVIDAR EL ARCHIVO OCULTO .GITIGNORE** (podemos obviar el `README.md`).
+4. copiar o mover los archivos y carpetas a nuestro proyecto **SIN OLVIDAR EL ARCHIVO .GITIGNORE Y EL RESTO DE ARCHIVOS OCULTOS (empiezan por `.`)** (podemos obviar el `README.md`)
 5. Desde nuestro proyecto ya podemos ejecutar `npm install`, y ya estamos listas
+
+* * *
+
+###### EJERCICIO 5
+
+Seguiremos los pasos anteriores para crear un nuevo proyecto usando el kit de Adalab. Después, en esta misma carpeta meteremos un ejercicio de la sesión de responsive para probar que se lanza el navegador que se actualiza solo con los cambios que hacemos en el HTML o CSS. Comprobad que la carpeta donde debemos meter el código de nuestro proyecto es **_src**.
+
+Una vez terminado, vamos a probar una opción muy chula del kit: la posibilidad de trabajar con ficheros parciales de HTML. Para eso, mirad el ejemplo de la carpeta `_src/templates` donde hay un fichero `index.html` que carga 2 ficheros parciales con trozos de HTML. En vuestro proyecto cread esta misma estructura y sacad la cabecera y el pie de página de la web a un parcial.
+
+Para terminar, vamos a publicar la web usando GitHub Pages. Para eso usaremos la tarea `gulp docs` que general una carpeta docs con la web preparada para subirla a GitHub Pages.
+
+* * *
 
 ### BONUS: Más plugins de Gulp
 
@@ -253,7 +279,7 @@ Podéis ver un ejemplo de cómo trabajar con esto en este repositorio que prepar
 
 ##### Plugins de linting
 
-Un *linter* es un programa que detecta errores de uso y/o estilo en un código. Ahora mismo en el propio Atom tenemos instalados varios linters que nos informan de errores en el código o en su estilo (llaves que no cierran, etc.). También podemos usar esos linters desde una tareas de Gulp, de forma que nos digan errores antes de, por ejemplo, subir un código a producción. Algunos ejemplos son [JSLint](http://www.jslint.com/) o [CSSLint](http://csslint.net/).
+Un *linter* es un programa que detecta errores de uso y/o estilo en un código. Ahora mismo en el propio Code tenemos instalados varios linters que nos informan de errores en el código o en su estilo (llaves que no cierran, etc.). También podemos usar esos linters desde una tareas de Gulp, de forma que nos digan errores antes de, por ejemplo, subir un código a producción. Algunos ejemplos son [JSLint](http://www.jslint.com/) o [CSSLint](http://csslint.net/).
 
 ##### Plugins para trabajar con imágenes
 
