@@ -1,6 +1,6 @@
 # Asincronía
 
-<!-- TOC depthFrom:4 depthTo:4 -->
+<!-- TOC depthFrom:4 depthTo:4 insertAnchor:true -->
 
 - [EJERCICIO 1](#ejercicio-1)
 - [EJERCICIO 2](#ejercicio-2)
@@ -10,6 +10,7 @@
 - [EJERCICIO 6](#ejercicio-6)
 - [EJERCICIO 7](#ejercicio-7)
 - [EJERCICIO 8](#ejercicio-8)
+- [EJERCICIO 9](#ejercicio-9)
 
 <!-- /TOC -->
 
@@ -156,7 +157,7 @@ Vamos a realizar el típico mensaje que aparece en un blog con la información d
 
 El método `setTimeout()` es muy similar a `setInterval()` pero a diferencia de este solo ejecuta una vez la función que le pasemos. Sirve entonces para retrasar determinados milisegundos una operación.
 
-Por ejemplo, vamos a crear un texto de aviso de que algo se ha guardado correctamente. Este mensaje se borrará pasados 3 segundos.
+Por ejemplo, vamos a crear un texto de aviso de que algo se ha guardado correctamente. Este mensaje se borrará pasados 6 segundos.
 
 ```html
 <p class="msg">Se ha guardado correctamente</p>
@@ -223,11 +224,17 @@ Para obtener más información:
 <a id="markdown-ejercicio-7" name="ejercicio-7"></a>
 #### EJERCICIO 7
 
-Crear un cronómetro que vaya aumentando en segundos y cuando se pulse el botón de parar deje de aumentar. Cuando pulsemos el de continuar, vuelva a empezar de nuevo.
+Vamos a modificar nuestra solución del ejercicio 4 para que, en lugar de seguir ejecutando la función indefinidamente, detengamos su ejecución con `clearInterval`.
 
 * * *
 <a id="markdown-ejercicio-8" name="ejercicio-8"></a>
 #### EJERCICIO 8
+
+Crear un cronómetro que vaya aumentando en segundos y cuando se pulse el botón de parar deje de aumentar. Cuando pulsemos el de continuar, vuelva a empezar de nuevo.
+
+* * *
+<a id="markdown-ejercicio-9" name="ejercicio-9"></a>
+#### EJERCICIO 9
 
 Crear una página con un botón que transcurridos 10 segundos te pregunte: "¿te has dormido?". Si pulsas en el botón la cuenta volverá a cero y otra vez, si transcurren 10 segundos sin pulsar volverá a preguntar de nuevo "¿te has dormido?"
 
