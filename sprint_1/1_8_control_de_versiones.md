@@ -121,7 +121,6 @@ Un conflicto ocurre cuando git se encuentra con dos versiones del mismo bloque d
 =======
 2ª versión del código en conflicto
 >>>>>>>
-2ª versión del bloque en conflicto
 ```
 
 **<<<<<<<**: Indica el inicio de la zona de conflicto, en la línea siguiente muestra el primer bloque en conflicto.  
