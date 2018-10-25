@@ -234,13 +234,14 @@ Hacer un `div` de 100x100px usando las propiedades `width` y `height`, incluir d
 ### Overflow
 Por defecto, nuestros contenedores tomarán el tamaño del contenido pero desde el momento en que definimos un tamaño para el contenedor puede pasar que el contenido no quepa ¿Y entonces, qué?
 
-Pueden pasar dos cosas, que el contenido se pueda adaptar, como pasa con el texto o que el contenido simplemente se salga de nuestro contenedor (tb puede pasar con el texto):
+Pueden pasar dos cosas, que el contenido se pueda adaptar, como pasa con el texto o que el contenido simplemente se salga de nuestro contenedor (también puede pasar con el texto):
 
 ![Overflow básico](assets/images/1-3/overflow-basico.png)
 
 [&rtrif; Mira este ejemplo en Codepen](https://codepen.io/adalab/pen/WzLBwq)
 
 Podemos controlar cómo se comporta un contenedor en los casos en que el contenido se salga, tenemos 3 opciones:
+
 1. No hacer nada y lidiar con las consecuencias
 2. Ocultar todo lo que se salga
 3. Incluir scroll en el contenedor
@@ -255,9 +256,10 @@ Podéis leer sobre la propiedad _overflow_:
 
 **Todo en su caja**
 
-Con estos enlaces, ¿sabrías resolver los casos de [este Codepen](https://codepen.io/adalab/pen/KobLGM)?
+Con la información de los enlaces anteriores, ¿sabrías resolver los casos de [este Codepen](https://codepen.io/adalab/pen/KobLGM)?
 
 * * *
+
 > **NOTA:**  
 > Recordad que para que el overflow se active, el contenedor tiene que tener definidas dimensiones (o ser un elemento de bloque y que el contenido sobrepase el ancho del contenedor)
 
