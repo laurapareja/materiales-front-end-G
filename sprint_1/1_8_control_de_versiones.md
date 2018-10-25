@@ -116,6 +116,11 @@ Y aquí tenemos dos escenarios diferentes:
 ### ¿Qué pinta tiene un conflicto?
 Un conflicto ocurre cuando git se encuentra con dos versiones del mismo bloque de código. Entonces, marca en el documento que hay un conflicto y muestra las dos opciones para que nosotros elijamos qué hacer:
 ```
+<<<<<<<
+1ª versión del código en conflicto
+=======
+2ª versión del código en conflicto
+>>>>>>>
 2ª versión del bloque en conflicto
 ```
 
@@ -144,6 +149,7 @@ Vamos a ver el trabajo en ramas a través de un ejemplo, como un mini proyecto d
 
 * * *
 
+<a id="markdown-ejercicio-1" name="ejercicio-1"></a>
 #### EJERCICIO 1
 
 1. Vamos crear un repositorio por pareja, donde ambas debéis tener acceso al repositorio (la que lo crea debe dar acceso al usuario de GitHub de la otra)
@@ -203,6 +209,7 @@ git push -u origin nombre-de-la-rama
 ```
 
 * * *
+<a id="markdown-ejercicio-2" name="ejercicio-2"></a>
 #### EJERCICIO 2
 
 1. Una de la pareja creará una rama `footer`, nos movemos a ella y modificamos un poco nuestro proyecto. Añadiremos a nuestro footer el enlace a la web de Adalab, quedando así:
@@ -235,6 +242,7 @@ Esto nos mezclará nuestra versión local de la rama `nombre-de-la-rama` con la 
 
 * * *
 
+<a id="markdown-ejercicio-3" name="ejercicio-3"></a>
 #### EJERCICIO 3
 
 Vamos a fusionar nuestra rama `footer` con `master` para que nuestra web tenga el enlace que hemos añadido anteriormente.
@@ -258,6 +266,7 @@ Para ello:
 
 * * *
 
+<a id="markdown-ejercicio-4" name="ejercicio-4"></a>
 #### EJERCICIO 4
 
 Ahora que hemos hecho un primer acercamiento a las ramas, vamos a hacer lo mismo pero cada miembro de la pareja por separado. Cada una estará encargada de un trabajo diferente que tendrá que realizar en una rama y posteriormente mezclar en la rama principal.
@@ -330,6 +339,7 @@ Github, como otros servicios de control de versiones tienen un sistema de ticket
 
 
 * * *
+<a id="markdown-ejercicio-5" name="ejercicio-5"></a>
 #### EJERCICIO 5
 
 **Crear repositorio en GitHub**
@@ -340,6 +350,7 @@ Hay que crear un repositorio vacío en GitHub:
 
 * * *
 
+<a id="markdown-ejercicio-6" name="ejercicio-6"></a>
 #### EJERCICIO 6
 
 **Clonar repositorio**
@@ -348,6 +359,7 @@ Clonaremos el repositorio de nuestra compañera y le pondremos o abriremos un is
 
 * * *
 
+<a id="markdown-ejercicio-7" name="ejercicio-7"></a>
 #### EJERCICIO 7
 
 **Eliminar un repositorio**
@@ -356,6 +368,7 @@ No es tan habitual pero de tanto en tanto querremos hacer limpieza en nuestra cu
 
 * * *
 
+<a id="markdown-ejercicio-81" name="ejercicio-81"></a>
 #### EJERCICIO 8.1
 
 **Crear un repositorio local y conectarlo con remoto**
@@ -377,6 +390,7 @@ Y ahora, ¿no sería genial conectarlo con un repositorio remoto y tenerlo siemp
 
 * * *
 
+<a id="markdown-ejercicio-82" name="ejercicio-82"></a>
 #### EJERCICIO 8.2
 
 **Solucionar un conflicto**
