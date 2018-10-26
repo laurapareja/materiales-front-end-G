@@ -265,27 +265,27 @@ Recordemos que hay otra forma de escribir funciones y es asignando funciones an�
 
 ```js
 const sum = function(a,b) {
-  return a+b;
+  return a + b;
 }
 ```
 O usando funciones flecha:
 ```js
-const sum = (a,b) => a+b
+const sum = (a,b) => a + b;
 ```
 
 Aquí se aplicarían las mismas reglas de hoisting que se aplican a `const` y `let` por lo que NO podríamos ejecutar el siguiente código:
 
 ```js
 console.log(sum(2,3));
-const sum = (a,b) = a+b;
+const sum = (a,b) => a + b;
 ```
 
-mientras que con el anterior sistema de escritura de funciones sí podríamos ya que el hoisting de Javascript transformaría este código:
+Mientras que con el anterior sistema de escritura de funciones sí podríamos ya que el hoisting de JavaScript transformaría este código:
 
 ```js
 console.log(sum(2,3));
 function sum(a,b) {
-  return a+b;
+  return a + b;
 }
 ```
 
@@ -293,7 +293,7 @@ en este otro:
 
 ```js
 function sum(a,b) {
-  return a+b;
+  return a + b;
 }
 console.log(sum(2,3));
 ```
