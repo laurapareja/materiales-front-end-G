@@ -10,7 +10,7 @@
 
 ## Introducción
 
-Hasta ahora hemos trabajado con dos estructuras de datos, los arrays y los objetos, y hemos visto diferentes formas de trabajar con ellas. Vamos a ver dos más, una para extraer valores y otra para construir estructuras: **Destructuring** y **Spread operator**
+Hasta ahora hemos trabajado con dos estructuras de datos, los arrays y los objetos, y hemos visto diferentes formas de trabajar con ellas. Vamos a ver dos más, una para extraer valores y otra para construir estructuras: **Destructuring** y **Spread operator**.
 
 
 ## _Destructuring_
@@ -236,14 +236,14 @@ const twinSister = {...person, name: 'Juliette'};
 console.log(twinSister); // { name: 'Juliette', lastName: 'Smith', age: 39 }
 ```
 
-> Cuidado: si alguna de las propiedades del objeto original es un array u otro objeto, esa propiedad no se clonaría, sino que se compartiría. Para evitar errores, solo copiaremos de esta manera objetos "planos".
+> **¡Cuidado!**: si alguna de las propiedades del objeto original es un array u otro objeto, esa propiedad no se clonaría, sino que se compartiría. Para evitar errores, solo copiaremos de esta manera objetos "planos".
 
 
 * * *
 
 **Vuelve la carrera de escobas**
 
-Partiendo del listado de participantes de la carrera de escobas del ejercicio 6 de ayer. Vamos a realizar varios ejercicios:  
+Partiendo del listado de participantes de la carrera de escobas del ejercicio 1, vamos a realizar varios ejercicios:  
 
 <a id="markdown-ejercicio-3" name="ejercicio-3"></a>
 #### EJERCICIO 3
@@ -271,3 +271,18 @@ const users = [
 ```
 
 * * *
+
+## Recursos externos
+
+### Mozilla Developer Network
+
+Páginas donde se explica en más profundidad las diferentes características de ES6 (en inglés)
+
+- [Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+- [Spread syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator)
+
+### Mozilla Hacks: ES6 in Depth
+
+Lista de artículos de colaboradores de Mozilla explicando las novedades de ECMAScript 6
+
+- [ES6 in Depth - Modules](https://hacks.mozilla.org/2015/08/es6-in-depth-modules/)
