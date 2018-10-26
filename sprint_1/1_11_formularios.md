@@ -181,7 +181,6 @@ Otra peculiaridad de los campos del tipo `password` es que su contenido se borra
 ![El contenido de los campos del tipo contraseña se sustituye por asteriscos](assets/images/1-11/password.png)
 
 ***
-<a id="markdown-ejercicio-1" name="ejercicio-1"></a>
 ###### EJERCICIO 1
 
 Sin que sirva de precedente, vamos a realizar este ejercicio directamente en Codepen. Esto nos permitirá comprobar cuales son los datos que se envían en el formulario ya que cuando creamos un formulario en Codepen, al enviarlo, nos muestra una ventana con la información que le llegaría al servidor. Esto nos permite comprobar que funciona correctamente y ver qué es lo que llegaría en cada caso. Es importante que dejemos el atributo `action` de la etiqueta `<form>` vacío y que el método sea del tipo `post`.
@@ -224,7 +223,7 @@ El atributo required sirve para establecer que un campo es obligatorio y debe se
 <!-- Campo obligatorio -->
 <input type="text" id="firstName" name="firstName" required>
 
-<!-- Ca,po no obligatorio -->
+<!-- Campo no obligatorio -->
 <input type="text" id="firstName" name="firstName">
 ```
 
@@ -253,7 +252,6 @@ El atributo `disabled` sirve para desactivar un campo de un formulario.
 ```
 
 ***
-<a id="markdown-ejercicio-2" name="ejercicio-2"></a>
 ###### EJERCICIO 2
 
 Vamos a añadir un atributo `required` a todos los campos del ejercicio anterior excepto al apellido.
@@ -392,7 +390,6 @@ Por defecto las etiquetas ocultas se muestran con el atributo `display: none;` a
 ```
 
 ***
-<a id="markdown-ejercicio-3" name="ejercicio-3"></a>
 ###### EJERCICIO 3
 
 En este ejercicio vamos a crear el formulario de Facebook. Para crearlo utilizaremos lo que hemos visto hasta ahora de formularios. El formulario en sí será el que se muestra en la imagen inferior. El objetivo es crear sólo el HTML pero si te atreves puedes probar también a realizar un CSS similar.
@@ -454,7 +451,6 @@ Para crear un botón en nuestro formulario que realice esta acción de establece
 Este botón siempre borrará toda la información de los campos que haya dentro de la etiqueta `<form>` que lo contenga.
 
 ***
-<a id="markdown-ejercicio-4" name="ejercicio-4"></a>
 ###### EJERCICIO 4
 
 En el formulario de facebook, añadir un botón para borrar la información.
@@ -465,7 +461,7 @@ En el formulario de facebook, añadir un botón para borrar la información.
 
 Los estilos de los formularios varían mucho entre navegadores pero todos ellos aplican múltiples estilos a estos. A algunos elementos de formularios no se les puede aplicar estilos, como a los `<option>`, es por eso que al final en muchas empresas los desarrolladores crean, utilizando otras etiquetas, sus propios campos customizados para adaptar los estilos a sus necesidades. Nosotros vamos a ceñirnos a estos pero en el futuro veremos cómo crear usando HTML, CSS y JavaScript un componente de formulario customizado.
 
-Una cosa que sí que debemos tener en cuenta es que en móvil por defecto se aplican una serie de estilos a nuestros botones e inputs que modifican bastante su estilo aplicando bordes redondeados y un fondo con degradado. Esto es un problema que viene de los comienzos de la "era mobile", cuando las webs no se adaptaban a dispositivos móviles y era difícil visualizarlas correctamente y se decidió aplicar un estilo por defecto a los campos y botones para que fuesen más intuitivos. Hoy en día los desarrolladores tienen en cuenta esto y, más que ser útil, termina siendo molesto pero tiene solución. Para que estos estilos no se apliquen a nuestros campos lo que debemos hacer es añadirles el atributo `appearance: none;` de la siguiente forma:
+Una cosa que sí que debemos tener en cuenta es que en móvil por defecto se aplican una serie de estilos a nuestros botones e inputs que modifican bastante su estilo aplicando bordes redondeados y un fondo con degradado. Esto es un problema que viene de los comienzos de la "era mobile", cuando las webs no se adaptaban a dispositivos móviles y era difícil visualizarlas correctamente. En ese momento se decidió aplicar un estilo por defecto a los campos y botones para que fuesen más intuitivos. Hoy en día los desarrolladores tienen en cuenta esto y, más que ser útil, termina siendo molesto pero tiene solución. Para que estos estilos no se apliquen a nuestros campos lo que debemos hacer es añadirles el atributo `appearance: none;` de la siguiente forma:
 
 ```css
 input {
@@ -479,7 +475,6 @@ input {
 > El prefijo `-webkit-` y `-moz-` es específico para aplicar esto a los navegadores Safari y Chrome y Mozilla Firefox respectivamente
 
 ***
-<a id="markdown-ejercicio-5" name="ejercicio-5"></a>
 ###### EJERCICIO 5
 
 Crea un formulario similar al de la imagen, que es el de registro de Gmail.
