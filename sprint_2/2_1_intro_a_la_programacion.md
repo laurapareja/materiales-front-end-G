@@ -480,8 +480,8 @@ sectionB.classList.add('hidden', 'otraClase', 'otraMas');
 Bien ya sabemos cómo añadir clases, veamos cómo eliminar. Supongamos que hemos aplicado añadido la clase `.hidden` a la sección B y actualmente está oculta y ahora queremos que se muestre de nuevo y, además, se oculte la sección A. Esto lo podemos hacer de la siguiente manera:
 
 ```js
-var sectionA = document.querySelector('.section-a');
-var sectionB = document.querySelector('.section-b');
+const sectionA = document.querySelector('.section-a');
+const sectionB = document.querySelector('.section-b');
 
 sectionA.classList.add('hidden');
 sectionB.classList.remove('hidden');
