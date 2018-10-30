@@ -1,7 +1,7 @@
 [codepen-string-interpolation]: https://codepen.io/adalab/pen/wpPZvN?editors=0010
 # Introducción a la programación 2
 
-<!-- TOC depthFrom:4 depthTo:4 -->
+<!-- TOC depthFrom:4 depthTo:4 insertAnchor:true -->
 
 - [EJERCICIO 1](#ejercicio-1)
 - [EJERCICIO 2](#ejercicio-2)
@@ -271,7 +271,7 @@ La interpolación de cadenas nos facilita insertar variables y operaciones dentr
 const name = 'Ada';
 const surname = 'Lovelace';
 
-console.log(`My name is ${name} ${surname}.`):
+console.log(`My name is ${name} ${surname}.`);
 // 'My name is Ada Lovelace.'
 ```
 
