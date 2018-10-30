@@ -1,6 +1,6 @@
 # Posicionamiento
 
-<!-- TOC depthFrom:4 depthTo:4 -->
+<!-- TOC depthFrom:4 depthTo:4 insertAnchor:false updateOnSave:true -->
 
 - [EJERCICIO 1](#ejercicio-1)
 - [EJERCICIO 2](#ejercicio-2)
@@ -56,7 +56,6 @@ Los navegadores web aplican por defecto un valor `display` a todos los elementos
 
 * * *
 
-<a id="markdown-ejercicio-1" name="ejercicio-1"></a>
 #### EJERCICIO 1
 
 **Listas horizontales**
@@ -102,7 +101,6 @@ La posición Z de cada capa representa el orden de apilamiento. Podemos modifica
 
 * * *
 
-<a id="markdown-ejercicio-2" name="ejercicio-2"></a>
 #### EJERCICIO 2
 
 **Desplazando divs relativamente**
@@ -117,7 +115,6 @@ c) El div 3 deberá desplazarse 180 píxeles a la derecha y 240 píxeles hacia a
 
 * * *
 
-<a id="markdown-ejercicio-3" name="ejercicio-3"></a>
 #### EJERCICIO 3
 
 **Vente conmigo**
@@ -167,7 +164,6 @@ Permite rotar el elemento:
 
 * * *
 
-<a id="markdown-ejercicio-4" name="ejercicio-4"></a>
 #### EJERCICIO 4
 
 **Transformers**
@@ -184,7 +180,6 @@ Permite rotar el elemento:
 
 * * *
 
-<a id="markdown-ejercicio-5" name="ejercicio-5"></a>
 #### EJERCICIO 5
 
 **Cajas sobre cajas**
@@ -205,7 +200,6 @@ Para esto usad `box-sizing: border-box;`.
 
 * * *
 
-<a id="markdown-ejercicio-6" name="ejercicio-6"></a>
 #### EJERCICIO 6
 
 **Aviso de cookies**
@@ -217,7 +211,6 @@ Vamos a definir un documento HTML con varios `div`s que contengan suficiente tex
 Usando posicionamiento fixed, tenemos que fijar este `div` en la parte inferior de la página de modo que se visualize siempre, aún cuando hagamos scroll.
 
 
-<a id="markdown-ejercicio-7" name="ejercicio-7"></a>
 #### EJERCICIO 7
 
 **Ese texto necesita aire**
@@ -226,7 +219,6 @@ Crea un texto que ocupe el 86% de la pantalla y esté centrado dentro del body. 
 
 * * *
 
-<a id="markdown-ejercicio-8" name="ejercicio-8"></a>
 #### EJERCICIO 8
 
 **Dame PDFs**
@@ -237,7 +229,6 @@ Hacer un enlace de descarga de un archivo (por ejemplo PDF) con una etiqueta que
 
 * * *
 
-<a id="markdown-ejercicio-9" name="ejercicio-9"></a>
 #### EJERCICIO 9
 
 **Esto es un artículo**
@@ -256,7 +247,6 @@ Las dimensiones de esta composición serían las siguientes:
 
 * * *
 
-<a id="markdown-ejercicio-10" name="ejercicio-10"></a>
 #### EJERCICIO 10
 
 **Tecnologías web**
@@ -273,7 +263,6 @@ La web que vamos a crear consta de las siguientes características:
 
 * * *
 
-<a id="markdown-ejercicio-11" name="ejercicio-11"></a>
 #### EJERCICIO 11
 
 **Una web sencilla**
@@ -289,7 +278,6 @@ Vamos a crear una web sencilla, con las siguientes características:
 
 * * *
 
-<a id="markdown-ejercicio-12" name="ejercicio-12"></a>
 #### EJERCICIO 12
 
 **Con buenos modales**

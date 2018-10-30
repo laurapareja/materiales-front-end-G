@@ -1,6 +1,6 @@
 # Flexbox
 
-<!-- TOC depthFrom:4 depthTo:4 -->
+<!-- TOC depthFrom:4 depthTo:4 insertAnchor:false updateOnSave:true -->
 
 - [EJERCICIO 1](#ejercicio-1)
 - [EJERCICIO 2](#ejercicio-2)
@@ -84,7 +84,6 @@ Básicamente lo podemos/querremos usar en cualquier estructura que se distribuya
 
 * * *
 
-<a id="markdown-ejercicio-1" name="ejercicio-1"></a>
 #### EJERCICIO 1
 
 **FLEX y FLEX DIRECTION**
@@ -97,7 +96,6 @@ Básicamente lo podemos/querremos usar en cualquier estructura que se distribuya
 
 * * *
 
-<a id="markdown-ejercicio-2" name="ejercicio-2"></a>
 #### EJERCICIO 2
 
 **FLEX WRAP**
@@ -108,7 +106,6 @@ Teniendo una lista de 10 a 15 imágenes de 200x100 px, hacer un bloque flexbox d
 
 * * *
 
-<a id="markdown-ejercicio-3" name="ejercicio-3"></a>
 #### EJERCICIO 3
 
 **JUSTIFY CONTENT y ALIGN ITEMS**
@@ -128,7 +125,6 @@ Teniendo una lista de 10 a 15 imágenes de 200x100 px, hacer un bloque flexbox d
 
 * * *
 
-<a id="markdown-ejercicio-4" name="ejercicio-4"></a>
 #### EJERCICIO 4
 
 **ORDER**
@@ -141,7 +137,6 @@ Teniendo una lista de 10 a 15 imágenes de 200x100 px, hacer un bloque flexbox d
 
 * * *
 
-<a id="markdown-ejercicio-5" name="ejercicio-5"></a>
 #### EJERCICIO 5 
 
 **FLEX/GROW/SHRINK/BASIS**
@@ -156,7 +151,6 @@ Si hubiese mucho contenido el footer debe colocarse tras el main, de forma natur
 
 * * *
 
-<a id="markdown-ejercicio-6" name="ejercicio-6"></a>
 #### EJERCICIO 6
 
 ![Ejemplo](assets/images/1-4/ejercicio-6.png)
@@ -169,7 +163,6 @@ Convertir la imagen anterior a código usando HTML y CSS y lo que habéis aprend
 
 * * *
 
-<a id="markdown-ejercicio-7" name="ejercicio-7"></a>
 #### EJERCICIO 7
 
 ![Ejemplo](assets/images/1-4/ejercicio-7.png)
@@ -186,7 +179,6 @@ Si tenéis cualquier duda, preguntad.
 
 * * *
 
-<a id="markdown-ejercicio-8" name="ejercicio-8"></a>
 #### EJERCICIO 8
 
 Crear una página con un texto simple centrado que ocupe el 100% de la pantalla hasta un máximo de 600 píxeles. Este texto deberá tener un título, un autor y una fecha de creación organizado de la siguiente forma.
@@ -208,7 +200,6 @@ Es importante utilizar flexbox para los elementos del header de la página y el 
 ## BONUS
 
 * * *
-<a id="markdown-ejercicio-9-bonus" name="ejercicio-9-bonus"></a>
 #### EJERCICIO 9 BONUS
 
 En el siguiente [codepen](https://codepen.io/adalab/pen/BmQaQa) variad las dimensiones en vw y vh para:
