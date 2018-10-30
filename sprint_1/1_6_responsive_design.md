@@ -199,7 +199,7 @@ Veremos que el div `.box` ocupará el ancho disponible y tendrá 100px de alto, 
 	background: red;
 	height: 100px;
 }
-@media all and (min-width:500px) {
+@media all and (min-width:550px) {
 	.box {
 		background: blue;
 	}

@@ -477,7 +477,7 @@ y al `<aside>` con clase `.links` le aplicamos una regla que ponga el texto rojo
 
 **Herencia para todas**
 
-Partiendo del [ejercicio 2](#ejercicio-2) vamos ha hacer uso de la herencia, y utilizando un solo selector de css vamos ha hacer que:
+Partiendo del [ejercicio 2](#ejercicio-2) vamos a hacer uso de la herencia, y utilizando un solo selector de css vamos a hacer que:
 
 - el tamaño de fuente de la página sea de `18px`
 - el tipo de fuente sea `Tahoma`
