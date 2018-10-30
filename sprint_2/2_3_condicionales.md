@@ -45,9 +45,9 @@ Los condicionales se usan para realizar o no un código en función de una condi
 
 Los booleanos son tipos de datos de JavaScript que guardan información del tipo verdadero o falso. Solo pueden tener los valores `true` o `false`. Por ejemplo:
 ```js
-var filled = false; // Este booleano es falso
+const filled = false; // Este booleano es falso
 
-var solved = true; // Este booleano es verdadero
+const solved = true; // Este booleano es verdadero
 ```
 
 ## Truthy y Falsy
@@ -129,7 +129,7 @@ const nameIsFilled = !emptyNameField; // false
 Cuando aplicamos una negación a un valor `truthy` o `falsy`, JavaScript primero lo convierte a booleano y después nos devuelve el valor contrario, esto es muy útil por ejemplo para saber si una variable está definida, o si tiene un string que no está vacío (que no es `''` o `""`). 
 
 ```js
-let nameField; // undefined (falsy)
+const nameField; // undefined (falsy)
 const emptyNameField = !nameField; // true
 const nameIsFilled = !emptyNameField; // false
 ```
@@ -137,7 +137,7 @@ const nameIsFilled = !emptyNameField; // false
 Podemos realizar la misma operación con un atajo
 
 ```js
-let nameField = ''; // '' (falsy)
+const nameField = ''; // '' (falsy)
 const nameIsFilled = !!nameField; // false
 ```
 
@@ -159,7 +159,7 @@ Cuando `!!nameField` devuelve `false`, la respuesta es NO, `nameField` tiene un 
 
 Uso --> `expr1 && expr2`
 
-El operador `&&` (_AND_) devuelve la primera expresión si está es `falsy`, de lo contrario devuelve la segunda expresión.
+El operador `&&` (_AND_) devuelve la primera expresión si esta es `falsy`, de lo contrario devuelve la segunda expresión.
 
 Cuando trabajamos con booleanos devuelve verdadero **SOLO** si ambas condiciones son verdaderas. Por ejemplo:
 
@@ -197,8 +197,8 @@ El operador `||` (_OR_) devuelve la primera expresión si esta es `truthy`, de l
 Cuando trabajamos con booleanos devuelve verdadero si **AL MENOS** una condición se cumple. Por ejemplo:
 
 ```js
-var name = 'María';
-var age = 35;
+const name = 'María';
+const age = 35;
 
 (name === 'María' || age >= 30); // true
 (name === 'Marta' || age >= 30); // true
@@ -370,7 +370,7 @@ Vamos a ver un método nuevo de`classList` que muy útil cuando trabajamos con c
 Veamos el caso que estábamos comentando, tenemos un elemento que puede o no tener la clase `.hidden`. Vamos a comprobar si la tiene y en caso de ser así se la quitaremos y en caso de no tenerla se la añadiremos. Esto huele a `if` ¿verdad? :). Veamos el código:
 
 ```js
-var activableSection = document.querySelector('.activable-section');
+const activableSection = document.querySelector('.activable-section');
 
 // Si contiene la clase hidden
 if (activableSection.classList.contains('hidden')) {
