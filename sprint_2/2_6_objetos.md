@@ -183,7 +183,6 @@ Los métodos son funciones asociadas a la propiedad de un objeto. Estas funcione
 const adalaber = {};
 adalaber.name = 'María';
 adalaber.speak = (phrase) => `Yo digo: ${phrase}`;
-}
 
 // Muestra en la consola 'Yo digo: Hola'
 console.log(adalaber.speak('Hola'));
