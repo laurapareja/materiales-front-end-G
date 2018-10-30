@@ -1,6 +1,6 @@
 # Publicando nuestra web
 
-<!-- TOC depthFrom:4 depthTo:4 updateOnSave:true -->
+<!-- TOC depthFrom:4 depthTo:4 insertAnchor:false updateOnSave:true -->
 
 - [EJERCICIO 1](#ejercicio-1)
 - [EJERCICIO 2](#ejercicio-2)
@@ -209,7 +209,6 @@ y sí, `$ nautilus ..` nos abrirá nuestra carpeta madre en el explorador de arc
 > **NOTA**: igual que con `nautilus` podemos abrir el explorador de archivos en una ruta, también podemos abrir programas como VSCode en una ruta. Por ejemplo, con `code .` abrimos una ventana de Code en la carpeta actual
 
 * * *
-<a id="markdown-ejercicio-1" name="ejercicio-1"></a>
 #### EJERCICIO 1
 
 Ir a nuestra carpeta de documentos y crear la siguiente estructura de carpetas y archivos (vacíos):
@@ -225,7 +224,6 @@ nombre
 - Mover los dos archivos a la carpeta principal, que sería **nombre**
 
 * * *
-<a id="markdown-ejercicio-2" name="ejercicio-2"></a>
 #### EJERCICIO 2
 
 Desde la terminal, vamos a crear un nuevo proyecto en nuestra carpeta de proyectos que se llame `rutas-relativas`, con las carpetas `images` y `styles`. Y los archivos `index.html` (en la raíz del proyecto), `style.css` (en la carpeta `styles`) y `imagen-de-prueba.jpg` (en la carpeta `images`, la podéis descargar desde [este enlace](assets/images/1-7/imagen-de-prueba.jpg)).
@@ -351,7 +349,6 @@ $ git commit -m "Fix typo in article title"
 ```
 
 * * *
-<a id="markdown-ejercicio-3" name="ejercicio-3"></a>
 #### EJERCICIO 3
 
 Vamos a crear nuestro primer proyecto con git, al que llamaremos `testing-git`. Dentro de él, crearemos un archivo HTML con un título HEAD en el que ponga "Testing Git" y un `h1` con el mismo texto. Además, crearemos un archivo para los estilos (`main.css`) dónde añadiremos un estilo para que la familia de texto que se use en la web sea `sans-serif`. Organizaremos el proyecto siguiendo la estructura de siempre:
@@ -375,7 +372,6 @@ $ git commit -m "Initial commit"
 ```
 
 * * *
-<a id="markdown-ejercicio-4" name="ejercicio-4"></a>
 #### EJERCICIO 4
 
 Modificar el archivo `index.html` para que en el título de la página ponga "My first Git project" y en el texto de la cabecera aparezca una sonrisa `:)`. Añadir los cambios y hacer un commit para guardarlos.
@@ -383,7 +379,6 @@ Modificar el archivo `index.html` para que en el título de la página ponga "My
 **Nota:** El mensaje del commit deberá explicar de forma clara los cambios que hemos realizado
 
 * * *
-<a id="markdown-ejercicio-5" name="ejercicio-5"></a>
 #### EJERCICIO 5
 
 Vamos a realizar un tercer cambio dónde añadiremos un archivo `README.md` en la raíz de nuestro proyecto. Este archivo se utiliza para poner información acerca de nuestro código y, por defecto, la web GitHub lo muestra en la página principal de nuestro proyecto. Dentro de ese archivo escribiremos el siguiente texto:
@@ -403,7 +398,6 @@ Como hemos explicado anteriormente, GitHub es una plataforma de desarrollo colab
 
 * * *
 
-<a id="markdown-ejercicio-6" name="ejercicio-6"></a>
 #### EJERCICIO 6
 
 Pon una foto de perfil en tu cuenta de GitHub.
@@ -461,7 +455,6 @@ En el video que mostramos a continuación se hace un pequeño tour alrededor de 
 - [Curso Git - Empezando con GitHub](https://www.youtube.com/watch?v=Qn186NyDqOk)
 
 * * *
-<a id="markdown-ejercicio-7" name="ejercicio-7"></a>
 #### EJERCICIO 7
 
 Vamos a:
@@ -480,7 +473,6 @@ Como hemos comentado previamente, GitHub ofrece un servicio llamado [GitHub Page
 Un hosting es un servicio de almacenamiento de datos para poder tener tu web en un servidor y que esté disponible en internet y esto es lo que ofrece exactamente GitHub Pages.
 
 * * *
-<a id="markdown-ejercicio-8" name="ejercicio-8"></a>
 #### EJERCICIO 8
 
 Desde la página de nuestro proyecto `testing-git` en GitHub, activar GitHub Pages.
@@ -494,7 +486,6 @@ GitHub Classroom es un "módulo" de GitHub que permite automatizar el control de
 Classroom permite asignar repositorios vacíos o con un código inicial.
 
 * * *
-<a id="markdown-ejercicio-9" name="ejercicio-9"></a>
 #### EJERCICIO 9
 
 Haz clic en el siguiente enlace [https://classroom.github.com/a/cdZUSdeT](https://classroom.github.com/a/cdZUSdeT) para crear tu primer repositorio a través de GitHub Classroom, y luego:
