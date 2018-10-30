@@ -384,7 +384,7 @@ Modificar el archivo `index.html` para que en el título de la página ponga "My
 Vamos a realizar un tercer cambio dónde añadiremos un archivo `README.md` en la raíz de nuestro proyecto. Este archivo se utiliza para poner información acerca de nuestro código y, por defecto, la web GitHub lo muestra en la página principal de nuestro proyecto. Dentro de ese archivo escribiremos el siguiente texto:
 
 ```markdown
-# My first Git project
+## My first Git project
 
 Dummy project to learn Git basics
 ```
