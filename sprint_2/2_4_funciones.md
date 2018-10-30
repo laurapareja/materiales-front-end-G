@@ -1,13 +1,12 @@
 # Funciones
 
-<!-- TOC depthFrom:4 depthTo:4 insertAnchor:false updateOnSave:true -->
+<!-- TOC depthFrom:4 depthTo:4 insertAnchor:true updateOnSave:true -->
 
 - [EJERCICIO 1](#ejercicio-1)
 - [EJERCICIO 2](#ejercicio-2)
 - [EJERCICIO 3](#ejercicio-3)
 - [EJERCICIO 4](#ejercicio-4)
 - [EJERCICIO 5](#ejercicio-5)
-- [EJERCICIO BONUS 1](#ejercicio-bonus-1)
 
 <!-- /TOC -->
 
@@ -38,17 +37,17 @@ Ahora, las funciones serían como estas cafeteras modernas, a las que dependiend
 Un ejemplo de esto sería:
 
 ```javascript
-function makeMeCoffe( coffeName ) {
-  return `Aquí tiene su ${coffeName}, que lo disfrute`;
+function makeMeCoffee( coffeeName ) {
+  return `Aquí tiene su ${coffeeName}, que lo disfrute`;
 }
 ```
 
 De manera que podemos llamar varias veces a la función y obtener "cafés" diferentes:
 ```javascript
-makeMeCoffe( 'Café hipster con cuerpo de minotauro y esencia de madera y oro' );
+makeMeCoffee( 'Café hipster con cuerpo de minotauro y esencia de madera y oro' );
 // devuelve "Aquí tiene su Café hipster con cuerpo de minotauro y esencia de madera y oro, que lo disfrute"
 
-makeMeCoffe( 'Café con coco, nata y un toque de menta' );
+makeMeCoffee( 'Café con coco, nata y un toque de menta' );
 // devuelve "Aquí tiene su Café con coco, nata y un toque de menta, que lo disfrute"
 
 ```
@@ -125,6 +124,7 @@ Por defecto, si en una función no indicamos un valor de retorno usando `return`
 Cuando ejecutamos una instrucción `return` dentro de una función, termina la ejecución de la función. Todo el código que se fuese a ejecutar después de ese `return` será ignorado, como si no existiese. Por tanto, debemos evitar escribir líneas de código después de un `return` y normalmente será la útlima línea de código de una función.
 
 * * *
+<a id="markdown-ejercicio-1" name="ejercicio-1"></a>
 #### EJERCICIO 1
 
 **Función multiplicación**
@@ -132,6 +132,7 @@ Cuando ejecutamos una instrucción `return` dentro de una función, termina la e
 Crea una función que reciba como argumento dos valores y devuelva como valor de retorno la multiplicación de ambos. Haz tres pruebas con distintos números para comprobar que funciona correctamente y muestra el resultado en la consola usando `console.log()`.
 
 * * *
+<a id="markdown-ejercicio-2" name="ejercicio-2"></a>
 #### EJERCICIO 2
 
 **Función media**
@@ -140,6 +141,7 @@ Crea una función que reciba 4 parámetros, cada uno con un número, y devuelva 
 
 * * *
 
+<a id="markdown-ejercicio-3" name="ejercicio-3"></a>
 #### EJERCICIO 3
 
 **Ticket con IVA**
@@ -300,6 +302,7 @@ console.log( printWaitingTime(4) );
 // devuelve "Please, wait 4 minutes"
 ```
 
+<a id="markdown-ejercicio-4" name="ejercicio-4"></a>
 #### EJERCICIO 4
 
 **Calculador de modelo de caja**
@@ -312,6 +315,7 @@ Para probar que funciona, ejecuta la función recogiendo el resultado en una var
 
 * * *
 
+<a id="markdown-ejercicio-5" name="ejercicio-5"></a>
 #### EJERCICIO 5
 
 **Arrow functions everywhere**
