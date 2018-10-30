@@ -1,11 +1,13 @@
 # Animaciones CSS
 
-<!-- TOC START min:4 max:4 link:true update:true -->
-- [EJERCICIO 1:](#ejercicio-1)
-- [EJERCICIO 2:](#ejercicio-2)
-- [EJERCICIO 3:](#ejercicio-3)
+<!-- TOC depthFrom:4 depthTo:4 -->
 
-<!-- TOC END -->
+- [EJERCICIO 1](#ejercicio-1)
+- [EJERCICIO 2](#ejercicio-2)
+- [EJERCICIO 3](#ejercicio-3)
+- [EJERCICIO 4](#ejercicio-4)
+
+<!-- /TOC -->
 
 ## Introducción
 CSS es un lenguaje de estilo y con él decimos cómo tiene que verse nuestro HTML. Hasta ahora hemos visto algunas de las cosas que podemos hacer con estilos e incluso como aplicarlas cuando se cumplen ciertas condiciones gracias a las mediaqueries. Todavía nos falta el aspecto más vistoso que le da más vida al apartado gráfico: transiciones y animaciones.
@@ -55,10 +57,11 @@ a {
 ```
 
 * * *
-#### EJERCICIO 1:
+<a id="markdown-ejercicio-1" name="ejercicio-1"></a>
+#### EJERCICIO 1
 
 Dado este [botón](https://codepen.io/adalab/pen/XVXGVN?editors=1100):
-- Añade transiciones para que el coloreado y el sombreado no sean tan bruscos
+- Añade transiciones para que el coloreado y el sombreado no sean tan bruscos en hover y click ;)
 - Añade transiciones para modificar alguna propiedad (tamaño, redondeado, color de fuente...)
 * * *
 Con este tipo de efectos podemos limar pequeños detalles o resolver interacciones más complejas, sólo cambiando clases.
@@ -66,9 +69,24 @@ Con este tipo de efectos podemos limar pequeños detalles o resolver interaccion
 En este [Codepen](https://codepen.io/adalab/pen/goPZep) usamos javascript para que al hacer click en el botón "Menú" se aplique una clase al elemento `.page`, que se elimina al hacer click en la X de "Cerrar".
 
 * * *
-#### EJERCICIO 2:
 
-¿Cómo os veis para hacer un botón central que al hacer click haga que "popup" entre despacito desde abajo de la ventana del navegador y se coloque en el centro?
+<a id="markdown-ejercicio-2" name="ejercicio-2"></a>
+#### EJERCICIO 2
+
+Vamos a ver cómo funcionan las transiciones cuando hay muchos elementos:
+En [este codepen](https://codepen.io/adalab/pen/qJGGoe) hemos preparado un dashboard básico y tendréis que aplicar unas transiciones para suavizar los efectos que se modifican al hacer `hover`:
+- Color de fondo (.5s)
+- Sombra (1s)
+
+¿Qué pasa si muevo el ratón sobre varias cards a la vez?
+
+![Dashboard](assets/images/1-13/dashboard.png)
+
+* * *
+<a id="markdown-ejercicio-3" name="ejercicio-3"></a>
+#### EJERCICIO 3
+
+¿Cómo os veis para hacer una página que al pasar el ratón sobre ella haga que "popup" entre despacito desde abajo de la ventana del navegador y se coloque en el centro?
 
 ![Ejemplo](assets/images/1-13/popup-transition.png)
 * * *
@@ -131,7 +149,9 @@ Tenéis la documentación completa de las sub propiedades de `animation` en la M
 > Animar es un trabajo en sí mismo y aunque, de entrada, nadie nos va a pedir que seamos animadoras profesionales está bien conocer las posibilidades que nos da CSS para tener un repertorio más amplio de opciones a la hora de desarrollar una web. Otra cosa es que nos guste y CSS es suficientemente potente para hacer locuras.
 
 * * *
-#### EJERCICIO 3:  
+<a id="markdown-ejercicio-4" name="ejercicio-4"></a>
+#### EJERCICIO 4
+  
 Vamos a hacer algo más del día a día: partiendo de un contenedor que ocupe el 100% de la pantalla (en alto y ancho) con una imagen de fondo y un título centrado...
 Tendremos que hacer que el título tenga una animación que lo haga entrar suavemente desde la parte superior del navegador y quedarse en el centro de su contenedor.
 
