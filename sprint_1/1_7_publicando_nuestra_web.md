@@ -490,6 +490,7 @@ Classroom permite asignar repositorios vacíos o con un código inicial.
 #### EJERCICIO 9
 
 Haz clic en el siguiente enlace [https://classroom.github.com/a/cdZUSdeT](https://classroom.github.com/a/cdZUSdeT) para crear tu primer repositorio a través de GitHub Classroom, y luego:
+
 1. Clónalo en tu equipo
 2. Crea un archivo `README.md`
 3. Dentro, escribe tu nombre precedido de un `#`: `# PEPA HERRERA`
