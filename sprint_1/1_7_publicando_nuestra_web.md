@@ -458,6 +458,7 @@ En el video que mostramos a continuación se hace un pequeño tour alrededor de 
 #### EJERCICIO 7
 
 Vamos a:
+
 1. Crear un proyecto vacío en GitHub. Le pondremos como nombre `testing-git`.
 1. Añadimos el repositorio que acabamos de crear como repositorio remoto en nuestro proyecto usando `git remote` como se muestra en el video.
 1. Hacer _push_ para mandar la info del proyecto al repositorio remoto y, de esta forma, almacenar los datos del proyecto en GitHub. Comprobar tras hacerlo que, al abrir la página del proyecto en GitHub, se muestran los cambios que hemos realizado en nuestro ordenador.
