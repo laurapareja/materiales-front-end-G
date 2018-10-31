@@ -38,8 +38,8 @@ En el desarrollo de esta aplicación web usaremos las siguientes tecnologías:
 - Uso avanzado de formularios HTML
 - Maquetación usando CSS avanzado, como flex y grid
 - Uso de mediaqueries para que el diseño sea adaptable al dispositivo usando la estrategia mobile first
-- Gestión de eventos (al hacer click, pasa x, etc.)
-- Acceso a datos en Internet mediante peticiones AJAX
+- Gestión de eventos en el navegador (al hacer click, pasa x, etc.)
+- Acceso y envío de datos en Internet mediante peticiones al servidor
 - Almacenamiento en local usando LocalStorage
 - Uso de git para el control de versiones del proyecto
 - Publicación del resultado en Internet usando GitHub pages
@@ -71,10 +71,10 @@ Respecto a la interacción con la web:
 - Las modificaciones que hacemos en el formulario (diseño y contenido), aparecen automáticamente en la vista previa de la tarjeta
 - Las 3 partes del proceso de creación serán elementos colapsables, que al hacer clic en el título se mostrará/ocultará solo mostrando una sección de al vez
 - Las opciones de habilidades las obtenemos al hacer una petición a un [servicio en esta URL](https://raw.githubusercontent.com/Adalab/dorcas-s2-proyecto-data/master/skills.json)
-- Se podrán seleccionar varias habilidades (hasta un máximo de 3), pudiendo añadir más con un botón, y borrando las existentes con otro
+- Se podrán seleccionar varias habilidades (hasta un máximo de 3)
 - Toda la información del formulario debe almacenarse en LocalStorage (almacenamiento local del navegador), de forma que al recargar la página siga disponible y podamos borrarla con un botón de *Reset*. Para esto, debemos definir una estructura de datos compleja (con arrays y objetos) que es lo que guardaremos en el navegador
 - Para compartir en Twitter seguiremos 2 pasos
-  1. Al hacer clic en el botón de "Enviar" enviaremos el formulario (submit) a un API (la URL del API os la daremos más adelante) que devolverá la URL de una web con la tarjeta de visita con la información rellena
+  1. Al hacer clic en el botón de "Enviar" enviaremos el formulario (submit) a un API que devolverá la URL de una web con la tarjeta de visita con la información rellena
   2. Mostraremos esta URL para que el usuario verifique si la tarjeta está bien definida y un botón de "Compartir" que enlazará a Twitter donde habrá un tweet con texto predefinido que incluye la URL de la tarjeta
 
 ## Diseño
@@ -109,16 +109,16 @@ En esta sección os proponemos una serie de hitos como sugerencia para dividir l
 
 ### Primero. Arranque del proyecto (kickoff)
 
-- 2 sesiones de trabajo.
-- Organizar el trabajo a realizar usando Trello, e ir asignando tareas y responsables.
+- 2 sesiones de trabajo
+- Organizar el trabajo a realizar usando Trello, e ir asignando tareas y responsables
 - Crear la infraestructura necesaria: repositorio en GitHub con acceso para todos los miembros del equipo.
-- Establecer la estructura del contenido de la web y buscar referencias.
+- Establecer la estructura del contenido de la web y buscar referencias
 
 
 ### Segundo. Primera versión simple de la web
 
-- 1 semana de trabajo
-- Desarrollar una primera versión básica de la web, con la maquetación de la estructura básica (para web y móvil) que incluye el formulario con los colapsables y la vista previa
+- 3 sesiones de trabajo
+- Desarrollar una primera versión básica de la web, con la maquetación de la estructura básica (para desktop y móvil) que incluye el formulario con los colapsables y la vista previa
 - Funcionalidad básica: al modificar un campo del formulario, se actualiza la vista previa
 
 > **NOTA**:  
@@ -126,16 +126,17 @@ Para considerar terminado este hito y todos los siguientes debéis tener publica
 
 ### Tercero. Formulario interactivo
 permite
-- 1 semana de trabajo
+- 5 sesiones de trabajo
 - Formulario interactivo, que al modificar cualquier campo de datos o el diseño se actualice la vista previa
-- En el campo de habilidades pueden añadirse hasta 3 datos, y se añaden y eliminan de forma dinámica. De momento escribiremos las opciones del campo a manita en el HTML (datos 'harcodeados'), más adelante las sustituiremos por aquellas que nos devuelva el servidor.
+- En el campo de habilidades pueden añadirse hasta 3 datos (primero escribiremos las opciones a manita en el HTML)
+- Sustituimos las opciones de habilidades por aquellas que nos devuelve el servidor
 
 ### Cuarto. Manejo de datos
 
-- 1 semana de trabajo
+- 5 sesiones de trabajo
 - Hacer que el contenido se almacene en LocalStorage del navegador
-- Hacer que los datos del combo de habilidades se descarguen desde un servidor
-- Añadir la funcionalidad de compartir en Twitter
+- Añadir la funcionalidad de compartir en Twitter, enviando primero los datos al servidor para obtener la URL para compartir
+- Realizar validaciones de datos del formulario: campos obligatorios, que el número de habilidades seleccionadas sean máximo 3, etc.
 
 ### Quinto. Presentación final
 
