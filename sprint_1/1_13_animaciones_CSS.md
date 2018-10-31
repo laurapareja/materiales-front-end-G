@@ -1,6 +1,6 @@
 # Animaciones CSS
 
-<!-- TOC depthFrom:4 depthTo:4 -->
+<!-- TOC depthFrom:4 depthTo:4 insertAnchor:true -->
 
 - [EJERCICIO 1](#ejercicio-1)
 - [EJERCICIO 2](#ejercicio-2)
@@ -18,14 +18,14 @@ Las transiciones son "transiciones" entre dos estados de un elemento, bueno, ent
 ![Hover básico](assets/images/1-13/hover.png)
 
 Bien, con las transiciones podemos controlar el paso entre dos valores de una propiedad CSS.  
-> [Ejemplo en Codepen](https://codepen.io/adalab/pen/baEmxK)
+> [&rtrif; Ejemplo en Codepen](https://codepen.io/adalab/pen/baEmxK)
 
 o entre varios valores de varias propiedades:
 
-> [Ejemplo de varias propiedades en Codepen](https://codepen.io/adalab/pen/dJGwPg)
+> [&rtrif; Ejemplo de varias propiedades en Codepen](https://codepen.io/adalab/pen/dJGwPg)
 
 ### ¿Cómo se construye una transición?
-Las transiciones de especifican con la propiedad `transition` que es un atajo de:
+Las transiciones de especifican con la propiedad `transition` que es un atajo (shortcut) de:
 * `transition-property`: la propiedad sobre la que queremos aplicar la transición
 * `transition-duration`: la duración de la transición en segundos o milisegundos
 * `transition-timing-function`: una función de tiempo para determinar cómo aplicar la transición, hay unas [palabras clave para algunas funciones](https://developer.mozilla.org/en-US/docs/Web/CSS/single-transition-timing-function#Keywords_for_common_timing_functions)
@@ -60,21 +60,22 @@ a {
 <a id="markdown-ejercicio-1" name="ejercicio-1"></a>
 #### EJERCICIO 1
 
-Dado este [botón](https://codepen.io/adalab/pen/XVXGVN?editors=1100):
+Dado [este botón](https://codepen.io/adalab/pen/XVXGVN?editors=1100):
 - Añade transiciones para que el coloreado y el sombreado no sean tan bruscos en hover y click ;)
 - Añade transiciones para modificar alguna propiedad (tamaño, redondeado, color de fuente...)
 * * *
 Con este tipo de efectos podemos limar pequeños detalles o resolver interacciones más complejas, sólo cambiando clases.
 
-En este [Codepen](https://codepen.io/adalab/pen/goPZep) usamos javascript para que al hacer click en el botón "Menú" se aplique una clase al elemento `.page`, que se elimina al hacer click en la X de "Cerrar".
+En [este Codepen](https://codepen.io/adalab/pen/goPZep) usamos javascript para que al hacer click en el botón "Menú" se aplique una clase al elemento `.page`, que se elimina al hacer click en la X de "Cerrar".
 
 * * *
 
 <a id="markdown-ejercicio-2" name="ejercicio-2"></a>
 #### EJERCICIO 2
 
-Vamos a ver cómo funcionan las transiciones cuando hay muchos elementos:
-En [este codepen](https://codepen.io/adalab/pen/qJGGoe) hemos preparado un dashboard básico y tendréis que aplicar unas transiciones para suavizar los efectos que se modifican al hacer `hover`:
+Vamos a ver cómo funcionan las transiciones cuando hay muchos elementos.
+
+En [este Codepen](https://codepen.io/adalab/pen/qJGGoe) hemos preparado un dashboard básico y tendréis que aplicar unas transiciones para suavizar los efectos que se modifican al hacer `hover`:
 - Color de fondo (.5s)
 - Sombra (1s)
 
@@ -108,7 +109,7 @@ Primero definimos unos keyframes con la regla `@keyframes` y dentro definiremos 
 	}
 }
 ```
-y luego se la aplicamos a nuestro selector con el atajo 'animation' o con sus subpropiedades:
+y luego se la aplicamos a nuestro selector con el atajo `animation` o con sus subpropiedades:
 - `animation-delay`: determina el tiempo  hasta que empieza la animación
 - `animation-direction`: especifica si la animación mantendrá la dirección, la alternará en cada repetición, o si la resetea al punto inicial
 - `animation-duration`: marca el tiempo que durará la animación
@@ -129,7 +130,7 @@ Por ahora vamos a ver como aplicar nuestra animación sencilla:
 }
 ```
 
-[El resultado en Codepen](https://codepen.io/adalab/pen/qpbwwG)
+[&rtrif; El resultado en Codepen](https://codepen.io/adalab/pen/qpbwwG)
 
 Vamos a probar [una menos... powerpoint](https://codepen.io/adalab/pen/jYWjVj)
 
@@ -138,7 +139,7 @@ Tenéis la documentación completa de las sub propiedades de `animation` en la M
 ### Ejemplos de animaciones (más o menos curradas)
 - [Pure CSS Animated Checkbox](https://codepen.io/north-of-rapture/pen/rWqega?limit=all&page=2&q=css+animation)
 - [CSS Animated Hamburger Icon](https://codepen.io/elijahmanor/pen/Igpoe?q=css+animation&limit=all&type=type-pens)
-- [CSS Animate](https://codepen.io/mdd/pen/xEuyG?q=css+animation&limit=all&type=type-pens) (Y ha escrito un [post sobre cómo se hace](https://webdesign.tutsplus.com/tutorials/a-beginners-introduction-to-css-animation--cms-21068))
+- [CSS Animate](https://codepen.io/mdd/pen/xEuyG?q=css+animation&limit=all&type=type-pens) (y ha escrito un [post sobre cómo se hace](https://webdesign.tutsplus.com/tutorials/a-beginners-introduction-to-css-animation--cms-21068))
 - [CSS Animation Material Design](https://codepen.io/Michiel/pen/EBtga?limit=all&page=3&q=css+animation)
 - [CSS Animation with steps()](https://codepen.io/Guilh/pen/yldGp?limit=all&page=4&q=css+animation)
 - [Mr JeellyFish pure CSS animation](https://codepen.io/FabioG/pen/QjLreK?q=css+animation&limit=all&type=type-pens)
