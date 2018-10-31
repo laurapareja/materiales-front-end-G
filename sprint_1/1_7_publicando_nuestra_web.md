@@ -211,7 +211,7 @@ y sí, `$ nautilus ..` nos abrirá nuestra carpeta madre en el explorador de arc
 * * *
 #### EJERCICIO 1
 
-Ir a nuestra carpeta de documentos y crear la siguiente estructura de carpetas y archivos (vacíos):
+Desde la terminal, id a vuestra carpeta de documentos y cread la siguiente estructura de carpetas y archivos (vacíos):
 ```txt
 nombre
     datos
