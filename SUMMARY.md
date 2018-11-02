@@ -11,14 +11,14 @@
 * [1.5 Posicionamiento](sprint_1/1_5_posicionamiento.md)
 * [1.6 Diseño responsive](sprint_1/1_6_responsive_design.md)
 * [1.7 Publicando nuestra web](sprint_1/1_7_publicando_nuestra_web.md)
-
-<!--
 * [1.8 Control de versiones](sprint_1/1_8_control_de_versiones.md)
 * [1.9 Automatización de tareas](sprint_1/1_9_automatizacion_de_tareas.md)
 * [1.10 SASS](sprint_1/1_10_sass.md)
 * [1.11 Formularios](sprint_1/1_11_formularios.md)
 * [1.12 Sistema de Grid](sprint_1/1_12_sistema_de_grid.md)
 * [1.13 Animaciones CSS](sprint_1/1_13_animaciones_CSS.md)
+
+<!--
 * [1.14 Sistemas de diseño](sprint_1/1_14_sistemas_de_diseno.md)
 -->
 
