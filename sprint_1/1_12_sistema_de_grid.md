@@ -1,16 +1,19 @@
 # Sistema de grid
 
-<!-- TOC START min:4 max:4 link:true update:true -->
-- [EJERCICIO 1:](#ejercicio-1)
-- [EJERCICIO 2:](#ejercicio-2)
-- [EJERCICIO 3:](#ejercicio-3)
-- [EJERCICIO 4:](#ejercicio-4)
-- [EJERCICIO 5:](#ejercicio-5)
-- [EJERCICIO 6:](#ejercicio-6)
-- [EJERCICIO 7:](#ejercicio-7)
-- [EJERCICIO 8:](#ejercicio-8)
-- [EJERCICIO 9:](#ejercicio-9)
-<!-- TOC END -->
+<!-- TOC depthFrom:4 depthTo:4 insertAnchor:true updateOnSave:true withLinks:true -->
+
+- [EJERCICIO 1](#ejercicio-1)
+- [EJERCICIO 2](#ejercicio-2)
+- [EJERCICIO 3](#ejercicio-3)
+- [EJERCICIO 4](#ejercicio-4)
+- [EJERCICIO 5](#ejercicio-5)
+- [EJERCICIO 6](#ejercicio-6)
+- [EJERCICIO 7](#ejercicio-7)
+- [EJERCICIO 8](#ejercicio-8)
+- [EJERCICIO 9](#ejercicio-9)
+- [EJERCICIO 10](#ejercicio-10)
+
+<!-- /TOC -->
 
 ## Introducción
 
@@ -72,7 +75,8 @@ Para las filas funciona exactamente igual:
 También podemos indicar el tamaño del espaciado de elementos en el contenedor con la propiedad `grid-gap`. Podemos indicar 2 valores si queremos espaciado distinto entre filas y columnas.
 
 * * *
-#### EJERCICIO 1:
+<a id="markdown-ejercicio-1" name="ejercicio-1"></a>
+#### EJERCICIO 1
 
 Partiendo del ejemplo de codepen, conseguid una composición como la de la imagen.
 
@@ -89,12 +93,14 @@ A la hora de posicionar los elementos en el grid, también podemos usar la palab
 ```
 
 * * *
-#### EJERCICIO 2:
+<a id="markdown-ejercicio-2" name="ejercicio-2"></a>
+#### EJERCICIO 2
 
 Vamos a modificar el ejercicio anterior para usar `span` en vez de punto inicial y final.
 
 * * *
-#### EJERCICIO 3:
+<a id="markdown-ejercicio-3" name="ejercicio-3"></a>
+#### EJERCICIO 3
 
 Vamos a crear un grid de 12 columnas y 3 filas, la primera y la última ocupan el 20% del alto del viewport. Crearemos la composición de la imagen.
 
@@ -109,11 +115,11 @@ Como en muchas otras ocasiones el navegador va a intentar solucionarlo, en este 
 
 Pero tenemos una forma de decirle a nuestro grid cómo comportarse cuando haya más elementos de la cuenta, gracias a `grid-auto-rows` y `grid-auto-columns`, funcionan como `grid-template-rows/columns` pero solo se aplica en el caso de que haya más elementos de la cuenta.
 
-- [Ejemplo en codepen de `grid-auto-rows`](https://codepen.io/adalab/pen/YLEYxg)
+[&rtrif; Ejemplo en codepen de `grid-auto-rows`](https://codepen.io/adalab/pen/YLEYxg)
 
 Y lo podemos usar junto con `grid-auto-flow`, que fuerza una única dirección (columna o fila) para nuestra rejilla :)
 
-- [Ejemplo en Codepen de `grid-auto-columns` con `grid-auto-flow`](https://codepen.io/adalab/pen/zjPpma)
+[&rtrif; Ejemplo en Codepen de `grid-auto-columns` con `grid-auto-flow`](https://codepen.io/adalab/pen/zjPpma)
 
 Con estas propiedades ya podemos empezar a controlar un poco el comportamiento de nuestra rellija. Para completar un poco esta introducción a grid faltaría ver la posibilidad de definir áreas con nombres más cercanos al humano:
 
@@ -152,35 +158,37 @@ Si ahora quisiésemos que un elemento en concreto se colocase en una de estas á
 ```
 
 * * *
-#### EJERCICIO 4:
+<a id="markdown-ejercicio-4" name="ejercicio-4"></a>
+#### EJERCICIO 4
 ¿Seremos capaces de [colocar cada elemento en su sitio](https://codepen.io/adalab/pen/zjPjER)? ;)
 * * *
 
-El soporte el navegadores de CSS grid aún no es completo pero a día de hoy (mayo de 2018) es de [más del 80% según caniuse](https://caniuse.com/#feat=css-grid). Para los casos en que aún no podamos usarlo, tenemos como alternativa usar flexbox o el sistema de grid que nos ofrece Bootstrap.
+El soporte el navegadores de CSS grid aún no es completo pero a día de hoy (octubre de 2018) es de [casi del 85% según caniuse](https://caniuse.com/#feat=css-grid). Para los casos en que aún no podamos usarlo, tenemos como alternativa usar flexbox o el sistema de grid que nos ofrece Bootstrap.
 
 ## Bootstrap
 
-Boostrap es una librería de grid y componentes gráficos que creó uno de los desarrolladores de Twitter. La librería ofrece un montón de funcionalidad, desde elementos de UI (botones, dropdowns, menús, etc.), hasta componentes interactivos con JavaScript como un carrusel de fotografías.
+Boostrap es una librería de grid (solo columnas) y componentes gráficos que creó uno de los desarrolladores de Twitter. La librería ofrece un montón de funcionalidades, desde elementos de UI (botones, dropdowns, menús, etc.), hasta componentes interactivos con JavaScript como un carrusel de fotografías.
 
-A diferencia de otros temas, con Bootstrap os vamos a contar solo una pequeña introducción y vais a tener que enfrentaros con algo muy común como es usar una herramienta nueva y tener que revisar la documentación ;)
+A diferencia de otros temas, con Bootstrap os vamos a contar solo una pequeña introducción y vais a tener que enfrentaros con algo muy común como es usar una herramienta nueva y tener que revisar **la documentación ;)**
 
-Para poder usarlo en nuestro proyecto, tendremos varias opciones:
-* Descargar el código fuente (CSS, JS), y enlazarlo desde nuestro HTML
-* Enlazar el código alojado en un servidor de Internet, lo que suele llamarse CDN
+Para poder usarlo en nuestro proyecto, enlazaremos los CSS alojado en un servidor de Internet, lo que suele llamarse CDN (como hemos hecho con las fuentes de Google Fonts o con FontAwesome)
 
-Usando esta segunda opción, simplemente pegamos el snippet que [Bootstrap nos da en su página de inicio](https://getbootstrap.com/). Si sólo queremos usar el CSS usamos esto en nuestro `head`:
+> Alternativamente podríamos descargar el código CSS y usarlo en nuesto proyecto.
 
-```hmtl
+Por ahora vamos a usar el `<link>` que [Bootstrap nos da en su página de inicio](https://getbootstrap.com/). Si sólo queremos usar el CSS usamos esto en nuestro `head`:
+
+```html
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 
 ```
 
-Entre todas las funcionalidades que nos ofrece Bootstrap, cuenta con un sistema de grid sencillo de 12 columnas.
+Por ahora vamos a ver que Bootstrap cuenta con un sistema de grid sencillo de 12 columnas.
 
 > **Nota:**  
 > Lo llamamos sistema de grid pero solo dispone las columnas.
 
-Siempre partimos de la base de 12 columnas para distribuir el espacio disponible en la web. En el CSS que hemos importado, tenemos una serie de clases que nos van a permitir construir nuestra web con un grid.
+Siempre partimos de la base de 12 columnas para distribuir el espacio disponible en la web. En el CSS que hemos importado, tenemos una serie de clases que nos van a permitir construir nuestra web con un grid responsive de acuerdo a unos breakpoints que bootstrap tiene definidos.
+
 
 Como base usaremos un elemento `container` que contiene nuestro grid (como el wrapper de CSS grid) o `container-fluid` si queremos que ocupe todo el ancho y sea fluido. Luego usaremos un elemento con la clase `row` para indicar que es una nueva fila, y dentro podremos los elementos correspondientes. En cada fila podremos indicar el número de columnas a usar con las clases `col-num`, por ejemplo, `col-1`, `col-6`, `col-12`. Veamos un ejemplo.
 
@@ -203,15 +211,17 @@ Como base usaremos un elemento `container` que contiene nuestro grid (como el wr
 ```
 
 * * *
-#### EJERCICIO 5:
+<a id="markdown-ejercicio-5" name="ejercicio-5"></a>
+#### EJERCICIO 5
 
 Vamos a crear la composición del **ejercicio 3** con Bootstrap para ver las diferencias de uso respecto a CSS grid.
 
 * * *
 
-#### EJERCICIO 6:
+<a id="markdown-ejercicio-6" name="ejercicio-6"></a>
+#### EJERCICIO 6
 
-COn bootstrap, vamos a crear la típica distribución de columnas que se usa para mostrar cómo funciona un grid:
+Con Bootstrap, vamos a crear la típica distribución de columnas que se usa para mostrar cómo funciona un grid:
 
 ![Distribución de columnas](assets/images/1-12/grid-1.png)
 
@@ -222,14 +232,22 @@ Con suficientes divs (las cajas verdes) vamos a mostrar las columnas y opciones 
 4. 2 columnas
 5. 1 columnas
 
-* * *
-#### EJERCICIO 7:
-Ahora iremos a un paso más y, usando las 12 columnas de nuevo con bootstrap, intentaremos replicar el siguiente hexagrama:
+* * * 
 
-![Distribución de columnas](assets/images/1-12/grid-2.png)
+<a id="markdown-ejercicio-7" name="ejercicio-7"></a>
+#### EJERCICIO 7
+Responde a las siguiente preguntas:
+
+1. ¿Cuáles son los breakpoints que nos ofrece Bootstrap? 
+1. ¿Qué clase tendrá un elemento que ocupe 2 columnas en el breakpoint Small?
+1. ¿Qué clase tendrá un elemento que ocupe 6 columnas en el breakpoint Large?
+1. ¿Qué clase tendrá un elemento que ocupe 11 columnas en el breakpoint Extra Small?
+
 
 * * *
-#### EJERCICIO 8:
+
+<a id="markdown-ejercicio-8" name="ejercicio-8"></a>
+#### EJERCICIO 8
 
 Vamos a acercarnos a algo más real y probemos a usar los breakpoints de Bootstrap:
 ![Distribución de columnas](assets/images/1-12/grid-3.png)
@@ -239,7 +257,17 @@ Los breakpoints que usaremos son Extra small, Medium y Large ;)
 > las imágenes de los gaticos están en [este zip](assets/images/1-12/cats.zip)
 
 * * *
-#### EJERCICIO 9:
+
+<a id="markdown-ejercicio-9" name="ejercicio-9"></a>
+#### EJERCICIO 9
+Ahora iremos a un paso más y, vamos a crear una página simple que se ajuste a las siguiente guías:
+
+![Distribución de columnas](assets/images/1-12/bootstrap-site.png)
+
+
+* * *
+<a id="markdown-ejercicio-10" name="ejercicio-10"></a>
+#### EJERCICIO 10
 
 Vamos a crear el layout para páginas con las que habitualmente trabajaremos, usando CSS grid y/o el sistema de grid de Bootstrap. Para ello, os proponemos replicar [el experimento de Jo Franchetti de este artículo en Medium](https://medium.com/samsung-internet-dev/common-responsive-layouts-with-css-grid-and-some-without-245a862f48df), donde replica layouts típicos usando CSS grid. Realizad al menos el primer ejemplo *"Large Image followed by articles"* usando Sass y el sistema de grid que elijáis.
 

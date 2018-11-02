@@ -2,7 +2,7 @@
 
 En este ejercicio vamos a maquetar una versión simplificada de la Home de la página web de Adalab.
 
-Antes de empezar, tenéis que crear un nuevo repositorio en GitHub desde GitHub Classroom usando [este enlace](https://classroom.github.com/a/UOiK3sGe). Una vez creado, lo clonaremos en nuestro ordenador y en la carpeta creada empezaremos a trabajar en el ejercicio.
+Antes de empezar, tenéis que crear un nuevo repositorio en GitHub desde GitHub Classroom usando [este enlace](https://classroom.github.com/a/8tacO4vm). Una vez creado, lo clonaremos en nuestro ordenador y en la carpeta creada empezaremos a trabajar en el ejercicio.
 
 * * *
 
@@ -24,7 +24,7 @@ También os damos información de estilo:
   - `#4a4a4a` (Texto del menú)
   - `#3CDBC0` (color de fondo de la página)
   - `#FFFFFFF` (Color de texto de "Creando diversidad digital")
-- El logo de adalab podéis [descargarlo de este enlace](https://github.com/Adalab/materiales-front-end-D/blob/master/assets/images/logo_adalab_155x61.png)
+- El logo de Adalab podéis [descargarlo de este enlace](https://github.com/Adalab/materiales-front-end-D/blob/master/assets/images/logo_adalab_155x61.png)
 
 La web realizada tiene que ser **responsive**, es decir, debe funcionar correctamente para los siguientes tamaños:
 

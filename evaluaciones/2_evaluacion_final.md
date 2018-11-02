@@ -27,7 +27,7 @@ Algunas de las series que obtenemos en los resultados no tienen cartel. En ese c
 
 ### 3. Favoritos
 
-Una vez aparecen los resultados de búsqueda, podremos indicar cuáles son nuestros favoritos. Para ello, al hacer clic sobre un resultado cambia el color de fondo y se pone un borde alrededor de la tarjeta.
+Una vez aparecen los resultados de búsqueda, podremos indicar cuáles son nuestros favoritos. Para ello, al hacer clic sobre un resultado cambia el color de fondo y se pone un borde alrededor de la tarjeta. También vamos a almacenar la información de favoritos en el localStorage. De esta forma si como resultado de búsqueda aparece una serie que hemos marcado como favorita, aparecerá directamente como favorita en el listado.
 
 ### 4. BONUS: Afinar la maquetación
 
@@ -64,5 +64,6 @@ Vamos a listar los criterios de evaluación de este ejercicio. Si superas más d
 #### AJAX y APIs
 - Crear peticiones con fetch y promesas
 - Gestionar información en formato JSON 
+- Usar el localStorage para guardar información en el navegador
 
 **¡Al turrón!**

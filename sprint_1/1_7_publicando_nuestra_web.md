@@ -285,12 +285,12 @@ Por defecto, cada vez que intentamos conectarnos con GitHub, el servidor de GitH
 
 Para poder almacenar la contraseña de GitHub en Ubuntu, realizaremos los siguientes comandos uno por uno:
 
-1. `sudo apt-get install libgnome-keyring-dev`
+1. `sudo apt-get install libsecret-1-0 libsecret-1-dev`
 Nos solicitará una contraseña, aquí debemos introducir la contraseña de nuestro ordenador, no la de GitHub.
-1. `cd /usr/share/doc/git/contrib/credential/gnome-keyring`
+1. `cd /usr/share/doc/git/contrib/credential/libsecret`
 1. `sudo make`
 1. `cd -`
-1. `git config --global credential.helper /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring`
+1. `git config --global credential.helper /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret`
 
 Al hacer esto, la próxima vez que introduzcamos nuestra contraseña de GitHub, esta se almacenará de forma segura en nuestro ordenador y no será necesario volver a introducirla de nuevo.
 
