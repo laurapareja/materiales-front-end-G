@@ -1,11 +1,14 @@
 # Sistemas de diseño
 
-    - [EJERCICIO 1: COLORES](#ejercicio-1-colores)
-    - [EJERCICIO 2: TIPOGRAFÍA](#ejercicio-2-tipografa)
-    - [EJERCICIO BONUS 1: Mixin para el tamaño de los botones](#ejercicio-bonus-1-mixin-para-el-tamao-de-los-botones)
-    - [EJERCICIO 3: Nuestro componente input](#ejercicio-3-nuestro-componente-input)
-    - [(BONUS) EJERCICIO 4: UN SISTEMA COMPLETO](#bonus-ejercicio-4-un-sistema-completo)
+<!-- TOC depthFrom:4 depthTo:4 insertAnchor:false -->
 
+- [EJERCICIO 1](#ejercicio-1)
+- [EJERCICIO 2](#ejercicio-2)
+- [EJERCICIO 3](#ejercicio-3)
+- [EJERCICIO BONUS 1](#ejercicio-bonus-1)
+- [EJERCICIO BONUS 2](#ejercicio-bonus-2)
+
+<!-- /TOC -->
 
 ## Introducción
 
@@ -185,9 +188,11 @@ Que generaría este código CSS:
 
 * * *
 
-#### EJERCICIO 1: COLORES
+#### EJERCICIO 1
 
-Vamos a descargarnos el [ejercicio de evaluación del primer sprint de Adalab de la promoción Clarke](https://github.com/Adalab/clarke-s1-evaluacion).
+**Colores**
+
+Vamos a descargarnos el [ejercicio de evaluación intermedia del primer sprint de Adalab de nuestra promoción](https://github.com/Adalab/e-s1-evaluacion-intermedia-nasivuela).
 
 A continuación, vamos a reestructurar el archivo siguiendo la estructura que hemos aprendido para organizar nuestros archivos de Sass. Por ejemplo, crearemos un archivo en la ruta `scss/layout/_header.scss` donde meteremos los estilos de la cabecera.
 
@@ -198,7 +203,6 @@ Para finalizar, vamos a cambiar los colores que tenemos por los de esta página:
 >NOTA: Si hemos realizado bien el código, cada uno de estos cambios de color lo podremos llevar a cabo cambiando sólo una línea
 
 * * *
-
 
 ### Tipografía
 
@@ -328,7 +332,9 @@ Creando estos estilos podremos reutilizarlos simplemente para dar estilo a nuest
 
 * * *
 
-#### EJERCICIO 2: TIPOGRAFÍA
+#### EJERCICIO 2
+
+**Tipografía**
 
 Vamos a crear un nuevo proyecto en el que tendremos solo tres archivos `scss`:
 
@@ -345,7 +351,6 @@ Además, asignaremos a `body` los estilos que consideremos necesarios pero usand
 * * *
 
 ### Componentes
-
 
 En este apartado veremos en clase como trabajar con componentes. Cuando hablamos de componentes en la web, hacemos referencia a la unidad mínima con la que se forman las distintas vistas de nuestra web. Por ejemplo, elementos como un botón o un campo d e texto (input) serán componentes de nuestra página.
 
@@ -559,9 +564,112 @@ Y con estos estilos para cambiar el tamaño de los botones terminamos esta secci
 
 - No hay una única solución para nombrar y organizar los estilos. Nosotros os planteamos más abajo algunas soluciones de algunos sistemas pero en muchas ocasiones, como sucede muchas veces en programación, no existe la forma única sino que dependerá de cada caso. Por tanto, no te preocupes si no estás segura de cómo nombrar o que clases utilizar para tus componentes, puedes preguntarnos en clase o hacerlo como mejor consideres y nosotros siempre te daremos consejo en los ejercicios y el feedback.
 
-#### BONUS: Mixins para nuestros estilos
+#### EJERCICIO 3
 
-Bien hasta ahora mencionabamos los mixins en la sección de bonus de Sass pero muchas veces sucede que no tenemos ejemplos claros donde veamos para qué sirven estos exactamente. Pues para el caso que hemos visto de aplicar distintos estilos a los botones pueden ser de gran ayuda y nos permitirán crear un código más sencillo y fácil de mantener.
+**Nuestro componente input**
+
+En este ejercicio vamos a crear los estilos para un componente input. Este componente, como se puede ver en la imagen tendrá distintos estados (activo, hover, etc.) y distintos formatos (con y sin icono a la derecha)
+
+![Inputs](assets/images/1-14/inputs.png)
+
+A continuación generaremos un HTML en el que probaremos que funciona cada uno de los estados y cada una de las variantes. La idea es que usando un HTML como el siguiente los estilos se apliquen correctamente:
+
+```html
+<div class="input-w-icon">
+  <img src="images/user.png" alt="Usuario">
+  <input type="text" name="username">
+</div>
+
+<input class="input" type="text" name="lastname" >
+<input class="input" type="number" name="creditcard" disabled>
+```
+
+
+>NOTA: No es necesario que los estilos sean idénticos a los que aparecen en la foto, pero si deben de estar definidos los estilos para cada uno de los estados y para cada una de las variaciones
+
+* * *
+
+## Ejemplos de sistemas de diseño
+
+Para finalizar y para que sirva de inspiración hemos recogido algunos de los sistemas que consideramos que están mejor resueltos. Estos sistemas de diseño están enfocados a web y por tanto en la documentación muestran los nombres de las clases que utilizan y las distancias en píxeles y sirven para inspirarse y ver cómo trabajan en empresas que destacan en el sector tecnológico.
+
+- [Purple de Heroku](https://purple.herokuapp.com/)
+- [Sistema de Mailchimp](http://ux.mailchimp.com/patterns)
+- [Nachos: Sistema de diseño de Trello](https://design.trello.com/)
+
+## BONUS: Clases de ayuda
+
+A la hora de generar el CSS para crear un sistema es muy común crear clases que sirvan de ayuda para aplicar estilos en determinados casos. Estas clases suelen ir definidas en un archivo llamado `_helpers.scss` o `_utilities.scss` y suele ser el último archivo que se importa desde nuestro `main.scss` para que así las clases que definamos en éste archivo prevalezcan frente al resto por la regla de la cascada de CSS.
+
+Un ejemplo del código que podríamos encontrar en este archivo sería el siguiente:
+
+```scss
+.block { display: block; }
+.inline { display: inline; }
+.inline-block { display: inline-block; }
+
+// Esta clase se suele aplicar mucho a un elemento padre que contiene otro en
+// posición absoluta y se utiliza para que el elemento en posición absoluta se
+// coloque en función de la posición del padre con posición relativa.
+
+.relative { position: relative; }
+
+// Esta clase es la solemos usar con JavaScript para ocultar o mostrar un elemento
+// Algunas personas suelen poner el prefijo js- delante de las clases relacionadas
+// con JavaScript para identificarlas mejor (e.g. .js-hidden)
+.hidden { display: none; }
+.hide-sm { @media (max-width: 1023px) { display: none; } }
+.hide-lg { @media (min-width: 1024px) { display: none; } }
+
+.m-xs { margin: 16px; }
+.m-md { margin: 24px; }
+.m-lg { margin: 32px; }
+.m-xl { margin: 40px; }
+.m-xs { margin: 16px; }
+.m-md { margin: 24px; }
+.m-lg { margin: 32px; }
+.m-xl { margin: 40px; }
+
+.m-bottom-xs { margin-bottom: 16px; }
+.m-bottom-md { margin-bottom: 24px; }
+.m-bottom-lg { margin-bottom: 32px; }
+.m-bottom-xl { margin-bottom: 40px; }
+.m-top-xs { margin-top: 16px; }
+.m-top-md { margin-top: 24px; }
+.m-top-lg { margin-top: 32px; }
+.m-top-xl { margin-top: 40px; }
+
+.p-xs { padding: 16px; }
+.p-md { padding: 24px; }
+.p-lg { padding: 32px; }
+.p-xl { padding: 40px; }
+.p-xs { padding: 16px; }
+.p-md { padding: 24px; }
+.p-lg { padding: 32px; }
+.p-xl { padding: 40px; }
+
+.p-bottom-xs { padding-bottom: 16px; }
+.p-bottom-md { padding-bottom: 24px; }
+.p-bottom-lg { padding-bottom: 32px; }
+.p-bottom-xl { padding-bottom: 40px; }
+.p-top-xs { padding-top: 16px; }
+.p-top-md { padding-top: 24px; }
+.p-top-lg { padding-top: 32px; }
+.p-top-xl { padding-top: 40px; }
+```
+
+Luego a la hora de usarlo será algo tan simple como esto:
+
+```html
+<div class="hide-lg">
+  <p>Solo aparezco en pantallas pequeñas</p>
+</div>
+
+<p class="p-lg m-top-lg">Tengo mucho padding y un margen superior grande</p>
+```
+
+## BONUS: Mixins para nuestros estilos
+Bien hasta ahora mencionábamos los mixins en la sección de bonus de Sass pero muchas veces sucede que no tenemos ejemplos claros donde veamos para qué sirven estos exactamente. Pues para el caso que hemos visto de aplicar distintos estilos a los botones pueden ser de gran ayuda y nos permitirán crear un código más sencillo y fácil de mantener.
 
 Recuperando el código de Sass de nuestros botones esto era lo que teníamos:
 
@@ -655,7 +763,9 @@ Si quieres experimentar más y ver cómo convierte el código Sass a CSS, puedes
 
 * * *
 
-#### EJERCICIO BONUS 1: Mixin para el tamaño de los botones
+#### EJERCICIO BONUS 1
+
+**Mixin para el tamaño de los botones**
 
 Como hemos visto en el ejemplo, podemos crear un mixin para los distintos estilos de un botón. Como sugerencia de ejercicio y sólo si quieres, puedes probar a hacer un mixin para los tamaños de los botones. Puedes usar tanto CodePen como Sassmeister para realizarlo. El resultado debería ser idéntico y solo debería cambiar el código.
 
@@ -663,112 +773,9 @@ Puedes partir de este [CodePen](https://codepen.io/anon/pen/vRjLbK) cómo base
 
 * * *
 
-#### EJERCICIO 3: Nuestro componente input
+#### EJERCICIO BONUS 2
 
-En este ejercicio vamos a crear los estilos para un componente input. Este componente, como se puede ver en la imagen tendrá distintos estados (activo, hover, etc.) y distintos formatos (con y sin icono a la derecha)
-
-![Inputs](assets/images/1-14/inputs.png)
-
-A continuación generaremos un HTML en el que probaremos que funciona cada uno de los estados y cada una de las variantes. La idea es que usando un HTML como el siguiente los estilos se apliquen correctamente:
-
-```html
-<div class="input-w-icon">
-  <img src="images/user.png" alt="Usuario">
-  <input type="text" name="username">
-</div>
-
-<input class="input" type="text" name="lastname" >
-<input class="input" type="number" name="creditcard" disabled>
-```
-
-
->NOTA: No es necesario que los estilos sean idénticos a los que aparecen en la foto, pero si deben de estar definidos los estilos para cada uno de los estados y para cada una de las variaciones
-
-* * *
-
-### Clases de ayuda
-
-A la hora de generar el CSS para crear un sistema es muy común crear clases que sirvan de ayuda para aplicar estilos en determinados casos. Estas clases suelen ir definidas en un archivo llamado `_helpers.scss` o `_utilities.scss` y suele ser el último archivo que se importa desde nuestro `main.scss` para que así las clases que definamos en éste archivo prevalezcan frente al resto por la regla de la cascada de CSS.
-
-Un ejemplo del código que podríamos encontrar en este archivo sería el siguiente:
-
-```scss
-.block { display: block; }
-.inline { display: inline; }
-.inline-block { display: inline-block; }
-
-// Esta clase se suele aplicar mucho a un elemento padre que contiene otro en
-// posición absoluta y se utiliza para que el elemento en posición absoluta se
-// coloque en función de la posición del padre con posición relativa.
-
-.relative { position: relative; }
-
-// Esta clase es la solemos usar con JavaScript para ocultar o mostrar un elemento
-// Algunas personas suelen poner el prefijo js- delante de las clases relacionadas
-// con JavaScript para identificarlas mejor (e.g. .js-hidden)
-.hidden { display: none; }
-.hide-sm { @media (max-width: 1023px) { display: none; } }
-.hide-lg { @media (min-width: 1024px) { display: none; } }
-
-.m-xs { margin: 16px; }
-.m-md { margin: 24px; }
-.m-lg { margin: 32px; }
-.m-xl { margin: 40px; }
-.m-xs { margin: 16px; }
-.m-md { margin: 24px; }
-.m-lg { margin: 32px; }
-.m-xl { margin: 40px; }
-
-.m-bottom-xs { margin-bottom: 16px; }
-.m-bottom-md { margin-bottom: 24px; }
-.m-bottom-lg { margin-bottom: 32px; }
-.m-bottom-xl { margin-bottom: 40px; }
-.m-top-xs { margin-top: 16px; }
-.m-top-md { margin-top: 24px; }
-.m-top-lg { margin-top: 32px; }
-.m-top-xl { margin-top: 40px; }
-
-.p-xs { padding: 16px; }
-.p-md { padding: 24px; }
-.p-lg { padding: 32px; }
-.p-xl { padding: 40px; }
-.p-xs { padding: 16px; }
-.p-md { padding: 24px; }
-.p-lg { padding: 32px; }
-.p-xl { padding: 40px; }
-
-.p-bottom-xs { padding-bottom: 16px; }
-.p-bottom-md { padding-bottom: 24px; }
-.p-bottom-lg { padding-bottom: 32px; }
-.p-bottom-xl { padding-bottom: 40px; }
-.p-top-xs { padding-top: 16px; }
-.p-top-md { padding-top: 24px; }
-.p-top-lg { padding-top: 32px; }
-.p-top-xl { padding-top: 40px; }
-```
-
-Luego a la hora de usarlo será algo tan simple como esto:
-
-```html
-<div class="hide-lg">
-  <p>Solo aparezco en pantallas pequeñas</p>
-</div>
-
-<p class="p-lg m-top-lg">Tengo mucho padding y un margen superior grande</p>
-```
-
-
-## Ejemplos de sistemas de diseño
-
-Para finalizar y para que sirva de inspiración hemos recogido algunos de los sistemas que consideramos que están mejor resueltos. Estos sistemas de diseño están enfocados a web y por tanto en la documentación muestran los nombres de las clases que utilizan y las distancias en píxeles y sirven para inspirarse y ver cómo trabajan en empresas que destacan en el sector tecnológico.
-
-- [Purple de Heroku](https://purple.herokuapp.com/)
-- [Sistema de Mailchimp](http://ux.mailchimp.com/patterns)
-- [Nachos: Sistema de diseño de Trello](https://design.trello.com/)
-
-* * *
-
-#### (BONUS) EJERCICIO 4: UN SISTEMA COMPLETO
+**Un sistema completo**
 
 A partir de la siguiente imagen. Crea el HTML y los archivos de Sass necesario para replicar los estilos y generar un sistema a partir de lo visto. Utiliza variables para los tamaños de fuente, los colores, los radios de los botones, etc. por si se decide cambiar en el futuro. No importa si no es exacto el color o el radio del borde.
 
