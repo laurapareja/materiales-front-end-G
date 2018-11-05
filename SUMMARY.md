@@ -17,10 +17,7 @@
 * [1.11 Formularios](sprint_1/1_11_formularios.md)
 * [1.12 Sistema de Grid](sprint_1/1_12_sistema_de_grid.md)
 * [1.13 Animaciones CSS](sprint_1/1_13_animaciones_CSS.md)
-
-<!--
 * [1.14 Sistemas de diseño](sprint_1/1_14_sistemas_de_diseno.md)
--->
 
 <!--
 ## Sprint 2. Programando la web
