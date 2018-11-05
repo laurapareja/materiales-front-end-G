@@ -20,9 +20,7 @@
 
 ## Introducción
 
-AASDasf
-
-En esta sesión veremos dos recursos fundamentales para modificar la apariencia de nuestra web: visualización (o display) y posicionamiento. Ambos permiten modificar cómo se muestran los elementos de la página ya sea modificando su tamaño, su posición o ambos a la vez. Nasisklsdjlksdjf
+En esta sesión veremos dos recursos fundamentales para modificar la apariencia de nuestra web: visualización (o display) y posicionamiento. Ambos permiten modificar cómo se muestran los elementos de la página ya sea modificando su tamaño, su posición o ambos a la vez.
 
 ## ¿Para qué sirve lo que vamos a ver en esta sesión?
 
