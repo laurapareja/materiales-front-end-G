@@ -109,15 +109,17 @@ Para considerar terminado este hito y todos los siguientes debéis tener publica
 
 - 4 sesiones de trabajo
 - Hacer la web para el resto de tamaños de pantalla (tablet, desktop)
-- Realizar el formulario de contacto para todos los dispositivos
+- Integración con gulp para automatización de tareas:
+- Dividir HTML en partials
+- Pasar el CSS a Sass
+
 
 ### Cuarto. Versión final
 
 - 4 sesiones de trabajo
+- Realizar el formulario de contacto para todos los dispositivos
 - Aplicar las técnicas avanzadas aprendidas en la parte final del curso:
-  - Sass
   - Grid en la sección de "quiénes somos"
-  - Integración con gulp para automatización de tareas
   - Opcionalmente añadir animaciones y transiciones
 
 ### Quinto. Presentación final
