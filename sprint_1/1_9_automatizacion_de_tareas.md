@@ -1,6 +1,6 @@
 # Automatización de tareas
 
-<!-- TOC depthFrom:6 depthTo:6 -->
+<!-- TOC depthFrom:4 depthTo:4 -->
 
 - [EJERCICIO 1](#ejercicio-1)
 - [EJERCICIO 2](#ejercicio-2)
@@ -192,7 +192,7 @@ Ahora ejecutamos nuestra nueva tarea `gulp watch`. Una vez ejecutada, lo primero
 Prueba a modificar el fichero Sass y ver que el CSS se modifica automáticamente.
 
 * * *
-###### EJERCICIO 1
+#### EJERCICIO 1
 
 Ahora vamos a trabajar con un proyecto que ya tiene configurado Gulp. Primero tendremos que clonarlo en nuestro ordenador y en la carpeta ejecutar `npm install` para instalar las dependencias.
 
@@ -216,19 +216,19 @@ Tendremos tres carpetas (por defecto solo viene una en el kit):
 
 * * *
 
-###### EJERCICIO 2
+#### EJERCICIO 2
 
 ¿Quién sabe decir qué hace la tarea **styles**?
 
 * * *
 
-###### EJERCICIO 3
+#### EJERCICIO 3
 
 ¿Quién sabe decir qué hace la tarea **scripts**?
 
 * * *
 
-###### EJERCICIO 4
+#### EJERCICIO 4
 
 ¿Que diferencias hay entre la tarea **styles** y **styles-dist**?
 
@@ -257,7 +257,7 @@ La forma más cómoda es:
 
 * * *
 
-###### EJERCICIO 5
+#### EJERCICIO 5
 
 Seguiremos los pasos anteriores para crear un nuevo proyecto usando el kit de Adalab. Después, en esta misma carpeta meteremos un ejercicio de la sesión de responsive para probar que se lanza el navegador que se actualiza solo con los cambios que hacemos en el HTML o CSS. Comprobad que la carpeta donde debemos meter el código de nuestro proyecto es **_src**.
 
@@ -267,25 +267,25 @@ Para terminar, vamos a publicar la web usando GitHub Pages. Para eso usaremos la
 
 * * *
 
-### BONUS: Más plugins de Gulp
+## BONUS: Más plugins de Gulp
 
 Hasta ahora hemos usado plugins de Gulp para trabajar con Sass y CSS. Plugins son todas las pequeñas librerías que hemos ido instalando con `npm install` como `gulp-sass`. Pero existen plugins para otras muchas funcionalidades. Vamos a ver algunos.
 
-#### Plugins para JavaScript
+### Plugins para JavaScript
 
 También existen tareas de Gulp que nos permiten mejorar nuestro flujo de trabajo con JavaScript. Algo habitual es tener varios ficheros JavaScript en un proyecto, pero en producción siempre es mejor que el navegador cargue uno solo. Para eso existe una tarea para concatenar (`concat`) todos los ficheros JS en uno solo. También suele ser habitual minificar el código (eliminar espacios, cambiar nombres de variables a una letra, etc.) para que vaya más rápido.
 
 Podéis ver un ejemplo de cómo trabajar con esto en este repositorio que preparó un voluntario del curso: https://github.com/luisddm/Gulp-adalab
 
-##### Plugins de linting
+### Plugins de linting
 
 Un *linter* es un programa que detecta errores de uso y/o estilo en un código. Ahora mismo en el propio Code tenemos instalados varios linters que nos informan de errores en el código o en su estilo (llaves que no cierran, etc.). También podemos usar esos linters desde una tareas de Gulp, de forma que nos digan errores antes de, por ejemplo, subir un código a producción. Algunos ejemplos son [JSLint](http://www.jslint.com/) o [CSSLint](http://csslint.net/).
 
-##### Plugins para trabajar con imágenes
+### Plugins para trabajar con imágenes
 
 Existen plugins para optimizar imágenes, es decir, que pesen menos para nuestra web, por ejemplo, `gulp-imagemin`.
 
-##### Plugins para trabajar con ficheros
+### Plugins para trabajar con ficheros
 
 Plugins para copiar ficheros, por ejemplo, copiar las fuentes a nuestra carpeta con el proyecto para producción. O renombrarlos, por ejemplo, los ficheros minificados suelen llevar un `.min.` antes de su extensión. También borrar ficheros intermedios que ya no queremos.
 
@@ -294,8 +294,8 @@ Plugins para copiar ficheros, por ejemplo, copiar las fuentes a nuestra carpeta 
 - [Documentación oficial de Gulp](https://Gulpjs.com/)
 - [Gulp for beginners](https://css-tricks.com/Gulp-for-beginners/)
 
-### BONUS: Instalar node
-#### Instalar Node en Ubuntu
+## BONUS: Instalar node
+### Instalar Node en Ubuntu
 
 Para instalar la última versión estable de Node en Ubuntu, tenemos que ejecutar estas dos líneas de código en nuestra terminal:
 
@@ -304,7 +304,7 @@ curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
-#### Instalar Node en Mac
+### Instalar Node en Mac
 
 Para instalar Node en Mac ejecutaremos el siguiente código para comprobar si tenemos instalado [Homebrew](https://brew.sh/index_es.html), que es una herramienta muy útil que nos permite instalar software en nuestro ordenador de forma muy sencilla.
 
@@ -330,6 +330,6 @@ Por último, ahora que tenemos instalado Homebrew, instalar Node será tan senci
 brew install node@8
 ```
 
-#### Instalar Node en otro sistema operativo distinto de Ubuntu o Mac
+### Instalar Node en otro sistema operativo distinto de Ubuntu o Mac
 
 Para el resto de sistemas seguimos las [instrucciones de instalación en su web oficial](https://nodejs.org/en/).
