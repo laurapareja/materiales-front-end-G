@@ -77,9 +77,11 @@ body {
 ##### EJERCICIO 1
 
 En el siguiente [codepen](https://codepen.io/adalab/pen/aVrxYY) tenemos un ejemplo en css que vamos a reescribir a SCSS y modificar un poco.
+
 1. Lo primero es configurarlo para usar SCSS: en la rueda de CSS, desplegar las opciones y elegir SCSS como preprocesador
 2. Convertir a variables los valores de las líneas indicadas
 3. Hacer los siguientes cambios sólo tocando la variables:
+
 	1. Color del texto de `#414141` a `#010101`;
 	2. Tamaño de fuente de la página a `18px`
 	3. El margen de `.wrapper` a `0 60px`
@@ -88,7 +90,7 @@ En el siguiente [codepen](https://codepen.io/adalab/pen/aVrxYY) tenemos un ejemp
 	6. Fondo de `.main` a `cyan`
 ***
 
-**Cuándo hacemos variables y cuánto no?**  
+**¿Cuándo hacemos variables y cuándo no?**  
 Quizás el primer impulso es empezar a crear variables como si no hubiera mañana pero el truco está en ver qué valores reutilizamos (misma altura para diferentes elementos, algunos márgenes, colores) y empezar creando sólo esas.
 
 **Sobre los colores**
