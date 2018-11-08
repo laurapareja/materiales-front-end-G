@@ -1,7 +1,12 @@
 # Formularios
 
-<!-- TOC depthFrom:5 depthTo:6 updateOnSave:true withLinks:true -->
+<!-- TOC depthFrom:4 depthTo:4 updateOnSave:true -->
 
+- [EJERCICIO 1](#ejercicio-1)
+- [EJERCICIO 2](#ejercicio-2)
+- [EJERCICIO 3](#ejercicio-3)
+- [EJERCICIO 4](#ejercicio-4)
+- [EJERCICIO 5](#ejercicio-5)
 
 <!-- /TOC -->
 
