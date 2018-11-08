@@ -1,6 +1,6 @@
 # Sistema de grid
 
-<!-- TOC depthFrom:4 depthTo:4 insertAnchor:true updateOnSave:true withLinks:true -->
+<!-- TOC depthFrom:4 depthTo:4 updateOnSave:true withLinks:true -->
 
 - [EJERCICIO 1](#ejercicio-1)
 - [EJERCICIO 2](#ejercicio-2)
@@ -75,7 +75,6 @@ Para las filas funciona exactamente igual:
 También podemos indicar el tamaño del espaciado de elementos en el contenedor con la propiedad `grid-gap`. Podemos indicar 2 valores si queremos espaciado distinto entre filas y columnas.
 
 * * *
-<a id="markdown-ejercicio-1" name="ejercicio-1"></a>
 #### EJERCICIO 1
 
 Partiendo del ejemplo de codepen, conseguid una composición como la de la imagen.
@@ -93,13 +92,11 @@ A la hora de posicionar los elementos en el grid, también podemos usar la palab
 ```
 
 * * *
-<a id="markdown-ejercicio-2" name="ejercicio-2"></a>
 #### EJERCICIO 2
 
 Vamos a modificar el ejercicio anterior para usar `span` en vez de punto inicial y final.
 
 * * *
-<a id="markdown-ejercicio-3" name="ejercicio-3"></a>
 #### EJERCICIO 3
 
 Vamos a crear un grid de 12 columnas y 3 filas, la primera y la última ocupan el 20% del alto del viewport. Crearemos la composición de la imagen.
@@ -158,7 +155,6 @@ Si ahora quisiésemos que un elemento en concreto se colocase en una de estas á
 ```
 
 * * *
-<a id="markdown-ejercicio-4" name="ejercicio-4"></a>
 #### EJERCICIO 4
 ¿Seremos capaces de [colocar cada elemento en su sitio](https://codepen.io/adalab/pen/zjPjER)? ;)
 * * *
@@ -173,7 +169,7 @@ A diferencia de otros temas, con Bootstrap os vamos a contar solo una pequeña i
 
 Para poder usarlo en nuestro proyecto, enlazaremos los CSS alojado en un servidor de Internet, lo que suele llamarse CDN (como hemos hecho con las fuentes de Google Fonts o con FontAwesome)
 
-> Alternativamente podríamos descargar el código CSS y usarlo en nuesto proyecto.
+> Alternativamente podríamos descargar el código CSS y usarlo en nuestro proyecto.
 
 Por ahora vamos a usar el `<link>` que [Bootstrap nos da en su página de inicio](https://getbootstrap.com/). Si sólo queremos usar el CSS usamos esto en nuestro `head`:
 
@@ -211,14 +207,12 @@ Como base usaremos un elemento `container` que contiene nuestro grid (como el wr
 ```
 
 * * *
-<a id="markdown-ejercicio-5" name="ejercicio-5"></a>
 #### EJERCICIO 5
 
 Vamos a crear la composición del **ejercicio 3** con Bootstrap para ver las diferencias de uso respecto a CSS grid.
 
 * * *
 
-<a id="markdown-ejercicio-6" name="ejercicio-6"></a>
 #### EJERCICIO 6
 
 Con Bootstrap, vamos a crear la típica distribución de columnas que se usa para mostrar cómo funciona un grid:
@@ -234,7 +228,6 @@ Con suficientes divs (las cajas verdes) vamos a mostrar las columnas y opciones 
 
 * * * 
 
-<a id="markdown-ejercicio-7" name="ejercicio-7"></a>
 #### EJERCICIO 7
 Responde a las siguiente preguntas:
 
@@ -246,7 +239,6 @@ Responde a las siguiente preguntas:
 
 * * *
 
-<a id="markdown-ejercicio-8" name="ejercicio-8"></a>
 #### EJERCICIO 8
 
 Vamos a acercarnos a algo más real y probemos a usar los breakpoints de Bootstrap:
@@ -258,7 +250,6 @@ Los breakpoints que usaremos son Extra small, Medium y Large ;)
 
 * * *
 
-<a id="markdown-ejercicio-9" name="ejercicio-9"></a>
 #### EJERCICIO 9
 Ahora iremos a un paso más y, vamos a crear una página simple que se ajuste a las siguiente guías:
 
@@ -266,7 +257,6 @@ Ahora iremos a un paso más y, vamos a crear una página simple que se ajuste a 
 
 
 * * *
-<a id="markdown-ejercicio-10" name="ejercicio-10"></a>
 #### EJERCICIO 10
 
 Vamos a crear el layout para páginas con las que habitualmente trabajaremos, usando CSS grid y/o el sistema de grid de Bootstrap. Para ello, os proponemos replicar [el experimento de Jo Franchetti de este artículo en Medium](https://medium.com/samsung-internet-dev/common-responsive-layouts-with-css-grid-and-some-without-245a862f48df), donde replica layouts típicos usando CSS grid. Realizad al menos el primer ejemplo *"Large Image followed by articles"* usando Sass y el sistema de grid que elijáis.
