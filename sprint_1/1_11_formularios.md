@@ -1,6 +1,6 @@
 # Formularios
 
-<!-- TOC depthFrom:5 depthTo:6 updateOnSave:true withLinks:true -->
+<!-- TOC depthFrom:4 depthTo:4 updateOnSave:true -->
 
 - [EJERCICIO 1](#ejercicio-1)
 - [EJERCICIO 2](#ejercicio-2)
@@ -60,7 +60,7 @@ En HTML antes de escribir un campo de formulario, por norma general (aunque no e
 
 El atributo `method` sirve para especificar el método que utilizaremos para enviar nuestra información. No vamos a profundizar mucho en este tema pero es importante que sepamos que hay dos métodos distintos para enviar información a través de un formulario y esos métodos son POST y GET.
 
-Como norma general utilizaremos la el valor `post` para enviar datos sensibles (contraseñas, dni, cuentas bancarias, número de tarjeta, etc) y `get` para el resto de casos.
+Como norma general utilizaremos el valor `post` para enviar datos sensibles (contraseñas, dni, cuentas bancarias, número de tarjeta, etc) y `get` para el resto de casos.
 
 El atributo `action` se usa para indicar la dirección del servidor donde se envían los datos del formulario. Es, por tanto, el puente de comunicación de nuestro front-end con el back-end donde se reciben y manipulan los datos del usuario.
 
@@ -82,7 +82,7 @@ Junto con el atributo `type`, tenemos otro atributo especial llamado `name` que 
 
 ***
 
-Ya tenemos nuestro formulario con los dos campos necesarios para que funcione, pero nos falta lo más importante, poder enviar el formulario. Para esto vamos a usar también una etiqueta input pero en este caso va a ser del tipo `submit` (`type="submit"`). Si introducimos esta etiqueta en nuestro formulario se mostrará un botón que, al ser pulsado, enviará el formulario. Para establecer qué texto queremos que vaya dentro del botón, usaremos el atributo `value`. Otra cosa a destacar es que el botón tiene una serie de estilos CSS aplicados por defecto pero que podemos modificar añadiéndole unos nuevos que sobreescriban a los anteriores.
+Ya tenemos nuestro formulario con los dos campos necesarios para que funcione, pero nos falta lo más importante, poder enviar el formulario. Para esto vamos a usar también una etiqueta input pero en este caso va a ser del tipo `submit` (`type="submit"`). Si introducimos esta etiqueta en nuestro formulario se mostrará un botón que, al ser pulsado, enviará el formulario. Para establecer qué texto queremos que vaya dentro del botón, usaremos el atributo `value`. Otra cosa a destacar es que el botón tiene una serie de estilos CSS aplicados por defecto pero que podemos modificar añadiéndole unos nuevos que sobrescriban a los anteriores.
 
 ```html
 <form action="/signup" method="post">
@@ -181,7 +181,7 @@ Otra peculiaridad de los campos del tipo `password` es que su contenido se borra
 ![El contenido de los campos del tipo contraseña se sustituye por asteriscos](assets/images/1-11/password.png)
 
 ***
-###### EJERCICIO 1
+#### EJERCICIO 1
 
 Sin que sirva de precedente, vamos a realizar este ejercicio directamente en Codepen. Esto nos permitirá comprobar cuales son los datos que se envían en el formulario ya que cuando creamos un formulario en Codepen, al enviarlo, nos muestra una ventana con la información que le llegaría al servidor. Esto nos permite comprobar que funciona correctamente y ver qué es lo que llegaría en cada caso. Es importante que dejemos el atributo `action` de la etiqueta `<form>` vacío y que el método sea del tipo `post`.
 
@@ -212,7 +212,7 @@ Además de los atributos que hemos visto hasta ahora, existen otra serie de atri
 
 ### Required
 
-El atributo required sirve para establecer que un campo es obligatorio y debe ser rellenado antes de enviarse el formulario. Por defecto muchos navegadores antes de enviar un formulario comprueban que los campos con el atributo required están asignados antes de enviarlos y, en caso de no estarlo, muestran un mensaje de error informando al usuario de que estos campos son obligatorios. Para establecer un campo como obligatorio sólo debemos de añadirle el atributo `required`.
+El atributo `required` sirve para establecer que un campo es obligatorio y debe ser rellenado antes de enviarse el formulario. Por defecto muchos navegadores antes de enviar un formulario comprueban que los campos con el atributo `required` están asignados antes de enviarlos y, en caso de no estarlo, muestran un mensaje de error informando al usuario de que estos campos son obligatorios. Para establecer un campo como obligatorio sólo debemos de añadirle el atributo `required`.
 
 ![Error cuando un elemento es obligatorio y está vacío](assets/images/1-11/required-form.png)
 
@@ -252,7 +252,7 @@ El atributo `disabled` sirve para desactivar un campo de un formulario.
 ```
 
 ***
-###### EJERCICIO 2
+#### EJERCICIO 2
 
 Vamos a añadir un atributo `required` a todos los campos del ejercicio anterior excepto al apellido.
 
@@ -267,7 +267,7 @@ Para comprobar que funciona correctamente intentaremos enviar el formulario sin 
 
 En la actualidad, disponemos de múltiples formas de introducir información mediante opciones. A diferencia de los campos, las etiquetas de opciones nos permitirán elegir entre ninguna, una o más opciones y según el carácter de los datos que queremos obtener usaremos un tipo determinado u otro.
 
-#### Checkbox
+### Checkbox
 
 Los checkbox nos permiten elegir entre una serie de opciones que no son mutuamente excluyentes, es decir, que podemos perfectamente seleccionar más de una.
 
@@ -297,7 +297,7 @@ Los checkbox nos permiten elegir entre una serie de opciones que no son mutuamen
 
 ![Ejemplo de Checkbox](assets/images/1-11/checkbox.png)
 
-#### Radio
+### Radio
 
 Los input del tipo `radio` nos permiten crear selecciones que se excluyan entre sí. Un ejemplo muy claro es cuando seleccionamos el tipo de pago, seleccionamos uno de una lista de posibles tipos de pagos y, como no tiene sentido, no nos dejará seleccionar más que uno.
 
@@ -326,7 +326,7 @@ Los input del tipo `radio` nos permiten crear selecciones que se excluyan entre 
 
 ![Ejemplo de Radio](assets/images/1-11/radio.png)
 
-#### Select
+### Select
 
 Las etiquetas `select` nos permiten crear selecciones que se excluyan entre sí y que permitan elegir entre un número de opciones considerable.
 
@@ -366,8 +366,7 @@ Ejemplo de uso:
 ### Número
 
 Para introducir un campo para un número, utilizaremos la etiqueta HTML de `input` con el atributo `type="number"`. Esta etiqueta sirve para campos en los que sólo queramos que se introduzcan números (códigos postales, cantidad de productos, números de domicilio, etc).
-
-#### Atributos
+Algunos de los atributos que acepta:
 
 * `min="0"` sirve para indicar el mínimo valor posible que podemos introducir en el campo.
 * `max="10"` sirve para indicar el número máximo que podemos introducir en el campo.
@@ -390,7 +389,7 @@ Por defecto las etiquetas ocultas se muestran con el atributo `display: none;` a
 ```
 
 ***
-###### EJERCICIO 3
+#### EJERCICIO 3
 
 En este ejercicio vamos a crear el formulario de Facebook. Para crearlo utilizaremos lo que hemos visto hasta ahora de formularios. El formulario en sí será el que se muestra en la imagen inferior. El objetivo es crear sólo el HTML pero si te atreves puedes probar también a realizar un CSS similar.
 
@@ -440,7 +439,7 @@ Como convención, la etiqueta `legend` se suele colocar la primera dentro del co
 
 ## Restaurar el formulario a los valores por defecto
 
-Muchas veces habrás visto en algunos formularios que existe un botón que directamente reestablece todos los campos a su valor por defecto, o dicho de otra forma, que borra la información que hemos introducido y la deja como estaba al cargar la página.
+Muchas veces habrás visto en algunos formularios que existe un botón que directamente restablece todos los campos a su valor por defecto, o dicho de otra forma, que borra la información que hemos introducido y la deja como estaba al cargar la página.
 
 Para crear un botón en nuestro formulario que realice esta acción de establecer todos los campos a su valor por defecto utilizaremos un `<input>` del tipo reset:
 
@@ -451,7 +450,7 @@ Para crear un botón en nuestro formulario que realice esta acción de establece
 Este botón siempre borrará toda la información de los campos que haya dentro de la etiqueta `<form>` que lo contenga.
 
 ***
-###### EJERCICIO 4
+#### EJERCICIO 4
 
 En el formulario de facebook, añadir un botón para borrar la información.
 
@@ -459,7 +458,7 @@ En el formulario de facebook, añadir un botón para borrar la información.
 
 ## Estilos CSS de un formulario
 
-Los estilos de los formularios varían mucho entre navegadores pero todos ellos aplican múltiples estilos a estos. A algunos elementos de formularios no se les puede aplicar estilos, como a los `<option>`, es por eso que al final en muchas empresas los desarrolladores crean, utilizando otras etiquetas, sus propios campos customizados para adaptar los estilos a sus necesidades. Nosotros vamos a ceñirnos a estos pero en el futuro veremos cómo crear usando HTML, CSS y JavaScript un componente de formulario customizado.
+Los estilos de los formularios varían mucho entre navegadores pero todos ellos aplican múltiples estilos a estos. A algunos elementos de formularios no se les puede aplicar estilos, como a los `<option>`, es por eso que al final en muchas empresas los desarrolladores crean, utilizando otras etiquetas, sus propios campos 'customizados' para adaptar los estilos a sus necesidades. Nosotros vamos a ceñirnos a estos pero en el futuro veremos cómo crear usando HTML, CSS y JavaScript un componente de formulario customizado.
 
 Una cosa que sí que debemos tener en cuenta es que en móvil por defecto se aplican una serie de estilos a nuestros botones e inputs que modifican bastante su estilo aplicando bordes redondeados y un fondo con degradado. Esto es un problema que viene de los comienzos de la "era mobile", cuando las webs no se adaptaban a dispositivos móviles y era difícil visualizarlas correctamente. En ese momento se decidió aplicar un estilo por defecto a los campos y botones para que fuesen más intuitivos. Hoy en día los desarrolladores tienen en cuenta esto y, más que ser útil, termina siendo molesto pero tiene solución. Para que estos estilos no se apliquen a nuestros campos lo que debemos hacer es añadirles el atributo `appearance: none;` de la siguiente forma:
 
@@ -475,7 +474,7 @@ input {
 > El prefijo `-webkit-` y `-moz-` es específico para aplicar esto a los navegadores Safari y Chrome y Mozilla Firefox respectivamente
 
 ***
-###### EJERCICIO 5
+#### EJERCICIO 5
 
 Crea un formulario similar al de la imagen, que es el de registro de Gmail.
 

@@ -1,6 +1,6 @@
 # Animaciones CSS
 
-<!-- TOC depthFrom:4 depthTo:4 insertAnchor:true -->
+<!-- TOC depthFrom:4 depthTo:4 -->
 
 - [EJERCICIO 1](#ejercicio-1)
 - [EJERCICIO 2](#ejercicio-2)
@@ -57,7 +57,6 @@ a {
 ```
 
 * * *
-<a id="markdown-ejercicio-1" name="ejercicio-1"></a>
 #### EJERCICIO 1
 
 Dado [este botón](https://codepen.io/adalab/pen/XVXGVN?editors=1100):
@@ -70,7 +69,6 @@ En [este Codepen](https://codepen.io/adalab/pen/goPZep) usamos javascript para q
 
 * * *
 
-<a id="markdown-ejercicio-2" name="ejercicio-2"></a>
 #### EJERCICIO 2
 
 Vamos a ver cómo funcionan las transiciones cuando hay muchos elementos.
@@ -84,7 +82,6 @@ En [este Codepen](https://codepen.io/adalab/pen/qJGGoe) hemos preparado un dashb
 ![Dashboard](assets/images/1-13/dashboard.png)
 
 * * *
-<a id="markdown-ejercicio-3" name="ejercicio-3"></a>
 #### EJERCICIO 3
 
 ¿Cómo os veis para hacer una página que al pasar el ratón sobre ella haga que "popup" entre despacito desde abajo de la ventana del navegador y se coloque en el centro?
@@ -150,7 +147,6 @@ Tenéis la documentación completa de las sub propiedades de `animation` en la M
 > Animar es un trabajo en sí mismo y aunque, de entrada, nadie nos va a pedir que seamos animadoras profesionales está bien conocer las posibilidades que nos da CSS para tener un repertorio más amplio de opciones a la hora de desarrollar una web. Otra cosa es que nos guste y CSS es suficientemente potente para hacer locuras.
 
 * * *
-<a id="markdown-ejercicio-4" name="ejercicio-4"></a>
 #### EJERCICIO 4
   
 Vamos a hacer algo más del día a día: partiendo de un contenedor que ocupe el 100% de la pantalla (en alto y ancho) con una imagen de fondo y un título centrado...

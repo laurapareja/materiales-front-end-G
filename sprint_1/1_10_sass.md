@@ -1,6 +1,6 @@
 # Sass
 
-<!-- TOC depthFrom:5 depthTo:5 -->
+<!-- TOC depthFrom:4 depthTo:4 -->
 
 - [EJERCICIO 1](#ejercicio-1)
 - [EJERCICIO 2](#ejercicio-2)
@@ -74,12 +74,14 @@ body {
 ```
 **¡Vamos a ponerlo en práctica!**
 ***
-##### EJERCICIO 1
+#### EJERCICIO 1
 
 En el siguiente [codepen](https://codepen.io/adalab/pen/aVrxYY) tenemos un ejemplo en css que vamos a reescribir a SCSS y modificar un poco.
+
 1. Lo primero es configurarlo para usar SCSS: en la rueda de CSS, desplegar las opciones y elegir SCSS como preprocesador
 2. Convertir a variables los valores de las líneas indicadas
 3. Hacer los siguientes cambios sólo tocando la variables:
+
 	1. Color del texto de `#414141` a `#010101`;
 	2. Tamaño de fuente de la página a `18px`
 	3. El margen de `.wrapper` a `0 60px`
@@ -88,7 +90,7 @@ En el siguiente [codepen](https://codepen.io/adalab/pen/aVrxYY) tenemos un ejemp
 	6. Fondo de `.main` a `cyan`
 ***
 
-**Cuándo hacemos variables y cuánto no?**  
+**¿Cuándo hacemos variables y cuándo no?**  
 Quizás el primer impulso es empezar a crear variables como si no hubiera mañana pero el truco está en ver qué valores reutilizamos (misma altura para diferentes elementos, algunos márgenes, colores) y empezar creando sólo esas.
 
 **Sobre los colores**
@@ -109,7 +111,7 @@ De esta manera tenemos un poco lo mejor de dos mundos.
 ### Nesting o anidado, y el símbolo `&`
 Una maravilla que nos permite hacer SASS es anidar nuestros estilos.
 
-Si queremos indicar que todos los `<p>` dentro de un elemento `.content` van a ser de color azul y si llevan enlace, éste, se motrará en rojo, podemos escribir:  
+Si queremos indicar que todos los `<p>` dentro de un elemento `.content` van a ser de color azul y si llevan enlace, éste, se mostrará en rojo, podemos escribir:  
 ```scss
 .content {
 	p {
@@ -130,7 +132,7 @@ Una buena regla es, cuando vayamos añadir un cuarto nivel de anidación, pararn
 
 > **NOTA**: El anidado es algo que podemos hacer, no que debamos hacer. Lo ideal es tener un buen sistema de nombrado de clases para no tener que encadenar estilos salvo en contadas ocasiones. Si queréis saber más sobre el tema podéis buscar sistemas de nombrado de clases como [BEM](http://getbem.com) o [SMACSS](https://smacss.com).
 
-#### Referenciando al selector padre o madre: `&`
+### Referenciando al selector padre o madre: `&`
 ¡Pero no todo es tener cuidado! Una de las ventajas que nos ofrece el anidado es poder referenciar al selector padre o madre. Por ejemplo: queremos que los enlaces de nuestra página sean rojos, y el hover en azul, pero los enlaces del footer deben ser naranjas con el hover en verde.
 ```scss
 a {
@@ -165,7 +167,7 @@ La posibilidad de anidar selectores nos permite una flexibilidad extra. Hasta ah
 	}
 	@media all and (min-width:1280px) {
 		margin: 0 auto;
-		max-widh: 1200px;
+		max-width: 1200px;
 	}
 }
 ```
@@ -221,7 +223,7 @@ scss
      `- _home.scss
 ```
 
-Tendríamos cuatro bloques de archivos: los de **core** como son las variables, nuestros mixins y funciones; el bloque principal de **layout** con la estructura del site y los componentes principales como header y footer; los diferentes **componentes** como puede ser un boque de noticias, el formulario de contacto o los botones; y por último el bloque de **páginas** donde tendríamos los ajustes particulares de cada página.
+Tendríamos cuatro bloques de archivos: los de **core** como son las variables, nuestros mixins y funciones; el bloque principal de **layout** con la estructura del site y los componentes principales como header y footer; los diferentes **componentes** como puede ser un bloque de noticias, el formulario de contacto o los botones; y por último el bloque de **páginas** donde tendríamos los ajustes particulares de cada página.
 
 En nuestro `main.scss` llamaríamos a todos estos archivos en orden:
 ```scss
@@ -256,7 +258,7 @@ En nuestro `main.scss` llamaríamos a todos estos archivos en orden:
 
 Una ventaja directa de trabajar con parciales es la cantidad de conflictos de git que nos vamos a ahorrar por no estar modificando el mismo fichero ;)
 ***
-##### EJERCICIO 2
+#### EJERCICIO 2
 
 Vamos a crearnos un proyecto con nuestra estructura de imports de SASS. Usaremos el kit de Adalab. Recordad que **iremos haciendo parciales conforme los vayamos necesitando** y que **en cada carpeta estarán solo los que necesitemos**.
 Para el ejercicio querremos:
@@ -276,7 +278,7 @@ Y hasta aquí el contenido de la sesión, pero si quieres saber más tenemos con
 Vale, ¿qué es esto de mixins y funciones? ¡Lo mejor!
 
 
-#### Mixins
+### Mixins
 
 Los **mixins** son bloques de código que vamos a querer reutilizar y/o personalizar. Veamos un ejemplo.
 ```scss
@@ -333,7 +335,7 @@ Que generará el siguiente CSS:
 	line-height: 24px;
 }
 ```
-#### Funciones
+### Funciones
 SASS viene con un un [juego de funciones](http://sass-lang.com/documentation/Sass/Script/Functions.html) y además podemos crear las nuestras propias.
 Por ejemplo, vamos a crear una función para poder escribir nuestras unidades en rem, pero elegantemente. ¿O qué?
 
@@ -376,7 +378,7 @@ Pero, escribir todos los prefijos es un un trabajo muy tedioso, y estar pendient
 > Por dejar claro, autoprefixer sería un post-procesador. Como hemos visto, SASS lo que hace es convertir un código con una sintaxis a CSS. Autoprefixer, en cambio, parte de un código CSS y lo post-procesa para convertirlo en un CSS con una serie de propiedades añadidas.
 
 ***
-##### EJERCICIO BONUS 1
+#### EJERCICIO BONUS 1
 
 Autoprefixer viene configurado en el Kit, ¿sabrías encontrar donde se configura? Pista: empieza por G y acaba por ulpfile.js ;)
 Hagamos que tenga en cuenta las 5 últimas versiones de los navegadores.
