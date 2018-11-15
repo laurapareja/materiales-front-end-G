@@ -85,6 +85,17 @@ Las tipografías usadas en el diseño son Open Sans y Rubik, disponibles en Goog
 * Gris claro: #b8b8b9
 * Gris de fondo: #f1f1f1
 
+### Zeplin
+
+**Zeplin** es una aplicación para poder compartir un diseño con desarrolladores sin necesidad de que usen aplicaciones como Sketch, Illustrator o Photoshop, y con mucha más información que unos pantallazos.
+
+Podéis ver un pequeño [tutorial en Youtube](https://www.youtube.com/watch?time_continue=12&v=tbKZAGthUgQ).
+
+Se puede acceder al diseño directamente desde el navegador para lo que necesitaréis una cuenta de zeplin (que se puede conseguir de forma gratuita desde su página).
+
+URL del proyecto: https://zpl.io/aXkApkx
+
+
 ## Hitos
 
 Os proponemos una serie de hitos como sugerencia para dividir las fases de este proyecto. Siguiendo los principios de las metodologías ágiles estableceremos pequeños ciclos iterativos de forma que al final de cada uno de estos generemos valor real, es decir, algo que nos beneficie y sea perceptible por nuestros usuarios (los visitantes de la web).
