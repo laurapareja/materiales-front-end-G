@@ -79,7 +79,7 @@ Respecto a la interacción con la web:
 
 ## Diseño
 
-El diseño lo podéis inspeccionar en [este proyecto de zeplin](https://app.zeplin.io/project/5b28021febd4990163e9020b/screen/5b280288ae4a31fc6a3ab179). También podéis probar cómo funciona en este [prototipo online](https://sketch.cloud/s/12l0y/all/tablet+/00-app-tablet+/play).
+El diseño lo podéis inspeccionar en [este proyecto de zeplin](https://zpl.io/29ZZ7Ay). También podéis probar cómo funciona en este [prototipo online](https://sketch.cloud/s/wrO9V/09A5lzW/play).
 
 Las fuentes necesarias para crear el diseño son
 - Merriweather (google fonts)
