@@ -21,7 +21,7 @@
 
 ## Sprint 2. Programando la web
 * [2.1 Intro a la programación](sprint_2/2_1_intro_a_la_programacion.md)
-* [2.2 Intro a la programación 2](sprint_2/2_1_intro_a_la_programacion_2.md)
+* [2.2 Intro a la programación 2](sprint_2/2_2_intro_a_la_programacion_2.md)
 * [2.3 Condicionales](sprint_2/2_3_condicionales.md)
 * [2.4 Funciones](sprint_2/2_4_funciones.md)
 * [2.5 Eventos](sprint_2/2_5_eventos.md)
