@@ -19,7 +19,6 @@
 * [1.13 Animaciones CSS](sprint_1/1_13_animaciones_CSS.md)
 * [1.14 Sistemas de diseño](sprint_1/1_14_sistemas_de_diseno.md)
 
-<!--
 ## Sprint 2. Programando la web
 * [2.1 Intro a la programación](sprint_2/2_1_intro_a_la_programacion.md)
 * [2.2 Intro a la programación 2](sprint_2/2_1_intro_a_la_programacion_2.md)
@@ -35,7 +34,7 @@
 * [2.12 Asincronía](sprint_2/2_12_asincronia_.md)
 * [2.13 Scope y hoisting](sprint_2/2_13_scope_y_hoisting.md)
 * [2.14 Manejo de estructuras de datos](sprint_2/2_14_manejo_de_estructuras_de_datos.md)
--->
+
 
 <!--
 ## Sprint 3. ES6 y React 
@@ -58,22 +57,13 @@
 
 * [Proyecto 1. Web grupal](proyectos/P1_proyecto_sprint_1.md)
 * [Anexo. Diseña tu web desde cero](proyectos/P1_anexo_diseno.md)
+* [Proyecto 2. Awesome profile-cards](proyectos/P2_proyecto_sprint_2.md)
+* [Anexo. Documentación del API de Awesome Profile Cards](proyectos/P2_anexo.md)
 
 <!--
-## Proyectos
-
-* [Proyecto 1. Web grupal](proyectos/P1_proyecto_sprint_1.md)
-* [Proyecto 2. Awesome profile-cards](proyectos/P2_proyecto_sprint_2.md)
 * [Proyecto 3. Un caso de código heredado](proyectos/P3_proyecto_sprint_3.md)
-* [Anexo. Documentación del API de Awesome Profile Cards](proyectos/P2_anexo.md)
-* [Anexo. Diseña tu web desde cero](proyectos/P1_anexo_diseno.md)
 -->
 
-<!-- ## Evaluaciones
-
-* Evaluación intermedia 1
-* Evaluación final 1
--->
 <!--
 ## Guías
 * [Instalar un linter de JavaScript](guias/instalar_linter_js.md)
