@@ -21,10 +21,10 @@ En este proyecto vamos a realizar una aplicación web que nos permite crear una 
 ## Objetivos
 
 1. Aprender los conceptos básicos de programación (variables, estructuras de datos, condicionales, funciones, etc.)
-1. Comprender cómo manipular el DOM de una página y responder a eventos del usuario
-1. Manejar estructuras de datos complejas, con arrays y objetos
-1. Realizar peticiones al servidor y almacenar datos en local
-1. Exponer en la sesión final y seguir adquiriendo habilidades de presentación en público
+2. Comprender cómo manipular el DOM de una página y responder a eventos del usuario
+3. Manejar estructuras de datos complejas, con arrays y objetos
+4. Realizar peticiones al servidor y almacenar datos en local
+5. Exponer en la sesión final y seguir adquiriendo habilidades de presentación en público
 
 
 ## Caso de uso
@@ -49,6 +49,7 @@ El proyecto consta de 2 páginas
 - una página con la aplicación de crear tarjetas
 
 La aplicación funciona siguiendo estos pasos:
+
 1. Permitir al usuario elegir el estilo de la tarjeta, eligiendo paleta de colores y tipografía
 2. Permitir al usuario que, mediante la introducción de información en un formulario, este texto se muestre maquetado automáticamente en un cuadro similar a una tarjeta de visita, que será la muestra del resultado final
 3. Permitir que el usuario pueda compartir su tarjeta de visita por Twitter
@@ -125,7 +126,7 @@ En esta sección os proponemos una serie de hitos como sugerencia para dividir l
 Para considerar terminado este hito y todos los siguientes debéis tener publicada la web en GitHub Pages.
 
 ### Tercero. Formulario interactivo
-permite
+
 - 5 sesiones de trabajo
 - Formulario interactivo, que al modificar cualquier campo de datos o el diseño se actualice la vista previa
 - En el campo de habilidades pueden añadirse hasta 3 datos (primero escribiremos las opciones a manita en el HTML)
