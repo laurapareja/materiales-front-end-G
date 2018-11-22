@@ -64,10 +64,15 @@
 * [Proyecto 3. Un caso de código heredado](proyectos/P3_proyecto_sprint_3.md)
 -->
 
-<!--
-## Guías
-* [Instalar un linter de JavaScript](guias/instalar_linter_js.md)
 
+## Guías
+* [Buenas prácticas para tener un portfolio atractivo en GitHub](guias/github_como_portfolio.md)
+
+<!--
+* [Instalar un linter de JavaScript](guias/instalar_linter_js.md)
+-->
+
+<!--
 ## Extra
 * [E.1 Repaso de flexbox y position](extra/e1-flexbox-y-position.md)
 -->
