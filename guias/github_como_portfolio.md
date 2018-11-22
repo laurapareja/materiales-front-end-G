@@ -8,17 +8,17 @@ En esta guía vamos a dar algunos tips para dar visibilidad a vuestro perfil de 
 
 Para cada repositorio que queramos mostrar en nuestro perfil (como mínimo las evaluaciones de cada sprint y los proyectos) debemos comprobar que cumplimos este checklist.
 
-<input type="checkbox"> El repositorio tiene un fichero `README.md` con la descripción del proyecto y por qué se realiza (contexto en que se hace, por ejemplo)<br>
-<input type="checkbox"> En la página principal del repositorio añade una descripción, enlace al proyecto en GitHub Pages y pon algún tag para que sea encontrable<br>
-<input type="checkbox"> Si se trata de un proyecto de equipo, comprueba que tu contribución al proyecto aparece bien representada en la sección de *contributors*, con el número de commits que has realizado<br>
+-  El repositorio tiene un fichero `README.md` con la descripción del proyecto y por qué se realiza (contexto en que se hace, por ejemplo)
+-  En la página principal del repositorio añade una descripción, enlace al proyecto en GitHub Pages y pon algún tag para que sea encontrable
+-  Si se trata de un proyecto de equipo, comprueba que tu contribución al proyecto aparece bien representada en la sección de *contributors*, con el número de commits que has realizado
 
 ## Buenas prácticas por la página del perfil
 
 En nuestro perfil debemos comprobar este otro checklist. Al finalizar comprueba cómo se ve tu perfil en una sesión del navegador donde no estés logueada (por ejemplo, una pestaña de incógnito) para ver cómo lo ven otras personas.
 
-<input type="checkbox"> Escribe tus datos de contacto (nombre, email), pon una foto (algo distinto a la foto por defecto) y una breve bio<br>
-<input type="checkbox"> En las organizaciones a las que perteneces (en este caso a la de Adalab), activa que tu membresía sea pública, ya que por defecto solo es visible para ti pero no para el resto<br>
-<input type="checkbox"> Personaliza los repositorios pinneados (6 máximo) que aparecen destacados en tu perfil. Puedes seleccionar repositorios a los que hayas contribuido, tanto si están en tu cuenta como en la de Adalab<br>
-<input type="checkbox"> Revisa que tienes una actividad constante en GitHub (grid de cuadraditos verdes), que cuenta desde commits (mergeados a master) como PRs, issues, etc. <br>
-<input type="checkbox"> Demuestra actividad siguiendo a otros perfiles interesantes y marcando proyectos molones como favoritos<br>
-<input type="checkbox"> *BONUS*: crea tu propia página personal en un repositorio con nombre `user.github.io` para enseñar al mundo lo que sabes hacer como front<br>
+-  Escribe tus datos de contacto (nombre, email), pon una foto (algo distinto a la foto por defecto) y una breve bio
+-  En las organizaciones a las que perteneces (en este caso a la de Adalab), activa que tu membresía sea pública, ya que por defecto solo es visible para ti pero no para el resto
+-  Personaliza los repositorios pinneados (6 máximo) que aparecen destacados en tu perfil. Puedes seleccionar repositorios a los que hayas contribuido, tanto si están en tu cuenta como en la de Adalab
+-  Revisa que tienes una actividad constante en GitHub (grid de cuadraditos verdes), que cuenta desde commits (mergeados a master) como PRs, issues, etc. 
+-  Demuestra actividad siguiendo a otros perfiles interesantes y marcando proyectos molones como favoritos
+-  *BONUS*: crea tu propia página personal en un repositorio con nombre `user.github.io` para enseñar al mundo lo que sabes hacer como front
