@@ -325,13 +325,13 @@ El objetivo de este ejercicio es pintar tres elementos dentro de una lista. Cada
 
 ```js
 const firstDogImage = 'https://dog.ceo/api/img/schipperke/n02104365_8156.jpg';
-const firstDogName: 'Dina';
+const firstDogName = 'Dina';
 
 const secondDogImage = 'https://dog.ceo/api/img/collie-border/n02106166_355.jpg';
-const secondDogName: 'Luna';
+const secondDogName = 'Luna';
 
 const thirdDogImage = 'https://dog.ceo/api/img/schipperke/n02104365_8156.jpg';
-const thirdDogName: 'Lana';
+const thirdDogName = 'Lana';
 ```
 En este caso para añadir cada uno de los elementos utilizaremos la propiedad `innerHTML` y la interpolación de cadenas.
 
