@@ -166,7 +166,6 @@ items.appendChild(newItem);
 ```
 [Ejemplo en Codepen](https://codepen.io/adalab/pen/mpXqow)
 
-<a id="markdown-ejercicio-1" name="ejercicio-1"></a>
 #### EJERCICIO 1
 
 **1, 2, 3, lo hacemos otra vez**
@@ -252,7 +251,6 @@ label.setAttribute('for', 'firstname'); // asignará for="firstname" al label
 ```
 
 * * *
-<a id="markdown-ejercicio-2" name="ejercicio-2"></a>
 #### EJERCICIO 2
 
 **De viaje**
@@ -265,7 +263,6 @@ Crea una página que contenga tres imágenes, usando un select de formulario pre
 > **Nota**: Usa imágenes que encuentres por Internet.
 
 * * *
-<a id="markdown-ejercicio-3" name="ejercicio-3"></a>
 #### EJERCICIO 3
 
 **Autocompletado**
@@ -279,7 +276,6 @@ Vamos a crear nuestro propio autocompletado de formularios. Para ello vamos a cr
 Por otro lado, en JavaScript tendremos un array de 3 objetos con esa estructura. Es decir, un listado 3 objetos, cada uno con nombre apellidos y teléfono. Pediremos a la usuaria que elija uno de esos 3 con un `select` con el nombre. Al seleccionarlo se rellenará el formulario automáticamente.
 
 * * *
-<a id="markdown-ejercicio-4" name="ejercicio-4"></a>
 #### EJERCICIO 4
 
 **Párrafos de altura**
@@ -296,7 +292,6 @@ En algunas ocasiones nos puede ser útil almacenar algún tipo de información (
 Para ello, simplemente definimos un nuevo atributo en el elemento que comienza con `data-` seguido del nombre que queremos darle a esos datos, por ejemplo, `data-id`. Para crearlos en HTML, los cremos como un atributo más del elemento, por ejemplo, `<a href="#" data-id="title1">`. Para acceder a ellos desde JavaScript usamos los métodos `getAttribute` y `setAttribute` que ya conocemos. Como alternativa, podemos acceder también mediante `dataset[]` con el nombre que le hemos dado a los datos (sin `data-`) entre [], por ejemplo, `myLink.dataset[id]`.
 
 * * *
-<a id="markdown-ejercicio-5" name="ejercicio-5"></a>
 #### EJERCICIO 5
 
 **Anclas de verdad**
@@ -310,7 +305,6 @@ Para ello seguimos estos pasos
 4. Usando [window.scrollTo](https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo) hacemos scroll hasta el elemento pero restando alguno píxeles para que la cabecera fija no lo tape
 
 * * *
-<a id="markdown-ejercicio-6" name="ejercicio-6"></a>
 #### EJERCICIO 6
 
 **Castigo**

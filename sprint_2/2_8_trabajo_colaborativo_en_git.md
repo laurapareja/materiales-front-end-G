@@ -1,5 +1,5 @@
 # Trabajo colaborativo en GIT
-<!-- TOC depthFrom:4 depthTo:4 updateOnSave:true withLinks:true -->
+<!-- TOC depthFrom:4 depthTo:4 updateOnSave:true -->
 
 - [EJERCICIO 1](#ejercicio-1)
 - [EJERCICIO 2](#ejercicio-2)
@@ -208,7 +208,6 @@ A continuación hay un listado de ejercicios/tickets que habrá que ir resolvien
 
 ****
 
-<a id="markdown-ejercicio-1" name="ejercicio-1"></a>
 #### EJERCICIO 1
 
 **Ticket #1: Centrar el careto**
@@ -217,7 +216,6 @@ Este señor está como apartado, en una esquina... eso no puede ser, debería es
 
 * * *
 
-<a id="markdown-ejercicio-2" name="ejercicio-2"></a>
 #### EJERCICIO 2
 
 **Ticket #2: Cara redonda**
@@ -226,7 +224,6 @@ Un careto.. ¿es un careto si no es redondo?. Hay que redondear esa cara para qu
 
 * * *
 
-<a id="markdown-ejercicio-3" name="ejercicio-3"></a>
 #### EJERCICIO 3
 
 **Ticket #3: Cara Sonriente**
@@ -235,7 +232,6 @@ Un careto.. ¿es un careto si no es redondo?. Hay que redondear esa cara para qu
 
 * * *
 
-<a id="markdown-ejercicio-4" name="ejercicio-4"></a>
 #### EJERCICIO 4
 
 **Ticket #4: Añadir funcionalidad para que guiñe**
