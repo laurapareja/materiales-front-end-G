@@ -1,6 +1,6 @@
 # Introducción a la programación 2
 
-<!-- TOC depthFrom:4 depthTo:4 insertAnchor:true updateOnSave:false -->
+<!-- TOC depthFrom:4 depthTo:4 -->
 
 - [EJERCICIO 1](#ejercicio-1)
 - [EJERCICIO 2](#ejercicio-2)
@@ -30,7 +30,6 @@ En las herramientas para desarrolladoras de Chrome (las DevTools) hay una pesta�
 
 * * *
 
-<a id="markdown-ejercicio-1" name="ejercicio-1"></a>
 #### EJERCICIO 1
 
 **"Trasteando" la consola**
@@ -67,7 +66,6 @@ La consola del navegador es a JavaScript lo que el inspector de elementos a HTML
 A partir de ahora cada vez que escribamos código JavaScript y sirvamos nuestra página en el navegador, por defecto abriremos la consola, ya que sin ella estaremos programando "a ciegas".
 
 * * *
-<a id="markdown-ejercicio-2" name="ejercicio-2"></a>
 #### EJERCICIO 2
 
 **Isra mola**
@@ -165,7 +163,6 @@ Los paréntesis en JavaScript, a la hora de aplicarlos a los números, funcionan
 
 
 * * *
-<a id="markdown-ejercicio-3" name="ejercicio-3"></a>
 #### EJERCICIO 3
 
 **El precio de la fruta**
@@ -180,7 +177,6 @@ Con lo que hemos visto durante los ejemplos y textos anteriores y usando JavaScr
 
 * * *
 
-<a id="markdown-ejercicio-4" name="ejercicio-4"></a>
 #### EJERCICIO 4
 
 **¡Págame, tía!**
@@ -189,7 +185,6 @@ Nos vamos de cena de Navidad, ¡qué alegría! Somos en total 9 personas y la cu
 
 * * *
 
-<a id="markdown-ejercicio-5" name="ejercicio-5"></a>
 #### EJERCICIO 5
 
 **Calcular el número total de horas que hemos vivido**
@@ -246,7 +241,6 @@ En el caso de `string`, la única forma de operar con el es usando el operador d
 
 * * *
 
-<a id="markdown-ejercicio-6" name="ejercicio-6"></a>
 #### EJERCICIO 6
 
 **Hola Adalaber**
@@ -303,11 +297,10 @@ element.innerHTML = `
 </div>`;
 ```
 
-[&blacktriangleright; Interpolación de cadenas en Codepen][codepen-string-interpolation]
+[&blacktriangleright; Interpolación de cadenas en Codepen](https://codepen.io/adalab/pen/wpPZvN?editors=0010)
 
 * * *
 
-<a id="markdown-ejercicio-7" name="ejercicio-7"></a>
 #### EJERCICIO 7
 
 **Interpola a Lola**
@@ -316,7 +309,6 @@ Hay que reescribir el [ejercicio 6](#ejercicio-6) utilizando la interpolación d
 
 * * *
 
-<a id="markdown-ejercicio-8" name="ejercicio-8"></a>
 #### EJERCICIO 8
 
 **Lista de perretas**
@@ -349,7 +341,6 @@ console.log('Mozilla is ' + browserName.length + ' code units long');
 
 * * * 
 
-<a id="markdown-ejercicio-9" name="ejercicio-9"></a>
 #### EJERCICIO 9
 
 **Cuántas letras tiene tu nombre**
@@ -393,7 +384,6 @@ console.log(`Te quedan ${yearsToRetirement} años para jubilarte`);
 
 * * *
 
-<a id="markdown-ejercicio-10" name="ejercicio-10"></a>
 #### EJERCICIO 10
 
 **Recogiendo números de HTML**
@@ -402,7 +392,6 @@ Vamos a duplicar el [ejercicio 5](#ejercicio-5) y a modificarlo, recogiendo la e
 
 * * *
 
-<a id="markdown-ejercicio-11" name="ejercicio-11"></a>
 #### EJERCICIO 11
 
 **String plus number**
