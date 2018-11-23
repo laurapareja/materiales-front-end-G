@@ -81,7 +81,7 @@ Partiendo de este HTML:
   </head>
   <body>
     <main class="main">
-      <h1 class="main__title">Ese Isra como mola, se merece una <span class="super-wave">OLA!</span></h1>
+      <h1 class="main__title">Ese Isra como mola, se merece una <span class="super-wawe">OLA!</span></h1>
     </main>
     <script type="text/javascript" src="main.js"></script>
   </body>
