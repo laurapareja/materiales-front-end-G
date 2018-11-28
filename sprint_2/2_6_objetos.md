@@ -399,6 +399,12 @@ Por defecto vamos a intentar ir de buenas y se mostrará a la criatura sonriente
 	- Recogerá el nuevo estado del select y lo pintará en lugar del actual
 	- Generará un número aleatorio de 100 como máximo y si es un número par colocará el color de fondo del amarillo correcto (#ffcc00) y si es impar, usaremos el naranja fuego chileno (#ff9900).
 
+**¿Cómo va lo del número aleatorio?**
+
+Todos los lenguajes de programación tienen sus formas de generar número aleatorios, y JavaScript no iba a ser menos.
+
+Puedes leer cómo va [la función Random de JS en MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random). Echa un ojo con cuidado que hay varios ejemplos para generar números aleatorios con un máximo, con mínimos y máximos, excluidos o incluídos :)
+
 * * *
 
 ## Recursos externos
