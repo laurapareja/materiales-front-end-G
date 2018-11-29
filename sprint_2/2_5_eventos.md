@@ -251,12 +251,16 @@ Después vamos a escuchar eventos sobre cada elemento de la lista, de forma que 
 **Favoritos**
 
 Hemos preparado un [HTML](https://codepen.io/adalab/pen/xyEwVj) con tres tarjetas. 
-Tenemos que hacer que al pinchar en un elemento del listado se añada la clase `.teacher--selected` si no la tiene o se la quite si la tiene.
-Y que el texto del span `.favorite` cambie de 'Añadir' a 'Quitar' y viceversa.
+Al pinchar en un elemento del listado tenemos que:
 
-> **Nota**: con `querySelector` buscamos un elemento dentro de otro. Hasta ahora lo habíamos usado para buscar dentro de `document` (todo nuestro documento HTML), con `document.querySelector()`. Si tuviéramos una constante llamada, por ejemplo, `sectionAboutElement` con un elemento podríamos buscar dentro de este un determinado elemento, tal que así `sectionAboutElement.querySelector()`
+- En el `li` añadir la clase `.teacher--selected` si no la tiene, o quitarla si la tiene.
+- Modificar el texto del span `.favorite` sustituyéndolo por 'Quitar' si en ese momento contiene 'Añadir', o por 'Añadir' si contiene 'Quitar'.
 
-> **Nota**: para facilitar añadir y quitar clases de CSS, os recomendamos usar `classList.toggle`
+> **Nota 1**: con `querySelector` buscamos un elemento dentro de otro. Hasta ahora lo habíamos usado para buscar dentro de `document` (todo nuestro documento HTML), con `document.querySelector()`. 
+
+> Si tuviéramos una constante llamada, por ejemplo, `sectionAboutElement` en la que hemos guardado un elemento de HTML, podríamos buscar dentro de este otro elemento, tal que así `sectionAboutElement.querySelector()`
+
+> **Nota 2**: para facilitar añadir y quitar clases de CSS, os recomendamos usar `classList.toggle`
 
 * * *
 
@@ -362,7 +366,7 @@ También, nos hemos acercado a los conceptos:
 Y hemos visto nueva información que no es exclusiva de los eventos como:
 
 - `classList.toggle`: quita o añade una clase de CSS
-- `element.value`: nos devuelve el valor de un input
+- `inputNameElement.value`: nos devuelve el valor de un input
 - `callback`: una función ejecutada por otra función
 
 ## Recursos externos
