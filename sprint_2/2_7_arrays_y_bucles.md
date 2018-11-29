@@ -36,7 +36,7 @@ Los arrays, también llamados arreglos o listas, nos permiten guardar una lista 
 
 Durante esta sesión veremos cuales son las características principales de este tipo de estructura de datos y veremos cómo trabajar con ellos, modificarlos y obtener información de ellos.
 
-También veremos los bucles, estructuras de control que, como su nombre indica, permiten repetir un código un número determinado de veces en función de si se cumple una condición. Esto es muy útil para realizar las tareas repetitivas que de otra forma tendríamos que escribir cientos de veces. Si pensamos en el típico castigo de colegio de "Escribe en una hoja 100 veces no volveré a dejarme los libros en casa", gracias al bucle for solo tendríamos que escribirlo 1 y decirle que se repita hasta que llegue a 100 veces. Imagina la cantidad de tiempo y código que permite ahorrarnos este recurso.
+También veremos los bucles, estructuras de control que, como su nombre indica, permiten repetir un código un número determinado de veces en función de si se cumple una condición. Esto es muy útil para realizar las tareas repetitivas que de otra forma tendríamos que escribir cientos de veces. Si pensamos en el típico castigo de colegio de "Escribe en una hoja 100 veces no volveré a dejarme los libros en casa", gracias al bucle `for` solo tendríamos que escribirlo una vez y decirle que se repita hasta que llegue a 100 veces. Imagina la cantidad de tiempo y código que permite ahorrarnos este recurso.
 
 ## ¿En qué casos se utilizan?
 
@@ -103,9 +103,9 @@ A continuación vamos a ver cómo trabajar con arrays, cuales son sus principale
 
 ### Declaración de un array
 
-Al igual que las cadenas y los números, podemos usar un `array` sin asignarlo a una variable `[1, 2, 3]`, pero normalmente crearemos una variable para guardar su valor.
+Al igual que las cadenas y los números, podemos usar un `array` sin asignarlo a una variable `[1, 2, 3]`, pero normalmente crearemos una variable o constante para guardar su valor.
 
-La sintaxis para declarar una variable y asignarle como valor un array es la siguiente:
+La sintaxis para declarar una variable o constante y asignarle como valor un array es la siguiente:
 
 ```js
 // Crea una variable con un array vacío
@@ -163,8 +163,8 @@ function handleLotteryNumberChange (event) {
   const input = event.currentTarget;
   const selectedNumber = parseInt(input.value);
   const ind = selectedNumber - 1; // El índice empieza en 0
-  const result = options[ind]; // Utilizamos una variable que contiene un número como valor
-  console.log('Premio:', result);
+  const result = options[ind]; // Utilizamos una constante que contiene un número como valor
+  console.log('Premio: ', result);
 }
 
 lotteryNumberInput.addEventListener('keyup', handleLotteryNumberChange);
@@ -214,7 +214,7 @@ arr[1] = 'limón'; // Sobrescribimos el valor que hay en la segunda posición de
 
 Vamos a hacer este ejercicio en parejas. ¿Listas? La primera de la pareja con el teclado va a crear un array `movies` con un listado de 3 películas que le gusten. Será un array de cadenas (`strings`).
 
-Ahora toma el teclado la otra compañera y añade al array anterior otra película más que le guste. No vale modificar la declaración del array, sino que añadiremos la nueva película en la posición 3 del array (recordad que se empiezan a numerar desde el 0). Para comprobar que funciona, tienes que mostrar en la consola el nombre de la última película del array.
+Ahora toma el teclado la otra compañera y añade al array anterior otra película más que le guste. No vale modificar la declaración del array, sino que añadiremos la nueva película en la posición 3 del array (recordad que se empiezan a numerar desde el 0). Para comprobar que funciona, tienes que mostrar el array completo en la consola.
 
 El teclado vuelve a la primera de la pareja. Tienes que modificar la película que menos te guste de las que hay en el array (¿podría ser la que ha puesto tu compañera? :P) por el nombre de otra que te guste más. Para comprobar que funciona, tienes que mostrar el array completo en la consola.
 
@@ -246,7 +246,7 @@ const arr2 = arr;
 
 Lo que estamos diciendo es que `arr2` va a guardar la información que tiene `arr` y por tanto, al igual que `arr` apuntará al array que hemos creado anteriormente.
 
-Bien, el problema viene ahora, ambas constantes apuntan al mismo array por lo que si modificamos una estaremos modificando también la otra, ya que lo que va a hacer JavaScript es modificar el array al que apunta.
+Bien, el problema viene ahora, ambas constantes apuntan al mismo array por lo que si modificamos una estaremos modificando también la otra, ya que lo que va a hacer JavaScript es modificar el array al que apuntan.
 
 ```js
 const arr = [1, 2, 3, 4];
@@ -295,12 +295,13 @@ for (let i = 0; i < 20; i++) {
 ```
 
 En este ejemplo de código, hacemos aparecer 20 veces en la consola el texto `Me encantan los bucles 💪`. Funciona de la siguiente forma:
-  1. Se ejecuta el código de inicialización (`const i = 0`)
+
+  1. Se ejecuta el código de inicialización (`let i = 0`)
   2. Se comprueba que la condición se cumple (`i < 20`), en este caso el resultado es `true`
   3. Como la condición se cumple, se ejecuta el código que hay dentro del bloque entre las llaves (`{}`), es decir el `console.log`
   4. Se ejecuta la actualización del bucle (`i++`) y la variable `i` pasa a valer 1
   5. Vuelta al paso 2
-  6. Cuando la variable `i` llega al valor de 20, la condición ya no se cumple (20 no es menor que 20) y el bucle acaba
+  6. Cuando la variable `i` llega al valor de 20, la condición ya no se cumple (20 no es menor que 20), por lo tanto el bloque que contiene el console log no se ejecuta y el bucle acaba
 
 Otro aspecto interesante de los bucles `for` es que dentro del bloque de código que se repite (el que va entre llaves `{ }`) podemos usar la variable `i`. Por ejemplo:
 
@@ -321,7 +322,7 @@ Este ejemplo hará aparecer 20 veces, en la consola, el texto:
 
 #### EJERCICIO 2
 
-Partiendo el ejemplo anterior, crea un bucle que muestre 10 veces, en la consola, el texto `Voy por la vuelta X` siendo el número de vuelta desde 1 hasta 10 (no desde 0 hasta 9).
+Partiendo el ejemplo anterior, crea un bucle que muestre 10 veces, en la consola, el texto `Voy por la vuelta X` siendo el número de vueltas desde 1 hasta 10 (no desde 0 hasta 9).
 
 * * *
 
@@ -367,11 +368,11 @@ console.log('La puntuación final es ' + acc);
 
 **La media**
 
-a) Vamos a crear un nuevo array `numbers` que contendrá 5 números cualesquiera. Vamos a recorrer el array mediante un bucle para calcular la media de los números (la suma de los números dividido por cuántos hay, es decir, 5). Necesitaremos una variable (*acumulador*) para ir almacenando la suma de todos los números y después poder hacer la media. Para comprobar si el resultado es correcto, vamos a `loguearlo` en la consola.
+a) Vamos a crear un nuevo array `numbers` que contendrá 5 números cualesquiera. Vamos a recorrer el array mediante un bucle para calcular la media de los números (la suma de los números dividido por cuántos hay, es decir, 5). Necesitaremos una variable (*acumulador*) para ir almacenando la suma de todos los números y después poder hacer la media. Para comprobar si el resultado es correcto, vamos a *loguearlo* en la consola.
 
 b) Ahora vamos añadir un nuevo número al array y repetir el cálculo de la media. En este caso, para calcular la media habrá que sumar todos y dividir entre el total, que ahora es 6.
 
-c) Vamos a generalizar el código anterior creando una función `average`. Esta función toma como parámetro un array `numbers`, calula la media del array (de cualquier longitud) y devuelve la media. Para poder trabajar con arrays de cualquier longitud, deberemos consultar la longitud del array mediante su propiedad `length`. Para comprobar que la función hace el cálculo correcto, la invocaremos(o ejecutaremos para que no suene tan esotérico) varias veces pasándole como argumento un array con diferente longitud cada vez y mostraremos el resultado en la consola del navegador.
+c) Vamos a generalizar el código anterior creando una función `average`. Esta función toma como parámetro un array `numbers`, calula la media del array (de cualquier longitud) y devuelve la media. Para poder trabajar con arrays de cualquier longitud, deberemos consultar la longitud del array mediante su propiedad `length`. Para comprobar que la función hace el cálculo correcto, la invocaremos (o ejecutaremos para que no suene tan esotérico) varias veces pasándole como argumento un array con diferente longitud cada vez y mostraremos el resultado en la consola del navegador.
 
 * * *
 
@@ -407,7 +408,7 @@ for (const movie of bestAnimatedFeature2016Nominees) {
 
 **Tenemos mucho en común**
 
-Vamos a hacer un pequeño programa que le pregunte a la usuaria cuáles son sus dos películas o libros favoritos mediante un formulario. Cuando esta pulse el botón `enviar`  guardaremos la información en un array, lo recorreremos y mostraremos este mensaje por cada obra: "¡A mí también me encantó "OBRA"! Tenemos mucho en común, humana.", donde OBRA será el nombre de la obra.
+Usando `for...of` vamos a hacer un pequeño programa que le pregunte a la usuaria cuáles son sus dos películas o libros favoritos mediante un formulario. Cuando esta pulse el botón `enviar`  guardaremos la información en un array, lo recorreremos y mostraremos este mensaje por cada obra: "¡A mí también me encantó "OBRA"! Tenemos mucho en común, humana.", donde OBRA será el nombre de la obra.
 
 * * *
 
@@ -505,7 +506,7 @@ arr.push(3, 5, 6, 7, 23, 34, 35, 34, 54, 34, 3434, 34); // Esto es totalmente v�
 
 ### `reverse`
 
-El método reverse() invierte el orden de un array. El primer elemento pasará a ser colocarse en la última posición, el segundo pasará a colocarse en la penúltima y así sucesivamente. Este método modifica directamente el array sobre el que se ha utilizado y devuelve ese array actualizado.
+El método `reverse()` invierte el orden de un array. El primer elemento pasará a colocarse en la última posición, el segundo pasará a colocarse en la penúltima y así sucesivamente. Este método modifica directamente el array sobre el que se ha utilizado y devuelve ese array actualizado.
 
 ```js
 const arr = [1, 2, 3];
@@ -558,7 +559,8 @@ for (var i = 0; i < paragraphs.length; i++) {
 
 **Mi lista de tareas**
 
-Hemos creado una aplicación para gestionar un listado de tareas: ¡somos gente muy ocupada! Para eso, hemos creado un objeto literal con el listado de tareas y su estado. Nuestra misión es :
+Hemos creado una aplicación para gestionar un listado de tareas: ¡somos gente muy ocupada! Para eso, hemos creado un objeto literal con el listado de tareas y su estado. Nuestra misión es:
+
 1. Mostrar una frase que indique cuántas tareas hay.
 2. Pintar todas las tareas en pantalla.
 3. Tachar las ya realizadas. 
@@ -576,7 +578,7 @@ const tasks = [
 ```
 Veamos como afrontar un ejercicio de este tipo, dónde tenemos que unir muchos de los conceptos aprendidos hasta ahora, la organización es clave:
 
-a) **Vamos a por una tarea.** Primero vamos a pintar una tarea, solo una, en una lista de HTML. A continuación vamos a preparar una clase que la modifique, de manera que si fuera una tarea completada, el texto aparezca tachado.
+a) **Vamos a por una tarea.** Primero vamos a pintar una tarea, solo una, en una lista de HTML. A continuación vamos a preparar una clase que la modifique, de manera que si fuera una tarea completada `complete: true`, el texto aparezca tachado.
 
 b) **Listado de tareas.** ¡Seguimos con nuestras tareas! Ahora vamos a pintar en pantalla todas la tareas que tenemos en el listado, cada una de las tareas completadas debe aparecer tachada.
 
@@ -584,7 +586,7 @@ c) **Vamos a darle dinamismo.** Ahora viene lo bueno: vamos a añadir la lógica
 - la tarea debe mostrarse como completada (tachada)
 - debemos modificar su estado (propiedad `completed`) en el array `tasks`.
 
-d) **Tareas totales.** No nos podemos olvidar de los detalles. Añadamos por encima del listado de tareas una frase que diga: Tienes <_X_> tareas. <_Y_> completadas y <_Z_> por realizar. Cada vez que una tarea se marque/desmarque deberiamos actualizar esta información.
+d) **Tareas totales.** No nos podemos olvidar de los detalles. Añadamos por encima del listado de tareas una frase que diga: Tienes _X_ tareas. _Y_ completadas y _Z_ por realizar. Cada vez que una tarea se marque/desmarque deberiamos actualizar esta información.
 
 * * *
 
