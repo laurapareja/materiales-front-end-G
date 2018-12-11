@@ -9,7 +9,7 @@ La URL base del servicio es
 El API sigue una convención tipo REST para la gestión de tarjetas: creación y acceso a las mismas. Las acciones implementadas por este API son las siguientes:
 
 - *CREATE*: una petición 'POST' a la URL `/card` con los datos necesarios en formato JSON (especificados más abajo) creará una nueva tarjeta 
-- *GET*: una petición 'GET' a la URL `/card/:id:/` devueleve una página web en HTML donde se muestran los datos de la tarjeta con el identificador 'id'
+- *GET*: una petición 'GET' a la URL `/card/:id:/` devuelve una página web en HTML donde se muestran los datos de la tarjeta con el identificador 'id'
 
 En el proyecto 2 de Adalab **vamos a usar el servicio para crear una tarjeta**. El servicio de acceder a una tarjeta (GET) lo usamos indirectamente porque lo usa la URL que nos devuelve el servicio de crear una tarjeta.
 
