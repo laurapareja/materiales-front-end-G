@@ -237,3 +237,7 @@ En esta lección hemos profundizado un poco más en el concepto de **asincronía
 
 - **`setInterval`** nos permite ejecutar una función cada x milisegundos, y puede ser cancelada con **`clearInterval`**
 - **`setTimeout`** nos permite ejecutar una función pasados x milisegundos, y puede ser cancelada con **`cancelTimeOut`**
+
+## Recursos externos adicionales
+
+- [Javascript Asíncrono: La guía definitiva](https://lemoncode.net/lemoncode-blog/2018/1/29/javascript-asincrono)
