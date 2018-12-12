@@ -236,7 +236,7 @@ Crear una página con un botón que transcurridos 10 segundos te pregunte: "¿te
 En esta lección hemos profundizado un poco más en el concepto de **asincronía** y hemos conocido los temporizadores:
 
 - **`setInterval`** nos permite ejecutar una función cada x milisegundos, y puede ser cancelada con **`clearInterval`**
-- **`setTimeout`** nos permite ejecutar una función pasados x milisegundos, y puede ser cancelada con **`cancelTimeOut`**
+- **`setTimeout`** nos permite ejecutar una función pasados x milisegundos, y puede ser cancelada con **`clearTimeOut`**
 
 ## Recursos externos adicionales
 
