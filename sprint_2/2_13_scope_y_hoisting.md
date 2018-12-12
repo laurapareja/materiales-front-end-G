@@ -80,10 +80,11 @@ sayHello();
 Bien, antes de saber cuál será el resultado, vamos a ver qué pasos sigue este código.
 
 JavaScript en este caso realiza los siguientes pasos:
+
 1. Genera la variable `greeting` en el ámbito global y  le asigna `Hola`
-1. Declara una función (crea la función)
-1. Ejecuta la función sayHello
-1. Al ejecutar la función `sayHello` y por tanto el código que contiene, se crea una variable `greeting` en el ámbito de la función `sayHello`
+2. Declara una función (crea la función)
+3. Ejecuta la función sayHello
+4. Al ejecutar la función `sayHello` y por tanto el código que contiene, se crea una variable `greeting` en el ámbito de la función `sayHello`
 1. Se ejecuta el `console.log`, en este caso como le hemos pasado como argumento la variable `greeting`, buscará esa variable en el ámbito más próximo y utilizará el valor que almacena
 
 Recordemos que en JavaScript, el ámbito (o scope) se encarga de llevar la lista de todas las variables y funciones declaradas y define una serie de reglas que establecen si esas variables son accesibles en el momento de ejecutar un código.
