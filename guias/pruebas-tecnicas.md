@@ -9,7 +9,7 @@ Si hay algo que no tienes claro dejalo para el final, primero ataca todo lo que 
 
 Es posible que te pidan realizar algo con una determinada tecnología de la cual no tienes ni idea, pero que sepas como resolver la prueba con otra tecnología diferente. En este caso una opción puede ser resolverlo con tus conocimientos, y en una rama intentarlo con la tecnología que nos piden:
 
-- Como el problema ya lo has resuelto con la tecnología que conoces, ya conoces la solución y por tanto puedes centrarte en aprender la nueva tecnología para hacer algo que ya sabes hacer
+- Como el problema ya lo has resuelto con la tecnología que conoces, ya conoces la solución y por tanto puedes centrarte en aprender la nueva tecnología para hacer algo que ya sabes hacer.
 - Si no consigues resolverlo con la tecnología pedida, tienes una ejercicio completo en master del que sentirte orgullosa y listo para entregar, y ademas una rama para mostrar tu enfrentamiento a lo desconocido ;)
 - Si lo consigues, solo tienes que mergear
 
@@ -29,7 +29,7 @@ Si los requisitos para la prueba se encontraban en un repositorio público inclu
 
 ### Instrucciones para ejecutar tu prueba
 
-En el `README.md` incluye en inglés los pasos necesarios para ejecutar tu aplicación. No des nada por hecho y detalla todo lo necesario. Es posible que la persona que vaya a revisarla no tenga `gulp` instalado en su ordenador, o inclusive que se la pase al desarrollador backend para que la mira y ¡este no tenga ni _Node.js_!
+En el `README.md` incluye en inglés los pasos necesarios para ejecutar tu aplicación. No des nada por hecho y detalla todo lo necesario. Es posible que la persona que vaya a revisarla no tenga `gulp` instalado en su ordenador, o inclusive que se la pase al desarrollador backend para que la mire y ¡este no tenga ni _Node.js_!
 
 1. Si es necesario tener instaladas herramientas de manera global, como `node` o el CLI de `gulp`, indícalo.
 
@@ -45,7 +45,7 @@ En el `README.md` incluye en inglés los pasos necesarios para ejecutar tu aplic
 
 3. Indica los pasos para generar el `build` de producción (si es que has preparado esta parte).
 
-// TODO: enlace a readme sencillo de ejemplo
+- [Ejemplo de README.md sencillo](https://github.com/Adalab/mood-app/blob/master/README.md)
 
 ### URL de tu prueba en vivo
 
@@ -66,18 +66,22 @@ Idealmente deberías haber escrito tu código siguiendo un estilo unificado e in
 
 ### Email
 
-Una vez estés conforme llega el momento de escribir el email para entregar tu prueba. En este no olvides incluir:
+Una vez estés contenta con tu trabajo llega el momento de escribir el email para entregar tu prueba. En este no olvides incluir:
 
 - La URL al repo con tu solución y las instrucciones para servirlo en local
 
 - Explica tu prueba (decisiones tomadas):
 
   - Qué tecnolgías has usado, y por qué.
-  - Se ha quedado algo fuera, o en progreso en una rama, y por qué
+  - Se ha quedado algo fuera, o en progreso en una rama.
   - En qué navegadores funciona
   - ...
 
+- Si has incluido algo totalmente nuevo para ti, indícalo para que sea valorado teniendo esto en cuenta.
+
 - ¿Algo te ha supuesto un reto? ¿Te has divertido haciendo la prueba? ¿Has aprendido algo nuevo?
+
+- Se honesta y no te preocupes si nos has conseguido incluir todo lo que se pedía.
 
 - Siempre está bien agradecer la oportunidad e indicar que pueden contactarte si tienen alguna duda sobre la prueba entregada.
 
