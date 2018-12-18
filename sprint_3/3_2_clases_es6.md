@@ -1,17 +1,14 @@
-# Clases de ES6
+# Clases y objetos
 
-## Contenidos
+<!-- TOC depthFrom:4 depthTo:4 insertAnchor:true updateOnSave:true withLinks:true -->
 
-[sección-constructor]: #el-constructor-y-this
+- [EJERCICIO 1](#ejercicio-1)
+- [EJERCICIO 2](#ejercicio-2)
+- [EJERCICIO BONUS A](#ejercicio-bonus-a)
+- [EJERCICIO BONUS B](#ejercicio-bonus-b)
+- [EJERCICIO 3](#ejercicio-3)
 
-- [Introducción](#introducción)
-- [¿Para qué sirve lo que vamos a ver en esta sesión?](#¿para-qué-sirve-lo-que-vamos-a-ver-en-esta-sesión)
-- [Clases y objetos](#clases-y-objetos)
-- [Métodos y atributos](#métodos-y-atributos)
-- [Clase VS instancia](#clase-vs-instancia)
-- [El constructor y `this`][sección-constructor]
-- [Herencia (`extends`)](#herencia-extends)
-- [Bonus: _getters_ y _setters_](#bonus-getters-y-setters)
+<!-- /TOC -->
 
 ## Introducción
 
@@ -20,12 +17,14 @@
 
 En esta sesión veremos el concepto de clases, que está muy relacionado con la [programación orientada a objetos][wp-poo] (OOP, según sus siglas en inglés). La POO es una manera consensuada de pensar la programación (un [paradigma][wp-paradigma]) que se usa en una gran variedad de lenguajes de programación.
 
+En la última sección, veremos cómo reutilizar nuestro código entre distintos proyectos, o importar código ajeno.
+
 
 ## ¿Para qué sirve lo que vamos a ver en esta sesión?
 
-JavaScript es un lenguaje muy flexible. Por eso, en la práctica, muchos programadores recurren a otros conceptos asentados de programación al escribir JavaScript. Con ES6 se guiñó un ojo a los programadores que usaban las posibilidades de JavaScript para la POO y se introdujeron las clases.
+JavaScript es un lenguaje muy flexible. Por eso, en la práctica, muchos programadores recurren a otros conceptos asentados de programación al escribir JavaScript. Con ES6 se guiñó un ojo a los programadores que usaban las posibilidades de JavaScript para la POO y se introdujeron las **clases**.
 
-Las clases en ES6 nos ayudan a delimitar la responsabilidad de ciertas partes de nuestro código y organizarlo de manera más clara y también nos ayudan a reutilizar partes del código y ahorrar líneas y posibilidades de error.
+Las clases nos ayudan a delimitar la responsabilidad de ciertas partes de nuestro código y organizarlo de manera más clara y también nos ayudan a reutilizar partes del código y ahorrar líneas y posibilidades de error.
 
 
 ## Clases y objetos
@@ -45,7 +44,7 @@ Una instancia es un objeto de una clase que hayamos especificado. En el ejemplo 
 
 ## Métodos y atributos
 
-Los objetos se caracterizan por sus propiedades, que pueden ser funciones o valores. En las clases, llamaremos *métodos* a las funciones de una clase, y *atributos* a los valores. Veremos cómo declarar atributos en la sección [constructor][sección-constructor]. De momento, vamos a declarar un método para la clase `Dog`:
+Los objetos se caracterizan por sus propiedades, que pueden ser funciones o valores. En las clases, llamaremos *métodos* a las funciones de una clase, y *atributos* a los valores. Veremos cómo declarar atributos en la sección sobre el constructor. De momento, vamos a declarar un método para la clase `Dog`:
 
 ```js
 class Dog {
@@ -64,7 +63,8 @@ hachiko.bark(); // Woof, woof!
 
 * * *
 
-**EJERCICIO 1**:
+<a id="markdown-ejercicio-1" name="ejercicio-1"></a>
+#### EJERCICIO 1
 
 Vamos a crear un programita que haga cálculos geométricos sencillos. En el programa definiremos la clase `Square`, que tendrá al menos:
 
@@ -80,7 +80,7 @@ Calcularemos y mostraremos el perímetro y el área de un cuadrado de `9` de lad
 
 ## Métodos de clase VS métodos de instancia
 
-Como hemos visto, las instancias comparten los métodos de la clase de la que vienen. Pero las instancias también pueden declarar los suyos propios e individuales:
+Como hemos visto, las instancias comparten los métodos de la clase de la que vienen. Pero las instancias también pueden declarar los suyos propios e individuales. En este ejemplo, la instancia `hachiko` declara un método `waitForOwner` que solo puede usar ella.
 
 ```js
 class Dog {
@@ -183,7 +183,8 @@ laika.reactToCall('Hey, Hachiko!'); // 'Woof, woof!'
 
 * * *
 
-**EJERCICIO 2**:
+<a id="markdown-ejercicio-2" name="ejercicio-2"></a>
+#### EJERCICIO 2
 
 Vamos a mejorar nuestra calculadora geométrica sencilla. En el programa definiremos la clase `Square`, que tendrá al menos:
 
@@ -313,7 +314,8 @@ leo.bark(); // 'Woof, woof!'
 
 * * *
 
-**EJERCICIO BONUS A**:
+<a id="markdown-ejercicio-bonus-a" name="ejercicio-bonus-a"></a>
+#### EJERCICIO BONUS A
 
 Vamos a mejorar ¡aún más! nuestra calculadora geométrica sencilla. En el programa definiremos la clase `Polygon`, `Square` y `Triangle` para polígolos regulares (todos sus lados miden lo mismo). Ya os imagináis por dónde van los tiros: las clases `Square` y `Triangle` serán subclases de `Polygon`. La clase `Polygon` tendrá, al menos:
 
@@ -405,7 +407,8 @@ hachiko.printHappiness(); // 'Little Paws is 25% happy.'
 
 * * *
 
-**EJERCICIO BONUS B**:
+<a id="markdown-ejercicio-bonus-b" name="ejercicio-bonus-b"></a>
+#### EJERCICIO BONUS B
 
 Vamos a mejorar ¡aún más, siempre más! nuestra calculadora geométrica sencilla. En el programa definiremos la clase `Polygon`, `Square` para polígolos regulares (todos sus lados miden lo mismo). La clase `Square` será subclase de `Polygon` y serán iguales a las del **ejercicio bonus A**.
 
@@ -419,6 +422,152 @@ Crearemos una instancia: un cuadrado de `7` de lado. Haremos lo siguiente:
   2. Cambiaremos el lado del cuadrado por `47`
   3. Pediremos de nuevo el área y la guardaremos en otra variable
   4. Compararemos que los valores son distintos. Si son iguales, ¡meeec!
+
+* * *
+
+## Módulos de JS
+
+Los módulos nos facilitan dividir nuestro código en pequeñas partes reutilizables. Podemos dividir nuestro código en partes tanto para **organizar** un proyecto, **compartir** código entre distintos proyectos nuestros o para **usar librerías** de terceros.
+
+**dog.js**:
+```js
+class Dog {
+  bark() {
+    console.log('Wan, wan!');
+  }
+}
+
+const FAMOUS_DOGS = ['Hachiko', 'Laika', '101 Dalmatians'];
+
+export { Dog, FAMOUS_DOGS };
+```
+
+**main.js**:
+```js
+import { Dog, FAMOUS_DOGS } from './dog.js';
+
+const hachiko = new Dog();
+
+console.log(`Some famous dogs in history: ${FAMOUS_DOGS.join(', ')}...`); // 'Some famous dogs in history: Hachiko, Laika, 101 Dalmatians...'
+hachiko.bark(); // 'Wan, wan!'
+```
+
+### `export`
+
+Todo lo que hay dentro de un módulo de JavaScript pertenece exclusivamente al módulo por defecto. Nada se puede acceder desde fuera excepto si se **exporta**. La palabra clave `export` nos permite exportar una variable (`var`, `let` o `const`), función o clase que podrá ser **importada** por otro código más tarde.
+
+Podemos exportar de varias maneras. Podemos exportar individualmente valores que ya hayamos declarado:
+
+**module.js**:
+```js
+export const aConstant = 'constant';
+
+export function aFunction() { /* function body */ }
+```
+
+También podemos exportar todo de una sola vez (como un objeto envoltorio), que mejora la legibilidad del código cuando es extenso:
+
+**module.js**:
+```js
+const aConstant = 'constant';
+
+function aFunction() { /* function body */ }
+
+export { aConstant, aFunction };
+```
+
+Por último, podemos declarar un valor exportado por defecto, si queremos. Solo puede haber un valor exportado por defecto en cada módulo, y puede o no tener nombre:
+
+**module_default-unnamed.js**:
+```js
+export default function() { /* function body */ };
+```
+
+**module_default-named.js**:
+```js
+export default aFunction;
+```
+
+
+### `import`
+
+Para usar código de un módulo, primero tendremos que importarlo en nuestro código. Como es normal en JavaScript, tenemos varias maneras distintas de importar módulos.
+
+Podemos seleccionar, por su nombre, qué valores exportados importar. Importaremos solo uno de la siguiente manera:
+
+**main.js**:
+```js
+import { aConstant } from './module.js';
+
+console.log(aConstant); // 'constant'
+```
+
+E importaremos varios valores así:
+
+**main.js**:
+```js
+import { aConstant, aFunction } from './module.js';
+
+aFunction(); // do things as declared in module.js
+console.log(aConstant); // 'constant'
+```
+
+Si queremos cambiarle el nombre a algún valor, lo podemos hacer con `as`:
+
+**main.js**:
+```js
+import { aFunction as functionFromModule } from './module.js';
+
+functionFromModule(); // do things as declared in module.js
+```
+```js
+import {
+  aConstant,
+  aFunction as functionFromModule
+} from './module.js';
+
+functionFromModule(); // do things as declared in module.js
+console.log(aConstant); // 'constant'
+```
+```js
+import {
+  aConstant as constantFromModule,
+  aFunction as functionFromModule
+} from './module.js';
+
+functionFromModule(); // do things as declared in module.js
+console.log(constantFromModule); // 'constant'
+```
+
+También podemos importar todo el contenido de un módulo con `*`. Esto nos importa todos los valores dentro de un objeto envoltorio al que debemos darle nombre con `as`:
+
+**main.js**:
+```js
+import * as module from './module.js';
+
+module.aFunction(); // do things as declared in module.js
+console.log(module.aConstant); // 'constant'
+```
+
+### Declarar módulos
+
+Podemos declarar archivos de JavaScript como módulos en el HTML de la siguiente manera:
+
+**index.html**:
+```html
+<script type="module" src="route/to/module.js"></script>
+```
+
+En el ejemplo, declararíamos **main.js** de esta manera.
+
+Sin embargo, esta forma de trabajo [no está muy soportada aún](https://caniuse.com/#feat=es6-module) por los navegadores: solo un 62.81% de las últimas versiones de los navegadores lo soporta. Sin embargo, no tendremos ningún problema cuando usemos _module bundlers_ o [Babel](http://babeljs.io/) para compilar nuestro código, y en estos casos no será necesario declarar los módulos en el HTML.
+
+* * *
+
+<a id="markdown-ejercicio-3" name="ejercicio-3"></a>
+#### EJERCICIO 3
+
+Prueba los ejemplos anteriores exportando datos desde un fichero e importándolos desde otros. Asegúrate de entender bien cómo funcionan las rutas para importar/exportar adecuadamente.
 
 * * *
 
@@ -440,3 +589,4 @@ Lista de artículos de colaboradores de Mozilla explicando las novedades de ECMA
 
 - [ES6 in Depth - Classes](https://hacks.mozilla.org/2015/07/es6-in-depth-classes/)
 - [ES6 in Depth - Subclassing](https://hacks.mozilla.org/2015/08/es6-in-depth-subclassing/) (herencia)
+- [ES6 in Depth - Modules](https://hacks.mozilla.org/2015/08/es6-in-depth-modules/)
