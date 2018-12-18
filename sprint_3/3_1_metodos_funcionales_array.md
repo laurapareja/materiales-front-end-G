@@ -1,6 +1,6 @@
 # Métodos funcionales de array
 
-<!-- TOC START min:4 max:4 link:true update:true -->
+<!-- TOC -->
 - [EJERCICIO 1](#ejercicio-1)
 - [EJERCICIO 2](#ejercicio-2)
 - [EJERCICIO 3](#ejercicio-3)
@@ -11,8 +11,9 @@
 - [EJERCICIO 8](#ejercicio-8)
 - [EJERCICIO 9](#ejercicio-9)
 - [EJERCICIO 10](#ejercicio-10)
+- [EJERCICIO 11](#ejercicio-11)
 
-<!-- TOC END -->
+<!-- /TOC -->
 
 ## Introducción
 
@@ -47,11 +48,11 @@ El método `map` nos permite aplicar una función a todos los elementos de un ar
 Vamos a ver cómo usarlo. [En este ejemplo en codepen](https://codepen.io/adalab/pen/wppeQx?editors=0011), partimos de un array con nombres `names` y queremos obtener otro array con los nombres en mayúscula `capitalNames`:
 
 ```js
-var names = ['María', 'Lucía', 'Susana', 'Rocío', 'Inmaculada'];
-var capitalNames = [];
+const names = ['María', 'Lucía', 'Susana', 'Rocío', 'Inmaculada'];
+const capitalNames = [];
 
-for (var i = 0; i < names.length; i++) {
-  var capitalName = names[i].toUpperCase();
+for (let i = 0; i < names.length; i++) {
+  const capitalName = names[i].toUpperCase();
   capitalNames.push(capitalName);
 }
 
@@ -62,17 +63,15 @@ En el bucle, simplemente llamamos a la función `toUpperCase` sobre cada element
 Ahora vamos a ver cómo [realizar esto mismo usando `map`](https://codepen.io/adalab/pen/gooREe?editors=0011):
 
 ```js
-var names = ['María', 'Lucía', 'Susana', 'Rocío', 'Inmaculada'];
-var capitalNames = names.map(function(name){
-  return name.toUpperCase();
-});
+const names = ['María', 'Lucía', 'Susana', 'Rocío', 'Inmaculada'];
+const capitalNames = names.map( name => name.toUpperCase() );
 
 console.log(capitalNames);
 ```
 
-En este caso ejecutamos el método `map` sobre el array de nombres `names`. A `map` le pasamos un único parámetro que es una función que se va a aplicar sobre cada elemento del array. Esta función (que hemos decidido hacer anónima en este caso) toma como parámetro el elemento del array, al que hemos llamado `name`. Nosotros no ejecutamos esta función, sino que solo se la pasamos como parámetro a `map`, justo de la misma forma que hacíamos con los callbacks, y será `map` quien la ejecute pasándoles como argumento cada elemento del array. Dentro de la función tenemos el elemento del array (el nombre, por ejemplo, en primer lugar 'María') sobre el que ejecutamos directamente el método `toUppercase` (pasar a mayúscula). Devolvemos (`return`) el resultado para que pase al array de resultados `capitalNames`. En este caso nosotros no hemos tenido que crear el array `capitalNames` a mano sino que `map` lo crea solo directamente porque así es como funciona: devuelve un array del mismo tamaño que el original con el resultado de aplicar una función a cada elemento del array.
+En este caso ejecutamos el método `map` sobre el array de nombres `names`. A `map` le pasamos un único parámetro que es una función que se va a aplicar sobre cada elemento del array. Esta función (que hemos decidido hacer con una `arrow function`) toma como parámetro el elemento del array, al que hemos llamado `name`. Nosotros no ejecutamos esta función, sino que solo se la pasamos como parámetro a `map`, justo de la misma forma que hacíamos con los callbacks, y será `map` quien la ejecute pasándoles como argumento cada elemento del array. Dentro de la función tenemos el elemento del array (el nombre, por ejemplo, en primer lugar 'María') sobre el que ejecutamos directamente el método `toUppercase` (pasar a mayúscula). Devolvemos (con un `return` implícito) el resultado para que pase al array de resultados `capitalNames`. En este caso nosotros no hemos tenido que crear el array `capitalNames` a mano sino que `map` lo crea directamente porque así es como funciona: devuelve un array del mismo tamaño que el original con el resultado de aplicar una función a cada elemento del array.
 
-> NOTA: es importante recordar que el array resultante de aplicar map va a ser siempre de la misma longitud que el array original.
+> **NOTA**: es importante recordar que el array resultante de aplicar map va a ser siempre de la misma longitud que el array original.
 
 ***
 
@@ -80,7 +79,7 @@ En este caso ejecutamos el método `map` sobre el array de nombres `names`. A `m
 
 **Inflar las notas**
 
-¡Ya tenemos las notas  del examen! Los profes, como somos así, las hemos metido en un array: `var marks = [5, 4, 6, 7, 9];`. Casi todo el mundo lo ha hecho bastante bien pero... vamos a hacer un poco de trampa de la buena :) Vamos a modificar las notas de todas para añadirles 1 punto, ¿no? Pues usemos nuestro reciente amigo `map` para crear un nuevo array `inflatedMarks` con las notas modificadas. Finalmente, mostraremos en la consola las notas modificadas para ver que funciona correctamente. ¡Al lío!
+¡Ya tenemos las notas  del examen! Los profes, como somos así, las hemos metido en un array: `const marks = [5, 4, 6, 7, 9];`. Casi todo el mundo lo ha hecho bastante bien pero... vamos a hacer un poco de trampa de la buena :) Vamos a modificar las notas de todas para añadirles 1 punto, ¿no? Pues usemos nuestro reciente amigo `map` para crear un nuevo array `inflatedMarks` con las notas modificadas. Finalmente, mostraremos en la consola las notas modificadas para ver que funciona correctamente. ¡Al lío!
 
 ***
 
@@ -88,7 +87,7 @@ En este caso ejecutamos el método `map` sobre el array de nombres `names`. A `m
 
 **Saludar es de buena educación**
 
-Estamos creando una aplicación web, y lo primero que queremos hacer es saludar al usuario por su nombre, ¡como es debido! Tenemos un array con el listado de usuarios de nuestra aplicación `var names = ['María', 'Lucía', 'Susana', 'Rocío', 'Inmaculada'];` y queremos conseguir otro array con los saludos, por ejemplo, *'Bienvenida Yolanda'*. ¿Podríamos usar `map` para que nos echase una mano?
+Estamos creando una aplicación web, y lo primero que queremos hacer es saludar al usuario por su nombre, ¡como es debido! Tenemos un array con el listado de usuarios de nuestra aplicación `const names = ['María', 'Lucía', 'Susana', 'Rocío', 'Inmaculada'];` y queremos conseguir otro array con los saludos, por ejemplo, *'Bienvenida Yolanda'*. ¿Podríamos usar `map` para que nos echase una mano?
 
 ***
 
@@ -103,7 +102,7 @@ Vamos a partir de este array con el listado de usuarios que incluye tanto su nom
 Tenemos que crear un nuevo array con los saludos. ¿Podremos hacerlo con `map`?
 
 ```js
-var users = [
+const users = [
   {name: 'María', isPremium: false},
   {name: 'Lucía', isPremium: true},
   {name: 'Susana', isPremium: true},
@@ -121,13 +120,13 @@ El siguiente método funcional que vamos a ver es `filter`. `filter` nos ayuda a
 [Partimos de un ejemplo](https://codepen.io/adalab/pen/vppJVQ?editors=0011) en el que, dado un listado de nombres queremos quedarnos solo con los que tienen más de 5 letras, es decir, 6 o más. Primero vamos a solucionarlo con un bucle:
 
 ```js
-var names = ['María', 'Lucía', 'Susana', 'Rocío', 'Inmaculada'];
-var longNames = [];
+const names = ['María', 'Lucía', 'Susana', 'Rocío', 'Inmaculada'];
+const longNames = [];
 
-for (var i = 0; i < names.length; i++) {
-  var nameLength = names[i].length; // ¡Si, podemos .lenght con strings para saber su longitud!
+for (name of names) {
+  const nameLength = names.length; // ¡Sí, podemos .length con strings para saber su longitud!
   if(nameLength > 5){
-    longNames.push(names[i]);
+    longNames.push(name);
   }
 }
 
@@ -138,17 +137,15 @@ Como en el caso del `map` recorremos el array usando un bucle y hemos creado un 
 Ahora vamos a realizar [este mismo ejemplo con `filter`](https://codepen.io/adalab/pen/PEEKVr?editors=0011):
 
 ```js
-var names = ['María', 'Lucía', 'Susana', 'Rocío', 'Inmaculada'];
-var longNames = names.filter(function(name){
-  return name.length > 5;
-});
+const names = ['María', 'Lucía', 'Susana', 'Rocío', 'Inmaculada'];
+const longNames = names.filter(name => name.length > 5);
 
 console.log(longNames);
 ```
 
 En este caso hemos ejecutado el método `filter` sobre el array `names` y le pasamos como parámetro una función que es la que se ejecuta sobre cada elemento del array. Esta función (anónima) define un parámetro que hemos llamado `name` que representa el elemento del array, por ejemplo, 'María'. Dentro de la función comparamos la longitud (`length`) del nombre con 5, y devolvemos el resultado de esa comparación. Es decir, devolvemos `true` (si la longitud del nombre es mayor que 5) o `false` (si no lo es).
 
->NOTA: El return siempre deberá devolver un booleano o una operación que devuelva un valor de este tipo, por ejemplo, `3 < 4` o `'hola' === 'adios'`.
+>**NOTA**: El return siempre deberá devolver un booleano o una operación que devuelva un valor de este tipo, por ejemplo, `3 < 4` o `'hola' === 'adios'`.
 
 ***
 
@@ -167,7 +164,7 @@ Seguimos con nuestra app de moda y vamos a utilizar el listado de usuarios del e
 Tenemos un listado de las contraseñas (PIN de 4 números) de los usuarios de nuestra web:
 
 ```js
-var pins = [2389, 2384, 2837, 5232, 8998];
+const pins = [2389, 2384, 2837, 5232, 8998];
 ```
 
 De ese listado de contraseñas, queremos que solo puedan entrar los que han elegido una contraseña que es un número par para hacer [A/B testing](https://es.wikipedia.org/wiki/Test_A/B). ¿Nos ayudas a encontrar las contraseñas usando `filter`?
@@ -183,7 +180,7 @@ De ese listado de contraseñas, queremos que solo puedan entrar los que han eleg
 Ya hemos conseguido las contraseñas pertenecientes a cada usuario. ¿Podrías darnos un array con los usuarios que pueden acceder a la aplicación, es decir, los que tienen como PIN un número par?
 
 ```js
-var users = [
+const users = [
   {name: 'María', isPremium: false, pin: 2389},
   {name: 'Lucía', isPremium: true, pin: 2384},
   {name: 'Susana', isPremium: true, pin: 2837},
@@ -198,13 +195,13 @@ var users = [
 
 El método `reduce` es un método funcional complejo que nos permite realizar cálculos o acciones que requieran utilizar varios elementos de un array. A diferencia de `map` o `filter` el resultado de `reduce` no es un array sino un valor del tipo que queramos. Se basa en aplicar una función a todos los elementos de un array (como las anteriores) y se va trabajando con resultados parciales hasta que se llega al resultado final. Se usa cuando queremos obtener un resultado que depende de varios de los elementos del array, por ejemplo, calcular la media de un listado de números.
 
-Vamos a empezar con un [ejemplo de la sesión 2.5 sobre arrays](../sprint_2/2_7_arrays.md#user-content-iterando-sobre-los-elementos-de-un-array) que calcula la suma de un listado de números:
+Vamos a empezar con un ejemplo de la sesión sobre arrays que calcula la suma de un listado de números:
 
 ```js
-var scores = [4, 2, 7, 8, 6, 7, 9, 1, 2, 6, 7];
-var result = 0;
+const scores = [4, 2, 7, 8, 6, 7, 9, 1, 2, 6, 7];
+let result = 0;
 
-for (var i = 0; i < scores.length; i++) {
+for (let i = 0; i < scores.length; i++) {
   result += scores[i];
 }
 
@@ -216,11 +213,12 @@ En la variable `result`, que comienza siendo 0, vamos acumulando la suma de todo
 Vamos a ver cómo haríamos este mismo ejemplo con `reduce`:
 
 ```js
-var scores = [4, 2, 7, 8, 6, 7, 9, 1, 2, 6, 7];
+const scores = [4, 2, 7, 8, 6, 7, 9, 1, 2, 6, 7];
 
-var result = scores.reduce(function(acc, number){
-  return acc + number;
-}, 0);
+const result = scores.reduce(
+  (acc, number) =>  acc + number,
+  0
+);
 
 console.log(result);
 ```
@@ -239,6 +237,12 @@ La función lo que hace es sumar al acumulador el valor del número actual y dev
 
 > NOTA: el segundo parámetro de `reduce` (el valor del acumulador) es opcional y si no lo pasamos se toma como valor inicial el primer elemento del array. En nuestro ejemplo anterior sería válido no indicar segundo parámetro y comenzaríamos a aplicar la función a partir del segundo elemento (en el caso anterior el `2`) que toma como acumulador el primero (en el caso anterior el `4`).
 
+```js
+const result = scores.reduce(
+  (acc, number) =>  acc + number
+);
+```
+
 Esta forma de trabajar es bastante compleja y requiere de mucha práctica, así que vamos a practicar realizando unos ejercicios.
 
 ***
@@ -250,7 +254,7 @@ Esta forma de trabajar es bastante compleja y requiere de mucha práctica, así 
 Hemos organizado una carrera de escobas para que podáis exprimir a fondo vuestra flamante Nimbus 2000. Tenemos los tiempos en este array y nos gustaría conocer la media: ¿nos ayudas a calcularla usando `reduce`?
 
 ```js
-var times = [56, 9, 45, 28, 35];
+const times = [56, 9, 45, 28, 35];
 ```
 
 ***
@@ -264,7 +268,7 @@ Ya hemos conseguido los nombres de los competidores y nos gustaría que usases `
 > PISTA: en este caso el acumulador puede ser no sólo un número sino cualquier valor. Por ejemplo un objeto que sea nuestro candidato a ganador :)
 
 ```js
-var users = [
+const runners = [
   {name: 'Gregory Goyle', time: 56},
   {name: 'Nymphadora Tonks', time: 9},
   {name: 'Luna Lovegood', time: 45},
@@ -275,6 +279,40 @@ var users = [
 
 ***
 
+### Estos métodos pueden encadenarse
+
+Dado que el resultado de aplicar `map` y `filter` es un array, querríamos poder encadenar su comportamiento. `reduce` también podemos encadenarlo, pero será normalmente el último ya que su resultado no tiene por qué ser un array. Vamos a ver un [ejemplo en codepen](https://codepen.io/adalab/pen/BqEjzN?editors=0011).
+
+```js
+const names = ['María', 'Lucía', 'Susana', 'Rocío', 'Inmaculada'];
+const longNames = names
+  .filter(name => name.length > 5)
+  .map(name => name.toUpperCase());
+
+console.log(longNames);
+```
+
+En este caso queremos filtrar los nombres largos pero además obtenerlos en mayúscula. Para eso vamos a, primero filtrar con `filter` por longitud del nombre y luego convertirlos en mayúscula usando `map`.
+
+***
+
+#### EJERCICIO 9
+
+**El ganador de los estudiantes**
+
+Como en el ejemplo anterior vamos a averiguar quién ha ganado usando `reduce`, pero queremos saber el ganador de los estudiantes, por que tendremos que filtrar primero quiénes lo son.
+
+```js
+const runners = [
+  {name: 'Gregory Goyle', time: 56, student: true},
+  {name: 'Nymphadora Tonks', time: 9, student: false},
+  {name: 'Luna Lovegood', time: 45, student: true},
+  {name: 'Cedric Diggory', time: 28, student: true},
+  {name: 'Cho Chang', time: 35, student: true}
+];
+```
+
+***
 
 ### BONUS: sort
 
@@ -283,7 +321,7 @@ Para terminar, vamos a ver un último método que nos permite ordenar los elemen
 Para ordenar valores que son cadenas, no es necesario usar ninguna función de ordenación ya que por defecto `sort` ordena los elementos de un array alfabéticamente.
 
 ```js
-var names = ['María', 'Lucía', 'Susana', 'Rocío', 'Inmaculada'];
+const names = ['María', 'Lucía', 'Susana', 'Rocío', 'Inmaculada'];
 
 names.sort();
 console.log(names);
@@ -297,18 +335,16 @@ Si queremos indicar otro tipo de orden, tendremos que pasar al método `sort` un
 Vamos a ver un ejemplo de la función de ordenación para ordenar números:
 
 ```js
-var times = [56, 9, 45, 28, 35];
+const times = [56, 9, 45, 28, 35];
 
-times.sort(function(a, b){
-  return a - b;
-});
+times.sort((a, b) => a - b);
 console.log(times);
 ```
 De esta forma, si un número `a` es mayor que otro `b` el resultado es positivo y `b` se posiciona antes en el resultado. Lo contrario ocurre cuando `a` es menor que `b`. Si son iguales, el resultado es 0 y se quedan como están.
 
 ***
 
-#### EJERCICIO 9
+#### EJERCICIO 10
 
 **Clasificación de la carrera**
 
@@ -318,7 +354,7 @@ Volviendo a nuestra carrera de escobas, queremos tener el array del ejercicio 8 
 
 ***
 
-#### EJERCICIO 10
+#### EJERCICIO 11
 
 **Poniendo orden en nuestros usuarios**
 
@@ -326,9 +362,28 @@ Vamos a volver al listado de usuarios del ejercicio 6, porque nos ha dado la man
 
 ***
 
+### Recorriendo las propiedades de un objeto
+
+En algunas ocasiones necesitaremos acceder al listado de propiedades de un objeto, que a priori no sabemos cuáles son. Por ejemplo, nos puede llegar la información de un libro de una petición a un API y querer pintar en pantalla todas las propiedades que comienzan por 'ds_'. Para poder hacer esto usamos el método `Object.keys` que nos devuelve el listado de las propiedades de un objeto en un array.
+
+```js
+const book = {
+  title: 'Harry Potter and the Deathly Hallows',
+  ds_title: 'Harry Potter 7',
+  author: 'J. K. Rowling',
+  ds_author: 'Rowling',
+  ...
+};
+
+const keys = Object.keys(book);
+console.log(keys); //['title', 'ds_title', 'author', 'ds_author', ...]
+```
+
+
 ## Recursos externos
 
 - [Array `map` en MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
 - [Array `filter` en MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
 - [Array `reduce` en MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)
 - [Array `sort` en MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+- [`Object.keys` en MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
