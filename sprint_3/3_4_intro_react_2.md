@@ -441,6 +441,8 @@ class RandomCat extends React.Component {
 export default RandomCat;
 ```
 
+> **NOTA**: cuando manejamos un listado de componentes hermanos (como en los `li`s del ejemplo anterior), React nos _warning_ en la consola indicando que debemos dar un atributo `key` a cada elemento cuando tengo un listado. Este atributo debe ser único para cada elemento de la lista, normalmente se usa el `id` del elemento si viene del servidor aunque si no lo tenemos puede usarse el índice de un `for` o un `map`. Sirve para que React internamente pueda optimizar el pintado de los elementos.
+
 ---
 
 **EJERCICIO 4**:
