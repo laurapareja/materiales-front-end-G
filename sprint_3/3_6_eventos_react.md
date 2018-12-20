@@ -15,11 +15,9 @@
 
 Hasta ahora sólo hemos visto cómo pintar interfaces estáticas o independientes en React. Esta es la sesión divertida: en esta sesión veremos cómo añadir dinamicidad a los componentes con eventos.
 
-
 ## ¿Para qué sirve lo que vamos a ver en esta sesión?
 
 React tiene un sistema de eventos sintéticos que ejecutan una acción cuando ocurre un acontecimiento. Con los eventos declararemos cómo _react-cionarán_ nuestros componentes a la interacción con el usuario. Por ejemplo, cuando haga clic en un botón dentro de un componente que hemos definido.
-
 
 ## Eventos sintéticos de React
 
@@ -32,22 +30,26 @@ En la sesión 2.6 vimos los eventos del DOM y cómo escuchar eventos desde JavaS
 Vamos a ver un ejemplo. Queremos escuchar un evento de `click` desde un botón que declaramos con JSX. Escribiremos el botón (`<button>texto</button>`) y en un atributo `onClick` (ojo con la mayúscula) añadiremos la función "escuchadora", que será la reacción. Quedará así:
 
 ```js
-const alertButton = <button onClick={ /* aquí va la función */ }>Pedir más información</button>;
+const alertButton =
+  <button onClick={ /* aquí va la función */ }>
+    Pedir más información
+  </button>;
 ```
 
 Podríamos escribir directamente la función escuchadora como una _arrow function_ ahí, pero no quedaría legible. Preferiremos declararla fuera y la pasaremos (sin llamarla) al atributo de JSX:
 
 ```js
-const onClickListener = (event) => {
-  alert('Para más información, acuda a recepción.');
+const onClickListener = event => {
+  alert("Para más información, acuda a recepción.");
 };
-const alertButton = <button onClick={ onClickListener }>Pedir más información</button>;
+const alertButton = (
+  <button onClick={onClickListener}>Pedir más información</button>
+);
 ```
 
 Ya está. Cuando hagamos clic en el botón, React se encargará de escuchar el evento y de ejecutar la función.
 
 [&blacktriangleright; Evento simple en Codepen][codepen-simple-jsx-event]
-
 
 Naturalmente, hay más atributos para escuchar eventos a parte de `onClick`. Los nombres de los atributos tendrán la forma `onEventoEscuchado`, con cada palabra del nombre del evento que se escucha escrita con mayúsculas iniciales. Es decir, escucharemos el evento `focus` rellenando el atributo `onFocus`, el evento `mouseover` rellenando el atributo `onMouseOver`, y así sucesivamente. Podéis consultar [el listado completo de atributos soportados](https://reactjs.org/docs/events.html#supported-events), pero a continuación vamos a listar los más usados, como ya hicimos en la sesión de eventos:
 
@@ -71,8 +73,7 @@ React no puede controlar los eventos de la ventana, así que los siguiente event
   - ~~`onResize`: se ha cambiado el tamaño de la ventana~~
   - ~~`onScroll`: se ha hecho scroll en la ventana o un elemento~~
 
-
-* * *
+---
 
 **EJERCICIO 1: ODIO LA CEBOLLA**
 
@@ -82,14 +83,13 @@ Vamos a crear un componente `OnionHater` que consta de un `textarea`. Escucharem
 
 > PISTA: para comprobar si una cadena contiene un texto podemos usar el método `includes` de las cadenas
 
-* * *
+---
 
 **EJERCICIO 2: ELIGE TU DESTINO**
 
 Vamos a crear un componente `Destiny` que contiene un `select` con un listado de ciudades: Buenos Aires, Sydney, Praga, Boston y Tokio. Al cambiar el valor del `select`, haremos aparecer un `alert` que diga 'Tu destino es viajar a XXX', siendo XXX la ciudad seleccionada.
 
-* * *
-
+---
 
 ## Uso de métodos `handleEvent` para manejar eventos
 
@@ -100,7 +100,8 @@ Es una práctica común declarar **dentro** del componente las _event handlers_ 
 Vamos a ver un ejemplo. Recordaréis [el componente `RandomCat`][codepen-remembering-randomcat] que creamos en una sesión anterior. Este componente pintaba una foto aleatoria con un gato. Pero algunos días como hoy nos gusta más Bill Murray que los gatos, así que haremos un componente `RandomMurray` que pinte una foto aleatoria de Bill:
 
 ```js
-const getRandomInteger = (max, min) => Math.floor(Math.random() * (max - min + 1)) + min;
+const getRandomInteger = (max, min) =>
+  Math.floor(Math.random() * (max - min + 1)) + min;
 const MIN_SIZE = 200;
 const MAX_SIZE = 400;
 
@@ -109,7 +110,10 @@ class RandomMurray extends React.Component {
     const randomMurray = getRandomInteger(MIN_SIZE, MAX_SIZE);
 
     return (
-      <img src={ `http://www.fillmurray.com/200/${randomMurray}` } alt="Random murray" />
+      <img
+        src={`http://www.fillmurray.com/200/${randomMurray}`}
+        alt="Random murray"
+      />
     );
   }
 }
@@ -141,9 +145,9 @@ class RandomMurray extends React.Component {
 
     return (
       <img
-        src={ `http://www.fillmurray.com/200/${randomMurray}` }
+        src={`http://www.fillmurray.com/200/${randomMurray}`}
         alt="Random murray"
-        onClick={ this.handleClick }
+        onClick={this.handleClick}
       />
     );
   }
@@ -174,7 +178,8 @@ class RandomMurray extends React.Component {
 Ahora que tenemos nuestro método `handleClick()` declarado y enlazado, podemos registrarlo en el elemento JSX donde queremos escuchar el evento.
 
 ```js
-const getRandomInteger = (max, min) => Math.floor(Math.random() * (max - min + 1)) + min;
+const getRandomInteger = (max, min) =>
+  Math.floor(Math.random() * (max - min + 1)) + min;
 const MIN_SIZE = 200;
 const MAX_SIZE = 400;
 
@@ -194,9 +199,9 @@ class RandomMurray extends React.Component {
 
     return (
       <img
-        src={ `http://www.fillmurray.com/200/${randomMurray}` }
+        src={`http://www.fillmurray.com/200/${randomMurray}`}
         alt="Random murray"
-        onClick={ this.handleClick }
+        onClick={this.handleClick}
       />
     );
   }
@@ -205,19 +210,19 @@ class RandomMurray extends React.Component {
 
 [&blacktriangleright; Métodos `handleEvent()` en Codepen][codepen-handleevent-methods]
 
-* * *
+---
 
 **EJERCICIO 3: EXPRESO MI ODIO EN ROJO**
 
 Partiendo del código ejercicio 1, vamos a hacer que nuestro componente ocupe toda la pantalla disponible, y tenga el `textarea` en el centro. Vamos a hacer que al detectar la palabra cebolla en el texto, en vez de mostrar un alert mostrando nuestro odio, pongamos el fondo del componente de color rojo. Al volver a un texto sin cebolla, el fondo vuelve a ser blanco.
 
->PISTA: usaremos el método `forceUpdate` que hemos usado antes, haciendo por ejemplo que cambie un atributo de nuestra clase para indicar si estamos odiando o no
+> PISTA: usaremos el método `forceUpdate` que hemos usado antes, haciendo por ejemplo que cambie un atributo de nuestra clase para indicar si estamos odiando o no
 
 > PISTA: recuerda que para que el `this` funcione correctamente en nuestra función de _handle_ debemos hacer el `bind` adecuado en el constructor
 
 _BONUS_: ¿Podrías hacer que nuestro odio aparezca tanto si 'cebolla' tiene mayúsculas o minúsculas?
 
-* * *
+---
 
 **EJERCICIO 4: VISUALIZA TU DESTINO**
 
@@ -239,10 +244,10 @@ Debe mostrar una imagen de Praga. Para facilitar este comportamiento, este compo
 
 Una vez que tenemos este componente funcionando, vamos a crear uno como hija de nuestro componente `Destiny`, es decir, vamos a hacer que `Destiny` contenga un `CityImage`. Para eso vamos a pintarlo en el JSX de su `render`.
 
-Para terminar, vamos hacer que la magia suceda: en vez de hacer un alert, vamos a conseguir que al cambiar el select a una ciudad aparezca la imagen de esa ciudad y nuestro componente `Destiny` también muestre el texto 'Tu destino es viajar a XXX' en un título. Para conseguirlo, modificaremos un atributo de la clase `this.city` al modificarse el `select`. También tendremos que hacer un `forceUpdate` para se ejecute el método `render` y a) se pasen unas props diferentes al componente `CityImage` y b) se pinte una ciudad diferente en el título.
+Para terminar, vamos hacer que la magia suceda: en vez de hacer un alert, cuando la usuaria elija una ciudad en el select aparece la imagen de esa ciudad y se muestra el texto 'Tu destino es viajar a XXX'.
+Para conseguirlo os recomendamos usar un atributo de la clase `this.city` que cambie su valor al cambiar el select. También tendremos que usar `forceUpdate` para se ejecute el método `render` y a) se pasen unas props diferentes al componente `CityImage` y b) se pinte una ciudad diferente en el título.
 
-* * *
-
+---
 
 ## Recursos externos
 

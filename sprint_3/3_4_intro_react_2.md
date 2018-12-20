@@ -1,6 +1,7 @@
 # Introducción a React - II
 
 ## Contenidos
+
 - [Introducción](#introducción)
 - [¿Para qué sirve lo que vamos a ver en esta sesión?](#¿para-qué-sirve-lo-que-vamos-a-ver-en-esta-sesión)
 - [Creando nuestro primer componente](#creando-nuestro-primer-componente)
@@ -15,31 +16,31 @@
 
 En esta sesión vamos a seguir aprendiendo cómo funciona la librería [React.js][react]. En concreto, vamos a ver que está basada en componentes y cómo crear un componentes personalizable.
 
-
 ## ¿Para qué sirve lo que vamos a ver en esta sesión?
 
-Un __componente web__ es una parte de la interfaz de una página o aplicación web que podemos reutilizar. Por ejemplo, una línea de producto de un carrito de la compra, o un elemento colapsable.
+Un **componente web** es una parte de la interfaz de una página o aplicación web que podemos reutilizar. Por ejemplo, una línea de producto de un carrito de la compra, o un elemento colapsable.
 
 Los frameworks o librerías como React se basan en el concepto de componente. De esta forma, todo lo que vamos a crear son componentes que iremos usando para crear la interfaz deseada.
 
 Los componentes de React, además, pueden personalizarse a través de un mecanismo llamado `props`, que no es otra cosa que pasarle valores a través de los atributos del componente HTML.
 
-
 ## Creando nuestro primer componente
 
-_¡Manos a la obra!_ Vamos a crear nuestro primer componente de React. Va a ser un componente que nos muestre una imagen aleatoria de un gato usando la web de lorempixel, y que además será un enlace a una página. Primero, creamos un proyecto nuevo con `create-react-app`. 
+_¡Manos a la obra!_ Vamos a crear nuestro primer componente de React. Va a ser un componente que nos muestre una imagen aleatoria de un gato usando la web de lorempixel, y que además será un enlace a una página. Primero, creamos un proyecto nuevo con `create-react-app`.
 
 Para comenzar, vamos a crear un nuevo módulo JavaScript para definir el componente. Crearemos un archivo `RandomCat.js` en la misma carpeta `src` donde definiremos el componente. Tendremos que importar React de su módulo, así que añadiremos al principio:
 
 **RandomCat.js**:
+
 ```js
-import React from 'react';
+import React from "react";
 // ...
 ```
 
 Para que nuestro componente se pueda usar desde fuera del módulo, lo exportaremos. Para eso, añadiremos al final:
 
 **RandomCat.js**:
+
 ```js
 // ...
 export default RandomCat;
@@ -72,10 +73,11 @@ class RandomCat extends React.Component {
 _¡Ya está!_ Ahora para ver el resultado tendremos que decirle a React que lo pinte. Para usar nuestro componente en el archivo `index.js`, tendremos que importar nuestro componente del módulo, naturalmente. Escribiremos arriba:
 
 **index.js**:
+
 ```js
-import React from 'react';
+import React from "react";
 // ...
-import RandomCat from './RandomCat';
+import RandomCat from "./RandomCat";
 ```
 
 > Para importar de un archivo local, utilizaremos el prefijo `./` antes de la ruta. Sin embargo, no pondremos el prefijo cuando sea una dependencia en `npm`, como nos preconfigura `create-react-app` para `react` y `react-dom`.
@@ -83,14 +85,15 @@ import RandomCat from './RandomCat';
 Solo falta el paso final: es tan fácil como cambiar la línea que empieza por `ReactDOM.render` y reemplazar `<App />` por `<RandomCat />`:
 
 ```js
-ReactDOM.render(<RandomCat />, document.getElementById('root'));
+ReactDOM.render(<RandomCat />, document.getElementById("root"));
 ```
 
 **Y voilá!** Nos debería quedar así:
 
 **RandomCat.js**:
+
 ```js
-import React from 'react';
+import React from "react";
 
 class RandomCat extends React.Component {
   render() {
@@ -106,25 +109,27 @@ export default RandomCat;
 ```
 
 **index.js**:
+
 ```js
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import RandomCat from './RandomCat';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import RandomCat from "./RandomCat";
 //import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<RandomCat />, document.getElementById('root'));
+ReactDOM.render(<RandomCat />, document.getElementById("root"));
 //registerServiceWorker();
 ```
 
 > Las líneas comentadas son una añadidura de `create-react-app` para facilitar hacer _progressive web apps_, pero son completamente opcionales y por ahora no las utilizaremos.
 
-* * *
+---
+
 **EJERCICIO 1**:
 
 Vamos a partir del ejercicio 1 (o del 2) de la sesión anterior. En lugar de usar el componente genérico App, vamos a crear un nuevo componente `MediaCard` encargado de pintar una tarjeta social para un usuario. Vamos a cargar ese nuevo componente desde el `index.js` para pintarlo con ReactDOM.
 
-* * *
+---
 
 ## Las `props` para personalizar un componente
 
@@ -134,14 +139,14 @@ Hasta aquí todo bien, pero ¿y si queremos que `RandomCat` no sea siempre igual
 class Greeting extends React.Component {
   render() {
     return (
-      <span>Hello, { this.props.name }!</span> // <span>Hello, María Moliner!</span>
+      <span>Hello, {this.props.name}!</span> // <span>Hello, María Moliner!</span>
     );
   }
 }
 
 const componentToRender = <Greeting name="María Moliner" />;
 
-ReactDOM.render(componentToRender, document.getElementById('root'));
+ReactDOM.render(componentToRender, document.getElementById("root"));
 ```
 
 Estos datos se llaman `props` y se guardan en un atributo de las instancias del mismo nombre. Podemos acceder a él a través de `this.props`, que es un objeto que contiene las claves y los valores de estos "atributos".
@@ -165,10 +170,12 @@ render() {
 }
 ```
 
-* * *
+---
+
 **EJERCICIO 2**:
 
 Vamos a partir del ejercicio 1 (el anterior). Vamos a usar las `props` para personalizar el contenido de una tarjeta social `MediaCard`. En concreto, vamos a personalizar
+
 - el nombre del usuario
 - la fecha
 - la imagen
@@ -176,7 +183,7 @@ Vamos a partir del ejercicio 1 (el anterior). Vamos a usar las `props` para pers
 - el número de likes
 - si el corazón está o no relleno
 
-* * *
+---
 
 ### Crear componentes _dummies_ más rápido
 
@@ -185,13 +192,11 @@ Llamamos componente _dummy_ (títere) a los componentes en React que **no tienen
 Hasta ahora los hemos escrito como componentes completos para que os familiarizaseis con la sintaxis de clases de React:
 
 ```js
-import React from 'react';
+import React from "react";
 
 class Greetings extends React.Component {
   render() {
-    return (
-      <h1>Hello, { this.props.name }!</h1>
-    );
+    return <h1>Hello, {this.props.name}!</h1>;
   }
 }
 
@@ -201,12 +206,10 @@ export default Greetings;
 Pero React también tiene una manera de escribir estos componentes de manera más sencilla. La idea, sencillamente, es pensar en los componentes _dummies_ como funciones que reciben unas `props` como parámetros y devuelven elementos y componentes de JSX:
 
 ```js
-import React from 'react';
+import React from "react";
 
-const Greetings = (props) => {
-  return (
-    <h1>Hello, { props.name }!</h1>
-  );
+const Greetings = props => {
+  return <h1>Hello, {props.name}!</h1>;
 };
 
 export default Greetings;
@@ -218,12 +221,10 @@ Aunque parezca difícil, esta sintaxis se puede simplificar aún más. Recordamo
 
 ```js
 // ...
-const Greetings = (props) => {
+const Greetings = props => {
   const { name } = props; // "destructuring" de objeto
-  return (
-    <h1>Hello, { name }!</h1>
-  );
-}
+  return <h1>Hello, {name}!</h1>;
+};
 // ...
 ```
 
@@ -231,11 +232,10 @@ Podemos hacer _destructuring_ directamente en los parámetros de una función:
 
 ```js
 // ...
-const Greetings = ({ name }) => { // "destructuring" en los parámetros
-  return (
-    <h1>Hello, { name }!</h1>
-  );
-}
+const Greetings = ({ name }) => {
+  // "destructuring" en los parámetros
+  return <h1>Hello, {name}!</h1>;
+};
 // ...
 ```
 
@@ -243,20 +243,21 @@ Y si lo combinamos con el _return_ implícito de las _arrow functions_, queda as
 
 ```js
 // ...
-const Greetings = ({ name }) => ( // "arrow function" sin llaves, con "return" implícito
-  <h1>Hello, { name }!</h1>
-);
+const Greetings = (
+  { name } // "arrow function" sin llaves, con "return" implícito
+) => <h1>Hello, {name}!</h1>;
 // ...
 ```
 
 Hemos reducido la declaración de un componente de siete líneas a tres. Es una práctica común hacerlo al revés: declarar un componente nuevo primero como función, _dummy_, y si más tarde necesita estado o comportamiento, [ampliar su declaración](https://reactjs.org/docs/state-and-lifecycle.html#converting-a-function-to-a-class) a la de un componente de clase completo.
 
-* * *
+---
+
 **EJERCICIO 3**:
 
 Convierte el componente `MediaCard` del ejercicio anterior en un componente funcional.
 
-* * *
+---
 
 ## Creando varios componentes
 
@@ -265,8 +266,9 @@ Vamos a hacer un componente más que sea la sección donde se mostrarán distint
 Nos vamos a acostumbrar a crear nuestros componentes de React en un directorio `components` para tenerlos todos juntos. Creamos el directorio, movemos `RandomCat.js` dentro y creamos un nuevo archivo `CatList.js`:
 
 **components/CatList.js**:
+
 ```js
-import React from 'react';
+import React from "react";
 
 class CatList extends React.Component {
   // class body
@@ -278,6 +280,7 @@ export default CatList;
 El método `render()` devolverá un elemento `section` con un `h1` y una lista `ul` con tres elementos `li`:
 
 **components/CatList.js**:
+
 ```js
 // ...
 class CatList extends React.Component {
@@ -288,7 +291,9 @@ class CatList extends React.Component {
         <ul className="section-cats_list">
           <li>A cat</li>
           <li>Another cat</li>
-          <li><i>Moar</i> cats</li>
+          <li>
+            <i>Moar</i> cats
+          </li>
         </ul>
       </section>
     );
@@ -300,21 +305,29 @@ class CatList extends React.Component {
 Como queremos usar `RandomCat` dentro de `CatList`, tendremos que importarlo en la parte superior del archivo:
 
 **components/CatList.js**:
+
 ```js
-import React from 'react';
-import RandomCat from './RandomCat';
+import React from "react";
+import RandomCat from "./RandomCat";
 // ...
 ```
 
 Lo siguiente tenemos que agradecérselo a JSX: para usar nuestro componente solo tendremos que usarlo como si fuera una etiqueta de HTML normal. Así que cambiaremos cada uno de los textos de dentro de los elementos `li` por `<RandomCat />`:
 
 **components/CatList.js**:
+
 ```js
 // ...
 <ul className="section-cats_list">
-  <li><RandomCat /></li>
-  <li><RandomCat /></li>
-  <li><RandomCat /></li>
+  <li>
+    <RandomCat />
+  </li>
+  <li>
+    <RandomCat />
+  </li>
+  <li>
+    <RandomCat />
+  </li>
 </ul>
 // ...
 ```
@@ -322,20 +335,22 @@ Lo siguiente tenemos que agradecérselo a JSX: para usar nuestro componente solo
 Finalmente, en el archivo `index.js` importaremos el componente `CatList` y le diremos a `ReactDOM` que renderice `<CatList />`:
 
 **index.js**:
+
 ```js
 // ...
-import CatList from './components/CatList';
+import CatList from "./components/CatList";
 
-ReactDOM.render(<CatList />, document.getElementById('root'));
+ReactDOM.render(<CatList />, document.getElementById("root"));
 ```
 
 Ahora se verán tres gatos iguales por la caché de los navegadores web (la dirección de la imagen es la misma y reutilizan la llamada al servidor). Podemos modificar el componente `RandomCat` para que siempre sea diferente generando un número aleatorio. Declaramos una pequeña función y el número de gatos disponibles:
 
 **RandomCat.js**:
-```js
-import React from 'react';
 
-const getRandomInteger = (maxNumber) => Math.floor(Math.random() * maxNumber);
+```js
+import React from "react";
+
+const getRandomInteger = maxNumber => Math.floor(Math.random() * maxNumber);
 const NUMBER_OF_CATS = 10;
 // ...
 ```
@@ -343,6 +358,7 @@ const NUMBER_OF_CATS = 10;
 Y ahora solo tendremos que modificar el método `render()` para incluir la llamada a la función, que se ejecutará cada vez que React pinte un componente `RandomCat`:
 
 **RandomCat.js**:
+
 ```js
 // ...
 render() {
@@ -359,19 +375,21 @@ render() {
 **¡Genial!** Nos quedará así:
 
 **index.js**:
-```js
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import CatList from './components/CatList';
 
-ReactDOM.render(<CatList />, document.getElementById('root'));
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import CatList from "./components/CatList";
+
+ReactDOM.render(<CatList />, document.getElementById("root"));
 ```
 
 **components/CatList.js**:
+
 ```js
-import React from 'react';
-import RandomCat from './RandomCat';
+import React from "react";
+import RandomCat from "./RandomCat";
 
 class CatList extends React.Component {
   render() {
@@ -379,9 +397,15 @@ class CatList extends React.Component {
       <section className="section-cats">
         <h1>All Cats Are Beautiful</h1>
         <ul className="section-cats_list">
-          <li><RandomCat /></li>
-          <li><RandomCat /></li>
-          <li><RandomCat /></li>
+          <li>
+            <RandomCat />
+          </li>
+          <li>
+            <RandomCat />
+          </li>
+          <li>
+            <RandomCat />
+          </li>
         </ul>
       </section>
     );
@@ -392,10 +416,11 @@ export default CatList;
 ```
 
 **components/RandomCat.js**:
-```js
-import React from 'react';
 
-const getRandomInteger = (maxNumber) => Math.floor(Math.random() * maxNumber);
+```js
+import React from "react";
+
+const getRandomInteger = maxNumber => Math.floor(Math.random() * maxNumber);
 const NUMBER_OF_CATS = 10;
 
 class RandomCat extends React.Component {
@@ -404,7 +429,10 @@ class RandomCat extends React.Component {
 
     return (
       <a href="http://lorempixel.com">
-        <img src={ `http://lorempixel.com/400/200/cats/${randomCat}` } alt="Random cat" />
+        <img
+          src={`http://lorempixel.com/400/200/cats/${randomCat}`}
+          alt="Random cat"
+        />
       </a>
     );
   }
@@ -413,7 +441,7 @@ class RandomCat extends React.Component {
 export default RandomCat;
 ```
 
-* * *
+---
 
 **EJERCICIO 4**:
 
@@ -421,28 +449,29 @@ Vamos a partir de la web del ejemplo con un listado de gatos con fotos aleatoria
 
 Desde `CatList` declararemos que se pinten tres componentes `RandomCat`:
 
-  - Uno de 200x200 px
-  - Otro de 200x400 px
-  - Otro, al que no pasaremos `props`, que será de 400x200 px
+- Uno de 200x200 px
+- Otro de 200x400 px
+- Otro, al que no pasaremos `props`, que será de 400x200 px
 
-* * *
+---
 
 **EJERCICIO 5**:
 
 En nuestra web de tarjetas sociales, vamos a crear un nuevo componente `MediaList` para manejar una lista de componentes `MediaCard`. Para ello, mostrará una nueva sección con un título y un listado de 3 componentes `MediaCard`. Cada tarjeta tendrá datos personalizados que definiremos mediantes `props` desde el componente madre, es decir, el que maneja la lista.
 
-* * *
+---
 
 ## Publicar nuestra app React en GitHub Pages
 
-`create-react-app` nos crea un entorno de desarrollo donde empezar a trabajar con React en nuestra máquina. Si queremos enseñar el resultado con GitHub Pages hay que hacer algunas cosillas antes de generar una versión para producción 
+`create-react-app` nos crea un entorno de desarrollo donde empezar a trabajar con React en nuestra máquina. Si queremos enseñar el resultado con GitHub Pages hay que hacer algunas cosillas antes de generar una versión para producción
+
 - rutas a los archivos principales serán relativas al dominio
-- necesitaremos una carpeta determinada 
+- necesitaremos una carpeta determinada
 - y, quizás, haya que cambiar algo de `http` a `https`.
 
-> GitHub Pages se sirve como https y "pide" que el resto de recursos externos que pidamos usen el mismo protocolo. Esto se aplica, por ejemplo, a las peticiones a una API.
+> GitHub Pages se sirve como https y "pide" que el resto de recursos externos que pidamos usen el mismo protocolo. Esto se aplica, por ejemplo, a las peticiones a una API o las rutas de las imágenes.
 
-Entraremos por terminal a nuestra carpeta de proyecto y esto es lo que hay que hacer:  
+Entraremos por terminal a nuestra carpeta de proyecto y esto es lo que hay que hacer:
 
 1. Modificar `package.json` para que las rutas sean relativas a nuestros archivos: hay que añadir `”homepage”: “./“,`.
 2. Ya que lo vamos a servir desde GitHub, y usa https, tendremos que cambiar cualquier recurso `http` a `https`: por ejemplo, en un fetch
@@ -455,13 +484,13 @@ GitHub Pages funciona en la carpeta raíz o en la **docs/** de la rama master, a
 
 **Ya.**
 
-* * *
+---
 
 **EJERCICIO 6**:
 
 Publiquemos la aplicación del último ejercicio en GitHub Pages. ¡A por ello!
 
-* * *
+---
 
 ## Recursos externos
 

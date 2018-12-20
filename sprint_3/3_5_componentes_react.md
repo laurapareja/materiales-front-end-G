@@ -17,20 +17,17 @@
 - [Valores por defecto de las `props`](#valores-por-defecto-de-las-props)
 - [`props` tipadas con `propTypes`](#props-tipadas-com-proptypes)
 
-
 ## Introducción
 
 Hasta ahora hemos visto cómo crear componentes sencillos y decirle a React que se encargue de pintarlos.
 
 En esta sesión veremos cómo definir componentes más completos y robustos, y exploraremos las diferentes maneras de relacionar nuestros componentes entre sí.
 
-
 ## ¿Para qué sirve lo que vamos a ver en esta sesión?
 
 Según vayamos creando aplicaciones web más grandes con React, necesitaremos definir mayor número de componentes que se relacionarán entre sí. Veremos cómo se relacionan los componentes padre/madre con los componentes hijo/hija, y un tipo especial de componente que tendrá más componentes arbitrarios en su interior.
 
-También necesitaremos crear componentes con mayores garantías de funcionar. Para eso veremos `propTypes`, para obligar a las `props` a ser de un tipo de dato concreto, y cómo asignarles valores por defecto para hacer `props` opcionales.  
-
+También necesitaremos crear componentes con mayores garantías de funcionar. Para eso veremos `propTypes`, para obligar a las `props` a ser de un tipo de dato concreto, y cómo asignarles valores por defecto para hacer `props` opcionales.
 
 ## Componentes padre e hijo (madre e hija)
 
@@ -54,7 +51,6 @@ Los componentes padre/madre pueden tener múltiples componentes hijo/hija, pero 
 
 Estas relaciones forman una jerarquía importante para entender React. Desde los componentes padre/madre podremos pasar datos _hacia abajo_ a los componentes hijo/hija, mediante las `props`, pero **no al revés**. Un hijo/a no podrá pasar datos _hacia arriba_ libremente. Veremos en una sesión posterior cómo "solucionar" los problemas que _a priori_ parece generar este **flujo unidireccional**.
 
-
 ## Ejemplos de app con varios componentes y cómo se pasan datos con las `props`
 
 Vamos a ver un ejemplo para entender mejor el paso de información de un componente a sus hijas. Partimos de un componente `Item` que es un artículo que tenemos en una lista de la compra:
@@ -62,6 +58,7 @@ Vamos a ver un ejemplo para entender mejor el paso de información de un compone
 ![Item example](./assets/images/4_4_item.png)
 
 Como vemos en la imagen, un item tiene estas propiedades:
+
 - nombre
 - descripción
 - cantidad
@@ -75,13 +72,13 @@ class Item extends React.Component {
   render() {
     return (
       <div className="item">
-        <h5 className="quantity">{ this.props.quantity }</h5>
+        <h5 className="quantity">{this.props.quantity}</h5>
         <div>
-          <h5>{ this.props.name }</h5>
-          <h6 className="text-muted">{ this.props.description }</h6>
+          <h5>{this.props.name}</h5>
+          <h6 className="text-muted">{this.props.description}</h6>
         </div>
-        <div className="badge badge-info">{ this.props.category }</div>
-        <h5 className="price">{ this.props.price }€</h5>
+        <div className="badge badge-info">{this.props.category}</div>
+        <h5 className="price">{this.props.price}€</h5>
       </div>
     );
   }
@@ -136,7 +133,7 @@ class ItemList extends React.Component {
 }
 ```
 
-* * *
+---
 
 **EJERCICIO 1**:
 
@@ -147,21 +144,21 @@ Ahora tenemos los datos de cada item en un array de objetos (como variable globa
 ```js
 const items = [
   {
-    name:"Cereales con chocolate",
+    name: "Cereales con chocolate",
     description: "Cereales rellenos de chocolate",
     quantity: 2,
     category: "Cereales",
     price: 5
   },
   {
-    name:"Hamburguesa con queso",
+    name: "Hamburguesa con queso",
     description: "Hamburguesa rica y saludable",
     quantity: 1,
     category: "Fast-food",
     price: 15
   },
   {
-    name:"Agua mineral",
+    name: "Agua mineral",
     description: "Agua de un charco del Himalaya",
     quantity: 2,
     category: "Bebida",
@@ -172,20 +169,20 @@ const items = [
 
 ¿Serías capaz de crear el JSX que devuelve el método `render` de `ItemList` usando un bucle o un `map`? Para hacerlo debes saber que para pintar varios componentes en JSX basta con crear un array con cada JSX y devolverlo en una expresión entre {}.
 
-* * *
+---
 
 ## Uso de `children` para acceder a los componentes hijo cuando no los conoces
 
 Algunas veces, al declarar un componente no sabremos o no nos importará qué otros componentes podrá contener dentro. Por ejemplo, un componente `Popup` o un componente genérico `Header`. En esos casos podremos usar una `prop` especial, `children`, para pasar directamente elementos:
 
 ```js
-import React from 'react';
+import React from "react";
 
 class Popup extends React.Component {
   render() {
     return (
-      <div className={ `alert alert-${this.props.styling}` } role="alert">
-      { this.props.children }
+      <div className={`alert alert-${this.props.styling}`} role="alert">
+        {this.props.children}
       </div>
     );
   }
@@ -194,66 +191,64 @@ class Popup extends React.Component {
 ReactDOM.render(
   <Popup styling="info">
     <h1 className="horizontal-center">Welcome</h1>
-    <p>
-     Thank you for visiting our webpage!
-    </p>
-    <p>
-      We hope you enjoy our new shiny site!
-    </p>
+    <p>Thank you for visiting our webpage!</p>
+    <p>We hope you enjoy our new shiny site!</p>
   </Popup>,
-  document.getElementById('react-root')
+  document.getElementById("react-root")
 );
 ```
 
-[Componentes y `children` en Codepen][codepen-component-children]
+[&rtrif; Componentes y `children` en Codepen][codepen-component-children]
 
 Como se puede observar en el ejemplo, inyectaremos `props.children` en el JSX del componente genérico como una variable cualquiera. Cuando usemos el componente, escribiremos el contenido en JSX dentro de sus etiquetas de apertura (`<Popup>`) y de cierre (`</Popup>`).
 
-* * *
+---
 
 **EJERCICIO 2**:
 
 Desarrolla un componente `HalfPage` que todo su contenido lo ponga en la mitad izquierda de la pantalla (mitad de ancho y todo el alto). Usa `children` para introducir todo el contenido entre la apertura y cierre de `HalfPage` en su interior. Crea 2 componentes `HalfPage` con algo de contenido HTML (en JSX) para ver cómo se posiciona en una mitad y la otra.
 
-* * *
-
+---
 
 ## Valores por defecto de las `props`
 
 En ocasiones querremos definir que algunas `props` no sean obligatorias, y cuando no se pasen querremos usar un valor por defecto. Esto se puede conseguir en React con `defaultProps`. Será un objeto con el nombre de las `props` que queremos que tengan valor por defecto y su correspondiente valor, y cuando se instancie el componente, se cogerán las `props` que falten de ese objeto. Lo definimos como una propiedad del componente, `NombreDelComponente.defaultProps = {}`, después de declarar la clase:
 
 ```js
-import React from 'react';
+import React from "react";
 
 class Button extends React.Component {
   render() {
     return (
-      <button className={ `btn btn-${this.props.styling}` } type="button" name="button">
-        { this.props.label }
+      <button
+        className={`btn btn-${this.props.styling}`}
+        type="button"
+        name="button"
+      >
+        {this.props.label}
       </button>
-    )
+    );
   }
 }
 
 // Así definimos las defaultProps
 Button.defaultProps = {
-  styling: 'primary', // from Bootstrap classes: primary, secondary, success, info, warning, danger, link
-  label: 'Aceptar'
+  styling: "primary", // from Bootstrap classes: primary, secondary, success, info, warning, danger, link
+  label: "Aceptar"
 };
 ```
 
-[Valores por defecto en Codepen][codepen-default-values]
+[&rtrif; Valores por defecto en Codepen][codepen-default-values]
 
 > No hace falta importar el paquete `prop-types` para usar valores por defecto
 
-* * *
+---
 
 **EJERCICIO 3**:
 
 Partiendo del código del ejercicio 1, usa las `defaultProps` para que la descripción del item sea opcional y si no nos lo pasan por `props` aparezca 'No hay descripción'.
 
-* * *
-
+---
 
 ## `props` tipadas con `propTypes`
 
@@ -273,24 +268,28 @@ npm install --save prop-types
 Después, ya en nuestro archivo JavaScript, lo importaremos como un módulo después de importar `React`:
 
 ```js
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 // ...
 ```
 
 Del mismo modo que con `defaultProps` y después de declarar el componente, definimos una propiedad del componente, `NombreDelComponente.propTypes = {}`, que será un objeto con el nombre de las props y el tipo que queremos que sea:
 
 ```js
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 class Button extends React.Component {
   render() {
     return (
-      <button className={ `btn btn-${this.props.styling}` } type="button" name="button">
-        { this.props.label }
+      <button
+        className={`btn btn-${this.props.styling}`}
+        type="button"
+        name="button"
+      >
+        {this.props.label}
       </button>
-    )
+    );
   }
 }
 
@@ -318,18 +317,25 @@ También podemos declarar tipos más complejos:
 - `PropTypes.oneOf(['apple', 'pear', 'lemon', 'orange'])` para valores limitados a los del array especificado
 - Y más. La lista completa está en los [enlaces externos][sección-recursos-externos]
 
-
 Además de todo esto, podemos obligar a que se le pase valor a la `prop` añadiendo `.isRequired` a cualquiera de los tipos:
 
 ```js
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 class Button extends React.Component {
   // class body
 }
 
-const stylingValues = ['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'link'];
+const stylingValues = [
+  "primary",
+  "secondary",
+  "success",
+  "info",
+  "warning",
+  "danger",
+  "link"
+];
 Button.propTypes = {
   label: PropTypes.string,
   styling: PropTypes.oneOf(stylingValues).isRequired // obligamos a que tenga valor
@@ -338,25 +344,21 @@ Button.propTypes = {
 // Y también definimos valores por defecto
 Button.defaultProps = {
   // no incluímos "styling" porque con propTypes y "isRequired" obligamos a que se pase un valor
-  label: 'Aceptar'
+  label: "Aceptar"
 };
 ```
 
-[Validar `props` de React en Codepen][codepen-props-typechecking]
+[&rtrif; Validar `props` de React en Codepen][codepen-props-typechecking]
 
 Podemos combinar `propTypes` con `children` también, y obligar a que nuestro componente tenga un solo hijo/a, por ejemplo:
 
 ```js
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 class VerticalCenter extends React.Component {
   render() {
-    return (
-      <div className="vertical-center">
-        { this.props.children }
-      </div>
-    );
+    return <div className="vertical-center">{this.props.children}</div>;
   }
 }
 
@@ -365,14 +367,13 @@ VerticalCenter.propTypes = {
 };
 ```
 
-* * *
+---
 
 **EJERCICIO 4**:
 
 Dado el resultado del ejercicio 3, vamos a hacer que el nombre de los items sea obligatorio y que el precio sea también obligatorio y de tipo numérico. Crea después un nuevo item con valores erróneos para ver qué pinta tiene el error que nos envía React.
 
-* * *
-
+---
 
 ## Recursos externos
 

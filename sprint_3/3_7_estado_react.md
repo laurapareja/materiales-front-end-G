@@ -14,15 +14,13 @@
 
 Hasta ahora hemos usado los componentes prácticamente como plantillas HTML que podemos personalizar con `props`. Declarábamos los componentes y se pintaban. Aunque también hemos visto cómo pueden reaccionar a eventos, en esta sesión iremos un paso más allá y veremos cómo cada componente puede tener una pequeña memoria que le permitirá tener actividad por sí mismo.
 
-
 ## ¿Para qué sirve lo que vamos a ver en esta sesión?
 
-El __estado__ de una interfaz son sencillamente los datos que necesitamos para representarla. Por ejemplo, vamos a fijarnos en la interfaz de entrada a GMail. Los datos que necesitamos para poder pintarla son muchos más de los que pensamos a priori. Por un lado, necesitamos los datos concretos de email: el nombre de remitente, asunto, el texto inicial del email y la fecha. Pero también necesitamos conocer si un correo está marcado como favorito para mostrar la estrella rellana o vacía. O, al marcar algún correo con un check, hay opciones nuevas que aparecen. Por tanto, todos estos datos que necesito para poder pintar la interfaz son el estado.
+El **estado** de una interfaz son sencillamente los datos que necesitamos para representarla. Por ejemplo, vamos a fijarnos en la interfaz de entrada a GMail. Los datos que necesitamos para poder pintarla son muchos más de los que pensamos a priori. Por un lado, necesitamos los datos concretos de email: el nombre de remitente, asunto, el texto inicial del email y la fecha. Pero también necesitamos conocer si un correo está marcado como favorito para mostrar la estrella rellana o vacía. O, al marcar algún correo con un check, hay opciones nuevas que aparecen. Por tanto, todos estos datos que necesito para poder pintar la interfaz son el estado.
 
 ![New GMail cover](assets/images/3_8_new-gmail-web-cover.jpg)
 
 React es especialmente bueno manejando los pequeños cambios que se necesitan en cada uno de los componentes de una web. Cada instancia de un componente tiene un **estado** que refleja cada uno de esos pequeños cambios. React encapsula toda la complejidad y la distribuye en este sistema predecible. Saber utilizar los estados nos permitirá definir cómo se comportarán los componentes en cada momento y declarar _react-ciones_ más elaboradas a según qué interación con el usuario.
-
 
 ## Manejo del estado en un componente de React
 
@@ -35,7 +33,7 @@ Por defecto, el estado de un componente está vacío. Hay dos momentos y maneras
 En el `constructor()` podemos definir el estado que tendrá el componente en el primer momento en que se muestre en pantalla. En otras palabras, el estado inicial del componente. Lo haremos asignando a `this.state` un objeto con los valores iniciales de **todos los estados** que vaya a tener el componente:
 
 ```js
-const generateRandomInteger = (maxValue) => Math.floor(Math.random() * maxValue);
+const generateRandomInteger = maxValue => Math.floor(Math.random() * maxValue);
 
 class RandomInteger extends React.Component {
   constructor(props) {
@@ -44,13 +42,11 @@ class RandomInteger extends React.Component {
 
     this.state = {
       number: generateRandomInteger(maxValue)
-    }
+    };
   }
 
   render() {
-    return (
-      <span>{ this.state.number }</span>
-    );
+    return <span>{this.state.number}</span>;
   }
 }
 ```
@@ -70,7 +66,7 @@ class BipolarButton extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      styling: 'info'
+      styling: "info"
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -79,13 +75,18 @@ class BipolarButton extends React.Component {
   handleClick() {
     // Nuestra función escuchadora del evento click
     this.setState({
-      styling: 'danger'
+      styling: "danger"
     });
   }
 
   render() {
     return (
-      <button className={ `btn btn-${this.state.styling}` } onClick={ this.handleClick }>{ this.props.label }</button>
+      <button
+        className={`btn btn-${this.state.styling}`}
+        onClick={this.handleClick}
+      >
+        {this.props.label}
+      </button>
     );
   }
 }
@@ -100,7 +101,7 @@ class BipolarButton extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      styling: 'info'
+      styling: "info"
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -109,10 +110,10 @@ class BipolarButton extends React.Component {
   handleClick() {
     this.setState((prevState, props) => {
       let nextStyling;
-      if (prevState.styling === 'info') {
-        nextStyling = 'danger';
+      if (prevState.styling === "info") {
+        nextStyling = "danger";
       } else {
-        nextStyling = 'info';
+        nextStyling = "info";
       }
 
       return {
@@ -126,7 +127,9 @@ class BipolarButton extends React.Component {
     const { styling } = this.state;
 
     return (
-      <button className={ `btn btn-${styling}` } onClick={ this.handleClick }>{ label }</button>
+      <button className={`btn btn-${styling}`} onClick={this.handleClick}>
+        {label}
+      </button>
     );
   }
 }
@@ -136,31 +139,29 @@ También se puede usar una _arrow function_ más corta y, en este caso, un opera
 
 ```js
 this.setState((prevState, props) => ({
-  styling: (prevState.styling === 'info') ? 'danger' : 'info'
+  styling: prevState.styling === "info" ? "danger" : "info"
 })); // este doble paréntesis se suele olvidar de primeras
 ```
 
 [&blacktriangleright; `setState()` con función en Codepen][codepen-setstate-incremental-function]
 
+---
 
-* * *
-
-**EJERCICIO 1: QUÉ HORA SERÁ**:
+**EJERCICIO 1: QUÉ HORA SERÁ**
 
 Hace unas semanas, la empresa Time2Sleep nos encargó una página que mostrase sus ejercicios de relajación orientados a agilizar el sueño. Después de publicarla, recibieron _feedback_ de sus usuarios: se quedaban tan profundamente dormidos que, al despertar, no recordaban ni su nombre. Como quedaron muy contentos con el trabajo (literalmente: _"¡cómo nos flipan estas adalabers!"_), ahora nos han pedido una evolutiva, que es como se llama a las funcionalidades que se añaden a un proyecto ya hecho, para que añadamos un reloj a la web. Así sus usuarios sabrán al menos qué hora es.
 
-Vamos a crear un componente reloj (`Clock`) que nos muestre la hora en cada momento. Tendrá un método `updateClock()` en el componente para actualizar el estado con `setState(/* objeto */)`, que actualizará la hora con `new Date()`. En el constructor del componente declararemos un `setInterval()` que ejecute `updateClock` cada segundo.  
+Vamos a crear un componente reloj (`Clock`) que nos muestre la hora en cada momento. Tendrá un método `updateClock()` en el componente para actualizar el estado con `setState(/* objeto */)`, que actualizará la hora con `new Date()`. En el constructor del componente declararemos un `setInterval()` que ejecute `updateClock` cada segundo.
 
-* * *
+---
 
 **EJERCICIO 2: CONTADOR DE OVEJAS**
 
-Definitivamente, Time2Sleep es fan de AdaLab. Esta vez, basándose en unos novedosos estudios científicos de alguna famosísima universidad que dice que al contar ovejas nos aburrimos tanto que caemos dormidos, nos han encargado que hagamos un contador de ovejas digital.
+Definitivamente, Time2Sleep es fan de Adalab. Esta vez, basándose en unos novedosos estudios científicos de alguna famosísima universidad que dice que al contar ovejas nos aburrimos tanto que caemos dormidos, nos han encargado que hagamos un contador de ovejas digital.
 
 Crearemos un componente cuentaovejas (`SheepCounter`) que mostrará un número en grande y un botón. El botón tendrá asignado un escuchador al evento `click` que aumentará el contador. Actualizaremos el valor del contador con `setState(/* función */)`.
 
-* * *
-
+---
 
 ## ¿Qué pasa cuando hay un cambio de estado?
 
@@ -172,7 +173,6 @@ Un cambio de estado no solo cambia los valores de `this.state`. Lo más importan
 
 Ahora podemos entender por qué React no asegura que los cambios de estado ocurran al momento, aunque sean bastante rápidos. Cuando llamamos a `setState()` en cualquiera de sus formas, React registra esa **petición** de cambio de estado y la añade a una cola de tareas por hacer. Para no tener que re-`render`izar componentes demasiadas veces, es posible que agrupe en lotes (_batches_) algunos cambios de estado a la vez y los procese juntos para mejorar con eso el rendimiento. Esto significa que tendremos que pensar **las llamadas a `setState()` como llamadas asíncronas**.
 
-
 ### El `callback` de `setState()`
 
 Si usásemos un valor de `this.state` después de llamar a `setState()`, podría no tener el valor actualizado. Por eso, `setState()` acepta un `callback` como último parámetro, como cualquier función asíncrona.
@@ -180,7 +180,7 @@ Si usásemos un valor de `this.state` después de llamar a `setState()`, podría
 ```js
 this.setState(
   {
-    mensaje: 'nuevo mensaje'
+    mensaje: "nuevo mensaje"
   },
   () => {
     console.log(this.state.mensaje); // 'nuevo mensaje'
@@ -190,7 +190,7 @@ this.setState(
 
 El `callback` se ejecutará justo después de que el cambio de estado haya tenido lugar, así que se pueden usar los nuevos valores de `this.state` sin problema.
 
-* * *
+---
 
 **EJERCICIO 3: CONTADOR DE OVEJAS AVANZADO**
 
@@ -198,7 +198,7 @@ Sobre el componente cuentaovejas (`SheepCounter`) del ejercicio anterior, añadi
 
 > Podéis usar esta imagen por ejemplo: http://www.clker.com/cliparts/e/4/8/7/13280460782141411990Cartoon%20Sheep.svg.hi.png
 
-* * *
+---
 
 ## Recursos externos
 
@@ -208,10 +208,8 @@ Documentación oficial de React (en inglés).
 
 - [Estado en los componentes](https://facebook.github.io/react/docs/state-and-lifecycle.html)
 
-
 ### Egghead
 
 Serie de clases en vídeo que introduce y explora los fundamentos básicos de React (en inglés).
 
 - [Gestión de los estados en los componentes](https://egghead.io/lessons/react-state-basics)
-
