@@ -1,4 +1,4 @@
-# Formularios en React
+# Estado en React 2
 
 [codepen-form-example]: https://codepen.io/adalab/pen/WyBqdK?editors=0010
 
@@ -8,16 +8,13 @@
 - [¿Para qué sirve lo que vamos a ver en esta sesión?](#¿para-qué-sirve-lo-que-vamos-a-ver-en-esta-sesión)
 - [Formularios](#formularios)
 
-
 ## Introducción
 
-Los formularios funcionan un poco diferente en React que un formulario simple HTML. Los elementos de formulario almacenan de por sí un estado, que es el valor del input. En React, cuando creamos un formulario vamos a manejar el estado de los input usando el estado de los componentes de React. Manejarlo de esta forma nos va a facilitar procesar los datos introducidos por el usuario, ya sea para hacer validaciones o a la hora de enviarlo.
-
+Los formularios funcionan un poco diferente en React que un formulario simple HTML. Los elementos de formulario almacenan de por sí un estado, que es el valor del input. En React, cuando creamos un formulario vamos a manejar el estado de los input usando el estado de los componentes de React. Manejarlo de esta forma nos va a facilitar procesar los datos introducidos por el usuario, ya sea para hacer validaciones o a la hora de enviar los datos a un servidor.
 
 ## ¿Para qué sirve lo que vamos a ver en esta sesión?
 
 Para crear apps de React que tienen un formulario, y hacerlo de la forma correcta en React. Por ejemplo, ¿no estáis haciendo un proyecto que tiene formularios?
-
 
 ## Formularios
 
@@ -32,21 +29,21 @@ class AwesomeForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: ''
+      name: ""
     };
 
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
-    this.setState({name: event.target.value});
+    this.setState({ name: event.target.value });
   }
 
   render() {
     return (
       <form>
         <label htmlFor="name">Name:</label>
-        <input  id="name" type="text" onChange={this.handleChange} />
+        <input id="name" type="text" onChange={this.handleChange} />
         <input type="submit" value="Enviar" />
       </form>
     );
@@ -58,12 +55,12 @@ Hemos creado un componente simple, `AwesomeForm`, que tiene un formulario con un
 
 > NOTA: Fíjate también que en la etiqueta `label` hemos usado el atributo `htmlFor` en lugar de `for`, ya que es una palabra reservada de JavaScript, lo mismo que con pasaba con `class` y `className`.
 
-
 ### Componentes controlados
 
-Muy bien, pero hay una cosa más que tenemos que hacer para asegurarnos de que la información que guardamos en el estado sea "de verdad verdadera" la que introduce el usuario. Y es obligar a que su `value` tome los datos directamente del estado, es decir, que se muestren de nuevo en el `input`. 
+Muy bien, pero hay una cosa más que tenemos que hacer para asegurarnos de que la información que guardamos en el estado sea "de verdad verdadera" la que introduce el usuario. Y es obligar a que su `value` tome los datos directamente del estado, es decir, que se muestren de nuevo en el `input`.
 
 El ciclo que siguen los datos es:
+
 1. el usuario escribe en el `input`
 2. en el evento de cambio se guardan en el estado
 3. al cambiar el estado se ejecuta en método `render` y se asignan como `value` al `input`
@@ -75,21 +72,26 @@ class AwesomeForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: ''
+      name: ""
     };
 
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
-    this.setState({name: event.target.value});
+    this.setState({ name: event.target.value });
   }
 
   render() {
     return (
       <form>
         <label htmlFor="name">Name:</label>
-        <input id="name" type="text" value={this.state.name} onChange={this.handleChange} />
+        <input
+          id="name"
+          type="text"
+          value={this.state.name}
+          onChange={this.handleChange}
+        />
         <input type="submit" value="Enviar" />
       </form>
     );
@@ -109,28 +111,73 @@ Usar un _componente controlado_ tiene más ventajas, por ejemplo, nos permite va
 
 [&blacktriangleright; Usando un componente controlado en Codepen][codepen-form-example]
 
-* * *
+---
 
 **EJERCICIO 1: Formulario para pelis**
 
 Vamos a crear un formulario en un componente de React que recoja información de una película. Recogeremos información de
+
 - nombre (en un campo de texto)
 - descripción (en un textarea)
 - género (en un select donde podemos seleccionar comedia, drama o infantil)
 
-* * *
+---
+
+## Refs
+
+Hasta ahora sabemos que para pintar la información de nuestro componentes en el DOM hemos delegado totalmente en React: nos hemos olvidado de los `querySelector` y los `innerHTML`. Para modificar en pantalla los datos de un componente, le paso nuevas `props` o modifica su estado y se vuelve a pintar actualizado.
+
+Pero para algunos casos concretos vamos a necesitar acceder al DOM directamente y para estos casos React nos ofrece una alternativa: los Refs o referencias al DOM. Debe usarlos solo en casos muy específicos como:
+
+- manejar el foco de un elemento de formulario, la selección de texto o la reporducción multimedia
+- iniciar animaciones
+- integrar en nuestra aplicación librerías externas que usan el DOM
+
+### Usando refs
+
+Para poder usar refs en nuestro código de React tenemos que seguir estos sencillos pasos:
+
+1. declarar un atributo en el `constructor` llamando a la función `React.createRef()`
+2. crear un atributo `ref` en el elemento que necesitamos referenciar, y le damos como valor el atributo anterior
+3. para poder usar una referencia al DOM desde un método cualquiera de la clase usamos la propiedad `current` del atributo declarado en el punto 1
+
+Vamos a ver un ejemplo de la documentación de React que sigue estos 3 pasos para que, al pinchar en un campo, cambiamos el foco a otro campo usando refs.
+
+```js
+class CustomTextInput extends React.Component {
+  constructor(props) {
+    super(props);
+    this.textInput = React.createRef();
+    this.focusTextInput = this.focusTextInput.bind(this);
+  }
+
+  focusTextInput() {
+    this.textInput.current.focus();
+  }
+
+  render() {
+    return (
+      <div>
+        <input type="text" ref={this.textInput} />
+
+        <input
+          type="button"
+          value="Focus the text input"
+          onClick={this.focusTextInput}
+        />
+      </div>
+    );
+  }
+}
+```
 
 ### Componentes no controlados: el `input` de tipo `file`
 
 Existe una excepción en el uso de elementos de formulario como componentes controlados, y es al usar un campo de tipo fichero (`file`). En esta caso, no puede ser controlado ya que se trata de un campo de solo lectura porque el único que puede modificarlo, por temas de seguridad, es el usuario de la web.
 
-Para trabajar con este `input` y, por ejemplo, acceder a su contenido tendremos que acceder a él como un nodo del DOM. Hasta ahora no hemos visto cómo se hace eso en React, ya que toda la programación que hemos hecho es declarativa. Para poder procesar este input necesitamos acceder a él mediante una referencia `Ref` al DOM gestionada React (esta forma de acceso al DOM existe desde React 16).
+Para trabajar con este `input` y, por ejemplo, acceder a su contenido tendremos que acceder a él como un nodo del DOM. Por tanto, vamos a usar las Refs que hemos visto antes para acceder a la información del fichero que ha elegido la usuaria.
 
-Para esto tenemos que seguir 2 pasos:
-1. declarar un atributo de la clase en el `constructor` llamando a la función `React.createRef()`
-2. indicar en el atributo `ref` del elemento al que queremos acceder ese atributo
-
-Veamos un ejemplo de la documentación de React de cómo acceder al nombre del fichero elegido por el usuario al enviar el formulario.
+Veamos un ejemplo de la documentación de React.
 
 ```js
 class FileInput extends React.Component {
@@ -141,11 +188,7 @@ class FileInput extends React.Component {
   }
   handleSubmit(event) {
     event.preventDefault();
-    alert(
-      `Selected file - ${
-        this.fileInput.current.files[0].name
-      }`
-    );
+    alert(`Selected file - ${this.fileInput.current.files[0].name}`);
   }
 
   render() {
@@ -163,13 +206,13 @@ class FileInput extends React.Component {
 }
 ```
 
-* * *
+---
 
 **EJERCICIO 2: Formulario para pelis II**
 
 Partiendo del ejercicio anterior, vamos a añadir un campo más al formulario que sea la carátula de la película. Al elegir el usuario una carátula, se muestra una previsualización de la misma, y se guardan los datos en el estado. Recuerda que para leer la información de ficheros debemos usar un `FileReader` y para recoger la información de una imagen su método `readAsDataURL`.
 
-* * *
+---
 
 ## Recursos externos
 
@@ -180,3 +223,5 @@ Documentación oficial de React (en inglés).
 - [Formularios en React](https://reactjs.org/docs/forms.html)
 
 - [Manejo del input tipo `file` en React](https://reactjs.org/docs/uncontrolled-components.html#the-file-input-tag)
+
+- [Refs y el DOM](https://reactjs.org/docs/refs-and-the-dom.html)
