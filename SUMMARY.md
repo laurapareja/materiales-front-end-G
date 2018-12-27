@@ -47,12 +47,12 @@
 - [3.7 Estado en React](sprint_3/3_7_estado_react.md)
 
 <!--
-* [3.8 Formularios en React](sprint_3/3_8_formularios_react.md)
-* [3.9 Lifting](sprint_3/3_9_lifting.md)
-* [3.10 Arquitectura de componentes con estado](sprint_3/3_10_arquitectura_estado.md)
-* [3.11 React router](sprint_3/3_11_react_router.md)
-* [3.12 Métodos del ciclo de vida de componentes](sprint_3/3_12_ciclo_vida_componentes_react.md)
-* [3.13 Debugging en React](sprint_3/3_14_debugging_react.md)
+- [3.8 Formularios en React](sprint_3/3_8_estado_react_2.md)
+- [3.9 Lifting](sprint_3/3_9_lifting.md)
+- [3.10 Arquitectura de componentes con estado](sprint_3/3_10_arquitectura_estado.md)
+- [3.11 React router](sprint_3/3_11_react_router.md)
+- [3.12 Métodos del ciclo de vida de componentes](sprint_3/3_12_ciclo_vida_componentes_react.md)
+- [3.13 Debugging en React](sprint_3/3_14_debugging_react.md)
 -->
 
 ## Proyectos
@@ -63,7 +63,7 @@
 - [Anexo. Documentación del API de Awesome Profile Cards](proyectos/P2_anexo.md)
 
 <!--
-* [Proyecto 3. Un caso de código heredado](proyectos/P3_proyecto_sprint_3.md)
+- [Proyecto 3. Un caso de código heredado](proyectos/P3_proyecto_sprint_3.md)
 -->
 
 ## Guías
@@ -71,10 +71,10 @@
 - [Buenas prácticas para tener un portfolio atractivo en GitHub](guias/github_como_portfolio.md)
 
 <!--
-* [Instalar un linter de JavaScript](guias/instalar_linter_js.md)
+- [Instalar un linter de JavaScript](guias/instalar_linter_js.md)
 -->
 
 <!--
 ## Extra
-* [E.1 Repaso de flexbox y position](extra/e1-flexbox-y-position.md)
+- [E.1 Repaso de flexbox y position](extra/e1-flexbox-y-position.md)
 -->
