@@ -4,9 +4,12 @@
 
 ## Contenidos
 
-- [Introducción](#introducción)
-- [¿Para qué sirve lo que vamos a ver en esta sesión?](#¿para-qué-sirve-lo-que-vamos-a-ver-en-esta-sesión)
-- [Formularios](#formularios)
+<!-- TOC -->
+
+- [EJERCICIO 1](#ejercicio-1)
+- [EJERCICIO 2](#ejercicio-2)
+
+<!-- /TOC -->
 
 ## Introducción
 
@@ -113,7 +116,9 @@ Usar un _componente controlado_ tiene más ventajas, por ejemplo, nos permite va
 
 ---
 
-**EJERCICIO 1: Formulario para pelis**
+#### EJERCICIO 1
+
+**Formulario para pelis**
 
 Vamos a crear un formulario en un componente de React que recoja información de una película. Recogeremos información de
 
@@ -127,9 +132,9 @@ Vamos a crear un formulario en un componente de React que recoja información de
 
 Hasta ahora sabemos que para pintar la información de nuestro componentes en el DOM hemos delegado totalmente en React: nos hemos olvidado de los `querySelector` y los `innerHTML`. Para modificar en pantalla los datos de un componente, le paso nuevas `props` o modifica su estado y se vuelve a pintar actualizado.
 
-Pero para algunos casos concretos vamos a necesitar acceder al DOM directamente y para estos casos React nos ofrece una alternativa: los Refs o referencias al DOM. Debe usarlos solo en casos muy específicos como:
+Pero para algunos casos concretos vamos a necesitar acceder al DOM directamente y para estos casos React nos ofrece una alternativa: los Refs o referencias al DOM. Debemos usarlos solo en casos muy específicos como:
 
-- manejar el foco de un elemento de formulario, la selección de texto o la reporducción multimedia
+- manejar el foco de un elemento de formulario, la selección de texto o la reproducción multimedia
 - iniciar animaciones
 - integrar en nuestra aplicación librerías externas que usan el DOM
 
@@ -208,7 +213,9 @@ class FileInput extends React.Component {
 
 ---
 
-**EJERCICIO 2: Formulario para pelis II**
+#### EJERCICIO 2
+
+**Formulario para pelis II**
 
 Partiendo del ejercicio anterior, vamos a añadir un campo más al formulario que sea la carátula de la película. Al elegir el usuario una carátula, se muestra una previsualización de la misma, y se guardan los datos en el estado. Recuerda que para leer la información de ficheros debemos usar un `FileReader` y para recoger la información de una imagen su método `readAsDataURL`.
 
