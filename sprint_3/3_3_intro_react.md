@@ -2,14 +2,13 @@
 
 ## Contenidos
 
-- [Introducción](#introducción)
-- [¿Para qué sirve lo que vamos a ver en esta sesión?](#¿para-qué-sirve-lo-que-vamos-a-ver-en-esta-sesión)
-- [Qué es React](#qué-es-react)
-- [Estructura de un proyecto en React](#estructura-de-un-proyecto-en-react)
-- ["Hola, mundo" con `create-react-app`](#"hola-mundo"-con-create-react-app)
-- [JSX y el método `render`: la magia de no tener que manipular el DOM](#jsx-y-el-método-render)
-- [Interfaz declarativa VS imperativa](#interfaz-declarativa-vs-imperativa)
-- [Usando Sass en nuestro proyecto de React](#usando-sass-en-nuestro-proyecto-de-react)
+<!-- TOC -->
+
+- [EJERCICIO 1](#ejercicio-1)
+- [EJERCICIO 2](#ejercicio-2)
+- [EJERCICIO 3](#ejercicio-3)
+
+<!-- /TOC -->
 
 ## Introducción
 
@@ -232,7 +231,7 @@ Muy parecido al JSX que hemos escrito, ¿verdad?
 
 ---
 
-**EJERCICIO 1**:
+#### EJERCICIO 1
 
 Vamos a crear un nuevo proyecto de React llamado **mediacard**. Vamos a modificar el método `render` del componente `App` para que tenga un diseño similar al de la imagen. Podéis usar una imagen a vuestra elección en lugar de la que aparece en el diseño, y Font-Awesome para el icono del corazón. De esta forma, aprenderemos a cómo trabajar con cosas que ya conocemos (HTML y CSS) en una aplicación de React.
 
@@ -240,7 +239,7 @@ Vamos a crear un nuevo proyecto de React llamado **mediacard**. Vamos a modifica
 
 ---
 
-**EJERCICIO 2**:
+#### EJERCICIO 2
 
 Partiendo del ejercicio anterior, en este ejercicio aprenderemos mejor cómo funciona JSX. Para ello vamos a asignar nombres a las variables, un tema que será importante cuando creemos nuestros componentes más adelante.
 
@@ -324,9 +323,66 @@ To import Sass files, you first need to install node-sass.
 Run `npm install node-sass` or `yarn add node-sass` inside your workspace.
 ```
 
+### ¿Y cómo quedará esto en nuestros proyectos?
+
+Vamos a partir de el proyecto base que nos crea `create-react-app` y vamos a cambiar nuestro `App.css` a `App.scss`, ahora enlazamos directamente nuestro scss:
+
+**App.js**
+```js
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.scss';
+
+class App extends Component {
+  ···
+}
+
+export default App;
+```
+
+Vale, ¿y si quiero tener archivos importados para usar variables y parciales?
+
+Pues igual que siempre, en el mismo ejemplo: Desde `App.scss` vamos a importar un archivo de variables `_vars.scss`, y a usarlo!
+
+**_vars.scss**
+```scss
+$bg: #282c34;
+```
+
+**App.scss**
+```scss
+@import 'vars';
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  ···
+}
+```
+
+y `App.js` se mantiene igual que antes:
+```js
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.scss';
+
+class App extends Component {
+  ···
+}
+
+export default App;
+```
+
 ---
 
-**EJERCICIO 3**:
+#### EJERCICIO 3
 
 Vamos a modificar el ejercicio anterior de la tarjeta para hacerlo con Sass dentro de nuestro proyecto de React.
 
