@@ -4,9 +4,11 @@
 
 ## Contenidos
 
-- [Introducción](#introducción)
-- [¿Para qué sirve lo que vamos a ver en esta sesión?](#¿para-qué-sirve-lo-que-vamos-a-ver-en-esta-sesión)
-- [Arquitectura de componentes con estado](#arquitectura-de-componentes-con-estado)
+<!-- TOC -->
+
+- [EJERCICIO 1: DIRECTORIO](#ejercicio-1-directorio)
+
+<!-- /TOC -->
 
 ## Introducción
 
@@ -28,7 +30,7 @@ En esta sesión vamos a proponeros una arquitectura concreta para trabajar con c
 
 ## Arquitectura de componentes con estado
 
-Cuando trabajamos en aplicación React con varios componentes, la gestión de estado se vuelve compleja. Cuando desde un componente necesito unos datos que están en otro, primero tendré que identificar en cuál están y luego acceder a ellos, ya sea por _props_ o _lifting_. Para manejar esta situación, existen distintas arquitecturas de componentes. En esta sesión os proponemos una concreta con la que trabajar, aunque no es la única ni vale para todas las situaciones, sí que os va a ayudar a estructurar mejor vuestra aplicación React.
+Cuando trabajamos en aplicaciones React con varios componentes, la gestión de estado se vuelve compleja. Cuando desde un componente necesito unos datos que están en otro, primero tendré que identificar en cuál están y luego acceder a ellos, ya sea por _props_ o _lifting_. Para manejar esta situación, existen distintas arquitecturas de componentes. En esta sesión os proponemos una concreta con la que trabajar, aunque no es la única ni vale para todas las situaciones, sí que os va a ayudar a estructurar mejor vuestra aplicación React.
 
 A pesar de que todos los componentes pueden tener estado, a la hora de hacer aplicaciones web con React, preferiremos **agrupar todos los estados en el componente raíz**. El resto de componentes serán _dummies_ (títeres), que significa que no tendrán estado. Podemos referirnos al estado del componente raíz como **estado de la aplicación** o **estado global**.
 
@@ -156,6 +158,7 @@ class MurrayList extends React.Component {
         <h1>
           All <del>Cats</del> Murrays Are Beautiful
         </h1>
+
         {this.state.loading ? (
           <Loader />
         ) : (
@@ -171,6 +174,7 @@ class MurrayList extends React.Component {
             </li>
           </ul>
         )}
+        
         {/* pasamos handleClickAndReload al hijo como prop */}
         <ReloadButton actionToPerform={handleClick} label="More murrays" />
       </section>
@@ -201,7 +205,9 @@ render() {
 
 ---
 
-**EJERCICIO 1: DIRECTORIO**
+#### EJERCICIO 1
+
+**Directorio**
 
 En este ejercicio vamos a realizar un directorio de personas, al estilo de LinkedIn, con unos filtros que permiten filtrar las personas que aparecen. Para ello vamos a partir de un array de datos de gente aleatoria generado por https://randomuser.me/. Por ejemplo, un listado de 50 personas con datos aleatorios: https://randomuser.me/api/?results=50
 
