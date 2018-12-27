@@ -4,9 +4,13 @@
 
 ## Contenidos
 
-- [Introducción](#introducción)
-- [¿Para qué sirve lo que vamos a ver en esta sesión?](#¿para-qué-sirve-lo-que-vamos-a-ver-en-esta-sesión)
-- [_Lifting_ (alzamiento) para pasar datos de hijos a padres](#lifting-alzamiento-para-pasar-datos-de-hijos-a-padres)
+<!-- TOC -->
+
+- [EJERCICIO 1](#ejercicio-1)
+- [EJERCICIO 2](#ejercicio-2)
+- [EJERCICIO 3](#ejercicio-3)
+
+<!-- /TOC -->
 
 ## Introducción
 
@@ -64,7 +68,7 @@ class MurrayList extends React.Component {
 export default MurrayList;
 ```
 
-Como vemos en el componente `MurrayList` creamos un componente `ReloadButton` al que pasamos por `props` una función que llamamos `actionToPerform`. Esta prop apunta a al método `handleClick` que simplemente hace un forceUpdate que provoca una llamada al render y por tanto el re-renderizado de todas las hijas, las 3 `RandomMurray`, provocando el pintado de 3 nuevas imágenes aleatorias.
+Como vemos en el componente `MurrayList` llamamos a un componente `ReloadButton` al que pasamos por `props` una función que llamamos `actionToPerform`. Esta prop apunta a al método `handleClick` que simplemente hace un forceUpdate que provoca una llamada al render y por tanto el re-renderizado de todas las hijas, las 3 `RandomMurray`, provocando el pintado de 3 nuevas imágenes aleatorias.
 
 **components/ReloadButton.js**
 
@@ -124,17 +128,21 @@ import MurrayList from "./components/MurrayList";
 ReactDOM.render(<MurrayList />, document.getElementById("react-root"));
 ```
 
-[&blacktriangleright; _Lifting_ de eventos en Codepen][codepen-lifting-events]
+&blacktriangleright; [_Lifting_ de eventos en Codepen][codepen-lifting-events]
 
 ---
 
-**EJERCICIO 1: CIUDADES**
+#### EJERCICIO 1
+
+**Ciudades**
 
 Para terminar de entender bien cómo funciona el lifting vamos a hacer un ejercicio muy sencillo. Partimos de un select con nombre de ciudades que encapsulamos en un componente `CitySelector`. Vamos a hacer que, al seleccionar una ciudad del select, aparezca una foto de la misma al lado. La diferencia con ejercicios anteriores es que ahora el select está en su propio componente, y debemos usar lifting.
 
 ---
 
-**EJERCICIO 2: TRADUCTOR MIMIMI**
+#### EJERCICIO 2 
+
+**Traductor MIMIMI**
 
 ¿No os ha pasado nunca que habéis dicho algo y se han burlado de vosotras con un MIMIMI?
 
@@ -150,9 +158,11 @@ Vamos a partir de un formulario simple con un textarea donde escribimos una fras
 
 ---
 
-**EJERCICIO 3: FILTRANDO ARTÍCULOS**
+#### EJERCICIO 3
 
-Vamos a partir de la segunda parte del ejercicio 1 de la sesión 3.6 (los items de la lista de la compra). Si recuerdas bien, teníamos un componente `ItemList` que mostraba un listado de `Item`s. Vamos a crear un nuevo componente `CategoryButton` que es un botón con el nombre de una categoría de productos y que recibe por `props` el nombre de la categoría.
+**Filtrando artículos**
+
+Vamos a partir del ejercicio 1 de la sesión 3.5 (los items de la lista de la compra). Si recuerdas bien, teníamos un componente `ItemList` que mostraba un listado de `Item`s. Vamos a crear un nuevo componente `CategoryButton` que es un botón con el nombre de una categoría de productos y que recibe por `props` el nombre de la categoría.
 
 ```html
 <CategoryButton category="Bebida" />

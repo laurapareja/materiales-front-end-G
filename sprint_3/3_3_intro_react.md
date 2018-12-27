@@ -1,14 +1,14 @@
 # Introducción a React
 
 ## Contenidos
-- [Introducción](#introducción)
-- [¿Para qué sirve lo que vamos a ver en esta sesión?](#¿para-qué-sirve-lo-que-vamos-a-ver-en-esta-sesión)
-- [Qué es React](#qué-es-react)
-- [Estructura de un proyecto en React](#estructura-de-un-proyecto-en-react)
-- ["Hola, mundo" con `create-react-app`](#"hola-mundo"-con-create-react-app)
-- [JSX y el método `render`: la magia de no tener que manipular el DOM](#jsx-y-el-método-render)
-- [Interfaz declarativa VS imperativa](#interfaz-declarativa-vs-imperativa)
-- [Usando Sass en nuestro proyecto de React](#usando-sass-en-nuestro-proyecto-de-react)
+
+<!-- TOC -->
+
+- [EJERCICIO 1](#ejercicio-1)
+- [EJERCICIO 2](#ejercicio-2)
+- [EJERCICIO 3](#ejercicio-3)
+
+<!-- /TOC -->
 
 ## Introducción
 
@@ -238,7 +238,7 @@ Muy parecido al JSX que hemos escrito, ¿verdad?
 
 * * *
 
-**EJERCICIO 1**:
+#### EJERCICIO 1
 
 Vamos a crear un nuevo proyecto de React llamado **mediacard**. Vamos a modificar el método `render` del componente `App` para que tenga un diseño similar al de la imagen. Podéis usar una imagen a vuestra elección en lugar de la que aparece en el diseño, y Font-Awesome para el icono del corazón. De esta forma, aprenderemos a cómo trabajar con cosas que ya conocemos (HTML y CSS) en una aplicación de React.
 
@@ -246,7 +246,7 @@ Vamos a crear un nuevo proyecto de React llamado **mediacard**. Vamos a modifica
 
 * * *
 
-**EJERCICIO 2**:
+#### EJERCICIO 2
 
 Partiendo del ejercicio anterior, en este ejercicio aprenderemos mejor cómo funciona JSX. Para ello vamos a asignar nombres a las variables, un tema que será importante cuando creemos nuestros componentes más adelante.
 
@@ -366,7 +366,7 @@ Para tener más información, podéis mirar la [documentción oficial de cómo u
 
 * * *
 
-**EJERCICIO 3**:
+#### EJERCICIO 3
 
 Vamos a modificar el ejercicio anterior de la tarjeta para hacerlo con Sass dentro de nuestro proyecto de React.
 

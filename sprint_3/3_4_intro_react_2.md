@@ -2,13 +2,16 @@
 
 ## Contenidos
 
-- [Introducción](#introducción)
-- [¿Para qué sirve lo que vamos a ver en esta sesión?](#¿para-qué-sirve-lo-que-vamos-a-ver-en-esta-sesión)
-- [Creando nuestro primer componente](#creando-nuestro-primer-componente)
-- [Las `props` para personalizar un componente](#las-props-para-personalizar-un-componente)
-- [Crear componentes _dummies_ más rápido](#crear-componentes-dummies-más-rápido)
-- [Creando varios componentes](#creando-varios-componentes)
-- [Publicar nuestra app React en GitHub Pages](#publicar-nuestra-app-react-en-github-pages)
+<!-- TOC -->
+
+- [EJERCICIO 1](#ejercicio-1)
+- [EJERCICIO 2](#ejercicio-2)
+- [EJERCICIO 3](#ejercicio-3)
+- [EJERCICIO 4](#ejercicio-4)
+- [EJERCICIO 5](#ejercicio-5)
+- [EJERCICIO 6](#ejercicio-6)
+
+<!-- /TOC -->
 
 ## Introducción
 
@@ -125,7 +128,7 @@ ReactDOM.render(<RandomCat />, document.getElementById("root"));
 
 ---
 
-**EJERCICIO 1**:
+#### EJERCICIO 1
 
 Vamos a partir del ejercicio 1 (o del 2) de la sesión anterior. En lugar de usar el componente genérico App, vamos a crear un nuevo componente `MediaCard` encargado de pintar una tarjeta social para un usuario. Vamos a cargar ese nuevo componente desde el `index.js` para pintarlo con ReactDOM.
 
@@ -172,7 +175,7 @@ render() {
 
 ---
 
-**EJERCICIO 2**:
+#### EJERCICIO 2
 
 Vamos a partir del ejercicio 1 (el anterior). Vamos a usar las `props` para personalizar el contenido de una tarjeta social `MediaCard`. En concreto, vamos a personalizar
 
@@ -253,7 +256,7 @@ Hemos reducido la declaración de un componente de siete líneas a tres. Es una 
 
 ---
 
-**EJERCICIO 3**:
+#### EJERCICIO 3
 
 Convierte el componente `MediaCard` del ejercicio anterior en un componente funcional.
 
@@ -445,7 +448,7 @@ export default RandomCat;
 
 ---
 
-**EJERCICIO 4**:
+#### EJERCICIO 4
 
 Vamos a partir de la web del ejemplo con un listado de gatos con fotos aleatorias. Usaremos las `props` para pasar el tamaño de la imagen a `RandomCat`. Pasaremos una anchura (`width`) y una altura (`height`), que serán enteros (píxeles). En el caso de que no se pasen `props`, `width` será de `400` y `height` será `200`.
 
@@ -457,7 +460,7 @@ Desde `CatList` declararemos que se pinten tres componentes `RandomCat`:
 
 ---
 
-**EJERCICIO 5**:
+#### EJERCICIO 5
 
 En nuestra web de tarjetas sociales, vamos a crear un nuevo componente `MediaList` para manejar una lista de componentes `MediaCard`. Para ello, mostrará una nueva sección con un título y un listado de 3 componentes `MediaCard`. Cada tarjeta tendrá datos personalizados que definiremos mediantes `props` desde el componente madre, es decir, el que maneja la lista.
 
@@ -488,7 +491,7 @@ GitHub Pages funciona en la carpeta raíz o en la **docs/** de la rama master, a
 
 ---
 
-**EJERCICIO 6**:
+#### EJERCICIO 6
 
 Publiquemos la aplicación del último ejercicio en GitHub Pages. ¡A por ello!
 
