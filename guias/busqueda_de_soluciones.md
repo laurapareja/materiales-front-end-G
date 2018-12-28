@@ -13,7 +13,31 @@ Puede ocurrir que la documentación no cubra nuestra duda o que el lenguaje que 
 
 ## Búsqueda en Google
 
-// TODO: buscar un par de ejemplos
+Buscar en Google nuestro problema es súper buena opción y aunque no hace falta redactar la pregunta como la haría William (Shakespeare) sí que usar el inglés nos va a dar una ventaja significativa. Es lo que hay.
+
+Vamos a ver algunos ejemplos, cuando buscamos información y cuando buscamos un error concreto:
+
+### Buscar información
+1) Nos suena que el método `split()` nos va a solucionar la vida pero no sabemos o no nos acordamos cómo usarlo, ni dónde estará la documentación:
+
+[js split](https://www.google.com/search?hl=en&q=js%20split)
+
+2) Estamos a tope con un tema de checkbox pero no nos aclaramos a comprobar cuándo un checkbox está marcado:
+
+[js check if a checkbox is checked](https://www.google.com/search?hl=en&q=js%20check%20if%20a%20checkbox%20is%20checked%20)
+
+–¡Espera! este búsqueda no me sirve porque todos los resultados hablan de JQuery
+Pues nada, sin JQuery:
+
+[js check if a checkbox is checked -jquery](https://www.google.com/search?hl=en&q=js%20check%20if%20a%20checkbox%20is%20checked%20-jquery)
+
+### Buscar un error concret
+A veces nos van a saltar errores que podríamos no entender. Una opción es copiar el error, meterlo entre cadenas y hacer una búsqueda a ver qué sale.
+
+En este ejemplo hemos intentado reasignar una constante y en la consola nos aparece `Assignment to constant variable.`. Vamos a suponer que no entendemos que pasa y nos vamos a nuestro buscador favorito:
+
+["Assignment to constant variable." javascript](https://www.google.com/search?hl=en&biw=1765&bih=1301&ei=nvAlXM1NsqDV8A_dubmYCg&q="Assignment+to+constant+variable."+javascript&oq="Assignment+to+constant+variable."+javascript&gs_l=psy-ab.3..0i30j0i8i30.58515.58515..59175...0.0..0.60.60.1......0....1j2..gws-wiz.5xG0VxGWq28)
+
 
 ### Filtrando por fecha
 
