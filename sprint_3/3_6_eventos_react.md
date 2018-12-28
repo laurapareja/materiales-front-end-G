@@ -6,10 +6,14 @@
 
 ## Contenidos
 
-- [Introducción](#introducción)
-- [¿Para qué sirve lo que vamos a ver en esta sesión?](#¿para-qué-sirve-lo-que-vamos-a-ver-en-esta-sesión)
-- [Eventos sintéticos de React](#eventos-sintéticos-de-react)
-- [Uso de métodos `handleEvent` para manejar eventos](#uso-de-funciones-handleevent-para-manejar-eventos)
+<!-- TOC -->
+
+- [EJERCICIO 1](#ejercicio-1)
+- [EJERCICIO 2](#ejercicio-2)
+- [EJERCICIO 3](#ejercicio-3)
+- [EJERCICIO 4](#ejercicio-4)
+
+<!-- /TOC -->
 
 ## Introducción
 
@@ -75,7 +79,9 @@ React no puede controlar los eventos de la ventana, así que los siguiente event
 
 ---
 
-**EJERCICIO 1: ODIO LA CEBOLLA**
+#### EJERCICIO 1
+
+**Odio la cebolla**
 
 Vamos a crear un componente `OnionHater` que consta de un `textarea`. Escucharemos los evento de cambio del valor del `textarea` de forma que, si el texto escrito contiene la palabra 'cebolla' hagamos un `alert` diciendo 'ODIO LA CEBOLLA'.
 
@@ -85,7 +91,9 @@ Vamos a crear un componente `OnionHater` que consta de un `textarea`. Escucharem
 
 ---
 
-**EJERCICIO 2: ELIGE TU DESTINO**
+#### EJERCICIO 2
+
+**Elige tu destino**
 
 Vamos a crear un componente `Destiny` que contiene un `select` con un listado de ciudades: Buenos Aires, Sydney, Praga, Boston y Tokio. Al cambiar el valor del `select`, haremos aparecer un `alert` que diga 'Tu destino es viajar a XXX', siendo XXX la ciudad seleccionada.
 
@@ -212,7 +220,9 @@ class RandomMurray extends React.Component {
 
 ---
 
-**EJERCICIO 3: EXPRESO MI ODIO EN ROJO**
+#### EJERCICIO 3
+
+**Expreso mi odio en rojo**
 
 Partiendo del código ejercicio 1, vamos a hacer que nuestro componente ocupe toda la pantalla disponible, y tenga el `textarea` en el centro. Vamos a hacer que al detectar la palabra cebolla en el texto, en vez de mostrar un alert mostrando nuestro odio, pongamos el fondo del componente de color rojo. Al volver a un texto sin cebolla, el fondo vuelve a ser blanco.
 
@@ -224,7 +234,9 @@ _BONUS_: ¿Podrías hacer que nuestro odio aparezca tanto si 'cebolla' tiene may
 
 ---
 
-**EJERCICIO 4: VISUALIZA TU DESTINO**
+#### EJERCICIO 4
+
+**Visualiza tu destino**
 
 Vamos a partir del ejercicio 2 sobre elegir tu destino. Vamos a crear un nuevo componente `CityImage` que muestra una imagen de una ciudad que recibe por props. Por ejemplo
 

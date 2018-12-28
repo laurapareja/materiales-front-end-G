@@ -4,9 +4,12 @@
 
 ## Contenidos
 
-- [Introducción](#introducción)
-- [¿Para qué sirve lo que vamos a ver en esta sesión?](#¿para-qué-sirve-lo-que-vamos-a-ver-en-esta-sesión)
-- [Formularios](#formularios)
+<!-- TOC -->
+
+- [EJERCICIO 1](#ejercicio-1)
+- [EJERCICIO 2](#ejercicio-2)
+
+<!-- /TOC -->
 
 
 ## Introducción
@@ -111,7 +114,9 @@ Usar un _componente controlado_ tiene más ventajas, por ejemplo, nos permite va
 
 * * *
 
-**EJERCICIO 1: Formulario para pelis**
+#### EJERCICIO 1
+
+**Formulario para pelis**
 
 Vamos a crear un formulario en un componente de React que recoja información de una película. Recogeremos información de
 - nombre (en un campo de texto)
@@ -165,7 +170,9 @@ class FileInput extends React.Component {
 
 * * *
 
-**EJERCICIO 2: Formulario para pelis II**
+#### EJERCICIO 2
+
+**Formulario para pelis II**
 
 Partiendo del ejercicio anterior, vamos a añadir un campo más al formulario que sea la carátula de la película. Al elegir el usuario una carátula, se muestra una previsualización de la misma, y se guardan los datos en el estado. Recuerda que para leer la información de ficheros debemos usar un `FileReader` y para recoger la información de una imagen su método `readAsDataURL`.
 
