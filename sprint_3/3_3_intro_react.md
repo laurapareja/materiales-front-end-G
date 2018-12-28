@@ -323,6 +323,63 @@ To import Sass files, you first need to install node-sass.
 Run `npm install node-sass` or `yarn add node-sass` inside your workspace.
 ```
 
+### ¿Y cómo quedará esto en nuestros proyectos?
+
+Vamos a partir de el proyecto base que nos crea `create-react-app` y vamos a cambiar nuestro `App.css` a `App.scss`, ahora enlazamos directamente nuestro scss:
+
+**App.js**
+```js
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.scss';
+
+class App extends Component {
+  ···
+}
+
+export default App;
+```
+
+Vale, ¿y si quiero tener archivos importados para usar variables y parciales?
+
+Pues igual que siempre, en el mismo ejemplo: Desde `App.scss` vamos a importar un archivo de variables `_vars.scss`, y a usarlo!
+
+**_vars.scss**
+```scss
+$bg: #282c34;
+```
+
+**App.scss**
+```scss
+@import 'vars';
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  ···
+}
+```
+
+y `App.js` se mantiene igual que antes:
+```js
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.scss';
+
+class App extends Component {
+  ···
+}
+
+export default App;
+```
+
 ---
 
 #### EJERCICIO 3
