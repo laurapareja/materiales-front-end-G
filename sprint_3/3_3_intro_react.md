@@ -362,7 +362,7 @@ $bg: #282c34;
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: $bg;
   ···
 }
 ```
