@@ -11,7 +11,7 @@ Es posible que te pidan realizar algo con una determinada tecnología de la cual
 
 - Como el problema ya lo has resuelto con la tecnología que conoces, ya conoces la solución y por tanto puedes centrarte en aprender la nueva tecnología para hacer algo que ya sabes hacer.
 - Si no consigues resolverlo con la tecnología pedida, tienes una ejercicio completo en master del que sentirte orgullosa y listo para entregar, y ademas una rama para mostrar tu enfrentamiento a lo desconocido ;)
-- Si lo consigues, solo tienes que mergear
+- Si lo consigues, solo tienes que mergear.
 
 ## La entrega
 
@@ -81,7 +81,7 @@ Una vez estés contenta con tu trabajo llega el momento de escribir el email par
 
 - ¿Algo te ha supuesto un reto? ¿Te has divertido haciendo la prueba? ¿Has aprendido algo nuevo?
 
-- Se honesta y no te preocupes si nos has conseguido incluir todo lo que se pedía.
+- Se honesta y no te preocupes si no has conseguido incluir todo lo que se pedía.
 
 - Siempre está bien agradecer la oportunidad e indicar que pueden contactarte si tienen alguna duda sobre la prueba entregada.
 
