@@ -5,10 +5,13 @@
 
 ## Contenidos
 
-- [Introducción](#introducción)
-- [¿Para qué sirve lo que vamos a ver en esta sesión?](#¿para-qué-sirve-lo-que-vamos-a-ver-en-esta-sesión)
-- [Manejo del estado en un componente de React](#manejo-del-estado-en-un-componente-de-react)
-- [¿Qué pasa cuando hay un cambio de estado?](#¿qué-pasa-cuando-hay-un-cambio-de-estado)
+<!-- TOC -->
+
+- [EJERCICIO 1](#ejercicio-1)
+- [EJERCICIO 2](#ejercicio-2)
+- [EJERCICIO 3](#ejercicio-3)
+
+<!-- /TOC -->
 
 ## Introducción
 
@@ -92,7 +95,7 @@ class BipolarButton extends React.Component {
 }
 ```
 
-[&blacktriangleright; `setState()` de objeto literal en Codepen][codepen-setstate-object-literal]
+&blacktriangleright; [`setState()` de objeto literal en Codepen][codepen-setstate-object-literal]
 
 Utilizaremos la forma del objeto literal cuando el nuevo valor no dependa del anterior o de ningún otro estado del componente actual. Como React no asegura que los cambios de estado se ejecuten en el momento (los agrupa en lotes), si usamos el valor de un estado actual para calcular otro podemos estar usando un estado que no tiene el valor que pretendemos. Eso es una fuente de errores. Para esos casos existe otra manera de llamar a `setState()`, esta vez le pasamos una función, un `callback`. El `callback` recibe como parámetros el estado que modificaremos (`prevState`), y las `props` del componente, y devolverá un objeto literal con las claves (nombres) de los estados que queremos cambiar. Es más fácil verlo que contarlo:
 
@@ -147,7 +150,9 @@ this.setState((prevState, props) => ({
 
 ---
 
-**EJERCICIO 1: QUÉ HORA SERÁ**
+#### EJERCICIO 1
+
+**Qué hora será**
 
 Hace unas semanas, la empresa Time2Sleep nos encargó una página que mostrase sus ejercicios de relajación orientados a agilizar el sueño. Después de publicarla, recibieron _feedback_ de sus usuarios: se quedaban tan profundamente dormidos que, al despertar, no recordaban ni su nombre. Como quedaron muy contentos con el trabajo (literalmente: _"¡cómo nos flipan estas adalabers!"_), ahora nos han pedido una evolutiva, que es como se llama a las funcionalidades que se añaden a un proyecto ya hecho, para que añadamos un reloj a la web. Así sus usuarios sabrán al menos qué hora es.
 
@@ -155,7 +160,9 @@ Vamos a crear un componente reloj (`Clock`) que nos muestre la hora en cada mome
 
 ---
 
-**EJERCICIO 2: CONTADOR DE OVEJAS**
+#### EJERCICIO 2
+
+**Contador de ovejas**
 
 Definitivamente, Time2Sleep es fan de Adalab. Esta vez, basándose en unos novedosos estudios científicos de alguna famosísima universidad que dice que al contar ovejas nos aburrimos tanto que caemos dormidos, nos han encargado que hagamos un contador de ovejas digital.
 
@@ -192,7 +199,9 @@ El `callback` se ejecutará justo después de que el cambio de estado haya tenid
 
 ---
 
-**EJERCICIO 3: CONTADOR DE OVEJAS AVANZADO**
+#### EJERCICIO 3
+
+**Contador de ovejas avanzado**
 
 Sobre el componente cuentaovejas (`SheepCounter`) del ejercicio anterior, añadimos la funcionalidad de que, además de mostrar el número de ovejas, muestra también la imagen de una oveja. Por ejemplo, si el contador está en 6, además de aparecer el número 6 veremos 6 imágenes de ovejas.
 

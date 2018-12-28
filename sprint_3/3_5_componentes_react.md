@@ -4,18 +4,18 @@
 [codepen-component-children]: https://codepen.io/adalab/pen/WdZEQv?editors=0010
 [codepen-props-typechecking]: https://codepen.io/adalab/pen/ZvXqvm?editors=0010
 [codepen-props-example]: https://codepen.io/adalab/pen/XVoVOa?editors=0110
+[sección-recursos-externos]: #recursos-externos
 
 ## Contenidos
 
-[sección-recursos-externos]: #recursos-externos
+<!-- TOC -->
 
-- [Introducción](#introducción)
-- [¿Para qué sirve lo que vamos a ver en esta sesión?](#¿para-qué-sirve-lo-que-vamos-a-ver-en-esta-sesión)
-- [Componentes padre e hijo (madre e hija)](#componentes-padre-e-hijo-madre-e-hija)
-- [Ejemplos de app con varios componentes y cómo se pasan datos con las `props`](#ejemplos-de-app-con-varios-componentes-y-cómo-se-pasan-datos-con-las-props)
-- [Uso de `children` para acceder a los componentes hijo cuando no los conoces](#uso-de-children-para-acceder-a-los-componentes-hijo-cuando-no-los-conoces)
-- [Valores por defecto de las `props`](#valores-por-defecto-de-las-props)
-- [`props` tipadas con `propTypes`](#props-tipadas-com-proptypes)
+- [EJERCICIO 1](#ejercicio-1)
+- [EJERCICIO 2](#ejercicio-2)
+- [EJERCICIO 3](#ejercicio-3)
+- [EJERCICIO 4](#ejercicio-4)
+
+<!-- /TOC -->
 
 ## Introducción
 
@@ -135,7 +135,7 @@ class ItemList extends React.Component {
 
 ---
 
-**EJERCICIO 1**:
+#### EJERCICIO 1
 
 Echa un ojo al [ejemplo anterior en codepen][codepen-props-example], e intenta añadir un nuevo `Item` a la lista.
 
@@ -204,7 +204,7 @@ Como se puede observar en el ejemplo, inyectaremos `props.children` en el JSX de
 
 ---
 
-**EJERCICIO 2**:
+#### EJERCICIO 2
 
 Desarrolla un componente `HalfPage` que todo su contenido lo ponga en la mitad izquierda de la pantalla (mitad de ancho y todo el alto). Usa `children` para introducir todo el contenido entre la apertura y cierre de `HalfPage` en su interior. Crea 2 componentes `HalfPage` con algo de contenido HTML (en JSX) para ver cómo se posiciona en una mitad y la otra.
 
@@ -244,7 +244,7 @@ Button.defaultProps = {
 
 ---
 
-**EJERCICIO 3**:
+#### EJERCICIO 3
 
 Partiendo del código del ejercicio 1, usa las `defaultProps` para que la descripción del item sea opcional y si no nos lo pasan por `props` aparezca 'No hay descripción'.
 
@@ -369,7 +369,7 @@ VerticalCenter.propTypes = {
 
 ---
 
-**EJERCICIO 4**:
+#### EJERCICIO 4
 
 Dado el resultado del ejercicio 3, vamos a hacer que el nombre de los items sea obligatorio y que el precio sea también obligatorio y de tipo numérico. Crea después un nuevo item con valores erróneos para ver qué pinta tiene el error que nos envía React.
 

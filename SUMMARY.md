@@ -36,7 +36,6 @@
 - [2.13 Scope y hoisting](sprint_2/2_13_scope_y_hoisting.md)
 - [2.14 Manejo de estructuras de datos](sprint_2/2_14_manejo_de_estructuras_de_datos.md)
 
-<!--
 ## Sprint 3. ES6 y React
 
 - [3.1 Métodos funcionales de array](sprint_3/3_1_metodos_funcionales_array.md)
@@ -46,7 +45,9 @@
 - [3.5 Componentes en React](sprint_3/3_5_componentes_react.md)
 - [3.6 Eventos en React](sprint_3/3_6_eventos_react.md)
 - [3.7 Estado en React](sprint_3/3_7_estado_react.md)
-- [3.8 Estado en React II](sprint_3/3_8_estado_react_2.md)
+
+<!--
+- [3.8 Formularios en React](sprint_3/3_8_estado_react_2.md)
 - [3.9 Lifting](sprint_3/3_9_lifting.md)
 - [3.10 Arquitectura de componentes con estado](sprint_3/3_10_arquitectura_estado.md)
 - [3.11 React router](sprint_3/3_11_react_router.md)
@@ -62,7 +63,7 @@
 - [Anexo. Documentación del API de Awesome Profile Cards](proyectos/P2_anexo.md)
 
 <!--
-* [Proyecto 3. Un caso de código heredado](proyectos/P3_proyecto_sprint_3.md)
+- [Proyecto 3. Un caso de código heredado](proyectos/P3_proyecto_sprint_3.md)
 -->
 
 ## Guías
@@ -70,10 +71,14 @@
 - [Buenas prácticas para tener un portfolio atractivo en GitHub](guias/github_como_portfolio.md)
 
 <!--
-* [Instalar un linter de JavaScript](guias/instalar_linter_js.md)
+- [Instalar un linter de JavaScript](guias/instalar_linter_js.md)
 -->
 
 <!--
 ## Extra
+<<<<<<< HEAD
 * [E.1 Repaso de flexbox y position](extra/e1-flexbox-y-position.md)
+=======
+- [E.1 Repaso de flexbox y position](extra/e1-flexbox-y-position.md)
+>>>>>>> master
 -->

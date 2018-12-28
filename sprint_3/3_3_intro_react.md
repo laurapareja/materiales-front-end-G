@@ -1,21 +1,20 @@
 # Introducción a React
 
 ## Contenidos
-- [Introducción](#introducción)
-- [¿Para qué sirve lo que vamos a ver en esta sesión?](#¿para-qué-sirve-lo-que-vamos-a-ver-en-esta-sesión)
-- [Qué es React](#qué-es-react)
-- [Estructura de un proyecto en React](#estructura-de-un-proyecto-en-react)
-- ["Hola, mundo" con `create-react-app`](#"hola-mundo"-con-create-react-app)
-- [JSX y el método `render`: la magia de no tener que manipular el DOM](#jsx-y-el-método-render)
-- [Interfaz declarativa VS imperativa](#interfaz-declarativa-vs-imperativa)
-- [Usando Sass en nuestro proyecto de React](#usando-sass-en-nuestro-proyecto-de-react)
+
+<!-- TOC -->
+
+- [EJERCICIO 1](#ejercicio-1)
+- [EJERCICIO 2](#ejercicio-2)
+- [EJERCICIO 3](#ejercicio-3)
+
+<!-- /TOC -->
 
 ## Introducción
 
 [react]: https://reactjs.org/
 
 En esta sesión nos iniciaremos en la librería [React.js][react]. React es una librería para crear interfaces de usuario que se creó en 2013 en el seno de Facebook y goza de buena salud en el ecosistema de JavaScript.
-
 
 ## ¿Para qué sirve lo que vamos a ver en esta sesión?
 
@@ -27,21 +26,21 @@ En nuestra actividad profesional nos encontraremos con diferentes _frameworks_ y
 
 ## ¿En qué casos y por qué se utilizan los _frameworks_?
 
-Un framework o librería JavaScript nos soluciona uno de los principales problemas de la programación front-end: mantener la **interfaz de usuario** (UI, del inglés *User Interface*) en sincronización con el **estado** nuestra aplicación.
+Un framework o librería JavaScript nos soluciona uno de los principales problemas de la programación front-end: mantener la **interfaz de usuario** (UI, del inglés _User Interface_) en sincronización con el **estado** nuestra aplicación.
 
-Pero, *¿qué es el estado de una aplicación web?* Una aplicación web, a diferencia de una simple página web, se encarga de **gestionar datos**. Por ejemplo, en una aplicación como GMail gestionamos datos de correos (nuevos, leídos, archivados, etc.) desde una interfaz. En una simple aplicación de una lista de tareas, manejamos datos de tareas, si están completados o las fechas de realización.
+Pero, _¿qué es el estado de una aplicación web?_ Una aplicación web, a diferencia de una simple página web, se encarga de **gestionar datos**. Por ejemplo, en una aplicación como GMail gestionamos datos de correos (nuevos, leídos, archivados, etc.) desde una interfaz. En una simple aplicación de una lista de tareas, manejamos datos de tareas, si están completados o las fechas de realización.
 
 Volviendo a los frameworks, estos nos facilitan sincronizar el estado (los datos) con la interfaz (lo que se ve en la pantalla). Vamos a verlo con un ejemplo que ya conocemos: el juego de adivinar el número del sprint anterior. Necesitamos bastante código para tener sincronizado el estado del juego (el feedback sobre un intento y el número de intentos) con la interfaz.
 
 ```js
 function showFeedback(text) {
-  var feedbackContainer = document.querySelector('.feedback');
+  var feedbackContainer = document.querySelector(".feedback");
   feedbackContainer.innerHTML = text;
 }
 
 function incrementTrials() {
   trials++;
-  var trialsOnPage = document.querySelector('.trials');
+  var trialsOnPage = document.querySelector(".trials");
   trialsOnPage.innerHTML = trials;
 }
 ```
@@ -49,9 +48,10 @@ function incrementTrials() {
 Este código de sincronización puede complicarse mucho (como habéis podido comprobar en el proyecto grupal del sprint anterior). Y es también muy acoplado a la interfaz (cambiar el HTML implica cambios en el código) y es muy propenso a errores. Por esto, las librerías como React nos ayudan mucho porque hacen esta sincronización por nosotros y nos evitan muchos problemas. A cambio, vamos a tener que trabajar de una forma determinada para aprovechar las ventajas que el frameworks nos da.
 
 A parte de esta ventaja fundamental, otras ventajas de usar frameworks son
+
 - facilitan el trabajo con componentes web
 - tienen extensiones del navegador que facilitan el debugging
-- facilitan el desarrollo de SPAs (del inglés *Single Page Applications*)
+- facilitan el desarrollo de SPAs (del inglés _Single Page Applications_)
 
 ## Qué es React
 
@@ -60,7 +60,6 @@ Hasta ahora hemos visto cómo crear webs escribiendo la vista en archivos HTML y
 React es una librería que nos permite hacer componentes gráficos con los que estructurar nuestra web. Los componentes gráficos se pintarán "solos" en el DOM, sin que tengamos que manejarlo "a mano". Además, React lo hace de una manera pensada para que los componentes cambien, así que crearemos webs muy reactivas y rápidas.
 
 Es intuitivo hacer webs con React porque todo son componentes que llaman a otros componentes. El flujo es unidireccional (de arriba abajo), así que es fácil entender y solucionar los errores que pueda haber: si el error no está en mi componente, está en quien ha llamado a mi componente y cómo.
-
 
 ## Estructura de un proyecto en React
 
@@ -104,7 +103,6 @@ Nuestros componentes de React irán en la carpeta `src/components`, cada uno en 
 
 Basta de cháchara: ¡empecemos!
 
-
 ## "Hola, mundo" con `create-react-app`
 
 Vamos a crear nuestro primer "¡Hola, mundo!" con React. Usaremos `create-react-app`, una herramienta generador que nos automatiza instalar React y Babel, que transformará código ES6 en ES5, y nos preconfigura un proyecto. ¡Manos a la obra!
@@ -140,9 +138,9 @@ Es el único fichero HTML que usaremos en nuestra aplicación. Podemos modificar
 Este será el fichero JS de entrada a nuestra aplicación React. Será el único en el que carguemos `ReactDOM` y se encarga de acceder a un nodo del DOM (el `div` que antes identificamos como `root`) e importar y pintar el componente principal de la aplicación, en este caso, llamado `App`.
 
 ```js
-import App from './App';
+import App from "./App";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById("root"));
 ```
 
 Para pintar el componente `App` usamos una sintaxis un poco rara: _¡es como si `App` fuese una etiqueta del HTML!_ Vamos a verlo en más profundidad en el siguiente fichero.
@@ -152,21 +150,21 @@ Para pintar el componente `App` usamos una sintaxis un poco rara: _¡es como si 
 Este fichero corresponde a nuestro primer _componente_ de React, pero ya veremos qué es un componente más adelante. De momento, vamos a pensar que quizá al modificar el archivo `App.js` os haya sorprendido algo. _"¿Eso no es HTML? ¡Pero si esto es un archivo JavaScript!"_:
 
 ```js
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1 className="App-title">¡Hola, mundo!</h1>
-      </header>
-      <p className="App-intro">
-        To get started, edit <code>src/App.js</code> and save to reload.
-      </p>
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">¡Hola, mundo!</h1>
+        </header>
+        <p className="App-intro">
+          To get started, edit <code>src/App.js</code> and save to reload.
+        </p>
       </div>
     );
   }
@@ -186,16 +184,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <header className="App-header">
-        {titleElement}
-      </header>
+        <header className="App-header">{titleElement}</header>
       </div>
     );
   }
 }
-
 ```
-
 
 Como es HTML, podemos añadir atributos a los elementos que definamos con JSX:
 
@@ -207,24 +201,23 @@ const titleElement = <h1 className="App-title">¡Hola, mundo!</h1>;
 
 Por último, hay que destacar otra cosa de este fichero: estamos importando imágenes y CSS. _¿Y esooo?_ Pues porque en React tenemos la posibilidad y es una buena práctica trabajar de esta forma: desde un componente (fichero JS) importamos las imágenes y CSS que necesitemos para montar la interfaz del componente. Y confiamos en que la configuración del automatizador que tenemos por debajo (en este caso webpack), se encarga de importar los CSS desde el HTML (para que el navegador los entienda) y modificar las imágenes por su ruta para que puedan ser visualizadas. De momento nos quedamos con que _en React se hace así_.
 
-
 ### JSX y el método `render`
 
 Para terminar, recordemos que el JSX que escribimos al final se convierte en código JavaScript. Pero entonces, ¿por qué usamos JSX y no directamente escribimos JavaScript? Porque la sintaxis de JSX es muy cercana a HTML, mucho más legible y simplifica el desarrollo de nuestros componentes. _¿Y si no usáramos JSX?_ Vamos a ver un ejemplo:
 
 ```js
-const titleClassNames = 'App-title';
-const titleElement = <h1 className={ titleClassNames }>¡Hola, mundo!</h1>;
+const titleClassNames = "App-title";
+const titleElement = <h1 className={titleClassNames}>¡Hola, mundo!</h1>;
 ```
 
 Este ejemplo de JSX se transformará en este JavaScript:
 
 ```js
-const titleClassNames = 'App-title';
+const titleClassNames = "App-title";
 const titleElement = React.createElement(
-  'h1',
+  "h1",
   { className: titleClassNames },
-  '¡Hola, mundo!'
+  "¡Hola, mundo!"
 );
 ```
 
@@ -236,17 +229,17 @@ React pintará en el DOM el HTML correspondiente al JSX que se devuelve desde el
 
 Muy parecido al JSX que hemos escrito, ¿verdad?
 
-* * *
+---
 
-**EJERCICIO 1**:
+#### EJERCICIO 1
 
 Vamos a crear un nuevo proyecto de React llamado **mediacard**. Vamos a modificar el método `render` del componente `App` para que tenga un diseño similar al de la imagen. Podéis usar una imagen a vuestra elección en lugar de la que aparece en el diseño, y Font-Awesome para el icono del corazón. De esta forma, aprenderemos a cómo trabajar con cosas que ya conocemos (HTML y CSS) en una aplicación de React.
 
 ![Media Card](assets/images/3_4_media-card.png)
 
-* * *
+---
 
-**EJERCICIO 2**:
+#### EJERCICIO 2
 
 Partiendo del ejercicio anterior, en este ejercicio aprenderemos mejor cómo funciona JSX. Para ello vamos a asignar nombres a las variables, un tema que será importante cuando creemos nuestros componentes más adelante.
 
@@ -265,8 +258,7 @@ render() {
 }
 ```
 
-* * *
-
+---
 
 ## Interfaz declarativa VS imperativa
 
@@ -277,28 +269,25 @@ No tendremos que seleccionar qué elemento del DOM tiene que cambiar cuando se c
 ```js
 const person = {
   fullName: {
-    name: 'Ada',
-    lastName: 'Lovelace'
+    name: "Ada",
+    lastName: "Lovelace"
   },
-  title: 'Countess of Lovelace',
-  areas: [
-    'Mathematics',
-    'Computing'
-  ]
-}
-const personCardElement = document.getElementById('person-card');
+  title: "Countess of Lovelace",
+  areas: ["Mathematics", "Computing"]
+};
+const personCardElement = document.getElementById("person-card");
 
 // CÓMO, imperativa
-const cardTitle = document.createElement('h2');
+const cardTitle = document.createElement("h2");
 cardTitle.textContent = `${person.fullName.name}, ${person.title}`;
-cardTitle.classList.add('card-title');
+cardTitle.classList.add("card-title");
 personCardElement.appendChild(cardTitle);
 
-const cardList = document.createElement('ul');
-cardList.classList.add('card-area-list');
+const cardList = document.createElement("ul");
+cardList.classList.add("card-area-list");
 for (const area of person.areas) {
-  const cardListItem = document.createElement('li');
-  cardListItem.classList.add('card-area');
+  const cardListItem = document.createElement("li");
+  cardListItem.classList.add("card-area");
   cardListItem.textContent = area;
   cardList.appendChild(cardListItem);
 }
@@ -308,12 +297,12 @@ personCardElement.appendChild(cardList);
 const personCardComponent = (
   <article>
     <h2 className="card-title">
-      { person.fullName.name }, { person.title }
+      {person.fullName.name}, {person.title}
     </h2>
     <ul className="card-area-list">
-    { person.areas.map((area) =>
-      <li className="card-area">{ area }</li>
-    ) }
+      {person.areas.map(area => (
+        <li className="card-area">{area}</li>
+      ))}
     </ul>
   </article>
 );
@@ -325,52 +314,22 @@ Este flujo es más útil cuando creamos una aplicación web compleja que cambie 
 
 ## Usando Sass en nuestro proyecto de React
 
-Durante el curso hemos usado `gulp` o `Koala` para compilar Sass en nuestro proyectos. En el caso de los proyectos de React, que creamos con `create-react-app`, ya tienen su propio sistema de automatización de tareas que convierte los ficheros en ES6 a ES5 con Babel, y lanza un servidor local. Es mejor que, por tanto, en vez de incluir más herramientas como `gulp` usamos el sistema de automatización que ya tenemos (basado en [webpack](https://webpack.js.org/), por cierto) para observar los ficheros SCSS y compilarlos a CSS.
+Durante el curso hemos usado `gulp` para compilar Sass en nuestro proyectos. En el caso de los proyectos de React, que creamos con `create-react-app`, ya tienen su propio sistema de automatización de tareas que convierte los ficheros en ES6 a ES5 con Babel, y lanza un servidor local. Es mejor que, por tanto, en vez de incluir más herramientas como `gulp` usamos el sistema de automatización que ya tenemos (basado en [webpack](https://webpack.js.org/), por cierto) para observar los ficheros SCSS y compilarlos a CSS.
 
-Ahora vamos a detallar los pasos a seguir para conseguirlo.
+Desde la versión 2 de `create-react-app` (octubre 2018) simplemente podemos enlazar ficheros `.scss` desde nuestros componentes de React y webpack directamente hará la conversión a CSS y lo cargará correctamente. El único paso adicional es instalar `node-sass` y nos aparecerá este warning al intentar usar Sass por primera vez.
 
-### 1. Instalar paquetes
-
-Para poder compilar desde la terminal, tendremos que instalar en nuestro proyecto `node-sass`:
-
-`npm install --save-dev node-sass-chokidar`
-
-También instalamos `npm-run-all` para poder lanzar varias tareas a la vez, es decir, las de React y las nuevas de Sass:
-
-`npm install --save-dev npm-run-all`
-
-### 2. Modificar los scripts de npm
-
-Después vamos a modificar los scripts de npm en nuestro `package.json` para que se lancen las nuevas tareas al lanzar el servidor con `npm start`:
-
-```json
-"scripts": {
-     "build-css": "node-sass-chokidar src/ -o src/",
-     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
-     "start-js": "react-scripts start",
-     "start": "npm-run-all -p watch-css start-js",
-     "build-js": "react-scripts build",
-     "build": "npm-run-all build-css build-js",
-     "test": "react-scripts test --env=jsdom",
-     "eject": "react-scripts eject"
-   }
+```
+To import Sass files, you first need to install node-sass.
+Run `npm install node-sass` or `yarn add node-sass` inside your workspace.
 ```
 
-Con esto, hemos añadido varias tareas:
-- `build-css`: para compilar los ficheros scss en la carpeta `src` a css en la misma carpeta
-- `watch-css`: para observar los ficheros scss y si se modifican compilarlos a css
-- `start-js` y `build-js`: los scripts originales por defecto de `create-react-app`
-- `start` y `build`: usamos el `npm-run-all` para ejecutar los scripts originales y los nuevos para compilar Sass
+---
 
-Para tener más información, podéis mirar la [documentción oficial de cómo usar SASS con create-react-app](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-css-preprocessor-sass-less-etc).
-
-* * *
-
-**EJERCICIO 3**:
+#### EJERCICIO 3
 
 Vamos a modificar el ejercicio anterior de la tarjeta para hacerlo con Sass dentro de nuestro proyecto de React.
 
-* * *
+---
 
 ## Recursos externos
 
