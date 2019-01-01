@@ -61,10 +61,7 @@
 - [Anexo. Diseña tu web desde cero](proyectos/P1_anexo_diseno.md)
 - [Proyecto 2. Awesome profile-cards](proyectos/P2_proyecto_sprint_2.md)
 - [Anexo. Documentación del API de Awesome Profile Cards](proyectos/P2_anexo.md)
-
-<!--
 - [Proyecto 3. Un caso de código heredado](proyectos/P3_proyecto_sprint_3.md)
--->
 
 ## Guías
 
@@ -76,9 +73,5 @@
 
 <!--
 ## Extra
-<<<<<<< HEAD
-* [E.1 Repaso de flexbox y position](extra/e1-flexbox-y-position.md)
-=======
 - [E.1 Repaso de flexbox y position](extra/e1-flexbox-y-position.md)
->>>>>>> master
 -->
