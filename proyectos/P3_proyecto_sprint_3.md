@@ -19,10 +19,10 @@ En este proyecto vamos a trabajar con un caso muy típico que se suele producir 
 ## Objetivos
 
 1. Lidiar con código heredado y ser capaces de refactorizarlo
-1. Saber identificar y generar los componentes de una página, separarlos y crear componentes visualmente similares a partir de estos
-1. Aprender a usar React para crear una aplicación web sencilla
-1. Exponer en la sesión final y seguir adquiriendo habilidades de desarrollo personal
-1. Aprender a buscar información en la documentación de librerías externas
+2. Saber identificar y generar los componentes de una página, separarlos y crear componentes visualmente similares a partir de estos
+3. Aprender a usar React para crear una aplicación web sencilla
+4. Exponer en la sesión final y seguir adquiriendo habilidades de desarrollo personal
+5. Aprender a buscar información en la documentación de librerías externas
 
 
 ## Caso de uso
@@ -66,22 +66,6 @@ De cara a la refactorización, el proyecto debe utilizar estas tecnologías:
 - Publicación del resultado en Internet usando GitHub Pages
 
 La webapp deberá tener las siguientes nuevas características:
-- La web debe estar en una única página, por lo que usaremos React router para navegar de la página de bienvenida a la aplicación y ambas tendrán su propia ruta
-
-
-## Especificaciones
-
-Se partirá de un proyecto funcional y se realizará una refactorización del código incluyendo el uso de React. _Refactorizar_ código consiste en modificar un código para mejorar su estructura pero sin añadir nuevas funcionalidades.
-
-De cara a la refactorización, el proyecto debe utilizar estas tecnologías:
-- Uso de Sass para los estilos
-- Uso de ES6 y React para la estructuración del JS de la aplicación
-- Uso de mediaqueries para que el diseño sea adaptable al dispositivo
-- Desarrollo usando la estrategia mobile first
-- Uso de git para el control de versiones del proyecto, con ramas y pull-requests para revisar los cambios de las compañeras
-- Publicación del resultado en Internet usando GitHub Pages
-
-La webapp deberá tener las siguientes nuevas características:
 - Deberá usar transiciones y/o animaciones para mejorar interacciones con la aplicación
 
 - Debe implementarse con una navegación entre distintas páginas de la aplicación usando React router
@@ -95,7 +79,7 @@ En esta sección os proponemos una serie de hitos como sugerencia para dividir l
 
 - 2 sesiones de trabajo
 - Organizar el trabajo a realizar usando Trello, e ir asignando tareas y responsables
-- Crear la infraestructura necesaria de repositorios. En este proyecto usaremos 2 repos: 1) el repo del proyecto que nos hayan asignado, donde trabajaremos en una rama para pasarlo a ES6; 2) un nuevo repo con el proyecto de React
+- Crear la infraestructura necesaria de repositorios. En este proyecto usaremos 2 repos: 1) el repo del proyecto que nos hayan asignado, donde trabajaremos en una rama para añadir más ES6; 2) un nuevo repo con el proyecto de React
 - Entender los requisitos del proyecto y las técnicas y herramientas empleadas
 - Analizar el código y entender su estructura para poder adaptarla a nuestras necesidades y conocimientos
 - Analizar los componentes empleados en la web y el estilo visual de esta
@@ -104,9 +88,9 @@ En esta sección os proponemos una serie de hitos como sugerencia para dividir l
 ### Segundo. Refactorización y primera versión con React
 
 - 4 sesiones de trabajo
-- Modularizar y refactorizar el código JS con ES6
+- Modularizar y refactorizar el código JS incluyendo lo último aprendido de ES6 (métodos funcionales de array, destructuring, spread operator...)
 - Definir la estructura de componentes React de la aplicación
-- Generar las componentes del proyecto y comunicar información por props
+- Generar los componentes del proyecto y comunicar información por props
 
 > **NOTA**: No debéis copiar código de vuestro proyecto anterior, sino esforzaros por entender el que han creado otras compañeras. Para partes incompletas o que no funcionen podéis arreglarlas pero no re-hacerlas desde cero.
 
@@ -141,13 +125,6 @@ Por ejemplo, el nombre de la primera promoción de Adalab fue "Ada". Si un grupo
 
 De manera adicional, se deberá activar "GitHub Pages" en el proyecto para que este pueda ser visualizado como una web, es decir, que en el caso anterior, si alguien introdujese la dirección "adalab.github.io/web-hopper/" en un navegador web, este mostraría la web que se genera con el código del repositorio.
 
-Por último, para acompañar a la entrega del proyecto, el equipo realizará una presentación de 10 minutos mostrando la web y explicando los siguientes puntos:
-
-- Cómo está estructurada la web y el contenido y el por qué de cada cosa
-- Cómo se ha diseñado
-- La estructura del código y las partes más importantes de este (por encima, sin entrar mucho en detalle)
-- Cómo ha sido la organización del equipo, el reparto de tareas y la coordinación a la hora de trabajar todas en el mismo código
-- Cuál de las tareas o los puntos ha sido el que más esfuerzo ha requerido
-- Cuál de las tareas o partes de la web es la que hace que el equipo esté más orgulloso
+Por último, para acompañar a la entrega del proyecto, el equipo realizará una presentación de 10 minutos con un enfoque técnico.
 
 Al final de esta presentación habrá un turno breve de preguntas, de manera informal, tanto por parte de otras compañeras como por parte de los profesores.
