@@ -1,6 +1,7 @@
 # Métodos funcionales de array
 
 <!-- TOC -->
+
 - [EJERCICIO 1](#ejercicio-1)
 - [EJERCICIO 2](#ejercicio-2)
 - [EJERCICIO 3](#ejercicio-3)
@@ -225,11 +226,12 @@ console.log(result);
 
 En este caso ejecutamos el método `reduce` sobre el array `scores` y le pasamos como parámetros 1) una función y 2) un valor inicial.
 
-1) La función se ejecuta por cada elemento del array y toma como parámetros: a) un *acumulador* `acc`, que acumula el resultado de un elemento al siguiente; y b) el elemento del array, por ejemplo, el en la primera vuelta será el de índice 0 cuyo valor es 4.
+1) La función se ejecuta por cada elemento del array y toma como parámetros: a) un *acumulador* `acc`, que acumula el resultado de un elemento al siguiente; y b) el elemento del array, por ejemplo, en la primera vuelta será el de índice 0 cuyo valor es 4.
 
-2) El valor segundo parámetro, en este caso `0`, es el valor inicial del acumulador.
+2) El segundo parámetro, en este caso `0`, es el valor inicial del acumulador.
 
 La función lo que hace es sumar al acumulador el valor del número actual y devuelve el resultado y ese mismo resultado se convierte en el acumulador del siguiente paso. Vamos a ver cómo funciona internamente:
+
 1. Se ejecuta la función sobre el primer valor del array (`4`) que tiene como argumentos `acc` con valor 0 (valor inicial que hemos pasado al acumulador) y `number`que es 4, y devuelve la suma `4 + 0` que es 4 y se convierte en el valor del acumulador.
 2. Para el segundo valor, los argumentos son `acc` que vale 4 y `number` que es 2, y devuelve la suma que es 6 y será el valor del acumulador en el siguiente paso
 3. La función toma como argumentos `acc=6` y `number=7` y devuelve 13
@@ -300,7 +302,7 @@ En este caso queremos filtrar los nombres largos pero además obtenerlos en may�
 
 **El ganador de los estudiantes**
 
-Como en el ejemplo anterior vamos a averiguar quién ha ganado usando `reduce`, pero queremos saber el ganador de los estudiantes, por que tendremos que filtrar primero quiénes lo son.
+Como en el ejemplo anterior vamos a averiguar quién ha ganado usando `reduce`, pero queremos saber el ganador de los estudiantes, por lo que tendremos que filtrar primero quiénes lo son.
 
 ```js
 const runners = [
@@ -364,7 +366,7 @@ Vamos a volver al listado de usuarios del ejercicio 6, porque nos ha dado la man
 
 ### Recorriendo las propiedades de un objeto
 
-En algunas ocasiones necesitaremos acceder al listado de propiedades de un objeto, que a priori no sabemos cuáles son. Por ejemplo, nos puede llegar la información de un libro de una petición a un API y querer pintar en pantalla todas las propiedades que comienzan por 'ds_'. Para poder hacer esto usamos el método `Object.keys` que nos devuelve el listado de las propiedades de un objeto en un array.
+En algunas ocasiones necesitaremos acceder al listado de propiedades de un objeto, que a priori no sabemos cuáles son. Por ejemplo, nos puede llegar la información de un libro de una petición a un API y queremos pintar en pantalla todas las propiedades que comienzan por 'ds_'. Para poder hacer esto usamos el método `Object.keys` que nos devuelve el listado de las propiedades de un objeto en un array.
 
 ```js
 const book = {
