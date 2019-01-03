@@ -410,7 +410,7 @@ hachiko.printHappiness(); // 'Little Paws is 25% happy.'
 <a id="markdown-ejercicio-bonus-b" name="ejercicio-bonus-b"></a>
 #### EJERCICIO BONUS B
 
-Vamos a mejorar ¡aún más, siempre más! nuestra calculadora geométrica sencilla. En el programa definiremos la clase `Polygon`, `Square` para polígolos regulares (todos sus lados miden lo mismo). La clase `Square` será subclase de `Polygon` y serán iguales a las del **ejercicio bonus A**.
+Vamos a mejorar ¡aún más, siempre más! nuestra calculadora geométrica sencilla. En el programa definiremos la clase `Polygon`, `Square` para polígonos regulares (todos sus lados miden lo mismo). La clase `Square` será subclase de `Polygon` y serán iguales a las del **ejercicio bonus A**.
 
 Aquí viene lo distinto: la clase `Square` tendrá un _getter_ y un _setter_ para consultar o modificar el lado.
 
