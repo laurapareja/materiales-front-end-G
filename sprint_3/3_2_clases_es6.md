@@ -1,6 +1,6 @@
 # Clases y objetos
 
-<!-- TOC depthFrom:4 depthTo:4 insertAnchor:true updateOnSave:true withLinks:true -->
+<!-- TOC depthFrom:4 depthTo:4 -->
 
 - [EJERCICIO 1](#ejercicio-1)
 - [EJERCICIO 2](#ejercicio-2)
@@ -63,7 +63,6 @@ hachiko.bark(); // Woof, woof!
 
 * * *
 
-<a id="markdown-ejercicio-1" name="ejercicio-1"></a>
 #### EJERCICIO 1
 
 Vamos a crear un programita que haga cálculos geométricos sencillos. En el programa definiremos la clase `Square`, que tendrá al menos:
@@ -183,7 +182,6 @@ laika.reactToCall('Hey, Hachiko!'); // 'Woof, woof!'
 
 * * *
 
-<a id="markdown-ejercicio-2" name="ejercicio-2"></a>
 #### EJERCICIO 2
 
 Vamos a mejorar nuestra calculadora geométrica sencilla. En el programa definiremos la clase `Square`, que tendrá al menos:
@@ -314,7 +312,6 @@ leo.bark(); // 'Woof, woof!'
 
 * * *
 
-<a id="markdown-ejercicio-bonus-a" name="ejercicio-bonus-a"></a>
 #### EJERCICIO BONUS A
 
 Vamos a mejorar ¡aún más! nuestra calculadora geométrica sencilla. En el programa definiremos la clase `Polygon`, `Square` y `Triangle` para polígolos regulares (todos sus lados miden lo mismo). Ya os imagináis por dónde van los tiros: las clases `Square` y `Triangle` serán subclases de `Polygon`. La clase `Polygon` tendrá, al menos:
@@ -407,7 +404,6 @@ hachiko.printHappiness(); // 'Little Paws is 25% happy.'
 
 * * *
 
-<a id="markdown-ejercicio-bonus-b" name="ejercicio-bonus-b"></a>
 #### EJERCICIO BONUS B
 
 Vamos a mejorar ¡aún más, siempre más! nuestra calculadora geométrica sencilla. En el programa definiremos la clase `Polygon`, `Square` para polígonos regulares (todos sus lados miden lo mismo). La clase `Square` será subclase de `Polygon` y serán iguales a las del **ejercicio bonus A**.
@@ -564,7 +560,6 @@ Sin embargo, esta forma de trabajo [no está muy soportada aún](https://caniuse
 
 * * *
 
-<a id="markdown-ejercicio-3" name="ejercicio-3"></a>
 #### EJERCICIO 3
 
 Prueba los ejemplos anteriores exportando datos desde un fichero e importándolos desde otros. Asegúrate de entender bien cómo funcionan las rutas para importar/exportar adecuadamente.
