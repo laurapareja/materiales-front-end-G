@@ -116,7 +116,7 @@ En esta sección os proponemos una serie de hitos como sugerencia para dividir l
 
 ## Entrega
 
-El formato de entrega de este proyecto será mediante la subida de este a la plataforma de GitHub. Para subirlo, se creará un repositorio en la organización de Adalab (en este proyecto es hacer un _fork_ de un proyecto existente). El nombre del repositorio deberá estar compuesto de las siguientes partes, todo ello separado por guiones:
+El formato de entrega de este proyecto será mediante la subida de este a la plataforma de GitHub. Para subirlo, se creará un repositorio en la organización de Adalab. El nombre del repositorio deberá estar compuesto de las siguientes partes, todo ello separado por guiones:
 - Nombre de la promoción en minúsculas
 - "s" minúscula seguida del número del sprint
 - Nombre del equipo en minúsculas
