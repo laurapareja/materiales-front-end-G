@@ -99,7 +99,7 @@ my-react-project
 `npm` instalará las dependencias en la carpeta `node_modules`, de donde podremos importar módulos de JS como `react` y `react-dom` a nuestro código.
 Nuestro código se agrupará dentro de la carpeta `src`, excepto el único archivo HTML que usaremos, que estará en `public/index.html`.
 
-Nuestros componentes de React irán en la carpeta `src/components`, cada uno en su fichero. En cuanto a los archivos de estilo, seguiremos compilando Sass con gulp/Koala y metiendo los archivos CSS en la carpeta `src/stylesheets`.
+Nuestros componentes de React irán en la carpeta `src/components`, cada uno en su fichero.
 
 Basta de cháchara: ¡empecemos!
 
