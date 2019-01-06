@@ -7,7 +7,10 @@ Cuando aplicamos a un trabajo como programadoras es común que nos manden alguna
 Sobre todo **atente al máximo a lo que te piden**.
 Si hay algo que no tienes claro dejalo para el final, primero ataca todo lo que controlas.
 
-Es posible que te pidan realizar algo con una determinada tecnología de la cual no tienes ni idea, pero que sepas como resolver la prueba con otra tecnología diferente. En este caso una opción puede ser resolverlo con tus conocimientos, y en una rama intentarlo con la tecnología que nos piden:
+Es posible que te pidan realizar algo con una determinada tecnología de la cual no tienes ni idea, esto no tiene por qué frenarnos y podemos mostrar cómo trabajamos igualmente. 
+
+En este caso una opción puede ser resolverlo con tus conocimientos, y en una rama intentarlo con la tecnología nueva que nos piden:
+
 
 - Como el problema ya lo has resuelto con la tecnología que conoces, ya conoces la solución y por tanto puedes centrarte en aprender la nueva tecnología para hacer algo que ya sabes hacer.
 - Si no consigues resolverlo con la tecnología pedida, tienes una ejercicio completo en master del que sentirte orgullosa y listo para entregar, y ademas una rama para mostrar tu enfrentamiento a lo desconocido ;)
@@ -72,7 +75,7 @@ Una vez estés contenta con tu trabajo llega el momento de escribir el email par
 
 - Explica tu prueba (decisiones tomadas):
 
-  - Qué tecnolgías has usado, y por qué.
+  - Qué tecnologías has usado, y por qué.
   - Se ha quedado algo fuera, o en progreso en una rama.
   - En qué navegadores funciona
   - ...
