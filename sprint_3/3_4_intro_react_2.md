@@ -2,7 +2,7 @@
 
 ## Contenidos
 
-<!-- TOC -->
+<!-- TOC depthFrom:4 depthTo:4 -->
 
 - [EJERCICIO 1](#ejercicio-1)
 - [EJERCICIO 2](#ejercicio-2)
@@ -444,13 +444,13 @@ class RandomCat extends React.Component {
 export default RandomCat;
 ```
 
-> **NOTA**: cuando manejamos un listado de componentes hermanos (como en los `li`s del ejemplo anterior), React nos _warning_ en la consola indicando que debemos dar un atributo `key` a cada elemento cuando tengo un listado. Este atributo debe ser único para cada elemento de la lista, normalmente se usa el `id` del elemento si viene del servidor aunque si no lo tenemos puede usarse el índice de un `for` o un `map`. Sirve para que React internamente pueda optimizar el pintado de los elementos.
+> **NOTA**: cuando manejamos un listado de componentes hermanos (como en los `li`s del ejemplo anterior), React nos da un _warning_ en la consola indicando que debemos dar un atributo `key` a cada elemento del listado. Este atributo debe ser único para cada elemento de la lista, normalmente se usa el `id` del elemento si viene del servidor aunque si no lo tenemos puede usarse el índice de un `for` o un `map`. Sirve para que React internamente pueda optimizar el pintado de los elementos.
 
 ---
 
 #### EJERCICIO 4
 
-Vamos a partir de la web del ejemplo con un listado de gatos con fotos aleatorias. Usaremos las `props` para pasar el tamaño de la imagen a `RandomCat`. Pasaremos una anchura (`width`) y una altura (`height`), que serán enteros (píxeles). En el caso de que no se pasen `props`, `width` será de `400` y `height` será `200`.
+Vamos a partir del ejemplo con un listado de gatos con fotos aleatorias. Usaremos las `props` para pasar el tamaño de la imagen a `RandomCat`. Pasaremos una anchura (`width`) y una altura (`height`), que serán enteros (píxeles). En el caso de que no se pasen `props`, `width` será de `400` y `height` será `200`.
 
 Desde `CatList` declararemos que se pinten tres componentes `RandomCat`:
 
