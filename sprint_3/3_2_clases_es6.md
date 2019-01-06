@@ -585,3 +585,8 @@ Lista de artículos de colaboradores de Mozilla explicando las novedades de ECMA
 - [ES6 in Depth - Classes](https://hacks.mozilla.org/2015/07/es6-in-depth-classes/)
 - [ES6 in Depth - Subclassing](https://hacks.mozilla.org/2015/08/es6-in-depth-subclassing/) (herencia)
 - [ES6 in Depth - Modules](https://hacks.mozilla.org/2015/08/es6-in-depth-modules/)
+
+### This y classes pre ES6
+
+- [Understanding the "this" keyword, call, apply, and bind in JavaScript](https://tylermcginnis.com/this-keyword-call-apply-bind-javascript/)
+- [A Beginner's Guide to JavaScript's Prototype](https://tylermcginnis.com/beginners-guide-to-javascript-prototype/)
