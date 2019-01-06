@@ -31,7 +31,7 @@ Pues nada, sin JQuery:
 
 [js check if a checkbox is checked -jquery](https://www.google.com/search?hl=en&q=js%20check%20if%20a%20checkbox%20is%20checked%20-jquery)
 
-### Buscar un error concret
+### Buscar un error concreto
 A veces nos van a saltar errores que podríamos no entender. Una opción es copiar el error, meterlo entre cadenas y hacer una búsqueda a ver qué sale.
 
 En este ejemplo hemos intentado reasignar una constante y en la consola nos aparece `Assignment to constant variable.`. Vamos a suponer que no entendemos que pasa y nos vamos a nuestro buscador favorito:
@@ -74,7 +74,7 @@ Lo más probable es que alguien ya haya realizado la misma pregunta o una muy si
 
 ## Comunidad
 
-Cuando todo lo demás ha fallado, o hemos encontrado una solución pero no estamos del todo conformes con ella hay que recurrir a la comunidad más cercana, preguntando
+Cuando todo lo demás ha fallado, o hemos encontrado una solución pero no estamos del todo conformes con ella hay que recurrir a la comunidad más cercana, preguntando:
 
 1. A compañeras de trabajo
 2. En canales de Slack
