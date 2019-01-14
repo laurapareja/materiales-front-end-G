@@ -45,11 +45,11 @@
 - [3.5 Componentes en React](sprint_3/3_5_componentes_react.md)
 - [3.6 Eventos en React](sprint_3/3_6_eventos_react.md)
 - [3.7 Estado en React](sprint_3/3_7_estado_react.md)
+- [3.8 Estado en React 2](sprint_3/3_8_estado_react_2.md)
+- [3.9 Lifting](sprint_3/3_9_lifting.md)
+- [3.10 Arquitectura de aplicaciones React](sprint_3/3_10_arquitectura_estado.md)
 
 <!--
-- [3.8 Formularios en React](sprint_3/3_8_estado_react_2.md)
-- [3.9 Lifting](sprint_3/3_9_lifting.md)
-- [3.10 Arquitectura de componentes con estado](sprint_3/3_10_arquitectura_estado.md)
 - [3.11 React router](sprint_3/3_11_react_router.md)
 - [3.12 Métodos del ciclo de vida de componentes](sprint_3/3_12_ciclo_vida_componentes_react.md)
 - [3.13 Debugging en React](sprint_3/3_14_debugging_react.md)
