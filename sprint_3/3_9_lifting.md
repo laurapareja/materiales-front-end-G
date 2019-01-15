@@ -154,7 +154,7 @@ Pues es hora de contraatacar y crear nuestro propio traductor MIMIMI con React.
 
 Vamos a partir de un formulario simple con un textarea donde escribimos una frase. Según vamos escribiendo, obtendremos en un párrafo el resultado de la traducción a MIMIMI. Es importante que tanto formulario como el párrafo resultado estén cada uno en su propio componente independiente. El componente del formulario, por ejemplo `TextInput`, simplemente se encarga de recoger los cambios de la usuaria y enviarlo al componente madre `App`, que los guarda en su estado. El componente `MIMIMITranslator` recoge el texto que le pasan por props, lo traduce y muestra en un párrafo.
 
-> PITA: para realizar la traducción basta con buscar [una expresión regular (RegExp)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) y el método `replace` de las cadenas. Si buscas "javascript regex replace vowels" en Google va a ser fácil de encontrar.
+> PISTA: para realizar la traducción basta con buscar [una expresión regular (RegExp)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) y el método `replace` de las cadenas. Si buscas "javascript regex replace vowels" en Google va a ser fácil de encontrar.
 
 ---
 
@@ -179,7 +179,7 @@ Ahora viene lo bueno: vamos a escuchar eventos `click` sobre el botón de la cat
 
 Al final, elijamos la que elijamos, tendremos que realizar un cambio de estado para forzar la ejecución del método `render` de `ItemList` que a su vez fuerza el de sus hijas.
 
-_BONUS_: cuando tenemos todo funcionando para una categoría, podemos añadir botones para cada de las que tengamos productos. Incluso un botón especial 'Todos' para mostar de nuevo los productos de todas las categorías.
+_BONUS_: cuando tenemos todo funcionando para una categoría, podemos añadir botones para cada de las que tengamos productos. Incluso un botón especial 'Todos' para mostrar de nuevo los productos de todas las categorías.
 
 ---
 
