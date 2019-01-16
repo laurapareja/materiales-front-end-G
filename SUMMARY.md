@@ -52,7 +52,8 @@
 <!--
 - [3.11 React router](sprint_3/3_11_react_router.md)
 - [3.12 Métodos del ciclo de vida de componentes](sprint_3/3_12_ciclo_vida_componentes_react.md)
-- [3.13 Debugging en React](sprint_3/3_14_debugging_react.md)
+- [3.13 Debugging de aplicaciones JS y React](sprint_3/3_13_debugging_react.md)
+- [3.14 Testing con JavaScript](sprint_3/3_14_testing_js.md)
 -->
 
 ## Proyectos
