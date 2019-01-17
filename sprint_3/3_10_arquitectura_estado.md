@@ -4,11 +4,7 @@
 
 ## Contenidos
 
-<!-- TOC -->
-
-- [EJERCICIO 1: DIRECTORIO](#ejercicio-1-directorio)
-
-<!-- /TOC -->
+<!-- TOC -->autoauto- [Arquitecturas de aplicaciones React](#arquitecturas-de-aplicaciones-react)auto  - [Contenidos](#contenidos)auto  - [Introducción](#introducción)auto  - [¿Para qué sirve lo que vamos a ver en esta sesión?](#¿para-qué-sirve-lo-que-vamos-a-ver-en-esta-sesión)auto  - [Arquitectura de componentes con estado](#arquitectura-de-componentes-con-estado)auto  - [Servicios en módulos externos](#servicios-en-módulos-externos)auto  - [Loader](#loader)auto  - [Fragments](#fragments)auto      - [EJERCICIO 1](#ejercicio-1)auto  - [Recursos externos](#recursos-externos)auto    - [Egghead](#egghead)auto    - [React patterns](#react-patterns)autoauto<!-- /TOC -->
 
 ## Introducción
 
@@ -39,14 +35,14 @@ _¿Por qué hacemos esto?_ En los estados guardaremos diferentes datos, algunos 
 _¿Y cómo lo haremos?_ Como vimos en la sesión anterior podemos pasar datos de hijos a padres/madres **mediante _lifting_**. Recordemos que la técnica de _lifting_ consistía en pasar una función definida en el padre/madre a un componente hijo mediante las `props`. Esa función puede modificar a la madre. Ahora que hemos visto los estados, podemos ver un nuevo uso del _lifting_: **actualizar estados de los padres/madres desde los hijos**.
 
 ```js
-const ENDPOINT = "https://...";
+const ENDPOINT = 'https://...';
 
 class AppRoot extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      reasonsStore: []
+      reasonsStore: [],
     };
 
     this.fetchNewReasons = this.fetchNewReasons.bind(this);
@@ -57,7 +53,7 @@ class AppRoot extends React.Component {
       .then(response => response.json())
       .then(data => {
         this.setState({
-          reasonsStore: data.reasons
+          reasonsStore: data.reasons,
         });
       });
   }
@@ -96,7 +92,7 @@ Siguiendo con el ejemplo anterior, os proponemos usar una carpeta `services` con
 **ReasonsService.js**
 
 ```js
-const ENDPOINT = "https://...";
+const ENDPOINT = 'https://...';
 
 const fetchReasons = fetch(ENDPOINT).then(response => response.json());
 
@@ -106,7 +102,7 @@ export { fetchReasons };
 **App.js**
 
 ```js
-const {fetchReasons} = import('../services/ReasonsService');
+import {fetchReasons}  from '../services/ReasonsService';
 
 class AppRoot extends React.Component {
 
@@ -144,7 +140,7 @@ class MurrayList extends React.Component {
     super(props);
 
     this.state = {
-      loading: true
+      loading: true,
     };
     //Simulamos que los datos se han cargado tras 2 segundos
     setTimeout(() => this.setState({ loading: false }), 2000);
@@ -174,7 +170,7 @@ class MurrayList extends React.Component {
             </li>
           </ul>
         )}
-        
+
         {/* pasamos handleClickAndReload al hijo como prop */}
         <ReloadButton actionToPerform={handleClick} label="More murrays" />
       </section>
