@@ -102,7 +102,7 @@ export { fetchReasons };
 **App.js**
 
 ```js
-import {fetchReasons}  from '../services/ReasonsService';
+import {fetchReasons}  from './services/ReasonsService';
 
 class AppRoot extends React.Component {
 
