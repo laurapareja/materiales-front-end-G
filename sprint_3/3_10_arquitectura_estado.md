@@ -94,7 +94,7 @@ Siguiendo con el ejemplo anterior, os proponemos usar una carpeta `services` con
 ```js
 const ENDPOINT = 'https://...';
 
-const fetchReasons = fetch(ENDPOINT).then(response => response.json());
+const fetchReasons = () => fetch(ENDPOINT).then(response => response.json());
 
 export { fetchReasons };
 ```
