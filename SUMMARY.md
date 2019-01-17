@@ -36,7 +36,7 @@
 - [2.13 Scope y hoisting](sprint_2/2_13_scope_y_hoisting.md)
 - [2.14 Manejo de estructuras de datos](sprint_2/2_14_manejo_de_estructuras_de_datos.md)
 
-## Sprint 3. ES6
+## Sprint 3. React
 
 - [3.1 Métodos funcionales de array](sprint_3/3_1_metodos_funcionales_array.md)
 - [3.2 Clases de ES6](sprint_3/3_2_clases_es6.md)
