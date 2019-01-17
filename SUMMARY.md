@@ -36,7 +36,7 @@
 - [2.13 Scope y hoisting](sprint_2/2_13_scope_y_hoisting.md)
 - [2.14 Manejo de estructuras de datos](sprint_2/2_14_manejo_de_estructuras_de_datos.md)
 
-## Sprint 3. ES6 y React
+## Sprint 3. ES6
 
 - [3.1 Métodos funcionales de array](sprint_3/3_1_metodos_funcionales_array.md)
 - [3.2 Clases de ES6](sprint_3/3_2_clases_es6.md)
@@ -48,13 +48,10 @@
 - [3.8 Estado en React 2](sprint_3/3_8_estado_react_2.md)
 - [3.9 Lifting](sprint_3/3_9_lifting.md)
 - [3.10 Arquitectura de aplicaciones React](sprint_3/3_10_arquitectura_estado.md)
-
-<!--
 - [3.11 React router](sprint_3/3_11_react_router.md)
 - [3.12 Métodos del ciclo de vida de componentes](sprint_3/3_12_ciclo_vida_componentes_react.md)
 - [3.13 Debugging de aplicaciones JS y React](sprint_3/3_13_debugging_react.md)
 - [3.14 Testing con JavaScript](sprint_3/3_14_testing_js.md)
--->
 
 ## Proyectos
 
