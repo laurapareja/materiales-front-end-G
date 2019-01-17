@@ -2,9 +2,11 @@
 
 [codepen-lifting-state-up]: https://codepen.io/adalab/pen/xpzBYz?editors=0010
 
-## Contenidos
+<!-- TOC depthFrom:4 depthTo:4 -->
 
-<!-- TOC -->autoauto- [Arquitecturas de aplicaciones React](#arquitecturas-de-aplicaciones-react)auto  - [Contenidos](#contenidos)auto  - [Introducción](#introducción)auto  - [¿Para qué sirve lo que vamos a ver en esta sesión?](#¿para-qué-sirve-lo-que-vamos-a-ver-en-esta-sesión)auto  - [Arquitectura de componentes con estado](#arquitectura-de-componentes-con-estado)auto  - [Servicios en módulos externos](#servicios-en-módulos-externos)auto  - [Loader](#loader)auto  - [Fragments](#fragments)auto      - [EJERCICIO 1](#ejercicio-1)auto  - [Recursos externos](#recursos-externos)auto    - [Egghead](#egghead)auto    - [React patterns](#react-patterns)autoauto<!-- /TOC -->
+- [EJERCICIO 1](#ejercicio-1)
+
+<!-- /TOC -->
 
 ## Introducción
 

@@ -7,9 +7,12 @@
 [codepen-react-router-params]: https://codepen.io/adalab/pen/eKwbMZ?editors=0010
 [codepen-react-router-active-nav]: https://codepen.io/adalab/pen/OzrYZN?editors=0010
 
-## Contenidos
+<!-- TOC depthFrom:4 depthTo:4 -->
 
-<!-- TOC -->autoauto- [El router de React](#el-router-de-react)auto  - [Contenidos](#contenidos)auto  - [Introducción](#introducción)auto  - [¿Para qué sirve lo que vamos a ver en esta sesión?](#¿para-qué-sirve-lo-que-vamos-a-ver-en-esta-sesión)auto  - [Qué es React Router](#qué-es-react-router)auto  - [Uso básico del router para navegar entre pantallas de nuestra SPA](#uso-básico-del-router-para-navegar-entre-pantallas-de-nuestra-spa)auto      - [EJERCICIO 1](#ejercicio-1)auto  - [Usando parámetros en las rutas](#usando-parámetros-en-las-rutas)auto  - [Gestión avanzada de rutas: uso de render](#gestión-avanzada-de-rutas-uso-de-render)auto      - [EJERCICIO 2](#ejercicio-2)auto  - [Gestión avanzada de rutas: uso de children](#gestión-avanzada-de-rutas-uso-de-children)auto  - [Recursos externos](#recursos-externos)auto    - [Blog de Paul Sherman](#blog-de-paul-sherman)auto    - [Blog de Krasimir Tsonev](#blog-de-krasimir-tsonev)auto    - [Documentación de React Router](#documentación-de-react-router)autoauto<!-- /TOC -->
+- [EJERCICIO 1](#ejercicio-1)
+- [EJERCICIO 2](#ejercicio-2)
+
+<!-- /TOC -->
 
 ## Introducción
 

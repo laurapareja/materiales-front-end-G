@@ -5,10 +5,7 @@
 [codepen-remembering-lifting-state-up]: https://codepen.io/adalab/pen/xpzBYz?editors=0010
 [codepen-fetching-remote-data-in-lifecycle]: https://codepen.io/adalab/pen/BJGoRP?editors=0010
 
-## Contenidos
-
-
-<!-- TOC -->
+<!-- TOC depthFrom:4 depthTo:4 -->
 
 - [EJERCICIO 1](#ejercicio-1)
 - [EJERCICIO 2](#ejercicio-2)

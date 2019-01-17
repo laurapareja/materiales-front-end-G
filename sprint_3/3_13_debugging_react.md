@@ -1,7 +1,6 @@
 # _Debugging_ de aplicaciones JavaScript y React
 
-## Contenidos
-<!-- TOC -->
+<!-- TOC depthFrom:4 depthTo:4 -->
 
 - [EJERCICIO 1](#ejercicio-1)
 - [EJERCICIO 2](#ejercicio-2)
@@ -12,6 +11,9 @@
 - [EJERCICIO 7](#ejercicio-7)
 - [EJERCICIO 8](#ejercicio-8)
 - [EJERCICIO 9](#ejercicio-9)
+- [Pila de llamadas](#pila-de-llamadas)
+- [Event listeners](#event-listeners)
+- [Source maps](#source-maps)
 - [EJERCICIO 10](#ejercicio-10)
 
 <!-- /TOC -->
