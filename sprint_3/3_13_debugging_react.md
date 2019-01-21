@@ -452,7 +452,7 @@ Cuando paramos la ejecución en un breakpoint podemos realizar distintas accione
 - ejecutar la función línea a línea y ver los resultados
 - cuando una función se llama desde la actual podemos ver el resultado directamente o ejecutar la otra también paso a paso
 - inspeccionar el valor de variable locales, en el panel _Scope_
-- observar el valor de una _watch expression_, es decir, el valor de una expresión definidas en función de las variables del contexto con las uqe podemos hacer operaciones
+- observar el valor de una _watch expression_, es decir, el valor de una expresión definidas en función de las variables del contexto con las que podemos hacer operaciones
 
 ---
 
