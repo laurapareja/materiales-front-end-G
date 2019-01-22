@@ -404,7 +404,7 @@ isEvenAndGreaterThan10(11);
 
 ---
 
-8. **Errores con librerías externas**
+8) **Errores con librerías externas**
 
 Utilizando librerías externas, por ejemplo React, también vamos a tener una serie de errores específicos, por ejemplo:
 
@@ -449,7 +449,7 @@ Un _breakpoint_ o punto de interrupción es una forma de parar la ejecución de 
 Podemos crear puntos de interrupción asociados a distintas situaciones donde queremos pasar la ejecución. Lo haremos siempre desde la pestaña de "Sources". Los más usados son
 
 - en una línea de código concreta
-- en respuesta a un evento, por ejemplo, un clic
+- en respuesta a un evento, por ejemplo, un click
 
 Cuando paramos la ejecución en un breakpoint podemos realizar distintas acciones
 
