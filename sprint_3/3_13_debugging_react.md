@@ -350,9 +350,9 @@ for (let i = 0; i < teachers.length; i++) {
 7. **Errores en condicionales**
    Errores típicos al trabajar con condicionales son:
 
-- confundir condición con asignación
-- confundir operadores para unir condiciones (`&&` y `||`)
-- cuando hay varias condiciones, colocarlas en el orden adecuado
+  - confundir condición con asignación
+  - confundir operadores para unir condiciones (`&&` y `||`)
+  - cuando hay varias condiciones, colocarlas en el orden adecuado
 
 ---
 
