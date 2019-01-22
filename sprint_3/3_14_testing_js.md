@@ -155,7 +155,7 @@ Para ver si todo está funcionando, ejecutaremos `npm test` en la terminal. Tras
 
 ![Resultado de ejecutar los tests en la terminal](./assets/images/3_14_tests_resultado.png)
 
-> NOTA: si no queremos estar ejecutando `npm test` continuamente para comprobar el resultado de nuestros tests, existe la opción de configurar `jest --watch` en nuestro `package.json` que estará ejecutando los tests continuamente según guardemos los ficheros.
+> NOTA: si no queremos estar ejecutando `npm test` continuamente para comprobar el resultado de nuestros tests, existe la opción de configurar `jest --watch` en nuestro `package.json` que estará ejecutando los tests continuamente según guardemos los ficheros. PARA USAR ESTO NECESITAREMOS ESTAR EN UN REPO GIT, escribir `git init` en la consola bastará ;)
 
 ![Resultado de ejecutar los tests en la terminal con watch](./assets/images/3_14_tests_resultado_watch.png)
 
