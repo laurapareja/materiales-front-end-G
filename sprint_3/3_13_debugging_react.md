@@ -402,12 +402,12 @@ isEvenAndGreaterThan10(11);
 
 8. **Errores con librerías externas**
 
-Utilizando librerías externas, por ejemplo React, también vamos a tener una serie de errores específicos, por ejemplo
+Utilizando librerías externas, por ejemplo React, también vamos a tener una serie de errores específicos, por ejemplo:
 
-- errores al importar ficheros
-- al referenciar otros componentes
-- al entender el comportamiento del framework, por ejemplo en React, qué va en el `constructor`, qué va en el `render`, etc.
-- al métodos específicos del framework, en React los métodos del ciclo de vida
+  - al importar ficheros
+  - al referenciar otros componentes
+  - al entender el comportamiento del framework, por ejemplo en React, qué va en el `constructor`, qué va en el `render`, etc.
+  - al usar métodos específicos del framework, en React los métodos del ciclo de vida
 
 ---
 
