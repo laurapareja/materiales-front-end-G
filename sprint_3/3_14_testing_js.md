@@ -232,7 +232,7 @@ Partiendo del código del ejercicio 1, vamos a:
 
 **Kata Padding**
 
-A los ejercicios de programación que se usan para practicar testing muchas veces se les llama katas. Esta kata consiste en crear una función `padding-left` que se encarga de meter caracteres de relleno en un cadena por el lado izquierdo hasta llegar a un tamaño deseado. Toma 3 parámetros
+A los ejercicios de programación que se usan para practicar testing muchas veces se les llama katas. Esta kata consiste en crear una función `paddingLeft` que se encarga de meter caracteres de relleno en un cadena por el lado izquierdo hasta llegar a un tamaño deseado. Toma 3 parámetros
 
 - La cadena inicial
 - Un tamaño final
@@ -242,15 +242,15 @@ Si el tamaño final es menor o igual que la cadena inicial, se devuelve sin toca
 
 Ejemplos:
 
-- `padding-left('hola', 6, 'x')` devuelve `'xxhola'`
-- `padding-left('hola', 6, 'a')` devuelve `'aahola'`
-- `padding-left('ee', 4, 'aa')` devuelve `'aaee'`
-- `padding-left('xxxx', 6, 'x')` devuelve `'xxxxxx'`
-- `padding-left('', 6, 'x')` devuelve `'xxxxxx'`
-- `padding-left('hola mi amigo', 6, 'x')` devuelve `'hola mi amigo'`
-- `padding-left('xxxx', 0, 'x')` devuelve `'xxxx'`
+- `paddingLeft('hola', 6, 'x')` devuelve `'xxhola'`
+- `paddingLeft('hola', 6, 'a')` devuelve `'aahola'`
+- `paddingLeft('ee', 4, 'aa')` devuelve `'aaee'`
+- `paddingLeft('xxxx', 6, 'x')` devuelve `'xxxxxx'`
+- `paddingLeft('', 6, 'x')` devuelve `'xxxxxx'`
+- `paddingLeft('hola mi amigo', 6, 'x')` devuelve `'hola mi amigo'`
+- `paddingLeft('xxxx', 0, 'x')` devuelve `'xxxx'`
 
-En primer lugar, desarrollad el código de la función `padding-left` en un fichero. Cuando lo tengáis, cread un fichero de tests y cread un test para cada uno de los ejemplos anteriores. Así estamos comprobando que la función hacía lo que se ha pedido que haga.
+En primer lugar, desarrollad el código de la función `paddingLeft` en un fichero. Cuando lo tengáis, cread un fichero de tests y cread un test para cada uno de los ejemplos anteriores. Así estamos comprobando que la función hacía lo que se ha pedido que haga.
 
 ---
 
