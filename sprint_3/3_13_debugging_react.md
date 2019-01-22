@@ -86,7 +86,7 @@ Los **errores de ejecución** son errores que no se deben al lenguaje en sí y q
 
 ### Errores típicos en JavaScript
 
-1. **El error tipográfico (_typo_)**
+1) **El error tipográfico (_typo_)**
 
 Uno de los errores más comunes es el error tipográfico. Estamos escribiendo alguna de las palabras del lenguaje, o de las variables que hemos declarado, y nos baila una letra.
 
@@ -122,7 +122,7 @@ button.addEventListener("click", () => alert("Sent"));
 
 ---
 
-2. **Errores de variables**
+2) **Errores de variables**
 
 En nuestro programas siempre trabajamos con datos. Para guardarlo en JavaScript usamos variables. Algunos errores típicos al trabajar con variables:
 
@@ -178,7 +178,7 @@ const html = "<html>";
 
 ---
 
-3. **Errores de estructuras de datos**
+3) **Errores de estructuras de datos**
 
 Cuando manejamos estructuras de datos complejas, como arrays y objetos, también solemos encontrarnos con errores. Alguno típicos son
 
@@ -218,8 +218,9 @@ alert(teacher["pets"][1]);
 
 ---
 
-4. **Errores de funciones**
-   Cuando trabajamos con funciones (que es casi siempre) también tenemos un listado de errores típicos:
+4) **Errores de funciones**
+
+Cuando trabajamos con funciones (que es casi siempre) también tenemos un listado de errores típicos:
 
 - definimos la función y no ejecutamos
 - ejecutamos la función con parámetros inadecuados
@@ -254,8 +255,9 @@ sayHello("Ada", 35);
 
 ---
 
-5. **Errores de null / undefined**
-   Errores típicos cuando no manejamos valores nulos o indefinidos:
+5) **Errores de null / undefined**
+
+Errores típicos cuando no manejamos valores nulos o indefinidos:
 
 - llamar a función que no existe
 - acceder a una propiedad de un objeto que no existe
@@ -291,8 +293,9 @@ alert(item.description);
 
 ---
 
-6. **Errores en bucles**
-   Errores típicos al trabajar con bucles son:
+6) **Errores en bucles**
+
+Errores típicos al trabajar con bucles son:
 
 - bucle infinito
 - cuando tengo bucles anidados, trabajar con distintos índices
@@ -347,7 +350,7 @@ for (let i = 0; i < teachers.length; i++) {
 
 ---
 
-7. **Errores en condicionales**
+7) **Errores en condicionales**
 
 Errores típicos al trabajar con condicionales son:
 
