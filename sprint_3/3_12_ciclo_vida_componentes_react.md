@@ -238,7 +238,7 @@ Vamos a crear un menú de opciones dinámico, es decir, que las opciones vienen 
 
 1. Creamos un componente `App` que será el contenedor de la aplicación
 
-2. Creamos un componente `Menu` al que le pasamos por `props` un array con las opciones en este formato:
+2. Creamos un componente `Menu` que recibirá por `props` un array con las opciones en este formato:
 
 ```js
 [
@@ -250,9 +250,10 @@ Vamos a crear un menú de opciones dinámico, es decir, que las opciones vienen 
 ]
 ```
 
-3. Hacemos que el componente `App` tenga dentro un `Menu` pasándole un array que creamos "a mano", es decir, creando una variable con el array
+3. Creamos un estado en el componente `App` para almacenar las opciones de menú, y de momento le asignamos como valor un array como el del ejemplo anterior. Más tarde borraremos este array lo sustituiremos por la respuesta de un fetch.
 
-4. Creamos un estado en el componente `App` para almacenar las opciones de menú, que seguimos creando "a mano" en el `constructor`
+$. Instanciamos el componente `Menu` en `App` y le pasamos por props el array que tenemos en el estado
+
 
 5. Realizamos una petición al servidor en https://three-random-reasons-mdqknjcwpl.now.sh/ que nos devuelve un listado de opciones. La petición la hacemos con `fetch` en el método del ciclo de vida que corresponda.
 
