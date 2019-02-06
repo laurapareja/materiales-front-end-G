@@ -9,7 +9,11 @@
 - [EJERCICIO 5](#ejercicio-5)
 - [EJERCICIO 6](#ejercicio-6)
 - [EJERCICIO 7](#ejercicio-7)
+- [EJERCICIO 7](#ejercicio-7-1)
 - [EJERCICIO 8](#ejercicio-8)
+- [EJERCICIO 9](#ejercicio-9)
+- [EJERCICIO 10](#ejercicio-10)
+- [EJERCICIO 11](#ejercicio-11)
 
 <!-- /TOC -->
 
@@ -34,7 +38,7 @@ Lo que podemos hacer desde JavaScript es responder a estos eventos. ¿Cómo? Cre
 
 Vamos a entender cómo actuamos en JavaScript con los ejemplos anteriores:
 - cuando la usuaria hace click en el botón *más info*, ejecutamos una función que muestra un información que estaba escondida
-- cuando el usuario hace scroll en la página, ejecutamos una función que comprueba si la posición de la pantalla es mayor que x píxeles y en caso afirmativo aplica una clase CSS a la cabecera
+- cuando el usuario hace scroll en la página, ejecutamos una función que comprueba si la posición de la pantalla es mayor que x y en caso afirmativo aplica una clase CSS a la cabecera
 
 ## Escuchando eventos desde JavaScript
 
@@ -71,7 +75,9 @@ A continuación, vamos a usar el método `addEventListener` de los elementos de 
 const button = document.querySelector('.alert');
 
 // handler
-const showAlert = () => console.log('Alerta');
+function showAlert() { 
+  console.log('Alerta'); 
+}
 
 // listener sobre el elemento, con tipo de evento y handler
 button.addEventListener('click', showAlert);
@@ -114,7 +120,7 @@ button.addEventListener('click', () => console.log('alerta'));
 > NOTA:
 > Es muy importante entender que la función sólo se ejecutará cuando suceda el evento. Si el evento nunca sucede, la función nunca se ejecutará. Nosotros nunca ejecutamos la función: es el navegador quien la ejecuta cuando sucede el evento.
 
-Existen otras formas de escuchar eventos que veréis por Internet, y que aunque siguen funcionando **no recomendamos** usar. La principal razón es porque queremos separar contenido (HTML), diseño (CSS) y funcionalidad (JavaScript), y al ser funcionalidad debería hacerse desde JS. Estas otras formas de escuchar eventos se basan es el uso del atributo `onclick` (en realidad, on + evento), que pueden usarse desde HTML:
+Existen otras formas de escuchar eventos que veréis por Internet, y que aunque siguen funcionando **no recomendamos** usar. La principal razón es porque queremos separar contenido (HTML), diseño (CSS) y funcionalidad (JavaScript). Estas otras formas de escuchar eventos se basan es el uso del atributo `onclick` (en realidad, on + evento), que pueden usarse desde HTML:
 
 ```html
 <button type="button" name="button" class="alert" onclick="showAlert()">Alerta</button>
@@ -127,7 +133,7 @@ button.onclick = function(){
   alert('Alerta');
 }
 ```
-A partir de ahora usaremos **siempre, siempre, siempre** la forma correcta, es decir, `addEventListener`.
+A partir de ahora usaremos **siempre, siempre, siempre** la forma recomendada, es decir, `addEventListener`.
 
 * * *
 
@@ -135,7 +141,7 @@ A partir de ahora usaremos **siempre, siempre, siempre** la forma correcta, es d
 
 **Hola click**
 
-Crear una página HTML con un párrafo en el que ponga Hola y un botón. Usando JavaScript, cambiar ese texto por "Mi primer click, ¡ole yo y la mujer que me parió!" cuando se pulse el botón.
+Crear una página HTML con un párrafo en el que ponga Hola y un botón. Cuando se pulse el botón hay que cambiar ese texto por "Mi primer click, ¡ole yo y la mujer que me parió!
 
 * * *
 
@@ -143,9 +149,9 @@ Crear una página HTML con un párrafo en el que ponga Hola y un botón. Usando 
 
 **¿Cómo te llamas?**
 
-Crear una página HTML con un input de tipo texto para introducir tu nombre y un botón. Al pinchar sobre el botón, imprimir en la consola el mensaje 'Hola <nombre>', con el nombre que aparece en el input de texto.
+Crear una página HTML con un input de tipo texto para introducir tu nombre y un botón. Al pinchar sobre el botón, imprimir en la consola el mensaje 'Hola {nombre}', con el nombre que aparece en el input de texto.
 
-> **Nota**: La etiqueta `input` no tiene apertura y cierre, por lo tanto técnicamente no tiene contenido. Si para recoger el contenido de una etiqueta con apertura y cierre utilizábamos `innerHTML`, para recoger el valor de un input utilizaremos `value`.
+> **Nota**: La etiqueta `input` no tiene apertura y cierre, por lo tanto técnicamente no tiene contenido. Si para leer y modificar el contenido de una etiqueta con apertura y cierre utilizábamos `innerHTML`, en el caso de los inputs utilizaremos `value`.
 
 * * *
 
@@ -155,7 +161,8 @@ Aparte del evento click, podéis ver [el listado completo de eventos que podemos
   - `mouseover`: pasar el ratón sobre un elemento
   - `mouseout`: sacar el ratón de un elemento
 - Eventos de teclado
-  - `keypress`: pulsar una tecla
+  - `keydown`: pulsar una tecla
+  - `keyup`: soltar una tecla
 - Sobre elementos
   - `focus`: poner el foco (seleccionar) sobre un elemento, por ejemplo un input
   - `blur`: quitar el foco de un elemento
@@ -177,11 +184,24 @@ Crear una página HTML con un párrafo con `lorem ipsum`. Al poner el ratón sob
 
 * * *
 
+#### EJERCICIO 4
+
+**Scroll es de colores**
+
+Cambiar el color de fondo de la página cuando se haga scroll. Para ello tenemos que:
+
+- Añadir un `div` con suficiente texto dentro para que haya scroll. Podéis usar el siguiente comando de emmet para hacerlo `p*50>lorem`.
+- Preparar classes para cambiar el color de fondo del `div`.
+- Escuchar el evento scroll sobre la ventana `window`.
+- Cuando la posición del scroll vertical supere 250 píxeles poner un color de fondo, cuando sea inferior a 250 píxeles poner otro.
+
+> **Nota**: `window.scrollY` nos devuelve la posición del scroll vertical.
+
 ## Información sobre el evento
 
 Como hemos visto, cuando registramos un listener para escuchar un evento, es el navegador quien ejecuta la función `handler`. 
 
-Al ejecutarla, le pasa unos argumentos que podremos recoger si definimos parámetros en nuestra función `handler`. El primero de ellos es un objeto que se suele denominar y que contiene información acerca del evento. 
+Al ejecutarla, le pasa unos argumentos que podremos recoger si definimos parámetros en nuestra función `handler`. El primero de ellos es un objeto que se suele denominar `event` y que contiene información acerca del evento. 
 Aun no hemos visto los objetos, pero ahora mismo basta decir que son como una variable con muchas variables dentro.
 
 ```js
@@ -196,41 +216,131 @@ buttonElement.addEventListener('click', handleButtonClick);
 ```
 Vamos a ver alguna de la información útil que contiene:
 
+### event.key
+
+En los eventos de teclado podemos [consultar la propiedad `key`](https://keycode.info/) para saber qué tecla se ha pulsado.
+
+#### EJERCICIO 5
+
+**Jugando con el teclado**
+
+Tenemos que crear una página vacía. Al pulsar la tecla 'r' su color de fondo cambia a rojo y al pulsar la 'm' a morado. Vamos a escuchar un evento de teclado (directamente sobre el elemento `document`). 
+
+* * *
+
 ### event.currentTarget
 
-En **`event.currentTarget`** encontraremos el **elemento sobre el que pusimos el listener**.
+**`event.currentTarget`** contiene el **elemento sobre el que pusimos el listener**.
+
+```js
+const buttonElement = document.querySelector('.button');
+
+function handleButtonClick(event) {
+  console.log(event.currentTarget);
+}
+
+buttonElement.addEventListener('click', handleButtonClick);
+```
+
+Prueba el ejemplo de código anterior y observa en la consola el valor de `event.currentTarget`. Contiene exactamente el mismo elemento que la constante `buttonElement`, a la que le pusimos el listener.
+
+#### EJERCICIO 6
+
+**Información instantánea**
+
+Crear una página con un input de texto y un párrafo vacío. Cada vez que la usuaria escriba una letra tenemos que recoger el valor del input al que le pusimos el listener y escribirlo en el párrafo.
+
+> **Nota**: el objetivo es hacerlo utilizando `event.currentTarget`
+
+#### EJERCICIO 7
+
+**Otro botón**
+
+Vamos a preparar un botón y una clase de css. La clase tiene que cambiar alguno de sus estilos, pero no se la vamos a poner inicialmente. Cada vez que la usuaria pulse el botón hay que:
+
+- añadir la clase si no la tiene
+- quitarla la clase si la tiene
+
+> **Nota**: para facilitar añadir y quitar clases de CSS, os recomendamos usar `classList.toggle`
+
+* * *
+
+`event.currentTarget` es muy útil cuando queremos que varios elementos tengan el mismo handler. 
+
+Por ejemplo, pensemos en un listado en el cual al pinchar sobre un elemento este cambia de estilo indicando que ha sido seleccionado.
+
+Vamos a verlo con un ejemplo:
 
 ```html
-<button class="button__add-one">
-0
-</button>
+<ul class="fruits">
+  <li class="fruit fruit-strawberry">Fresa</li>
+  <li class="fruit fruit-banana">Plátano</li>
+  <li class="fruit fruit-kiwi">Kiwi</li>
+</ul>
+```
+
+```css
+.fruit {
+  padding: 6px;
+  cursor: pointer;
+  border-bottom: 3px solid #b9b8ba; /* grey */
+}
+.fruit--selected {
+  border-bottom: 3px solid #64dac4; /* green */
+}
 ```
 
 ```js
 
-const plusOneButtonElement = document.querySelector('.button__add-one');
+const strawberry = document.querySelector('.fruit-strawberry');
+const banana = document.querySelector('.fruit-banana');
+const kiwi = document.querySelector('.fruit-kiwi');
 
-function handlePlusOneButton(event) {
-  // Recogemos el elemento sobre el que pusimos el listener
-  // y lo asignamos a una constante
-  const buttonElement = event.currentTarget;
-  buttonElement.innerHTML = parseInt(buttonElement.innerHTML) + 1;
+function handleFruitClick(event) {
+  // Guardamos en una constante el elemento 
+  // sobre el que pusimos el `listener`
+  const selectedFruit = event.currentTarget;
+  
+  selectedFruit.classList.toggle('fruit--selected');
 }
 
-plusOneButtonElement.addEventListener('click', handlePlusOneButton);
+strawberry.addEventListener('click', handleFruitClick);
+banana.addEventListener('click', handleFruitClick);
+kiwi.addEventListener('click', handleFruitClick);
 
 ```
-Como ya habrás notado en el ejemplo anterior las constantes `plusOneButtonElement` y `buttonElement` tienen asignado el mismo elemento de HTML. 
-Entonces ¿para qué queremos `currentTarget`, si nosotras hemos puesto el listener y por lo tanto ya sabemos cual es elemento botón?
-Para poder diferenciar entre dos elementos que tienen un listener con el mismo `handler`. Así podemos tener una sola `función manejadora` para dominarlos a todos :)
 
-Un caso muy claro sería un listado de elementos en el que queremos que, al pinchar sobre un elemento, este y solo este cambie de estilo. 
-
-[Ejemplo](https://codepen.io/adalab/pen/XxdPWL) de una lista que permite marcar como añadida una fruta en un carro de la compra de una frutería.
+Así podemos tener una sola `función manejadora` para dominarlos a todos :)
 
 * * *
 
-#### EJERCICIO 4
+#### EJERCICIO 7
+
+**Más botones**
+
+Partiendo del ejercicio anterior vamos a añadir un nuevo botón a nuestra página. Tenemos que ponerle un listener y a reutilizar el handler que ya teníamos. Es decir, los dos botones deben tener el mismo handler. 
+
+Cuando la usuaria pulse un botón el cambio de clase sucederá solamente sobre el botón pulsado.
+
+* * *
+
+#### EJERCICIO 8
+
+**Favoritos**
+
+Hemos preparado un [HTML](https://codepen.io/adalab/pen/xyEwVj) con tres tarjetas. 
+Al pinchar en un elemento del listado tenemos que:
+
+- Añadir la clase `.teacher--selected` si no la tiene, o quitarla si la tiene.
+- Modificar el texto del span `.favorite` sustituyéndolo por 'Quitar' si en ese momento contiene 'Añadir', o por 'Añadir' si contiene 'Quitar'.
+
+> **Nota**: con `querySelector` buscamos un elemento dentro de otro. Hasta ahora lo habíamos usado para buscar dentro de `document` (todo nuestro documento HTML), con `document.querySelector()`. 
+
+> Si tuviéramos una constante llamada, por ejemplo, `sectionAboutElement` en la que hemos guardado un elemento de HTML, podríamos buscar dentro él otro elemento, tal que así `sectionAboutElement.querySelector()`
+
+* * *
+
+#### EJERCICIO 9
 
 **¿Qué vemos esta noche?**
 
@@ -246,51 +356,8 @@ Después vamos a escuchar eventos sobre cada elemento de la lista, de forma que 
 
 * * *
 
-#### EJERCICIO 5
-
-**Favoritos**
-
-Hemos preparado un [HTML](https://codepen.io/adalab/pen/xyEwVj) con tres tarjetas. 
-Al pinchar en un elemento del listado tenemos que:
-
-- En el `li` añadir la clase `.teacher--selected` si no la tiene, o quitarla si la tiene.
-- Modificar el texto del span `.favorite` sustituyéndolo por 'Quitar' si en ese momento contiene 'Añadir', o por 'Añadir' si contiene 'Quitar'.
-
-> **Nota 1**: con `querySelector` buscamos un elemento dentro de otro. Hasta ahora lo habíamos usado para buscar dentro de `document` (todo nuestro documento HTML), con `document.querySelector()`. 
-
-> Si tuviéramos una constante llamada, por ejemplo, `sectionAboutElement` en la que hemos guardado un elemento de HTML, podríamos buscar dentro de este otro elemento, tal que así `sectionAboutElement.querySelector()`
-
-> **Nota 2**: para facilitar añadir y quitar clases de CSS, os recomendamos usar `classList.toggle`
-
-* * *
-
-#### EJERCICIO 6
-
-**Jugando con el teclado**
-
-Tenemos que crear una página vacía. Al pulsar la tecla 'r' su color de fondo cambia a rojo y al pulsar la 'm' a morado. Vamos a escuchar un evento de teclado (directamente sobre el elemento `document`). En el evento podemos [consultar la propiedad `key`](https://keycode.info/) para saber qué tecla se ha pulsado.
-
-* * *
-
-### event.target
-
-En **`event.target`** encontraremos el **elemento sobre el que ha sucedido el evento**. Este elemento no tiene por que ser el mismo sobre el que pusimos el listener. 
-
-Recordemos que en HTML se anidan las etiquetas, de manera que si ponemos un listener de `click` sobre un `div padre` que contenga varios `spans hijos`, al hacer click sobre cualquiera de los hijos, **en target estará el span hijo sobre el que se ha hecho click** y **en currentTarget el div padre sobre el que pusimos el listener**.
-
-* * *
-
-#### EJERCICIO 7
-
-**Delegando eventos**
-
-Vamos a `refactorizar` el [EJERCICIO 4](#ejercicio-4) para mejorarlo utilizando la técnica `event delegation`. Tenemos que quitar ese mogollón de listeners en los `li`s y reemplazarlos por uno solo en la etiqueta madre (`ul`).
-¡A por ello!
-
-* * *
-
-
 ### event.preventDefault()
+
 Algunos elementos de HTML tienen comportamientos por defecto ante eventos, por ejemplo:
 
 - al hacer click en un input de tipo checkbox este se marca/desmarca
@@ -307,7 +374,7 @@ Aunque aún no hemos visto como enviar un formulario desde JavaScript, prevenir 
 
 * * *
 
-#### EJERCICIO 8
+#### EJERCICIO 10
 
 **Para ese link**
 
@@ -315,7 +382,7 @@ Aunque aún no hemos visto como enviar un formulario desde JavaScript, prevenir 
 
 Vamos a animarnos y a preparar un HTML muy sencillo con:
 - una cabecera flotante que contenga un menu con tres enlaces 
-- tres secciones con bastante 'loreipsum' para que haya un scroll generoso
+- tres secciones con bastante 'lore ipsum' para que haya un scroll generoso
 
 El primer paso para arreglar este comportamiento es escuchar el click en los enlaces y prevenir el comportamiento por defecto.
 
@@ -327,7 +394,7 @@ Hhhmm, pero entonces no pasa nada al hacer click... Correcto, ¡ejercicio termin
 
 ## Dejando de escuchar eventos
 
-Puede llegar un punto en que queramos dejar de escuchar eventos sobre un elemento. Para eso usaremos la función `removeEventListener` pasándole los mismo parámetros que al registrarlo.
+Puede llegar un punto en que queramos dejar de escuchar eventos sobre un elemento. Para eso usaremos la función `removeEventListener` pasándole los mismos argumentos que al registrarlo.
 
 ```js
 const buttonElement = document.querySelector('.alert');
@@ -336,17 +403,72 @@ buttonElement.removeEventListener('click', showAlert);
 
 ## BONUS
 
+### event.target
+
+En **`event.target`** encontraremos el **elemento sobre el que ha sucedido el evento**. Este elemento no tiene por que ser el mismo sobre el que pusimos el listener.
+
+```css
+.btn {
+  font-size: 24px;
+}
+```
+
+```html
+<button class="btn">
+  <span class="btn__star">
+    &#9733;
+  </span>
+  <span class="btn__text">
+    Rate
+  </span>
+</button>
+```
+
+```js
+const btnEl = document.querySelector(".btn");
+
+const handleBtnClick = (event) => {
+  console.log(event.currentTarget);
+  console.log(event.target);
+}
+
+btnEl.addEventListener("click", handleBtnClick);
+```
+
+Si prueba el ejemplo anterior haciendo click sobre el texto y después sobre la estrella podrás ver la diferencia entre `target` y `currentTarget`. 
+
+- `currentTarget` nunca cambia, es el elemento al que le pusimos el listener. Por lo tanto siempre es el elemento que escribimos antes del punto de `addEventListener`.
+
+- `target` es el elemento sobre el que sucede el evento, puede coincidir con `currentTarget` o estar dentro de el.
+
+En la mayoría de los casos querremos trabajar con `currentTarget`. Pero no está mal que nos suene como funciona `target`.
+
+* * *
+
+#### EJERCICIO 11
+
+**Un listener para todos**
+
+Vamos a *refactorizar* el [EJERCICIO 9](#ejercicio-9) para mejorarlo. Tenemos que quitar ese mogollón de listeners en los `li`s y reemplazarlos por uno solo en la etiqueta madre (`ul`).
+
+¡A por ello!
+
+> **Nota**: esta técnica de poner un listener en la madre y acceder al hijo sobre el que se ha hecho click se llama **event delegation**.
+
+* * *
+
 ## Burbujeo de eventos o `event bubbling`
 
 Cada vez que sucede un evento sobre un elemento de HTML, este 'burbujea' hacia arriba. Esto quiere decir que el evento sucede en ese elemento, y después en el elemento padre, y después en el abuelo, y así hasta llegar al último ancestro, `html`.
 
-Aunque no lo vemos, esto está sucediendo continuamente en el navegador, por ejemplo cada vez que movemos el ratón, o hacemos click en cualquier sitio. este comportamiento hace que:
+Aunque no lo vemos, esto está sucediendo continuamente en el navegador, por ejemplo cada vez que movemos el ratón, o hacemos click en cualquier sitio. 
+Los eventos suceden, independientemente de que los estemos escuchando o no.
+
+Este comportamiento hace que:
  - podamos 'escuchar' un evento en un elemento, sin que esto implique que se haya iniciado en él
  - podamos poner `listeners` con `handlers` en varios padres y que todos se ejecuten si sucede un evento en un hijo común
 
 Pincha en los `divs` de este [codepen](https://codepen.io/adalab/pen/MPjyyW?editors=1010) y observa como se comportan.
-
-Esto nos permite técnicas tan interesantes como `event delegation` que practicamos en el [EJERCICIO 7](#ejercicio-7), con la cual podemos poner un listener en un `ul` y así manejar los eventos sobre sus hijos `li`s.
 
 En este [pen](https://codepen.io/adalab/pen/zLKwwP) puedes ver como manejar eventos anidados sin que entren en conflicto.
 
