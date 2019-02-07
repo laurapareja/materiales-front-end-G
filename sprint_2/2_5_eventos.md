@@ -13,7 +13,7 @@
 - [EJERCICIO 9](#ejercicio-9)
 - [EJERCICIO 10](#ejercicio-10)
 - [EJERCICIO 11](#ejercicio-11)
-- [EJERCICIO 12](#ejercicio-12)
+- [EJERCICIO 12 BONUS](#ejercicio-12-bonus)
 
 <!-- /TOC -->
 
@@ -437,7 +437,7 @@ En la mayor√≠a de los casos querremos trabajar con `currentTarget`. Pero no est√
 
 * * *
 
-#### EJERCICIO 12
+#### EJERCICIO 12 BONUS
 
 **Un listener para todos**
 
