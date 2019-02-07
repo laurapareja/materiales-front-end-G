@@ -9,11 +9,11 @@
 - [EJERCICIO 5](#ejercicio-5)
 - [EJERCICIO 6](#ejercicio-6)
 - [EJERCICIO 7](#ejercicio-7)
-- [EJERCICIO 7](#ejercicio-7-1)
 - [EJERCICIO 8](#ejercicio-8)
 - [EJERCICIO 9](#ejercicio-9)
 - [EJERCICIO 10](#ejercicio-10)
 - [EJERCICIO 11](#ejercicio-11)
+- [EJERCICIO 12](#ejercicio-12)
 
 <!-- /TOC -->
 
@@ -68,7 +68,7 @@ Para empezar, tendremos recoger de HTML el elemento sobre el que queremos escuch
 const button = document.querySelector('.alert');
 ```
 
-A continuación, vamos a usar el método `addEventListener` de los elementos de HTML para escuchar eventos. Le pasaremos 2 parámetros: el tipo de evento a escuchar y la función que tiene que ejecutar cuando suceda el evento. Primero vamos a definir la función manejadora (`handler`), y luego registramos la función escuchadora (`listener`).
+A continuación, vamos a usar el método `addEventListener` de los elementos de HTML para escuchar eventos. Le pasaremos 2 argumentos: el tipo de evento a escuchar y la función que tiene que ejecutar cuando suceda el evento. Primero vamos a definir la función manejadora (`handler`), y luego registramos la función escuchadora (`listener`).
 
 ```js
 // elemento de HTML
@@ -102,7 +102,7 @@ Esto os puede parecer un poco raro y complejo al principio, pero iremos descubri
 
 Por lo tanto la función que le pasamos a `addEventListener` como segundo argumento es un `callback`, no la ejecutamos nosotras, es ejecutada por `addEventListener` cuando sucede el evento.
 
-Para pasar un *callback* como argumento, podemos utilizar el nombre de una función ya declarada (como vimos en el ejemplo anterior), o podemos declararla directamente cuando la pasemos como argumento. Son dos maneras diferentes de hacer lo mismo. Vamos a ver el ejemplo anterior, pero declarando la función cuando la pasamos como argumento.
+Para pasar un *callback* como argumento, podemos utilizar el nombre de una función ya declarada (como vimos en el ejemplo anterior), o podemos declararla directamente. Son dos maneras diferentes de hacer lo mismo. Vamos a ver el ejemplo anterior, pero declarando la función cuando la pasamos como argumento.
 
 ```js
 const button = document.querySelector('.alert');
@@ -119,21 +119,6 @@ button.addEventListener('click', () => console.log('alerta'));
 
 > NOTA:
 > Es muy importante entender que la función sólo se ejecutará cuando suceda el evento. Si el evento nunca sucede, la función nunca se ejecutará. Nosotros nunca ejecutamos la función: es el navegador quien la ejecuta cuando sucede el evento.
-
-Existen otras formas de escuchar eventos que veréis por Internet, y que aunque siguen funcionando **no recomendamos** usar. La principal razón es porque queremos separar contenido (HTML), diseño (CSS) y funcionalidad (JavaScript). Estas otras formas de escuchar eventos se basan es el uso del atributo `onclick` (en realidad, on + evento), que pueden usarse desde HTML:
-
-```html
-<button type="button" name="button" class="alert" onclick="showAlert()">Alerta</button>
-```
-O desde JavaScript:
-
-```javascript
-const button = document.querySelector('.alert');
-button.onclick = function(){
-  alert('Alerta');
-}
-```
-A partir de ahora usaremos **siempre, siempre, siempre** la forma recomendada, es decir, `addEventListener`.
 
 * * *
 
@@ -297,8 +282,9 @@ const banana = document.querySelector('.fruit-banana');
 const kiwi = document.querySelector('.fruit-kiwi');
 
 function handleFruitClick(event) {
-  // Guardamos en una constante el elemento 
+  // Asignamos a una constante el elemento 
   // sobre el que pusimos el `listener`
+  // para trabajar cómodamente con el
   const selectedFruit = event.currentTarget;
   
   selectedFruit.classList.toggle('fruit--selected');
@@ -314,7 +300,7 @@ Así podemos tener una sola `función manejadora` para dominarlos a todos :)
 
 * * *
 
-#### EJERCICIO 7
+#### EJERCICIO 8
 
 **Más botones**
 
@@ -324,7 +310,7 @@ Cuando la usuaria pulse un botón el cambio de clase sucederá solamente sobre e
 
 * * *
 
-#### EJERCICIO 8
+#### EJERCICIO 9
 
 **Favoritos**
 
@@ -340,7 +326,7 @@ Al pinchar en un elemento del listado tenemos que:
 
 * * *
 
-#### EJERCICIO 9
+#### EJERCICIO 10
 
 **¿Qué vemos esta noche?**
 
@@ -374,7 +360,9 @@ Aunque aún no hemos visto como enviar un formulario desde JavaScript, prevenir 
 
 * * *
 
-#### EJERCICIO 10
+#### EJERCICIO 11
+
+[comment]: <> (Hay una referencia a este ejercicio 5 de DOM avanzado)
 
 **Para ese link**
 
@@ -435,7 +423,7 @@ const handleBtnClick = (event) => {
 btnEl.addEventListener("click", handleBtnClick);
 ```
 
-Si prueba el ejemplo anterior haciendo click sobre el texto y después sobre la estrella podrás ver la diferencia entre `target` y `currentTarget`. 
+Si pruebas el ejemplo anterior al hacer click sobre el texto y después sobre la estrella podrás ver la diferencia entre `target` y `currentTarget`. 
 
 - `currentTarget` nunca cambia, es el elemento al que le pusimos el listener. Por lo tanto siempre es el elemento que escribimos antes del punto de `addEventListener`.
 
@@ -445,15 +433,15 @@ En la mayoría de los casos querremos trabajar con `currentTarget`. Pero no est�
 
 * * *
 
-#### EJERCICIO 11
+#### EJERCICIO 12
 
 **Un listener para todos**
 
-Vamos a *refactorizar* el [EJERCICIO 9](#ejercicio-9) para mejorarlo. Tenemos que quitar ese mogollón de listeners en los `li`s y reemplazarlos por uno solo en la etiqueta madre (`ul`).
+Vamos a *refactorizar* el [EJERCICIO 9](#ejercicio-9) para mejorarlo. Tenemos que quitar ese mogollón de listeners en los `li`s, reemplazarlos por uno solo en la etiqueta madre (`ul`) y trabajar con `event.target`.
 
 ¡A por ello!
 
-> **Nota**: esta técnica de poner un listener en la madre y acceder al hijo sobre el que se ha hecho click se llama **event delegation**.
+> **Nota**: esta técnica de poner un listener en la madre y acceder a la hija sobre la que se ha hecho click se llama **event delegation**.
 
 * * *
 
@@ -471,6 +459,23 @@ Este comportamiento hace que:
 Pincha en los `divs` de este [codepen](https://codepen.io/adalab/pen/MPjyyW?editors=1010) y observa como se comportan.
 
 En este [pen](https://codepen.io/adalab/pen/zLKwwP) puedes ver como manejar eventos anidados sin que entren en conflicto.
+
+## Otras formas de escuchar eventos
+
+Existen otras formas de escuchar eventos que veréis por Internet, y que aunque siguen funcionando **no recomendamos** usar. La principal razón es porque queremos separar contenido (HTML), diseño (CSS) y funcionalidad (JavaScript). Estas otras formas de escuchar eventos se basan es el uso del atributo `onclick` (en realidad, on + evento), que pueden usarse desde HTML:
+
+```html
+<button type="button" name="button" class="alert" onclick="showAlert()">Alerta</button>
+```
+O desde JavaScript:
+
+```javascript
+const button = document.querySelector('.alert');
+button.onclick = function(){
+  alert('Alerta');
+}
+```
+A partir de ahora usaremos **siempre, siempre, siempre** la forma recomendada, es decir, `addEventListener`.
 
 ## Resumen
 
