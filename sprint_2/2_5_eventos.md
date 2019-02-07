@@ -429,7 +429,11 @@ Si pruebas el ejemplo anterior al hacer click sobre el texto y después sobre la
 
 - `target` es el elemento sobre el que sucede el evento, puede coincidir con `currentTarget` o estar dentro de el.
 
+[Explicación de currentTarget vs target en 30 segundos](http://joequery.me/code/event-target-vs-event-currenttarget-30-seconds/)
+
 En la mayoría de los casos querremos trabajar con `currentTarget`. Pero no está mal que nos suene como funciona `target`.
+
+
 
 * * *
 
@@ -500,4 +504,5 @@ Y hemos visto nueva información que no es exclusiva de los eventos como:
 
 - [key codes info](https://keycode.info/)
 - [Introduction to event listeners](https://www.youtube.com/watch?v=EaRrmOtPYTM&list=PLyuRouwmQCjnEupVi5lpP6VrLg-eO-Zcp&index=1)
+- [currentTarget vs target](http://joequery.me/code/event-target-vs-event-currenttarget-30-seconds/)
 - [classList.toggle](https://alligator.io/js/classlist/#toggle)
