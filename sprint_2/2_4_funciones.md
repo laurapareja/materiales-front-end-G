@@ -173,15 +173,15 @@ Crea una función que reciba como argumentos dos valores y devuelva como valor d
 
 **Función media**
 
-Crea una función que reciba 4 parámetros, cada uno con un número, y devuelva como valor la media de todos ellos. Haz tres pruebas con distintos números para comprobar que funciona correctamente y muestra el resultado en la consola.
+Crea una función con 4 parámetros numéricos que devuelva como valor la media de todos ellos. Haz tres pruebas con distintos números para comprobar que funciona correctamente y muestra el resultado en la consola.
 
----
+* * *
 
 #### EJERCICIO 3
 
 **Ticket con IVA**
 
-Crea una función que reciba como parámetro un número, que representará un precio, y devuelva un texto en el que ponga el precio sin IVA, el IVA (21%) y el total. Por ejemplo, si pasamos por parámetro un 10, la función pintará en la consola `"Precio sin IVA: 10, IVA: 2,1 y Total: 12,1"`.
+Crea una función que reciba por parámetro un número, que representará un precio, y devuelva un texto en el que ponga el precio sin IVA, el IVA (21%) y el total. Por ejemplo, si pasamos por parámetro un 10, la función pintará en la consola `"Precio sin IVA: 10, IVA: 2,1 y Total: 12,1"`.
 
 Para probar que funciona, ejecuta la función recogiendo el resultado en una variable e imprímela en la consola para comprobarlo.
 
@@ -191,9 +191,9 @@ Para probar que funciona, ejecuta la función recogiendo el resultado en una var
 
 **Pares o nones**
 
-Crear una función que reciba como parámetro un número y devuelva `true` si es par y `false` si es impar.
+Crear una función que reciba por parámetro un número y devuelva `true` si es par y `false` si es impar.
 
-Imprime el resultado para comprobar que funciona.
+Ejecutala e imprime el resultado para comprobar que funciona.
 
 #### EJERCICIO 5
 
