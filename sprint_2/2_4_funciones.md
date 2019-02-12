@@ -160,9 +160,9 @@ console.log('Exercises completed', sum(2,6,9));
 
 **Función multiplicación**
 
-Crea una función que reciba como argumento dos valores y devuelva como valor de retorno la multiplicación de ambos. Haz tres pruebas con distintos números para comprobar que funciona correctamente y muestra el resultado en la consola usando `console.log()`.
+Crea una función que reciba como argumentos dos valores y devuelva como valor de retorno la multiplicación de ambos. Haz tres pruebas con distintos números para comprobar que funciona correctamente y muestra el resultado en la consola usando `console.log()`.
 
----
+* * *
 
 #### EJERCICIO 2
 
@@ -307,18 +307,18 @@ En las funciones flecha podemos evitar los paréntesis solo cuando la función t
 
 ```javascript
 const printWaitingTime = minutes => {
-  console.log(`Please, wait ${minutes} minutes`);
+  return `Please, wait ${minutes} minutes`;
 };
 
 // equivale a
-const printWaitingTime = minutes => {
-  console.log(`Please, wait ${minutes} minutes`);
+const printWaitingTime = (minutes) => {
+  return `Please, wait ${minutes} minutes`;
 };
 ```
 
 ### Llaves y return implícito
 
-Escribir o no las llaves ({}) significa dos cosas distintas. Solo podremos no escribirlas cuando la función tenga una sola sentencia; es decir, cuando se ejecute una sola orden dentro (un console.log(), un cambio en un elemento HTML, un incremento en un contador, etc.). Cuando no escribimos las llaves, el valor que devuelve esa sentencia será el return de la función. Eso nos permite escribir en menos líneas funciones muy sencillas:
+Escribir o no las llaves del bloque (`{}`) significa dos cosas distintas. Solo podremos no escribirlas cuando la función tenga una sola sentencia; es decir, cuando se ejecute una sola orden dentro (un console.log(), un cambio en un elemento HTML, un incremento en un contador, etc.). Cuando no escribimos las llaves, el valor que devuelve esa sentencia será el return de la función. Eso nos permite escribir en menos líneas funciones muy sencillas:
 
 ```javascript
 const printWaitingTime = minutes => `Please, wait ${minutes} minutes`;
@@ -327,7 +327,7 @@ console.log( printWaitingTime(4) );
 };
 
 // equivale a
-const printWaitingTime = (minutes) => {
+const printWaitingTime = minutes => {
   return `Please, wait ${minutes} minutes`;
 };
 console.log( printWaitingTime(4) );
@@ -338,11 +338,15 @@ console.log( printWaitingTime(4) );
 
 **Calculador de modelo de caja**
 
-Como hemos visto en las clases anteriores, en CSS tenemos dos tipos de cálculo para las dimensiones de un elemento: `border-box` y `content-box`. Vamos a realizar un calculador al que le pasaremos 4 parámetros y nos devolverá el ancho del contenido, en caso de ser _border-box_ o el ancho total de la caja, en caso de ser _content-box_.
+Como hemos visto en las clases anteriores, en CSS tenemos dos tipos de cálculo para las dimensiones de un elemento: `border-box` y `content-box`. Vamos a realizar un calculador al que le pasaremos 4 parámetros y nos devolverá el ancho del contenido, y el ancho total de la caja.
 
-La función tendrá 4 parametros: el primero será un booleano para especificar si es border-box o no, el segundo será el ancho del contenido o de la caja entera, el tercero el padding y el cuarto el borde.
+La función tendrá 4 parámetros: 
+- el primero será un booleano para especificar si es `border-box` o no.
+- el segundo será el `width` de la caja
+- el tercero el `padding` 
+- el cuarto el `border-size`.
 
-Para probar que funciona, ejecuta la función recogiendo el resultado en una variable e imprímela en la consola para comprobarlo.
+Para probar que funciona, ejecuta la función recogiendo el resultado en una variable e imprímela en la consola.
 
 ---
 
