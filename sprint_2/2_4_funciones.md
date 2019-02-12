@@ -138,7 +138,7 @@ Observa la siguiente imagen:
 
 ![Máquina funciones](assets/images/2-4/maquina-funciones.png)
 
-- Al crear la función sum le hemos puestos tres tubos llamados a, b y c, estos son los **parámetros**.
+- Al crear la maquina sum le hemos puestos tres tubos llamados a, b y c, estos son los **parámetros**.
 
 
 ```js
@@ -364,12 +364,12 @@ const sum = function(a, b) {
 En las funciones flecha podemos evitar los paréntesis solo cuando la función tenga 1 único parámetro:
 
 ```javascript
-const printWaitingTime = minutes => {
+const getWaitingTime = minutes => {
   return `Please, wait ${minutes} minutes`;
 };
 
 // equivale a
-const printWaitingTime = (minutes) => {
+const getWaitingTime = (minutes) => {
   return `Please, wait ${minutes} minutes`;
 };
 ```
