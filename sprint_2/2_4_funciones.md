@@ -379,16 +379,16 @@ const printWaitingTime = (minutes) => {
 Escribir o no las llaves del bloque (`{}`) significa dos cosas distintas. Solo podremos no escribirlas cuando la función tenga una sola sentencia; es decir, cuando se ejecute una sola orden dentro (un console.log(), un cambio en un elemento HTML, un incremento en un contador, etc.). Cuando no escribimos las llaves, el valor que devuelve esa sentencia será el return de la función. Eso nos permite escribir en menos líneas funciones muy sencillas:
 
 ```javascript
-const printWaitingTime = minutes => `Please, wait ${minutes} minutes`;
-console.log( printWaitingTime(4) );
+const getWaitingTime = minutes => `Please, wait ${minutes} minutes`;
+console.log( getWaitingTime(4) );
 // devuelve "Please, wait 4 minutes"
 };
 
 // equivale a
-const printWaitingTime = minutes => {
+const getWaitingTime = minutes => {
   return `Please, wait ${minutes} minutes`;
 };
-console.log( printWaitingTime(4) );
+console.log( getWaitingTime(4) );
 // devuelve "Please, wait 4 minutes"
 ```
 * * *
