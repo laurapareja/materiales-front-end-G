@@ -7,6 +7,11 @@
 - [EJERCICIO 3](#ejercicio-3)
 - [EJERCICIO 4](#ejercicio-4)
 - [EJERCICIO 5](#ejercicio-5)
+- [EJERCICIO 6](#ejercicio-6)
+- [EJERCICIO 7](#ejercicio-7)
+- [EJERCICIO 8](#ejercicio-8)
+- [EJERCICIO 9](#ejercicio-9)
+- [EJERCICIO 10](#ejercicio-10)
 
 <!-- /TOC -->
 
@@ -180,7 +185,56 @@ Crea una función que reciba como parámetro un número, que representará un pr
 
 Para probar que funciona, ejecuta la función recogiendo el resultado en una variable e imprímela en la consola para comprobarlo.
 
----
+* * *
+
+#### EJERCICIO 4
+
+**Pares o nones**
+
+Crear una función que reciba como parámetro un número y devuelva `true` si es par y `false` si es impar.
+
+Imprime el resultado para comprobar que funciona.
+
+#### EJERCICIO 5
+
+**`querySelector` para todas**
+
+Estamos trabajando en un proyecto bastante grande, dónde hay que recoger muchos elementos de HTML desde javascript para interaccionar con ellos. Para no tener que escribir `document.querySelector(...)` tantas veces una compañera ha sugerido hacer una función llamada `getEl`.
+
+Esta función debe recibir por parámetro un selector de css y retornará el elemento de HTML correspondiente. Hemos quedado en que cuando llamemos a la función la sintaxis será tal que así:
+
+```js
+const btnEl = getEl('.btn');
+```
+
+> **Nota**: Prepara un html con varios elementos para poder probarla.
+
+#### EJERCICIO 6
+
+**Logueando errores**
+
+Nos hemos dado cuenta de que cuando llamamos a `getEl` a veces nos equivocamos escribiendo el selector (se nos olvida el punto de la clase, nos comemos una letra...), a partir de ahí todo falla y nos cuesta encontrar dónde está el error.
+
+Vamos a mejorar nuestra función para que nos avise cuando esto ocurre. Dentro de ella:
+
+- Al recoger el elemento de HTML vamos a guardarlo en una constante.
+- Con un condicional vamos a comprobar si la constante no tiene ningún valor, y en ese caso vamos a imprimir un error en la consola que diga `No existe ningún elemento con clase, id o tag llamado {aquí-el-nombre-del-selector}`
+- Finalmente tras nuestro condicional retornaremos la constante con el elemento.
+
+> **Nota**: podemos imprimir/loguear errores con `console.error()`.
+
+#### EJERCICIO 7
+
+**Combinando funciones**
+
+Preparar dos etiquetas en HTML con texto dentro.
+
+Crear una función que recibe por parámetros un elemento de HTML y añade un texto indicando si es par o impar.
+
+Dentro de esta función llamaremos a otras dos:
+
+- La primera se ocupará de decirnos si el número es impar o no.
+- La tercera añadirá al texto por delante: 'Este texto es PAR: ...' o 'Este texto es IMPAR: ...'
 
 ## Ámbito de las variables
 
@@ -283,6 +337,10 @@ console.log(mySecretLetter()); // devuelve "x"
 console.log(secretLetter); // da un error porque la variable solo está definida dentro del bloque de la función
 ```
 
+#### EJERCICIO 8
+
+TODO: ejercicio para practicar el ejemplo anterior
+
 ## Arrow functions
 
 Las arrow functions ("funciones flecha") de ES6 son una forma simplificada para declarar funciones anónimas. La sintaxis básica es la siguiente:
@@ -333,30 +391,31 @@ const printWaitingTime = minutes => {
 console.log( printWaitingTime(4) );
 // devuelve "Please, wait 4 minutes"
 ```
+* * *
 
-#### EJERCICIO 4
-
-**Calculador de modelo de caja**
-
-Como hemos visto en las clases anteriores, en CSS tenemos dos tipos de cálculo para las dimensiones de un elemento: `border-box` y `content-box`. Vamos a realizar un calculador al que le pasaremos 4 parámetros y nos devolverá el ancho del contenido, y el ancho total de la caja.
-
-La función tendrá 4 parámetros: 
-- el primero será un booleano para especificar si es `border-box` o no.
-- el segundo será el `width` de la caja
-- el tercero el `padding` 
-- el cuarto el `border-size`.
-
-Para probar que funciona, ejecuta la función recogiendo el resultado en una variable e imprímela en la consola.
-
----
-
-#### EJERCICIO 5
+#### EJERCICIO 9
 
 **Arrow functions everywhere**
 
 Vamos a rehacer alguno de los ejercicios anteriores con funciones flecha. ¡A lo loco!
 
----
+* * *
+
+#### EJERCICIO 10
+
+**Calculador de modelo de caja**
+
+Como hemos visto en las clases anteriores, en CSS tenemos dos tipos de cálculo para las dimensiones de un elemento: `border-box` y `content-box`. Vamos a realizar un calculador al que le pasaremos 4 parámetros y nos devolverá el ancho del contenido, y el ancho total de la caja en una cadena como esta: `El ancho del contenido es: 30px y el ancho total de la caja es: 34px`.
+
+La función tendrá 4 parámetros: 
+- el primero será un booleano para especificar si es `border-box` o no.
+- el segundo será un número con el `width` de la caja
+- el tercero será un número con el `padding` 
+- el cuarto será un número con el `border-size`.
+
+Para probar que funciona, ejecuta la función recogiendo el resultado en una variable e imprímela en la consola.
+
+* * *
 
 ## Bonus: Funciones en todas partes
 
