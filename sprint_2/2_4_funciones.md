@@ -10,19 +10,15 @@
 
 <!-- /TOC -->
 
-
-
-
 ## Funciones
 
 Una función es un bloque de código que definimos una vez y lo reutilizamos las veces que queramos; un conjunto de instrucciones a las que podemos pasar diferentes datos para que nos devuelva resultados distintos.
 
 Durante esta sesión veremos cuáles son las principales características de este recurso de programación y cómo utilizarlo en nuestro código para sacarle el máximo partido.
 
-
 ## ¿Para qué sirve lo que vamos a ver en esta sesión?
 
-Las funciones son muy útiles a la hora de crear un código único para usarlo en distintas partes de nuestro programa. El beneficio de esto es que si en el futuro queremos modificar algo de ese código lo haremos en un único sitio aunque se utilice en decenas de sitios diferentes. Las funciones se ejecutan en distintos momentos y con distintas características gracias a los _parámetros_.
+Las funciones son muy útiles a la hora de crear un código único para usarlo en distintas partes de nuestro programa. El beneficio de esto es que si en el futuro queremos modificar algo de ese código lo haremos en un único sitio aunque se utilice en decenas de sitios diferentes. Las funciones se ejecutan en distintos momentos y con distintas características gracias a los _parámetros_ y a los _argumentos_.
 
 Otra de las ventajas de las funciones es que devuelven un valor, es decir, realizan una operación y pueden devolver un dato. Ese dato podemos asignárselo a una variable o usarlo dentro de otra operación. O incluso podemos prescindir de él si no nos interesa para nada.
 
@@ -31,89 +27,125 @@ Las funciones son una forma de agrupar código que vamos a usar varias veces per
 Podemos intentar hacer un paralelismo con el café, más o menos todo el mundo sabe hacer un café, desde los ingredientes a los diferentes pasos. Y cada vez que queramos uno seguimos todos los pasos uno a uno, y al final tendremos un café.
 
 Ahora, las funciones serían como estas cafeteras modernas, a las que dependiendo de la cápsula que uses te hace un café diferente. Cuando activo la cafetera (llamo a la función) detecta qué tipo de capsula he introducido (parámetros) y me hace (me devuelve) un café u otro:
+
 - Si utilizo una de estas cápsulas de hipster purista tendré un café de esos que no te dejan tomar si no llevas camisas de cuadros, patinetes y unas gafas de pasta.
 - Si utilizo una cápsula más divertida que añada espuma, caramelo y coco pues tendré que huir de los hispters de antes porque para ellos este tipo de café debería ser ilegal.
 
 Un ejemplo de esto sería:
 
 ```javascript
-function makeMeCoffee( coffeeName ) {
+function makeMeCoffee(coffeeName) {
   return `Aquí tiene su ${coffeeName}, que lo disfrute`;
 }
 ```
 
 De manera que podemos llamar varias veces a la función y obtener "cafés" diferentes:
+
 ```javascript
-makeMeCoffee( 'Café hipster con cuerpo de minotauro y esencia de madera y oro' );
+makeMeCoffee('Café hipster con cuerpo de minotauro y esencia de madera y oro');
 // devuelve "Aquí tiene su Café hipster con cuerpo de minotauro y esencia de madera y oro, que lo disfrute"
 
-makeMeCoffee( 'Café con coco, nata y un toque de menta' );
+makeMeCoffee('Café con coco, nata y un toque de menta');
 // devuelve "Aquí tiene su Café con coco, nata y un toque de menta, que lo disfrute"
-
 ```
 
 ## ¿En qué casos se utiliza?
+
 Por ejemplo, en los siguientes casos:
+
 - Si tenemos un código que convierte la primera letra de un texto a mayúsculas y vamos a usar ese código en varias partes de nuestro programa, creamos una función y ejecutamos la función en cada uno de los sitios necesarios
 - Si queremos añadir varias clases a diferentes elementos HTML en función de la medida de la página web podemos crear una función y utilizarla en cada uno de ellos
 - Si queremos enviar datos a un servidor, la mayoría de las veces es muy parecido y sólo cambian unos datos. Podríamos hacer una función y reutilizarla y usar distintos datos en cada una mediante los parámetros de la función (que veremos durante esta sesión)
 
-
 ## Declaración y uso de funciones
+
 Para utilizar una función debemos declararla en algún sitio de nuestro código.
 
 La estructura para declarar una función es
+
 - primero la palabra reservada `function` seguida del nombre de la función
-- después entre paréntesis `( )` los parámetros de la función separados por comas `,` y que si no tiene parámetros estará vacío
+- después entre paréntesis `( )` los parámetros de la función separados por comas `,`, si no tiene parámetros estará vacío
 - un bloque de código entre llaves `{ }` con las instrucciones de código de la función
 
 ```javascript
 //Función sin parámetros
 function hi() {
-	return 'Hola';
+  return 'Hola';
 }
 
 //Función con parámetros
 function sum(a, b) {
-	return a + b;
+  return a + b;
 }
 ```
 
 Si añadimos las declaraciones anteriores de funciones a nuestra página, no veremos ningún efecto. Esto es porque solo estamos declarando las funciones, es decir, diciendo que existen pero nada más.
 
-Para utilizar (también se le puede llamar *ejecutar* o *invocar*) una función simplemente usamos el nombre de la función seguida de paréntesis donde pasaremos los parámetros o argumentos separados por comas `,`.
+Para utilizar (también se le puede llamar _ejecutar_ o _invocar_) una función simplemente usamos el nombre de la función seguida de paréntesis donde pasaremos los argumentos separados por comas `,`.
 
 ```javascript
-console.log( hi() );
+console.log(hi());
 //Muestra en la consola la palabra 'Hola'
 
-console.log( sum(1, 4) );
+console.log(sum(1, 4));
 //Muestra en la consola un 5
 ```
->NOTA: Esta sintaxis para utilizar funciones te suena, ¿verdad? Hasta ahora hemos estado ejecutando algunas funciones ya declaradas en el navegador como `querySelector('.title')` a la que le pasamos por parámetro una cadena con el selector que buscamos y nos devuelve la referencia a dicho elemento en nuestro HTML.
+
+> NOTA: Esta sintaxis para utilizar funciones te suena, ¿verdad? Hasta ahora hemos estado ejecutando algunas funciones ya declaradas en el navegador como `querySelector('.title')` a la que le pasamos por parámetro una cadena con el selector que buscamos y nos devuelve la referencia a dicho elemento en nuestro HTML.
+
+Así, una función es como una maquina:
+
+- Se construye una vez (declarando la función)
+- Se utiliza muchas veces (ejecutando la función)
+
+Observa la siguiente imagen:
+
+![Máquina funciones](assets/images/2-4/maquina-funciones.png)
+
+- Al crearla le hemos puestos tres tubos llamados a, b y c, estos los **parámetros**.
+
+
+```js
+function sum(a, b, c) {
+  return a + b + c;
+}
+```
+
+- Cada vez que la usamos pasamos valores por los tubos, por ejemplo 3, 56, 12, estos los **argumentos**. Y la máquina nos devuelve un resultado.
+
+```js
+const amount = sum(3, 56, 12);
+console.log('Cantidad', amount);
+
+const totalAges = sum(35, 26, 30);
+console.log('totalAges', totalAges);
+
+console.log('Exercises completed', sum(2,6,9));
+
+```
 
 Se pueden crear funciones sin nombre, estas funciones se llaman _funciones anónimas_. Estas funciones se suelen emplear para cosas que veremos en el curso más adelante, como asignarlas a una propiedad de un objeto o pasarlas como un callback. Un ejemplos de función anónima:
 
 ```javascript
 const sum = function(a, b) {
-	return a + b;
+  return a + b;
 };
 
 // La llamamos con el nombre de la variable
-sum(2,3); // devuelve 5
+sum(2, 3); // devuelve 5
 ```
 
 ## Parámetros y valores de retorno
 
-Los *parámetros* son los datos que definimos en una función y que, a la hora de ejecutarla, serán sustituidos por los *argumentos* que le pasemos. Por tanto, en la declaración de la función le llamamos parámetros y en la ejecución le llamamos argumentos. Las funciones pueden tener 0, 1 o más parámetros separados por comas `,`.
+Los _parámetros_ son los datos que definimos en una función y que, a la hora de ejecutarla, serán sustituidos por los _argumentos_ que le pasemos. Por tanto, en la declaración de la función le llamamos parámetros y en la ejecución le llamamos argumentos. Las funciones pueden tener 0, 1 o más parámetros separados por comas `,`.
 
 Una función puede devolver un valor utilizando la palabra clave `return` seguida del valor que queremos devolver. Para devolver una variable `result`, utilizaremos `return result;` en el código.
 
 ```javascript
 function sum(a, b) {
-	const result = a + b;
+  const result = a + b;
 
-	return result;
+  return result;
 }
 
 const sumResult = sum(3, 4); //sumResult vale 7
@@ -123,21 +155,23 @@ Por defecto, si en una función no indicamos un valor de retorno usando `return`
 
 Cuando ejecutamos una instrucción `return` dentro de una función, termina la ejecución de la función. Todo el código que se fuese a ejecutar después de ese `return` será ignorado, como si no existiese. Por tanto, debemos evitar escribir líneas de código después de un `return` y normalmente será la útlima línea de código de una función.
 
-* * *
+---
+
 #### EJERCICIO 1
 
 **Función multiplicación**
 
 Crea una función que reciba como argumento dos valores y devuelva como valor de retorno la multiplicación de ambos. Haz tres pruebas con distintos números para comprobar que funciona correctamente y muestra el resultado en la consola usando `console.log()`.
 
-* * *
+---
+
 #### EJERCICIO 2
 
 **Función media**
 
 Crea una función que reciba 4 parámetros, cada uno con un número, y devuelva como valor la media de todos ellos. Haz tres pruebas con distintos números para comprobar que funciona correctamente y muestra el resultado en la consola.
 
-* * *
+---
 
 #### EJERCICIO 3
 
@@ -147,7 +181,7 @@ Crea una función que reciba como parámetro un número, que representará un pr
 
 Para probar que funciona, ejecuta la función recogiendo el resultado en una variable e imprímela en la consola para comprobarlo.
 
-* * *
+---
 
 ## Ámbito de las variables
 
@@ -156,30 +190,32 @@ Por defecto, una variable definida con let o const tiene un ámbito (en inglés,
 **¿Y qué es un bloque?** Un bloque es cualquier expresión con llaves `{}` como puede ser un `if` o una función :)
 
 Por ejemplo:
+
 ```javascript
-const globalVar = 'Ey, I\'m global';
+const globalVar = "Ey, I'm global";
 
-if (2 === 2) { // ejemplo para asegurarnos de que entra en el bloque if
-  const globalVar = 'Ey, I\'m not really global';
-  const notGlobalVar = 'Shirt, I\'m not global :(';
+if (2 === 2) {
+  // ejemplo para asegurarnos de que entra en el bloque if
+  const globalVar = "Ey, I'm not really global";
+  const notGlobalVar = "Shirt, I'm not global :(";
 
-  console.log( globalVar ); // devuelve "Ey, I'm not really global"
-  console.log( notGlobalVar ); // devuelve "Shirt, I'm not global :("
+  console.log(globalVar); // devuelve "Ey, I'm not really global"
+  console.log(notGlobalVar); // devuelve "Shirt, I'm not global :("
 }
 
-console.log( globalVar ); // devuelve "Ey, I'm global"
-console.log( notGlobalVar ); // da un error porque no está definida
+console.log(globalVar); // devuelve "Ey, I'm global"
+console.log(notGlobalVar); // da un error porque no está definida
 ```
 
 Por supuesto, podemos acceder a las variables del ámbito superior:
 
 ```javascript
-let globalVar = 'Ey, I\'m global';
+let globalVar = "Ey, I'm global";
 if (2 === 2) {
-  globalVar = 'Ey, I\'m STILL global';
-  console.log( globalVar ); // devuelve "Ey, I'm STILL global"
+  globalVar = "Ey, I'm STILL global";
+  console.log(globalVar); // devuelve "Ey, I'm STILL global"
 }
-console.log( globalVar ); // devuelve "Ey, I'm STILL global" que se cambió en el bloque if
+console.log(globalVar); // devuelve "Ey, I'm STILL global" que se cambió en el bloque if
 ```
 
 De esta manera, una variable creada dentro del cuerpo de una función sólo será accesible desde dentro de esa función.
@@ -199,11 +235,9 @@ function f2() {
   return item;
 }
 
-console.log( f2() ); // devuelve 2;
-console.log( f1() ); // devuelve 1;
-
+console.log(f2()); // devuelve 2;
+console.log(f1()); // devuelve 1;
 ```
-
 
 Comprueba cuál será el resultado de las siguiente operaciones:
 
@@ -214,8 +248,8 @@ const secretLetter = 'y';
 function mySecretLetter() {
   return secretLetter;
 }
-console.log( mySecretLetter() ); // devuelve "y"
-console.log( secretLetter ); // devuelve "y"
+console.log(mySecretLetter()); // devuelve "y"
+console.log(secretLetter); // devuelve "y"
 ```
 
 ```javascript
@@ -225,8 +259,8 @@ function mySecretLetter() {
   secretLetter = 'x';
   return secretLetter;
 }
-console.log( mySecretLetter() ); // devuelve "x"
-console.log( secretLetter ); // devuelve "x"
+console.log(mySecretLetter()); // devuelve "x"
+console.log(secretLetter); // devuelve "x"
 ```
 
 ```javascript
@@ -236,8 +270,8 @@ function mySecretLetter() {
   const secretLetter = 'x';
   return secretLetter;
 }
-console.log( mySecretLetter() ); // devuelve "x"
-console.log( secretLetter ); // devuelve "y"
+console.log(mySecretLetter()); // devuelve "x"
+console.log(secretLetter); // devuelve "y"
 ```
 
 ```javascript
@@ -246,43 +280,45 @@ function mySecretLetter() {
   const secretLetter = 'x';
   return secretLetter;
 }
-console.log( mySecretLetter() ); // devuelve "x"
+console.log(mySecretLetter()); // devuelve "x"
 console.log(secretLetter); // da un error porque la variable solo está definida dentro del bloque de la función
 ```
-
 
 ## Arrow functions
 
 Las arrow functions ("funciones flecha") de ES6 son una forma simplificada para declarar funciones anónimas. La sintaxis básica es la siguiente:
 
 ```javascript
-const sum = (a,b) => {
+const sum = (a, b) => {
   return a + b;
 };
 
 // y la ejecutamos usando la variable a la que la hemos asignado:
-sum(2,3); // devuelve 5;
+sum(2, 3); // devuelve 5;
 
 // Anteriormente vimos esta misma función con la forma "normal"
-const sum = function(a,b) {
+const sum = function(a, b) {
   return a + b;
 };
 ```
 
 ### Paréntesis opcionales
+
 En las funciones flecha podemos evitar los paréntesis solo cuando la función tenga 1 único parámetro:
+
 ```javascript
 const printWaitingTime = minutes => {
   console.log(`Please, wait ${minutes} minutes`);
 };
 
 // equivale a
-const printWaitingTime = (minutes) => {
+const printWaitingTime = minutes => {
   console.log(`Please, wait ${minutes} minutes`);
 };
 ```
 
 ### Llaves y return implícito
+
 Escribir o no las llaves ({}) significa dos cosas distintas. Solo podremos no escribirlas cuando la función tenga una sola sentencia; es decir, cuando se ejecute una sola orden dentro (un console.log(), un cambio en un elemento HTML, un incremento en un contador, etc.). Cuando no escribimos las llaves, el valor que devuelve esa sentencia será el return de la función. Eso nos permite escribir en menos líneas funciones muy sencillas:
 
 ```javascript
@@ -309,7 +345,7 @@ La función tendrá 4 parametros: el primero será un booleano para especificar 
 
 Para probar que funciona, ejecuta la función recogiendo el resultado en una variable e imprímela en la consola para comprobarlo.
 
-* * *
+---
 
 #### EJERCICIO 5
 
@@ -317,7 +353,7 @@ Para probar que funciona, ejecuta la función recogiendo el resultado en una var
 
 Vamos a rehacer alguno de los ejercicios anteriores con funciones flecha. ¡A lo loco!
 
-* * *
+---
 
 ## Bonus: Funciones en todas partes
 
