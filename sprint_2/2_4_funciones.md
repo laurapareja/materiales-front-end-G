@@ -234,7 +234,7 @@ Crear una función que recibe por parámetros un elemento de HTML y añade un te
 Dentro de esta función llamaremos a otras dos:
 
 - La primera se ocupará de decirnos si el número es impar o no.
-- La tercera añadirá al texto por delante: 'Este texto es PAR: ...' o 'Este texto es IMPAR: ...'
+- La segunda añadirá al texto por delante: 'Este texto es PAR: ...' o 'Este texto es IMPAR: ...'
 
 ## Ámbito de las variables
 
