@@ -98,32 +98,6 @@ Así, una función es como una maquina:
 - Se construye una vez (declarando la función)
 - Se utiliza muchas veces (ejecutando la función)
 
-Observa la siguiente imagen:
-
-![Máquina funciones](assets/images/2-4/maquina-funciones.png)
-
-- Al crearla le hemos puestos tres tubos llamados a, b y c, estos los **parámetros**.
-
-
-```js
-function sum(a, b, c) {
-  return a + b + c;
-}
-```
-
-- Cada vez que la usamos pasamos valores por los tubos, por ejemplo 3, 56, 12, estos los **argumentos**. Y la máquina nos devuelve un resultado.
-
-```js
-const amount = sum(3, 56, 12);
-console.log('Cantidad', amount);
-
-const totalAges = sum(35, 26, 30);
-console.log('totalAges', totalAges);
-
-console.log('Exercises completed', sum(2,6,9));
-
-```
-
 Se pueden crear funciones sin nombre, estas funciones se llaman _funciones anónimas_. Estas funciones se suelen emplear para cosas que veremos en el curso más adelante, como asignarlas a una propiedad de un objeto o pasarlas como un callback. Un ejemplos de función anónima:
 
 ```javascript
@@ -153,9 +127,34 @@ const sumResult = sum(3, 4); //sumResult vale 7
 
 Por defecto, si en una función no indicamos un valor de retorno usando `return`, la función devolverá el valor `undefined`. El valor _undefined_ en JavaScript indica que una variable ha sido declarada pero no posee ningún valor, en este caso determina que la función no tiene asignado ningún valor de retorno y por eso devuelve `undefined`.
 
-Cuando ejecutamos una instrucción `return` dentro de una función, termina la ejecución de la función. Todo el código que se fuese a ejecutar después de ese `return` será ignorado, como si no existiese. Por tanto, debemos evitar escribir líneas de código después de un `return` y normalmente será la útlima línea de código de una función.
+Cuando ejecutamos una instrucción `return` dentro de una función, termina la ejecución de la función. Todo el código que se fuese a ejecutar después de ese `return` será ignorado, como si no existiese. Por tanto, debemos evitar escribir líneas de código después de un `return` y normalmente será la última línea de código de una función.
 
----
+Observa la siguiente imagen:
+
+![Máquina funciones](assets/images/2-4/maquina-funciones.png)
+
+- Al crear la función sum le hemos puestos tres tubos llamados a, b y c, estos son los **parámetros**.
+
+
+```js
+function sum(a, b, c) {
+  return a + b + c;
+}
+```
+
+- Cada vez que la usamos pasamos valores por los tubos, por ejemplo 3, 56, 12, estos los **argumentos**, y la maquina nos devuelve genera un resultado.
+
+```js
+const amount = sum(3, 56, 12);
+console.log('Cantidad', amount);
+
+const totalAges = sum(35, 26, 30);
+console.log('totalAges', totalAges);
+
+console.log('Exercises completed', sum(2,6,9));
+```
+
+* * *
 
 #### EJERCICIO 1
 
