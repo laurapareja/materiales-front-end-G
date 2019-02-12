@@ -147,7 +147,7 @@ function sum(a, b, c) {
 }
 ```
 
-- Cada vez que la usamos pasamos valores por los tubos, por ejemplo 3, 56, 12, estos los **argumentos**, y la maquina nos devuelve un resultado.
+- Cada vez que la usamos pasamos valores por los tubos, por ejemplo 3, 56, 12, estos son los **argumentos**, y la maquina nos devuelve un resultado.
 
 ```js
 const amount = sum(3, 56, 12);
