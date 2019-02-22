@@ -19,6 +19,7 @@
 - [1.13 Animaciones CSS](sprint_1/1_13_animaciones_CSS.md)
 - [1.14 Sistemas de diseño](sprint_1/1_14_sistemas_de_diseno.md)
 
+<!--
 ## Sprint 2. Programando la web
 
 - [2.1 Intro a la programación](sprint_2/2_1_intro_a_la_programacion.md)
@@ -65,7 +66,7 @@
 
 - [Buenas prácticas para tener un portfolio atractivo en GitHub](guias/github_como_portfolio.md)
 - [Guía para enfrentarse a problemas técnicos de manera autónoma](guias/busqueda_de_soluciones.md)
-
+-->
 <!--
 - [Instalar un linter de JavaScript](guias/instalar_linter_js.md)
 -->
