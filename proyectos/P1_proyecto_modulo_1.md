@@ -1,6 +1,6 @@
 # Proyecto 1: Contact us!
 
-<!-- TOC START min:2 max:2 link:true update:true -->
+<!-- TOC START min:2 max:3 link:true update:true -->
 - [Resumen (TL;DR)](#resumen-tldr)
 - [Objetivos](#objetivos)
 - [Caso de uso](#caso-de-uso)
@@ -129,6 +129,7 @@ Para considerar terminado este hito y todos los siguientes debéis tener publica
 
 - 4 sesiones de trabajo
 - Realizar el formulario de contacto para todos los dispositivos
+- Hacer que funcione el envío usando el servicio [formspree.io](https://formspree.io) ([Cómo usar Formspree.io](#formspree))
 - Aplicar las técnicas avanzadas aprendidas en la parte final del curso:
   - Grid en la sección de "quiénes somos"
   - Opcionalmente añadir animaciones y transiciones
@@ -165,6 +166,14 @@ Al final de esta presentación habrá un turno de preguntas tanto por parte de o
 ## Recursos
 
 Para este proyecto hemos preparado un listado de recursos que os pueden servir de ayuda.
+
+### Formspree
+[Formspree.io](https://formspree.io) es un servicio gratuito para recoger la información de formularios simples:
+
+1. Formspree nos proporciona una url para el atributo `action=""` de nuestro formulario que incluye el email en el que queremos recibir los datos
+1. La primera vez nos pedirá que confirmemos la dirección de email
+
+Puedes probarlo en este [codepen](https://codepen.io/adalab/pen/mvNNeL)
 
 
 ### Cómo diseñar una web desde cero
