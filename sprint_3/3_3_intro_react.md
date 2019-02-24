@@ -30,7 +30,7 @@ Un framework o librería JavaScript nos soluciona uno de los principales problem
 
 Pero, _¿qué es el estado de una aplicación web?_ Una aplicación web, a diferencia de una simple página web, se encarga de **gestionar datos**. Por ejemplo, en una aplicación como GMail gestionamos datos de correos (nuevos, leídos, archivados, etc.) desde una interfaz. En una simple aplicación de una lista de tareas, manejamos datos de tareas, si están completados o las fechas de realización.
 
-Volviendo a los frameworks, estos nos facilitan sincronizar el estado (los datos) con la interfaz (lo que se ve en la pantalla). Vamos a verlo con un ejemplo que ya conocemos: el juego de adivinar el número del sprint anterior. Necesitamos bastante código para tener sincronizado el estado del juego (el feedback sobre un intento y el número de intentos) con la interfaz.
+Volviendo a los frameworks, estos nos facilitan sincronizar el estado (los datos) con la interfaz (lo que se ve en la pantalla). Vamos a verlo con un ejemplo que ya conocemos: el juego de adivinar el número del módulo anterior. Necesitamos bastante código para tener sincronizado el estado del juego (el feedback sobre un intento y el número de intentos) con la interfaz.
 
 ```js
 function showFeedback(text) {
@@ -45,7 +45,7 @@ function incrementTrials() {
 }
 ```
 
-Este código de sincronización puede complicarse mucho (como habéis podido comprobar en el proyecto grupal del sprint anterior). Y es también muy acoplado a la interfaz (cambiar el HTML implica cambios en el código) y es muy propenso a errores. Por esto, las librerías como React nos ayudan mucho porque hacen esta sincronización por nosotros y nos evitan muchos problemas. A cambio, vamos a tener que trabajar de una forma determinada para aprovechar las ventajas que el frameworks nos da.
+Este código de sincronización puede complicarse mucho (como habéis podido comprobar en el proyecto grupal del módulo anterior). Y es también muy acoplado a la interfaz (cambiar el HTML implica cambios en el código) y es muy propenso a errores. Por esto, las librerías como React nos ayudan mucho porque hacen esta sincronización por nosotros y nos evitan muchos problemas. A cambio, vamos a tener que trabajar de una forma determinada para aprovechar las ventajas que el frameworks nos da.
 
 A parte de esta ventaja fundamental, otras ventajas de usar frameworks son
 

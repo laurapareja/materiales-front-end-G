@@ -60,7 +60,7 @@ Git se utiliza tanto en los casos más simples, como un pequeño proyecto o un a
 
 Nosotros lo utilizaremos siempre que queramos llevar un control de los cambios que hemos hecho en un proyecto para no perder información. Al principio será sólo en determinados proyectos de código, pero a medida que le vayáis cogiendo el gustillo, empezaréis a sentiros vacías sin él. En Adalab, por ejemplo, lo utilizamos para gestionar el contenido del curso. Sí, este contenido que estáis leyendo ahora mismo está creado utilizando git :)
 
-Por poneros un ejemplo que hayáis vivido en vuestra piel, tendría sentido utilizar git para los pequeños ejercicios que hacemos para practicar los conocimientos. Pero sobre todo que tendría sentido usar este control de versiones para gestionar el proyecto grupal del primer sprint.
+Por poneros un ejemplo que hayáis vivido en vuestra piel, tendría sentido utilizar git para los pequeños ejercicios que hacemos para practicar los conocimientos. Pero sobre todo que tendría sentido usar este control de versiones para gestionar el proyecto grupal del primer módulo.
 
 Respecto a GitHub, lo utilizaremos siempre que queramos compartir un código con el resto de la comunidad o si queremos tenerlo en lo que se llama "la nube" para no perderlo y que cualquier persona con acceso y permisos de escritura pueda editarlo desde cualquier parte del mundo.
 

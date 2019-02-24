@@ -203,7 +203,7 @@ Una vez hayas intentado averiguar cuál es el resultado de estos código, compru
 
 **Aprendiendo a averiguar el scope con las Dev Tools**
 
-Abre tu ejercicio de evaluación individual del segundo sprint (el de adivinar el número aleatorio) y después abre el panel de las Chrome Dev Tools. Selecciona la pestaña _Sources_, coloca algunas paradas en el código pulsando en los números de línea del editor de código que aparece. Recarga la página para que se vaya parando en cada una de las líneas y comprueba en el panel derecho cual es el scope en cada caso.
+Abre tu ejercicio de evaluación individual del segundo módulo (el de adivinar el número aleatorio) y después abre el panel de las Chrome Dev Tools. Selecciona la pestaña _Sources_, coloca algunas paradas en el código pulsando en los números de línea del editor de código que aparece. Recarga la página para que se vaya parando en cada una de las líneas y comprueba en el panel derecho cual es el scope en cada caso.
 
 Prueba a poner paradas tanto dentro de funciones como fuera para ver qué sucede.
 
@@ -305,7 +305,7 @@ console.log(sum(2,3));
 
 **Comprobando cómo se aplica el hoisting con las Chrome Dev Tools**
 
-Abre tu ejercicio de evaluación individual del segundo sprint (el de adivinar el número aleatorio). Pon una parada en el código y comprueba si las variables se han añadido al scope para ver cómo JavaScript aplica el _hoisting_.
+Abre tu ejercicio de evaluación individual del segundo módulo (el de adivinar el número aleatorio). Pon una parada en el código y comprueba si las variables se han añadido al scope para ver cómo JavaScript aplica el _hoisting_.
 
 * * *
 
