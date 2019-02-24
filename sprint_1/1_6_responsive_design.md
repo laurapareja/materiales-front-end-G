@@ -256,9 +256,21 @@ Vamos a añadir al `<head>` de nuestra página el tag meta viewport quedando tod
 ```
 ¿Qué tal ahora? ¿Si nos vamos a las herramientas de desarrollo, abrimos el simulador y probamos con diferentes dispositivos/anchos? ¿Cambia ahora de rojo a azul?
 * * *
+
+## La columna central
+Algo que no es muy obvio de ver al principio es la "columna central": normalmente, en diseño responsive, tenemos una columna central de contenido común a cada sección o módulo que mantiene una estructura a los largo de los diferentes breakpoints.
+
+Para esto no hay unos números estándar pero es común que nos encontremos unos márgenes para móvil (320px), otros para tablet (768px) y un ancho fijo y centrado para las pantallas mayores:
+
+![Ejemplo de columna central](assets/images/1-6/columna-central.png)
+
+Esto se consigue con un contenedor con una clase concreta que va incluido en todos nuestros bloques de manera que podamos mantener los márgenes coherentes en todo el site y tener secciones con fondos de color o imagen que ocupen el 100% del navegador.
+
+Puedes ver un ejemplo en [este codepen](https://codepen.io/adalab/pen/WmerMe).
+
 ###### EJERCICIO 6
 
-Vamos a hacer algo más "real". En un HTML tendremos un contenedor con:
+Vamos a hacer algo más "real" y probamos a implementar esta "columna central". En un HTML tendremos un contenedor con:
 1. Un título
 2. Uno o dos párrafos de texto
 
