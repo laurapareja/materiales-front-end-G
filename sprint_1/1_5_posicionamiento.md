@@ -20,7 +20,7 @@
 
 ## Introducción
 
-En esta sesión veremos dos recursos fundamentales para modificar la apariencia de nuestra web: visualización (o display) y posicionamiento. Ambos permiten modificar cómo se muestran los elementos de la página ya sea modificando su tamaño, su posición o ambos a la vez.
+En esta sesión veremos dos recursos para modificar la apariencia de nuestra web: visualización (o display, que es fundamental) y posicionamiento. Ambos permiten modificar cómo se muestran los elementos de la página ya sea modificando su tamaño, su posición o ambos a la vez.
 
 ## ¿Para qué sirve lo que vamos a ver en esta sesión?
 
@@ -71,11 +71,13 @@ Vista de la lista con estilos
 * * *
 
 ## Posicionamiento de elementos
-Aparte de modificar esa distribución, podremos hacer que cambien su comportamiento a la hora de hacer scroll en la página y que modifiquen la posición de otros objetos al modificar la suya propia.
+Antes de tener disponible flexbox el posicionamiento que vamos a ver era la principal opción de solucionar diseños complejos. En cualquier caso todavía puede que nos encontremos con soluciones muy complejas o código ya resuelto con este sistema, así que vamos a verlo:
+
+Aparte de modificar la distribución, podremos hacer que cambien su comportamiento a la hora de hacer scroll en la página y que modifiquen la posición de otros objetos al modificar la suya propia.
 
 La propiedad `position` de CSS será la que nos permita modificar la forma en la que se distribuyen los objetos a través de una página web.
 
-El atributo `position` es fundamental en las webs actuales porque sin él todo el contenido sería lineal, es decir, no podríamos tener ciertas superposiciones y no podríamos sacar a un elemento del flujo de la página para que el resto de elementos (contenedor y elementos hermanos) no lo tengan en cuenta y lo ignoren.
+El atributo `position` es fundamental en casos muy concretos con las webs actuales, es decir, no podríamos tener ciertas superposiciones y no podríamos sacar a un elemento del flujo de la página para que el resto de elementos (contenedor y elementos hermanos) no lo tengan en cuenta y lo ignoren.
 
 La propiedad `position` tiene cuatro valores posibles:
 * `static`: Es el tipo de posición por defecto en todos los elementos HTML.
