@@ -13,7 +13,7 @@ Con los datos que nos facilita el mercado, [usaremos este JSON de la receta del 
 * siempre tendré una lista actualizada de lo que me costaría hacer un pedido (en caso de tener elementos seleccionados)
 * El botón de compra siempre marcará dicha cantidad
 * El botón de compra debería llevar a la url final de compra, pero eso lo dejaremos para otro día
-* No usaremos React en este caso
+* No usaremos React en este caso, pero sín Bootstrap
 
 
 ## Guía gráfica
@@ -30,3 +30,4 @@ Os proponemos un guión para presentar el ejercicio pero el entrevistador podrá
 - Revisión de los datos que nos entrega la tienda
 - Flujo de programación
 - Revisión de los casos de uso
+- Uso de Bootstrap
