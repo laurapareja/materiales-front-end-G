@@ -62,7 +62,7 @@ Hay una serie de secciones especiales que tienen asignado un significado semánt
 * `<footer>`: un pie o sección final de un bloque
 * `<nav>`: un bloque de navegación, para un menú.
 * `<aside>`: un bloque de contenido de menor importancia o con contenido relacionado
-* `<article>`: un artículo
+* `<article>`: un artículo, el cual aunque elimináramos el resto de contenido seguiría teniendo sentido por si mismo.
 
 Estos bloques especiales se pueden usar unos dentro de otros según tenga sentido: por ejemplo, un `<article>` puede tener cabecera y pie, mientras que una cabecera no debería tener pie.
 
@@ -129,7 +129,7 @@ Ahora podría añadir un enlace abajo del todo para ahorrarle el scroll a las us
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
   </main>
   <footer>
-    <p><a href="#top">Volver arriba</a></p>
+    <a href="#top">Volver arriba</a>
   </footer>
 </body>
 </html>
@@ -275,7 +275,7 @@ Buscar información sobre todos estos elementos en la [MDN](https://developer.mo
 
 **Una página clásica**
 
-Realizar una página semántica con: un título principal, tres párrafos con el contenido, dos párrafos con anuncios secundarios, y un texto de copy (© 2018)
+Realizar una página semántica con: un título principal, tres párrafos con el contenido, dos párrafos con anuncios secundarios, y un texto de copy (© 2019)
 * * *
 
 ## CSS
@@ -366,7 +366,7 @@ Las pseudo clases son palabras claves que añadidas a alguno de los selectores a
 
 Las pseudo clases se escriben usando el selector, seguido de `:` y la palabra clave para el estado.
 
-Por ejemplo, como en uno de los ejemplos anteriores, tenemos un enlace que vamos al cual le vamos a poner el texto de color rojo, pero cuando coloques el cursor encima invertiremos los colores y lo mostraremos con fondo blanco y color rojo. Partimos del mismo `html` que anteriormente.
+Por ejemplo, como en uno de los ejemplos anteriores, tenemos un enlace al cual le vamos a poner el texto de color rojo, pero al pasar el cursor encima invertiremos los colores y lo mostraremos con fondo blanco y color rojo. Partimos del mismo `html` que anteriormente.
 
 ```html
 <a href="#" class="text-link">Enlace de texto</a>
@@ -383,13 +383,6 @@ Y el css sería:
 ```
 [&rtrif; Codepen con ejemplo de hover](https://codepen.io/adalab/pen/QZmVjK)
 
-* * *
-
-¡A jugar!
-
-Para practicar los selectores, desde los más sencillos a los más complejos, te recomendamos [practicar con este divertido juego](https://flukeout.github.io/).
-
-* * *
 
 ### Los selectores se pueden mezclar
 De los ejemplos de las pseudo clases vemos que los selectores se pueden mezclar. Esto nos ayuda a contemplar casos particulares sin tener que usar las ID.
@@ -441,8 +434,12 @@ Digamos que queremos que los botones tengan una caja con bordes redondeados pero
 
 [&rtrif; Codepen de ejemplo de composición de clases](https://codepen.io/adalab/pen/KGoxam)
 
+### ¡A jugar!
+
+Para practicar los selectores, desde los más sencillos a los más complejos, te recomendamos [practicar con este divertido juego](https://flukeout.github.io/).
+
 ### Herencia en CSS
-Hay una serie de estilos que se heredan, es decir, que se transmiten a los hijas. Entonces, si aplicamos una de estas propiedades a una etiqueta, todos las etiquetas anidadas en ella la heredarán también.
+Hay una serie de estilos que se heredan, es decir, que se transmiten a las hijas. Entonces, si aplicamos una de estas propiedades a una etiqueta, todos las etiquetas anidadas en ella la heredarán también.
 
 * * *
 #### EJERCICIO 3
@@ -450,6 +447,7 @@ Hay una serie de estilos que se heredan, es decir, que se transmiten a los hijas
 **Coloreame esos links**
 
 El color es una de la propiedades que se heredan así que si tenemos esta estructura:
+
 ```html
 <article>
 	<h2>Título</h2>
@@ -526,4 +524,4 @@ Partiendo de este [Codepen de ejemplo](https://codepen.io/oneeyedman/pen/vWEBex)
 
 ### Figma
 
-[Figma](https://www.figma.com/) es una herramienta online para diseñar y prototipar que permite hasta tres proyectos gratuitos. Este tipo de herramientas son muy útiles para las frontend, ya que pueden servirnos para algo más complejo como diseñar nuestra web personal hasta para medir o recortar una imagen de manera ágil.
+[Figma](https://www.figma.com/) es una herramienta online para diseñar y prototipar que permite hasta tres proyectos gratuitos. Este tipo de herramientas son muy útiles para las frontend, ya que nos pueden servir para algo sencillo como medir o recortar una imagen de manera ágil, o para algo más complejo como diseñar nuestra web personal. 
