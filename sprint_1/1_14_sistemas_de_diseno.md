@@ -192,7 +192,7 @@ Que generaría este código CSS:
 
 **Colores**
 
-Vamos a descargarnos el [ejercicio de evaluación intermedia del primer sprint de Adalab de nuestra promoción](https://github.com/Adalab/e-s1-evaluacion-intermedia-nasivuela).
+Vamos a descargarnos el [ejercicio de evaluación intermedia del primer módulo de Adalab](https://github.com/Adalab/e-s1-evaluacion-intermedia-nasivuela).
 
 A continuación, vamos a reestructurar el archivo siguiendo la estructura que hemos aprendido para organizar nuestros archivos de Sass. Por ejemplo, crearemos un archivo en la ruta `scss/layout/_header.scss` donde meteremos los estilos de la cabecera.
 

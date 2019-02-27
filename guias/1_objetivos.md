@@ -1,10 +1,10 @@
 # Hola mundo
 
-Este es el momento en el que comienza todo, en el que os damos la bienvenida al mundo de la programación front-end y a la vez empezáis una nueva etapa. En este primer sprint nos centraremos en aprender en qué consiste el mundo de la programación, que hace un front-end y cómo introducirse en la comunidad.
+Este es el momento en el que comienza todo, en el que os damos la bienvenida al mundo de la programación front-end y a la vez empezáis una nueva etapa. En este primer módulo nos centraremos en aprender en qué consiste el mundo de la programación, que hace un front-end y cómo introducirse en la comunidad.
 
 ## Objetivos
 
-Los objetivos de este bloque, al que de aquí en adelante llamaremos sprint "Hola Mundo", serán los siguientes:
+Los objetivos de este bloque, al que de aquí en adelante llamaremos módulo "Hola Mundo", serán los siguientes:
 
 - **Objetivos de desarrollo profesional**
 	- Entender el programa de Adalab en todos su componentes
@@ -54,6 +54,6 @@ Una buena forma de mejorar la productividad en nuestro trabajo y en nuestra vida
 ## Charlas con voluntarios
 
 Una parte fundamental de nuestro programa son los voluntarios. Estos colaborarán con nosotros para enseñaros aspectos técnicos y profesiones en los cuales tienen gran experiencia. De esta forma el aprendizaje será mucho mejor ya que el tema que os expliquen será algo que ha formado parte de su día a día y, por tanto, dominan.
-Las charlas de voluntarios que tendremos durante este sprint son las siguientes:
+Las charlas de voluntarios que tendremos durante este módulo son las siguientes:
 - *Metodologías ágiles en un equipo de desarrollo* (Thinking with you)
 - *Tomar la palabra: todas tenemos algo que decir* (Marina Lorenzo)

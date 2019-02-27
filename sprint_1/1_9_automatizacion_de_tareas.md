@@ -15,7 +15,7 @@
 En esta sesión usaremos herramientas para automatización de tareas en nuestro flujo de trabajo en front-end. Estas herramientas son muy útiles porque nos ayudarán a ser más eficientes en nuestro trabajo y nos ahorrarán tareas repetitivas.
 
 > **NOTA:**  
-> En esta sesión vamos a dar un repaso por encima a un flujo de trabajo con Gulp y node pero no tendremos que configurarnos todavía nuestro entorno de trabajo, os proporcionaremos una base ya configurada sobre la que trabajar lo que queda de sprint :)
+> En esta sesión vamos a dar un repaso por encima a un flujo de trabajo con Gulp y node pero no tendremos que configurarnos todavía nuestro entorno de trabajo, os proporcionaremos una base ya configurada sobre la que trabajar lo que queda de módulo :)
 
 
 ## ¿En qué casos se utiliza?
@@ -68,7 +68,7 @@ El `-g` indica que se instala de forma global y se puede usar la utilidad de Gul
 
 Ahora que ya tenemos todo instalado, vamos a utilizar Gulp en nuestro proyecto. Vamos a crear un nuevo proyecto, para ello creamos una nueva carpeta (podemos hacerlo desde la terminal con `mkdir <nombre_carpeta>`). **Y nos movemos dentro de la carpeta con `cd <nombre_carpeta>`**.
 
-Para indicar que en este proyecto vamos a usar npm, necesitamos crear un fichero llamado `package.json` que indica la configuración de npm del proyecto. Es un fichero en formato JSON, tiene el aspecto de un objeto de JavaScript que ya veremos en el próximo sprint. La forma más sencilla de crear este fichero es ejecutando desde la terminal:
+Para indicar que en este proyecto vamos a usar npm, necesitamos crear un fichero llamado `package.json` que indica la configuración de npm del proyecto. Es un fichero en formato JSON, tiene el aspecto de un objeto de JavaScript que ya veremos en el próximo módulo. La forma más sencilla de crear este fichero es ejecutando desde la terminal:
 
 `npm init`
 

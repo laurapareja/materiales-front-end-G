@@ -29,4 +29,4 @@ Os proponemos un guión para presentar el ejercicio pero el entrevistador podrá
 - Descripción breve de la API
 - Cómo se ha planteado el ejercicio
 - Estructura de componentes
-- En este caso el html/css no es importante pero si se ha resuelto, contar muy brevemente cómo se han resuelto.
+- En este caso el HTML/CSS no es importante pero si se ha resuelto, contar muy brevemente cómo se han resuelto

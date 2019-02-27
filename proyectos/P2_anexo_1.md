@@ -6,7 +6,7 @@
 2. Cambiar el contenido de elementos HTML
 
 ## Introducción
-Aunque este contenido se verá en detalle más adelante en el sprint ya que hemos utilizado el `prompt` para recoger datos y almacenarlos en una variable nos queda cómo conectar nuestro JS con nuestro HTML de cada a completar el segundo hito del proyecto:
+Aunque este contenido se verá en detalle más adelante en el módulo, ya que hemos utilizado el `prompt` para recoger datos y almacenarlos en una variable nos queda cómo conectar nuestro JS con nuestro HTML de cada a completar el segundo hito del proyecto:
 
 	Desarrollar una primera versión básica de la web, con la maquetación de la estructura básica (para web y móvil) y la funcionalidad de meter contenido en el currículum mediante el uso de los `prompt` de JavaScript.
 

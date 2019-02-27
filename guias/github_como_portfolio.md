@@ -2,11 +2,11 @@
 
 Para una programadora front-end, una herramienta muy importante para visibilizar su trabajo de cara a un nuevo empleo es su perfil en GitHub. Durante el curso de Adalab realizamos varios ejercicios, evaluaciones y proyectos donde cada una demuestra lo que sabe y lo que puede aportar a un proyecto. Por tanto, es muy importante visibilizar ese trabajo de cara a un posible empleador.
 
-En esta guía vamos a dar algunos tips para dar visibilidad a vuestro perfil de GitHub y vuestro proyectos. Para pasar al programa de inserción de Adalab debéis haber seguido estas pautas al final del curso intensivo. Pero esto es más sencillo de cumplir si vamos trabajando en mejorar nuestro portafolio sprint a sprint.
+En esta guía vamos a dar algunos tips para dar visibilidad a vuestro perfil de GitHub y vuestro proyectos. Para pasar al programa de inserción de Adalab debéis haber seguido estas pautas al final del curso intensivo. Pero esto es más sencillo de cumplir si vamos trabajando en mejorar nuestro portafolio módulo a módulo.
 
 ## Buenas prácticas para la página de un repositorio
 
-Para cada repositorio que queramos mostrar en nuestro perfil (como mínimo las evaluaciones de cada sprint y los proyectos) debemos comprobar que cumplimos este checklist.
+Para cada repositorio que queramos mostrar en nuestro perfil (como mínimo las evaluaciones de cada módulo y los proyectos) debemos comprobar que cumplimos este checklist.
 
 -  El repositorio tiene un fichero `README.md` con la descripción del proyecto y por qué se realiza (contexto en que se hace, por ejemplo)
 -  En la página principal del repositorio añade una descripción, enlace al proyecto en GitHub Pages y pon algún tag para que sea encontrable

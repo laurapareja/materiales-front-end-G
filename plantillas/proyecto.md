@@ -46,10 +46,10 @@ Os proponemos una serie de hitos como sugerencia para dividir las fases de este 
 
 El formato de entrega de este proyecto será mediante la subida de este a la plataforma de GitHub. Para subirlo, se creará un repositorio en la organización de Adalab. El nombre del repositorio deberá estar compuesto de las siguientes partes, todo ello separado por guiones:
 - Nombre de la promoción en minúsculas
-- "s" minúscula seguida del número del sprint
+- "m" minúscula seguida del número del módulo
 - Nombre del equipo en minúsculas
 
-Por ejemplo, el nombre de la primera promoción de Adalab fue "Ada". Si un grupo realizase un proyecto para el primer sprint y el nombre de ese grupo fuese "Lovelace", el nombre del repositorio debería ser "ada-s1-lovelace".
+Por ejemplo, el nombre de la primera promoción de Adalab fue "Ada". Si un grupo realizase un proyecto para el primer módulo y el nombre de ese grupo fuese "Lovelace", el nombre del repositorio debería ser "ada-m1-lovelace".
 
 De manera adicional, se deberá activar "GitHub Pages" en el proyecto para que este pueda ser visualizado como una web, es decir, que en el caso anterior, si alguien introdujese la dirección "adalab.github.io/web-hopper/" en un navegador web, este mostraría la web que se genera con el código del repositorio.
 

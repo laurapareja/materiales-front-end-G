@@ -311,7 +311,7 @@ Aunque aún no hemos visto como enviar un formulario desde JavaScript, prevenir 
 
 **Para ese link**
 
-¿Recuerdas el proyecto del sprint uno? Los enlaces de la cabecera de nuestra página tenían un problema, como nuestra cabecera era flotante, al navegar a una sección parte del contenido de quedaba oculto tras la cabecera. 
+¿Recuerdas el proyecto del módulo uno? Los enlaces de la cabecera de nuestra página tenían un problema, como nuestra cabecera era flotante, al navegar a una sección parte del contenido de quedaba oculto tras la cabecera. 
 
 Vamos a animarnos y a preparar un HTML muy sencillo con:
 - una cabecera flotante que contenga un menu con tres enlaces 

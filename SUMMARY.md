@@ -2,7 +2,7 @@
 
 - [Introduction](README.md)
 
-## Sprint 1. Hola Mundo
+## Módulo 1. Hola Mundo
 
 - [1.1. Intro a la web](sprint_1/1_1_intro_a_la_web.md)
 - [1.2. Mi primera página web](sprint_1/1_2_mi_primera_web.md)
@@ -20,7 +20,7 @@
 - [1.14 Sistemas de diseño](sprint_1/1_14_sistemas_de_diseno.md)
 
 <!--
-## Sprint 2. Programando la web
+## Módulo 2. Programando la web
 
 - [2.1 Intro a la programación](sprint_2/2_1_intro_a_la_programacion.md)
 - [2.2 Intro a la programación 2](sprint_2/2_2_intro_a_la_programacion_2.md)
@@ -37,7 +37,7 @@
 - [2.13 Scope y hoisting](sprint_2/2_13_scope_y_hoisting.md)
 - [2.14 Manejo de estructuras de datos](sprint_2/2_14_manejo_de_estructuras_de_datos.md)
 
-## Sprint 3. React
+## Módulo 3. React
 
 - [3.1 Métodos funcionales de array](sprint_3/3_1_metodos_funcionales_array.md)
 - [3.2 Clases de ES6](sprint_3/3_2_clases_es6.md)
@@ -62,13 +62,27 @@
 - [Anexo. Documentación del API de Awesome Profile Cards](proyectos/P2_anexo.md)
 - [Proyecto 3. Un caso de código heredado](proyectos/P3_proyecto_sprint_3.md)
 
+## Formación continua
+
+- [Presentación](formacion-continua/0_presentacion.md)
+- [Prueba técnica #1](formacion-continua/1_prueba_tecnica.md)
+- [Prueba técnica #2](formacion-continua/2_prueba_tecnica.md)
+- [Prueba técnica #3](formacion-continua/3_prueba_tecnica.md)
+- [Prueba técnica #4](formacion-continua/4_prueba_tecnica.md)
+- [Prueba técnica #5](formacion-continua/5_prueba_tecnica.md)
+- [Prueba técnica #6](formacion-continua/6_prueba_tecnica.md)
+- [Prueba técnica #7](formacion-continua/7_prueba_tecnica.md)
+
+-->
+
 ## Guías
 
+- [Instalación de ordenadores](guias/instalacion_ordenadores.md)
+
+<!--
 - [Buenas prácticas para tener un portfolio atractivo en GitHub](guias/github_como_portfolio.md)
 - [Guía para enfrentarse a problemas técnicos de manera autónoma](guias/busqueda_de_soluciones.md)
--->
-<!--
-- [Instalar un linter de JavaScript](guias/instalar_linter_js.md)
+- [Pruebas técnicas](guias/pruebas_tecnicas.md)
 -->
 
 <!--

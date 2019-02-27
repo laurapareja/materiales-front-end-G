@@ -79,10 +79,10 @@ protocolo://nombre-de-dominio/directorio/nombre-de-archivo
 * **directorio y nombre de archivo**: si no especificamos nada más que protocolo y dominio, `https://google.es` en el navegador se nos mostrará la página que esté indicada por defecto, pero podemos pedir un archivo en concreto y que puede estar dentro de una serie de carpetas (recordemos que el servidor, al final, es un ordenador:
 
 ```
-https://www.adidas.es/zapatilla-adizero-ubersonic-3.0-jade/BY1617.html
+https://www.adidas.es/zapatilla-adizero-ubersonic-3.0/CP8852.html
 ```
 
-Queremos acceder al archivo `BY1617.html` que se encuentra en la ruta de directorios `zapatilla-adizero-ubersonic-3.0-jade` en el servidor de `www.adidas.es`.
+Queremos acceder al archivo `CP8852.html` que se encuentra en la ruta de directorios `zapatilla-adizero-ubersonic-3.0` en el servidor de `www.adidas.es`.
 
 Hasta ahora hablamos de consultar páginas web que ya están hechas y colocadas en un servidor al que accedemos desde el navegador de nuestro ordenador.
 
@@ -114,17 +114,17 @@ Un valor importante en una desarrolladora es la organización. Normalmente solem
 
 Vamos a ver los pasos básicos para empezar a trabajar en un proyecto sencillo de `html`:
 
-1.  Tenemos que crear una nueva carpeta (dentro de la general dónde guardamos todos los proyectos), pulsar botón derecho derecho del ratón, o hacer click con dos dedos en el *touchpad* sobre ella y seleccionar la opción, *abrir con...* *Code* (Visual Studio Code)
+1. Tenemos que crear una nueva carpeta (dentro de la general dónde guardamos todos los proyectos), pulsar botón derecho derecho del ratón, o hacer click con dos dedos en el *touchpad* sobre ella y seleccionar la opción, *abrir con...* *Code* (Visual Studio Code)
 
-2. Alternativamente, podemos abrir directamente *Code* y abrir/crear una nueva carpeta: con el comando `Ctrl+K Ctrl+O` o en la pestaña *Archivo* (o *File* en inglés) del menú superior seleccionando la opción abrir carpeta, aparecerá una ventana que nos permite navegar por el sistema de carpetas del ordenador, crear una nueva carpeta en una localización determinada, y/o abrirla.
+2. Alternativamente, podemos abrir directamente *Code* y abrir/crear una nueva carpeta: con el comando `Ctrl+K Ctrl+O` (Linux) o `⌘K ⌘0` (macOs) o en la pestaña *Archivo* (o *File* en inglés) del menú superior seleccionando la opción abrir carpeta, aparecerá una ventana que nos permite navegar por el sistema de carpetas del ordenador, crear una nueva carpeta en una localización determinada, y/o abrirla.
 
-3. En `Code` nos encontramos con un mensaje de `Bienvenida` en el cual hay un enlace para crear un nuevo archivo, (también podemos hacerlo de manera más ágil con `Ctrl+N`), automáticamente aparecerá una pestaña con el nombre `Untitled-1`.
+3. En `Code` nos encontramos con un mensaje de `Bienvenida` en el cual hay un enlace para crear un nuevo archivo, (también podemos hacerlo de manera más ágil con `Ctrl+N` o `⌘N`), automáticamente aparecerá una pestaña con el nombre `Untitled-1`.
 
-4. Escribimos la base de nuestro `html` (vamos a ver cómo un poco más abajo) y guardamos con `Ctrl+S`. Como es la primera vez de nuevo se nos abrirá el navegador de archivos para que elijamos un nombre, lo llamamos `index.html` y guardamos.
+4. Guardamos con `Ctrl+S` o `⌘S`, y como es la primera vez de nuevo se nos abrirá el navegador de archivos para que elijamos un nombre, lo llamamos `index.html` y guardamos. Escribimos la base de nuestro `html` (vamos a ver cómo un poco más abajo).
 
 5. Ahora toca volver al navegador de archivos (nautilos en Ubuntu, finder en MAC), localizar nuestro nuevo archivo `index.html` y de nuevo, pulsar botón derecho derecho del ratón, o hacer click con dos dedos en el *touchpad* sobre el y seleccionar la opción *Abrir con Chrome* para comprobar que nuestra página se muestra como esperamos en el navegador.
 
-6. Volvemos a *Code* y continuamos trabajando, guardando frecuentemente con `Ctrl+S` y comprobando que los cambios se reflejan en el navegador, yendo a este y pulsando `Ctrl+R` para refrescar la página.
+6. Volvemos a *Code* y continuamos trabajando, guardando frecuentemente (`Ctrl+S` o `⌘S`) y comprobando que los cambios se reflejan en el navegador, yendo a este y pulsando `Ctrl+R` o `⌘R` para refrescar la página.
 
 * * *
 #### EJERCICIO 1
@@ -149,6 +149,8 @@ Cuando lleguemos al paso 5, copiaremos el siguiente código en el archivo `index
 ```
 
 Para realizar el paso 6 podemos cambiar el texto 'Hola Mundo' por 'Hola mundo, día 1 en Adalab'.
+
+> **Nota**: en esta documentación cada ejemplo de código tiene un botón arriba a la derecha para copiar. Te recomendamos qe lo utilices ya que a veces con el copiado manual nos llevamos caracteres escondidos que hacen que el código no funcione.
 
 > **Nota**: Observa como cuando realizas algún cambio sobre un archivo en *Code*, en la pestaña superior del archivo, junto al nombre, aparece una bolita, esta nos indica que hay cambios sin guardar. Como consejo nunca deberías pasar mucho tiempo sin guardar los cambios realizados sobre un archivo.
 
@@ -277,7 +279,7 @@ La lista ordenada produce una lista numerando cada ítem por orden de escritura 
 * * *
 #### EJERCICIO 2
 
-Con estos elementos vamos a crear nuestra primera página:
+Con estos elementos vamos a crear nuestra primera página con una receta de Gazpacho fresquito:
 
 ## GAZPACHO
 
@@ -316,7 +318,7 @@ El aceite de oliva, vinagre, agua y sal son el resto de ingredientes. Suelen emp
 ## CSS
 La maquetación web tiene mucha relación con la maquetación en papel de toda la vida, donde se utilizan los estilos para definir la apariencia que tendrá un cierto contenido.
 
-En la web tenemos CSS (del inglés "Cascading Style Sheets" o, en español, "Hojas de estilo en cascada") que es un lenguaje de estilos para definir la presentación de un documento escrito en un lenguaje de marcado, como HTML.
+En la web tenemos CSS (del inglés "Cascading Style Sheets" o, en español, "Hojas de estilo en cascada") que es un lenguaje de estilos para definir la presentación visual de un documento escrito en un lenguaje de marcado, como HTML.
 
 CSS tiene una sintaxis simple, y usa un conjunto de palabras clave en inglés para especificar los nombres de varias propiedades de estilo.
 
@@ -389,7 +391,7 @@ Lo haremos con la etiqueta `<link>`, que es una de esas etiquetas que no necesit
 <head>
     <meta charset="utf-8">
     <title>Mi página</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Título de mi página</h1>
@@ -451,7 +453,7 @@ A la hora de organizar los archivos y carpetas de un proyecto es normal fijar un
 No hay una manera "buena" y cada empresa tiene las suyas. Lo importante es tener unas normas que las personas del equipo (y aquellas que se unirán en un futuro) puedan seguir facilitando su día a día.
 Para este curso vamos a plantear unas que dan bastante buen resultado para empezar. Aquí van:
 
-* Los nombres de archivo irán siempre en minúsculas, sin tildes, sin espacios y sin caracteres especiales.
+* Los nombres de archivos y carpetas irán siempre en minúsculas, sin tildes, sin espacios y sin caracteres especiales.
 * Usaremos guiones para separar palabras: `baby-kangaroo.png`
 * Usaremos [rutas relativas](https://es.wikipedia.org/wiki/Ruta_(informatica)#Ruta_relativa) siempre. Veremos más información sobre las rutas relativas en la siguiente sesión.
 * Los nombres de archivo siempre en inglés: `rainy-and-windy-day.png`
@@ -476,7 +478,7 @@ Para la estructura del proyecto usaremos estas carpetas:
 
 ## La paleta de comandos de Code
 
-Code tiene una paleta de comandos que nos permite acceder a los comandos del editor mediante el teclado. La podemos abrir con `Ctrl+Shift+P`.
+Code tiene una paleta de comandos que nos permite acceder a los comandos del editor mediante el teclado. La podemos abrir con `Ctrl+Shift+P` o `⌘S+Shift+P`.
 
 * * *
 
@@ -486,20 +488,20 @@ Code tiene una paleta de comandos que nos permite acceder a los comandos del edi
 
 En el ejercicio del Gazpacho hemos observado como los párrafos con mucho texto provocan un scroll horizontal en nuestro editor, dificultando su lectura y edición. Afortunadamente la mayoría de editores de código nos permiten configurar un máximo de línea que hará que el texto salte a la siguiente línea llegada una determinada longitud, sin que esto afecte al resultado final (a no ser que provoquemos el salto de línea pulsando la tecla `enter`).
 
-Vamos a abrir la paleta de comandos de Code para abrir a los *settings* (ajustes). Una vez abierto tenemos que buscar `word wrap` y
-- Cambia el valor la opción `Editor: Word Wrap Column` a 20 y observa como cambia el `html` del ejercicio del Gazpacho
+Vamos a abrir la paleta de comandos de Code para abrir los *settings* (ajustes). Una vez abierto tenemos que buscar `word wrap` y
+- Cambia el valor de la opción `Editor: Word Wrap Column` a 20 y observa como cambia el `html` del ejercicio del Gazpacho
 - Vuelve a cambiarla para dejar una longitud final de 80
 
 * * *
 
 ## El explorador de archivos en Code
 
-Con `Ctrl+P` podemos abrir el explorador de archivos de code, conforme vayamos escribiendo Code nos irá mostrando la coincidencias, y al seleccionar un archivo lo abrirá.
+Con `Ctrl+P` (Linux) y `⌘P` (macOs) podemos abrir el explorador de archivos de code, conforme vayamos escribiendo Code nos irá mostrando la coincidencias, y al seleccionar un archivo lo abrirá.
 
 ### Indentando el código
 
 Indentar es mover un bloque de código hacía la derecha, separándolo del margen izquierdo. No afecta al resultado final, si no a la legibilidad del código.
-A partir de ahora **vamos a indentar siempre** nuestro código conforme vayamos escribiéndolo, nos ayudará a que sea más legible y a prevenir e identificar errores más fácilmente.
+A partir de ahora **vamos a indentar siempre** nuestro código, con la tecla *Tab*, conforme vayamos escribiéndolo, nos ayudará a que sea más legible y a prevenir e identificar errores más fácilmente.
 
 * [Qué es la indentación](https://medium.com/@sthefany/que-es-la-indentacion-c9471f3ae84f)
 
@@ -509,8 +511,8 @@ A partir de ahora **vamos a indentar siempre** nuestro código conforme vayamos 
 
 Aunque vayamos indentando a la par que escribimos, a veces se nos queda alguna línea dónde no debe, o tenemos fallos que no vemos como una etiqueta no cerrada, para solucionarlo podemos apoyarnos en la funcionalidad auto-indent de Code.
 
-- Con `Ctrl+a` seleccionamos todo el archivo
-- Con `Ctrl+k+f` indentamos el código seleccionado
+- Con `Ctrl+Shift+I ` (Ubuntu) o `⇧⌥F` (MAC) indentamos todo el documento
+
 
 * * *
 
@@ -526,22 +528,14 @@ Vamos a indentar el ejercicio del Gazpacho con auto-indent.
 
 Hoy hemos visto un montón de atajos de teclado, en este momento puede que sientas un poco de resistencia a utilizarlos porque:
 
-- Te sientas más cómoda y rápida con el trackpad, ¡es normal! llevas toda la vida acostumbrándote a usarlo a fuerza de repetición. Así que vamos a cambiar esto poco a poco, intentando usar los atajos en la medida de lo posible, con el tiempo lo harás sin pensar y serás mucho más ágil utilizando el ordenador.
-- Que estás echa un lío con tanto comando, ¿para qué era cada uno? Vamos a darle un repaso a los visto hoy para refrescar.
-
-En Chrome
-
-- `Ctrl+R`: refresca la página
+- Te sientas más cómoda y rápida con el trackpad o ratón, ¡es normal! llevas toda la vida acostumbrándote a usarlo a fuerza de repetición. Así que vamos a cambiar esto poco a poco, intentando usar los atajos en la medida de lo posible, con el tiempo lo harás sin pensar y serás mucho más ágil utilizando el ordenador.
+- Que estás echa un lío con tanto comando, ¿para qué era cada uno? Vamos a tener a mano un documento que nos ayude a recordar.
 
 En Code:
 
-- `Ctrl+K Ctrl+O`: nos permite abrir una nueva carpeta
-- `Ctrl+N`: crea un nuevo archivo
-- `Ctrl+S`: guarda los cambios realizados sobre un archivo
-- `Ctrl+A`: selecciona todo el archivo
-- `Ctrl+K Ctrl+F`: autoindenta el código seleccionado
-- `Ctrl+Shift+P`: abre la paleta de comandos
-- `Ctrl+P`: abre el navegador de archivos
+* [Atajos de teclado de Visual Studio Code para Linux](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
+
+* [Atajos de teclado de Visual Studio Code para macOs](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf)
 
 ## Recursos externos
 
