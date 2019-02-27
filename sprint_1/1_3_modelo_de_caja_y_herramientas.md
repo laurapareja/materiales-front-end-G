@@ -26,7 +26,7 @@ Uno de los objetivos de la sesión es saber que hay dos modelos de caja, en qué
 
 El navegador Google Chrome nos ofrece una serie de herramientas llamadas Chrome Dev Tools que nos permiten obtener información sobre la página actual que tenemos y realizar pruebas y modificaciones sobre ella. Estas herramientas son las siguientes:
 
-- El inspector. Nos permite ver el código de la página y los estilos que tiene aplicados a la vez que nos ofrece la posibilidad de modificarlo y cambiar los elementos de la web de sitio.
+- El inspector de elementos. Nos permite ver el código de la página y los estilos que tiene aplicados a la vez que nos ofrece la posibilidad de modificarlo y cambiar los elementos de la web actual.
 - La herramienta Network. Muestra cuales son los recursos que carga la web actual, su peso y el tiempo que necesita para cargarlos. Además nos mostrará errores en caso de que algún recurso no pueda ser cargado debido a un error.
 
 ## ¿Para qué sirve lo que vamos a ver en esta sesión?
@@ -105,9 +105,7 @@ Debido a que los elementos en línea solo ocupan el ancho de su contenido, estos
 
 [&rtrif; Elementos en línea en Codepen](https://codepen.io/adalab/pen/vWNzLj)
 
-Al ocupar solo el ancho de su contenido, los elementos en línea permiten colocar un elemento al lado del otro siempre y cuando ambos quepan en la misma fila, como sucede con los elementos en línea. Aquí también se respetarán los espacios entre los elementos en línea como si se tratasen de palabras normales y corrientes.
-
-Como norma general, los elementos `inline` no deberían contener otros elementos de bloque.
+Como norma general, los elementos `inline` no deberían contener elementos de bloque.
 
 Una regla muy importante que se aplica sobre los elementos en línea es que estos no pueden cambiar su ancho ni su alto, no pueden tener márgenes horizontales y se puede aplicar margen y padding vertical pero este no se tiene en cuenta a la hora de definir su altura y su posición vertical. Esto los diferencia de los elementos en bloque, que permiten tener un ancho y un alto específico y márgenes y padding tanto vertical como horizontal. Veremos la importancia de esto en esta misma sesión, cuando hablemos del modelo de cajas.
 
@@ -213,7 +211,7 @@ Si quisiéramos cambiar el modelo de caja para todos los elementos podemos usar 
 
 ```css
 * {
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 ```
 
@@ -273,7 +271,7 @@ Con la información de los enlaces anteriores, ¿sabrías resolver los casos de 
 
 **Equipo corchángulo**
 
-Nos vamos de hackaton, y la página con los detalles de nuestro equipo está sin terminar. La maquetadora la ha dejado preparada a falta de descomentar algunas lineas. Mira el [Codepen](https://codepen.io/adalab/pen/LrPbmb?editors=1100#0) que ha preparado y descomenta y comenta las lineas de CSS para ver como se comportan los elementos.
+Nos vamos de hackaton, y la página con los detalles de nuestro equipo está sin terminar. La maquetadora la ha dejado preparada a falta de descomentar algunas lineas. Mira el [Codepen](https://codepen.io/adalab/pen/LrPbmb) que ha preparado y descomenta y comenta las lineas de CSS para ver como se comportan los elementos.
 
 * * *
 
@@ -291,6 +289,9 @@ Para abrir el inspector tenemos varias opciones:
 * Usar `Ctrl+Shift+I` en Ubuntu o Windows y `Cmd+Opción+I` en Mac
 * Pulsar con el botón derecho sobre un elemento de nuestra página y seleccionar la opción *Inspeccionar*
 
+Una vez abierto podemos moverlo y colocarlo arriba, abajo, a la derecha o sacarlo a una nueva ventana.
+
+
 ### Si queremos cerrarlo...
 
 * Pulsamos en la cruz que aparece en la esquina superior derecha del panel
@@ -300,7 +301,7 @@ Para abrir el inspector tenemos varias opciones:
 
 El inspector es una herramienta que viene con nuestro navegador y por tanto es parte de la aplicación del navegador, está incluida en, prácticamente, todos los navegadores más famosos (Chrome, Firefox, Safari, Internet Explorer, Edge…) y sirve para leer, añadir, editar o eliminar tanto CSS como HTML (y sus atributos) de nuestra página. Con él haremos de cirujanos de la web, veremos sus tripas y las modificaremos a nuestro antojo.
 
-El inspector nos permite indagar y modificar tanto en páginas que tengamos en nuestro ordenador como otras que estén publicadas en Internet. Cuando modifiquemos estas páginas no estaremos modificando las páginas como tal realmente, solo temporalmente para ver qué sucedería si aplicamos ciertos cambios pero la web como tal, ya sea la de nuestro ordenador o la de Internet, no va a verse modificada. Esos cambios serán temporales y una vez que recarguemos la página se perderán y ésta volverá a su estado inicial.
+El inspector nos permite indagar y modificar tanto en páginas que tengamos en nuestro ordenador como otras que estén publicadas en Internet. Cuando modifiquemos estas páginas no estaremos modificando las páginas como tal, solo temporalmente para ver qué sucedería si aplicamos ciertos cambios pero la web, ya sea la de nuestro ordenador o la de Internet, no va a verse modificada. Esos cambios serán temporales y una vez que recarguemos la página se perderán y ésta volverá a su estado inicial.
 
 
 ### ¿Para qué nos sirve?
@@ -312,7 +313,6 @@ Por otro lado nos permite investigar qué cambios queremos hacer sin guarrear nu
 Por ejemplo, podemos ver información del modelo de caja:
 ![HTML y Modelo de caja en las DevTools](assets/images/1-3/html-inspector-modelo-de-caja.png)
 
-Podemos colocarlo arriba, abajo, a la derecha o sacarlo a una nueva ventana.
 
 * * *
 #### EJERCICIO 8
@@ -327,6 +327,7 @@ Entrar en [Wikipedia.org](http://wikipedia.org) y:
 * Averiguar las dimensiones de la caja de búsqueda y
     * Cuánto tiene de separación con el botón de buscar
     * ¿Qué hay de raro con esa separación?
+
 * * *
 
 ### Cambiando CSS con el Inspector: el atributo `style`
@@ -348,7 +349,8 @@ Usando este atributo los estilos se escriben en línea, seguidos y separados por
 * * *
 #### EJERCICIO 9
 
-¿Sabríamos ir a la web https://duckduckgo.com, buscar el logo con el id "logo_homepage_link" y aplicarle estos estilos desde nuestro inspector?
+¿Sabríamos ir a la web [https://duckduckgo.com](https://duckduckgo.com), buscar el logo con el id "logo_homepage_link" y aplicarle estos estilos desde nuestro inspector?
+
 ```css
 background-color: black;
 border-radius: 10px;
@@ -507,7 +509,7 @@ Mientras que en el primer caso estamos diciendo que el color de fondo sea `green
 - [ ] Solo se verá un color rojo de fondo
 - [ ] Otra
 
-Cuando usamos un acortador estamos definiendo TODAS las opciones, aunque no las usemos, por eso siempre deberíamos usar las propiedades que necesitemos, y solo usar los acortadores cuando realmente estemos usando la mayoria de las propiedades que acortan :)
+Cuando usamos un atajo estamos definiendo TODAS las opciones, aunque no las usemos, por eso siempre deberíamos usar las propiedades que necesitemos, y solo usar los atajos cuando realmente estemos usando la mayoria de las propiedades :)
 
 Si solo queremos cambiar el color de fondo deberíamos usar
 `background-color`.
