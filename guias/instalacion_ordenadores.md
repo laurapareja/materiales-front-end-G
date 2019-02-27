@@ -25,9 +25,9 @@ Si queremos mantener Windows, tendremos que hacer una partición:
 - Hacer partición siguiendo este tutorial: http://www.everydaylinuxuser.com/2015/11/how-to-shrink-windows-10-to-make-space.html
 - Luego instalaremos Ubuntu así: http://dailylinuxuser.com/2015/11/how-to-install-ubuntu-linux-alongside.html
 
-Además, puede que haya incompatibilidades de nuestro hardware (ordenador) con Ubuntu, [como esta que nos ha sucedido](https://plus.google.com/116778530198197186752/posts/baLJGdM52Wn
-https://askubuntu.com/questions/38780/how-do-i-set-nomodeset-after-ive-already-installed-ubuntu
-).
+> NOTA: Al elegir instalar ubuntu, seleccionamos la opción de "opciones adicionales" para elegir en qué partición hacerlo. Una vez seleccionada la partición donde instalar Ubuntu, elegir que el gestor de arranque (bootloader) se instale en el disco duro principal en un desplegable abajo de la pantalla.
+
+Además, puede que haya incompatibilidades de nuestro hardware (ordenador) con Ubuntu, [como esta que nos ha sucedido](https://askubuntu.com/questions/38780/how-do-i-set-nomodeset-after-ive-already-installed-ubuntu).
 
 ## Instalación de los programas
 
