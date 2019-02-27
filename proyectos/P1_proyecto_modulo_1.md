@@ -25,7 +25,7 @@ En este proyecto vamos a desarrollar nuestra primera web colaborativa. Para ello
 
 ## Caso de uso
 
-Con esta web del equipo podréis ilustrar este primer proyecto realizado en Adalab en vuestro perfil de LinkedIn, añadiendo al resto de compañeros y el enlace al código en GitHub. De esta forma, las empresas podrán ver que durante el programa Adalab habéis adquirido experiencia de trabajo en equipo y podrán acceder fácilmente al código que habéis desarrollado.
+Con esta web del equipo podréis ilustrar este primer proyecto realizado en Adalab en vuestro perfil de LinkedIn, añadiendo al resto de compañeras y el enlace al código en GitHub. De esta forma, las empresas podrán ver que durante el programa Adalab habéis adquirido experiencia de trabajo en equipo y podrán acceder fácilmente al código que habéis desarrollado.
 
 ## Especificaciones
 
@@ -55,7 +55,7 @@ En la página principal, aparece
 
 ![Contact](assets/images/s1-contact-1200.png)
 
-En la página de contacto habrá un formulario que recoge información de contacto como nombre completo, email, teléfono y mensaje, y un botón para poder enviarlo (aunque de momento no funcione).
+En la página de contacto habrá un formulario que recoge información de contacto como nombre completo, email, teléfono y mensaje, y un botón para poder enviarlo.
 
 Las páginas principal y de contacto tienen un diseño establecido, al que debéis ajustaros lo máximo posible. El diseño está realizado para 3 tamaños de dispositivo
 
@@ -99,47 +99,42 @@ Se puede acceder al diseño directamente desde el navegador para lo que necesita
 
 URL del proyecto: https://zpl.io/aXkApkx
 
-## Hitos
+## Planificación del proyecto
 
-Os proponemos una serie de hitos como sugerencia para dividir las fases de este proyecto. Siguiendo los principios de las metodologías ágiles estableceremos pequeños ciclos iterativos de forma que al final de cada uno de estos generemos valor real, es decir, algo que nos beneficie y sea perceptible por nuestros usuarios (los visitantes de la web).
+### Sprints
 
-### Primero. Arranque del proyecto (kickoff)
+Para la realización de este proyecto trabajaremos en _2 sprints_ (2 iteraciones) de 7 sesiones cada uno. Siguiendo los principios ágiles estableceremos pequeños ciclos iterativos de forma que al final de cada uno generemos valor perceptible por nuestros usuarios (los visitantes de la web). Dedicaremos el primer día a la planificación del sprint (_sprint planning_) y el resto a trabajar en el desarrollo del proyecto. Al final de cada sprint haremos una _demo_ del proyecto para presentar los resultados conseguidos, y una _retrospectiva_ para evaluar nuestro trabajo en equipo y mejorar en el siguiente sprint.
 
-- 2 sesiones de trabajo
-- Organizar el trabajo a realizar usando Trello, e ir asignando tareas y responsables
-- Establecer la organización del trabajo: qué tareas realizar en clase juntas y cuáles por separado en casa
+### Historias de usuario
 
-### Segundo. Versión móvil de la web
+Para la gestión del proyecto, usaremos _historias de usuario_, que es una herramienta para definir las características de un producto que veremos en detalle durante el curso.
 
-- 4 sesiones de trabajo
-- Desarrollar la versión para móvil de la web (página principal y contacto, sin el formulario de momento) con HTML y CSS
+#### Primera. Versión móvil de la web
+
+- Desarrollar la versión para móvil de la web (página principal) con HTML y CSS
 - Crear el contenido de la web: textos e imágenes
 - Crear la infraestructura necesaria: repositorio en GitHub y con acceso para todos los miembros del equipo
 
 > **NOTA**:  
-> Para considerar terminado este hito y todos los siguientes debéis tener publicada la web en GitHub Pages.
+> Para considerar terminada esta historia y todas los siguientes debéis tener publicada la web en GitHub Pages.
 
-### Tercero. Versión responsive de la web
+#### Segunda. Versión responsive de la web
 
-- 4 sesiones de trabajo
 - Hacer la web para el resto de tamaños de pantalla (tablet, desktop)
-- Integración con gulp para automatización de tareas:
+
+#### Tercera. Mejora de tecnología
+
+- Integración con gulp para automatización de tareas
 - Dividir HTML en partials
-- Pasar el CSS a Sass
-
-### Cuarto. Versión final
-
-- 4 sesiones de trabajo
-- Realizar el formulario de contacto para todos los dispositivos
-- Hacer que funcione el envío usando el servicio [formspree.io](https://formspree.io) ([Cómo usar Formspree.io](#formspree))
+- Pasar el CSS a Sass (también usando partials)
 - Aplicar las técnicas avanzadas aprendidas en la parte final del curso:
   - Grid en la sección de "quiénes somos"
   - Opcionalmente añadir animaciones y transiciones
 
-### Quinto. Presentación final
+#### Cuarta. Formulario de contacto
 
-- 2 sesiones de trabajo
-- El último día del módulo presentaréis la versión final de este proyecto. Para ello tendréis que dejarlo publicado y acabado con tiempo, y organizaros para realizar la presentación.
+- Realizar el formulario de contacto para todos los dispositivos
+- Hacer que funcione el envío usando el servicio [formspree.io](https://formspree.io) ([Cómo usar Formspree.io](#formspree))
 
 ## Entrega
 
@@ -153,7 +148,9 @@ Por ejemplo, el nombre de la primera promoción de Adalab fue "Ada". Si un grupo
 
 De manera adicional, se deberá activar "GitHub Pages" en el proyecto para que este pueda ser visualizado como una web, es decir, que en el caso anterior, si alguien introdujese la dirección "adalab.github.io/ada-m1-lovelace/" en un navegador web, este mostraría la web que se genera con el código del repositorio.
 
-Por último, para acompañar a la entrega del proyecto, el equipo realizará una presentación de 10 minutos mostrando la web y explicando los siguientes puntos:
+## Presentación
+
+El último día del módulo presentaréis la versión final de este proyecto. Para ello tendréis que dejarlo publicado y acabado con tiempo, y organizaros para realizar la presentación. El equipo realizará una presentación de 10 minutos mostrando la web y explicando los siguientes puntos:
 
 - Cómo está estructurada la web y el contenido y el por qué de las decisiones tomadas
 - Cómo se ha seguido el diseño proporcionado
@@ -175,7 +172,7 @@ Para este proyecto hemos preparado un listado de recursos que os pueden servir d
 1. Formspree nos proporciona una url para el atributo `action=""` de nuestro formulario que incluye el email en el que queremos recibir los datos
 1. La primera vez nos pedirá que confirmemos la dirección de email
 
-Puedes probarlo en este [codepen](https://codepen.io/adalab/pen/mvNNeL)
+Puedes probarlo en este [codepen](https://codepen.io/adalab/pen/mvNNeL).
 
 ### Cómo diseñar una web desde cero
 
