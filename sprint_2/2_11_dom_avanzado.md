@@ -296,7 +296,7 @@ Para ello, simplemente definimos un nuevo atributo en el elemento que comienza c
 
 **Anclas de verdad**
 
-Vamos a partir del ejercicio 8 de la sesión 2.5, donde aprendimos a eliminar el comportamiento por defecto del enlace. En este ejercicio vamos a terminar lo que empezamos, y podremos hacer *scroll* hasta cada sección usando enlaces desde JS.
+Vamos a partir del ejercicio 11 de la sesión 2.5, donde aprendimos a eliminar el comportamiento por defecto del enlace. En este ejercicio vamos a terminar lo que empezamos, y podremos hacer *scroll* hasta cada sección usando enlaces desde JS.
 
 Para ello seguimos estos pasos
 1. Ponemos un atributo `data-id` a los enlaces para indicar a qué elemento debemos hacer *scroll*
