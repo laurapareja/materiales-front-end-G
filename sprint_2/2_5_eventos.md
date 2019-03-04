@@ -1,21 +1,6 @@
 # Eventos
 
-<!-- TOC depthFrom:4 depthTo:4 -->
-
-- [EJERCICIO 1](#ejercicio-1)
-- [EJERCICIO 2](#ejercicio-2)
-- [EJERCICIO 3](#ejercicio-3)
-- [EJERCICIO 4](#ejercicio-4)
-- [EJERCICIO 5](#ejercicio-5)
-- [EJERCICIO 6](#ejercicio-6)
-- [EJERCICIO 7](#ejercicio-7)
-- [EJERCICIO 8](#ejercicio-8)
-- [EJERCICIO 9](#ejercicio-9)
-- [EJERCICIO 10](#ejercicio-10)
-- [EJERCICIO 11](#ejercicio-11)
-- [EJERCICIO 12 BONUS](#ejercicio-12-bonus)
-
-<!-- /TOC -->
+<!-- TOC depthFrom:4 depthTo:4 -->autoauto- [EJERCICIO 1](#ejercicio-1)auto- [EJERCICIO 2](#ejercicio-2)auto- [EJERCICIO 3](#ejercicio-3)auto- [EJERCICIO 4](#ejercicio-4)auto- [EJERCICIO 5](#ejercicio-5)auto- [EJERCICIO 6](#ejercicio-6)auto- [EJERCICIO 7](#ejercicio-7)auto- [EJERCICIO 8](#ejercicio-8)auto- [EJERCICIO 9](#ejercicio-9)auto- [EJERCICIO 10](#ejercicio-10)auto- [EJERCICIO 11](#ejercicio-11)auto- [EJERCICIO 12 BONUS](#ejercicio-12-bonus)autoauto<!-- /TOC -->
 
 ## Introducción
 
@@ -98,9 +83,9 @@ y el nombre de una función
 
  - `logError`
 
-Esto os puede parecer un poco raro y complejo al principio, pero iremos descubriendo en el curso que es muy útil. A este tipo de funciones que se pasan como argumentos a otras, se les llama **callbacks**
+Esto os puede parecer un poco raro y complejo al principio, pero iremos descubriendo en el curso que es muy útil. A este tipo de funciones que se pasan como argumentos a otras, se les llama **callbacks**.
 
-Por lo tanto la función que le pasamos a `addEventListener` como segundo argumento es un `callback`, no la ejecutamos nosotras, es ejecutada por `addEventListener` cuando sucede el evento.
+Por lo tanto la función que le pasamos a `addEventListener` como segundo argumento es un `callback`, no la ejecutamos nosotras, es ejecutada por el navegador cuando sucede el evento.
 
 Para pasar un *callback* como argumento, podemos utilizar el nombre de una función ya declarada (como vimos en el ejemplo anterior), o podemos declararla directamente. Son dos maneras diferentes de hacer lo mismo. Vamos a ver el ejemplo anterior, pero declarando la función cuando la pasamos como argumento.
 
@@ -187,7 +172,7 @@ Cambiar el color de fondo de la página cuando se haga scroll. Para ello tenemos
 Como hemos visto, cuando registramos un listener para escuchar un evento, es el navegador quien ejecuta la función `handler`. 
 
 Al ejecutarla, le pasa unos argumentos que podremos recoger si definimos parámetros en nuestra función `handler`. El primero de ellos es un objeto que se suele denominar `event` y que contiene información acerca del evento. 
-Aun no hemos visto los objetos, pero ahora mismo basta decir que son como una variable con muchas variables dentro.
+Aún no hemos visto los objetos, pero ahora mismo basta decir que son como una variable con muchas variables dentro.
 
 ```js
 const buttonElement = document.querySelector('.button');
@@ -209,13 +194,13 @@ En los eventos de teclado podemos [consultar la propiedad `key`](https://keycode
 
 **Jugando con el teclado**
 
-Tenemos que crear una página vacía. Al pulsar la tecla 'r' su color de fondo cambia a rojo y al pulsar la 'm' a morado. Vamos a escuchar un evento de teclado (directamente sobre el elemento `document`). 
+Tenemos que crear una página vacía. Al pulsar la tecla 'r' su color de fondo cambia a rojo y al pulsar la 'm' a morado. Vamos a escuchar un evento de teclado directamente sobre el elemento `document`.
 
 * * *
 
 ### event.currentTarget
 
-**`event.currentTarget`** contiene el **elemento sobre el que pusimos el listener**.
+`event.currentTarget` contiene el **elemento sobre el que pusimos el listener**.
 
 ```js
 const buttonElement = document.querySelector('.button');
@@ -235,13 +220,13 @@ Prueba el ejemplo de código anterior y observa en la consola el valor de `event
 
 Crear una página con un input de texto y un párrafo vacío. Cada vez que la usuaria escriba una letra tenemos que recoger el valor del input al que le pusimos el listener y escribirlo en el párrafo.
 
-> **Nota**: el objetivo es hacerlo utilizando `event.currentTarget`
+> **Nota**: el objetivo es hacerlo utilizando `event.currentTarget`.
 
 #### EJERCICIO 7
 
 **Otro botón**
 
-Vamos a preparar un botón y una clase de css. La clase tiene que cambiar alguno de sus estilos, pero no se la vamos a poner inicialmente. Cada vez que la usuaria pulse el botón hay que:
+Vamos a preparar un botón y una clase de CSS. La clase tiene que cambiar alguno de los estilos del botón (por ejemplo el color de fondo), pero no se la vamos a poner inicialmente. Cada vez que la usuaria pulse el botón hay que:
 
 - añadir la clase si no la tiene
 - quitarla la clase si la tiene
@@ -284,7 +269,7 @@ const kiwi = document.querySelector('.fruit-kiwi');
 function handleFruitClick(event) {
   // Asignamos a una constante el elemento 
   // sobre el que pusimos el `listener`
-  // para trabajar cómodamente con el
+  // para trabajar cómodamente con él
   const selectedFruit = event.currentTarget;
   
   selectedFruit.classList.toggle('fruit--selected');
@@ -322,7 +307,7 @@ Al pinchar en un elemento del listado tenemos que:
 
 > **Nota**: con `querySelector` buscamos un elemento dentro de otro. Hasta ahora lo habíamos usado para buscar dentro de `document` (todo nuestro documento HTML), con `document.querySelector()`. 
 
-> Si tuviéramos una constante llamada, por ejemplo, `sectionAboutElement` en la que hemos guardado un elemento de HTML, podríamos buscar dentro él otro elemento, tal que así `sectionAboutElement.querySelector()`
+> Si tuviéramos una constante llamada, por ejemplo, `sectionAboutElement` en la que hemos guardado un elemento de HTML, podríamos buscar dentro él otro elemento, tal que así `sectionAboutElement.querySelector()`.
 
 * * *
 
@@ -366,11 +351,11 @@ Aunque aún no hemos visto como enviar un formulario desde JavaScript, prevenir 
 
 **Para ese link**
 
-¿Recuerdas el proyecto del sprint uno? Los enlaces de la cabecera de nuestra página tenían un problema, como nuestra cabecera era flotante, al navegar a una sección parte del contenido de quedaba oculto tras la cabecera. 
+¿Recuerdas el proyecto del módulo uno? Los enlaces de la cabecera de nuestra página tenían un problema, como nuestra cabecera era flotante, al navegar a una sección parte del contenido de quedaba oculto tras la cabecera. 
 
 Vamos a animarnos y a preparar un HTML muy sencillo con:
 - una cabecera flotante que contenga un menu con tres enlaces 
-- tres secciones con bastante 'lore ipsum' para que haya un scroll generoso
+- tres secciones con bastante 'lorem ipsum' para que haya un scroll generoso
 
 El primer paso para arreglar este comportamiento es escuchar el click en los enlaces y prevenir el comportamiento por defecto.
 
@@ -393,7 +378,7 @@ buttonElement.removeEventListener('click', showAlert);
 
 ### event.target
 
-En **`event.target`** encontraremos el **elemento sobre el que ha sucedido el evento**. Este elemento no tiene por que ser el mismo sobre el que pusimos el listener.
+En **`event.target`** encontraremos el **elemento sobre el que ha sucedido el evento**. Este elemento no tiene porqué ser el mismo sobre el que pusimos el listener.
 
 ```css
 .btn {
@@ -413,27 +398,25 @@ En **`event.target`** encontraremos el **elemento sobre el que ha sucedido el ev
 ```
 
 ```js
-const btnEl = document.querySelector(".btn");
+const btnEl = document.querySelector('.btn');
 
 const handleBtnClick = (event) => {
   console.log(event.currentTarget);
   console.log(event.target);
 }
 
-btnEl.addEventListener("click", handleBtnClick);
+btnEl.addEventListener('click', handleBtnClick);
 ```
 
 Si pruebas el ejemplo anterior al hacer click sobre el texto y después sobre la estrella podrás ver la diferencia entre `target` y `currentTarget`. 
 
 - `currentTarget` nunca cambia, es el elemento al que le pusimos el listener. Por lo tanto siempre es el elemento que escribimos antes del punto de `addEventListener`.
 
-- `target` es el elemento sobre el que sucede el evento, puede coincidir con `currentTarget` o estar dentro de el.
+- `target` es el elemento sobre el que sucede el evento, puede coincidir con `currentTarget` o estar dentro de él.
 
 [Explicación de currentTarget vs target en 30 segundos](http://joequery.me/code/event-target-vs-event-currenttarget-30-seconds/)
 
 En la mayoría de los casos querremos trabajar con `currentTarget`. Pero no está mal que nos suene como funciona `target`.
-
-
 
 * * *
 
