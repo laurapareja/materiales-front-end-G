@@ -110,7 +110,7 @@ Para instalar Jest en nuestro proyecto lo hacemos usando `npm`. Para eso, tenemo
 
 **Instalación de Jest**
 
-En primer lugar vamos a crear un proyecto nuevo. En nuestro ordenador creamos una carpeta `intro-testing` y nos movemos a ella desde la terminal. Después tenemos que ejecutar estos comandos:
+En primer lugar tenemos que crear un proyecto nuevo, pero no usaremos create-react-app ni Adalab Starter Kit. Vamos a crearlo siguiendo los pasos descritos a continuación. En nuestro ordenador creamos una carpeta `intro-testing` y nos movemos a ella desde la terminal. Después tenemos que ejecutar estos comandos:
 
 ```
 npm init
