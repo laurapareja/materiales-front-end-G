@@ -1,6 +1,6 @@
 # Funciones
 
-<!-- TOC depthFrom:4 depthTo:4 updateOnSave:true -->
+<!-- TOC depthFrom:4 depthTo:4 -->
 
 - [EJERCICIO 1](#ejercicio-1)
 - [EJERCICIO 2](#ejercicio-2)
@@ -98,7 +98,7 @@ console.log(sum(1, 4));
 
 > NOTA: Esta sintaxis para utilizar funciones te suena, ¿verdad? Hasta ahora hemos estado ejecutando algunas funciones ya declaradas en el navegador como `querySelector('.title')` a la que le pasamos por parámetro una cadena con el selector que buscamos y nos devuelve la referencia a dicho elemento en nuestro HTML.
 
-Así, una función es como una maquina:
+Así, una función es como una máquina:
 
 - Se construye una vez (declarando la función)
 - Se utiliza muchas veces (ejecutando la función)
@@ -130,15 +130,35 @@ function sum(a, b) {
 const sumResult = sum(3, 4); //sumResult vale 7
 ```
 
+En este ejemplo, la función `sum` tiene 2 parámetros, a los que damos como nombre `a` al primero y `b` al segundo. Al ejecutarla en `sum(3, 4)` le pasamos los argumentos 3 y 4, que se asignan a los parámetros de forma que `a = 3` y `b = 4`. El valor de retorno es la variable `result` que contiene la suma de a y b, es decir, 7 en este caso. Este valor de retorno se asigna a la variable `sumResult` que recoge el resultado de la ejecución de la función.
+
 Por defecto, si en una función no indicamos un valor de retorno usando `return`, la función devolverá el valor `undefined`. El valor _undefined_ en JavaScript indica que una variable ha sido declarada pero no posee ningún valor, en este caso determina que la función no tiene asignado ningún valor de retorno y por eso devuelve `undefined`.
 
+```javascript
+function sum(a, b) {
+  const result = a + b;
+}
+
+const sumResult = sum(3, 4); //sumResult vale undefined
+```
+
 Cuando ejecutamos una instrucción `return` dentro de una función, termina la ejecución de la función. Todo el código que se fuese a ejecutar después de ese `return` será ignorado, como si no existiese. Por tanto, debemos evitar escribir líneas de código después de un `return` y normalmente será la última línea de código de una función.
+
+```javascript
+function sayHi(name) {
+  return 'Hi ' + name;
+
+  return 'En un lugar de la Mancha'; //Esta línea nunca se llega a ejecutar
+}
+
+const result = sayHi('Ashley'); //result vale 'Hi Ashley'
+```
 
 Observa la siguiente imagen:
 
 ![Máquina funciones](assets/images/2-4/maquina-funciones.png)
 
-- Al crear la maquina sum le hemos puestos tres tubos llamados a, b y c, estos son los **parámetros**.
+- Al crear la máquina sum le hemos puestos tres tubos llamados a, b y c, estos son los **parámetros**.
 
 
 ```js
@@ -199,7 +219,7 @@ Ejecutala e imprime el resultado para comprobar que funciona.
 
 **`querySelector` para todas**
 
-Estamos trabajando en un proyecto bastante grande, dónde hay que recoger muchos elementos de HTML desde javascript para interaccionar con ellos. Para no tener que escribir `document.querySelector(...)` tantas veces una compañera ha sugerido hacer una función llamada `getEl`.
+Estamos trabajando en un proyecto bastante grande, donde hay que recoger muchos elementos de HTML desde JavaScript para interaccionar con ellos. Para no tener que escribir `document.querySelector(...)` tantas veces una compañera ha sugerido hacer una función llamada `getEl`.
 
 Esta función debe recibir por parámetro un selector de css y retornará el elemento de HTML correspondiente. Hemos quedado en que cuando llamemos a la función la sintaxis será tal que así:
 
@@ -207,7 +227,7 @@ Esta función debe recibir por parámetro un selector de css y retornará el ele
 const btnEl = getEl('.btn');
 ```
 
-> **Nota**: Prepara un html con varios elementos para poder probarla.
+> **Nota**: Prepara un HTML con varios elementos para poder probarla.
 
 #### EJERCICIO 6
 
@@ -227,18 +247,18 @@ Vamos a mejorar nuestra función para que nos avise cuando esto ocurre. Dentro d
 
 **Combinando funciones**
 
-Preparar dos etiquetas en HTML con texto dentro.
+Partimos de un HTML con un párrafo que contiene un número. En nuestro fichero JavaScript nos copiamos la declaración de las funciones `getEl` y la que comprueba si un número es par o impar (ejercicio 4).
 
-Crear una función que recibe por parámetros un elemento de HTML y añade un texto indicando si es par o impar.
+Vamos a hacer lo siguiente:
+- usando nuestra función `getEl` accedemos al párrafo, y recogemos su valor (con `innerHTML`)
+- convertimos ese valor a número
+- usamos nuestra función del ejercicio 4 para saber si es par o impar
+- escribimos en la consola 'Este número es PAR: ...' o 'Este número es IMPAR: ...'
 
-Dentro de esta función llamaremos a otras dos:
-
-- La primera se ocupará de decirnos si el número es impar o no.
-- La segunda añadirá al texto por delante: 'Este texto es PAR: ...' o 'Este texto es IMPAR: ...'
 
 ## Ámbito de las variables
 
-Por defecto, una variable definida con let o const tiene un ámbito (en inglés, _scope_) que corresponde a su bloque, es decir, van a existir dentro de su bloque.
+Por defecto, una variable definida con `let` o `const` tiene un ámbito (en inglés, _scope_) que corresponde a su bloque, es decir, van a existir dentro de su bloque.
 
 **¿Y qué es un bloque?** Un bloque es cualquier expresión con llaves `{}` como puede ser un `if` o una función :)
 
@@ -339,7 +359,20 @@ console.log(secretLetter); // da un error porque la variable solo está definida
 
 #### EJERCICIO 8
 
-TODO: ejercicio para practicar el ejemplo anterior
+Vamos a partir de uno de los ejemplos anteriores que usa una variable global, que luego se modifica desde una función.
+
+```javascript
+// modificamos una variable de ámbito global
+let secretLetter = 'y';
+function mySecretLetter() {
+  secretLetter = 'x';
+  return secretLetter;
+}
+console.log(mySecretLetter()); // devuelve "x"
+console.log(secretLetter); // devuelve "x"
+```
+
+En el ejemplo anterior prueba a cambiar el orden del los `console.log`. ¿Qué está pasando? ¿Por qué no se imprime en la consola 2 veces "x"?
 
 ## Arrow functions
 
