@@ -1,6 +1,21 @@
 # Eventos
 
-<!-- TOC depthFrom:4 depthTo:4 -->autoauto- [EJERCICIO 1](#ejercicio-1)auto- [EJERCICIO 2](#ejercicio-2)auto- [EJERCICIO 3](#ejercicio-3)auto- [EJERCICIO 4](#ejercicio-4)auto- [EJERCICIO 5](#ejercicio-5)auto- [EJERCICIO 6](#ejercicio-6)auto- [EJERCICIO 7](#ejercicio-7)auto- [EJERCICIO 8](#ejercicio-8)auto- [EJERCICIO 9](#ejercicio-9)auto- [EJERCICIO 10](#ejercicio-10)auto- [EJERCICIO 11](#ejercicio-11)auto- [EJERCICIO 12 BONUS](#ejercicio-12-bonus)autoauto<!-- /TOC -->
+<!-- TOC depthFrom:4 depthTo:4 -->
+
+- [EJERCICIO 1](#ejercicio-1)
+- [EJERCICIO 2](#ejercicio-2)
+- [EJERCICIO 3](#ejercicio-3)
+- [EJERCICIO 4](#ejercicio-4)
+- [EJERCICIO 5](#ejercicio-5)
+- [EJERCICIO 6](#ejercicio-6)
+- [EJERCICIO 7](#ejercicio-7)
+- [EJERCICIO 8](#ejercicio-8)
+- [EJERCICIO 9](#ejercicio-9)
+- [EJERCICIO 10](#ejercicio-10)
+- [EJERCICIO 11](#ejercicio-11)
+- [EJERCICIO 12 BONUS](#ejercicio-12-bonus)
+
+<!-- /TOC -->
 
 ## Introducción
 
