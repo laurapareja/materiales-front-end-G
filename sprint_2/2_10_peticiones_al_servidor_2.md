@@ -7,7 +7,11 @@
 - [EJERCICIO 3](#ejercicio-3)
 - [EJERCICIO 4](#ejercicio-4)
 - [EJERCICIO 5](#ejercicio-5)
-- [EJERCICIO 6 BONUS](#ejercicio-6-bonus)
+- [EJERCICIO 6](#ejercicio-6)
+- [EJERCICIO 7](#ejercicio-7)
+- [EJERCICIO 8](#ejercicio-8)
+- [EJERCICIO 9](#ejercicio-9)
+- [EJERCICIO 10 BONUS](#ejercicio-10-bonus)
 
 <!-- /TOC -->
 
@@ -130,11 +134,15 @@ Hasta ahora, la única fuente de datos que hemos usado es un API en el servidor,
 
 Usar el localStorage es bastante sencillo: solo necesitamos un nombre (clave) y unos datos (valor).
 
+### localStorage.setItem
+
 Para guardar datos es tan sencillo como usar `setItem` cuyo primer parámetro es el nombre que le ponemos a los datos y luego los datos que queremos guardar, que pueden ser de cualquier tipo primitivo (cadena, número, booleano). Por ejemplo:
 
 ```js
 localStorage.setItem('name', 'Ana');
 ```
+
+### localStorage.getItem
 
 Para recuperar los datos es tan sencillo como usar `getItem` y pasar el nombre que le dimos a los datos. Por ejemplo:
 
@@ -143,11 +151,14 @@ const name = localStorage.getItem('name');
 console.log(name); //Ana
 ```
 
+### localStorage.removeItem
+
 Para borrar los datos es tan sencillo como usar `removeItem` y pasar el nombre que le dimos a los datos. Por ejemplo:
 
 ```js
 localStorage.removeItem('name');
 ```
+
 Podemos ver los datos guardados usando las devTools en la pestaña "Application":
 
 ![DevTools localStorage](assets/images/2-10/devtools-localstorage.png)
@@ -166,15 +177,65 @@ const  tasks = [
   {name: 'Aprender cómo funcionan los objetos de JavaScript', completed: false}
 ];
 
-localStorage.setItem('taks', JSON.stringify(tasks));
+localStorage.setItem('tasks', JSON.stringify(tasks));
 
-const  savedTasks = JSON.parse(localStorage.getItem('taks'));
+const savedTasks = JSON.parse(localStorage.getItem('tasks'));
 console.log(savedTasks.length); //4
 ```
 
 * * *
 
 #### EJERCICIO 4
+
+**Conociendo LS**
+
+Escribir datos en formularios es muy tedioso para los usuarios. ¡Vamos a cachearlos para facilitarles la vida! 
+
+- Prepara un `input` de texto para el nombre y un párrafo vacío
+- Cada vez que la usuaria escriba su nombre (`keyUp`) tenemos que pintar el valor en el párrafo y guardarlo en `localStorage`.
+- Al recargar la página tenemos que consultar `localStorage` y, si hay algún nombre guardado, rellenar el input y el párrafo.
+
+* * *
+
+#### EJERCICIO 5
+
+**Buenas prácticas trabajando con LS**
+
+Partiendo del ejercicio anterior vamos a visitar la página y borraremos el valor del `localStorage` a través de las DevTools. Con el `localStorage` limpito, recargaremos la página para simular la primera visita de la usuaria, dónde aun no habría información sobre el nombre guardada (`cacheada`). 
+
+Si al realizar esta acción nos encontramos algún error tenemos que apañarlo.
+
+A partir de ahora **recuerda** que siempre que recojas un dato del localStorage, deberías comprobar que existe antes de empezar a trabajar con el, y **realizar una limpieza del localStorage** manual para comprobar que todo funciona como esperas, haya o no datos cacheados.
+
+* * *
+
+#### EJERCICIO 6
+
+**Mi tema preferido**
+
+Vamos a preparar una página sencilla, con un título, un par de párrafos y un selector de tema. Para hacer el selector:
+
+- Añadiremos dos `radio buttons` para poder elegir entre claro y oscuro.
+- Prepararemos dos clases de css: una pondrá el fondo claro y el texto oscuro, y la otra pondrá el fondo oscuro y el texto claro.
+- Aplicaremos a nuestra página una clase u otra según la selección de la usuaria, apoyándonos en el `value` del input seleccionado.
+- Paralelamente cada vez que la usuaria elija un tema, guardaremos esta información en `localStorage`.
+- Al cargar la página buscaremos en `localStorage` el tema seleccionado en la última visita y lo aplicaremos sin que la usuaria tenga que realizar ninguna acción.
+
+* * *
+
+#### EJERCICIO 7
+
+**Un formulario de verdad**
+
+Vamos a seguir trabajando sobre el [ejercicio 4](#ejercicio-4). El formulario nos ha quedado un poco pobretón, añadamos al menos un campo más para el apellido.
+
+¡Pero, ojo! Queremos tener nuestros datos agrupaditos. El reto es guardar y recoger del localStorage un objeto con dos propiedades, nombre y apellido.
+
+¡A por ello!
+
+* * *
+
+#### EJERCICIO 8
 
 Sobre el ejercicio 2 vamos a *cachear* las búsquedas al servidor. De forma que cuando a busquemos una cadena a través del campo de búsqueda, primero busque en localStorage si ya tenemos un resultado en local para esa cadena. Si no lo hay se pide al servidor y luego se guarda en `localStorage` usando como clave el texto de la búsqueda; si al buscarlo en `localStorage` lo encontramos pues le enseñamos el resultado directamente al usuario y nos evitamos una petición al servidor.
 
@@ -203,7 +264,7 @@ A veces nos resultará molesto tener algunos errores o warnings en el editor por
 
 * * *
 
-#### EJERCICIO 5
+#### EJERCICIO 9
 
 Para el proyecto anterior de la búsqueda en SWAPI, incluye el linter y corrige todos los errores detectados.
 
@@ -213,7 +274,7 @@ Para el proyecto anterior de la búsqueda en SWAPI, incluye el linter y corrige 
 
 * * *
 
-#### EJERCICIO 6 BONUS
+#### EJERCICIO 10 BONUS
 
 **Dame gifs de gatetes**
 
@@ -235,7 +296,7 @@ En la lección anterior vimos como gestionar errores con promesas, por otro lado
 
 Cuando se resuelve la promesa de un fetch en esta nos llega información, uno de los datos es la propiedad `ok`. Esta es `true` si el código de respuesta es de tipo 200, en caso contrario es `false`. Una práctica extendida es cuando el valor de `ok` es falso generar una *excepción* con `throw`, ya que cuando hacemos esto dentro de un `then()` en lugar de ejecutarse el siguiente `then()` se ejecuta `catch()`. 
 
-El API de Github nos devuelve un error cuando intentamos [pedir repositorios publicos](https://developer.github.com/v3/repos/#list-all-public-repositories) con un un valor no válido en el `queryParam` *since*. Veamos el ejemplo:
+El API de Github nos devuelve un error cuando intentamos [pedir repositorios públicos](https://developer.github.com/v3/repos/#list-all-public-repositories) con un un valor no válido en el `queryParam` *since*. Veamos el ejemplo:
 
 ```js
 fetch('https://api.github.com/repositories?since=asdf')
@@ -267,7 +328,7 @@ Como bonus podemos gestionar con `fetch` las respuestas con código diferente a 
 
 También hemos visto como **cachear** datos en el navegador de la usuaria gracias al uso de **localStorage**.
 
-Y como las buenas prácticas marcan la diferencia, a partir de ahora tendremos un código homogeneo y con menos errores gracias al uso de un **linter**.
+Y como las buenas prácticas marcan la diferencia, a partir de ahora tendremos un código homogéneo y con menos errores gracias al uso de un **linter**.
 
 ## Recursos externos
 
