@@ -195,15 +195,19 @@ Escribir datos en formularios es muy tedioso para los usuarios. ¡Vamos a cachea
 - Cada vez que la usuaria escriba su nombre (`keyUp`) tenemos que pintar el valor en el párrafo y guardarlo en `localStorage`.
 - Al recargar la página tenemos que consultar `localStorage` y, si hay algún nombre guardado, rellenar el input y el párrafo.
 
+* * *
+
 #### EJERCICIO 5
 
 **Buenas prácticas trabajando con LS**
 
-Partiendo del ejercicio anterior vamos a visitar la página y borraremos el valor del `localStorage` a través de las DevTools. Con el `localStorage` limpito, recargaremos la página para simular la primera visita de la usuaria, dónde aun no habría información sobre el nombre guardada `cacheada`. 
+Partiendo del ejercicio anterior vamos a visitar la página y borraremos el valor del `localStorage` a través de las DevTools. Con el `localStorage` limpito, recargaremos la página para simular la primera visita de la usuaria, dónde aun no habría información sobre el nombre guardada (`cacheada`). 
 
 Si al realizar esta acción nos encontramos algún error tenemos que apañarlo.
 
 A partir de ahora **recuerda** que siempre que recojas un dato del localStorage, deberías comprobar que existe antes de empezar a trabajar con el, y **realizar una limpieza del localStorage** manual para comprobar que todo funciona como esperas, haya o no datos cacheados.
+
+* * *
 
 #### EJERCICIO 6
 
@@ -217,11 +221,9 @@ Vamos a preparar una página sencilla, con un título, un par de párrafos y un 
 - Paralelamente cada vez que la usuaria elija un tema, guardaremos esta información en `localStorage`.
 - Al cargar la página buscaremos en `localStorage` el tema seleccionado en la última visita y lo aplicaremos sin que la usuaria tenga que realizar ninguna acción.
 
+* * *
+
 #### EJERCICIO 7
-
-Sobre el ejercicio 2 vamos a *cachear* las búsquedas al servidor. De forma que cuando a busquemos una cadena a través del campo de búsqueda, primero busque en localStorage si ya tenemos un resultado en local para esa cadena. Si no lo hay se pide al servidor y luego se guarda en `localStorage` usando como clave el texto de la búsqueda; si al buscarlo en `localStorage` lo encontramos pues le enseñamos el resultado directamente al usuario y nos evitamos una petición al servidor.
-
-#### EJERCICIO 8
 
 **Un formulario de verdad**
 
@@ -230,6 +232,12 @@ Vamos a seguir trabajando sobre el [ejercicio 4](#ejercicio-4). El formulario no
 ¡Pero, ojo! Queremos tener nuestros datos agrupaditos. El reto es guardar y recoger del localStorage un objeto con dos propiedades, nombre y apellido.
 
 ¡A por ello!
+
+* * *
+
+#### EJERCICIO 8
+
+Sobre el ejercicio 2 vamos a *cachear* las búsquedas al servidor. De forma que cuando a busquemos una cadena a través del campo de búsqueda, primero busque en localStorage si ya tenemos un resultado en local para esa cadena. Si no lo hay se pide al servidor y luego se guarda en `localStorage` usando como clave el texto de la búsqueda; si al buscarlo en `localStorage` lo encontramos pues le enseñamos el resultado directamente al usuario y nos evitamos una petición al servidor.
 
 * * *
 
