@@ -547,7 +547,7 @@ Aumenta o reduce la imagen proporcionalmente para asegurarse que siempre cubre t
 ### Usando fuentes de Google Fonts
 
 Para utilizar fuentes tipográficas de un sitio externo como Google Fonts, tenemos que seguir 2 sencillos pasos:
-1) Añadir una etiqueta link a nuestro body con un enlace que cargue la fuente
+1) Añadir una etiqueta link a nuestro head con un enlace que cargue la fuente
 
 ```html
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Font+Name">
