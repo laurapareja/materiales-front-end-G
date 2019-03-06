@@ -1,6 +1,6 @@
 # Publicando nuestra web
 
-<!-- TOC depthFrom:4 depthTo:4 insertAnchor:false updateOnSave:true -->
+<!-- TOC depthFrom:4 depthTo:4 -->
 
 - [EJERCICIO 1](#ejercicio-1)
 - [EJERCICIO 2](#ejercicio-2)
@@ -16,7 +16,7 @@
 
 ## Introducción
 
-La terminal es una herramienta fundamental para el desarrollo front-end. Su finalidad es ejecutar comandos mediante instrucciones. Estos comandos serían similares a las interacciones que haríamos en una aplicación normal (clics, escribir en campos, cambiar de sección, etc.) pero en este caso se hacen escribiendo órdenes en la ventana. Muchas de las herramientas para programación están hechas sin interfaz por ser más sencillas, aprender a usar la terminal nos ayudará en el futuro a poder usar esas herramientas y mejorar nuestro flujo de trabajo gracias a ellas.
+La terminal es una herramienta fundamental para el desarrollo front-end. Su finalidad es ejecutar comandos mediante instrucciones. Estos comandos serían similares a las interacciones que haríamos en una aplicación normal (clics, escribir en campos, cambiar de sección, etc.) pero en este caso se hacen escribiendo órdenes en una terminal de comandos. Muchas de las herramientas para programación están hechas sin interfaz por ser más sencillas, aprender a usar la terminal nos ayudará en el futuro a poder usar esas herramientas y mejorar nuestro flujo de trabajo gracias a ellas.
 
 La terminal parece muy agresiva al principio pero poco a poco le iremos pillando cariño. Te permite hacer prácticamente todo lo que puedes hacer con la interfaz gráfica del sistema operativo y bastantes cosas más.
 
@@ -66,7 +66,7 @@ Respecto a GitHub, lo utilizaremos siempre que queramos compartir un código con
 
 Por último, GitHub Pages, al ser un servicio gratuito y sencillo para publicar páginas, es un recurso muy útil si queremos colgar en internet algún proyecto de forma gratuita.
 
-Es importante saber que todos los servicios de GitHub son gratuitos siempre y cuando nuestro código sea público. En caso de querer hacerlo privado deberemos pagar por el servicio. Por el momento como queremos darle visibilidad al código y que otras personas puedan verlo, no tendremos ningún problema en que nuestro código sea público.
+Es importante saber que todos los servicios de GitHub son gratuitos tanto repositorios públicos como privados. Por el momento como queremos darle visibilidad al código y que otras personas puedan verlo, no tendremos ningún problema en que nuestro código sea público.
 
 ## Terminal
 
@@ -88,7 +88,7 @@ Normalmente nuestro prompt tendra este aspecto:
 ```shell
 ubuntu@ubuntu: ~$
 ```
-Esto nos dice que el usuario de nuestro equipo es **ubuntu**, que nuestro equipo se llama **ubuntu** y que estamos en la carpeta raíz de nuestro usuario (que se representa con `~`).
+Esto nos dice que el usuario de nuestro equipo es **ubuntu**, que nuestro equipo se llama **ubuntu** y que estamos en la carpeta home del usuario (que se representa con `~`).
 
 
 ### Comandos básicos de GNU/Linux
@@ -123,6 +123,8 @@ carpeta-hija
 
 El comando `ls` nos muestra un listado de los archivos y carpetas que hay en nuestra carpeta actual.
 
+Podemos usar la opción especial `ls -a` para listar también los ficheros y carpetas ocultos, que su nombre comienza por `.` y por defecto no se ven.
+
 **CD**
 
 El comando `cd` (Change Directory) nos ofrece diferentes posibilidades a la hora de cambiar de carpeta:
@@ -133,6 +135,14 @@ $ cd nombre-de-carpeta
 ```
 
 Nos permite entrar en la carpeta `nombre-de-carpeta` que estaría en nuestra carpeta actual.  
+
+Podemos encadenar varios nombres de subcarpetas separadas por `/` para llegar hasta una ruta más profunda:
+
+```shell
+$ cd nombre-de-carpeta/carpeta-hija/carpeta-nieta
+```
+
+> **NOTA**: la terminal de comandos nos permite autocompletar los comandos como `cd` usando la tecla tabulador (Tab); por ejemplo, si escribimos `cd a` y damos a tabulador, aparecerán las opciones de carpetas o ficheros en la carpeta actual que comienza por 'a'.
 
 * * *
 
@@ -206,7 +216,13 @@ y sí, `$ nautilus ..` nos abrirá nuestra carpeta madre en el explorador de arc
 
 > **NOTA**: en Mac podemos abrir el explorador de archivos (Finder) con `open`
 
-> **NOTA**: igual que con `nautilus` podemos abrir el explorador de archivos en una ruta, también podemos abrir programas como VSCode en una ruta. Por ejemplo, con `code .` abrimos una ventana de Code en la carpeta actual
+> **NOTA**: igual que con `nautilus` podemos abrir el explorador de archivos en una ruta, también podemos abrir programas como VSCode en una ruta. Por ejemplo, con `code .` abrimos una ventana de Code en la carpeta actual. Para que funcione también en Mac debemos [instalar el comando con estas instrucciones](https://code.visualstudio.com/docs/setup/mac#_launching-from-the-command-line).
+
+**Volver a los últimos comandos**
+
+Para volver a los últimos comandos ejecutados podemos usar la tecla de flecha para arriba ⬆️.
+
+Si queremos buscar un comando en el historial, podemos usar Ctrl + R y comenzar a escribir el comando para buscarlo.
 
 * * *
 #### EJERCICIO 1
@@ -320,7 +336,7 @@ En cualquier momento podremos pedir que nos diga en qué estado está el proyect
 Normalmente trabajaremos con cambios cortos o tareas pequeñas, y cuando hayamos terminado, querremos indicarle a git que ya hemos terminado un paquete de cambios, para lo que tenemos dos comandos:
 1. `git add -A` para añadir los archivos que hemos modificado. Una vez añadidos git sabrá qué cambios hemos hecho.
 2. `git commit -m "Mensaje"` nos permite crear como un paquete de cambios y "guardarlo en nuestro sistema de versiones", nos dejará escribir un mensaje corto para asociarlo al paquete de cambios o *commit*.
-3. Si queremos ver la lista de commits realizados en un proyecto usaremos `git log`.
+3. Si queremos ver la lista de commits realizados en un proyecto usaremos `git log`. Para salir del listado usamos la tecla `q`.
 
 En el video que añadimos a continuación se explican los comandos básicos para empezar a trabajar con git.
 
@@ -394,13 +410,13 @@ Dummy project to learn Git basics
 
 ## GitHub
 
-Como hemos explicado anteriormente, GitHub es una plataforma de desarrollo colaborativo para alojar proyectos utilizando el sistema de control de versiones de git. Está muy enfocada a proyectos de código abierto, por lo que es de uso gratuito siempre que tus proyectos estén disponibles para todos. Pagando puedes tener proyectos privados, pero la verdadera fuerza de GitHub está en la comunidad tan grande que se ha montado sobre la idea de código abierto u *open source* :)
+Como hemos explicado anteriormente, GitHub es una plataforma de desarrollo colaborativo para alojar proyectos utilizando el sistema de control de versiones de git. Está muy enfocada a proyectos de código abierto y la verdadera fuerza de GitHub está en la comunidad tan grande que se ha montado sobre la idea de código abierto u *open source* :)
 
 * * *
 
 #### EJERCICIO 6
 
-Pon una foto de perfil en tu cuenta de GitHub.
+Pon una foto de perfil en tu cuenta de GitHub. No tiene por qué ser una fotografía.
 
 * * *
 
