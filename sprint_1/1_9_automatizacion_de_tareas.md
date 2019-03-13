@@ -184,13 +184,8 @@ gulp.task('default', function(done) {
 
 // Tarea que observa cambios en 'scss'
 // En su primera ejecución lanzará también las tareas que pasamos como segundo parámetro en la función, default en este caso
-<<<<<<< HEAD
 gulp.task('watch', gulp.series(['default']), function(done) {
   gulp.watch('scss/*.scss', gulp.series(['default']));  // Lanza la tarea 'default' cuando observa cambios en cualquier scss
-=======
-gulp.task('watch', ['default'], function(done) {
-  gulp.watch('scss/*.scss', ['default']); // Lanza la tarea 'default' cuando observa cambios en cualquier scss
->>>>>>> fe90e06e7190db531d8d51a7f835edb6e5a5a4f6
   done();
 });
 ```
