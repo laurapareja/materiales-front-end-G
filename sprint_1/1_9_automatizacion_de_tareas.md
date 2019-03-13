@@ -97,7 +97,7 @@ Con esto, instalamos Gulp para nuestro proyecto e indicamos que se use sólo en 
 
 ```json
   "devDependencies": {
-    "gulp": "4.0.0"
+    "gulp": "^4.0.0"
   }
 ```
 
@@ -110,12 +110,10 @@ Ahora solo nos falta crear el fichero de configuración de Gulp llamado `gulpfil
 ```javascript
 const gulp = require('gulp');
 
-function init(done) {
+gulp.task('default', function(done) {
   console.log('Hola Gulp');
   done();
-};
-
-exports.default = init;
+});
 ```
 
 > **NOTA**: No vamos a entrar por el momento en detalle ni explicaciones, simplemente queremos que lo probéis y os vayáis familiarizando. Usad el botón de copiar de gitbook para evitar copiar caracteres extraños.
@@ -136,15 +134,13 @@ Ahora usaremos este gulpfile:
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 
-function styles(done) {
+gulp.task('default', function(done) {
   gulp
     .src('scss/index.scss') // Leo el archivo scss
     .pipe(sass()) // Convierto el contenido del archivo index.scss a CSS
     .pipe(gulp.dest('css')); // El CSS generado lo guardamos en la carpeta css
   done();
-};
-
-exports.default = styles;
+});
 ```
 
 Lo que hace es coger `scss/index.scss` y generar a partir de él un archivo CSS en la carpeta `css`. Para probarlo, creamos en nuestro proyecto una carpeta `css` vacía y otra `scss` con un fichero llamado `index.scss` en el que escribiremos lo siguiente:
@@ -179,22 +175,19 @@ Vamos a crear una tarea `watch` que está todo el rato observando nuestros fiche
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 
-function styles(done) {
-  gulp
-  .src('scss/index.scss') // Leo el archivo scss
-  .pipe(sass()) // Convierto el contenido del archivo index.scss a CSS
-  .pipe(gulp.dest('css')); // El CSS generado lo guardamos en la carpeta css
-  done();
-}
+gulp.task('default', function(done) {
+  gulp.src('scss/index.scss') // Leo el archivo scss
+    .pipe(sass()) // Convierto el contenido del archivo index.scss a CSS
+    .pipe(gulp.dest('css')); // El CSS generado lo guardamos en la carpeta css
+    done();
+});
 
 // Tarea que observa cambios en 'scss'
-// En su primera ejecución lanzará también las tareas que pasamos como tercer parámetro en la función, gulpt.watch
-function watchFiles() {
-  return gulp.watch('scss/*.scss', { ignoreInitial: false }, styles);  // Lanza la tarea 'styles' cuando observa cambios en cualquier scss
-};
-
-exports.watch = watchFiles;
-exports.default = styles;const sass = require('gulp-sass');
+// En su primera ejecución lanzará también las tareas que pasamos como segundo parámetro en la función, default en este caso
+gulp.task('watch', gulp.series(['default'], function(done) {
+  gulp.watch('scss/*.scss', gulp.series(['default']));  // Lanza la tarea 'default' cuando observa cambios en cualquier scss
+  done();
+}));
 ```
 
 Ahora ejecutamos nuestra nueva tarea `gulp watch`. Una vez ejecutada, lo primero que hará será ejecutar `default` porque le hemos dicho que lo ejecute antes de comenzar `watch`. Tras ejecutar `default`, el proceso se quedará corriendo en la terminal y si realizamos algún cambio en alguno de los archivos Sass de nuestro proyecto veremos cómo en la terminal aparecen unos mensajes que muestran que se ha vuelto a ejecutar la tarea `default`. Si en algún momento queremos parar este proceso, podremos pulsar `Ctrl + C` en el teclado y el proceso terminará en ese momento.
