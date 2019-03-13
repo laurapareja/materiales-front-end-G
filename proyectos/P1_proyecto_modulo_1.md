@@ -154,16 +154,31 @@ De manera adicional, se deberá activar "GitHub Pages" en el proyecto para que e
 
 ## Presentación
 
-El último día del módulo presentaréis la versión final de este proyecto. Para ello tendréis que dejarlo publicado y acabado con tiempo, y organizaros para realizar la presentación. El equipo realizará una presentación de 10 minutos mostrando la web y explicando los siguientes puntos:
+El último día del módulo presentaréis la versión final de este proyecto a vuestras compañeras y al equipo de Adalab en el Meetup Space. Cada equipo realizará una presentación de 10 minutos y posteriormente habrá 10 minutos de feedback por parte del público.
 
-- Cómo está estructurada la web y el contenido y el por qué de las decisiones tomadas
-- Cómo se ha seguido el diseño proporcionado
-- La estructura del código y las partes que se quieran destacar
-- Cómo ha sido la organización del equipo, el reparto de tareas y la coordinación a la hora de trabajar todas en el mismo código
-- Cuál de las tareas o los puntos ha sido el que más esfuerzo ha requerido
-- Cuál de las tareas o partes de la web es la que hace que el equipo esté más orgulloso
+El día 25 de marzo, Alicia Ro asesorará a cada equipo durante 30 minutos sobre la presentación del proyecto grupal (grupo mañana de 12.00-14.00 y grupo tarde de 17.00-19.00). Para aprovechar bien este espacio, es necesario que antes cada equipo haya decidido las cuestiones clave para la presentación.
 
-Al final de esta presentación habrá un turno de preguntas tanto por parte de otras compañeras como por parte de las profesoras del curso.
+A continuación algunos elementos que os pueden ayudar a enfocar la presentación:
+
+- En el público habrá personas con conocimientos técnicos y no técnicos.
+- El objetivo de la presentación es dar a conocer el producto creado, a las integrantes de cada equipo así como el proceso que habéis seguido para crear la web.
+- Todas las participantes del equipo deben hablar en la presentación (sin práctica no hay mejora).
+
+Otros elementos que podríais incluir (son solo ideas, sentíos libres de innovar y ser creativas):
+
+- Presentación de las integrantes del equipo desde un punto de vista profesional: se tratar de practicar vuestro "relato" profesional en versión muy corta. Que las personas asistentes conozcan quienes sois como profesionales.
+- Dejar muy claro quién ha sido vuestro cliente y qué fue lo que os pidió.
+- Explicar qué necesidades cubre o qué problemas soluciona el producto, cuál es el beneficio principal que aporta y qué lo hace único comparado con otros productos parecidos del mercado.
+- Os aconsejamos incluir una demo (ya sea mostrar la web online o hacer un vídeo).
+- Aportaciones "únicas" de cada equipo al proyecto.
+- La estructura del código y las partes que se quieran destacar.
+- Cómo ha sido la organización del equipo, el reparto de tareas y la coordinación a la hora de trabajar todas en el mismo código.
+- Cuál de las tareas o los puntos ha sido el que más esfuerzo ha requerido.
+- Cuál de las tareas o partes de la web es la que hace que el equipo esté más orgulloso.
+- La presentación debe tener un "buen cierre" que nos haga a todos aplaudir... ahí os dejamos que echéis a volar vuestra imaginación.
+- No habléis en primera persona de lo que habéis hecho, hablad del equipo.
+- No mencionéis problemas, sino "retos" que os han hecho aprender y crecer.
+- Os aconsejamos utilizar un lenguaje ni demasiado formal y técnico, ni demasiado informal. Nuestra audiencia puede ser muy variada.
 
 ## Recursos
 
