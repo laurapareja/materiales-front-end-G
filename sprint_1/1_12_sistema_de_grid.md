@@ -12,13 +12,13 @@
 - [EJERCICIO 8](#ejercicio-8)
 - [EJERCICIO 9](#ejercicio-9)
 - [EJERCICIO 10](#ejercicio-10)
+- [EJERCICIO 11](#ejercicio-11)
 
 <!-- /TOC -->
 
 ## Introducción
 
 Un sistema de grid o rejilla, nos permite disponer los elementos de una página y que estén alineados. Va a existir una rejilla imaginaria de filas y columnas, a partir de la cual vamos a colocar los elementos de nuestra web. El uso de un sistema de grid tiene sentido si acompaña un diseño que usa también una rejilla.
-
 
 ## ¿Para qué sirve lo que vamos a ver en esta sesión?
 
@@ -39,75 +39,85 @@ En primer lugar, existen 2 tipos de elementos, el contenedor del grid y los elem
 Para comenzar, usaremos en el contenedor la propiedad `display:grid` y definiremos las filas y columnas de nuestro grid con `grid-template`. Vamos a ver un ejemplo que podéis [jugar en codepen](https://codepen.io/adalab/pen/JMXwbL?editors=1100):
 
 ```css
-.wrapper{
+.wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 40px 200px 40px;
 }
 ```
+
 En este grid vamos a tener 4 columnas, cada una de tamaño `1fr`, que es una medida sobre el espacio disponible (free space). Por tanto, se divide el espacio disponible en 4 partes para las columnas. Para las filas, tendremos 3 de 40, 200 y 40px respectivamente.
 
 A continuación, indicaremos a los elementos si queremos que ocupen una o varias filas o columnas con las propiedades `grid-column` y `grid-row`.
 
 ```css
 .item1 {
-    grid-column-start: 1;
-    grid-column-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 4;
 }
 ```
+
 Esto indica que se expande desde la primera línea de grid hasta la cuarta, es decir, ocupa las 3 primeras columnas.
+
 > NOTA: si tenemos 4 columnas, tendremos 5 líneas de grid. Es decir, siempre vamos a tener una más que el número de filas o columnas.
 
 Podemos escribir lo anterior de una forma simplificada:
+
 ```css
 .item1 {
-    grid-column: 1 / 4;
+  grid-column: 1 / 4;
 }
 ```
+
 Para las filas funciona exactamente igual:
+
 ```css
 .item3 {
-    grid-row-start: 2;
-    grid-row-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 4;
 }
 ```
 
 También podemos indicar el tamaño del espaciado de elementos en el contenedor con la propiedad `grid-gap`. Podemos indicar 2 valores si queremos espaciado distinto entre filas y columnas.
 
-* * *
+---
+
 #### EJERCICIO 1
 
 Partiendo del ejemplo de codepen, conseguid una composición como la de la imagen.
 
 ![Exercise 1](assets/images/1-12/exercise-1.png)
 
-* * *
+---
 
 A la hora de posicionar los elementos en el grid, también podemos usar la palabra `span` para indicar cuánto se expande desde la fila/columna actual. Por ejemplo, para el `item1` que se expandía desde la línea de grid 1 a la 4 podríamos usar:
 
 ```css
 .item1 {
-    grid-column: span 3;
+  grid-column: span 3;
 }
 ```
 
-* * *
+---
+
 #### EJERCICIO 2
 
 Vamos a modificar el ejercicio anterior para usar `span` en vez de punto inicial y final.
 
-* * *
+---
+
 #### EJERCICIO 3
 
 Vamos a crear un grid de 12 columnas y 3 filas, la primera y la última ocupan el 20% del alto del viewport. Crearemos la composición de la imagen.
 
 ![Exercise 3](assets/images/1-12/exercise-3.png)
 
-* * *
+---
 
-Hasta ahora hemos definido una rejilla fija donde colocar nuestros elementos pero **¿Qué pasa cuando hay más elementos que "huecos"?**  
+Hasta ahora hemos definido una rejilla fija donde colocar nuestros elementos pero **¿Qué pasa cuando hay más elementos que "huecos"?**
 
 Como en muchas otras ocasiones el navegador va a intentar solucionarlo, en este caso va a intentar [ampliar el grid con la configuración que le hemos dado](https://codepen.io/adalab/pen/GdOMvr):
+
 - ¿Qué ha pasado con los tres últimos elementos? Pues que se ha hecho lo que se ha podido.
 
 Pero tenemos una forma de decirle a nuestro grid cómo comportarse cuando haya más elementos de la cuenta, gracias a `grid-auto-rows` y `grid-auto-columns`, funcionan como `grid-template-rows/columns` pero solo se aplica en el caso de que haya más elementos de la cuenta.
@@ -121,7 +131,6 @@ Y lo podemos usar junto con `grid-auto-flow`, que fuerza una única dirección (
 Con estas propiedades ya podemos empezar a controlar un poco el comportamiento de nuestra rellija. Para completar un poco esta introducción a grid faltaría ver la posibilidad de definir áreas con nombres más cercanos al humano:
 
 ![Grid areas](assets/images/1-12/grid-area.png)
-
 
 El grid que hay debajo es de 2x3, y para definirlo usaríamos:
 
@@ -140,7 +149,7 @@ pero si queremos "nombrar los espacios" podemos usar, además, `grid-template-ar
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  grid-template-areas: "header header" "main aside" "footer footer"
+  grid-template-areas: 'header header' 'main aside' 'footer footer';
 }
 ```
 
@@ -154,10 +163,13 @@ Si ahora quisiésemos que un elemento en concreto se colocase en una de estas á
 }
 ```
 
-* * *
+---
+
 #### EJERCICIO 4
+
 ¿Seremos capaces de [colocar cada elemento en su sitio](https://codepen.io/adalab/pen/zjPjER)? ;)
-* * *
+
+---
 
 El soporte el navegadores de CSS grid aún no es completo pero a día de hoy (octubre de 2018) es de [casi del 85% según caniuse](https://caniuse.com/#feat=css-grid). Para los casos en que aún no podamos usarlo, tenemos como alternativa usar flexbox o el sistema de grid que nos ofrece Bootstrap.
 
@@ -174,8 +186,12 @@ Para poder usarlo en nuestro proyecto, enlazaremos los CSS alojado en un servido
 Por ahora vamos a usar el `<link>` que [Bootstrap nos da en su página de inicio](https://getbootstrap.com/). Si sólo queremos usar el CSS usamos esto en nuestro `head`:
 
 ```html
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-
+<link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+  integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+  crossorigin="anonymous"
+/>
 ```
 
 Por ahora vamos a ver que Bootstrap cuenta con un sistema de grid sencillo de 12 columnas.
@@ -184,7 +200,6 @@ Por ahora vamos a ver que Bootstrap cuenta con un sistema de grid sencillo de 12
 > Lo llamamos sistema de grid pero solo dispone las columnas.
 
 Siempre partimos de la base de 12 columnas para distribuir el espacio disponible en la web. En el CSS que hemos importado, tenemos una serie de clases que nos van a permitir construir nuestra web con un grid responsive de acuerdo a unos breakpoints que bootstrap tiene definidos.
-
 
 Como base usaremos un elemento `container` que contiene nuestro grid (como el wrapper de CSS grid) o `container-fluid` si queremos que ocupe todo el ancho y sea fluido. Luego usaremos un elemento con la clase `row` para indicar que es una nueva fila, y dentro podremos los elementos correspondientes. En cada fila podremos indicar el número de columnas a usar con las clases `col-num`, por ejemplo, `col-1`, `col-6`, `col-12`. Veamos un ejemplo.
 
@@ -206,12 +221,13 @@ Como base usaremos un elemento `container` que contiene nuestro grid (como el wr
 </div>
 ```
 
-* * *
+---
+
 #### EJERCICIO 5
 
 Vamos a crear la composición del **ejercicio 3** con Bootstrap para ver las diferencias de uso respecto a CSS grid.
 
-* * *
+---
 
 #### EJERCICIO 6
 
@@ -220,24 +236,25 @@ Con Bootstrap, vamos a crear la típica distribución de columnas que se usa par
 ![Distribución de columnas](assets/images/1-12/grid-1.png)
 
 Con suficientes divs (las cajas verdes) vamos a mostrar las columnas y opciones que nos ofrece bootstrap:
+
 1. 12 columnas
 2. 6 columnas
 3. 3 columnas
 4. 2 columnas
 5. 1 columnas
 
-* * * 
+---
 
 #### EJERCICIO 7
+
 Responde a las siguiente preguntas:
 
-1. ¿Cuáles son los breakpoints que nos ofrece Bootstrap? 
+1. ¿Cuáles son los breakpoints que nos ofrece Bootstrap?
 1. ¿Qué clase tendrá un elemento que ocupe 2 columnas en el breakpoint Small?
 1. ¿Qué clase tendrá un elemento que ocupe 6 columnas en el breakpoint Large?
 1. ¿Qué clase tendrá un elemento que ocupe 11 columnas en el breakpoint Extra Small?
 
-
-* * *
+---
 
 #### EJERCICIO 8
 
@@ -248,23 +265,37 @@ Los breakpoints que usaremos son Extra small, Medium y Large ;)
 
 > las imágenes de los gaticos están en [este zip](assets/images/1-12/cats.zip)
 
-* * *
+---
 
 #### EJERCICIO 9
+
 Ahora iremos a un paso más y, vamos a crear una página simple que se ajuste a las siguiente guías:
 
 ![Distribución de columnas](assets/images/1-12/bootstrap-site.png)
 
+---
 
-* * *
 #### EJERCICIO 10
 
-Vamos a crear el layout para páginas con las que habitualmente trabajaremos, usando CSS grid y/o el sistema de grid de Bootstrap. Para ello, os proponemos replicar [el experimento de Jo Franchetti de este artículo en Medium](https://medium.com/samsung-internet-dev/common-responsive-layouts-with-css-grid-and-some-without-245a862f48df), donde replica layouts típicos usando CSS grid. Realizad al menos el primer ejemplo *"Large Image followed by articles"* usando Sass y el sistema de grid que elijáis.
+Ahora vamos a explorar las posibilidades de Bootstrap que, además del sistema de columnas, nos ofrece una serie de c[omponentes ya definidos](https://getbootstrap.com/docs/4.1/components/buttons/) para que apliquemos clases CSS pre-diseñadas a nuestros elementos. Vamos a usar al menos los componentes de botones (buttons) y tarjetas (cards).
 
-* * *
+![Página de pricing con bootstrap](assets/images/1-12/bootstrap-pricing.png)
+
+---
+
+#### EJERCICIO 11
+
+Vamos a crear el layout para páginas con las que habitualmente trabajaremos, usando CSS grid y/o el sistema de grid de Bootstrap. Para ello, os proponemos replicar [el experimento de Jo Franchetti de este artículo en Medium](https://medium.com/samsung-internet-dev/common-responsive-layouts-with-css-grid-and-some-without-245a862f48df), donde replica layouts típicos usando CSS grid. Realizad al menos el primer ejemplo _"Large Image followed by articles"_ usando Sass y el sistema de grid que elijáis.
+
+---
+
+### Accesibilidad en Bootstrap
+
+Existen una serie de [funcionalidades que nos da el propio Bootstrap para que los sitios creado con este framework sean accesibles](https://getbootstrap.com/docs/4.0/getting-started/accessibility/#visually-hidden-content). Por ejemplo, la clase `sr-only` nos permite definir contenido que es invisible al usuario pero sí es usado por un lector de pantalla (screen reader). Lo mismo sucede con `sr-only-focusable` que además permite que ese elemento pueda coger el foco al navegar la página con el teclado.
 
 ## Recursos externos
 
 - [Frontazo - pensando en grid](https://vimeo.com/98141102)
 - [Learn CSS grid](http://learncssgrid.com/)
+- [Charla _Rock' n' grid_ de Diana Aceves](https://www.youtube.com/watch?v=p7oXrr9yjXY)
 - [Grid de Bootstrap](https://getbootstrap.com/docs/4.0/layout/grid/)
