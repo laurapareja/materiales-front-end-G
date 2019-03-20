@@ -48,7 +48,7 @@ Por último, si estamos diseñando una web muy sencilla en la que queremos darle
 
 ## Convertir un sistema a código
 
-Bien, ya tenemos una idea básica de qué es un sistema. Ahora vamos a ver cómo implementarlo en nuestro código. Para ello es bueno retomar la estructura que definimos en la sesión de [Sass](3_1_sass.md):
+Bien, ya tenemos una idea básica de qué es un sistema. Ahora vamos a ver cómo implementarlo en nuestro código. Para ello es bueno retomar la estructura que definimos en la sesión de [Sass](1_10_sass.md):
 
 ```
 scss
