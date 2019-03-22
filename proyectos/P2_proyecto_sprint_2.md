@@ -49,7 +49,7 @@ El proyecto consta de 2 páginas
 
 La aplicación funciona siguiendo estos pasos:
 
-1. Permitir al usuario elegir el estilo de la tarjeta, eligiendo paleta de colores y tipografía
+1. Permitir al usuario elegir el estilo de la tarjeta, eligiendo paleta de colores
 2. Permitir al usuario que, mediante la introducción de información en un formulario, este texto se muestre maquetado automáticamente en un cuadro similar a una tarjeta de visita, que será la muestra del resultado final
 3. Permitir que el usuario pueda crear una web con su tarjeta y compartirla por Twitter
 
@@ -65,15 +65,12 @@ La tarjeta de visita deberá tener los siguientes campos (entre paréntesis el n
 - RRSS
   - LinkedIn (linkedin)
   - GitHub (github)
-- Habilidades: a elegir máximo 3 de un listado (skills)
 
 Respecto a la interacción con la web:
 
 - Los campos deberán tener restricciones para su formato indicado. Campo de teléfono para el móvil, mail para el correo, etc.
 - Las modificaciones que hacemos en el formulario (diseño y contenido), aparecen automáticamente en la vista previa de la tarjeta
 - Las 3 partes del proceso de creación serán elementos colapsables, que al hacer clic en el título se mostrará/ocultará solo mostrando una sección de a la vez
-- Las posibles habilidades las obtenemos al hacer una petición a un [servicio en esta URL](https://raw.githubusercontent.com/Adalab/dorcas-s2-proyecto-data/master/skills.json)
-- Se podrán seleccionar varias habilidades (hasta un máximo de 3)
 - Toda la información del formulario debe almacenarse en LocalStorage (almacenamiento local del navegador), de forma que al recargar la página siga disponible y podamos borrarla con un botón de _Reset_. Para esto, debemos definir una estructura de datos compleja (con arrays y objetos) que es lo que guardaremos en el navegador
 - Para compartir en Twitter seguiremos 2 pasos
   1. Al hacer clic en el botón de "Enviar" enviaremos el formulario (_submit_) a un API que devolverá la URL de una web con la tarjeta de visita con la información rellena
@@ -81,16 +78,7 @@ Respecto a la interacción con la web:
 
 ## Diseño
 
-El diseño lo podéis inspeccionar en [este proyecto de zeplin](https://zpl.io/29ZZ7Ay). También podéis probar cómo funciona en este [prototipo online](https://sketch.cloud/s/wrO9V/09A5lzW/play).
-
-Las fuentes necesarias para crear el diseño son
-
-- Merriweather (google fonts)
-- Open sans (google fonts)
-- Comic Sans MS (sistema)
-- Montserrat (google fonts)
-- Ubuntu (google fonts)
-- FontAwesome (fontawesome.io)
+El diseño lo podéis inspeccionar en [este proyecto de zeplin](https://zpl.io/bJ78X13). También podéis probar cómo funciona en este [prototipo online](https://sketch.cloud/s/MLK7m/g0PKWVJ/play).
 
 ### Archivos
 
@@ -132,11 +120,10 @@ Para la gestión del proyecto, usaremos _historias de usuario_, que es una herra
 ### Segunda. Versión interactiva
 
 - Formulario interactivo: al modificar un campo del formulario, tanto del diseño de la tarjeta como de los datos de usuario, se actualiza la vista previa
-- Realizar validaciones de datos del formulario: campos obligatorios, que el número de habilidades seleccionadas sean máximo 3 (primero escribiremos las opciones a manita en el HTML), etc.
+- Realizar validaciones de datos del formulario: campos obligatorios, email, etc.
 
 ### Tercera. Versión offline
 
-- En el campo de habilidades sustituimos las opciones de habilidades por aquellas que nos devuelve el servidor
 - Hacer que el contenido se almacene en LocalStorage del navegador
 
 ### Tercera. Compartir
