@@ -19,6 +19,7 @@
 - [1.13 Animaciones CSS](sprint_1/1_13_animaciones_CSS.md)
 - [1.14 Sistemas de diseño](sprint_1/1_14_sistemas_de_diseno.md)
 - [Preguntas entrevista](sprint_1/1_questions.md)
+- [Repaso](sprint_1/1_repaso.md)
 
 <!--
 ## Módulo 2. Programando la web
