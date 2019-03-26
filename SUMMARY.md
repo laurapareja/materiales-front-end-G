@@ -85,6 +85,7 @@
 ## Guías
 
 - [Instalación de ordenadores](guias/instalacion_ordenadores.md)
+- [Scrum](guias/scrum.md)
 
 <!--
 - [Buenas prácticas para tener un portfolio atractivo en GitHub](guias/github_como_portfolio.md)
