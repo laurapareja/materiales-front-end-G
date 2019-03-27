@@ -16,10 +16,9 @@
 
 Utilizando aplicaciones y webs, muchas veces nos encontramos con casos en los que no se nos permiten determinadas acciones, por ejemplo añadir un elemento más al carro de la compra si hemos superado el límite.
 
-Las condicionales permiten tomar decisiones y realizar acciones en función de una serie de datos. Gracias a ellas diremos qué pasos queremos que siga la aplicación en cada momento para que se cumpla el objetivo que deseamos alcanzar. 
+Las condicionales permiten tomar decisiones y realizar acciones en función de una serie de datos. Gracias a ellas diremos qué pasos queremos que siga la aplicación en cada momento para que se cumpla el objetivo que deseamos alcanzar.
 
 Durante esta sesión veremos cómo controlar qué parte de nuestro código se ejecuta y cuál no. Aprenderemos a dar instrucciones a nuestros aplicaciones para realizar acciones en función de datos. Estableciendo normas al estilo si sucede esto haz esto otro y sino haz una orden alternativa. El condicional es una de las estructuras de control más básicas e importantes de la programación.
-
 
 ## ¿Para qué sirve lo que vamos a ver en esta sesión?
 
@@ -32,23 +31,27 @@ La mejor forma de explicar para qué sirven las condicionales es explicar cómo 
 Veamos algunos ejemplos donde se utiliza lo que vamos a ver durante esta sesión.
 
 Los booleanos se utilizan para almacenar datos verdaderos o falsos o convertir comparaciones a verdadero o falso:
-  - Guardar información del estilo el usuario está registrado o no, el campo se ha rellenado o no, etc.
-  - Guardar info sobre si un número es mayor o menor, si dos strings son iguales o no, si una variable existe, si una cadena de texto está vacía, etc.
+
+- Guardar información del estilo el usuario está registrado o no, el campo se ha rellenado o no, etc.
+- Guardar info sobre si un número es mayor o menor, si dos strings son iguales o no, si una variable existe, si una cadena de texto está vacía, etc.
 
 Los condicionales se usan para realizar o no un código en función de una condición:
-  - Mostrar un mensaje de error si falta un campo obligatorio por rellenar en un formulario
-  - Mostrar el símbolo de usuario verificado en Twitter si la cuenta está verificada
-  - Mostrar una película en favoritos si está marcada como favorita
 
+- Mostrar un mensaje de error si falta un campo obligatorio por rellenar en un formulario
+- Mostrar el símbolo de usuario verificado en Twitter si la cuenta está verificada
+- Mostrar una película en favoritos si está marcada como favorita
 
 ## Booleanos
 
 Los booleanos son tipos de datos de JavaScript que guardan información del tipo verdadero o falso. Solo pueden tener los valores `true` o `false`. Por ejemplo:
+
 ```js
 const filled = false; // Este booleano es falso
 
 const solved = true; // Este booleano es verdadero
 ```
+
+Los booleanos son muy útiles para representar valores que solo pueden ser verdadero o falso. Por ejemplo, para representar si un usuario tiene o no avatar. O también para representar el resultado de una comparación. Por ejemplo, el número de tareas que tenemos que completar es menor que 5.
 
 ## Truthy y Falsy
 
@@ -57,6 +60,7 @@ En Javascript un **valor verdadero** o `Truthy` es un valor que se considera ver
 Los valores `Falsy` son aquellos que aun no siendo de tipo booleano, al evaluarse en un contexto booleano, se comportan como los booleanos de valor falso.
 
 Los valores falsy son:
+
 - false
 - null
 - undefined
@@ -74,6 +78,7 @@ Podemos obtener también un booleano como resultado de una operación booleana, 
 El operador comparación de igualdad es `===` (_strict equal_ o _estrictamente igual_) comprueba si dos valores son iguales y son del mismo tipo. Usaremos siempre esta versión para comparar si algo es igual. Existe también una versión `==` que solo compara el valor (no el tipo de datos) pero que NO debemos usar.
 
 Ejemplo:
+
 ```js
 const currentVegetable = 'lettuce';
 
@@ -91,24 +96,27 @@ Ejemplo:
 ```js
 const result = 5;
 
-(result !== 4 + 5); // true
-(result !== 0 + 5); // false
+result !== 4 + 5; // true
+result !== 0 + 5; // false
 ```
 
 Otros operadores de desigualdad para comparar números:
+
 - `<` (_less than_ o _menor que_) comprueba si el número a la izquierda del operador es menor que el que está a su derecha
 - `>` (_greater than_ o _mayor que_) comprueba si el número a la izquierda del operador es mayor que el que está a su derecha
 - `<=` (_less than or equal_ o _menor o igual que_) comprueba si el número a la izquierda del operador es menor o igual que el que está a su derecha
 - `>=` (_greater than or equal_ o _mayor o igual que_) comprueba si el número a la izquierda del operador es mayor o igual que el que está a su derecha
 
 Ejemplo:
+
 ```js
 const result = 5;
 
-(result >= 4 + 5); // false
-(result >= 0 + 5); // true
-(result >= 4 - 5); // true
+result >= 4 + 5; // false
+result >= 0 + 5; // true
+result >= 4 - 5; // true
 ```
+
 > **Nota**: Los operadores de comparación se ejecutan siempre después de los operadores numéricos, es decir, si tenemos `5 * 1 - 4 !== '3'`, primero se hará la multiplicación, luego la resta y finalmente se hará la operación de comparación.
 
 ## Operadores lógicos
@@ -126,10 +134,10 @@ const emptyNameField = true; // true
 const nameIsFilled = !emptyNameField; // false
 ```
 
-Cuando aplicamos una negación a un valor `truthy` o `falsy`, JavaScript primero lo convierte a booleano y después nos devuelve el valor contrario, esto es muy útil por ejemplo para saber si una variable está definida, o si tiene un string que no está vacío (que no es `''` o `""`). 
+Cuando aplicamos una negación a un valor `truthy` o `falsy`, JavaScript primero lo convierte a booleano y después nos devuelve el valor contrario, esto es muy útil por ejemplo para saber si una variable está definida, o si tiene un string que no está vacío (que no es `''` o `""`).
 
 ```js
-const nameField; // undefined (falsy)
+const nameField = document.querySelector('.input-name').value; // Accedemos al valor de un input que está en la página, y está vacío (falsy)
 const emptyNameField = !nameField; // true
 const nameIsFilled = !emptyNameField; // false
 ```
@@ -137,21 +145,21 @@ const nameIsFilled = !emptyNameField; // false
 Podemos realizar la misma operación con un atajo
 
 ```js
-const nameField = ''; // '' (falsy)
+const nameField = document.querySelector('.input-name').value; // '' (falsy)
 const nameIsFilled = !!nameField; // false
 ```
 
 Un truco para utilizar el operador `!` es pensar en humano. Para usarlo podemos plantearnos preguntas de este tipo:
 
-- ¿Tiene `nameField` un valor falso? 
-La respuesta nos la dará su negación,`!nameField`. 
-Cuando `!nameField` devuelve `true`, la respuesta es SI, `nameField` tiene un valor falso.
-Cuando `!nameField` devuelve `false`, la respuesta es NO, `nameField` tiene un valor verdadero.
+- ¿Tiene `nameField` un valor falso?
+  La respuesta nos la dará su negación,`!nameField`.
+  Cuando `!nameField` devuelve `true`, la respuesta es SI, `nameField` tiene un valor falso.
+  Cuando `!nameField` devuelve `false`, la respuesta es NO, `nameField` tiene un valor verdadero.
 
 - ¿Tiene `nameField` un valor verdadero?
-La respuesta nos la dará su doble negación, `!!nameField`.
-Cuando `!!nameField` devuelve `true`, la respuesta es SI, `nameField` tiene un valor verdadero.
-Cuando `!!nameField` devuelve `false`, la respuesta es NO, `nameField` tiene un valor falso.
+  La respuesta nos la dará su doble negación, `!!nameField`.
+  Cuando `!!nameField` devuelve `true`, la respuesta es SI, `nameField` tiene un valor verdadero.
+  Cuando `!!nameField` devuelve `false`, la respuesta es NO, `nameField` tiene un valor falso.
 
 > **Nota**: Trabajar con el operador `!` puede parecer un poco lioso al principio, no te preocupes si aún no tienes claro como aplicarlo, irá asentándose poco a poco con su uso.
 
@@ -167,10 +175,10 @@ Cuando trabajamos con booleanos devuelve verdadero **SOLO** si ambas condiciones
 const name = 'María';
 const age = 35;
 
-(name === 'María' && age >= 30); // true
-(name === 'Marta' && age >= 30); // false
-(name === 'María' && age >= 40); // false
-(name === 'Marta' && age >= 40); // false
+name === 'María' && age >= 30; // true
+name === 'Marta' && age >= 30; // false
+name === 'María' && age >= 40; // false
+name === 'Marta' && age >= 40; // false
 ```
 
 Cuando trabajamos con no booleanos `&&` es muy útil para asignar un valores a constantes y variables de manera condicional.
@@ -183,7 +191,7 @@ const userName = 'Layla';
 // Como la primera expresión es `truthy`, se devuelve la segunda expresión
 const moderatorName = isModerator && userName; // Layla
 
-// Como la primera expresión es `falsy`, se devuelve esta, y la segunda ni siquiera llega a evaluarse. 
+// Como la primera expresión es `falsy`, se devuelve esta, y la segunda ni siquiera llega a evaluarse.
 const adminName = isAdmin && userName; // false
 ```
 
@@ -191,8 +199,7 @@ const adminName = isAdmin && userName; // false
 
 Uso --> `expr1 || expr2`
 
-El operador `||` (_OR_) devuelve la primera expresión si esta es `truthy`, de lo contrario devuelve la segunda expresión. 
-
+El operador `||` (_OR_) devuelve la primera expresión si esta es `truthy`, de lo contrario devuelve la segunda expresión.
 
 Cuando trabajamos con booleanos devuelve verdadero si **AL MENOS** una condición se cumple. Por ejemplo:
 
@@ -200,11 +207,10 @@ Cuando trabajamos con booleanos devuelve verdadero si **AL MENOS** una condició
 const name = 'María';
 const age = 35;
 
-(name === 'María' || age >= 30); // true
-(name === 'Marta' || age >= 30); // true
-(name === 'María' || age >= 40); // true
-(name === 'Marta' || age >= 40); // false
-
+name === 'María' || age >= 30; // true
+name === 'Marta' || age >= 30; // true
+name === 'María' || age >= 40; // true
+name === 'Marta' || age >= 40; // false
 ```
 
 Cuando trabajamos con no booleanos `||` devuelve la primera expresión si esta es verdadera, de lo contrario devuelve la segunda expresión.
@@ -218,34 +224,41 @@ const isModerator = true;
 const moderatorText = isModerator && 'moderadora';
 
 // Como la primera expresión es `falsy`, se devuelve la segunda expresión
-welcomeMessageElement.innerHTML = `Bienvenida ${(adminText || moderatorText)}. ¡Es genial verte de nuevo!`
+welcomeMessageElement.innerHTML = `Bienvenida ${adminText ||
+  moderatorText}. ¡Es genial verte de nuevo!`;
 ```
+
+---
 
 #### EJERCICIO 1
 
 **Nadie sin avatar**
 
-Vamos a realizar un programa para completar una ficha de usuario. Tenemos que preparar un HTML con un título que contenga el nombre del usuario y una caja sin contenido de 300x300.
+Vamos a realizar un programa para completar una ficha de usuario. Tenemos que preparar un HTML con un título que contenga el nombre del usuario y una imagen sin contenido de 300x300.
 
 En JavaScript hay que preparar una constante y una variable:
+
 - A la constante le asignaremos como valor la url de un avatar por defecto 'http://placehold.it/300x300'
 - A la variable le asignaremos un string vacío (`''`) o no le asignaremos ningún valor (`undefined`)
 
-Con estos datos hay que hacer la lógica para añadir a la caja un avatar sí o sí. De manera que si no tenemos datos de la url del usuario se muestre el avatar por defecto, pero si tenemos el avatar del usuario se muestre este.
+Con estos datos hay que hacer la lógica para añadir a la imagen un avatar sí o sí. De manera que si no tenemos datos de la url del usuario se muestre el avatar por defecto, pero si tenemos el avatar del usuario se muestre este.
 
 > **Nota**: Cambia la variable vacía añadiendo esta imagen 'http://www.fillmurray.com/300/300' y comprueba que el programa funciona.
 
-* * *
+> En este ejercicio aún no vamos a usar condicionales `if`/`else` ;)
+
+---
 
 ## Condicionales
 
 Los condicionales son estructuras de control de JavaScript que sirven para ejecutar un código u otro (o ninguno) en función de si se cumple o no una condición.
 
- _Si esta condición es verdadera, haz esto y sino esto otro_. La condición que escribamos siempre se va a convertir en `true` o `false`.
+_Si esta condición es verdadera, haz esto y sino esto otro_. La condición que escribamos siempre se va a convertir en `true` o `false`.
 
 ### If...else
 
 La estructura simple de un condicional es la siguiente:
+
 - usamos la palabra `if` para definirlo
 - después indicamos entre paréntesis `( )` una condición
 - a continuación definimos un bloque de código entre llaves `{ }` que se va a ejecutar si se cumple la condición
@@ -261,6 +274,7 @@ if (age > 30) {
 ```
 
 Existe otra estructura para el condicional que nos permite ejecutar otro código cuando no se cumpla la condición. Partiendo de la estructura simple, añadimos:
+
 - usamos la palabra `else` para definir qué hacer cuando NO se cumple la condición
 - a continuación definimos un bloque de código entre llaves `{ }` que se va a ejecutar si NO se cumple la condición
 
@@ -276,7 +290,7 @@ if (age > 30) {
 }
 ```
 
-* * *
+---
 
 #### EJERCICIO 2
 
@@ -286,9 +300,10 @@ En este ejercicio vamos a crear un control de acceso. Para ello prepararemos una
 
 > **Nota**: cambia el valor de la variable y comprueba que todo funciona como esperas.
 
-* * *
+---
 
 Podemos complicar incluso más la estructura del condicional cuando queremos que se ejecute un código si NO se cumple la primera condición pero SOLO si se cumple una segunda condición. En este caso, a la estructura del condicional simple le añadimos:
+
 - usamos la palabra `else` para definir qué hacer cuando NO se cumple la condición
 - usamos la palabra `if` para definir una nueva comprobación
 - después indicamos entre paréntesis `( )` una segunda condición
@@ -306,16 +321,16 @@ if (age > 30) {
 }
 ```
 
-Si necesitamos una estructura más complicada, siempre podemos poner un `else` al final para ejecutar código cuando no se ha cumplido  ninguna de las condiciones. Además, podemos incluir todas las condiciones que queramos con `else if`.
+Si necesitamos una estructura más complicada, siempre podemos poner un `else` al final para ejecutar código cuando no se ha cumplido ninguna de las condiciones. Además, podemos incluir todas las condiciones que queramos con `else if`.
 
 ```js
 const age = 35;
 
-if ( age > 30 ){
+if (age > 30) {
   console.log('Tienes más de 30 años'); //Esta línea se ejecuta solo si se cumple la condición
-} else if ( age >= 20) {
+} else if (age >= 20) {
   console.log('Tienes entre 20 y 30 años'); //Esta línea se ejecuta solo si se NO cumple la primera condición y SÍ se cumple la segunda
-} else if ( age >= 10) {
+} else if (age >= 10) {
   console.log('Tienes entre 10 y 19 años'); //Esta línea se ejecuta solo si se NO cumplen la primeras condiciones y SÍ se cumple la última
 } else {
   console.log('Eres un niño entre 0 y 9 años'); //Esta línea se ejecuta solo si se NO cumplen ninguna de las condiciones anteriores
@@ -324,7 +339,7 @@ if ( age > 30 ){
 
 > **Nota**: Los bloques de un condicional son excluyentes, es decir, solo se va a ejecutar el código de un bloque (if, else if o else). En ningún momento se ejecutará el código de dos bloques ya que si se cumple una condición se ejecuta el código de su bloque y se ignoran las posteriores condiciones.
 
-* * *
+---
 
 #### EJERCICIO 3
 
@@ -347,7 +362,7 @@ if (/* condición 1 */) {
 }
 ```
 
-* * *
+---
 
 #### EJERCICIO 4
 
@@ -361,7 +376,7 @@ Te habrá pasado varias veces de ir por la calle y que alguien te pregunte "perd
 
 > **Nota**: Prueba que el código funciona correctamente con distintos años (1, 2, 12...). Imagina el alcance de los daños si la próxima vez que te pare una persona para preguntarte por el conversor... ¡no funciona correctamente!
 
-* * *
+---
 
 ### classList.contains
 
@@ -376,7 +391,8 @@ const activableSection = document.querySelector('.activable-section');
 if (activableSection.classList.contains('hidden')) {
   // Elimina la clase
   activableSection.classList.remove('hidden');
-} else { // Sino
+} else {
+  // Sino
   // Añade la clase hidden
   activableSection.classList.add('hidden');
 }
@@ -386,8 +402,9 @@ if (activableSection.classList.contains('hidden')) {
 
 **Notificaciones arcoiris**
 
-Crea un div que contenga un título "NOTIFICACIÓN" y un texto "Mensaje por defecto". 
+Crea un div que contenga un título "NOTIFICACIÓN" y un texto "Mensaje por defecto".
 Crea también tres clases:
+
 - La primera, `.success`, aplicará un borde verde oscuro, un fondo verde claro y el color de fuente verde oscuro
 - La segunda, `.error`, igual pero sustituyendo el verde por rojo
 - La tercera, `.warning`, lo mismo pero usando el color amarillo
@@ -400,22 +417,21 @@ Usando JavaScript, haremos que:
 
 Cambia la clase en HTML y comprueba que el código de JavaScript funciona.
 
-* * *
+---
 
 ### Operador condicional o ternario
 
 Podemos pensar en él como un atajo del `if...else` más sencillo.
 
 La estructura de un ternario es la siguiente:
+
 - indicamos entre paréntesis `( )` una condición
 - escribimos `?` y el código que se va a ejecutar si se cumple la condición
 - escribimos `:` y el código que se va a ejecutar si NO se cumple la condición
 
 ```js
-
 const theme = 'hallowen';
-const fontColor = (theme === 'hallowen') ? '#ff5722' : '#000';
-
+const fontColor = theme === 'hallowen' ? '#ff5722' : '#000';
 ```
 
 ## Expresiones (expressions) y sentencias (statements).
@@ -423,13 +439,13 @@ const fontColor = (theme === 'hallowen') ? '#ff5722' : '#000';
 Una expresión es cualquier unidad de código que produce un valor.
 
 ```js
-myVar
+myVar;
 
-3 + x
+3 + x;
 
-true ? 'Access allowed' : 'You may not pass'
+true ? 'Access allowed' : 'You may not pass';
 
-'' || 'OneEyedMan'
+'' || 'OneEyedMan';
 ```
 
 Una sentencia realiza una acción.
@@ -440,41 +456,41 @@ const avocadoPrice = 1.5;
 const money = 33;
 
 if (money >= avocadoPrice) {
-    avocados = money / avocadoPrice;
+  avocados = money / avocadoPrice;
 } else {
-    avocados = 0;
+  avocados = 0;
 }
 ```
 
 Normalmente cuando JavaScript espera una sentencia podemos escribir una expresión, pero no al revés. Por ejemplo podríamos haber escrito la sentencia `if...else` con un _ternario_, pero no podemos poner entre los paréntesis del if como condición otro if, ya que aquí JavaScript espera una expresión que produzca un valor `true`/`false`.
 Si en este punto el concepto de expresión y sentencia es confuso, no te preocupes, es natural. Es un primer acercamiento a un concepto teórico y se irá aclarando con el tiempo ;)
 
-* * *
+---
 
 #### EJERCICIO 6
 
-Reescribe el código del ejemplo anterior utilizando un ternario en lugar de un `if...else`.
+Reescribe el código del ejemplo anterior (no del ejercicio anterior) utilizando un ternario en lugar de un `if...else`.
 
-* * *
+---
 
 ## BONUS
 
 ### Módulo
 
-El operador de resto (`%`), también llamado operador de módulo (_module_), es un operador especial utilizado en JavaScript para obtener el resto de la división entre dos valores. Si escribimos `5 % 2` en nuestro código, este nos devolverá el resto de esa operación, 1. 
+El operador de resto (`%`), también llamado operador de módulo (_module_), es un operador especial utilizado en JavaScript para obtener el resto de la división entre dos valores. Si escribimos `5 % 2` en nuestro código, este nos devolverá el resto de esa operación, 1.
 
 ```js
-0 % 80 // Devuelve 0
-4 % 5  // Devuelve 4
-13 % 5 // Devuelve 3
-9 % 3  // Devuelve 0
+0 % 80; // Devuelve 0
+4 % 5; // Devuelve 4
+13 % 5; // Devuelve 3
+9 % 3; // Devuelve 0
 ```
 
 El operador de módulo tiene el mismo orden de ejecución que los operadores de multiplicación y división.
 
 > **Nota**: este operador es muy util para saber si un número es par o impar. Como recordatorio todos los números cuya divisón entre dos tienen como resto 0 son pares.
 
-* * *
+---
 
 #### EJERCICIO 7 BONUS
 
@@ -484,7 +500,7 @@ Vamos a escribir un pequeño programa que nos permita saber cuál será el sigui
 
 **Pista:** Tenemos que escribir el año en el que estamos en una constante.
 
-* * *
+---
 
 ## Recursos externos
 
