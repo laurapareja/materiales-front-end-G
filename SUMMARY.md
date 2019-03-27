@@ -32,11 +32,11 @@
 - [2.6 Objetos](sprint_2/2_6_objetos.md)
 - [2.7 Arrays y bucles](sprint_2/2_7_arrays_y_bucles.md)
 - [2.8 Trabajo colaborativo en git](sprint_2/2_8_trabajo_colaborativo_en_git.md)
-- [2.9 Peticiones al servidor](sprint_2/2_9_peticiones_al_servidor.md)
-- [2.10 Peticiones al servidor 2](sprint_2/2_10_peticiones_al_servidor_2.md)
-- [2.11 DOM avanzado](sprint_2/2_11_dom_avanzado.md)
-- [2.12 Asincronía](sprint_2/2_12_asincronia.md)
-- [2.13 Scope y hoisting](sprint_2/2_13_scope_y_hoisting.md)
+- [2.9 Métodos de array y temporizadores](sprint_2/2_9_asincronia.md)
+- [2.10 Peticiones al servidor](sprint_2/2_10_peticiones_al_servidor.md)
+- [2.11 Peticiones al servidor 2](sprint_2/2_11_peticiones_al_servidor_2.md)
+- [2.12 DOM avanzado](sprint_2/2_12_dom_avanzado.md)
+- [2.13 Debugging](sprint_2/2_13_debugging.md)
 - [2.14 Manejo de estructuras de datos](sprint_2/2_14_manejo_de_estructuras_de_datos.md)
 
 ## Módulo 3. React
