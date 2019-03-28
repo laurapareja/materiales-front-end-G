@@ -366,7 +366,7 @@ En este caso deberemos coger el contenido actual del elemento y añadirle ", ada
 Obtenemos el elemento con el que queremos trabajar usando
 document.querySelector()
 */
-var titleElement = document.querySelector('.title');
+const titleElement = document.querySelector('.title');
 
 // Cambiamos el contenido del elemento, indicando que sea igual al actual, más una nueva palabra añadida
 titleElement.innerHTML = titleElement.innerHTML + ', adalaber';
