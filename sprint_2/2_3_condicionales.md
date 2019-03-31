@@ -149,16 +149,22 @@ const nameField = document.querySelector('.input-name').value; // '' (falsy)
 const nameIsFilled = !!nameField; // false
 ```
 
-Un truco para utilizar el operador `!` es pensar en humano. Para usarlo podemos plantearnos preguntas de este tipo:
+Un truco para utilizar el operador `!` es pensar en humano. Para usarlo podemos hacer planteamientos de este tipo:
 
 - ¿Tiene `nameField` un valor falso?
+
   La respuesta nos la dará su negación,`!nameField`.
+
   Cuando `!nameField` devuelve `true`, la respuesta es SI, `nameField` tiene un valor falso.
+
   Cuando `!nameField` devuelve `false`, la respuesta es NO, `nameField` tiene un valor verdadero.
 
 - ¿Tiene `nameField` un valor verdadero?
+
   La respuesta nos la dará su doble negación, `!!nameField`.
+
   Cuando `!!nameField` devuelve `true`, la respuesta es SI, `nameField` tiene un valor verdadero.
+
   Cuando `!!nameField` devuelve `false`, la respuesta es NO, `nameField` tiene un valor falso.
 
 > **Nota**: Trabajar con el operador `!` puede parecer un poco lioso al principio, no te preocupes si aún no tienes claro como aplicarlo, irá asentándose poco a poco con su uso.
@@ -488,7 +494,7 @@ El operador de resto (`%`), también llamado operador de módulo (_module_), es 
 
 El operador de módulo tiene el mismo orden de ejecución que los operadores de multiplicación y división.
 
-> **Nota**: este operador es muy util para saber si un número es par o impar. Como recordatorio todos los números cuya divisón entre dos tienen como resto 0 son pares.
+> **Nota**: este operador es muy util para saber si un número es par o impar. Como recordatorio todos los números cuya división entre dos tienen como resto 0 son pares.
 
 ---
 
