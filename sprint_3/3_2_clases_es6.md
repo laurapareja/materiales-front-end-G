@@ -5,8 +5,9 @@
 - [EJERCICIO 1](#ejercicio-1)
 - [EJERCICIO 2](#ejercicio-2)
 - [EJERCICIO BONUS A](#ejercicio-bonus-a)
-- [EJERCICIO BONUS B](#ejercicio-bonus-b)
 - [EJERCICIO 3](#ejercicio-3)
+- [EJERCICIO BONUS B](#ejercicio-bonus-b)
+- [EJERCICIO BONUS C](#ejercicio-bonus-c)
 
 <!-- /TOC -->
 
@@ -19,13 +20,11 @@ En esta sesión veremos el concepto de clases, que está muy relacionado con la 
 
 En la última sección, veremos cómo reutilizar nuestro código entre distintos proyectos, o importar código ajeno.
 
-
 ## ¿Para qué sirve lo que vamos a ver en esta sesión?
 
 JavaScript es un lenguaje muy flexible. Por eso, en la práctica, muchos programadores recurren a otros conceptos asentados de programación al escribir JavaScript. Con ES6 se guiñó un ojo a los programadores que usaban las posibilidades de JavaScript para la POO y se introdujeron las **clases**.
 
 Las clases nos ayudan a delimitar la responsabilidad de ciertas partes de nuestro código y organizarlo de manera más clara y también nos ayudan a reutilizar partes del código y ahorrar líneas y posibilidades de error.
-
 
 ## Clases y objetos
 
@@ -44,7 +43,7 @@ Una instancia es un objeto de una clase que hayamos especificado. En el ejemplo 
 
 ## Métodos y atributos
 
-Los objetos se caracterizan por sus propiedades, que pueden ser funciones o valores. En las clases, llamaremos *métodos* a las funciones de una clase, y *atributos* a los valores. Veremos cómo declarar atributos en la sección sobre el constructor. De momento, vamos a declarar un método para la clase `Dog`:
+Los objetos se caracterizan por sus propiedades, que pueden ser funciones o valores. En las clases, llamaremos _métodos_ a las funciones de una clase, y _atributos_ a los valores. Veremos cómo declarar atributos en la sección sobre el constructor. De momento, vamos a declarar un método para la clase `Dog`:
 
 ```js
 class Dog {
@@ -59,23 +58,23 @@ const hachiko = new Dog();
 laika.bark(); // Woof, woof!
 hachiko.bark(); // Woof, woof!
 ```
+
 > **Nota**: Debes notar que para declarar un método en una clase, no usamos la palabra `function` sino directamente el nombre del método
 
-* * *
+---
 
 #### EJERCICIO 1
 
 Vamos a crear un programita que haga cálculos geométricos sencillos. En el programa definiremos la clase `Square`, que tendrá al menos:
 
-  - Un método para calcular el perímetro (`perimeter()`) del cuadrado (multiplica la longitud del lado por el número de lados)
-  - Un método para calcular el área (`area()`) del cuadrado (elevar al cuadrado el lado)
+- Un método para calcular el perímetro (`perimeter()`) del cuadrado (multiplica la longitud del lado por el número de lados)
+- Un método para calcular el área (`area()`) del cuadrado (elevar al cuadrado el lado)
 
 Los métodos recibirán la longitud del lado (`side`) como parámetro.
 
 Calcularemos y mostraremos el perímetro y el área de un cuadrado de `9` de lado.
 
-* * *
-
+---
 
 ## Métodos de clase VS métodos de instancia
 
@@ -93,7 +92,7 @@ const hachiko = new Dog();
 
 hachiko.waitForOwner = () => {
   console.log('Hachiko is waiting.');
-}
+};
 
 hachiko.waitForOwner(); // Hachiko is waiting.
 laika.waitForOwner(); // TypeError: laika.waitForOwner no es una función
@@ -113,12 +112,11 @@ const hachiko = new Dog();
 
 hachiko.bark = () => {
   console.log('Wan, wan!'); // Hachiko barks in Japanese
-}
+};
 
 laika.bark(); // 'Woof, woof!'
 hachiko.bark(); // 'Wan, wan!'
 ```
-
 
 ## El constructor y `this`
 
@@ -132,7 +130,7 @@ class Dog {
 }
 
 const laika = new Dog('Laika'); // (I have a conscience now. My name is Laika)
-```  
+```
 
 En el constructor, además, es donde se declaran los atributos de la clase. Vamos a declarar el parámetro `name` como un atributo:
 
@@ -179,22 +177,21 @@ laika.reactToCall('Hey, Laika!'); // 'Laika wags its tail, happily.'
 laika.reactToCall('Hey, Hachiko!'); // 'Woof, woof!'
 ```
 
-
-* * *
+---
 
 #### EJERCICIO 2
 
 Vamos a mejorar nuestra calculadora geométrica sencilla. En el programa definiremos la clase `Square`, que tendrá al menos:
 
-  - Un atributo para la longitud del lado (`side`) del cuadrado
-  - Un método para calcular el perímetro (`perimeter()`) del cuadrado (multiplica la longitud del lado por el número de lados - 4)
-  - Un método para calcular el área (`area()`) del cuadrado (elevar al cuadrado el lado)
+- Un atributo para la longitud del lado (`side`) del cuadrado
+- Un método para calcular el perímetro (`perimeter()`) del cuadrado (multiplica la longitud del lado por el número de lados - 4)
+- Un método para calcular el área (`area()`) del cuadrado (elevar al cuadrado el lado)
 
 Los métodos no recibirán parámetros, sino que cogerán los datos necesarios de los atributos de la instancia.
 
 Crearemos tres instancias: una con `1` de lado, otra con `3` y otra con `7`. Llamaremos a los dos métodos en todas las instancias.
 
-* * *
+---
 
 ## Herencia (`extends`)
 
@@ -217,7 +214,9 @@ class Dog extends QuadrupedAnimal {
 
 const hachiko = new Dog();
 
-console.log(`Hachiko has ${hachiko.legs} legs because it's a quadruped animal.`); // 'Hachiko has 4 legs because it's a quadruped animal.'
+console.log(
+  `Hachiko has ${hachiko.legs} legs because it's a quadruped animal.`
+); // 'Hachiko has 4 legs because it's a quadruped animal.'
 ```
 
 Las subclases tienen un método especial `super()` que debe llamarse al principio del constructor (si se escribe). El método `super()` llama al constructor de la superclase; así podemos pasar parámetros de la subclase al constructor de la superclase:
@@ -310,30 +309,190 @@ const leo = new Dog('Leo');
 leo.bark(); // 'Woof, woof!'
 ```
 
-* * *
+---
 
 #### EJERCICIO BONUS A
 
 Vamos a mejorar ¡aún más! nuestra calculadora geométrica sencilla. En el programa definiremos la clase `Polygon`, `Square` y `Triangle` para polígolos regulares (todos sus lados miden lo mismo). Ya os imagináis por dónde van los tiros: las clases `Square` y `Triangle` serán subclases de `Polygon`. La clase `Polygon` tendrá, al menos:
 
-  - Un atributo para el número de lados (`numberOfSides`)
-  - Dos atributos más: para la longitud de la base (`base`) y de la altura (`height`)
-  - Un método para calcular el perímetro (`perimeter`) (multiplicar la longitud del lado base por el número de lados)
-  - Un método para calcular el área (`area`) (multiplicar base por altura)
+- Un atributo para el número de lados (`numberOfSides`)
+- Dos atributos más: para la longitud de la base (`base`) y de la altura (`height`)
+- Un método para calcular el perímetro (`perimeter`) (multiplicar la longitud del lado base por el número de lados)
+- Un método para calcular el área (`area`) (multiplicar base por altura)
 
 La subclase `Square` tendrá:
 
-  - Un atributo lado (`side`) igual a la base
-  - Un constructor que recibirá exclusivamente la longitud del lado
+- Un atributo lado (`side`) igual a la base
+- Un constructor que recibirá exclusivamente la longitud del lado
 
 La subclase `Triangle` tendrá:
-  - Un constructor que recibirá base y altura
-  - Un método `area()` que sobrescibirá al de la clase base. Devolverá la mitad de lo que devuelva llamar al área de la clase base (`super.area() / 2`)
+
+- Un constructor que recibirá base y altura
+- Un método `area()` que sobrescibirá al de la clase base. Devolverá la mitad de lo que devuelva llamar al área de la clase base (`super.area() / 2`)
 
 Crearemos dos instancias: un cuadrado de `4` de lado y un triángulo de `4` de base y `3` de altura. Llamaremos a los dos métodos en todas las instancias.
 
-* * *
+---
 
+## Módulos de JS
+
+Los módulos nos facilitan dividir nuestro código en pequeñas partes reutilizables. Podemos dividir nuestro código en partes tanto para **organizar** un proyecto, **compartir** código entre distintos proyectos nuestros o para **usar librerías** de terceros.
+
+**dog.js**:
+
+```js
+class Dog {
+  bark() {
+    console.log('Wan, wan!');
+  }
+}
+
+const FAMOUS_DOGS = ['Hachiko', 'Laika', '101 Dalmatians'];
+
+export { Dog, FAMOUS_DOGS };
+```
+
+**main.js**:
+
+```js
+import { Dog, FAMOUS_DOGS } from './dog.js';
+
+const hachiko = new Dog();
+
+console.log(`Some famous dogs in history: ${FAMOUS_DOGS.join(', ')}...`); // 'Some famous dogs in history: Hachiko, Laika, 101 Dalmatians...'
+hachiko.bark(); // 'Wan, wan!'
+```
+
+### `export`
+
+Todo lo que hay dentro de un módulo de JavaScript pertenece exclusivamente al módulo por defecto. Nada se puede acceder desde fuera excepto si se **exporta**. La palabra clave `export` nos permite exportar una variable (`var`, `let` o `const`), función o clase que podrá ser **importada** por otro código más tarde.
+
+Podemos exportar de varias maneras. Podemos exportar individualmente valores que ya hayamos declarado:
+
+**module.js**:
+
+```js
+export const aConstant = 'constant';
+
+export function aFunction() {
+  /* function body */
+}
+```
+
+También podemos exportar todo de una sola vez (como un objeto envoltorio), que mejora la legibilidad del código cuando es extenso:
+
+**module.js**:
+
+```js
+const aConstant = 'constant';
+
+function aFunction() {
+  /* function body */
+}
+
+export { aConstant, aFunction };
+```
+
+Por último, podemos declarar un valor exportado por defecto, si queremos. Solo puede haber un valor exportado por defecto en cada módulo, y puede o no tener nombre:
+
+**module_default-unnamed.js**:
+
+```js
+export default function() {
+  /* function body */
+}
+```
+
+**module_default-named.js**:
+
+```js
+export default aFunction;
+```
+
+### `import`
+
+Para usar código de un módulo, primero tendremos que importarlo en nuestro código. Como es normal en JavaScript, tenemos varias maneras distintas de importar módulos.
+
+Podemos seleccionar, por su nombre, qué valores exportados importar. Importaremos solo uno de la siguiente manera:
+
+**main.js**:
+
+```js
+import { aConstant } from './module.js';
+
+console.log(aConstant); // 'constant'
+```
+
+E importaremos varios valores así:
+
+**main.js**:
+
+```js
+import { aConstant, aFunction } from './module.js';
+
+aFunction(); // do things as declared in module.js
+console.log(aConstant); // 'constant'
+```
+
+Si queremos cambiarle el nombre a algún valor, lo podemos hacer con `as`:
+
+**main.js**:
+
+```js
+import { aFunction as functionFromModule } from './module.js';
+
+functionFromModule(); // do things as declared in module.js
+```
+
+```js
+import { aConstant, aFunction as functionFromModule } from './module.js';
+
+functionFromModule(); // do things as declared in module.js
+console.log(aConstant); // 'constant'
+```
+
+```js
+import {
+  aConstant as constantFromModule,
+  aFunction as functionFromModule,
+} from './module.js';
+
+functionFromModule(); // do things as declared in module.js
+console.log(constantFromModule); // 'constant'
+```
+
+También podemos importar todo el contenido de un módulo con `*`. Esto nos importa todos los valores dentro de un objeto envoltorio al que debemos darle nombre con `as`:
+
+**main.js**:
+
+```js
+import * as module from './module.js';
+
+module.aFunction(); // do things as declared in module.js
+console.log(module.aConstant); // 'constant'
+```
+
+### Declarar módulos
+
+Podemos declarar archivos de JavaScript como módulos en el HTML de la siguiente manera:
+
+**index.html**:
+
+```html
+<script type="module" src="route/to/module.js"></script>
+```
+
+En el ejemplo, declararíamos **main.js** de esta manera.
+
+Sin embargo, esta forma de trabajo [no está completamente soportada aún](https://caniuse.com/#feat=es6-module) por los navegadores: un 84% de las últimas versiones de los navegadores lo soporta (en abril de 2019). Sin embargo, no tendremos ningún problema cuando usemos _module bundlers_ o [Babel](http://babeljs.io/) para compilar nuestro código, y en estos casos no será necesario declarar los módulos en el HTML.
+
+---
+
+#### EJERCICIO 3
+
+Prueba los ejemplos anteriores exportando datos desde un fichero e importándolos desde otros. Asegúrate de entender bien cómo funcionan las rutas para importar/exportar adecuadamente.
+
+---
 
 ## BONUS: _getters_ y _setters_
 
@@ -349,7 +508,7 @@ class Dog {
   }
 
   get barking() {
-    return `${this.barkingSound}, ${this.barkingSound.toLowerCase()}!`
+    return `${this.barkingSound}, ${this.barkingSound.toLowerCase()}!`;
   }
 
   bark() {
@@ -401,10 +560,19 @@ hachiko.printHappiness(); // 'Little Paws is 25% happy.'
 
 > Es una convención usar nombres de atributos precedidos con barra baja (`_atributo`) para diferenciar los atributos de uso interno, que no deben ser usados desde fuera de la declaración.
 
-
-* * *
+---
 
 #### EJERCICIO BONUS B
+
+Vamos a mejorar crear una clase `Person` que recibe un nombre `firstName` y apellido `lastName` como parámetros de su constructor.
+
+También definiremos un _getter_ `fullName` para obtener el nombre completo, que es una concatenación de nombre y apellido.
+
+Crearemos 2 instancias con distintos nombres para probar que funciona.
+
+---
+
+#### EJERCICIO BONUS C
 
 Vamos a mejorar ¡aún más, siempre más! nuestra calculadora geométrica sencilla. En el programa definiremos la clase `Polygon`, `Square` para polígonos regulares (todos sus lados miden lo mismo). La clase `Square` será subclase de `Polygon` y serán iguales a las del **ejercicio bonus A**.
 
@@ -414,157 +582,12 @@ Aquí viene lo distinto: la clase `Square` tendrá un _getter_ y un _setter_ par
 
 Crearemos una instancia: un cuadrado de `7` de lado. Haremos lo siguiente:
 
-  1. Pediremos el área y la guardaremos en una variable
-  2. Cambiaremos el lado del cuadrado por `47`
-  3. Pediremos de nuevo el área y la guardaremos en otra variable
-  4. Compararemos que los valores son distintos. Si son iguales, ¡meeec!
+1. Pediremos el área y la guardaremos en una variable
+2. Cambiaremos el lado del cuadrado por `47`
+3. Pediremos de nuevo el área y la guardaremos en otra variable
+4. Compararemos que los valores son distintos. Si son iguales, ¡meeec!
 
-* * *
-
-## Módulos de JS
-
-Los módulos nos facilitan dividir nuestro código en pequeñas partes reutilizables. Podemos dividir nuestro código en partes tanto para **organizar** un proyecto, **compartir** código entre distintos proyectos nuestros o para **usar librerías** de terceros.
-
-**dog.js**:
-```js
-class Dog {
-  bark() {
-    console.log('Wan, wan!');
-  }
-}
-
-const FAMOUS_DOGS = ['Hachiko', 'Laika', '101 Dalmatians'];
-
-export { Dog, FAMOUS_DOGS };
-```
-
-**main.js**:
-```js
-import { Dog, FAMOUS_DOGS } from './dog.js';
-
-const hachiko = new Dog();
-
-console.log(`Some famous dogs in history: ${FAMOUS_DOGS.join(', ')}...`); // 'Some famous dogs in history: Hachiko, Laika, 101 Dalmatians...'
-hachiko.bark(); // 'Wan, wan!'
-```
-
-### `export`
-
-Todo lo que hay dentro de un módulo de JavaScript pertenece exclusivamente al módulo por defecto. Nada se puede acceder desde fuera excepto si se **exporta**. La palabra clave `export` nos permite exportar una variable (`var`, `let` o `const`), función o clase que podrá ser **importada** por otro código más tarde.
-
-Podemos exportar de varias maneras. Podemos exportar individualmente valores que ya hayamos declarado:
-
-**module.js**:
-```js
-export const aConstant = 'constant';
-
-export function aFunction() { /* function body */ }
-```
-
-También podemos exportar todo de una sola vez (como un objeto envoltorio), que mejora la legibilidad del código cuando es extenso:
-
-**module.js**:
-```js
-const aConstant = 'constant';
-
-function aFunction() { /* function body */ }
-
-export { aConstant, aFunction };
-```
-
-Por último, podemos declarar un valor exportado por defecto, si queremos. Solo puede haber un valor exportado por defecto en cada módulo, y puede o no tener nombre:
-
-**module_default-unnamed.js**:
-```js
-export default function() { /* function body */ };
-```
-
-**module_default-named.js**:
-```js
-export default aFunction;
-```
-
-
-### `import`
-
-Para usar código de un módulo, primero tendremos que importarlo en nuestro código. Como es normal en JavaScript, tenemos varias maneras distintas de importar módulos.
-
-Podemos seleccionar, por su nombre, qué valores exportados importar. Importaremos solo uno de la siguiente manera:
-
-**main.js**:
-```js
-import { aConstant } from './module.js';
-
-console.log(aConstant); // 'constant'
-```
-
-E importaremos varios valores así:
-
-**main.js**:
-```js
-import { aConstant, aFunction } from './module.js';
-
-aFunction(); // do things as declared in module.js
-console.log(aConstant); // 'constant'
-```
-
-Si queremos cambiarle el nombre a algún valor, lo podemos hacer con `as`:
-
-**main.js**:
-```js
-import { aFunction as functionFromModule } from './module.js';
-
-functionFromModule(); // do things as declared in module.js
-```
-```js
-import {
-  aConstant,
-  aFunction as functionFromModule
-} from './module.js';
-
-functionFromModule(); // do things as declared in module.js
-console.log(aConstant); // 'constant'
-```
-```js
-import {
-  aConstant as constantFromModule,
-  aFunction as functionFromModule
-} from './module.js';
-
-functionFromModule(); // do things as declared in module.js
-console.log(constantFromModule); // 'constant'
-```
-
-También podemos importar todo el contenido de un módulo con `*`. Esto nos importa todos los valores dentro de un objeto envoltorio al que debemos darle nombre con `as`:
-
-**main.js**:
-```js
-import * as module from './module.js';
-
-module.aFunction(); // do things as declared in module.js
-console.log(module.aConstant); // 'constant'
-```
-
-### Declarar módulos
-
-Podemos declarar archivos de JavaScript como módulos en el HTML de la siguiente manera:
-
-**index.html**:
-```html
-<script type="module" src="route/to/module.js"></script>
-```
-
-En el ejemplo, declararíamos **main.js** de esta manera.
-
-Sin embargo, esta forma de trabajo [no está muy soportada aún](https://caniuse.com/#feat=es6-module) por los navegadores: solo un 62.81% de las últimas versiones de los navegadores lo soporta. Sin embargo, no tendremos ningún problema cuando usemos _module bundlers_ o [Babel](http://babeljs.io/) para compilar nuestro código, y en estos casos no será necesario declarar los módulos en el HTML.
-
-* * *
-
-#### EJERCICIO 3
-
-Prueba los ejemplos anteriores exportando datos desde un fichero e importándolos desde otros. Asegúrate de entender bien cómo funcionan las rutas para importar/exportar adecuadamente.
-
-* * *
+---
 
 ## Recursos externos
 
@@ -576,7 +599,6 @@ Páginas donde se explica en más profundidad los conceptos de esta sesión
 - [Constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor)
 - [`this`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
 - [_getters_](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get) y [_setters_](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set)
-
 
 ### Mozilla Hacks: ES6 in Depth
 
