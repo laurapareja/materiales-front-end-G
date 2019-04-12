@@ -207,18 +207,6 @@ Escribir datos en formularios es muy tedioso para los usuarios. ¡Vamos a cachea
 
 #### EJERCICIO 5
 
-**Buenas prácticas trabajando con LS**
-
-Partiendo del ejercicio anterior vamos a visitar la página y borraremos el valor del `localStorage` a través de las DevTools. Con el `localStorage` limpito, recargaremos la página para simular la primera visita de la usuaria, dónde aun no habría información sobre el nombre guardada (`cacheada`).
-
-Si al realizar esta acción nos encontramos algún error tenemos que apañarlo.
-
-A partir de ahora **recuerda** que siempre que recojas un dato del localStorage, deberías comprobar que existe antes de empezar a trabajar con el, y **realizar una limpieza del localStorage** manual para comprobar que todo funciona como esperas, haya o no datos cacheados.
-
----
-
-#### EJERCICIO 6
-
 **Mi tema preferido**
 
 Vamos a preparar una página sencilla, con un título, un par de párrafos y un selector de tema. Para hacer el selector:
@@ -231,7 +219,7 @@ Vamos a preparar una página sencilla, con un título, un par de párrafos y un 
 
 ---
 
-#### EJERCICIO 7
+#### EJERCICIO 6
 
 **Un formulario de verdad**
 
@@ -240,6 +228,18 @@ Vamos a seguir trabajando sobre el [ejercicio 4](#ejercicio-4). El formulario no
 ¡Pero, ojo! Queremos tener nuestros datos agrupaditos. El reto es guardar y recoger del localStorage un objeto con dos propiedades, nombre y apellido.
 
 ¡A por ello!
+
+---
+
+#### EJERCICIO 7
+
+**Buenas prácticas trabajando con LS**
+
+Partiendo del ejercicio anterior vamos a visitar la página y borraremos el valor del `localStorage` a través de las DevTools. Con el `localStorage` limpito, recargaremos la página para simular la primera visita de la usuaria, dónde aun no habría información sobre el nombre guardada (`cacheada`).
+
+Si al realizar esta acción nos encontramos algún error tenemos que apañarlo.
+
+A partir de ahora **recuerda** que siempre que recojas un dato del localStorage, deberías comprobar que existe antes de empezar a trabajar con el, y **realizar una limpieza del localStorage** manual para comprobar que todo funciona como esperas, haya o no datos cacheados.
 
 ---
 
