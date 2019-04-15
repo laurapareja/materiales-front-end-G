@@ -289,7 +289,11 @@ Vamos a crear un div en HTML que contenga tres párrafos con un texto aleatorio.
 En algunas ocasiones nos puede ser útil almacenar algún tipo de información (datos) asociada a un elemento HTML. Por ejemplo, para referenciar al elemento HTML donde queremos hacer scroll. O cuando tenemos 2 elementos relacionados, y al interactuar sobre uno queremos un efecto sobre el otro. Por ejemplo, cuando un `select` cambia de valor queremos que un párrafo se modifique. 
 
 
-Para ello, simplemente definimos un nuevo atributo en el elemento que comienza con `data-` seguido del nombre que queremos darle a esos datos, por ejemplo, `data-id`. Para crearlos en HTML, los cremos como un atributo más del elemento, por ejemplo, `<a href="#" data-id="title1">`. Para acceder a ellos desde JavaScript usamos los métodos `getAttribute` y `setAttribute` que ya conocemos. Como alternativa, podemos acceder también mediante `dataset[]` con el nombre que le hemos dado a los datos (sin `data-`) entre [], por ejemplo, `myLink.dataset[id]`.
+Para ello, simplemente definimos un nuevo atributo en el elemento que comienza con `data-` seguido del nombre que queremos darle a esos datos, por ejemplo, `data-id`. Para crearlos en HTML, los cremos como un atributo más del elemento, por ejemplo, `<a href="#" data-id="title1">`. Para acceder a ellos desde JavaScript usamos los métodos `getAttribute` y `setAttribute` que ya conocemos.
+
+Como alternativa, podemos acceder también mediante `dataset`. Esta propiedad de los elementos contiene un objeto cuyas claves coinciden con el nombre que le hemos dado a los datos (sin `data-`). 
+
+Así que podriamos acceder al valor guardado en `data-id` con `myLink.dataset['id']` o con `myLink.dataset.id`.
 
 * * *
 #### EJERCICIO 5
