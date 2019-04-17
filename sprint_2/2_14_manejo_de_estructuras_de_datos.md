@@ -51,7 +51,6 @@ console.log(`The z-index is ${z}`); // The z-index is 12
 
 * * *
 
-<a id="markdown-ejercicio-1" name="ejercicio-1"></a>
 #### EJERCICIO 1
 
 **La carrera de escobas**
@@ -120,7 +119,6 @@ console.log(`${secondLanguage} is my second language`); // French is my second l
 
 
 * * *
-<a id="markdown-ejercicio-2" name="ejercicio-2"></a>
 #### EJERCICIO 2
 
 **De nuevo la carrera de escobas**
@@ -245,7 +243,6 @@ console.log(twinSister); // { name: 'Juliette', lastName: 'Smith', age: 39 }
 
 Partiendo del listado de participantes de la carrera de escobas del ejercicio 1, vamos a realizar varios ejercicios:  
 
-<a id="markdown-ejercicio-3" name="ejercicio-3"></a>
 #### EJERCICIO 3
 
 **Un nuevo participante**
@@ -253,7 +250,6 @@ Partiendo del listado de participantes de la carrera de escobas del ejercicio 1,
 Añadir un último participante que ha llegado tarde: el señor Argus Filch ha hecho un tiempo de 78. Crea un array nuevo con todos los resultados usando el `spreading` de array.
 
 ***
-<a id="markdown-ejercicio-4" name="ejercicio-4"></a>
 #### EJERCICIO 4
 
 **Marcando el primer puesto**
