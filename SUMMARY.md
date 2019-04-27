@@ -38,7 +38,7 @@
 - [2.13 Debugging](sprint_2/2_13_debugging.md)
 - [2.14 Manejo de estructuras de datos](sprint_2/2_14_manejo_de_estructuras_de_datos.md)
 
-<!--
+
 ## Módulo 3. React
 
 - [3.1 Métodos funcionales de array](sprint_3/3_1_metodos_funcionales_array.md)
@@ -55,7 +55,6 @@
 - [3.12 Métodos del ciclo de vida de componentes](sprint_3/3_12_ciclo_vida_componentes_react.md)
 - [3.13 Debugging de aplicaciones JS y React](sprint_3/3_13_debugging_react.md)
 - [3.14 Testing con JavaScript](sprint_3/3_14_testing_js.md)
--->
 
 ## Proyectos
 
@@ -64,9 +63,8 @@
 - [Proyecto 2. Awesome profile-cards](proyectos/P2_proyecto_sprint_2.md)
 - [Anexo. Documentación del API de Awesome Profile Cards](proyectos/P2_anexo.md)
 
-<!--
 - [Proyecto 3. Un caso de código heredado](proyectos/P3_proyecto_sprint_3.md)
--->
+
 
 <!--
 ## Formación continua
