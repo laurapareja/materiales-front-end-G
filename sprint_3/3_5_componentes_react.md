@@ -144,30 +144,32 @@ Ahora tenemos los datos de cada item en un array de objetos (como variable globa
 ```js
 const items = [
   {
-    name: "Cereales con chocolate",
-    description: "Cereales rellenos de chocolate",
+    name: 'Cereales con chocolate',
+    description: 'Cereales rellenos de chocolate',
     quantity: 2,
-    category: "Cereales",
-    price: 5
+    category: 'Cereales',
+    price: 5,
   },
   {
-    name: "Hamburguesa con queso",
-    description: "Hamburguesa rica y saludable",
+    name: 'Hamburguesa con queso',
+    description: 'Hamburguesa rica y saludable',
     quantity: 1,
-    category: "Fast-food",
-    price: 15
+    category: 'Fast-food',
+    price: 15,
   },
   {
-    name: "Agua mineral",
-    description: "Agua de un charco del Himalaya",
+    name: 'Agua mineral',
+    description: 'Agua de un charco del Himalaya',
     quantity: 2,
-    category: "Bebida",
-    price: 5
-  }
+    category: 'Bebida',
+    price: 5,
+  },
 ];
 ```
 
-¿Serías capaz de crear el JSX que devuelve el método `render` de `ItemList` usando un bucle o un `map`? Para hacerlo debes saber que para pintar varios componentes en JSX basta con crear un array con cada JSX y devolverlo en una expresión entre {}.
+a) ¿Serías capaz de crear el JSX que devuelve el método `render` de `ItemList` usando un bucle o un `map`? Para hacerlo debes saber que para pintar varios componentes en JSX basta con crear un array con cada JSX y devolverlo en una expresión entre {}.
+
+b) Ahora vamos a filtrar el array antes convertirlo a JSX con `map`, tirando de nuestra amiga `filter`. Motraremos en la página solo los productos cuyo precio es inferior a 10.
 
 ---
 
@@ -176,7 +178,7 @@ const items = [
 Algunas veces, al declarar un componente no sabremos o no nos importará qué otros componentes podrá contener dentro. Por ejemplo, un componente `Popup` o un componente genérico `Header`. En esos casos podremos usar una `prop` especial, `children`, para pasar directamente elementos:
 
 ```js
-import React from "react";
+import React from 'react';
 
 class Popup extends React.Component {
   render() {
@@ -194,7 +196,7 @@ ReactDOM.render(
     <p>Thank you for visiting our webpage!</p>
     <p>We hope you enjoy our new shiny site!</p>
   </Popup>,
-  document.getElementById("react-root")
+  document.getElementById('react-root')
 );
 ```
 
@@ -215,7 +217,7 @@ Desarrolla un componente `HalfPage` que todo su contenido lo ponga en la mitad i
 En ocasiones querremos definir que algunas `props` no sean obligatorias, y cuando no se pasen querremos usar un valor por defecto. Esto se puede conseguir en React con `defaultProps`. Será un objeto con el nombre de las `props` que queremos que tengan valor por defecto y su correspondiente valor, y cuando se instancie el componente, se cogerán las `props` que falten de ese objeto. Lo definimos como una propiedad del componente, `NombreDelComponente.defaultProps = {}`, después de declarar la clase:
 
 ```js
-import React from "react";
+import React from 'react';
 
 class Button extends React.Component {
   render() {
@@ -233,8 +235,8 @@ class Button extends React.Component {
 
 // Así definimos las defaultProps
 Button.defaultProps = {
-  styling: "primary", // from Bootstrap classes: primary, secondary, success, info, warning, danger, link
-  label: "Aceptar"
+  styling: 'primary', // from Bootstrap classes: primary, secondary, success, info, warning, danger, link
+  label: 'Aceptar',
 };
 ```
 
@@ -268,16 +270,16 @@ npm install --save prop-types
 Después, ya en nuestro archivo JavaScript, lo importaremos como un módulo después de importar `React`:
 
 ```js
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 // ...
 ```
 
 Del mismo modo que con `defaultProps` y después de declarar el componente, definimos una propiedad del componente, `NombreDelComponente.propTypes = {}`, que será un objeto con el nombre de las props y el tipo que queremos que sea:
 
 ```js
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 class Button extends React.Component {
   render() {
@@ -296,7 +298,7 @@ class Button extends React.Component {
 // Así definimos las propTypes
 Button.propTypes = {
   styling: PropTypes.string,
-  label: PropTypes.string
+  label: PropTypes.string,
 };
 ```
 
@@ -320,31 +322,31 @@ También podemos declarar tipos más complejos:
 Además de todo esto, podemos obligar a que se le pase valor a la `prop` añadiendo `.isRequired` a cualquiera de los tipos:
 
 ```js
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 class Button extends React.Component {
   // class body
 }
 
 const stylingValues = [
-  "primary",
-  "secondary",
-  "success",
-  "info",
-  "warning",
-  "danger",
-  "link"
+  'primary',
+  'secondary',
+  'success',
+  'info',
+  'warning',
+  'danger',
+  'link',
 ];
 Button.propTypes = {
   label: PropTypes.string,
-  styling: PropTypes.oneOf(stylingValues).isRequired // obligamos a que tenga valor
+  styling: PropTypes.oneOf(stylingValues).isRequired, // obligamos a que tenga valor
 };
 
 // Y también definimos valores por defecto
 Button.defaultProps = {
   // no incluímos "styling" porque con propTypes y "isRequired" obligamos a que se pase un valor
-  label: "Aceptar"
+  label: 'Aceptar',
 };
 ```
 
@@ -353,8 +355,8 @@ Button.defaultProps = {
 Podemos combinar `propTypes` con `children` también, y obligar a que nuestro componente tenga un solo hijo/a, por ejemplo:
 
 ```js
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 class VerticalCenter extends React.Component {
   render() {
@@ -363,7 +365,7 @@ class VerticalCenter extends React.Component {
 }
 
 VerticalCenter.propTypes = {
-  children: PropTypes.element.isRequired
+  children: PropTypes.element.isRequired,
 };
 ```
 
