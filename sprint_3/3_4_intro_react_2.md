@@ -36,7 +36,7 @@ Para comenzar, vamos a crear un nuevo módulo JavaScript para definir el compone
 **RandomCat.js**:
 
 ```js
-import React from "react";
+import React from 'react';
 // ...
 ```
 
@@ -78,9 +78,9 @@ _¡Ya está!_ Ahora para ver el resultado tendremos que decirle a React que lo p
 **index.js**:
 
 ```js
-import React from "react";
+import React from 'react';
 // ...
-import RandomCat from "./RandomCat";
+import RandomCat from './RandomCat';
 ```
 
 > Para importar de un archivo local, utilizaremos el prefijo `./` antes de la ruta. Sin embargo, no pondremos el prefijo cuando sea una dependencia en `npm`, como nos preconfigura `create-react-app` para `react` y `react-dom`.
@@ -88,7 +88,7 @@ import RandomCat from "./RandomCat";
 Solo falta el paso final: es tan fácil como cambiar la línea que empieza por `ReactDOM.render` y reemplazar `<App />` por `<RandomCat />`:
 
 ```js
-ReactDOM.render(<RandomCat />, document.getElementById("root"));
+ReactDOM.render(<RandomCat />, document.getElementById('root'));
 ```
 
 **Y voilá!** Nos debería quedar así:
@@ -96,7 +96,7 @@ ReactDOM.render(<RandomCat />, document.getElementById("root"));
 **RandomCat.js**:
 
 ```js
-import React from "react";
+import React from 'react';
 
 class RandomCat extends React.Component {
   render() {
@@ -114,13 +114,13 @@ export default RandomCat;
 **index.js**:
 
 ```js
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import RandomCat from "./RandomCat";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import RandomCat from './RandomCat';
 //import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<RandomCat />, document.getElementById("root"));
+ReactDOM.render(<RandomCat />, document.getElementById('root'));
 //registerServiceWorker();
 ```
 
@@ -149,7 +149,7 @@ class Greeting extends React.Component {
 
 const componentToRender = <Greeting name="María Moliner" />;
 
-ReactDOM.render(componentToRender, document.getElementById("root"));
+ReactDOM.render(componentToRender, document.getElementById('root'));
 ```
 
 Estos datos se llaman `props` y se guardan en un atributo de las instancias del mismo nombre. Podemos acceder a él a través de `this.props`, que es un objeto que contiene las claves y los valores de estos "atributos".
@@ -195,7 +195,7 @@ Llamamos componente _dummy_ (títere) a los componentes en React que **no tienen
 Hasta ahora los hemos escrito como componentes completos para que os familiarizaseis con la sintaxis de clases de React:
 
 ```js
-import React from "react";
+import React from 'react';
 
 class Greetings extends React.Component {
   render() {
@@ -209,7 +209,7 @@ export default Greetings;
 Pero React también tiene una manera de escribir estos componentes de manera más sencilla. La idea, sencillamente, es pensar en los componentes _dummies_ como funciones que reciben unas `props` como parámetros y devuelven elementos y componentes de JSX:
 
 ```js
-import React from "react";
+import React from 'react';
 
 const Greetings = props => {
   return <h1>Hello, {props.name}!</h1>;
@@ -271,7 +271,7 @@ Nos vamos a acostumbrar a crear nuestros componentes de React en un directorio `
 **components/CatList.js**:
 
 ```js
-import React from "react";
+import React from 'react';
 
 class CatList extends React.Component {
   // class body
@@ -310,8 +310,8 @@ Como queremos usar `RandomCat` dentro de `CatList`, tendremos que importarlo en 
 **components/CatList.js**:
 
 ```js
-import React from "react";
-import RandomCat from "./RandomCat";
+import React from 'react';
+import RandomCat from './RandomCat';
 // ...
 ```
 
@@ -341,9 +341,9 @@ Finalmente, en el archivo `index.js` importaremos el componente `CatList` y le d
 
 ```js
 // ...
-import CatList from "./components/CatList";
+import CatList from './components/CatList';
 
-ReactDOM.render(<CatList />, document.getElementById("root"));
+ReactDOM.render(<CatList />, document.getElementById('root'));
 ```
 
 Ahora se verán tres gatos iguales por la caché de los navegadores web (la dirección de la imagen es la misma y reutilizan la llamada al servidor). Podemos modificar el componente `RandomCat` para que siempre sea diferente generando un número aleatorio. Declaramos una pequeña función y el número de gatos disponibles:
@@ -351,7 +351,7 @@ Ahora se verán tres gatos iguales por la caché de los navegadores web (la dire
 **RandomCat.js**:
 
 ```js
-import React from "react";
+import React from 'react';
 
 const getRandomInteger = maxNumber => Math.floor(Math.random() * maxNumber);
 const NUMBER_OF_CATS = 10;
@@ -380,19 +380,19 @@ render() {
 **index.js**:
 
 ```js
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import CatList from "./components/CatList";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import CatList from './components/CatList';
 
-ReactDOM.render(<CatList />, document.getElementById("root"));
+ReactDOM.render(<CatList />, document.getElementById('root'));
 ```
 
 **components/CatList.js**:
 
 ```js
-import React from "react";
-import RandomCat from "./RandomCat";
+import React from 'react';
+import RandomCat from './RandomCat';
 
 class CatList extends React.Component {
   render() {
@@ -421,7 +421,7 @@ export default CatList;
 **components/RandomCat.js**:
 
 ```js
-import React from "react";
+import React from 'react';
 
 const getRandomInteger = maxNumber => Math.floor(Math.random() * maxNumber);
 const NUMBER_OF_CATS = 10;
@@ -497,6 +497,30 @@ Publiquemos la aplicación del último ejercicio en GitHub Pages. ¡A por ello!
 
 ---
 
+## _Debugging_ de aplicaciones en React
+
+[react-devtools-firefox]: https://addons.mozilla.org/firefox/addon/react-devtools/
+[react-devtools-chrome]: https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi
+[react-devtools-standalone]: https://www.npmjs.com/package/react-devtools
+
+React, en cierto modo, reemplaza la jerarquía de elementos del DOM por una jerarquía de componentes. Además, prácticamente todo el comportamiento se deriva de los valores que tienen las `props` y el estado de los componentes. Por todo esto, a veces resulta un poco difícil de depurar con las herramientas de desarrollo incluídas en los navegadores web.
+
+Para solucionar esto, el equipo de React proporciona una _webextension_ (extensión de navegador) específica para depurar aplicaciones en React. La extensión está disponible para [Chrome][react-devtools-chrome], para [Firefox][react-devtools-firefox] y también como [aplicación separada][react-devtools-standalone].
+
+La extensión de los navegadores se integra con las herramientas de desarrollo (<kbd>F12</kbd>) en ambos navegadores:
+
+![React DevTools integrado con las herramientas de desarrollo de Chrome](assets/images/3_13_react-devtools.png)
+
+Cuando estemos en una página hecha con React, la pestaña React de las herramientas de desarrollo nos mostrará la **jerarquía de componentes**:
+
+![React DevTools mostrando jerarquía de componentes de la página](assets/images/3_13_devtools-tree-view.png)
+
+Tras seleccionar un componente, en el panel lateral de esa misma pestaña podremos ver más detalles y cambiar las `props` y el estado del componente en tiempo real:
+
+![React DevTools editando el estado de un componente en tiempo real](assets/images/3_13_devtools-side-pane.gif)
+
+---
+
 ## Recursos externos
 
 ### Egghead
@@ -512,3 +536,7 @@ Serie de clases en vídeo que introduce y explora los fundamentos básicos de Re
 ### React documentation
 
 - [Components and props](https://reactjs.org/docs/components-and-props.html)
+
+### Documentación oficial de React devtools
+
+- [React Developer Tools](https://github.com/facebook/react-devtools)
