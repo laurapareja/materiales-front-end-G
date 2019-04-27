@@ -315,7 +315,7 @@ class MurrayList extends React.Component {
 export default MurrayList;
 ```
 
-Como vemos en el componente `MurrayList` llamamos a un componente `ReloadButton` al que pasamos por `props` una función que llamamos `actionToPerform`. Esta prop apunta a al método `handleClick` que simplemente hace un `forceUpdate` que provoca una llamada al render y por tanto el re-renderizado de todas las hijas, las 3 `RandomMurray`, provocando el pintado de 3 nuevas imágenes aleatorias.
+Como vemos en el componente `MurrayList` llamamos a un componente `ReloadButton` al que pasamos por `props` una función que llamamos `actionToPerform`. Esta prop apunta al método `handleClick` que simplemente hace un `forceUpdate` que provoca una llamada al render y por tanto el re-renderizado de todas las hijas, las 3 `RandomMurray`, provocando el pintado de 3 nuevas imágenes aleatorias.
 
 **components/ReloadButton.js**
 
