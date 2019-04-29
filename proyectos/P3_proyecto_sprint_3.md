@@ -6,7 +6,7 @@
 - [Objetivos](#objetivos)
 - [Caso de uso](#caso-de-uso)
 - [Especificaciones](#especificaciones)
-- [Hitos](#hitos)
+- [Planificación del proyecto](#planificacin-del-proyecto)
 - [Entrega](#entrega)
 
 <!-- TOC END -->
@@ -58,30 +58,7 @@ Al final del segundo sprint (final del proyecto), haremos una demo de 10 minutos
 
 ### Historias de usuario
 
-Para la gestión del proyecto, usaremos _historias de usuario_, que es una herramienta para definir las características de un producto que veremos en detalle durante el curso.
-
-### Primera. Refactorización y primera versión con React
-
-- Modularizar y refactorizar el código JS incluyendo lo último aprendido de ES6 (métodos funcionales de array, destructuring, spread operator...)
-- Definir la estructura de componentes React de la aplicación
-- Generar los componentes del proyecto y comunicar información por props
-
-> **NOTA**: No debéis copiar código de vuestro proyecto anterior, sino esforzaros por entender el que han creado otras compañeras. Para partes incompletas o que no funcionen podéis arreglarlas pero no re-hacerlas desde cero.
-
-### Segunda. Versión interactiva React
-
-- Incluir eventos de React
-
-### Tercera. Versión completa con React
-
-- Incluir estado de React
-- Incluir las peticiones al servidor
-
-### Cuarta. Versión offline
-
-- Incluir la funcionalidad offline
-- Implementar rutas con React router
-- Revisión de código
+Para la gestión del proyecto, usaremos _historias de usuario_, que es una herramienta para definir las características de un producto que veremos en detalle durante el curso. Usaremos las historias de usuario que ya tenemos definidas del proyecto del módulo anterior.
 
 ## Entrega
 
