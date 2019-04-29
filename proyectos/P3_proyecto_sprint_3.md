@@ -58,7 +58,7 @@ Al final del segundo sprint (final del proyecto), haremos una demo de 10 minutos
 
 ### Historias de usuario
 
-Para la gestión del proyecto, usaremos _historias de usuario_, que es una herramienta para definir las características de un producto que veremos en detalle durante el curso. Usaremos las historias de usuario que ya tenemos definidas del proyecto del módulo anterior.
+Para la gestión del proyecto, usaremos _historias de usuario_, que es una herramienta para definir las características de un producto que veremos en detalle durante el curso. Usaremos las historias de usuario que ya tenemos definidas del proyecto anterior.
 
 ## Entrega
 
