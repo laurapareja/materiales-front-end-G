@@ -126,7 +126,7 @@ const names = ['María', 'Lucía', 'Susana', 'Rocío', 'Inmaculada'];
 const longNames = [];
 
 for (const name of names) {
-  const nameLength = name.length; // ¡Sí, podemos .length con strings para saber su longitud!
+  const nameLength = name.length; // ¡Sí, podemos usar .length con strings para saber su longitud!
   if (nameLength > 5) {
     longNames.push(name);
   }
