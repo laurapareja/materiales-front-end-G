@@ -126,7 +126,7 @@ const names = ['María', 'Lucía', 'Susana', 'Rocío', 'Inmaculada'];
 const longNames = [];
 
 for (const name of names) {
-  const nameLength = names.length; // ¡Sí, podemos .length con strings para saber su longitud!
+  const nameLength = name.length; // ¡Sí, podemos .length con strings para saber su longitud!
   if (nameLength > 5) {
     longNames.push(name);
   }
@@ -344,7 +344,7 @@ const longName = names.find(name => name.length > 5);
 console.log(longName);
 ```
 
-Igual que en el caso de `map` y `filter`, al método `find` de array le pasamos como parámetro una función que es la que se ejecuta sobre cada elemento del array. En la función comparamos la longitud (`length`) del nombre con 5, y devolvemos el resultado de esa comparación. El primer elemento cuyo resultado de la comparación de como resultado `true` será devuelto por la función y lo recogemos en la varaible `longName`.
+Igual que en el caso de `map` y `filter`, al método `find` de array le pasamos como parámetro una función que es la que se ejecuta sobre cada elemento del array. En la función comparamos la longitud (`length`) del nombre con 5, y devolvemos el resultado de esa comparación. El primer elemento cuyo resultado de la comparación de como resultado `true` será devuelto por la función y lo recogemos en la variable `longName`.
 
 Ahora vamos a ver [un ejemplo con `findIndex`](https://codepen.io/adalab/pen/WWOdzB?editors=0011):
 
