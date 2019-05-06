@@ -9,6 +9,7 @@
 
 - [EJERCICIO 1](#ejercicio-1)
 - [EJERCICIO 2](#ejercicio-2)
+- [EJERCICIO 3](#ejercicio-3)
 
 <!-- /TOC -->
 
@@ -24,7 +25,7 @@ Utilizaremos los métodos del ciclo de vida de los componentes de React para que
 
 ## ¿Qué son los métodos del ciclo de vida?
 
-Se llama **ciclo de vida** al tiempo que pasa desde que un objeto se crea desde el código hasta que se elimina. En un nivel un poco más técnico, podríamos decir que desde que se carga en memoria hasta que se elimina de la memoria. Durante la _vida_ de un componente de React, se ejecutan varios métodos, en función del momento. A estos métodos se les llama métodos del ciclo de vida. Algunos métodos del ciclo de vida que ya conocemos son el `constructor()`, que se ejecuta cuando se crea el componente, y `render()`, que sabemos que se ejecuta en algún momento después de crearse y cada vez que cambia el estado.
+Se llama **ciclo de vida** al tiempo que pasa desde que un objeto se crea desde el código hasta que se elimina. En un nivel un poco más técnico, podríamos decir que desde que se carga en memoria hasta que se elimina de la memoria. Durante la _vida_ de un componente de React, se ejecutan varios métodos, en función del momento. A estos métodos se les llama métodos del ciclo de vida. Algunos métodos del ciclo de vida que ya conocemos son el `constructor()`, que se ejecuta, solo una vez, cuando se crea el componente, y `render()`, que sabemos que se ejecuta en algún momento después de crearse y cada vez que cambia el estado.
 
 Podemos clasificar los métodos del ciclo de vida en tres tipos:
 
@@ -65,7 +66,7 @@ class LifeCycleComponent extends React.Component {
     super(props);
 
     this.setState = {
-      items: [],
+      items: []
     };
 
     this.updateItems = this.updateItems.bind(this);
@@ -93,9 +94,8 @@ Como ya sabemos, mientras un componente está montado, si cambian las `props` o 
 Estos métodos son paralelos a los métodos del montaje del componente. Como tienen algunas peculiaridades, los desglosaremos en las siguientes subsecciones, pero se ejecutan en este orden:
 
 - `shouldComponentUpdate()`: decide si el componente se actualiza visualmente; es decir si los dos métodos siguientes se ejecutan o no:
-  - `render()`: siempre puro y fiel, [_hay un amigo en él_](https://www.youtube.com/watch?v=-KmBrQEcNUI)
-  - `componentDidUpdate()`: similar a `componentDidMount()`
-- `componentDidUpdate(prevProps, prevState)` se llama justo después de re-`render`izar un componente por actualización de sus `props` o estado. Si el componente hace peticiones que dependen de una `prop`, este es buen lugar para rehacerlas, después de comprobar que efectivamente esa `prop` en concreto ha cambiado.
+- `render()`: siempre puro y fiel, [_hay un amigo en él_](https://www.youtube.com/watch?v=-KmBrQEcNUI)
+- `componentDidUpdate(prevProps, prevState)`: similar a `componentDidMount()`, se llama justo después de re-`render`izar un componente por actualización de sus `props` o estado. Si el componente hace peticiones que dependen de una `prop`, este es buen lugar para rehacerlas, después de comprobar que efectivamente esa `prop` en concreto ha cambiado.
 
 > **Nota:** como veremos más abajo, este método no se ejecutará si `shouldComponentUpdate()` devuelve `false`
 
@@ -121,7 +121,7 @@ class AppRoot extends React.Component {
     super(props);
 
     this.state = {
-      reasonsStore: [],
+      reasonsStore: []
     };
 
     this.fetchNewReasons = this.fetchNewReasons.bind(this);
@@ -132,7 +132,7 @@ class AppRoot extends React.Component {
       .then(response => response.json())
       .then(data => {
         this.setState({
-          reasonsStore: data.reasons,
+          reasonsStore: data.reasons
         });
       });
   }
@@ -181,7 +181,7 @@ class AppRoot extends React.Component {
 
     // Inicializamos el estado en blanco: todavía no tenemos los datos
     this.state = {
-      reasonsStore: [],
+      reasonsStore: []
     };
 
     this.fetchNewReasons = this.fetchNewReasons.bind(this);
@@ -192,9 +192,14 @@ class AppRoot extends React.Component {
       .then(response => response.json())
       .then(data => {
         this.setState({
-          reasonsStore: data.reasons,
+          reasonsStore: data.reasons
         });
       });
+  }
+
+  // según termina de pintarse el componente, llamamos al método que actualiza el estado con los datos del servidor
+  componentDidMount() {
+    this.fetchNewReasons();
   }
 
   // render() solo maneja los datos del estado y las props
@@ -208,11 +213,6 @@ class AppRoot extends React.Component {
       </section>
     );
   }
-
-  // según termina de pintarse el componente, llamamos al método que actualiza el estado con los datos del servidor
-  componentDidMount() {
-    this.fetchNewReasons();
-  }
 }
 ```
 
@@ -224,38 +224,59 @@ class AppRoot extends React.Component {
 
 **La hora con ciclo de vida**
 
-Vamos a partir del componente `Clock` del ejercicio 1 de la sesión 3.7 sobre el estado. Y vamos a usar métodos del ciclo de vida para estructurar mejor el código.
+Vamos a crear dos páginas con React Router.
 
-> PISTA: en el `constructor` no deberíamos llamar a `setInterval` sino en el método de ciclo de vida adecuado
+Para la primera reutilizaremos el componente `Clock` del ejercicio 1 de la sesión 3.7 sobre el estado.
+Para la segunda crearemos un componente sencillo `NoClock` que pinte una frase relajante que nos haga olvidarnos del tiempo.
+
+Recuerda preparar un sencillo menú que nos permita navegar entre ambas.
+
+Ahora tenemos que estructurar mejor el código de `Clock` apoyandonos en los métodos del ciclo de vida. Inicia el intervalo para el reloj en la fase de montaje y limpialo en la fase de desmontaje.
+
+> PISTA: en el `constructor` NO deberíamos llamar a `setInterval` sino en el método de ciclo de vida adecuado
+> **NOTA**: comenta la lógica de limpiado del reloj, navega a la página relajante y observa los errores en la consola de Chrome para familiarizarte con ellos ;)
 
 ---
 
 #### EJERCICIO 2
 
+**Local de colores**
+
+Vamos a preparar un componente con dos radio buttons que permitan a la usuaria seleccionar su tema preferido para la página: claro u oscuro.
+
+1. Cuando la usuaria cambie la selección, actualizaremos el estado de `App`, y la vista se pintara con los colores de fondo y fuente cambiados.
+2. Como hemos cambiado el estado, el ciclo de vida de actualización de `App` comienza, así cuando el componente se actualize podemos consultar su estado actualizado y guardarlo en nuestro bien-amado `localStorage`.
+3. Ya que tenemos la selección de la usuaria en el `localStorage` podemos recuperarla cuando nuestro componente monte marcando la selección en los radios y cambiando los colores.
+
+#### EJERCICIO 3
+
 **El menú dinámico**
 
-Vamos a crear un menú de opciones dinámico, es decir, que las opciones vienen de hacer una petición a un servidor. Vamos a ver paso por paso cómo hacerlo:
+Vamos a crear un listado de personas dinámico, es decir, que las opciones vienen de hacer una petición a un servidor. Vamos a ver paso por paso cómo hacerlo:
 
 1. Creamos un componente `App` que será el contenedor de la aplicación
 
-2. Creamos un componente `Menu` que recibirá por `props` un array con las opciones en este formato:
+2. Creamos un componente `People` que recibirá por `props` un array con las opciones en este formato:
 
 ```js
 [
   {
-    "label": "inicio",
-    "link": "#inicio"
-  },
-  ...
-]
+    gender: 'female',
+    name: {
+      title: 'ms',
+      first: 'samantha',
+      last: 'elliott'
+    }
+    ...
+  }
+];
 ```
 
-3. Creamos un estado en el componente `App` para almacenar las opciones de menú, y de momento le asignamos como valor un array como el del ejemplo anterior. Más tarde borraremos este array lo sustituiremos por la respuesta de un fetch.
+3. Creamos un estado en el componente `App` para almacenar el listado, y de momento le asignamos como valor un array como el del ejemplo anterior. Más tarde borraremos este array lo sustituiremos por la respuesta de un fetch.
 
-$. Instanciamos el componente `Menu` en `App` y le pasamos por props el array que tenemos en el estado
+4. Instanciamos el componente `People` en `App` y le pasamos por props el array que tenemos en el estado
 
-
-5. Realizamos una petición al servidor en https://three-random-reasons-mdqknjcwpl.now.sh/ que nos devuelve un listado de opciones. La petición la hacemos con `fetch` en el método del ciclo de vida que corresponda.
+5. Realizamos una petición al servidor en `https://randomuser.me/api/` que nos devuelve un listado de personas. La petición la hacemos con `fetch` en el método del ciclo de vida que corresponda.
 
 6. BONUS: Creamos un botón en un nuevo componente `Button` que al hacer clic vuelve a realizar una petición al servidor y actualiza el estado, por lo que el menú vuelve a pintarse. Para esto necesitamos hacer lifting para pasar la información del evento desde `Button` hasta `App`, que es quien mantiene el estado.
 
