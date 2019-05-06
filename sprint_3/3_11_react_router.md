@@ -223,8 +223,8 @@ class App extends React.Component {
             <Route exact path="/" component={Home} />
             <Route
               path="/child/:id"
-              render={props => (
-                <Child match={props.match} babyemoji={this.babyEmoji} />
+              render={routerProps => (
+                <Child match={routerProps.match} babyemoji={this.babyEmoji} />
               )}
             />
           </Switch>
