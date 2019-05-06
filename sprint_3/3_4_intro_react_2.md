@@ -165,7 +165,7 @@ Una de las pocas reglas estrictas de React: **no debemos modificar nunca las `pr
 
 ```js
 render() {
-  const upperCaseName = this.props.name.toUppercase();
+  const upperCaseName = this.props.name.toUpperCase();
 
   return (
     <span>Hello, { upperCaseName }!</span> // <span>Hello, MARÍA MOLINER!</span>
