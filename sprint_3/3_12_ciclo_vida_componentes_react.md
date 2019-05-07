@@ -245,7 +245,7 @@ Ahora tenemos que estructurar mejor el código de `Clock` apoyandonos en los mé
 Vamos a preparar un componente con dos radio buttons que permitan a la usuaria seleccionar su tema preferido para la página: claro u oscuro.
 
 1. Cuando la usuaria cambie la selección, actualizaremos el estado de `App`, y la vista se pintara con los colores de fondo y fuente cambiados.
-2. Como hemos cambiado el estado, el ciclo de vida de actualización de `App` comienza, así cuando el componente se actualize podemos consultar su estado actualizado y guardarlo en nuestro bien-amado `localStorage`.
+2. Como hemos cambiado el estado, el ciclo de vida de actualización de `App` comienza, así cuando el componente se actualice podemos consultar su estado actualizado y guardarlo en nuestro bien-amado `localStorage`.
 3. Ya que tenemos la selección de la usuaria en el `localStorage` podemos recuperarla cuando nuestro componente monte marcando la selección en los radios y cambiando los colores.
 
 #### EJERCICIO 3
