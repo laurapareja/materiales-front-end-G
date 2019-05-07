@@ -8,8 +8,9 @@
 
 - [EJERCICIO 1](#ejercicio-1)
 - [EJERCICIO 2](#ejercicio-2)
-
-<!-- /TOC -->
+- [EJERCICIO 3](#ejercicio-3)
+- [EJERCICIO 4](#ejercicio-4)
+  <!-- /TOC -->
 
 ## Introducción
 
@@ -32,7 +33,7 @@ class AwesomeForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: ""
+      name: '',
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -75,7 +76,7 @@ class AwesomeForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: ""
+      name: '',
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -120,11 +121,49 @@ Usar un _componente controlado_ tiene más ventajas, por ejemplo, nos permite va
 
 **Formulario para pelis**
 
-Vamos a crear un formulario en un componente de React que recoja información de una película. Recogeremos información de
+Vamos a crear un formulario en un componente de React que recoja información de una película:
 
-- nombre (en un campo de texto)
-- descripción (en un textarea)
-- género (en un select donde podemos seleccionar comedia, drama o infantil)
+- **nombre**, en un campo de texto
+- **descripción**, en un textarea
+- **idioma**, en un select donde podemos seleccionar entre Español, Inglés o Portugués
+
+El resultado de rellenar el formulario, debe aparecer en una tarjeta de previsualización que va mostrando la información según se rellena.
+
+---
+
+#### EJERCICIO 2
+
+**Refactor del formulario**
+
+Vamos a hacer un pequeño refactor del código del ejercicio anterior: usaremos una única función escuchadora para el evento `change` de cada campo. Para eso, recordad que podemos acceder a la clave de un objeto cuyo nombre tenemos en una variable usando el operador `[key]` siendo `key` la variable que tiene el nombre de un campo del objeto. Por ejemplo:
+
+```js
+this.state = {
+  name: 'Groundhog Day',
+  description:
+    'A weatherman finds himself inexplicably living the same day over and over again.',
+};
+...
+...
+onChange = event => {
+  const name = event.target.name;
+  this.setState({
+    [name]: 'Leaving Las Vegas',
+  });
+}
+
+```
+
+---
+
+#### EJERCICIO 3
+
+**Más datos de las pelis**
+
+Vamos a añadir más información a nuestro formulario de películas
+
+- **clasificación por edades**, donde usaremos radio buttons con las opciones: A (todos los públicos, aparece marcada por defecto), 7, 12, 16 y 18
+- **género**, donde usaremos checkboxes y podrán marcarse un máximo de 3 de las opciones: comedia, drama, fantasía, acción, familia, terror
 
 ---
 
@@ -213,9 +252,9 @@ class FileInput extends React.Component {
 
 ---
 
-#### EJERCICIO 2
+#### EJERCICIO 4
 
-**Formulario para pelis II**
+**Pelis con carátula**
 
 Partiendo del ejercicio anterior, vamos a añadir un campo más al formulario que sea la carátula de la película. Al elegir el usuario una carátula, se muestra una previsualización de la misma, y se guardan los datos en el estado. Recuerda que para leer la información de ficheros debemos usar un `FileReader` y para recoger la información de una imagen su método `readAsDataURL`.
 
