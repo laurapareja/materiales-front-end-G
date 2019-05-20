@@ -144,10 +144,18 @@ Finalmente instalamos React Router en nuestro proyecto, y conseguimos que al pin
 
 ## Usando parámetros en las rutas
 
-React router también nos facilita crear rutas que tengan parámetros, es decir, que no sean rutas fijas sino que dependan del algún valor. Por ejemplo, si tenemos un listado de elementos y queremos crear una ruta para cada uno de ellos.
+React router también nos facilita crear rutas que tengan parámetros, es decir, que no sean rutas fijas sino que dependan del algún valor. Por ejemplo, si tenemos un listado de items y queremos crear una ruta para el detalle de cada uno de ellos.
 
-En este ejemplo, vamos a crear rutas para varios del estilo `/child/:id` donde `:id` es un identificar único de cada elemento. En el elemento `Switch` crearemos una nueva ruta `Route` con ese `path='/child/:id'` y que renderiza el componente `Child`. Ahora, los enlaces de la cabecera enlazan a `/child/1`, `/child/2`, etc. Al hacer clic en alguno de estos enlaces, se renderizará el componente `Child` al que le llegará por `props` un parámetro `match` que tiene información sobre los parámetros de la URL, en este caso, el número al final de la URL.
+En este ejemplo, vamos a crear rutas dinámicas para las páginas de detalle de varios items.
 
+Para ello, en lugar de escribir tantas rutas como items, escribimos una sola ruta dinámica: `/child/:id`, dónde `:id` es un identificar único de cada item. 
+
+En el componente `Switch` crearemos una nueva ruta `Route` con ese `path='/child/:id'` y que renderiza el componente `Child`. 
+
+Por otro lado, los enlaces de la cabecera enlazan a `/child/1`, `/child/2`, etc. 
+cada perso
+Al hacer clic en alguno de estos enlaces, se renderizará el componente `Child` al que le llegará por `props` un parámetro `match` que tiene información sobre los parámetros de la URL, en este caso, el número al final de la URL (`:id`).
+cada perso
 **App.js**:
 
 ```js
@@ -202,8 +210,10 @@ class Child extends React.Component {
 [&blacktriangleright; Rutas con React Router en Codepen][codepen-react-router-params]
 
 ## Gestión avanzada de rutas: uso de render
+cada perso
+Los componentes `Route` aceptan distintas `props`. En las secciones anteriores hemos visto la más básica, `component` a la que le pasamos el componente que queremos pintar para esa ruta determinada.
 
-Los componentes `Route` aceptan distintas `props`. En las secciones anteriores hemos visto la más básica, `component`. Cuando pasamos la `prop` así, el componente `Route` renderizará ese componente cuando la ruta coincida con la que especifica en `path`. Sin embargo, podemos querer renderizar algo más complejo, o puede que queramos pasar `props` a ese componente. Para esas situaciones, `Route` acepta una `prop` de nombre `render` al que le pasaremos una función que devuelva lo que queremos que se pinte.
+Sin embargo, podemos querer renderizar algo más complejo, o puede que queramos pasar `props` a ese componente. Para esas situaciones, `Route` acepta una `prop` de nombre `render` a la que le pasaremos una función que devuelva lo que queremos que se pinte.
 
 ```js
 // ...
@@ -246,7 +256,13 @@ Un ejemplo de como hacer esto lo tenemos en [este codepen](https://codepen.io/ad
 
 **Directorio con detalle**
 
-Vamos a partir del ejercicio de la sesión anterior sobre un directorio de personas. En la página principal aparecía un listado de personas con información de https://randomuser.me/. Ahora vamos a hacer un enlace por cada persona de la lista para acceder a una vista de detalle de esa persona. Implementaremos la vista de detalle con un nuevo componente `PersonDetail` al que navegaremos usando React router con una ruta por cada persona de la lista. **¡A por ello!**
+Vamos a partir del ejercicio de la sesión anterior sobre un directorio de personas. En la página principal aparecía un listado de personas con información de https://randomuser.me/. 
+
+Ahora vamos a hacer un enlace por cada persona de la lista para acceder a una vista de detalle de esa persona. 
+
+Implementaremos la vista de detalle con un nuevo componente `PersonDetail` al que navegaremos usando React router con una ruta por cada persona de la lista. 
+
+**¡A por ello!**
 
 > PISTA: Para resolver este segundo ejercicio `PersonDetail` debe tener acceso al id de cada usuario y a los datos (que seguramente estarán en App). Usaremos `render` para poder pasarle ambos datos, recordando que los datos del `match` debemos pasárselos explícitamente al contrario que usando `component`.
 
