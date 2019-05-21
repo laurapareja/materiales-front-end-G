@@ -234,6 +234,7 @@ Recuerda preparar un sencillo menú que nos permita navegar entre ambas.
 Ahora tenemos que estructurar mejor el código de `Clock` apoyandonos en los métodos del ciclo de vida. Inicia el intervalo para el reloj en la fase de montaje y limpialo en la fase de desmontaje.
 
 > PISTA: en el `constructor` NO deberíamos llamar a `setInterval` sino en el método de ciclo de vida adecuado
+
 > **NOTA**: comenta la lógica de limpiado del reloj, navega a la página relajante y observa los errores en la consola de Chrome para familiarizarte con ellos ;)
 
 ---
