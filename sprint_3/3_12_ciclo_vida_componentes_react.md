@@ -226,7 +226,7 @@ class AppRoot extends React.Component {
 
 Vamos a crear dos páginas con React Router.
 
-Para la primera reutilizaremos el componente `Clock` del ejercicio 1 de la sesión 3.7 sobre el estado.
+Para la primera reutilizaremos el componente `Clock` del ejercicio 3 de la sesión 3.7 sobre el estado.
 Para la segunda crearemos un componente sencillo `NoClock` que pinte una frase relajante que nos haga olvidarnos del tiempo.
 
 Recuerda preparar un sencillo menú que nos permita navegar entre ambas.
