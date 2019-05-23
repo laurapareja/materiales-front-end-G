@@ -49,7 +49,7 @@ Para activar el enrutado en nuestra aplicación, haremos lo siguiente. En nuestr
 ```js
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter } from `react-router-dom`;
+import { HashRouter } from 'react-router-dom';
 
 // ...
 
