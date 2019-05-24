@@ -153,9 +153,7 @@ Para ello, en lugar de escribir tantas rutas como items, escribimos una sola rut
 En el componente `Switch` crearemos una nueva ruta `Route` con ese `path='/child/:id'` y que renderiza el componente `Child`. 
 
 Por otro lado, los enlaces de la cabecera enlazan a `/child/1`, `/child/2`, etc. 
-cada perso
 Al hacer clic en alguno de estos enlaces, se renderizará el componente `Child` al que le llegará por `props` un parámetro `match` que tiene información sobre los parámetros de la URL, en este caso, el número al final de la URL (`:id`).
-cada perso
 **App.js**:
 
 ```js
@@ -210,7 +208,7 @@ class Child extends React.Component {
 [&blacktriangleright; Rutas con React Router en Codepen][codepen-react-router-params]
 
 ## Gestión avanzada de rutas: uso de render
-cada perso
+
 Los componentes `Route` aceptan distintas `props`. En las secciones anteriores hemos visto la más básica, `component` a la que le pasamos el componente que queremos pintar para esa ruta determinada.
 
 Sin embargo, podemos querer renderizar algo más complejo, o puede que queramos pasar `props` a ese componente. Para esas situaciones, `Route` acepta una `prop` de nombre `render` a la que le pasaremos una función que devuelva lo que queremos que se pinte.
