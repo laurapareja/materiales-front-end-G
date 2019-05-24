@@ -37,6 +37,8 @@
 - [2.12 DOM avanzado](sprint_2/2_12_dom_avanzado.md)
 - [2.13 Debugging](sprint_2/2_13_debugging.md)
 - [2.14 Manejo de estructuras de datos](sprint_2/2_14_manejo_de_estructuras_de_datos.md)
+- [Preguntas entrevista](sprint_2/2_questions.md)
+- [Repaso](sprint_2/2_repaso.md)
 
 ## Módulo 3. React
 
@@ -54,6 +56,8 @@
 - [3.12 Métodos del ciclo de vida de componentes](sprint_3/3_12_ciclo_vida_componentes_react.md)
 - [3.13 Testing con JavaScript](sprint_3/3_13_testing_js.md)
 - [3.14 Refactoring](sprint_3/3_14_refactoring.md)
+- [Preguntas entrevista](sprint_3/3_questions.md)
+- [Repaso](sprint_3/3_repaso.md)
 
 ## Proyectos
 
