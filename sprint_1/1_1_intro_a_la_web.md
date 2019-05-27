@@ -24,7 +24,7 @@ La respuesta más en detalle es que Internet es una red de ordenadores conectado
 A estos ordenadores se les llama **servidores** y dentro de esta red, cada ordenador está localizado por un conjunto de números que se llama dirección IP, formado por cuatro números separados por puntos, por ejemplo:
 
 ```
-216.58.211.206
+216.58.206.227
 ```
 
 Identificar los servidores de esta forma está bien cuando 2 ordenadores trabajan entre sí, pero las personas necesitamos un sistema que podamos entender y usar fácilmente. Así, tenemos otro tipo de ordenadores que se ocupan de asociar esta dirección IP con una dirección que una persona de bien pueda usar sin perder la juventud en llevar la cuenta, lo que llamamos un dominio.
@@ -43,14 +43,14 @@ Cuándo escribimos una dirección web en el navegador (Chrome, Firefox, Edge, Sa
 
 Nuestro cliente, a través de nuestro proveedor, se conecta con un servidor DNS y pregunta cuál es la IP para el dominio *google.es*.
 
-El servidor DNS responde con la IP asociada a ese dominio (en este caso *216.58.211.206*).
+El servidor DNS responde con la IP asociada a ese dominio (en este caso *216.58.206.227*).
 
 Nuestro cliente se conecta con el servidor que tiene esa IP.
 
 El servidor responde con la información necesaria para mostrar en el navegador la página de Google.
 
     Práctica:
-    Escribir en un navegador la dirección IP 216.58.211.206
+    Escribir en un navegador la dirección IP 216.58.206.227
 
 ### Partes de una dirección web o URL
 
@@ -69,7 +69,7 @@ protocolo://nombre-de-dominio/directorio/nombre-de-archivo
 ```
 
 * **Protocolo**: Indica cómo se van a intercambiar los datos entre  el ordenador cliente y el servidor. Hay varios tipos de protocolo, el normal para navegar es http (o https, que es http pero en modo seguro). http significa Hypertext Transfer Protocol, que español viene a ser "Protocolo de transferencia de hipertexto". Existen más protocolos como `mailto` o `ftp`.
-* **Nombre de dominio**: Dominio es la dirección amigable de un ordenador en Internet (recordad como vimos que `google.es` es el dominio que dirige al servidor que está en la dirección 216.58.211.206). Los dominios tienen un nombre y una extensión.
+* **Nombre de dominio**: Dominio es la dirección amigable de un ordenador en Internet (recordad como vimos que `google.es` es el dominio que dirige al servidor que está en la dirección 216.58.206.227). Los dominios tienen un nombre y una extensión.
     * Las **extensiones** las crea una entidad [ICANN](icann.org) y algunas extensiones populares son `.com`, `.net` o `.org`. Intentan añadir información al dominio, por ejemplo:
         * `.es` indica que es una página española
         * `.com` indica que es una página comercial
