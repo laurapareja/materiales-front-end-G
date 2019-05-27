@@ -122,7 +122,7 @@ Vamos a ver los pasos básicos para empezar a trabajar en un proyecto sencillo d
 
 4. Guardamos con `Ctrl+S` o `⌘S`, y como es la primera vez de nuevo se nos abrirá el navegador de archivos para que elijamos un nombre, lo llamamos `index.html` y guardamos. Escribimos la base de nuestro `html` (vamos a ver cómo un poco más abajo).
 
-5. Ahora toca volver al navegador de archivos (nautilos en Ubuntu, finder en MAC), localizar nuestro nuevo archivo `index.html` y de nuevo, pulsar botón derecho derecho del ratón, o hacer click con dos dedos en el *touchpad* sobre el y seleccionar la opción *Abrir con Chrome* para comprobar que nuestra página se muestra como esperamos en el navegador.
+5. Ahora toca volver al navegador de archivos (nautilos en Ubuntu, finder en MAC), localizar nuestro nuevo archivo `index.html` y de nuevo, pulsar botón derecho del ratón, o hacer click con dos dedos en el *touchpad* sobre el y seleccionar la opción *Abrir con Chrome* para comprobar que nuestra página se muestra como esperamos en el navegador.
 
 6. Volvemos a *Code* y continuamos trabajando, guardando frecuentemente (`Ctrl+S` o `⌘S`) y comprobando que los cambios se reflejan en el navegador, yendo a este y pulsando `Ctrl+R` o `⌘R` para refrescar la página.
 
@@ -150,7 +150,7 @@ Cuando lleguemos al paso 5, copiaremos el siguiente código en el archivo `index
 
 Para realizar el paso 6 podemos cambiar el texto 'Hola Mundo' por 'Hola mundo, día 1 en Adalab'.
 
-> **Nota**: en esta documentación cada ejemplo de código tiene un botón arriba a la derecha para copiar. Te recomendamos qe lo utilices ya que a veces con el copiado manual nos llevamos caracteres escondidos que hacen que el código no funcione.
+> **Nota**: En esta documentación cada ejemplo de código tiene un botón arriba a la derecha para copiar. Te recomendamos que lo utilices ya que a veces con el copiado manual nos llevamos caracteres escondidos que hacen que el código no funcione.
 
 > **Nota**: Observa como cuando realizas algún cambio sobre un archivo en *Code*, en la pestaña superior del archivo, junto al nombre, aparece una bolita, esta nos indica que hay cambios sin guardar. Como consejo nunca deberías pasar mucho tiempo sin guardar los cambios realizados sobre un archivo.
 
@@ -381,7 +381,7 @@ Dentro de nuestra página esto quedaría así:
 Una forma de añadir estilos a una página es a través de la etiqueta `<style>` que, como aplica ajustes visuales sobre la página iría dentro de la cabecera de mi documento.
 
 Bueno, es una de las opciones, pero desde hace unos años, intentamos separar el contenido de la presentación pasando nuestros estilos siempre a un archivo externo que estará enlazado desde nuestra página HTML.
-Lo haremos con la etiqueta `<link>`, que es una de esas etiquetas que no necesita cerrarse. Esta etiqueta lleva dos atributos, uno que dice el tipo de archivo que va enlazado `rel="stylesheet"` y otro diciendo dónde está el archivo `href="estilos.css"`.
+Lo haremos con la etiqueta `<link>`, que es una de esas etiquetas que no necesita cerrarse. Esta etiqueta lleva dos atributos, uno que dice el tipo de archivo que va enlazado `rel="stylesheet"` y otro diciendo dónde está el archivo `href="style.css"`.
 
 **index.html**
 
@@ -539,7 +539,7 @@ En Code:
 
 ## Recursos externos
 
-* [codificación de caracteres](https://es.wikipedia.org/wiki/Codificación_de_caracteres)
+* [Codificación de caracteres](https://es.wikipedia.org/wiki/Codificación_de_caracteres)
 * [Lista de elementos html | MDN](https://developer.mozilla.org/es/docs/HTML/HTML5/HTML5_lista_elementos)
 * [(Inglés) Lista de elementos html | html5doctor ](http://html5doctor.com/#glossary)
 * [Pair programming](https://en.wikipedia.org/wiki/Pair_programming)
