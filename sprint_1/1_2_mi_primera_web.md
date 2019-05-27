@@ -495,7 +495,7 @@ Acabamos de ver que a veces varios selectores se aplican al mismo elemento, es e
 
 La cascada depende de 3 factores:
 
-1. La **importancia**: hay una palabra clave (`!important`) que hace que nuestra propiedad se aplique siempre.
+1. La **importancia**: hay una palabra clave (`!important`) que hace que nuestra propiedad se aplique siempre. Cuando en un proyecto se abusa del uso de `!important` siempre llega un momento en el que queremos cambiar un estilo que ya tiene la palabra clave `important` y como es importante no podemos. Por ello se recomienda usar `!important` lo menos posible y en su lugar usar la especificidad.
 2. La **especificidad**: es un arma de doble filo porque cuanto más específico sea un selector más fuerza tendrán sus reglas sobre las demás. Pero es una buena práctica escribir los selectores lo menos específicos posible.
 3. El **orden** en el archivo CSS: si varios selectores tienen la misma "fuerza" ganarán los que estén más abajo porque el CSS se aplica en orden de escritura.
 
