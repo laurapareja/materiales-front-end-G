@@ -85,11 +85,13 @@
 ## Guías
 
 - [Instalación de ordenadores](guias/instalacion_ordenadores.md)
-  <!--
+
+<!--
 - [Scrum](guias/scrum.md)
-  -->
-  <!--
+-->
+
+<!--
 - [Buenas prácticas para tener un portfolio atractivo en GitHub](guias/github_como_portfolio.md)
 - [Guía para enfrentarse a problemas técnicos de manera autónoma](guias/busqueda_de_soluciones.md)
 - [Pruebas técnicas](guias/pruebas_tecnicas.md)
-  -->
+-->
