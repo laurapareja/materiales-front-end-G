@@ -151,6 +151,7 @@ Si conocemos una página que use id, podemos enlazar directamente a esa parte de
 ```
 Aquí el atributo `href` lleva la dirección de la página de la Wikipedia sobre la piratería y el `id` de la sección que se refiere a la edad media.
 
+> **Nota:** Si quieres ver los enlaces relativos que estamos utilizando en esta página ve arriba del todo y pulsa en los enlaces de cada uno de los ejercicios.
 La etiqueta `<a>` tiene otros atributos que debemos conocer:
 * `title=""`: Donde podemos añadir un texto complementario que el navegador mostrará en un pequeño tooltip cuando pongamos el cursor sobre el enlace. Me interesa usarlo cuando tengo un enlace tipo "descargar" y quiero asociarle el texto "Descargar archivo PDF".  
 **Ejemplo:**  
