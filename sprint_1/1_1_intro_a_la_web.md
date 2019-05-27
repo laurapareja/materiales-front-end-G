@@ -102,13 +102,13 @@ También podemos, con una aplicación destinada para ello, enviar nuestro archiv
 ##  Herramientas para desarrollar en la web
 
 Cuando desarrollamos páginas o aplicaciones web hay dos herramientas básicas que forman parte de nuestro día a día: el editor de código y el navegador web. Durante el curso de Adalab vamos a trabajar con el editor [Code](https://code.visualstudio.com/) y con el navegador [Chrome](https://www.google.com/chrome/) .
-A lo largo de las lecciones iremos viendo información valiosa para sacarle el mayor partido a ambos. Os recomendamos ir profundizando poco a poco en el conocimiento de ambos, para personalizarlos a vuestro gusto y sacarles el mayor partido. 
+A lo largo de las lecciones iremos viendo información valiosa para sacarle el mayor partido a ambos. Os recomendamos ir profundizando poco a poco en el conocimiento de ambos, para personalizarlos a vuestro gusto y sacarles el mayor partido.
 
 ## Organizando proyecto en carpetas
 
-Un valor importante en una desarrolladora es la organización. Normalmente solemos hacer montones de proyectos, algunos grandes y que requieren tiempo, otros pequeños que nos llevan unos minutos, como pruebas de conceptos o ejercicios para probar una nueva herramienta. Lo ideal es tener una carpeta en nuestro ordenador para tenerlos localizados y organizados. 
+Un valor importante en una desarrolladora es la organización. Normalmente solemos hacer montones de proyectos, algunos grandes y que requieren tiempo, otros pequeños que nos llevan unos minutos, como pruebas de conceptos o ejercicios para probar una nueva herramienta. Lo ideal es tener una carpeta en nuestro ordenador para tenerlos localizados y organizados.
 
-> **Nota**: El nombre de esta carpeta es personal, y cada desarrolladora elige el que mejor le encaja, algunas ideas: `Projects`, `Work`, `Trabajo`... 
+> **Nota**: El nombre de esta carpeta es personal, y cada desarrolladora elige el que mejor le encaja, algunas ideas: `Projects`, `Work`, `Trabajo`...
 
 ### Creando un proyecto
 
@@ -279,7 +279,7 @@ La lista ordenada produce una lista numerando cada ítem por orden de escritura 
 * * *
 #### EJERCICIO 2
 
-Con estos elementos vamos a crear nuestra primera página con una receta de Gazpacho fresquito:
+Con estos elementos vamos a crear nuestra primera página con una receta de Gazpacho fresquito. Añade el texto de la receta al fichero `index.html` (dentro de la etiqueta `body`) y añade las etiquetas HTML que necesites para que se parezca al texto que hay a continuación:
 
 ## GAZPACHO
 
@@ -524,7 +524,7 @@ Vamos a indentar el ejercicio del Gazpacho con auto-indent.
 
 * * *
 
-### Atajos de teclado 
+### Atajos de teclado
 
 Hoy hemos visto un montón de atajos de teclado, en este momento puede que sientas un poco de resistencia a utilizarlos porque:
 
