@@ -58,7 +58,7 @@ Usaremos una sección para agrupar contenidos por temática:
 Hay una serie de secciones especiales que tienen asignado un significado semántico predeterminado:
 
 * `<header>`: una cabecera o sección de presentación de un bloque
-* `<main>`: Indica la principal sección de contenido
+* `<main>`: indica la principal sección de contenido
 * `<footer>`: un pie o sección final de un bloque
 * `<nav>`: un bloque de navegación, para un menú.
 * `<aside>`: un bloque de contenido de menor importancia o con contenido relacionado
@@ -151,9 +151,11 @@ Si conocemos una página que use id, podemos enlazar directamente a esa parte de
 ```
 Aquí el atributo `href` lleva la dirección de la página de la Wikipedia sobre la piratería y el `id` de la sección que se refiere a la edad media.
 
+> **Nota:** Si quieres ver los enlaces relativos que estamos utilizando en esta página ve arriba del todo y pulsa en los enlaces de cada uno de los ejercicios.
+
 La etiqueta `<a>` tiene otros atributos que debemos conocer:
-* `title=""`: Donde podemos añadir un texto complementario que el navegador mostrará en un pequeño tooltip cuando pongamos el cursor sobre el enlace. Me interesa usarlo cuando tengo un enlace tipo "descargar" y quiero asociarle el texto "Descargar archivo PDF".  
-**Ejemplo:**  
+* `title=""`: Donde podemos añadir un texto complementario que el navegador mostrará en un pequeño tooltip cuando pongamos el cursor sobre el enlace. Me interesa usarlo cuando tengo un enlace tipo "descargar" y quiero asociarle el texto "Descargar archivo PDF".
+**Ejemplo:**
 ![Ejemplo de title=""](assets/images/1-2/title.png)
 * `target=""`: Aquí podemos especificar donde se abre el enlace. Por ejemplo con el valor `_blank`, indicamos que sea en una nueva pestaña, lo cual nos interesa cuando en nuestra página enlazamos a páginas de otros y no queremos que el usuario "pierda" nuestra página al hacer clic en ellos.
 
@@ -176,7 +178,7 @@ Muchas veces querremos acompañar nuestro contenido con imágenes, ya sea para a
 Para ello tenemos la etiqueta `<img>`, que tiene varios atributos:
 * `src=""`: Aquí indicamos la ruta de nuestro archivo de imagen
 * `alt=""`: El atributo alt es el texto que va a mostrar el navegador en caso de la imagen no se pueda cargar, pero también es muy importante para la accesibilidad, cuando la imagen es parte del contenido debemos usarlo añadiendo un texto descriptivo. Cuando la imagen sea meramente decorativa, se recomienda dejar el valor vacío, pero no omitirlo.
-**Ejemplo:**  
+**Ejemplo:**
 ![Ejemplo de alt=""](assets/images/1-2/alt.png)
 
 ### Saltos de línea
@@ -290,7 +292,7 @@ Se trata de una hoja de estilos que intenta que todos los elementos se muestren 
 
 Ahora mismo hay parte de la comunidad de desarrollo que no considera que estas hojas de reset sean necesarias porque:
 * Las páginas deben verse bien en todos los navegadores, no exactamente igual
-* Las últimas versiones de los navegadores son bastante decentes y la época dura de los navegadores antiguos, ya paso
+* Las últimas versiones de los navegadores son bastante decentes y la época dura de los navegadores antiguos, ya pasó
 * No hay un método estándar de reseteo de CSS
 
 > **NOTA**: Aún así, en algunos casos puede interesar usar una o incluso hacerse una propia, así que conocerlas es importante.
@@ -494,7 +496,7 @@ Acabamos de ver que a veces varios selectores se aplican al mismo elemento, es e
 
 La cascada depende de 3 factores:
 
-1. La **importancia**: hay una palabra clave (`!important`) que hace que nuestra propiedad se aplique siempre.
+1. La **importancia**: hay una palabra clave (`!important`) que hace que nuestra propiedad se aplique siempre. Cuando en un proyecto se abusa del uso de `!important` siempre llega un momento en el que queremos cambiar un estilo que ya tiene la palabra clave `important` y como es importante no podemos. Por ello se recomienda usar `!important` lo menos posible y en su lugar usar la especificidad.
 2. La **especificidad**: es un arma de doble filo porque cuanto más específico sea un selector más fuerza tendrán sus reglas sobre las demás. Pero es una buena práctica escribir los selectores lo menos específicos posible.
 3. El **orden** en el archivo CSS: si varios selectores tienen la misma "fuerza" ganarán los que estén más abajo porque el CSS se aplica en orden de escritura.
 
@@ -524,4 +526,4 @@ Partiendo de este [Codepen de ejemplo](https://codepen.io/oneeyedman/pen/vWEBex)
 
 ### Figma
 
-[Figma](https://www.figma.com/) es una herramienta online para diseñar y prototipar que permite hasta tres proyectos gratuitos. Este tipo de herramientas son muy útiles para las frontend, ya que nos pueden servir para algo sencillo como medir o recortar una imagen de manera ágil, o para algo más complejo como diseñar nuestra web personal. 
+[Figma](https://www.figma.com/) es una herramienta online para diseñar y prototipar que permite hasta tres proyectos gratuitos. Este tipo de herramientas son muy útiles para las frontend, ya que nos pueden servir para algo sencillo como medir o recortar una imagen de manera ágil, o para algo más complejo como diseñar nuestra web personal.
