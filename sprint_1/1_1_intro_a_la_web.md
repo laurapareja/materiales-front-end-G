@@ -24,7 +24,7 @@ La respuesta más en detalle es que Internet es una red de ordenadores conectado
 A estos ordenadores se les llama **servidores** y dentro de esta red, cada ordenador está localizado por un conjunto de números que se llama dirección IP, formado por cuatro números separados por puntos, por ejemplo:
 
 ```
-216.58.211.206
+216.58.206.227
 ```
 
 Identificar los servidores de esta forma está bien cuando 2 ordenadores trabajan entre sí, pero las personas necesitamos un sistema que podamos entender y usar fácilmente. Así, tenemos otro tipo de ordenadores que se ocupan de asociar esta dirección IP con una dirección que una persona de bien pueda usar sin perder la juventud en llevar la cuenta, lo que llamamos un dominio.
@@ -43,14 +43,14 @@ Cuándo escribimos una dirección web en el navegador (Chrome, Firefox, Edge, Sa
 
 Nuestro cliente, a través de nuestro proveedor, se conecta con un servidor DNS y pregunta cuál es la IP para el dominio *google.es*.
 
-El servidor DNS responde con la IP asociada a ese dominio (en este caso *216.58.211.206*).
+El servidor DNS responde con la IP asociada a ese dominio (en este caso *216.58.206.227*).
 
 Nuestro cliente se conecta con el servidor que tiene esa IP.
 
 El servidor responde con la información necesaria para mostrar en el navegador la página de Google.
 
     Práctica:
-    Escribir en un navegador la dirección IP 216.58.211.206
+    Escribir en un navegador la dirección IP 216.58.206.227
 
 ### Partes de una dirección web o URL
 
@@ -69,7 +69,7 @@ protocolo://nombre-de-dominio/directorio/nombre-de-archivo
 ```
 
 * **Protocolo**: Indica cómo se van a intercambiar los datos entre  el ordenador cliente y el servidor. Hay varios tipos de protocolo, el normal para navegar es http (o https, que es http pero en modo seguro). http significa Hypertext Transfer Protocol, que español viene a ser "Protocolo de transferencia de hipertexto". Existen más protocolos como `mailto` o `ftp`.
-* **Nombre de dominio**: Dominio es la dirección amigable de un ordenador en Internet (recordad como vimos que `google.es` es el dominio que dirige al servidor que está en la dirección 216.58.211.206). Los dominios tienen un nombre y una extensión.
+* **Nombre de dominio**: Dominio es la dirección amigable de un ordenador en Internet (recordad como vimos que `google.es` es el dominio que dirige al servidor que está en la dirección 216.58.206.227). Los dominios tienen un nombre y una extensión.
     * Las **extensiones** las crea una entidad [ICANN](icann.org) y algunas extensiones populares son `.com`, `.net` o `.org`. Intentan añadir información al dominio, por ejemplo:
         * `.es` indica que es una página española
         * `.com` indica que es una página comercial
@@ -102,13 +102,13 @@ También podemos, con una aplicación destinada para ello, enviar nuestro archiv
 ##  Herramientas para desarrollar en la web
 
 Cuando desarrollamos páginas o aplicaciones web hay dos herramientas básicas que forman parte de nuestro día a día: el editor de código y el navegador web. Durante el curso de Adalab vamos a trabajar con el editor [Code](https://code.visualstudio.com/) y con el navegador [Chrome](https://www.google.com/chrome/) .
-A lo largo de las lecciones iremos viendo información valiosa para sacarle el mayor partido a ambos. Os recomendamos ir profundizando poco a poco en el conocimiento de ambos, para personalizarlos a vuestro gusto y sacarles el mayor partido. 
+A lo largo de las lecciones iremos viendo información valiosa para sacarle el mayor partido a ambos. Os recomendamos ir profundizando poco a poco en el conocimiento de ambos, para personalizarlos a vuestro gusto y sacarles el mayor partido.
 
 ## Organizando proyecto en carpetas
 
-Un valor importante en una desarrolladora es la organización. Normalmente solemos hacer montones de proyectos, algunos grandes y que requieren tiempo, otros pequeños que nos llevan unos minutos, como pruebas de conceptos o ejercicios para probar una nueva herramienta. Lo ideal es tener una carpeta en nuestro ordenador para tenerlos localizados y organizados. 
+Un valor importante en una desarrolladora es la organización. Normalmente solemos hacer montones de proyectos, algunos grandes y que requieren tiempo, otros pequeños que nos llevan unos minutos, como pruebas de conceptos o ejercicios para probar una nueva herramienta. Lo ideal es tener una carpeta en nuestro ordenador para tenerlos localizados y organizados.
 
-> **Nota**: El nombre de esta carpeta es personal, y cada desarrolladora elige el que mejor le encaja, algunas ideas: `Projects`, `Work`, `Trabajo`... 
+> **Nota**: El nombre de esta carpeta es personal, y cada desarrolladora elige el que mejor le encaja, algunas ideas: `Projects`, `Work`, `Trabajo`...
 
 ### Creando un proyecto
 
@@ -122,7 +122,7 @@ Vamos a ver los pasos básicos para empezar a trabajar en un proyecto sencillo d
 
 4. Guardamos con `Ctrl+S` o `⌘S`, y como es la primera vez de nuevo se nos abrirá el navegador de archivos para que elijamos un nombre, lo llamamos `index.html` y guardamos. Escribimos la base de nuestro `html` (vamos a ver cómo un poco más abajo).
 
-5. Ahora toca volver al navegador de archivos (nautilos en Ubuntu, finder en MAC), localizar nuestro nuevo archivo `index.html` y de nuevo, pulsar botón derecho derecho del ratón, o hacer click con dos dedos en el *touchpad* sobre el y seleccionar la opción *Abrir con Chrome* para comprobar que nuestra página se muestra como esperamos en el navegador.
+5. Ahora toca volver al navegador de archivos (nautilos en Ubuntu, finder en MAC), localizar nuestro nuevo archivo `index.html` y de nuevo, pulsar botón derecho del ratón, o hacer click con dos dedos en el *touchpad* sobre el y seleccionar la opción *Abrir con Chrome* para comprobar que nuestra página se muestra como esperamos en el navegador.
 
 6. Volvemos a *Code* y continuamos trabajando, guardando frecuentemente (`Ctrl+S` o `⌘S`) y comprobando que los cambios se reflejan en el navegador, yendo a este y pulsando `Ctrl+R` o `⌘R` para refrescar la página.
 
@@ -150,7 +150,7 @@ Cuando lleguemos al paso 5, copiaremos el siguiente código en el archivo `index
 
 Para realizar el paso 6 podemos cambiar el texto 'Hola Mundo' por 'Hola mundo, día 1 en Adalab'.
 
-> **Nota**: en esta documentación cada ejemplo de código tiene un botón arriba a la derecha para copiar. Te recomendamos qe lo utilices ya que a veces con el copiado manual nos llevamos caracteres escondidos que hacen que el código no funcione.
+> **Nota**: En esta documentación cada ejemplo de código tiene un botón arriba a la derecha para copiar. Te recomendamos que lo utilices ya que a veces con el copiado manual nos llevamos caracteres escondidos que hacen que el código no funcione.
 
 > **Nota**: Observa como cuando realizas algún cambio sobre un archivo en *Code*, en la pestaña superior del archivo, junto al nombre, aparece una bolita, esta nos indica que hay cambios sin guardar. Como consejo nunca deberías pasar mucho tiempo sin guardar los cambios realizados sobre un archivo.
 
@@ -279,7 +279,7 @@ La lista ordenada produce una lista numerando cada ítem por orden de escritura 
 * * *
 #### EJERCICIO 2
 
-Con estos elementos vamos a crear nuestra primera página con una receta de Gazpacho fresquito:
+Con estos elementos vamos a crear nuestra primera página con una receta de Gazpacho fresquito. Añade el texto de la receta al fichero `index.html` (dentro de la etiqueta `body`) y añade las etiquetas HTML que necesites para que se parezca al texto que hay a continuación:
 
 ## GAZPACHO
 
@@ -381,7 +381,7 @@ Dentro de nuestra página esto quedaría así:
 Una forma de añadir estilos a una página es a través de la etiqueta `<style>` que, como aplica ajustes visuales sobre la página iría dentro de la cabecera de mi documento.
 
 Bueno, es una de las opciones, pero desde hace unos años, intentamos separar el contenido de la presentación pasando nuestros estilos siempre a un archivo externo que estará enlazado desde nuestra página HTML.
-Lo haremos con la etiqueta `<link>`, que es una de esas etiquetas que no necesita cerrarse. Esta etiqueta lleva dos atributos, uno que dice el tipo de archivo que va enlazado `rel="stylesheet"` y otro diciendo dónde está el archivo `href="estilos.css"`.
+Lo haremos con la etiqueta `<link>`, que es una de esas etiquetas que no necesita cerrarse. Esta etiqueta lleva dos atributos, uno que dice el tipo de archivo que va enlazado `rel="stylesheet"` y otro diciendo dónde está el archivo `href="style.css"`.
 
 **index.html**
 
@@ -524,7 +524,7 @@ Vamos a indentar el ejercicio del Gazpacho con auto-indent.
 
 * * *
 
-### Atajos de teclado 
+### Atajos de teclado
 
 Hoy hemos visto un montón de atajos de teclado, en este momento puede que sientas un poco de resistencia a utilizarlos porque:
 
@@ -539,7 +539,7 @@ En Code:
 
 ## Recursos externos
 
-* [codificación de caracteres](https://es.wikipedia.org/wiki/Codificación_de_caracteres)
+* [Codificación de caracteres](https://es.wikipedia.org/wiki/Codificación_de_caracteres)
 * [Lista de elementos html | MDN](https://developer.mozilla.org/es/docs/HTML/HTML5/HTML5_lista_elementos)
 * [(Inglés) Lista de elementos html | html5doctor ](http://html5doctor.com/#glossary)
 * [Pair programming](https://en.wikipedia.org/wiki/Pair_programming)
