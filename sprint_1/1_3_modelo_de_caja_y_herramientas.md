@@ -41,11 +41,11 @@ El navegador Google Chrome nos ofrece una serie de herramientas llamadas Chrome 
 * Cuando tengamos un problema en nuestra página para detectar dónde está el error.
 
 ## Modelo de caja
-En HTML cada elemento se representa visualmente como una caja, lo podemos ver fácilmente añadiendo un borde a un elemento HTML y viendo cómo lo pinta el navegador, por ejemplo:  
+En HTML cada elemento se representa visualmente como una caja, lo podemos ver fácilmente añadiendo un borde a un elemento HTML y viendo cómo lo pinta el navegador, por ejemplo:
 
 ```html
 <h1>Encabezado 1</h1>
-```  
+```
 
 ![Caja básica](assets/images/1-3/caja-basica.png)
 
@@ -94,7 +94,7 @@ A continuación se muestra la lista completa de elementos HTML que, por defecto,
 
 `<address>`, `<article>`, `<aside>`, `<blockquote>`, `<canvas>`, `<dd>`, `<div>`, `<dl>`, `<dt>`, `<fieldset>`, `<figcaption>`, `<figure>`, `<footer>`, `<form>`, `<h1>-<h6>`, `<header>`, `<hr>`, `<li>`, `<main>`, `<nav>`, `<noscript>`, `<ol>`, `<output>`, `<p>`, `<pre>`, `<section>`, `<table>`, `<tfoot>`, `<ul>` y `<video>`.
 
-> **Nota:**  
+> **Nota:**
 > Como es difícil memorizar la lista completa de elementos que se muestran en bloque, podemos hacernos la siguiente pregunta para saber si un elemento se mostrará en bloque o no: _"¿Tendría sentido meter este elemento dentro de un párrafo?"_. Si la respuesta es "no", es muy probable que el elemento sea un bloque; si por lo contrario, la respuesta es sí, probablemente sea un elemento en línea. Por ejemplo, no tendría sentido meter una lista, un `aside` o un `div` dentro de un párrafo y por eso los navegadores muestran estos como bloques.
 
 ### Inline
@@ -109,7 +109,7 @@ Como norma general, los elementos `inline` no deberían contener elementos de bl
 
 Una regla muy importante que se aplica sobre los elementos en línea es que estos no pueden cambiar su ancho ni su alto, no pueden tener márgenes horizontales y se puede aplicar margen y padding vertical pero este no se tiene en cuenta a la hora de definir su altura y su posición vertical. Esto los diferencia de los elementos en bloque, que permiten tener un ancho y un alto específico y márgenes y padding tanto vertical como horizontal. Veremos la importancia de esto en esta misma sesión, cuando hablemos del modelo de cajas.
 
-> **Nota:**  
+> **Nota:**
 > Las imágenes son un tipo especial de elemento en línea que por sus características actúa como una mezcla de elemento en línea y elemento en bloque, ya que pueden tener márgenes y padding verticales y se les pueden asignar un ancho y un alto.
 
 Usando CSS podemos cambiar la visualización de un elemento para hacer que se muestre en línea. Para ello aplicaremos `display: inline` en el elemento. Si quisiéramos hacer que un elemento con la clase `inline` se muestre en línea, utilizaríamos el siguiente código:
@@ -124,7 +124,7 @@ A continuación se muestra la lista completa de elementos HTML que, por defecto,
 
 `<a>`, `<b>`, `<big>`, `<i>`, `<small>`, `<tt>`, `<abbr>`, `<acronym>`, `<cite>`, `<code>`, `<dfn>`, `<em>`, `<kbd>`, `<strong>`, `<samp>`, `<time>`, `<var>`, `<bdo>`, `<br>`, `<img>`, `<map>`, `<object>`, `<q>`, `<script>`, `<span>`, `<sub>`, `<sup>`, `<button>`, `<input>`, `<label>`, `<select>` y `<textarea>`
 
-> **Nota:**  
+> **Nota:**
 > Aquí podemos usar la misma pregunta que comentamos en la sección de elementos en bloque para deducir si un elemento está en línea: _"¿Tendría sentido meter este elemento dentro de un párrafo?"_. Si la respuesta es *sí*, es muy probable que sea un elemento en línea.
 
 ### inline-block
@@ -249,7 +249,7 @@ Podéis leer sobre la propiedad _overflow_:
 * [overflow-x](http://devdocs.io/css/overflow-x)
 * [overflow-y](http://devdocs.io/css/overflow-y)
 
-* * *  
+* * *
 #### EJERCICIO 6
 
 **Todo en su caja**
@@ -258,7 +258,7 @@ Con la información de los enlaces anteriores, ¿sabrías resolver los casos de 
 
 * * *
 
-> **NOTA:**  
+> **NOTA:**
 > Recordad que para que el overflow se active, el contenedor tiene que tener definidas dimensiones (o ser un elemento de bloque y que el contenido sobrepase el ancho del contenedor)
 
 ### Alineando elementos en linea
@@ -336,7 +336,7 @@ Con el inspector no solo podemos consultar información sino cambiarla para hace
 
 Esta edición rápida es posible gracias al atributo `style=""` que es otra forma de aplicar estilos y que se puede añadir a cualquier etiqueta HTML.
 
-> **Nota:**  
+> **Nota:**
 > En principio no se deben aplicar estilos usando este atributo, en su lugar usaremos selectores CSS desde la hoja de estilos correspondiente.
 
 Es una forma de aplicar estilos que ha quedado para usar principalmente desde programación (ya lo veremos más adelante) pero desde el inspector nos permite hacer cambios rápidos.
@@ -440,7 +440,7 @@ p {
 }
 
 p {
-  color: hsl(300, 100%, 50%, 0.7)
+  color: hsla(300, 100%, 50%, 0.7)
 }
 ```
 * * *
@@ -468,11 +468,11 @@ La propiedad background se construye con estos posibles valores:
   }
 ```
 
-> **NOTA:**  
+> **NOTA:**
 > El orden no tiene que ser necesariamente ese, pero os proponemos usarlo.
 
 Realmente, la propiedad _background_ es una versión acortada de estas propiedades:
-* **background-image:**: [Ver detalle](http://devdocs.io/css/background-image)
+* **background-image:** [Ver detalle](http://devdocs.io/css/background-image)
 * **background-position:** [Ver detalle](http://devdocs.io/css/background-position)
 * **background-repeat:** [Ver detalle](http://devdocs.io/css/background-repeat)
 * **background-color:** [Ver detalle](http://devdocs.io/css/background-color)
@@ -483,7 +483,7 @@ Realmente, la propiedad _background_ es una versión acortada de estas propiedad
 ¿Sabrías replicar los ejemplos de fondo usando [este Codepen](https://codepen.io/adalab/pen/JLwQpz)?
 * * *
 
-### Cuando usar las propiedades de background o la versión acortada
+### Cuándo usar las propiedades de background o la versión acortada
 Usar estas dos propiedades produce el mismo resultado pero no son lo mismo:
 ```css
 .box {
@@ -493,7 +493,7 @@ Usar estas dos propiedades produce el mismo resultado pero no son lo mismo:
 	background: green;
 }
 ```
-Mientras que en el primer caso estamos diciendo que el color de fondo sea `green`, en el segundo estamos diciendo eso y que el resto de valores pasen a su valor por defecto.  
+Mientras que en el primer caso estamos diciendo que el color de fondo sea `green`, en el segundo estamos diciendo eso y que el resto de valores pasen a su valor por defecto.
 
 ¿Sabrías adelantar el resultado de aplicar esta clase?:
 
@@ -532,7 +532,7 @@ Desde hace tiempo hay una propiedad nueva que nos permite redimensionar la image
 
 Nosotros vamos a ver cómo ajustar el fondo a nuestro contenedor pero puedes consultar la [documentación completa](http://devdocs.io/css/background-size).
 
-Hay dos valores especialmente interesantes ya que permiten definir cómo se ajustará nuestra imagen de fondo al contenedor: **contain** y **cover**.  
+Hay dos valores especialmente interesantes ya que permiten definir cómo se ajustará nuestra imagen de fondo al contenedor: **contain** y **cover**.
 
 ### Contain
 Aumenta o reduce la imagen proporcionalmente todo lo que pueda sin deformarla para que quepa en nuestro contenedor.
@@ -563,12 +563,12 @@ p{
 
 ¿Cómo construimos la URL para enlazar la tipografía?
 
-En la propia URL añadimos `family=` y escribimos el nombre de la tipografía a usar. Si tiene espacios, los sustituimos por `+`. Si queremos importar varias fuentes, podemos cargar todas en el mismo enlace a Google Fonts poniendo los nombres separados por `|`. 
+En la propia URL añadimos `family=` y escribimos el nombre de la tipografía a usar. Si tiene espacios, los sustituimos por `+`. Si queremos importar varias fuentes, podemos cargar todas en el mismo enlace a Google Fonts poniendo los nombres separados por `|`.
 
 `https://fonts.googleapis.com/css?family=Tangerine|Inconsolata|Droid+Sans`
 
 Para cada tipo de fuente se importa por defecto la fuente normal, pero puede que queramos usar la fuente con otro peso (como negrita) o estilo (como cursiva). Para esto, añadimos al final del nombre de la fuente `:` y separados por `,` los estilos o pesos extra que necesitemos. El peso puede expresarse también como valor numérico que indica el grosor (400 es normal, 700 es negrita).
- 
+
 ```
 https://fonts.googleapis.com/css?family=Tangerine:bold
 https://fonts.googleapis.com/css?family=Tangerine:bold,italic
@@ -577,7 +577,7 @@ https://fonts.googleapis.com/css?family=Tangerine:400,700
 * * *
 Para más información consultad la [guía de inicio de Google Fonts](https://developers.google.com/fonts/docs/getting_started).
 
-### Extensión `Live server` en Code 
+### Extensión `Live server` en Code
 
 Cuando creamos una web, al final será "servida" por un servidor web en Internet para que todo el mundo pueda visitarla. Por tanto, es útil tener un servidor web local en nuestro ordenador de desarrollo. En Code, contamos con la extensión [`live-server`](https://ritwickdey.github.io/vscode-live-server/), que nos permite lanzar un servidor web local desde una carpeta de nuestro ordenador y ejecutándose en un puerto concreto.
 
@@ -601,11 +601,11 @@ Para lanzar el servidor, podemos usar los shortcuts (`Alt+L Alt+O`), hacerlo a t
 - [Explicación detallada sobre las DevTools](https://developers.google.com/web/tools/chrome-devtools/?hl=es)
 - [Videos de las herramientas para desarrolladores de Chrome - inglés](http://discover-devtools.codeschool.com/chapters/1?locale=en)
 
-> **Nota:**  
+> **Nota:**
 > Estos videos están en inglés y no poseen subtítulos pero son muy buenos. Están realizados por el propio equipo de Google que fué el que en su día desarrolló las herramientas que explican en los videos.
 
 - [Shortcuts del inspector](https://developers.google.com/web/tools/chrome-devtools/shortcuts?hl=es)
 - [Usando las herramientas de desarrollador](https://es.khanacademy.org/computing/computer-programming/html-css/web-development-tools/a/using-the-browser-developer-tools)
 
-> **Nota:**  
+> **Nota:**
 > Los dos videos de esta sección del curso de Khan Academy se pueden abrir en Youtube. Si los abrís en Youtube, activar los subtítulos y cambiáis la configuración a Auto-translate, podréis ver el video sin problemas ya que el traductor funciona muy bien.
