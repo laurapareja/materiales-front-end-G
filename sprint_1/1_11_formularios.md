@@ -74,7 +74,7 @@ Junto con el atributo `type`, tenemos otro atributo especial llamado `name` que 
 </form>
 ```
 
-> **Nota:**  
+> **Nota:**
 > La etiqueta input es una etiqueta sin contenido, por lo que no es necesario escribir la etiqueta de cierre. Otro detalle que podemos apreciar es que los campos se muestran en línea ya que por defecto los navegadores lo muestran con `display: inline-block;`. Podemos asignarles `display: block` para hacer que se apilen en vertical, uno debajo de otro.
 
 ---
@@ -111,7 +111,7 @@ Para decirle al navegador que nuestra etiqueta `<label>` está relacionada con u
 
 ![Ejemplo de cómo se muestran los labels](assets/images/1-11/labels.png)
 
-> **Nota:**  
+> **Nota:**
 > Es importante apreciar que dentro del input el atributo `name` y el `id` pueden ser distintos, pero el `for` del label siempre debe coincidir con el `id` del input.
 
 ---
@@ -132,7 +132,7 @@ El atributo `placeholder` se puede asignar a un input y sirve para establecer el
 
 ---
 
-Bien, continuemos introduciendo campos. Este ejemplo tiene se empieza a parecer a un formulario de registro, así que vamos a continuar como si se tratase de uno. En un formulario de este tipo, lo normal después del nombre es escribir el mail, para esto utilizaremos también la etiqueta `<input>` pero esta vez utilizaremos `type="email"` para definir el campo como una dirección de correo.
+Bien, continuemos introduciendo campos. Este ejemplo se empieza a parecer a un formulario de registro, así que vamos a continuar como si se tratase de uno. En un formulario de este tipo, lo normal después del nombre es escribir el mail, para esto utilizaremos también la etiqueta `<input>` pero esta vez utilizaremos `type="email"` para definir el campo como una dirección de correo.
 
 ```html
 <form action="/signup" method="post">
@@ -166,7 +166,7 @@ Bien, tenemos el nombre y el email, vamos con el siguiente, el teléfono. Para e
 
 ![Captura de pantalla del teclado que se muestra en un campo del tipo teléfono](assets/images/1-11/form-telephone-keyboard.jpg)
 
-Tenemos prácticamente todo pero nos quedaría algo bastante importante, la contraseña. Para crear un campo para nuestra contraseña continuamos con el mismo procedimiento que en los anteriores campos, esta vez usando `type="password"` como atributo para definir el tipo de campo. Los campos tipo password tienen una diferencia frente al resto y es que sustituyen el texto que contienen por asteriscos (\*) para aumentar la seguridad y que la contraseña no sea visible.
+Tenemos prácticamente todo pero nos quedaría algo bastante importante, la contraseña. Para crear un campo para nuestra contraseña continuamos con el mismo procedimiento que en los anteriores campos, esta vez usando `type="password"` como atributo para definir el tipo de campo. Los campos tipo password tienen una diferencia frente al resto y es que sustituyen el texto que contienen por puntos negros (●) para aumentar la seguridad y que la contraseña no sea visible.
 
 Otra peculiaridad de los campos del tipo `password` es que su contenido se borra si se recarga la página, mientras que en un campo de texto normal el contenido se mantiene tras la recarga.
 
@@ -178,7 +178,7 @@ Otra peculiaridad de los campos del tipo `password` es que su contenido se borra
 </form>
 ```
 
-![El contenido de los campos del tipo contraseña se sustituye por asteriscos](assets/images/1-11/password.png)
+![El contenido de los campos del tipo contraseña se sustituye por puntos](assets/images/1-11/password.png)
 
 ---
 
@@ -219,7 +219,7 @@ El atributo `required` sirve para establecer que un campo es obligatorio y debe 
 
 ![Error cuando un elemento es obligatorio y está vacío](assets/images/1-11/required-form.png)
 
-> **Nota:**  
+> **Nota:**
 > El atributo required solo puede ser verdadero o falso, por lo tanto no tendrá un valor asignado. Simplemente si una etiqueta tiene el atributo `required` (sin más) indicará que este elemento es obligatorio y si no lo tiene indicará que no lo es.
 
 ```html
@@ -247,7 +247,7 @@ Ejemplo de uso:
 
 El atributo `disabled` sirve para desactivar un campo de un formulario.
 
-> **Nota:**  
+> **Nota:**
 > En el caso de disabled pasa como con el atributo `required`, con añadir el atributo sin ningún valor es suficiente para indicar que un elemento está desactivado.
 
 ```html
@@ -526,7 +526,7 @@ input {
 }
 ```
 
-> **Nota:**  
+> **Nota:**
 > El prefijo `-webkit-` y `-moz-` es específico para aplicar esto a los navegadores Safari y Chrome, y Mozilla Firefox respectivamente
 
 ---
