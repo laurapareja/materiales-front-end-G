@@ -11,6 +11,7 @@
 - [EJERCICIO 7](#ejercicio-7)
 - [EJERCICIO 8](#ejercicio-8)
 - [EJERCICIO 9](#ejercicio-9)
+- [EJERCICIO 10](#ejercicio-10)
 
 <!-- /TOC -->
 
@@ -482,6 +483,21 @@ Vamos a:
 1. Una vez que estemos conforme con nuestro tipo sonriente, haremos un commit para añadir el cambio a nuestro repositorio y otro push, para sincronizar los cambios de nuestro repositorio local con los del remoto y, de esta forma, subir los cambios a GitHub.
 * * *
 
+#### EJERCICIO 8
+
+Puesto que trabajamos en parejas o en grupos queremos trabajar con el mismo código que tienen nuestras compañeras. Por ello si una compañera sube un cambio de código a GitHub (con `git push`) queremos poder descargarlo a nuestro ordenador (con `git pull`). Para ello:
+
+1. Crear un proyecto vacío en GitHub. Le pondremos como nombre `testing-git-pull`. En este proyecto vamos compartir código entre varias compañeras.
+1. Clonar el proyecto en los ordenadores de todas las compañeras del equipo con `$ git clone url-del-repositorio-que-me-da-github` (como se explica en ejercicio 6).
+1. Una de las compañeras debe añadir el fichero `index.html` en la raíz del proyecto.
+1. La compañera que haya hecho el cambio anterior debe hacer un commit y luego un push para subir el cambio a GitHub.
+1. Después, el resto de compañeras debe hacer `git pull` (desde dentro de la carpeta del proyecto) para descargarse los cambios a su ordenador.
+1. Abrir el proyecto con VSCode para comprobar que, efectivamente, los cambios se han descargado desde GitHub.
+1. Ahora otra compañera puede hacer otro cambio en `index.html`, hacer otro commit y otro push.
+1. Repetir los pasos del 4 al 7 tantas veces como se quiera.
+
+> **NOTA:** Cada vez que ejecutamos un comando de Git en la terminal es muy interesante leer la información que aparece en la terminal para saber lo que está haciendo Git.
+* * *
 
 ## GitHub Pages
 
@@ -490,7 +506,7 @@ Como hemos comentado previamente, GitHub ofrece un servicio llamado [GitHub Page
 Un hosting es un servicio de almacenamiento de datos para poder tener tu web en un servidor y que esté disponible en internet y esto es lo que ofrece exactamente GitHub Pages.
 
 * * *
-#### EJERCICIO 8
+#### EJERCICIO 9
 
 Desde la página de nuestro proyecto `testing-git` en GitHub, activar GitHub Pages.
 
@@ -503,7 +519,7 @@ GitHub Classroom es un "módulo" de GitHub que permite automatizar el control de
 Classroom permite asignar repositorios vacíos o con un código inicial.
 
 * * *
-#### EJERCICIO 9
+#### EJERCICIO 10
 
 Haz clic en el siguiente enlace [https://classroom.github.com/a/cdZUSdeT](https://classroom.github.com/a/cdZUSdeT) para crear tu primer repositorio a través de GitHub Classroom, y luego:
 
