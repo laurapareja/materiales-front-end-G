@@ -83,7 +83,7 @@ En esta ventana iremos escribiendo nuestros comandos para interactuar con el ord
 
 Por defecto la terminal nos mostrará una línea (el *prompt*) a partir de la cual podremos escribir nuestros comandos.
 
-Normalmente nuestro prompt tendra este aspecto:  
+Normalmente nuestro prompt tendra este aspecto:
 **usuario@nombre-de-equipo: ruta por defecto $**
 ```shell
 ubuntu@ubuntu: ~$
@@ -99,7 +99,7 @@ Principalmente usaremos la terminal para movernos por el sistema de archivos del
 ```shell
 $ pwd
 ```
-> **NOTA**: Muchas veces nos encontraremos los comandos que tenemos que introducir precedidos por el símbolo `$`, pero no hay que escribirlo.  
+> **NOTA**: Muchas veces nos encontraremos los comandos que tenemos que introducir precedidos por el símbolo `$`, pero no hay que escribirlo.
 
 Devolverá la ruta absoluta de la carpeta en la que estemos, con este aspecto:
 ```shell
@@ -134,7 +134,7 @@ El comando `cd` (Change Directory) nos ofrece diferentes posibilidades a la hora
 $ cd nombre-de-carpeta
 ```
 
-Nos permite entrar en la carpeta `nombre-de-carpeta` que estaría en nuestra carpeta actual.  
+Nos permite entrar en la carpeta `nombre-de-carpeta` que estaría en nuestra carpeta actual.
 
 Podemos encadenar varios nombres de subcarpetas separadas por `/` para llegar hasta una ruta más profunda:
 
@@ -244,7 +244,7 @@ nombre
 
 Desde la terminal, vamos a crear un nuevo proyecto en nuestra carpeta de proyectos que se llame `rutas-relativas`, con las carpetas `images` y `styles`. Y los archivos `index.html` (en la raíz del proyecto), `style.css` (en la carpeta `styles`) y `imagen-de-prueba.jpg` (en la carpeta `images`, la podéis descargar desde [este enlace](assets/images/1-7/imagen-de-prueba.jpg)).
 
-Ahora, en `index.html` se tiene que ver la imagen de dos formas:
+Ahora, editando el archivo `index.html` en VSCode se tiene que ver la imagen de dos formas:
 1. Con un `<img>`
 2. Como fondo de un `div` del mismo tamaño que la imagen
 
@@ -440,7 +440,7 @@ Ahora, con esta url podemos irnos a nuestra terminal y clonarlo con `git clone`:
 
 Esto nos generará una carpeta con nuestro proyecto. **Recordad que crea la carpeta pero no nos mete dentro** por lo que tendremos que usar el comando `cd` de nuestra terminal para cambiar la ruta actual.
 
-> **Nota**:  
+> **Nota**:
 > Por defecto git nos creará una carpeta con un nombre automático, si queremos un nombre específico para la carpeta de nuestro proyecto podemos declararlo tras la url que nos da GitHub:
 
 ```shell
@@ -453,10 +453,10 @@ Si accedemos a la carpeta, dentro debería estar el archivo README.md.
 Podemos crear archivos y/o realizar cambios sobre los existentes, guardarlos en local (Ctrl+S o Cmd+S), añadirlos para que git sepa que cambios hemos hecho (`git add -A`), commitearlos con un mensaje (`git commit -m "Add main css file"`), y finalmente hacer un _push_ al repositorio remoto de GitHub (`git push origin master`) para guadar nuestros cambios allí.
 
 ### ¿Y si ya tengo un proyecto con Git en local?
-A la hora de conectar el repo local y el remoto lo mas cómodo es empezar creando el repo en GitHub, clonándolo y seguir a partir de ahí con la conexión ya hecha. Pero puede pasar que ya tuviésemos un proyecto en local que hubiésemos inicializado con `git init`, en este caso seguiremos estos pasos:  
+A la hora de conectar el repo local y el remoto lo mas cómodo es empezar creando el repo en GitHub, clonándolo y seguir a partir de ahí con la conexión ya hecha. Pero puede pasar que ya tuviésemos un proyecto en local que hubiésemos inicializado con `git init`, en este caso seguiremos estos pasos:
 
 1. Creamos un repo vacío en GitHub **SIN INICIALIZARLO CON README.ME, GITIGNORE O LICENCIA**.
-2. Esto nos llevará a una página diferente con las instrucciones para conectar un repo local con nuestro repo remoto: 
+2. Esto nos llevará a una página diferente con las instrucciones para conectar un repo local con nuestro repo remoto:
 
 ![Nuevo repositorio](assets/images/1-7/github-repo-5.png)
 
@@ -465,7 +465,7 @@ A la hora de conectar el repo local y el remoto lo mas cómodo es empezar creand
 
 En el video que mostramos a continuación se hace un pequeño tour alrededor de la plataforma para ver cómo funciona y las funcionalidades que ofrece. En el video pone el nombre del repositorio con mayúsculas y minúsculas, nosotros lo pondremos en minúsculas y con el texto separado por guiones, como hacemos con las carpetas de nuestros proyectos. En el video también explica ramas, pero lo ignoraremos. De momento solo vamos a trabajar con una rama (`master`), más adelante veremos cómo es el flujo a la hora de trabajar con varias ramas, pero vayamos poco a poco.
 
-> **Nota:**  
+> **Nota:**
 > Sólo veremos hasta el min 21:34. Porque en el resto del video habla de cosas que no vamos a aprender por el momento.
 
 - [Curso Git - Empezando con GitHub](https://www.youtube.com/watch?v=Qn186NyDqOk)
