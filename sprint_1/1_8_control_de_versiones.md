@@ -29,6 +29,7 @@ Hoy vamos a ver cómo trabajar en grupo sobre el mismo proyecto y sus archivos.
 
 ### Inicio de un repositorio desde Github
 Lo más sencillo es crear el proyecto de cero desde nuestro servicio de Git, en este caso, GitHub:
+
 1. Vamos a nuestro perfil
 2. Creamos un nuevo repositorio
 3. Rellenamos el nombre y la descripción
@@ -55,7 +56,7 @@ Lo más sencillo es crear el proyecto de cero desde nuestro servicio de Git, en 
 ![Instrucciones para añadir el repositorio remoto](assets/images/1-8/new-repo-instructions.png)
 
 ### README.md
-El archivo `README.md` es un documento escrito en [markdown](https://es.wikipedia.org/wiki/Markdown) que se presenta en la página principal del repositorio y tiene como objeto aportar una primera documentación o presentación del proyecto.  
+El archivo `README.md` es un documento escrito en [markdown](https://es.wikipedia.org/wiki/Markdown) que se presenta en la página principal del repositorio y tiene como objeto aportar una primera documentación o presentación del proyecto.
 Esto es una convención, pero hay que tenerla en cuenta.
 
 > **NOTA**: Markdown es un lenguaje de marcado como HTML pero más simple.
@@ -66,7 +67,7 @@ Ejemplos de readme.md:
 * [Gulp (Automatizador de tareas)](https://github.com/gulpjs/gulp)
 
 ### .gitignore
-Git tiene un sistema para poder ignorar archivos de un proyecto.  
+Git tiene un sistema para poder ignorar archivos de un proyecto.
 **¿Y por qué querríamos hacer esto?** Porque habrá archivos que necesitemos en nuestra carpeta de trabajo local pero que no queramos subir al repositorio ni controlar sus cambios.
 
 En proyectos pequeños como los que tenemos ahora vamos a querer siempre subir al repositorio remoto todos nuestros archivos. Pero podría pasar que tuviésemos una carpeta con los archivos de diseño de ciertas partes del proyecto o archivos comprimidos que usamos para enviar a nuestro cliente los avances.
@@ -123,8 +124,8 @@ Un conflicto ocurre cuando git se encuentra con dos versiones del mismo bloque d
 >>>>>>>
 ```
 
-**<<<<<<<**: Indica el inicio de la zona de conflicto, en la línea siguiente muestra el primer bloque en conflicto.  
-**=======**: Separa las dos versiones, seguidamente muestra el bloque alternativo que está dando conflicto.  
+**<<<<<<<**: Indica el inicio de la zona de conflicto, en la línea siguiente muestra el primer bloque en conflicto.
+**=======**: Separa las dos versiones, seguidamente muestra el bloque alternativo que está dando conflicto.
 **>>>>>>>**: Indica el final e la zona de conflicto
 
 Aquí puede pasar que queramos la primera opción, la segunda, las dos, o una mezcla de las dos.
@@ -306,7 +307,7 @@ Y pusheamos (subimos los commits) con `git push` cuando terminemos la tarea que 
 
 Esto pasará de vez en cuando, unas veces por inexperiencia, otras por descuido y otras por otras razones, pero no hay miedo porque cada commit queda registrado y siempre podemos volver a consultar uno anterior o revertir el último. Vamos a ver cómo.
 
-Si queremos ver nuestra actividad en el proyecto usaremos `git log`, esto nos mostrará un listado de los commits realizados. 
+Si queremos ver nuestra actividad en el proyecto usaremos `git log`, esto nos mostrará un listado de los commits realizados.
 
 ![Ejemplo de Git log](assets/images/1-8/git-log.png)
 
