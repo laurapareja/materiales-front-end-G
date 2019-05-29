@@ -14,7 +14,7 @@
 
 En esta sesión usaremos herramientas para automatización de tareas en nuestro flujo de trabajo en front-end. Estas herramientas son muy útiles porque nos ayudarán a ser más eficientes en nuestro trabajo y nos ahorrarán tareas repetitivas.
 
-> **NOTA:**  
+> **NOTA:**
 > En esta sesión vamos a dar un repaso por encima a un flujo de trabajo con Gulp y node pero no tendremos que configurarnos todavía nuestro entorno de trabajo, os proporcionaremos una base ya configurada sobre la que trabajar lo que queda de módulo :)
 
 ## ¿En qué casos se utiliza?
@@ -31,11 +31,15 @@ Con una herramienta como Gulp, vamos a poder hacer que nuestro código Sass se c
 
 Gulp es una herramienta de automatización de tareas que está programada con JavaScript. Gulp no tiene interfaz gráfica sino que se ejecuta desde la terminal de comandos, al igual que sucede con git. Primero vamos a ver cómo instalarla y después la configuraremos para ayudarnos con algunas tareas.
 
-Decir que Gulp lo usaremos a través del terminal, que no tiene interfaz gráfica y que la configuración te la tienes que hacer tú mismo hace que sea difícil de vender como algo mejor. Pero la clave de Gulp reside en esa última característica, la de configurarlo a través de JavaScript. La potencia de usar una herramienta de automatización de tareas como Gulp es que podemos configurarla a nuestra manera y añadir procesos y tareas a medida que las necesitemos e ir mejorando poco a poco estos para adaptarlos a nuestras necesidades. Esto es el motivo principal por el que en la mayoría de las empresas tienen automatizadas las tareas con herramientas como Gulp. En esta sesión veremos alguna novedad como poder visualizar nuestra página directamente desde el móvil sin tener que subirla al servidor, pero esto es solo la punta del iceberg, existen cientos de utilidades que podremos utilizar con Gulp y que nos facilitarán mucho la tarea de desarrollar páginas web.
+Decir que Gulp lo usaremos a través del terminal, que no tiene interfaz gráfica y que la configuración te la tienes que hacer tú misma hace que sea difícil de vender como algo mejor. Pero la clave de Gulp reside en esa última característica, la de configurarlo a través de JavaScript. La potencia de usar una herramienta de automatización de tareas como Gulp es que podemos configurarla a nuestra manera y añadir procesos y tareas a medida que las necesitemos e ir mejorando poco a poco estos para adaptarlos a nuestras necesidades. Esto es el motivo principal por el que en la mayoría de las empresas tienen automatizadas las tareas con herramientas como Gulp. En esta sesión veremos alguna novedad como poder visualizar nuestra página directamente desde el móvil sin tener que subirla al servidor, pero esto es solo la punta del iceberg, existen cientos de utilidades que podremos utilizar con Gulp y que nos facilitarán mucho la tarea de desarrollar páginas web.
 
 ### Node
 
-Para poder usar _Gulp_ en nuestro ordenador, necesitamos tener instalado _Node.js_. Node es una plataforma que nos permite ejecutar código JavaScript en nuestro ordenador o un servidor, ya sea para programar un back-end o para ejecutar pequeños programas de código que nos sirvan de herramientas, llamados scripts, y todo ello usando código JavaScript, fantástico ¿no?
+Hasta ahora sabíamos que JavaScript se ejecuta siempre en un navegador web. Pero qué pasa si queremos ejecutar JavaScript fuera de un navegador?
+
+Node es una plataforma que nos permite ejecutar código JavaScript en nuestro ordenador o un servidor, ya sea para programar un back-end o para ejecutar pequeños programas de código que nos sirvan de herramientas, llamados scripts, y todo ello usando código JavaScript, fantástico ¿no?.
+
+Para poder usar _Gulp_ en nuestro ordenador, necesitamos tener instalado _Node.js_.
 
 No nos vamos a poner a instalar Node en el ordenador, ya está instalado y vamos a comprobarlo. Para ello como suele ser común, escribiremos en la terminal el nombre del comando, seguido de `-v` o similar, como hemos hecho anteriormente con git, en este caso escribiremos:
 
@@ -223,7 +227,7 @@ Probamos a ejecutar la tarea `gulp html`, que inserta los parciales en el HTML y
 
 ### Bueno, ¿y ahora?
 
-Ahora os hemos preparado un proyecto que os podéis descargar y donde integrar vuestros proyecto y ejercicios en Adalab:  
+Ahora os hemos preparado un proyecto que os podéis descargar y donde integrar vuestros proyecto y ejercicios en Adalab:
 [Adalab Web Starter Kit](https://github.com/Adalab/Adalab-web-starter-kit)
 
 ## Adalab Web Starter Kit
@@ -271,12 +275,12 @@ Esta tarea se ejecuta una sola vez y no lanza servidores web ni watchers, pero g
 
 La forma más cómoda es:
 
-1. crear un repositorio en GitHub y clonarlo / partir de un repo existente (como el de nuestro proyecto grupal)
-2. descargar/clonar el kit a otra carpeta
-3. copiar o mover los archivos y carpetas a nuestro proyecto **SIN OLVIDAR EL ARCHIVO .GITIGNORE Y EL RESTO DE ARCHIVOS OCULTOS (empiezan por `.`)** (podemos obviar el `README.md` y la carpeta `.git`)
+1. Crear un repositorio en GitHub y clonarlo / partir de un repo existente (como el de nuestro proyecto grupal)
+2. Descargar/clonar el kit a otra carpeta
+3. Copiar o mover los archivos y carpetas a nuestro proyecto **SIN OLVIDAR EL ARCHIVO .GITIGNORE Y EL RESTO DE ARCHIVOS OCULTOS (empiezan por `.`)** (podemos obviar el `README.md` y la carpeta `.git`)
 4. Desde nuestro proyecto ya podemos ejecutar `npm install` para instalar las dependencias
-5. si partimos de un repo existente, movemos el código de nuestro proyecto al lugar adecuado de la carpeta `_src`
-6. arrancamos el proyecto con el comando `gulp` en la terminal
+5. Si partimos de un repo existente, movemos el código de nuestro proyecto al lugar adecuado de la carpeta `_src`
+6. Arrancamos el proyecto con el comando `gulp` en la terminal
 
 ---
 
