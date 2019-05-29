@@ -105,10 +105,12 @@ Hasta aquí todo normal. Ahora llega el momento de subir el commit (o los commit
 
 ### ¿Qué pasa cuando hacemos un `git pull`?
 Pasan varias cosas:
+
 1. Git comprueba si en el repositorio remoto hay una versión posterior (más nueva) a la que se encuentra en nuestro repositorio local.
 2. Si encuentra cambios posteriores, se los baja e la intenta mezclarlos con los de nuestros commits.
 
 Y aquí tenemos dos escenarios diferentes:
+
 1. Los cambios que se han bajado de remoto (realizados por mis compañeras) y los míos se pueden mezclar (o mergear) automaticamente, Git crea un commit automático con esta mezcla (o merge) y nos lo muestra usando el editor por defecto que tenemos configurado en nuestra terminal (NANO, vim...).
 2. Otra posibilidad es que Git no pueda mezclar los cambios automáticamente. Entonces nos avisa de que hay conflictos que tendremos que resolver nosotras manualmente. Nos mostrará una lista de archivos donde encuentran los conflictos.
 
@@ -125,7 +127,9 @@ Un conflicto ocurre cuando git se encuentra con dos versiones del mismo bloque d
 ```
 
 **<<<<<<<**: Indica el inicio de la zona de conflicto, en la línea siguiente muestra el primer bloque en conflicto.
+
 **=======**: Separa las dos versiones, seguidamente muestra el bloque alternativo que está dando conflicto.
+
 **>>>>>>>**: Indica el final e la zona de conflicto
 
 Aquí puede pasar que queramos la primera opción, la segunda, las dos, o una mezcla de las dos.
@@ -270,6 +274,7 @@ Ahora que hemos hecho un primer acercamiento a las ramas, vamos a hacer lo mismo
 ![Resultado del ejercicio 4](assets/images/1-8/ramas-3.png)
 
 Como refleja la imagen vamos a hacer dos ampliaciones de contenido:
+
 1. una alumna de cada pareja tiene que añadir el contenido de la sección con una frase motivadora
 2. la otra alumna de la pareja tiene que añadir el contenido de la sección con un título y un pequeño párrafo
 
