@@ -698,6 +698,13 @@ Aumenta o reduce la imagen proporcionalmente para asegurarse que siempre cubre t
 
 ## BONUS
 
+### Accesibilidad
+
+Os dejamos un par de enlaces muy interesantes sobre accesilibidad web:
+
+* [Introduction to Web Accessibility and W3C Standards (video: 4:07)](https://www.w3.org/WAI/videos/standards-and-benefits/es)
+* [Introducción a la accesibilidad web (charla)](https://es.slideshare.net/tayzee/11-introduccin-a-la-accesibilidad-web)
+
 ### Figma
 
 [Figma](https://www.figma.com/) es una herramienta online para diseñar y prototipar que permite hasta tres proyectos gratuitos. Este tipo de herramientas son muy útiles para las frontend, ya que nos pueden servir para algo sencillo como medir o recortar una imagen de manera ágil, o para algo más complejo como diseñar nuestra web personal.
