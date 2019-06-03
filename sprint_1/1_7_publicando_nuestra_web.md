@@ -441,7 +441,7 @@ Como hemos explicado anteriormente, GitHub es una plataforma de desarrollo colab
 
 #### EJERCICIO 6
 
-Pon una foto de perfil en tu cuenta de GitHub. No tiene por qué ser una fotografía.
+Poneros, ambas compañeras, una imagen de perfil en vuestras cuentas de GitHub. No tiene por qué ser una fotografía.
 
 * * *
 
