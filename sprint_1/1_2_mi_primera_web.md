@@ -586,9 +586,8 @@ p {
   color: hsla(300, 100%, 50%, 0.7)
 }
 ```
-* * *
-
 Para más información, consultad [la guía de colores de MDN](http://devdocs.io/css/color_value).
+* * *
 
 ### Background
 
@@ -619,6 +618,10 @@ Realmente, la propiedad _background_ es una versión acortada de estas propiedad
 * **background-position:** [Ver detalle](http://devdocs.io/css/background-position)
 * **background-repeat:** [Ver detalle](http://devdocs.io/css/background-repeat)
 * **background-color:** [Ver detalle](http://devdocs.io/css/background-color)
+* **background-size:** [Ver detalle](http://devdocs.io/css/background-size)
+* **background-attachment:** [Ver detalle](http://devdocs.io/css/background-attachment)
+* **background-clip:** [Ver detalle](http://devdocs.io/css/background-clip)
+* **background-blend-mode:** [Ver detalle](http://devdocs.io/css/background-blend-mode)
 
 * * *
 #### EJERCICIO 6
