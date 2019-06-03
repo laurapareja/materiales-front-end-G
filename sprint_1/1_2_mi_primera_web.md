@@ -7,6 +7,7 @@
 - [EJERCICIO 3](#ejercicio-3)
 - [EJERCICIO 4](#ejercicio-4)
 - [EJERCICIO 5](#ejercicio-5)
+- [EJERCICIO 6](#ejercicio-6)
 
 <!-- /TOC -->
 
@@ -521,6 +522,169 @@ Partiendo de este [Codepen de ejemplo](https://codepen.io/oneeyedman/pen/vWEBex)
 4. Comentar el CSS que no se puede tocar y reescribirlo usando una clase por selector para que se vea igual.
 5. BONUS: Cambiar ahora entre `<div>` y `<ul>`/`<li>`
 * * *
+
+## Colores
+
+Para empezar, vamos a ver los distintos formatos que podemos usar para indicar colores, que podemos usar por ejemplo como valor de nuestro querida propiedad CSS `color`.
+
+### Colores con palabras clave
+
+La primera forma de indicar un color es mediante la palabra clave que indica el nombre del color. Hay un montón de palabras clave para colores que podemos usar que podéis ver en [la tabla de este artículo](http://devdocs.io/css/color_value#Color_keywords).
+
+```css
+p {
+  color: fuchsia;
+}
+```
+
+### Colores en hexadecimal
+
+De forma equivalente a las palabras clave, podemos expresar un color con formato hexadecimal. En este formato declaramos un color con una almohadilla `#` y sus 3 componentes RGB - R (rojo), G (verde), B (azul). Cada uno de los componentes se representa con 2 dígitos en hexadecimal, es decir, cada dígito puede tener 16 valores, entre 0 - 9 y A - F. Por ejemplo, el color fucsia se compone de una componente máxima de rojo (ff), nada de verde (00) y máxima de azul (ff).
+
+```css
+p {
+  color: #ff00ff;
+}
+```
+
+Suele ser habitual expresar algunos colores comunes de forma simplificada. Si los dígitos de cada componente son iguales (por ejemplo, `ff`) puede escribirse el color de una forma simplificada escribiendo sólo una vez el dígito repetido. Por ejemplo, el fucsia puede simplificarse porque todos los componentes tienen el dígito repetido.
+
+```css
+p {
+  color: #f0f;
+}
+```
+
+### rgb y rgba
+
+Como hemos visto en el caso anterior, los colores podemos expresarlos con sus componentes RGB (Red, Green, Blue). En CSS existe la posibilidad de, en lugar de usar 2 dígitos hexadecimales, expresar el color usando el valor decimal (número normal) de cada componente RGB, que tendrá un valor entre 0 y 255 (los mismos valores que podíamos indicar con 2 dígitos hexadecimales).
+
+```css
+p {
+  color: rgb(255, 0, 255);
+}
+```
+
+Existe además la posibilidad de indicar un nivel de opacidad al color con el formato RGBA que añade el canal alpha o transparencia. Este último componente tiene valores decimales entre 0 (totalmente transparente) y 1 (totalmente opaco).
+
+```css
+p {
+  color: rgba(255, 0, 255, 0.7);
+}
+```
+
+### hsl y hsla
+
+Igual que el RGB nos permite expresar colores a partir de sus componentes de color rojo/verde/azul, existe otro sistema, HSL, que nos permite expresarlos a través de H (hue - matiz), S (saturation - saturación), L (lightness - luminosidad). El matiz se expresa con un valor numérico y tanto saturación como luminosidad con un valor en %. En este caso, también existe la posibilidad de añadir un canal alpha para indicar transparencia.
+
+```css
+p {
+  color: hsl(300, 100%, 50%)
+}
+
+p {
+  color: hsla(300, 100%, 50%, 0.7)
+}
+```
+* * *
+
+Para más información, consultad [la guía de colores de MDN](http://devdocs.io/css/color_value).
+
+### Background
+
+Una vez entendido que cada elemento se puede ver como una caja, veamos cómo añadir un fondo a dicha "caja":
+
+Gracias a la propiedad _background_ podemos rellenar el fondo de nuestro contenedor con una imagen, con un color, o ambos:
+
+![Ejemplos de background](assets/images/1-2/ejemplos-de-background.png)
+
+
+La propiedad background se construye con estos posibles valores:
+- url de la imagen
+- posición de la imagen dentro del contenedor (horizontal y vertical)
+- modo de repetición de la imagen
+- color de fondo
+
+```css
+  .box {
+    background: url('url-de-la-imagen') left top no-repeat #ffcc00;
+  }
+```
+
+> **NOTA:**
+> El orden no tiene que ser necesariamente ese, pero os proponemos usarlo.
+
+Realmente, la propiedad _background_ es una versión acortada de estas propiedades:
+* **background-image:** [Ver detalle](http://devdocs.io/css/background-image)
+* **background-position:** [Ver detalle](http://devdocs.io/css/background-position)
+* **background-repeat:** [Ver detalle](http://devdocs.io/css/background-repeat)
+* **background-color:** [Ver detalle](http://devdocs.io/css/background-color)
+
+* * *
+#### EJERCICIO 6
+
+¿Sabrías replicar los ejemplos de fondo usando [este Codepen](https://codepen.io/adalab/pen/JLwQpz)?
+
+* * *
+
+### Cuándo usar las propiedades de background o la versión acortada
+Usar estas dos propiedades produce el mismo resultado pero no son lo mismo:
+```css
+.box {
+	background-color: green;
+}
+.box {
+	background: green;
+}
+```
+Mientras que en el primer caso estamos diciendo que el color de fondo sea `green`, en el segundo estamos diciendo eso y que el resto de valores pasen a su valor por defecto.
+
+¿Sabrías adelantar el resultado de aplicar esta clase?:
+
+```css
+.box {
+	background-image: url('https://fillmurray.com/150/1500');
+	background: red;
+}
+```
+
+- [ ] Se verá a Bill Murray de fondo
+- [ ] Se verá a Bill Murray de fondo pero lo que no rellene la imagen será de color rojo
+- [ ] Solo se verá un color rojo de fondo
+- [ ] Otra
+
+Cuando usamos un atajo estamos definiendo TODAS las opciones, aunque no las usemos, por eso siempre deberíamos usar las propiedades que necesitemos, y solo usar los atajos cuando realmente estemos usando la mayoria de las propiedades :)
+
+Si solo queremos cambiar el color de fondo deberíamos usar
+`background-color`.
+Si por el contrario queremos poner una imagen, en una posición y con una repetición, deberíamos usar el acortador `background` ya que realmente se escribe menos:
+
+```css
+.box {
+	background-image: url('https://fillmurray.com/150/150');
+	background-position: left top;
+	background-repeat: no-repeat;
+}
+```
+```css
+.box {
+	background: url('https://fillmurray.com/150/150') left top no-repeat;
+}
+```
+## Background-size
+Desde hace tiempo hay una propiedad nueva que nos permite redimensionar la imagen de fondo y hasta definir cómo se debe ajustar a nuestro contenedor: `background-size`.
+
+Nosotros vamos a ver cómo ajustar el fondo a nuestro contenedor pero puedes consultar la [documentación completa](http://devdocs.io/css/background-size).
+
+Hay dos valores especialmente interesantes ya que permiten definir cómo se ajustará nuestra imagen de fondo al contenedor: **contain** y **cover**.
+
+### Contain
+Aumenta o reduce la imagen proporcionalmente todo lo que pueda sin deformarla para que quepa en nuestro contenedor.
+
+### Cover
+Aumenta o reduce la imagen proporcionalmente para asegurarse que siempre cubre todo el área de nuestro contenedor, aunque eso signifique que parte de la imagen pueda quedar oculta.
+
+[Ejemplos de uso de Contain y Cover](https://codepen.io/adalab/pen/aGojMd)
 
 ## BONUS
 
