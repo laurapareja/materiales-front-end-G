@@ -14,7 +14,7 @@
 
 En esta sesión usaremos herramientas para automatización de tareas en nuestro flujo de trabajo en front-end. Estas herramientas son muy útiles porque nos ayudarán a ser más eficientes en nuestro trabajo y nos ahorrarán tareas repetitivas.
 
-> **NOTA:**  
+> **NOTA:**
 > En esta sesión vamos a dar un repaso por encima a un flujo de trabajo con Gulp y node pero no tendremos que configurarnos todavía nuestro entorno de trabajo, os proporcionaremos una base ya configurada sobre la que trabajar lo que queda de módulo :)
 
 ## ¿En qué casos se utiliza?
@@ -35,7 +35,11 @@ Decir que Gulp lo usaremos a través del terminal, que no tiene interfaz gráfic
 
 ### Node
 
-Para poder usar _Gulp_ en nuestro ordenador, necesitamos tener instalado _Node.js_. Node es una plataforma que nos permite ejecutar código JavaScript en nuestro ordenador o un servidor, ya sea para programar un back-end o para ejecutar pequeños programas de código que nos sirvan de herramientas, llamados scripts, y todo ello usando código JavaScript, fantástico ¿no?
+Hasta ahora sabíamos que JavaScript se ejecuta siempre en un navegador web. Pero qué pasa si queremos ejecutar JavaScript fuera de un navegador?
+
+Node es una plataforma que nos permite ejecutar código JavaScript en nuestro ordenador o un servidor, ya sea para programar un back-end o para ejecutar pequeños programas de código que nos sirvan de herramientas, llamados scripts, y todo ello usando código JavaScript, fantástico ¿no?.
+
+Para poder usar _Gulp_ en nuestro ordenador, necesitamos tener instalado _Node.js_.
 
 No nos vamos a poner a instalar Node en el ordenador, ya está instalado y vamos a comprobarlo. Para ello como suele ser común, escribiremos en la terminal el nombre del comando, seguido de `-v` o similar, como hemos hecho anteriormente con git, en este caso escribiremos:
 
@@ -223,7 +227,7 @@ Probamos a ejecutar la tarea `gulp html`, que inserta los parciales en el HTML y
 
 ### Bueno, ¿y ahora?
 
-Ahora os hemos preparado un proyecto que os podéis descargar y donde integrar vuestros proyecto y ejercicios en Adalab:  
+Ahora os hemos preparado un proyecto que os podéis descargar y donde integrar vuestros proyecto y ejercicios en Adalab:
 [Adalab Web Starter Kit](https://github.com/Adalab/Adalab-web-starter-kit)
 
 ## Adalab Web Starter Kit
@@ -271,12 +275,12 @@ Esta tarea se ejecuta una sola vez y no lanza servidores web ni watchers, pero g
 
 La forma más cómoda es:
 
-1. crear un repositorio en GitHub y clonarlo / partir de un repo existente (como el de nuestro proyecto grupal)
-2. descargar/clonar el kit a otra carpeta
-3. copiar o mover los archivos y carpetas a nuestro proyecto **SIN OLVIDAR EL ARCHIVO .GITIGNORE Y EL RESTO DE ARCHIVOS OCULTOS (empiezan por `.`)** (podemos obviar el `README.md` y la carpeta `.git`)
+1. Crear un repositorio en GitHub y clonarlo / partir de un repo existente (como el de nuestro proyecto grupal)
+2. Descargar/clonar el kit a otra carpeta
+3. Copiar o mover los archivos y carpetas a nuestro proyecto **SIN OLVIDAR EL ARCHIVO .GITIGNORE Y EL RESTO DE ARCHIVOS OCULTOS (empiezan por `.`)** (podemos obviar el `README.md` y la carpeta `.git`)
 4. Desde nuestro proyecto ya podemos ejecutar `npm install` para instalar las dependencias
-5. si partimos de un repo existente, movemos el código de nuestro proyecto al lugar adecuado de la carpeta `_src`
-6. arrancamos el proyecto con el comando `gulp` en la terminal
+5. Si partimos de un repo existente, movemos el código de nuestro proyecto al lugar adecuado de la carpeta `_src`
+6. Arrancamos el proyecto con el comando `gulp` en la terminal
 
 ---
 
