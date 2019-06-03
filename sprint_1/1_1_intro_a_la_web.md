@@ -65,7 +65,7 @@ https://google.es
 El esquema que sigue una url es:
 
 ```
-protocolo://nombre-de-dominio/directorio/nombre-de-archivo
+protocolo://nombre-de-dominio:puerto-de-red/directorio/nombre-de-archivo
 ```
 
 * **Protocolo**: Indica cómo se van a intercambiar los datos entre  el ordenador cliente y el servidor. Hay varios tipos de protocolo, el normal para navegar es http (o https, que es http pero en modo seguro). http significa Hypertext Transfer Protocol, que español viene a ser "Protocolo de transferencia de hipertexto". Existen más protocolos como `mailto` o `ftp`.
@@ -76,6 +76,7 @@ protocolo://nombre-de-dominio/directorio/nombre-de-archivo
         * `.cat` indica que es una página catalana, no de gatitos
     * El **nombre** es la denominación principal de dominio.
     * De manera opcional pueden contener *subdominios*, que es un nombre especial que se usa para identificar diferentes partes del dominio, por ejemplo, un blog: `https://blog.twitter.com`. Muchas direcciones usan las tres w como subdominio, y podríamos decir que `www` es un subdominio que viene por defecto.
+* **puerto de red**: número del puerto de red en el servidor, suele ir asociado al protocolo. Para `http` es el 80 y se suele omitir.
 * **directorio y nombre de archivo**: si no especificamos nada más que protocolo y dominio, `https://google.es` en el navegador se nos mostrará la página que esté indicada por defecto, pero podemos pedir un archivo en concreto y que puede estar dentro de una serie de carpetas (recordemos que el servidor, al final, es un ordenador:
 
 ```
