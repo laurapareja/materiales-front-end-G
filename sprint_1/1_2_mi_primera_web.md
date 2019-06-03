@@ -278,7 +278,14 @@ Buscar información sobre todos estos elementos en la [MDN](https://developer.mo
 
 **Una página clásica**
 
-Realizar una página semántica con: un título principal, tres párrafos con el contenido, dos párrafos con anuncios secundarios, y un texto de copy (© 2019)
+Realizar una página semántica explicando alugnos de lenguajes de programación que vamos a aprender durante el curso, con:
+
+* Un título principal.
+* Contenido:
+  * Tres párrafos con el contenido.
+  * Dos párrafos con anuncios secundarios.
+  * Un listado de 4 lenguajes de programación.
+* Un texto de copy (© 2019).
 * * *
 
 ## CSS
