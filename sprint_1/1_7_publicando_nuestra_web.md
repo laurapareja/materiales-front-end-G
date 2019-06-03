@@ -488,7 +488,7 @@ Vamos a:
 Puesto que trabajamos en parejas o en grupos queremos trabajar con el mismo código que tienen nuestras compañeras. Por ello si una compañera sube un cambio de código a GitHub (con `git push`) queremos poder descargarlo a nuestro ordenador (con `git pull`). Para ello:
 
 1. Crear un proyecto vacío en GitHub. Le pondremos como nombre `testing-git-pull`. En este proyecto vamos compartir código entre varias compañeras.
-1. Clonar el proyecto en los ordenadores de todas las compañeras del equipo con `$ git clone url-del-repositorio-que-me-da-github` (como se explica en ejercicio 6).
+1. Clonar el proyecto en ambos ordenadores (el tuyo y el de tu compañera) con `$ git clone url-del-repositorio-que-me-da-github` (como se explica en ejercicio 6).
 1. Una de las compañeras debe añadir el fichero `index.html` en la raíz del proyecto.
 1. La compañera que haya hecho el cambio anterior debe hacer un commit y luego un push para subir el cambio a GitHub.
 1. Después, el resto de compañeras debe hacer `git pull` (desde dentro de la carpeta del proyecto) para descargarse los cambios a su ordenador.
