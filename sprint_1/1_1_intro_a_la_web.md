@@ -77,11 +77,11 @@ protocolo://nombre-de-dominio:puerto-de-red/directorio/nombre-de-archivo
     - `.cat` indica que es una página catalana, no de gatitos
   - El **nombre** es la denominación principal de dominio.
   - De manera opcional pueden contener _subdominios_, que es un nombre especial que se usa para identificar diferentes partes del dominio, por ejemplo, un blog: `https://blog.twitter.com`. Muchas direcciones usan las tres w como subdominio, y podríamos decir que `www` es un subdominio que viene por defecto.
-- **puerto de red**: número del puerto de red en el servidor, suele ir asociado al protocolo. Para `http` es el 80 y se suele omitir.
+- **puerto de red**: número del puerto de red que indica por dónde acceder al servidor. Suele ir asociado al protocolo, por ejemplo para `http` es el 80, para `https` el 443 y se suelen omitir al escribir la URL.
 - **directorio y nombre de archivo**: si no especificamos nada más que protocolo y dominio, `https://google.es` en el navegador se nos mostrará la página que esté indicada por defecto, pero podemos pedir un archivo en concreto y que puede estar dentro de una serie de carpetas (recordemos que el servidor, al final, es un ordenador:
 
 ```
-https://www.adidas.es/zapatilla-adizero-ubersonic-3.0/CP8852.html
+https://www.adidas.es:443/zapatilla-adizero-ubersonic-3.0/CP8852.html
 ```
 
 Queremos acceder al archivo `CP8852.html` que se encuentra en la ruta de directorios `zapatilla-adizero-ubersonic-3.0` en el servidor de `www.adidas.es`.
