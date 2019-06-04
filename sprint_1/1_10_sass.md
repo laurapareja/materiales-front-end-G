@@ -4,7 +4,12 @@
 
 - [EJERCICIO 1](#ejercicio-1)
 - [EJERCICIO 2](#ejercicio-2)
-- [EJERCICIO BONUS 1](#ejercicio-bonus-1)
+- [EJERCICIO 3](#ejercicio-3)
+- [EJERCICIO 4](#ejercicio-4)
+- [EJERCICIO BONUS 5](#ejercicio-bonus-5)
+- [EJERCICIO BONUS 6](#ejercicio-bonus-6)
+- [EJERCICIO BONUS 7](#ejercicio-bonus-7)
+- [EJERCICIO BONUS 8](#ejercicio-bonus-8)
 
 <!-- /TOC -->
 
@@ -19,11 +24,11 @@ De esta manera ya no trabajaremos directamente el CSS sino con este preprocesado
 
 Actualmente hay varios preprocesadores, realmente lo que los diferencia es la sintaxis de cada uno pero vienen a hacer un poco lo mismo. Los preprocesadores CSS más famosos son:
 
-* [SASS (el que vamos a ver en Adalab)](http://sass-lang.com)
+* [Sass (el que vamos a ver en Adalab)](http://sass-lang.com)
 * [LESS](http://lesscss.org)
 * [Stylus](http://learnboost.github.io/stylus/)
 
-Nosotros vamos a usar SASS, concretamente SCSS, que es la sintaxis nueva :)
+Nosotros vamos a usar Sass, concretamente SCSS, que es la sintaxis nueva :)
 
 ## Vale, ¿y esto cómo funciona?
 
@@ -32,11 +37,11 @@ Pues esto se instala y se ejecuta por terminal, pero para no sufrir lo tenemos i
 Al arrancarlo todo el SCSS de la carpeta **_src/assets/scss** se procesará en la carpeta **public/assets/css**, automáticamente y se recargará el navegador.
 
 
-### Me estás liando, ¿SASS o SCSS?
-El preprocesador CSS que vamos a usar se llama SASS (Syntactically Awesome StyleSheets) pero tiene dos sintaxis, SASS y SCSS. Usaremos SCSS porque es más parecida a CSS y no depende tantísimo de estar todo bien tabulado ya que usa las mismas llaves a las que estamos acostumbrados ya. Así que diremos `sass` pero usaremos `scss` ;)
+### Me estás liando, ¿Sass o SCSS?
+El preprocesador CSS que vamos a usar se llama Sass (Syntactically Awesome StyleSheets) pero tiene dos sintaxis, Sass y SCSS. Usaremos SCSS porque es más parecida a CSS y no depende tantísimo de estar todo bien tabulado ya que usa las mismas llaves a las que estamos acostumbrados ya. Así que diremos `sass` pero usaremos `scss` ;)
 
-## ¿Y qué puedo hacer con SASS/SCSS?
-Maravillas, con SASS se pueden hacer maravillas.
+## ¿Y qué puedo hacer con Sass/SCSS?
+Maravillas, con Sass se pueden hacer maravillas.
 
 Bueno, se pueden hacer muchas cosas, hoy vamos a ver las variables, como se anida, el símbolo `&` y las media queries, imports y mixins/funciones.
 
@@ -76,6 +81,8 @@ body {
 ***
 #### EJERCICIO 1
 
+**Variables, variables everywhere**
+
 En el siguiente [codepen](https://codepen.io/adalab/pen/aVrxYY) tenemos un ejemplo en css que vamos a reescribir a SCSS y modificar un poco.
 
 1. Lo primero es configurarlo para usar SCSS: en la rueda de CSS, desplegar las opciones y elegir SCSS como preprocesador
@@ -109,7 +116,7 @@ a {
 De esta manera tenemos un poco lo mejor de dos mundos.
 
 ### Nesting o anidado, y el símbolo `&`
-Una maravilla que nos permite hacer SASS es anidar nuestros estilos.
+Una maravilla que nos permite hacer Sass es anidar nuestros estilos.
 
 Si queremos indicar que todos los `<p>` dentro de un elemento `.content` van a ser de color azul y si llevan enlace, éste, se mostrará en rojo, podemos escribir:  
 ```scss
@@ -157,9 +164,39 @@ a:hover {color: blue;}
 ```
 En este [codepen](https://codepen.io/adalab/pen/JOqQGG) podéis verlo funcionando.
 
+***
+
+#### EJERCICIO 2
+
+**Sass y BEM, cuanto más primo más me arrimo**
+
+Parece que en el siguiente código hay una errata y las cajas oscuras están fallando. Nos han pedido que lo apañemos y que, una vez arreglado, mejoremos el código haciendo uso del operador `&` para minimizar estos errores en el futuro.
+
+```css
+.card {
+	width: 100px;
+	height: 100px;
+	margin: 10px;
+}
+.card:hover {
+	box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+.carsd--dark {
+	background-color: #000;
+	color: #fff;
+}
+.card--light {
+	background-color: #000;
+	color: #fff;
+}
+```
+
+***
+
 ### Mediaqueries
-La posibilidad de anidar selectores nos permite una flexibilidad extra. Hasta ahora sólo podíamos meter selectores completos dentro de nuestras Mediaqueries, pero con SASS podemos incluir mediaqueries en nuestros selectores y hacer cosas como esta.
-```SCSS
+La posibilidad de anidar selectores nos permite una flexibilidad extra. Hasta ahora sólo podíamos meter selectores completos dentro de nuestras Mediaqueries, pero con Sass podemos incluir mediaqueries en nuestros selectores y hacer cosas como esta.
+
+```scss
 .wrapper {
 	margin: 0 25px;
 	@media all and (min-width:768px) {
@@ -190,10 +227,38 @@ Y que generaría el siguiente CSS:
 
 ```
 
-### Imports y cómo organizar nuestro proyecto
-Bueno, ¿qué más podemos hacer con SASS? Importar archivos. Esto es otra ventaja importante ya que nos permite modularizar nuestros estilos y trabajar en pequeños parciales que luego se unirán en el archivo final. Esto es gracias al `@import`.
+***
 
-Espera, CSS ya tiene un sistema de ´@import´ que todas sabemos que se colocan al principio del archivo CSS, ¿no? Pues sí, pero el ´@import´ de SASS lo puedes poner donde quieras del documento lo que nos permite plantear una estructura de componentes para llevar un orden en nuestros desarrollos. Hay muchas maneras de plantearlo así que os vamos a proponer una.
+#### EJERCICIO 3
+
+**¡Medias a mi!**
+
+Hay que reescribir el siguiente código con Sass. Al turrón!
+
+```css
+p {
+  font-size: 16px;
+}
+
+@media (min-width: 768px) {
+  p {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1024px) {
+  p {
+    font-size: 20px;
+  }
+}
+```
+
+***
+
+### Imports y cómo organizar nuestro proyecto
+Bueno, ¿qué más podemos hacer con Sass? Importar archivos. Esto es otra ventaja importante ya que nos permite modularizar nuestros estilos y trabajar en pequeños parciales que luego se unirán en el archivo final. Esto es gracias al `@import`.
+
+Espera, CSS ya tiene un sistema de ´@import´ que todas sabemos que se colocan al principio del archivo CSS, ¿no? Pues sí, pero el ´@import´ de Sass lo puedes poner donde quieras del documento lo que nos permite plantear una estructura de componentes para llevar un orden en nuestros desarrollos. Hay muchas maneras de plantearlo así que os vamos a proponer una.
 
 ```
 scss
@@ -251,16 +316,20 @@ En nuestro `main.scss` llamaríamos a todos estos archivos en orden:
 ```
 
 > **NOTA 1:**  
-> Si ponemos un archivo con un guión bajo delante SASS no lo procesará para convertirlo a CSS. La idea es que todos los nombres de archivos que vayamos a importar los escribamos con un guión bajo delante. Estos archivos a menudo se suelen llamar `parciales`, porque son partes del código final.
+> Si ponemos un archivo con un guión bajo delante Sass no lo procesará para convertirlo a CSS. La idea es que todos los nombres de archivos que vayamos a importar los escribamos con un guión bajo delante. Estos archivos a menudo se suelen llamar `parciales`, porque son partes del código final.
 
 > **NOTA 2:**  
 > Es importante saber que el orden de los imports es importante y que tal como se carguen será como se importen y como se ejecuten para convertirse a CSS. ¡Recordad la cascada de CSS!
 
 Una ventaja directa de trabajar con parciales es la cantidad de conflictos de git que nos vamos a ahorrar por no estar modificando el mismo fichero ;)
-***
-#### EJERCICIO 2
 
-Vamos a crearnos un proyecto con nuestra estructura de imports de SASS. Usaremos el kit de Adalab. Recordad que **iremos haciendo parciales conforme los vayamos necesitando** y que **en cada carpeta estarán solo los que necesitemos**.
+***
+
+#### EJERCICIO 4
+
+**Cada mochuelo a su olivo**
+
+Vamos a crearnos un proyecto con nuestra estructura de imports de Sass. Usaremos el kit de Adalab. Recordad que **iremos haciendo parciales conforme los vayamos necesitando** y que **en cada carpeta estarán solo los que necesitemos**.
 Para el ejercicio querremos:
 - Un header de 75 de alto en móvil, 100 en tablet (768px) y 110 en desktop (1280px)
 - Una home con 2 bloques:
@@ -335,8 +404,45 @@ Que generará el siguiente CSS:
 	line-height: 24px;
 }
 ```
+
+***
+
+#### EJERCICIO BONUS 5
+
+**A mezclar**
+
+Crea 3 mixins con tu compañera. Piensa en casos de uso comunes como: propiedades de background, estilos de texto o media queries.
+
+***
+
+#### EJERCICIO BONUS 6
+
+**MediaMixins**
+
+Queremos rehacer el ejercicio 3 para poder escribir nuestro código así:
+
+```scss
+p {
+  font-size: 16px;
+
+  @include tablet {
+    font-size: 18px;
+  }
+
+  @include desktop {
+    font-size: 20px;
+  }
+}
+```
+
+¿Te animas a hacer los mixins 'tablet' y 'desktop' para que funcione?
+
+**PISTA**: investiga la directiva `@content`
+
+***
+
 ### Funciones
-SASS viene con un un [juego de funciones](http://sass-lang.com/documentation/Sass/Script/Functions.html) y además podemos crear las nuestras propias.
+Sass viene con un un [juego de funciones](http://sass-lang.com/documentation/Sass/Script/Functions.html) y además podemos crear las nuestras propias.
 Por ejemplo, vamos a crear una función para poder escribir nuestras unidades en rem, pero elegantemente. ¿O qué?
 
 Recordemos que `rem` es una medida relativa al tamaño de fuente especificado en nuestra etiqueta `<html>`, por defecto este tamaño es de 16px.
@@ -369,17 +475,34 @@ p {
 
 Mola, ¿o qué?
 
+***
+
+#### EJERCICIO BONUS 7
+
+**Hagase la luz**
+
+Investigad la función `lighten` en la docu de Sass, coméntadla y probadla para ver su utilidad.
+
+***
 
 ### Autoprefixer
 Para entender **Autoprefixer**, primero tenemos que entender qué son los _vendor-prefixers_. Son prefijos que utilizan los navegadores en propiedades experimentales o que no son estándar. Esto lo hacen para permitir a los desarrolladores probar funcionalidades de CSS antes de que se estandaricen. El caso es que al final un montón de navegadores antiguos necesitan estos prefijos en las propiedades para que éstas funcionen correctamente.
 
 Pero, escribir todos los prefijos es un un trabajo muy tedioso, y estar pendiente de cuál necesitamos para cada navegador sería muy agotador. Por suerte tenemos **Autoprefixer** que hace este trabajo por nosotros. Nos permite olvidarnos de ese problema pudiendo especificar cuántos navegadores o versiones de navegador queremos que controle y, una vez que se genere nuestro CSS, colocará los prefijos necesarios en cada caso.
 
-> Por dejar claro, autoprefixer sería un post-procesador. Como hemos visto, SASS lo que hace es convertir un código con una sintaxis a CSS. Autoprefixer, en cambio, parte de un código CSS y lo post-procesa para convertirlo en un CSS con una serie de propiedades añadidas.
+> Por dejar claro, autoprefixer sería un post-procesador. Como hemos visto, Sass lo que hace es convertir un código con una sintaxis a CSS. Autoprefixer, en cambio, parte de un código CSS y lo post-procesa para convertirlo en un CSS con una serie de propiedades añadidas.
 
 ***
-#### EJERCICIO BONUS 1
+
+#### EJERCICIO BONUS 8
+
+**Crossbrowser**
 
 Autoprefixer viene configurado en el Kit, ¿sabrías encontrar donde se configura? Pista: empieza por G y acaba por ulpfile.js ;)
 Hagamos que tenga en cuenta las 5 últimas versiones de los navegadores.
 ***
+
+## Recursos externos
+
+- [Editor online para hacer pequeñas pruebas](https://sass.js.org/)
+- [Guía de estilo subjetiva para escribir Sass sano, sostenible y escalable](https://sass-guidelin.es/es/)
