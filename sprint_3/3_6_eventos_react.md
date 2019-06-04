@@ -16,7 +16,8 @@
 - [EJERCICIO 5](#ejercicio-5)
 - [EJERCICIO 6](#ejercicio-6)
 - [EJERCICIO 7](#ejercicio-7)
-  <!-- /TOC -->
+
+<!-- /TOC -->
 
 ## Introducción
 
@@ -295,7 +296,7 @@ class MurrayList extends React.Component {
   }
 
   render() {
-    const { handleClick } = this;
+    const handleClick = this.handleClick;
 
     return (
       <section className="section-murrays">
@@ -324,7 +325,8 @@ import React from 'react';
 
 class ReloadButton extends React.Component {
   render() {
-    const { label = 'More', actionToPerform } = this.props;
+    const actionToPerform = this.props.actionToPerform;
+    const label = this.props.label || 'More';
 
     return (
       // Registramos el escuchador que recibimos por props. ¡Lifting hecho!
