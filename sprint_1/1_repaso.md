@@ -15,3 +15,12 @@ Dado este wireframe, vamos a realizar la maquetación responsive.
 ## Resumen del módulo
 
 ![Resumen del módulo](assets/repaso/modulo-1-resumen.png)
+
+## Librerías
+
+- [Font Awesome](https://fontawesome.com/)
+- [Google fonts](https://fonts.google.com/)
+- [Bootstrap](https://getbootstrap.com/)
+- [Animate.css](https://daneden.github.io/animate.css/)
+- [Bulma.css](https://bulma.io/)
+- [Susy](https://www.oddbird.net/susy/)
