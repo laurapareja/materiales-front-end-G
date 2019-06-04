@@ -44,7 +44,7 @@ const generateRandomInteger = maxValue => Math.floor(Math.random() * maxValue);
 class RandomInteger extends React.Component {
   constructor(props) {
     super(props);
-    const { maxValue } = props;
+    const maxValue = props.maxValue;
 
     this.state = {
       number: generateRandomInteger(maxValue),
@@ -129,12 +129,10 @@ class BipolarButton extends React.Component {
   }
 
   render() {
-    const { label } = this.props;
-    const { styling } = this.state;
 
     return (
-      <button className={`btn btn-${styling}`} onClick={this.handleClick}>
-        {label}
+      <button className={`btn btn-${this.state.styling}`} onClick={this.handleClick}>
+        {this.props.label}
       </button>
     );
   }
