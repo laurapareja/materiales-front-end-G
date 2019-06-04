@@ -479,7 +479,7 @@ Mola, ¿o qué?
 
 #### EJERCICIO BONUS 7
 
-**Hagase la luz**
+**Hágase la luz**
 
 Investigad la función `lighten` en la docu de Sass, coméntadla y probadla para ver su utilidad.
 
