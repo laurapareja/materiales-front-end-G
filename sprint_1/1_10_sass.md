@@ -481,7 +481,7 @@ Mola, ¿o qué?
 
 **Hágase la luz**
 
-Investigad la función `lighten` en la docu de Sass, coméntadla y probadla para ver su utilidad.
+Investigad la función `lighten` en la docu de Sass, comentadla y probadla para ver su utilidad.
 
 ***
 
