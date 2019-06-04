@@ -101,7 +101,7 @@ En el siguiente [codepen](https://codepen.io/adalab/pen/aVrxYY) tenemos un ejemp
 Quizás el primer impulso es empezar a crear variables como si no hubiera mañana pero el truco está en ver qué valores reutilizamos (misma altura para diferentes elementos, algunos márgenes, colores) y empezar creando sólo esas.
 
 **Sobre los colores**
-Lo ideal es usar variables que indiquen el tipo de elemento al que se va a aplicar un color y no tanto el color en sí. Es mejor `$colorLink` en lugar de variables tipo `$colorBlue` que tarde o temprano acaban valiendo un color diferente y va a desconcertar a quien coja el proyecto después. Aunque hay un término médio: definimos nuestros colores como el color que son y asignamos nuestra variable a otra variable que indique el elemento donde se va a usar.
+Lo ideal es usar variables que indiquen el tipo de elemento al que se va a aplicar un color y no tanto el color en sí. Es mejor `$colorLink` en lugar de variables tipo `$colorBlue` que tarde o temprano acaban valiendo un color diferente y va a desconcertar a quien coja el proyecto después. Aunque hay un término medio: definimos nuestros colores como el color que son y asignamos nuestra variable a otra variable que indique el elemento donde se va a usar.
 
 ```scss
 $colorBlue: blue;
@@ -411,7 +411,7 @@ Que generará el siguiente CSS:
 
 **A mezclar**
 
-Crea 3 mixins con tu compañera. Piensa en casos de uso comunes como: propiedades de background, estilos de texto o media queries.
+Crea 3 mixins con tu compañera. Pensad en casos de uso comunes, como: propiedades de background, estilos de texto o media queries.
 
 ***
 
