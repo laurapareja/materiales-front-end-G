@@ -278,7 +278,7 @@ Buscar información sobre todos estos elementos en la [MDN](https://developer.mo
 
 **Una página clásica**
 
-Realizar una página semántica explicando alugnos de lenguajes de programación que vamos a aprender durante el curso, con:
+Realizar una página semántica explicando algunos de los lenguajes de programación que vamos a aprender durante el curso, con:
 
 * Un título principal.
 * Contenido:
@@ -532,7 +532,7 @@ Partiendo de este [Codepen de ejemplo](https://codepen.io/oneeyedman/pen/vWEBex)
 
 ## Colores
 
-Para empezar, vamos a ver los distintos formatos que podemos usar para indicar colores, que podemos usar por ejemplo como valor de nuestro querida propiedad CSS `color`.
+Para empezar, vamos a ver los distintos formatos que podemos usar para indicar colores, por ejemplo como valor de nuestro querida propiedad CSS `color`.
 
 ### Colores con palabras clave
 
