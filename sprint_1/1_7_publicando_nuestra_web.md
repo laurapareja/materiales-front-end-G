@@ -225,6 +225,24 @@ Para volver a los últimos comandos ejecutados podemos usar la tecla de flecha p
 
 Si queremos buscar un comando en el historial, podemos usar Ctrl + R y comenzar a escribir el comando para buscarlo.
 
+**Ayuda y opciones**
+
+Si no sabemos cómo funciona un comando pediremos ayuda al terminal. Por ejemplo para saber cómo funciona el comando LS escribimos:
+
+```shell
+$ ls --help
+```
+El terminal mostrará una explicación de cómo se utiliza el comando y las opciones que se pueden utilizar. Con esta información sabremos que para listar el contenido de un directorio en orden inverso podemos escribir:
+
+```shell
+$ ls --reverse
+```
+o
+
+```shell
+$ ls -r
+```
+
 * * *
 #### EJERCICIO 1
 
@@ -272,7 +290,7 @@ Para comprobar si tenemos instalado git en nuestro ordenador, debemos abrir la T
 **1. Creamos una cuenta en [GitHub](https://github.com). Poniendo nuestro usuario de GitHub en minúsculas**
 > Esto es súper importante y lo agradeceréis más adelante.
 
-**2. Añadimos nuestro nombre a la configuración de git**
+**2. Añadimos nuestro nombre a la configuración de Git**
 
 Abrimos la aplicación de la terminal e introducimos el siguiente comando, tal y como se muestra abajo, sustituyendo `"John Doe"` por vuestro nombre. Una vez lo hayamos introducido, pulsamos intro para que se ejecute.
 
@@ -323,6 +341,15 @@ $ git config --global credential.helper osxkeychain
 
 Una vez hayamos realizado ese paso, no necesitaremos hacer ningún cambio más.
 
+**5. Configuramos el editor de texto para trabajar con Git**
+
+**Nano** es un editor de texto que suele venir por defecto en Ubuntu en la terminal. Queremos que sea nuestro editor por defecto para trabajar con Git. Para ello abrimos la terminal e introducimos el siguiente comando. Una vez lo hayamos introducido, pulsamos intro para que se ejecute.
+
+```shell
+$ git config --global core.editor nano
+```
+
+El editor por defecto en otros sistemas operativos es otro, pero en este curso vamos a utilizar siempre Nano para trabajar todas de la misma manera.
 
 ### Cómo trabajar con git
 
@@ -417,7 +444,7 @@ Como hemos explicado anteriormente, GitHub es una plataforma de desarrollo colab
 
 #### EJERCICIO 6
 
-Pon una foto de perfil en tu cuenta de GitHub. No tiene por qué ser una fotografía.
+Poneros, ambas compañeras, una imagen de perfil en vuestras cuentas de GitHub. No tiene por qué ser una fotografía.
 
 * * *
 
