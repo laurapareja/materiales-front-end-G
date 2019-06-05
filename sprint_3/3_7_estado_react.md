@@ -314,23 +314,22 @@ this.setState(prevState => {
 });
 ```
 
-Este objeto debía tener como mínimo una de las claves que se encuentran en el primer nivel del estado (`selectedTab, theme, userData`) y React se encarga de que las claves no presentes no se vean afectadas.
+Este objeto debía tener, como mínimo, una de las propiedades que se encuentran en el primer nivel del estado (`selectedTab, theme, userData`) y React se encarga de que las propiedades hermanas no presentes no se vean afectadas.
 
-Pero, y si queremos actualizar una clave que no está a primer nivel, por ejemplo `age`. En estos casos tenemos que identificar la clave madre. En nuestro ejemplo sería `userData` y es la que tenemos que modificar.
+Pero, ¿y si queremos actualizar una propiedad que no está a primer nivel, por ejemplo `age`?. En estos casos tenemos que identificar la propiedad madre en el primer nivel, en nuestro ejemplo sería `userData`, y es la que tenemos que modificar.
 
-Las claves hijas de `userData` (`eyeColor, mostHatedFruit...`) ya no se encuentran a primer nivel y React no las controla, es nuestra responsabilidad que al modificar una las otras no se vean afectadas.
+Las propiedades hijas de `userData` (`eyeColor, mostHatedFruit...`) ya no se encuentran a primer nivel y React no las controla, es nuestra responsabilidad que al modificar una las otras no se vean afectadas.
 
-En este punto, si tenéis que modificar la clave `age`, es posible que penseis en algo así:
+En este punto, si tenéis que modificar la clave `age`, es posible que penséis en algo así:
 
 ```js
 this.setState(prevState => {
-  const newUserData = prevState.userData;
-  newUserData.age = 33;
-  return { userData: newUserData };
+  prevState.userData.age = 33;
+  return { userData: prevState.userData };
 });
 ```
 
-Pero a React **NO le gusta que mutemos arrays y objetos anidados, mejor si creamos una copia**, operador `spread` al rescate:
+Pero a React **NO le gusta que mutemos arrays y objetos anidados, mejor si creamos una copia**, ¡operador `spread` al rescate!:
 
 ```js
 this.setState(prevState => {
@@ -368,7 +367,14 @@ Vamos a crear un formulario donde vamos a poder modificar estos campos del estad
 > NOTA: Cuidado al modificar los campos anidados dentro del objeto `birdthDate`; recuerda que para modificarlos es muy útil usar en el `setState` el operador spread `...` para mantener el resto de datos de ese objeto. Por ejemplo:
 
 ```js
-this.setState((prevState, props) => ({ ...prevState.birthDate, day: 8 }));
+this.setState(prevState => {
+  return {
+    birthDate: {
+      ...prevState.birthDate,
+      day: 8
+    }
+  };
+});
 ```
 
 ### BONUS
