@@ -13,6 +13,7 @@
 - [EJERCICIO 4](#ejercicio-4)
 - [EJERCICIO 5](#ejercicio-5)
 - [EJERCICIO 6](#ejercicio-6)
+- [EJERCICIO BONUS 7](#ejercicio-bonus-7)
 
 <!-- /TOC -->
 
@@ -47,7 +48,7 @@ class RandomInteger extends React.Component {
     const maxValue = props.maxValue;
 
     this.state = {
-      number: generateRandomInteger(maxValue),
+      number: generateRandomInteger(maxValue)
     };
   }
 
@@ -65,14 +66,14 @@ Como en este ejemplo el estado nunca cambia más, puede parecer que esto no sirv
 
 Ahora bien, hemos dicho que podemos cambiar el estado. Sin embargo, tenemos que hacerlo de cierta manera. Sabemos que los componentes en React son declarativos: no decimos _cómo_ se hace un componente, sino el _qué_, y React es quien se encarga del _cómo_. A la hora de cambiar los valores del estado, **no podremos asignar directamente los valores a `this.state`** o cualquiera de sus propiedades, sino que utilizaremos el método `setState()` del componente: React se encargará del resto.
 
-Podemos llamar a `setState()` de varias maneras. La más común y sencilla de ellas es pasarle un **objeto literal** con las claves (nombres) de los estados que queremos cambiar y sus valores. Es decir, si tenemos tres estados `a`, `b` y `c`, pero solo queremos cambiar el valor de `c`, pasaremos un objeto `{ c: 'nuevo valor' }`, sin incluir `a` ni `b`. React lo mezclará con el estado actual y solo cambiará las propiedades que deba cambiar.
+Podemos llamar a `setState()` de varias maneras. La más común y sencilla de ellas es pasarle un **objeto literal** con las claves (nombres) del estado que queremos cambiar y sus valores. Es decir, si tenemos tres estados `a`, `b` y `c`, pero solo queremos cambiar el valor de `c`, pasaremos un objeto `{ c: 'nuevo valor' }`, sin incluir `a` ni `b`. React lo mezclará con el estado actual y solo cambiará las propiedades que deba cambiar.
 
 ```js
 class BipolarButton extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      styling: 'info',
+      styling: 'info'
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -81,7 +82,7 @@ class BipolarButton extends React.Component {
   handleClick() {
     // Nuestra función escuchadora del evento click
     this.setState({
-      styling: 'danger',
+      styling: 'danger'
     });
   }
 
@@ -107,7 +108,7 @@ class BipolarButton extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      styling: 'info',
+      styling: 'info'
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -123,15 +124,17 @@ class BipolarButton extends React.Component {
       }
 
       return {
-        styling: nextStyling,
+        styling: nextStyling
       };
     });
   }
 
   render() {
-
     return (
-      <button className={`btn btn-${this.state.styling}`} onClick={this.handleClick}>
+      <button
+        className={`btn btn-${this.state.styling}`}
+        onClick={this.handleClick}
+      >
         {this.props.label}
       </button>
     );
@@ -143,7 +146,7 @@ También se puede usar una _arrow function_ más corta y, en este caso, un opera
 
 ```js
 this.setState((prevState, props) => ({
-  styling: prevState.styling === 'info' ? 'danger' : 'info',
+  styling: prevState.styling === 'info' ? 'danger' : 'info'
 })); // este doble paréntesis se suele olvidar de primeras
 ```
 
@@ -208,7 +211,7 @@ Si usásemos un valor de `this.state` después de llamar a `setState()`, podría
 ```js
 this.setState(
   {
-    mensaje: 'nuevo mensaje',
+    mensaje: 'nuevo mensaje'
   },
   () => {
     console.log(this.state.mensaje); // 'nuevo mensaje'
@@ -227,6 +230,118 @@ El `callback` se ejecutará justo después de que el cambio de estado haya tenid
 Sobre el componente cuentaovejas (`SheepCounter`) del ejercicio anterior, añadimos la funcionalidad de que, además de mostrar el número de ovejas, muestra también la imagen de una oveja. Por ejemplo, si el contador está en 6, además de aparecer el número 6 veremos 6 imágenes de ovejas.
 
 > Podéis usar esta imagen por ejemplo: http://www.clker.com/cliparts/e/4/8/7/13280460782141411990Cartoon%20Sheep.svg.hi.png
+
+---
+
+## _Spread operator_
+
+El operador _spread_ (`...`) convierte un array o un objeto en el conjunto de valores que contiene, por lo que nos permite usarlos como si estuvieran escritos en el propio código. Una de las ventajas que nos ofrece el operador _spread_ es que no tenemos por qué saber qué hay en el array u objeto en cada momento.
+
+### _Spreading_ de array
+
+Veamos un par de ejemplos con arrays. Tenemos un array y queremos añadirle un nuevo valor:
+
+```js
+const names = ['Smith', 'White', 'Black', 'Pinkman'];
+
+const newNames = [...names, 'Williams'];
+
+console.log(newNames)); // ['Smith', 'White', 'Black', 'Pinkman', 'Williams']
+```
+
+Ahora pongamos que queremos mezclar dos arrays distintos que tenemos:
+
+```js
+const myBooks = ['1984', 'Brave New World'];
+const myBrotherBooks = ['We', 'Fahrenheit 451'];
+
+const books = [...myBooks, ...myBrotherBooks];
+
+console.log(books); // [`1984`, 'Brave New World', 'We', 'Fahrenheit 451']
+```
+
+### _Spreading_ de objeto
+
+Podemos usar el operador _spread_ también con las propiedades de los objetos. Por ejemplo, para añadir una propiedad nueva o sobreescribirla si ya existe. En este ejemplo copiamos el objeto `person` y lo guardamos en `twinSister`. El objeto `person` sigue existiendo y los dos son independientes:
+
+```js
+const person = {
+  name: 'Marie',
+  lastName: 'Smith',
+  age: 39
+};
+
+const twinSister = { ...person, name: 'Juliette' };
+
+console.log(twinSister); // { name: 'Juliette', lastName: 'Smith', age: 39 }
+```
+
+### Copia vs referencia
+
+Recordemos que en el módulo de javascript aprendimos que si teniamos un array o un objeto literal en una variable, al guardarlo en otra, en realidad guardabamos una _referencia_ del array/objeto.
+
+De manera que si modificábamos o mutábamos una de las dos variables, por ejemplo con un `.push` para el caso del array o cambiando el valor de una propiedad para el caso del objeto, estos cambios también sucedian en la otra variable, ya que el array u objeto contenido en ambas era el mismo.
+
+El operador _spread_ nos permite hacer una copia de un objeto o array en un momento dado. De manera que si cambiamos o mutamos, por ejemplo, el original, la copia no se ve afectada, ya que son independientes y no comparten referencia.
+
+### Actualizando un valor del estado a partir del segundo nivel
+
+Como hemos visto, si tenemos en el estado un objeto con tres claves, por ejemplo:
+
+```js
+this.state = {
+  selectedTab: 4,
+  theme: 'dark',
+  userData: {
+    age: 30,
+    eyeColor: 'soft-caramel',
+    mostHatedFruit: 'banana'
+  }
+};
+```
+
+Podemos actualizarlas con `this.setState()`, pasándole como primer parámetro **un objeto o una funcion que debe devolver un objeto**
+
+```js
+this.setState({ selectedTab: 2 });
+```
+
+o
+
+```js
+this.setState(prevState => {
+  return { selectedTab: 2 };
+});
+```
+
+Este objeto debía tener como mínimo una de las claves que se encuentran en el primer nivel del estado (`selectedTab, theme, userData`) y React se encarga de que las claves no presentes no se vean afectadas.
+
+Pero, y si queremos actualizar una clave que no está a primer nivel, por ejemplo `age`. En estos casos tenemos que identificar la clave madre. En nuestro ejemplo sería `userData` y es la que tenemos que modificar.
+
+Las claves hijas de `userData` (`eyeColor, mostHatedFruit...`) ya no se encuentran a primer nivel y React no las controla, es nuestra responsabilidad que al modificar una las otras no se vean afectadas.
+
+En este punto, si tenéis que modificar la clave `age`, es posible que penseis en algo así:
+
+```js
+this.setState(prevState => {
+  const newUserData = prevState.userData;
+  newUserData.age = 33;
+  return { userData: newUserData };
+});
+```
+
+Pero a React **NO le gusta que mutemos arrays y objetos anidados, mejor si creamos una copia**, operador `spread` al rescate:
+
+```js
+this.setState(prevState => {
+  return {
+    userData: {
+      ...prevState.userData,
+      age: 33
+    }
+  };
+});
+```
 
 ---
 
@@ -250,10 +365,78 @@ Vamos a partir de un objeto con información de un usuario que tenemos en el est
 
 Vamos a crear un formulario donde vamos a poder modificar estos campos del estado.
 
-> NOTA: Cuidado al modificar los campos anidados dentro del objeto `birdthDate`; para modificarlos es muy útil usar en el `setState` el operador spread `...` para mantener el resto de datos de ese objeto. Por ejemplo:
+> NOTA: Cuidado al modificar los campos anidados dentro del objeto `birdthDate`; recuerda que para modificarlos es muy útil usar en el `setState` el operador spread `...` para mantener el resto de datos de ese objeto. Por ejemplo:
 
 ```js
 this.setState((prevState, props) => ({ ...prevState.birthDate, day: 8 }));
+```
+
+### BONUS
+
+#### EJERCICIO BONUS 7
+
+**Fruta fresca**
+
+Vamos a hacer una lista de frutas populares, que nos permita añadir y quitar elementos.
+
+```js
+this.state = {
+  popularFruits: ['kiwi', 'pinneaple', 'strawberry'],
+  newFruit: ''
+};
+```
+
+1. Pintar el listado a partir de la clave del estado `popularFruits`.
+
+2. Pintar un input de texto y un botón con el texto 'Añadir'
+
+3. Cada vez que el input cambie, hay que actualizar la clave del estado `newFruit`
+
+4. Cuando se pulse el botón 'Añadir' hay que:
+
+   - actualizar la clave del estado `popularFruits` con el valor de `newFruit`. Ojo, no vale mutar el array contenido en `popularFruits` con un push. Usaremos `spread` o el método de array `.concat` para generar un nuevo array.
+
+   - actualizar el valor de `newFruit` cn comitas vacias para limpiar el input.
+
+5. Ahora vamos a añadir un botón 'Eliminar' junto a cada fruta, a este botón tenemos que añadirle un atributo `value` o `data-fruit` con el nombre de la fruta junto a la que se encuentra como valor.
+
+6. Cuando se pulse el botón tenemos que recoger la fruta que queremos eliminar y actualizar la clave del estado `popularFruits` con un nuevo array que no contenga dicha fruta. El método `.filter` de array que devuelve una copia nueva puede ayudaros con esta tarea.
+
+Al turrón!
+
+---
+
+### Spread y parámetros de funciones
+
+El operador _spread_ también nos puede ser útil para pasar todos los valores de un array como parámetros a una función:
+
+```js
+const vowels = ['a', 'e', 'i', 'o', 'u'];
+
+console.log(...vowels);
+```
+
+Esto sería equivalente a:
+
+```js
+//
+console.log(vowels[0], vowels[1], vowels[2], vowels[3], vowels[4]);
+```
+
+### _Rest parameters_
+
+Cuando declaramos una función propia también nos sirve para almacenar los parámetros sobrantes (_rest parameters_) en una sola variable:
+
+```js
+function showFavoriteFruits(first, ...rest) {
+  const restOfFruits = rest.join(' and ');
+  console.log(
+    `My favourite fruit is the ${first}, although I like ${restOfFruits} also.`
+  );
+}
+
+const myFavoriteFruits = ['orange', 'banana', 'pear'];
+showFavoriteFruits(...myFavoriteFruits); // 'My favourite fruit is the orange, although I like banana and pear also.'
 ```
 
 ---
