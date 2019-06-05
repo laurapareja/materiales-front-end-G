@@ -531,6 +531,35 @@ input {
 
 ---
 
+## Expresiones regulares (aka regex) (aka regexp)
+
+En la vida en general hay muchas cosas que cumplen patrones y en particular en programación queremos identificar o encontrar esos patrones. Hay millones de ejemplos de patrones que se pueden identificar con expresiones regulares:
+
+* Email: `nombre` + `@` + `dominio` + `.` + `extensión de dominio`. Si un email no tiene alguno de estos campos en este orden, no es un email válido.
+* Matrícula de los coches: `4 números` + `3 letras`.
+* DNI: `de 1 a 7 números` + `1 letra`.
+* CSS: `.` + `nombre de la clase` + `{` + `nombre de la propiedad` + `:` + `valor de la propiedad` + `;` + `}`. Para saber si nuestro código está bien escribo VSCode, el servidor, chrome... utilizan muchas regex.
+* Colores RGB: `#` + `6 números o letras de la A a F`.
+* La terminal: cuando escribimos `cp -r /carpetaA /carpetaB` la terminal sabe `-r` es una opción (y no una carpeta) porque tiene un guión delante.
+* Idiomas: un programa puede deducir si un texto está en español si contiene letras como ñ, acentos... y no contiene otras letras como &#20320;.
+* Nombres y apellidos: solo pueden tener letras, espacios y guiones.
+* Precio de un producto: `número entero` + `,` + `número decimal` + `€`. Si tiene letras u otros símbolos no es un precio válido.
+
+> Los inputs de HTML también pueden evaluar si el texto que la usuaria ha introducido cumple con un patrón o no.
+
+> JavaScript tiene formas de evaluar diferentes textos con expresiones regulares y de esta forma saber si el texto cumple o no con el patrón de la expresión regular.
+
+Las expresiones regulares tienen la siguiente pinta `^[0-9]{4}[a-zA-Z]{3}$`. Si evaluamos la matrícula _1234CDC_ con esta regex nos dirá que sí cumple el patrón. Vamos a analizar lo que espera la esta regex:
+
+* ^: el acento circunflejo ^ indica el inicio de la regex.
+* [0-9]: la regex espera caracteres del 0 al 9, es decir, números.
+* {4}: la regex espera 4 caracteres de los anteriores, es decir, 4 números.
+* [a-zA-Z]: a continuación de los 4 números, porque el orden es importante, la regex espera caracteres de la _a_ a la _z_ (en minúsuclas) y / o de la _A_ a la _Z_ en mayúsculas.
+* {3}: cuántas letras de las anteriores espera, pues 3.
+* $: aquí debe acabar la regex, es decir si hubiese más caracteres después de las 3 letras, entonces no sería una matrícula.
+
+> A lo largo de vuestra vida como programadoras a veces odiaréis las regexp hasta que un día os solucionen de forma simple un problema complejo y entonces... **I ♥ RegExp**.
+
 #### EJERCICIO 5
 
 Crea un formulario similar al de la imagen, que es el de registro de Gmail.
