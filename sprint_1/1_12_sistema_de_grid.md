@@ -171,7 +171,7 @@ Si ahora quisiésemos que un elemento en concreto se colocase en una de estas á
 
 ---
 
-El soporte el navegadores de CSS grid aún no es completo pero a día de hoy (octubre de 2018) es de [casi del 85% según caniuse](https://caniuse.com/#feat=css-grid). Para los casos en que aún no podamos usarlo, tenemos como alternativa usar flexbox o el sistema de grid que nos ofrece Bootstrap.
+El soporte el navegadores de CSS grid aún no es completo pero a día de hoy (junio de 2019) es de [casi del 92% según caniuse](https://caniuse.com/#feat=css-grid). Para los casos en que aún no podamos usarlo, tenemos como alternativa usar flexbox o el sistema de grid que nos ofrece Bootstrap.
 
 ## Bootstrap
 
@@ -196,7 +196,7 @@ Por ahora vamos a usar el `<link>` que [Bootstrap nos da en su página de inicio
 
 Por ahora vamos a ver que Bootstrap cuenta con un sistema de grid sencillo de 12 columnas.
 
-> **Nota:**  
+> **Nota:**
 > Lo llamamos sistema de grid pero solo dispone las columnas.
 
 Siempre partimos de la base de 12 columnas para distribuir el espacio disponible en la web. En el CSS que hemos importado, tenemos una serie de clases que nos van a permitir construir nuestra web con un grid responsive de acuerdo a unos breakpoints que bootstrap tiene definidos.
