@@ -598,7 +598,7 @@ Para más información, consultad [la guía de colores de MDN](http://devdocs.io
 
 ### Background
 
-Una vez entendido que cada elemento se puede ver como una caja, veamos cómo añadir un fondo a dicha "caja":
+Como veremos más adelante, cada elemento se puede ver como una caja, veamos cómo añadir un fondo a dicha "caja":
 
 Gracias a la propiedad _background_ podemos rellenar el fondo de nuestro contenedor con una imagen, con un color, o ambos:
 
