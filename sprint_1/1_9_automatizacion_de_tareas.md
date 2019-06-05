@@ -15,7 +15,7 @@
 En esta sesión usaremos herramientas para automatización de tareas en nuestro flujo de trabajo en front-end. Estas herramientas son muy útiles porque nos ayudarán a ser más eficientes en nuestro trabajo y nos ahorrarán tareas repetitivas.
 
 > **NOTA:**
-> En esta sesión vamos a dar un repaso por encima a un flujo de trabajo con Gulp y node pero no tendremos que configurarnos todavía nuestro entorno de trabajo, os proporcionaremos una base ya configurada sobre la que trabajar lo que queda de módulo :)
+> En esta sesión vamos a dar un repaso por encima a un flujo de trabajo con Gulp y Node pero no tendremos que configurarnos todavía nuestro entorno de trabajo, os proporcionaremos una base ya configurada sobre la que trabajar lo que queda de módulo :)
 
 ## ¿En qué casos se utiliza?
 
@@ -47,7 +47,7 @@ No nos vamos a poner a instalar Node en el ordenador, ya está instalado y vamos
 node --version
 ```
 
-Una vez hecho esto nos aparecerá un mensaje en la terminal. Si nos aparece un mensaje del estilo `El comando no existe` o `command not found` es que no tenemos instalado Node en nuestro ordenador. Si por el contrario, se muestra la versión de node que tenemos instalada, por ejemplo `v8.9.3`, sabremos que lo tenemos instalado y por tanto podemos saltarnos el paso de la instalación.
+Una vez hecho esto nos aparecerá un mensaje en la terminal. Si nos aparece un mensaje del estilo `El comando no existe` o `command not found` es que no tenemos instalado Node en nuestro ordenador. Si por el contrario, se muestra la versión de Node que tenemos instalada, por ejemplo `v10.16.0`, sabremos que lo tenemos instalado y por tanto podemos saltarnos el paso de la instalación.
 
 > Si nos aparece otro mensaje es que no se ha instalado correctamente, es el momento de instalarlo :)
 
@@ -273,14 +273,28 @@ Esta tarea se ejecuta una sola vez y no lanza servidores web ni watchers, pero g
 
 ## Cómo usar el kit en nuestros proyectos
 
-La forma más cómoda es:
+Hay dos formas de usar el kit, elegid la que más os guste:
 
-1. Crear un repositorio en GitHub y clonarlo / partir de un repo existente (como el de nuestro proyecto grupal)
-2. Descargar/clonar el kit a otra carpeta
-3. Copiar o mover los archivos y carpetas a nuestro proyecto **SIN OLVIDAR EL ARCHIVO .GITIGNORE Y EL RESTO DE ARCHIVOS OCULTOS (empiezan por `.`)** (podemos obviar el `README.md` y la carpeta `.git`)
-4. Desde nuestro proyecto ya podemos ejecutar `npm install` para instalar las dependencias
-5. Si partimos de un repo existente, movemos el código de nuestro proyecto al lugar adecuado de la carpeta `_src`
-6. Arrancamos el proyecto con el comando `gulp` en la terminal
+Clonando el repo:
+
+1. Desde un terminal clona el repo como ya hemos hecho en anteriores lecciones: `git clone <url-del-repo-de-github>`.
+1. Entra en la carpeta que acabas de crear: `cd <caperta-del-repo>`.
+1. Lista todos los ficheros y carpetas, incluidos los ocultos: `ls -a -l`.
+1. Verás que hay una carpeta que se llama `.git`. Si la borramos, esta carpeta dejará de estar enlazada con el repo de GitHub.
+1. Borra la carpeta `.git` con el comando `rm -rf .git`.
+1. Ejecuta `npm install` para instalar las dependencias del proyecto.
+1. Ejecuta `gulp` para arrancar el proyecto.
+1. Empieza a utilizar el kit creando o copiando ficheros dentro de `_src`, editando el README.md...
+
+Descargando el repo en un fichero:
+
+1. Entra en GitHub y junto a la opción de clonar está la opción de descargar el repo en un ZIP.
+1. Descárgalo a tu ordenador y descomprímelo.
+1. Ejecuta `npm install` dentro de la carpeta del proyecto para instalar las dependencias.
+1. Ejecuta `gulp` para arrancar el proyecto.
+1. Empieza a utilizar el kit creando o copiando ficheros dentro de `_src`, editando el README.md...
+
+En ambos casos, si quieres conectar el proyecto que acabas de crear con un repositorio en GitHub debes hacer lo que aprendimos en lecciones anteriores... (pista: `git remote ...`).
 
 ---
 
@@ -321,14 +335,14 @@ Plugins para copiar ficheros, por ejemplo, copiar las fuentes a nuestra carpeta 
 - [Documentación oficial de Gulp](https://Gulpjs.com/)
 - [Gulp for beginners](https://css-tricks.com/Gulp-for-beginners/)
 
-## BONUS: Instalar node
+## BONUS: Instalar Node
 
 ### Instalar Node en Ubuntu
 
 Para instalar la última versión estable de Node en Ubuntu, tenemos que ejecutar estas dos líneas de código en nuestra terminal:
 
 ```shell
-curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
@@ -355,7 +369,7 @@ Tras realizarlo y que haga todo el proceso, volvemos a comprobar con `brew --ver
 Por último, ahora que tenemos instalado Homebrew, instalar Node será tan sencillo como hacer lo siguiente:
 
 ```shell
-brew install node@8
+brew install node@10
 ```
 
 ### Instalar Node en otro sistema operativo distinto de Ubuntu o Mac
