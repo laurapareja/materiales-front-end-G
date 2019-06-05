@@ -280,10 +280,10 @@ const users = [
 
 ### _Destructuring_ en React
 
-Llegados a este punto, es posible que te estés preguntando,muchas "Por mis props ¿dónde encaja en React?"
-Párate a pensar en un componente de clase, cuantas veces escribes `this.props.something` o en uno funcional `props.something`, ¡seguro que bastantes!
+Llegado este punto, es posible que te estés preguntando, "Por mis props ¿dónde encaja esto en React?"
+Piensa en los componentes que has desarrollado hasta ahora, ¿cuantas veces has escrito `this.props.something` (clase) o `props.something` (funcional)?, ¡seguro que bastantes!
 
-Veamos un ejemplo, con un componente llamado `Field` que pinta un `label` y un `input` cada vez que es instanciado.
+Veamos un ejemplo de la definición de un componente llamado `Field` que pinta un `label` y un `input` cada vez que es instanciado.
 
 ```js
 import React, { Component } from 'react';
@@ -361,7 +361,7 @@ class Field extends Component {
 
 Este código es un poco más legible, pero a costa de escribir más lineas.
 
-Si te fijas bien hemos creado una constante por cada propiedad del objeto `this.props`. A esta constante la hemos llamado igual que a la propiedad que contiene el valor que queremos guardar en ella.
+Si te fijas bien, hemos creado una constante por cada propiedad del objeto `this.props`. A esta constante la hemos llamado igual que a la propiedad que contiene el valor que queremos guardar en ella.
 
 Con _destructuring_ podemos hacer esto mismo escribiendo menos código:
 
@@ -398,6 +398,8 @@ class Field extends Component {
 }
 ...
 ```
+
+Voila!
 
 #### EJERCICIO 6
 
