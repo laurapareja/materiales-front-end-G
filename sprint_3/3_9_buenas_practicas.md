@@ -7,6 +7,10 @@
 - [EJERCICIO 1](#ejercicio-1)
 - [EJERCICIO 2](#ejercicio-2)
 - [EJERCICIO 3](#ejercicio-3)
+- [EJERCICIO 4](#ejercicio-4)
+- [EJERCICIO 5](#ejercicio-5)
+- [EJERCICIO 6](#ejercicio-6)
+- [EJERCICIO 7](#ejercicio-7)
 
 <!-- /TOC -->
 
@@ -150,9 +154,269 @@ a) Para terminar, vamos a repasar los ejercicios anteriores y comprobar que no t
 
 b) En el ejercicio anterior vamos a extraer un nuevo componente llamado `ColapsiblePalette`. ¿Dónde hay que poner el `key` ahora?
 
+## Destructuring
+
+La sintaxis _destructuring_ de ES6 nos facilita recoger valores de una estructura de datos, como los arrays o los objetos. Simulando la sintaxis de un array o de un objeto, en cada caso, podemos declarar varias variables a la vez, ¡y en una sola línea! Vemos unos ejemplos a continuación:
+
+### _Destructuring_ de arrays
+
+Vamos a ver un par de ejemplos con arrays. Tenemos un array de tres valores, y queremos coger los dos primeros en las variables `x` e `y`:
+
+```js
+const coordinates = [150, 35, 12]; // x = 150, y = 35, z = 12
+
+// hasta ahora lo habríamos hecho así
+const x = coordinates[0];
+const y = coordinates[1];
+console.log(`The point is at (${x}, ${y})`); // The point is at (150, 35)
+
+// usando destructuring de array
+const [x, y] = coordinates;
+console.log(`The point is at (${x}, ${y})`); // The point is at (150, 35)
+```
+
+Como vemos, es más sencillo de escribir que manejar los índices. Ahora supongamos que del array solo nos interesa la tercera coordenada, la que sería la coordenada `z`, pero no nos interesan los valores de antes. Sencillo: dejamos las posiciones vacías y le damos nombre solo a la tercera posición:
+
+```js
+const coordinates = [150, 35, 12];
+
+// hasta ahora lo habríamos hecho así
+const z = coordinates[2];
+console.log(`The z-index is ${z}`); // The z-index is 12
+
+// usando destructuring de array
+const [, , z] = coordinates;
+console.log(`The z-index is ${z}`); // The z-index is 12
+```
+
+---
+
+#### EJERCICIO 4
+
+**La carrera de escobas**
+
+Partiendo de este array con los resultados de una carrera de escobas ya ordenados, vamos a sacar del array e imprimir en la consola el podium, es decir, los nombres y tiempos del primero, segundo y tercer clasificado usando destructuring del array.
+
+```js
+const users = [
+  { name: 'Nymphadora Tonks', time: 9 },
+  { name: 'Cedric Diggory', time: 28 },
+  { name: 'Cho Chang', time: 35 },
+  { name: 'Luna Lovegood', time: 45 },
+  { name: 'Gregory Goyle', time: 56 }
+];
+```
+
+---
+
+### _Destructuring_ de objetos
+
+Vamos ahora con los objetos. En los objetos, los valores no se identifican por su posición, sino que las propiedades tienen su propio nombre, así que tendremos que tener en cuenta esto al asignar los valores con _destructuring_.
+
+Queremos coger el valor de una propiedad de un objeto y guardarla en una variable con el mismo nombre:
+
+```js
+const person = {
+  name: 'Marie',
+  lastName: 'Smith',
+  age: 39,
+  languages: ['English', 'French']
+};
+
+const { name } = person;
+console.log(`Hello ${name}`); // Hello Marie
+```
+
+> Este caso es típico: si guardamos el nombre como `name` en este contexto (`window`), estaríamos sobrescribiendo `window.name`, que es una propiedad existente del objeto `window` en los navegadores.
+
+Como no queremos sobreescrituras ¿Y si quisiéramos cambiarle el nombre a la variable porque el nombre de la propiedad no es apropiado?
+
+```js
+const { name: personName } = person;
+console.log(`Hello ${personName}`); // Hello Marie
+```
+
+Ahora un _destructuring_ dentro de otro. Si queremos el segundo valor del array que está en una propiedad, el segundo idioma de Marie, haríamos:
+
+```js
+const person = {
+  name: 'Marie',
+  lastName: 'Smith',
+  age: 39,
+  languages: ['English', 'French']
+};
+
+const { languages } = person;
+const [, secondLanguage] = languages;
+console.log(`${secondLanguage} is my second language`); // French is my second language
+```
+
+Pero también podemos hacerlo todo en uno sin pasar por el paso intermedio de definir `languages` primero, aunque pueda parecer un lío:
+
+```js
+const {
+  languages: [, secondLanguage]
+} = person;
+console.log(`${secondLanguage} is my second language`); // French is my second language
+```
+
+---
+
+#### EJERCICIO 5
+
+**De nuevo la carrera de escobas**
+
+Revisa el ejercicio 1 para acceder al nombre y tiempo de los ganadores usando destructuring de array y de objeto para imprimirlos en la consola.
+
+```js
+const users = [
+  { name: 'Nymphadora Tonks', time: 9 },
+  { name: 'Cedric Diggory', time: 28 },
+  { name: 'Cho Chang', time: 35 },
+  { name: 'Luna Lovegood', time: 45 },
+  { name: 'Gregory Goyle', time: 56 }
+];
+```
+
+### _Destructuring_ en React
+
+Llegados a este punto, es posible que te estés preguntando,muchas "Por mis props ¿dónde encaja en React?"
+Párate a pensar en un componente de clase, cuantas veces escribes `this.props.something` o en uno funcional `props.something`, ¡seguro que bastantes!
+
+Veamos un ejemplo, con un componente llamado `Field` que pinta un `label` y un `input` cada vez que es instanciado.
+
+```js
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
+class Field extends Component {
+  render() {
+    return (
+      <div className={`Field ${this.props.name || ''}`}>
+        <label htmlFor={this.props.id}>{this.props.label}</label>
+        <input
+          id={this.props.id}
+          name={this.props.name || this.props.id}
+          type={this.props.type}
+          onChange={this.props.onChange}
+          value={this.props.value}
+        />
+      </div>
+    );
+  }
+}
+
+Field.defaultTypes = {
+  type: 'text'
+};
+
+Field.propTypes = {
+  className: Proptypes.string,
+  id: Proptypes.string.isRequired,
+  label: Proptypes.string.isRequired,
+  name: Proptypes.string,
+  type: Proptypes.string,
+  onChange: Proptypes.string.isRequired,
+  value: Proptypes.string.isRequired,
+  placeholder: Proptypes.string.isRequired
+};
+
+export default Field;
+```
+
+Si queremos que el `html` devuelto (`return`) en el `render` quede más limpito podemos hacer algo así:
+
+```js
+...
+
+class Field extends Component {
+  render() {
+    const className = this.props.className;
+    const id = this.props.id;
+    const label = this.props.label;
+    const name = this.props.name;
+    const type = this.props.type;
+    const onChange = this.props.onChange;
+    const value = this.props.value;
+    const placeholder = this.props.placeholder;
+
+    return (
+      <div className={`Field ${className || ''}`}>
+        <label htmlFor={id}>{label}</label>
+        <input
+          id={id}
+          name={name || id}
+          type={type}
+          placeholder={placeholder}
+          onChange={onChange}
+          value={value}
+        />
+      </div>
+    );
+  }
+}
+
+...
+```
+
+Este código es un poco más legible, pero a costa de escribir más lineas.
+
+Si te fijas bien hemos creado una constante por cada propiedad del objeto `this.props`. A esta constante la hemos llamado igual que a la propiedad que contiene el valor que queremos guardar en ella.
+
+Con _destructuring_ podemos hacer esto mismo escribiendo menos código:
+
+```js
+...
+
+class Field extends Component {
+  render() {
+    const {
+      className,
+      id,
+      label,
+      name,
+      type,
+      onChange,
+      value,
+      placeholder
+    } = this.props;
+
+    return (
+      <div className={`Field ${className || ''}`}>
+        <label htmlFor={id}>{label}</label>
+        <input
+          id={id}
+          name={name || id}
+          type={type}
+          placeholder={placeholder}
+          onChange={onChange}
+          value={value}
+        />
+      </div>
+    );
+  }
+}
+...
+```
+
+#### EJERCICIO 6
+
+**Destructurando props y estado**
+
+Vamos a partir del ejercicio **Formulario para pelis** de la sesión **Estado en React 2** y a hacer destructuring de los objetos `this.props` y `this.state`.
+
+#### EJERCICIO 7
+
+**Destructuring everywhere**
+
+En el ejercicio anterior ¿localizas algún otro objeto dónde hacer destructuring?
+
+**PISTA**: observa tu handler, quizás estés creando una constante y asignandole el valor contenido en la propiedad `value` del objeto `event.currentTarget`.
+
 ---
 
 ## Recursos externos
 
 - [Conditional Rendering](https://reactjs.org/docs/conditional-rendering.html)
 - [Lists and keys](https://reactjs.org/docs/lists-and-keys.html)
+- [Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
