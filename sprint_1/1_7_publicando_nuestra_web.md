@@ -342,11 +342,13 @@ Una vez hayamos realizado ese paso, no necesitaremos hacer ningún cambio más.
 
 **5. Configuramos el editor de texto para trabajar con Git**
 
-**Nano** es un editor de texto que suele venir por defecto en la terminal. Queremos que sea nuestro editor por defecto para trabajar con Git. Para ello abrimos la terminal e introducimos el siguiente comando. Una vez lo hayamos introducido, pulsamos intro para que se ejecute.
+**Nano** es un editor de texto que suele venir por defecto en Ubuntu en la terminal. Queremos que sea nuestro editor por defecto para trabajar con Git. Para ello abrimos la terminal e introducimos el siguiente comando. Una vez lo hayamos introducido, pulsamos intro para que se ejecute.
 
 ```shell
 $ git config --global core.editor nano
 ```
+
+El editor por defecto en otros sistemas operativos es otro, pero en este curso vamos a utilizar siempre Nano para trabajar todas de la misma manera.
 
 ### Cómo trabajar con git
 
