@@ -12,6 +12,9 @@
 - [EJERCICIO 8](#ejercicio-8)
 - [EJERCICIO 9](#ejercicio-9)
 - [EJERCICIO 10](#ejercicio-10)
+- [EJERCICIO 11](#ejercicio-11)
+- [EJERCICIO 12](#ejercicio-12)
+- [EJERCICIO 13](#ejercicio-13)
 
 <!-- /TOC -->
 
@@ -529,6 +532,32 @@ Haz clic en el siguiente enlace [https://classroom.github.com/a/cdZUSdeT](https:
 4. Haz `add` y `commit`
 5. Haz un `push` al repo remoto :)
 * * *
+
+## Más ejercicios de la terminal
+
+### EJERCICIO 11
+
+A través de la terminal entra en la carpeta del ejercicio 1 y investiga el comando `ls` para conseguir:
+
+* Listar el contenido de la carpeta para ver los nombres, propietarios y tamaño de los ficheros y carpetas.
+* Listar el contenido de la carpeta para solo el nombre de los ficheros y carpetas en formato columna.
+* Listar (con un solo comando) el contenido de la carpeta para ver los nombres, propietarios y tamaño de los ficheros y carpetas, incluyendo las subcarpetas y subarchivos.
+* Repertir los ejercicios anteriores en la carpeta del ejercicio 7, mostrando también los archivos y carpetas ocultas.
+
+En cada caso mira detenidamente toda la información que muestra la columna.
+
+### EJERCICIO 12
+
+A través de la terminal:
+
+* Copia la carpeta `rutas-relativas` del ejercicio 2 en la carpeta `rutas-relativas-2`.
+* Copia la carpeta `rutas-relativas` del ejercicio 2 en la carpeta `rutas-relativas-3` con la opción `verbose` y observa qué aparece en la terminal.
+
+### EJERCICIO 13
+
+A través de la terminal:
+
+* Renombra (o mueve) la carpeta `rutas-relativas-2` del ejercicio 12, y ponle el nombre `nuevas-rutas-relativas`.
 
 ## Recursos extra
 
