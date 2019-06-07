@@ -278,9 +278,9 @@ console.log(twinSister); // { name: 'Juliette', lastName: 'Smith', age: 39 }
 
 ### Copia vs referencia
 
-Recordemos que en el módulo de javascript aprendimos que si teniamos un array o un objeto literal en una variable, al guardarlo en otra, en realidad guardabamos una _referencia_ del array/objeto.
+Recordemos que en el módulo de javascript aprendimos que si teniamos un array o un objeto literal en una variable, al guardarlo en otra, en realidad guardábamos una _referencia_ del array/objeto.
 
-De manera que si modificábamos o mutábamos una de las dos variables, por ejemplo con un `.push` para el caso del array o cambiando el valor de una propiedad para el caso del objeto, estos cambios también sucedian en la otra variable, ya que el array u objeto contenido en ambas era el mismo.
+De manera que si modificábamos o mutábamos una de las dos variables, por ejemplo con un `.push` para el caso del array o cambiando el valor de una propiedad para el caso del objeto, estos cambios también sucedían en la otra variable, ya que el array u objeto contenido en ambas era el mismo.
 
 El operador _spread_ nos permite hacer una copia de un objeto o array en un momento dado. De manera que si cambiamos o mutamos, por ejemplo, el original, la copia no se ve afectada, ya que son independientes y no comparten referencia.
 
