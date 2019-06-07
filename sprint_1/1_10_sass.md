@@ -170,7 +170,7 @@ En este [codepen](https://codepen.io/adalab/pen/JOqQGG) podéis verlo funcionand
 
 **Sass y BEM, cuanto más primo más me arrimo**
 
-Parece que en el siguiente código hay una errata y las cajas oscuras están fallando. Nos han pedido que lo apañemos y que, una vez arreglado, mejoremos el código haciendo uso del operador `&` para minimizar estos errores en el futuro.
+Utilizando el editor online https://sass.js.org/ y haciendo uso del operador `&` hay que reescribir el siguiente código con Sass. El reto está en escribir la palabra `card` una sola vez.
 
 ```css
 .card {
@@ -181,13 +181,13 @@ Parece que en el siguiente código hay una errata y las cajas oscuras están fal
 .card:hover {
 	box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
-.carsd--dark {
+.card--dark {
 	background-color: #000;
 	color: #fff;
 }
 .card--light {
-	background-color: #000;
-	color: #fff;
+	background-color: #fff;
+	color: #000;
 }
 ```
 
@@ -233,21 +233,21 @@ Y que generaría el siguiente CSS:
 
 **¡Medias a mi!**
 
-Hay que reescribir el siguiente código con Sass. Al turrón!
+Seguimos con el editor online https://sass.js.org/, hay que reescribir el siguiente código con Sass. Al turrón!
 
 ```css
-p {
+.title {
   font-size: 16px;
 }
 
 @media (min-width: 768px) {
-  p {
+  .title {
     font-size: 18px;
   }
 }
 
 @media (min-width: 1024px) {
-  p {
+  .title {
     font-size: 20px;
   }
 }
@@ -422,7 +422,7 @@ Crea 3 mixins con tu compañera. Pensad en casos de uso comunes, como: propiedad
 Queremos rehacer el ejercicio 3 para poder escribir nuestro código así:
 
 ```scss
-p {
+.title {
   font-size: 16px;
 
   @include tablet {
