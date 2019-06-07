@@ -240,18 +240,45 @@ welcomeMessageElement.innerHTML = `Bienvenida ${adminText ||
 
 **Nadie sin avatar**
 
-Vamos a realizar un programa para completar una ficha de usuario. Tenemos que preparar un HTML con un título que contenga el nombre del usuario y una imagen sin contenido de 300x300.
+Partiendo de estas bases de html y js, vamos a realizar un programa para completar el perfil de un usuario.
 
-En JavaScript hay que preparar una constante y una variable:
+```html
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Mi primer código JavaScript</title>
+  </head>
+  <body>
+    <div class="user">
+      <h1 class="user__name">Bill</h1>
+      <img class="user__avatar" />
+    </div>
+    <script type="text/javascript" src="main.js"></script>
+  </body>
+</html>
+```
 
-- A la constante le asignaremos como valor la url de un avatar por defecto 'http://placehold.it/300x300'
-- A la variable le asignaremos un string vacío (`''`) o no le asignaremos ningún valor (`undefined`)
+```js
+'use strict';
 
-Con estos datos hay que hacer la lógica para añadir a la imagen un avatar sí o sí. De manera que si no tenemos datos de la url del usuario se muestre el avatar por defecto, pero si tenemos el avatar del usuario se muestre este.
+// avatar por defecto
+const DEFAULT_AVATAR = 'http://placehold.it/300x300';
+// avatar que eligió el usuario al registrarse
+let userAvatar = 'http://www.fillmurray.com/300/300';
+```
 
-> **Nota**: Cambia la variable vacía añadiendo esta imagen 'http://www.fillmurray.com/300/300' y comprueba que el programa funciona.
+Paso a paso:
 
-> En este ejercicio aún no vamos a usar condicionales `if`/`else` ;)
+1. Hagamos la lógica para añadir, desde javascript, la imagen `userAvatar` a la etiqueta de HTML `img`.
+2. Ahora vamos a plantear que `userAvatar` pueda no contener una URL porque, por ejemplo, cuando el usuario se registró no encontraba ninguna foto molona y decidió que la subiría en otro momento. Para ello tenemos que cambiar el contenido de `userAvatar` a comillas vacías `let userAvatar = '';`. ¡Ahora no debería verse ninguna imagen en la página!
+3. Vamos a mejorar nuestro programa para que la ficha de usuario tenga una imagen sí o sí, de manera que:
+   - si tenemos el avatar del usuario se muestre este.
+   - si no tenemos datos del avatar del usuario, se muestre el avatar por defecto
+
+> **NOTA**: En este ejercicio aún no vamos a usar condicionales `if`/`else`, tenemos que apoyarnos en el operador _OR_ para asignar al atributo `src` de la etiqueta `img` un valor u otro ;)
+
+> **NOTA**: Cambia manualmente el valor de `userAvatar` ('http://www.fillmurray.com/300/300' o '') para comprobar que el programa funcionará para los usuarios que añadieron su foto y para los que no lo hicieron.
 
 ---
 
@@ -360,7 +387,7 @@ if (/* condición 1 */) {
 } else if (/* condición 2 */) {
   console.log('El número es negativo')
 } else if (/* condición 3 */) {
-  console.log('El número más 2 es mayor 13')
+  console.log('El número más 2 es: mayor 13 pero menor o igual que 20')
 } else if (/* condición 4 */) {
   console.log('El número es mayor que 20 pero menor que 50')
 } else {
