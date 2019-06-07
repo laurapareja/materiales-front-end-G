@@ -266,7 +266,7 @@ console.log(`${secondLanguage} is my second language`); // French is my second l
 
 **De nuevo la carrera de escobas**
 
-Revisa el ejercicio 1 para acceder al nombre y tiempo de los ganadores usando destructuring de array y de objeto para imprimirlos en la consola.
+Revisa el ejercicio 4 para acceder al nombre y tiempo de los ganadores usando destructuring de array y de objeto para imprimirlos en la consola.
 
 ```js
 const users = [
