@@ -220,36 +220,14 @@ export default Greetings;
 
 > Estos componentes _dummies_ también se llaman componentes funcionales (_functional components_) o, más específicamente, componentes funcionales sin estado (_stateless functional components_), porque tienen forma de función y carecen de estado.
 
-Aunque parezca difícil, esta sintaxis se puede simplificar aún más. Recordamos que en ES2015 tenemos la habilidad de _destructuring_ de objetos. `props` es un objeto que podemos dividir en variables con los nombres de las `props`, directamente:
+Si lo combinamos con el _return_ implícito de las _arrow functions_ queda así:
 
 ```js
-// ...
-const Greetings = props => {
-  const { name } = props; // "destructuring" de objeto
-  return <h1>Hello, {name}!</h1>;
-};
-// ...
-```
+import React from 'react';
+// "arrow function" sin llaves, con "return" implícito
+const Greetings = props => <h1>Hello, {props.name}!</h1>;
 
-Podemos hacer _destructuring_ directamente en los parámetros de una función:
-
-```js
-// ...
-const Greetings = ({ name }) => {
-  // "destructuring" en los parámetros
-  return <h1>Hello, {name}!</h1>;
-};
-// ...
-```
-
-Y si lo combinamos con el _return_ implícito de las _arrow functions_, queda así:
-
-```js
-// ...
-const Greetings = (
-  { name } // "arrow function" sin llaves, con "return" implícito
-) => <h1>Hello, {name}!</h1>;
-// ...
+export default Greetings;
 ```
 
 Hemos reducido la declaración de un componente de siete líneas a tres. Es una práctica común hacerlo al revés: declarar un componente nuevo primero como función, _dummy_, y si más tarde necesita estado o comportamiento, [ampliar su declaración](https://reactjs.org/docs/state-and-lifecycle.html#converting-a-function-to-a-class) a la de un componente de clase completo.
