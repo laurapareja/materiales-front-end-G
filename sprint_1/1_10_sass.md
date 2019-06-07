@@ -170,7 +170,7 @@ En este [codepen](https://codepen.io/adalab/pen/JOqQGG) podéis verlo funcionand
 
 **Sass y BEM, cuanto más primo más me arrimo**
 
-Utilizando el editor online https://sass.js.org/ y haciendo uso del operador `&` hay que reescribir el siguiente código con Sass. El reto está en escribir la palabra `card` una sola vez.
+Utilizando el editor online https://sass.js.org/ y el operador `&` hay que reescribir el siguiente código con Sass. El reto está en escribir la palabra `card` una sola vez.
 
 ```css
 .card {
