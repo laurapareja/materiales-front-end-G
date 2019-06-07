@@ -342,6 +342,8 @@ this.setState(prevState => {
 });
 ```
 
+En este ejemplo creamos una copia del objeto `userData` usando spread y después actualizamos la propiedad age al nuevo valor (33). Ten en cuenta que el orden es importante, y si hay una propiedad repetida, prevalece la de más abajo (como en la cascada de CSS).
+
 ---
 
 #### EJERCICIO 6
