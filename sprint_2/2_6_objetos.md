@@ -377,7 +377,7 @@ Vamos a crear un objeto que sea una cesta de peras y que debe tener varias propi
 
 Y varios métodos que hagan:
 
-- Añadir al cesto una o varias peras
+- Añadir al cesto una pera
 - Sacar del cesto una o varias peras
 - Restablecer el número de peras al valor inicial.
 
