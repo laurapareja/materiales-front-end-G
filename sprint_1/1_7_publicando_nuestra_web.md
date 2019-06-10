@@ -540,7 +540,7 @@ Haz clic en el siguiente enlace [https://classroom.github.com/a/cdZUSdeT](https:
 A través de la terminal entra en la carpeta del ejercicio 1 y investiga el comando `ls` para conseguir:
 
 * Listar el contenido de la carpeta para ver los nombres, propietarios y tamaño de los ficheros y carpetas.
-* Listar el contenido de la carpeta para solo el nombre de los ficheros y carpetas en formato columna.
+* Listar el contenido de la carpeta para mostrar solo el nombre de los ficheros y carpetas en formato columna.
 * Listar (con un solo comando) el contenido de la carpeta para ver los nombres, propietarios y tamaño de los ficheros y carpetas, incluyendo las subcarpetas y subarchivos.
 * Repertir los ejercicios anteriores en la carpeta del ejercicio 7, mostrando también los archivos y carpetas ocultas.
 
