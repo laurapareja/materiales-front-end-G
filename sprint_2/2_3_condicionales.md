@@ -18,7 +18,7 @@ Utilizando aplicaciones y webs, muchas veces nos encontramos con casos en los qu
 
 Las condicionales permiten tomar decisiones y realizar acciones en función de una serie de datos. Gracias a ellas diremos qué pasos queremos que siga la aplicación en cada momento para que se cumpla el objetivo que deseamos alcanzar.
 
-Durante esta sesión veremos cómo controlar qué parte de nuestro código se ejecuta y cuál no. Aprenderemos a dar instrucciones a nuestros aplicaciones para realizar acciones en función de datos. Estableciendo normas al estilo si sucede esto haz esto otro y sino haz una orden alternativa. El condicional es una de las estructuras de control más básicas e importantes de la programación.
+Durante esta sesión veremos cómo controlar qué parte de nuestro código se ejecuta y cuál no. Aprenderemos a dar instrucciones a nuestras aplicaciones para realizar acciones en función de datos. Estableciendo normas al estilo si sucede esto haz esto otro y sino haz una orden alternativa. El condicional es una de las estructuras de control más básicas e importantes de la programación.
 
 ## ¿Para qué sirve lo que vamos a ver en esta sesión?
 
@@ -125,7 +125,7 @@ Normalmente se usan con valores booleanos, en estos casos siempre devuelven `tru
 
 ### Negación
 
-Uso --> `!expr`
+Uso --> `!expression`
 
 El operador `!` (_NOT_) devuelve el valor contrario al valor dado. Por ejemplo:
 
@@ -142,7 +142,7 @@ const emptyNameField = !nameField; // true
 const nameIsFilled = !emptyNameField; // false
 ```
 
-Podemos realizar la misma operación con un atajo
+Podemos realizar la misma operación con el atajo `!!` (doble exclamación) que significa negar 2 veces. O lo que es lo mismo convertir un valor no booleano a uno booleano: _truthy_ en `true` o _falsy_ en `false`.
 
 ```js
 const nameField = document.querySelector('.input-name').value; // '' (falsy)
@@ -171,7 +171,7 @@ Un truco para utilizar el operador `!` es pensar en humano. Para usarlo podemos 
 
 ### _AND_
 
-Uso --> `expr1 && expr2`
+Uso --> `expression1 && expression2`
 
 El operador `&&` (_AND_) devuelve la primera expresión si esta es `falsy`, de lo contrario devuelve la segunda expresión.
 
@@ -203,7 +203,7 @@ const adminName = isAdmin && userName; // false
 
 ### _OR_
 
-Uso --> `expr1 || expr2`
+Uso --> `expression1 || expression2`
 
 El operador `||` (_OR_) devuelve la primera expresión si esta es `truthy`, de lo contrario devuelve la segunda expresión.
 
@@ -233,7 +233,7 @@ const moderatorText = isModerator && 'moderadora';
 welcomeMessageElement.innerHTML = `Bienvenida ${adminText ||
   moderatorText}. ¡Es genial verte de nuevo!`;
 ```
-
+> **Nota**: Aunque no lo hemos puesto en los ejemplos se pueden evaluar más de 2 condiciones seguidas, por ejemplo: `name === 'María' && age >= 30 && career === 'adalaber' && favoriteLanguaje === 'JavaScript'`
 ---
 
 #### EJERCICIO 1
@@ -434,6 +434,11 @@ La estructura de un ternario es la siguiente:
 - indicamos entre paréntesis `( )` una condición
 - escribimos `?` y el código que se va a ejecutar si se cumple la condición
 - escribimos `:` y el código que se va a ejecutar si NO se cumple la condición
+
+Solo debemos utilizamos el operador ternario cuando:
+
+- Queremos guardar un valor en una variable o constante
+- Solo queremos hacer una operación o sentencia dentro del `?` y del `:`. Si queremos hacer más cosas utilizaremos el `if - else`.
 
 ```js
 const theme = 'hallowen';
