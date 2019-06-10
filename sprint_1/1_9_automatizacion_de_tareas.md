@@ -67,7 +67,7 @@ npm -g install gulp-cli
 
 El `-g` indica que se instala de forma global y se puede usar la utilidad de Gulp (como nuevo comando de la terminal) en todos los proyectos de nuestro ordenador.
 
-> Instalar `gulp` en casa para que en clase que nos pongamos a trabajar en los ejercicios.
+> **NOTA:** Instalar `gulp` en casa para que en clase que nos pongamos a trabajar en los ejercicios.
 
 ### Usando Gulp en nuestro proyecto
 
