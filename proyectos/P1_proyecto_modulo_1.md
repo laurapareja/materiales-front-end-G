@@ -119,8 +119,8 @@ Para la gestión del proyecto, usaremos _historias de usuario_, que es una herra
 - Crear el contenido de la web: textos e imágenes
 - Crear la infraestructura necesaria: repositorio en GitHub y con acceso para todos los miembros del equipo
 
-> **NOTA**:  
-> Para considerar terminada esta historia y todas los siguientes debéis tener publicada la web en GitHub Pages.
+> **NOTA**:
+> Para considerar terminada esta historia y todas las siguientes debéis tener publicada la web en GitHub Pages.
 
 #### Segunda. Versión responsive de la web
 
