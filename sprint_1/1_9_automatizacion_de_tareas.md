@@ -321,7 +321,7 @@ Con las rutas se puede trabajar de dos maneras:
 1. `../` indica que subimos a la carpeta madre, es decir `assets/`.
 1. Desde `assets/` buscamos el fichero `images/logo-adalab-80px.png`.
 
-Esta ruta es relativa porque relaciona ficheros de la carpeta `sccs/` con ficheros de la carpeta `images/`, independientemente de dónde estén estas dos carpetas. Siempre que estas carpetas sean hermanas, la ruta funcionará y el navegador encontrará la ruta de destino.
+Esta ruta es relativa porque relaciona ficheros de la carpeta `sccs/` con ficheros de la carpeta `images/`, independientemente de dónde estén estas dos carpetas. Siempre que estas dos carpetas sean hermanas, la ruta funcionará y el navegador encontrará la ruta de destino.
 
 Siempre preferimos rutas relativas porque las rutas absolutas solo funcionan en el servidor local `localhost:3000`. Si publicamos nuestro proyecto en un servidor para todo el mundo la web no se vería correctamente.
 
