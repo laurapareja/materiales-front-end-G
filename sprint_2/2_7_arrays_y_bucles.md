@@ -496,7 +496,6 @@ for (let i = 0; i < paragraphs.length; i++) {
   paragraphs[i].classList.add('highlight');
 }
 ```
-
 ---
 
 #### EJERCICIO 8
