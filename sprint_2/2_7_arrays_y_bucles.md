@@ -11,6 +11,7 @@
 - [EJERCICIO 7](#ejercicio-7)
 - [EJERCICIO 8](#ejercicio-8)
 - [EJERCICIO 9](#ejercicio-9)
+- [EJERCICIO 10](#ejercicio-10)
 
 <!-- /TOC -->
 
@@ -251,7 +252,7 @@ console.log(arr.length); // Mostrará un mensaje con la longitud del array (3)
 
 ### La función isArray
 
-Hasta ahora ya conocíamos la función `typeof()` que nos devolvía el tipo de una variable. Para saber si una variable es un array o no existe una manera mejor que es `Array.isArray()` que nos devuelve `true` o `false` dependiendo de qué variable le pasemos. Con un ejemplo se entiende mucho mejor:
+Hasta ahora ya conocíamos la función `typeof()` que nos devolvía el tipo de una variable. Para saber si una variable es un array o no, existe el método `Array.isArray()` que nos devuelve `true` o `false` dependiendo de qué variable le pasemos. Con un ejemplo se entiende mucho mejor:
 
 ```javascript
 const list = [1, 2, 3];
@@ -520,3 +521,26 @@ Vamos a practicar un poco más con el método `querySelectorAll`:
 1. Y si escribimos `document.querySelectorAll('h1')[0]` ¿qué está mostrando en consola este código?
 1. Ahora escribimos `document.querySelectorAll('h1')[0].className`. ¿qué información nos muestra? ¿Y el código `document.querySelectorAll('h1')[0].innerText`?
 1. Y por último ¿qué muestra el código `document.querySelectorAll('asdf')` y por qué?
+
+#### EJERCICIO 10
+
+Para finalizar la lección de hoy queremos hacer un ejercicio que muestre en consola el tipo datos que hay en un array. Dado el siguiente array:
+
+```javascript
+const items = [
+  'Ada',
+  1815,
+  [
+    'Informática',
+    'Matemática',
+    'Escritora'
+  ],
+  {
+    mother: 'Anna Isabella',
+    father: 'Lord Byron'
+  }
+]
+```
+Escribid un script que recorra los datos de este array y pinte en consola por cada elemento: "El dato VALOR está en la posición X y es de tipo TIPO".
+
+Por ejemplo "El dato Ada está en la posición 0 y es de tipo string".
