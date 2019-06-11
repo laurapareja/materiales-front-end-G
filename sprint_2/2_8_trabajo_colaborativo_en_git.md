@@ -50,16 +50,16 @@ Una vez terminada la tarea y comprobado que todo funciona correctamente ya está
 
 
 ### Pull Request y revisión de código
-Aunque hay diferentes formas de trabajo con ramas en el curso vamos a ver una muy común en las empresas: el equipo que se encarga de una tarea, crea la rama, ejecuta la tarea y la sube a la rama remota, pero no la fusiona: crea un **Pull Request**. De esta forma un equipo o algún miembro del equipo se encarga de revisar el código y dar el visto bueno a la fusión.
+Aunque hay diferentes formas de trabajo con ramas en el curso vamos a ver una muy común en las empresas: el equipo que se encarga de una tarea, crea la rama, ejecuta la tarea y la sube a la rama remota, pero no la fusiona todavía, antes crea un **Pull Request**. De esta forma un equipo o algún miembro del equipo se encarga de revisar el código y dar el visto bueno a la fusión.
 
 > A partir de este momento ya no vamos a hacer `$ git merge` desde la consola (salvo en un caso que veremos más adelante)
 
 La mecánica del Pull Request no es propia de git sino de quién da el servicio de git. En este caso GitHub tiene su propio sistema para gestionar los Pull Requests.
 
 ### Code review
-La revisión del código no es un asunto menor sino de los más importantes. Aquí no buscamos decir Ok y a correr, no. Aquí es donde tenemos la oportunidad de, con ojos frescos, revisar el código generado por nuestro compañeros para asegurar unos mínimos de compatibilidad, homogeneidad y calidad.
+La revisión del código no es un asunto menor sino de los más importantes. Aquí no buscamos decir Ok y a correr, no. Aquí es donde tenemos la oportunidad de, con ojos frescos, revisar el código generado por nuestras compañeras para asegurar unos mínimos de compatibilidad, homogeneidad y calidad.
 
-Cuando creamos un PR (o Pull Request) solemos asignar a alguien que será responsable de revisar nuestro código, un **reviewer**. 
+Cuando creamos una PR (o Pull Request) solemos asignar a alguien que será responsable de revisar nuestro código, un **reviewer**.
 
 Un problema no menor que tenemos en el sector es que cuando nos ponemos a programar nos cuesta detectar una serie de fallos (de código o de estilo) porque estamos centrados en resolver una tarea. Estas revisiones de código permiten compensar eso y asegurar que todos trabajamos a una. Quién revise nuestro código va a poder **mirar y comentar**, en este caso desde GitHub, de manera que si algo no está claro se pueda detectar y hablar en el momento.
 
@@ -79,7 +79,7 @@ En nuestro equipo nos organizaremos de la siguiente manera: Desde `dev` creamos 
 
 Si en lugar de usar un servicio de tickets nuestro cliente usase los issues de GitHub podríamos llamar a las ramas `issue/{número del issue}`.
 
-Hay diferentes formas de nombrar las ramas, al igual que los commits, lo haremos en inglés y con un nombre descriptivo o que identifique la tarea. 
+Hay diferentes formas de nombrar las ramas, al igual que los commits, lo haremos en inglés y con un nombre descriptivo o que identifique la tarea.
 
 > No hay una convención de nombrado estándar pero sí que existen muchas propuestas, podéis buscar y usar una o buscar vuestro propio sistema. Si entráis en un equipo nuevo lo normal es que ya tengan un sistema de nombrado de ramas, si no, es súper buen momento para proponer al equipo tener uno que se adapte a vuestro sistema de trabajo.
 
@@ -91,7 +91,7 @@ En esta PR vamos a incluir la información necesaria para que la persona encarga
 
 Quien toma el papel de revisora tiene que mirar nuestro código y no solo ver que funciona como debe funcionar sino que, además, cumple con los mínimos que haya marcado el equipo de desarrollo.
 
-¿Cómo hace esto? 
+¿Cómo hace esto?
 
 1. Pues primero leyendo la PR donde debería haber suficiente información para entender qué había que hacer y cómo se ha hecho.
 1. En la propia PR un espacio para revisar qué cambios se han hecho en el código y poder añadir comentarios, aceptar o rechazar la PR...
@@ -108,7 +108,7 @@ Hay que definir desde qué rama a qué rama va a ir nuestra PR, en este caso de 
 
 ![Ramas de destino y origen de la PR](assets/images/2-8/pr-01.png)
 
-Y ahora, a rellenarla y seleccionar quién va a revisarla. Luego pulsaremos "**Create pull request**".
+Y ahora a rellenar el título y la descripción de la PR y luego pulsaremos "**Create pull request**". Una vez creada debemos seleccionar quién va a revisarla.
 > El ejemplo es muy sencillo pero recordad que podemos escribir tranquilas el texto que necesitemos en nuestra PR porque no nos cobran por palabra)
 
 ![Rellenar y seleccionar un reviewer](assets/images/2-8/pr-02.png)
@@ -141,19 +141,19 @@ Sí. Todo el sistema del control de versiones es un registro exacto de nuestro t
 
 ### Los conflictos
 
-A estas alturas ya habremos solucionado alguno que otro. Recordemos que los conflictos suceden porque se han tocado partes iguales de un archivo y el algoritmo de Git no sabe cómo mezclarlo automáticamente así que nos muestra las opciones para que decidamos nosotros.
+A estas alturas ya habremos solucionado alguno que otro. Recordemos que los conflictos suceden porque se han tocado partes iguales de un archivo y el algoritmo de Git no sabe cómo mezclarlo automáticamente así que nos muestra las opciones para que decidamos nosotras.
 
-En este flujo de trabajo sabremos si hay conflictos cuando creemos el PR.
+En este flujo de trabajo sabremos si hay conflictos cuando creemos la PR.
 
 Siguiendo con el ejemplo (PR de `ticket/43` a `dev`) si al crear el PR nos avisa de que hay conflictos procederemos de la siguiente forma:
 
-1. Salta el conflicto la crear el PR de `ticket/43` a `dev`
+1. Salta el conflicto la crear la PR de `ticket/43` a `dev`
 1. Nos vamos a nuestro terminal y nos aseguramos de tener las últimas versiones de ambas ramas
-1. Invirtiendo el orden nos traemos `dev` a `ticket/43`: Cambiamos a `ticket/43` y lanzamos un `$ git merge dev` 
+1. Invirtiendo el orden nos traemos `dev` a `ticket/43`: Cambiamos a `ticket/43` y lanzamos un `$ git merge dev`
 1. Solucionamos los conflictos como haríamos normalmente
 1. Hacemos un push de `ticket/43`
 
-Esto actualizará automáticamente nuestro PR y ahora ya sí que podremos irnos a GitHub y ejecutar nuestro PR con éxito :)
+Esto actualizará automáticamente nuestra PR y ahora ya sí que podremos irnos a GitHub y ejecutar nuestro PR con éxito :)
 
 
 Vamos a hacer unas Pull Request con revisión de código, ¿o qué?
@@ -176,7 +176,7 @@ Partimos de una base, html y css:
 			<div class="head">
 				<div class="face">:|</div>
 			</div>
-		</div>		
+		</div>
 	</body>
 </html>
 ```
@@ -228,7 +228,7 @@ Un careto.. ¿es un careto si no es redondo?. Hay que redondear esa cara para qu
 
 **Ticket #3: Cara Sonriente**
 
-¿No está un poco serio? Hagamos que sonría un poco. 
+¿No está un poco serio? Hagamos que sonría un poco.
 
 * * *
 
@@ -239,6 +239,10 @@ Un careto.. ¿es un careto si no es redondo?. Hay que redondear esa cara para qu
 Sería genial si al hacer `click` el careto guiñase un ojo. Hay que tener en cuenta que al dejar de hacer `hover` sobre el careto tiene que volver a la posición inicial.
 
 * * *
+
+## Bonus
+
+Como bonus y para que no os olvidéis de programar os proponemos unos divertidos [ejercicios de repaso sobre funciones y parámetros](https://github.com/Adalab/funciones-y-parametros-desde-cero).
 
 ## Recursos externos
 
