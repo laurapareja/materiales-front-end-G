@@ -313,7 +313,7 @@ leo.bark(); // 'Woof, woof!'
 
 #### EJERCICIO BONUS A
 
-Vamos a mejorar ¡aún más! nuestra calculadora geométrica sencilla. En el programa definiremos la clase `Polygon`, `Square` y `Triangle` para polígolos regulares (todos sus lados miden lo mismo). Ya os imagináis por dónde van los tiros: las clases `Square` y `Triangle` serán subclases de `Polygon`. La clase `Polygon` tendrá, al menos:
+Vamos a mejorar ¡aún más! nuestra calculadora geométrica sencilla. En el programa definiremos la clase `Polygon`, `Square` y `Triangle` para polígonos regulares (todos sus lados miden lo mismo). Ya os imagináis por dónde van los tiros: las clases `Square` y `Triangle` serán subclases de `Polygon`. La clase `Polygon` tendrá, al menos:
 
 - Un atributo para el número de lados (`numberOfSides`)
 - Dos atributos más: para la longitud de la base (`base`) y de la altura (`height`)
