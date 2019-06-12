@@ -75,6 +75,17 @@ En este caso ejecutamos el método `map` sobre el array de nombres `names`. A `m
 
 > **NOTA**: es importante recordar que el array resultante de aplicar map va a ser siempre de la misma longitud que el array original.
 
+Es importante recordar que el único argumento que recibe la función `map` (al igual que resto de funciones que vamos a ver hoy) es un función. Y para que se entienda perfectamente vamos a rehacer el ejemplo anterior sustiyendo el código `name => name.toUpperCase()` por la función `getUperCaseName`:
+
+```js
+const names = ['María', 'Lucía', 'Susana', 'Rocío', 'Inmaculada'];
+const getUperCaseName = name => name.toUpperCase()
+const capitalNames = names.map(getUperCaseName);
+
+console.log(capitalNames);
+```
+¿Qué argumento recibe `map`?
+
 ---
 
 #### EJERCICIO 1
