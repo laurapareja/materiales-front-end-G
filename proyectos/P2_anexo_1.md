@@ -34,7 +34,7 @@ Supongamos que tenemos un HTML como:
 </html>
 ```
 
-Y queremos seleccionar el elemento `h2` que tiene clase 'card__title` y asignarlo a la variable `title`:
+Y queremos seleccionar el elemento `h2` que tiene clase `card__title` y asignarlo a la variable `title`:
 
 ```javascript
 var title = document.querySelector('.card__title');
