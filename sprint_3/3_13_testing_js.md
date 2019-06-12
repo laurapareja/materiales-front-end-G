@@ -313,7 +313,7 @@ Al principio suena a locura el pensar que vamos a escribir algo que prueba un c�
 - Si es número impar devuelve `false`
 - Si lo que me pasan no es un número devuelve un error
 
-Estos son los requisitos, simples y claros. De haber empezado por el código estaríamos pensando en `if`s y `else`s en vez de definir qué es lo que queremos. Una vez hecho esto, el siguiente paso sería pasar esos requisitos a reglas uno a uno usando tests. Por tanto, la clave de TDD es que pensamos en que queremos y cuales son los criterios claros y tangibles para que eso funcione correctamente y a partir de ahí implementamos el código que cumplirá esas reglas.
+Estos son los requisitos, simples y claros. De haber empezado por el código estaríamos pensando en `if`s y `else`s en vez de definir qué es lo que queremos. Una vez hecho esto, el siguiente paso sería pasar esos requisitos a reglas uno a uno usando tests. Por tanto, la clave de TDD es que pensamos en qué queremos y cuáles son los criterios claros y tangibles para que eso funcione correctamente y a partir de ahí implementamos el código que cumplirá esas reglas.
 
 ### El ciclo de TDD
 
