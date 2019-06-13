@@ -16,14 +16,13 @@ En primer lugar, para los PCs que no tengan un sistema operativo Linux, recomend
 - Instalar Ubuntu borrando todo lo que hay en el ordenador (recomendada): esta opción es obligatoria para equipos viejos que no tienen recursos para tener a la vez Windows y Linux
 - Instalar Ubuntu junto a Windows: crearemos una partición del disco duro del ordenador para instalar Ubuntu, y luego poder arrancar el ordenador desde el SO que elijamos; esta opción es más compleja y depende del ordenador concreto que tengáis que pueda hacerse o no
 
-> NOTA: Antes de proceder a la instalación es muy importante hacer una copia de seguridad de los datos que estén en el ordenador y que no queramos perder.
+> NOTA: Antes de proceder a la instalación es muy importante **hacer una copia de seguridad de los datos** que estén en el ordenador y que no queramos perder.
 
-Usaremos la distribución de Ubuntu 18.04, que podemos descargar una ISO desde http://releases.ubuntu.com/18.04/ y grabaremos en un CD o pendrive. Un día antes de empezar el curso os ayudaremos a instalarlo y llevaremos pendrives preparados con esta versión. Seguiremos lo pasos de instalación para instalar y configurar el sistema.
+Usaremos la distribución de Ubuntu 18.04, que podemos descargar una ISO desde http://releases.ubuntu.com/18.04/ y grabaremos en un CD o pendrive. El día de la sesión de bienvenida os ayudaremos a instalarlo y llevaremos pendrives preparados con esta versión. Seguiremos lo pasos de instalación para instalar y configurar el sistema.
 
 Si queremos mantener Windows, tendremos que hacer una partición:
 
-- Hacer partición siguiendo este tutorial: http://www.everydaylinuxuser.com/2015/11/how-to-shrink-windows-10-to-make-space.html
-- Luego instalaremos Ubuntu así: http://dailylinuxuser.com/2015/11/how-to-install-ubuntu-linux-alongside.html
+- Hacer partición e instalar Ubuntu siguiendo este tutorial (mínimo de 30GB): https://www.tecmint.com/install-ubuntu-alongside-with-windows/
 
 > NOTA: Al elegir instalar ubuntu, seleccionamos la opción de "opciones adicionales" para elegir en qué partición hacerlo. Una vez seleccionada la partición donde instalar Ubuntu, elegir que el gestor de arranque (bootloader) se instale en el disco duro principal en un desplegable abajo de la pantalla.
 
@@ -50,7 +49,7 @@ Desde el instalador visual, podremos instalar el resto (última versión de todo
 - Chrome (https://www.google.com/chrome/)
 - Slack (https://slack.com/)
 
-También usaremos cuentas en estos servicios:
+También crearemos cuentas en estos servicios (elegid un nombre de usuario teniendo en mente que será parte de vuestro perfil profesional):
 
 - GitHub (https://github.com/)
 - Trello (https://trello.com/)
