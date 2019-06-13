@@ -341,7 +341,7 @@ Hoy a venido la desarrolladora DevOps de la empresa y nos pide que la carpeta de
 1. Para `gulp` y borra la carpeta `public/`.
 1. Edita el fichero `config.json` > `images` > `dest` cambiando `public/assets/images/` por `public/assets/img/`.
 1. Vuelve a arrancar el proyecto y busca en qué carpeta se han creado ahora las imágenes.
-1. Como siempre, después de cualquier cambio tenemos que comprobar que no se ha roto nada. Mira la página en el navegador y verás que la imágen de fondo con el logotipo de Adalab ha desaparecido. OMG!! pues tenemos que arreglarlo.
+1. Como siempre, después de cualquier cambio tenemos que comprobar que no se ha roto nada. Mira la página en el navegador y verás que la imagen de fondo con el logotipo de Adalab ha desaparecido. OMG!! pues tenemos que arreglarlo.
 1. Abre el _Devtools_ de _Chrome_, entra en la pestaña de _Console_ y mira el mensaje de error que aparece. ¿Qué nos está diciendo?
 1. Arregla este error sin modificar el fichero `config.json`.
 
