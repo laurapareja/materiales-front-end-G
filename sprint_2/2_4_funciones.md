@@ -114,7 +114,7 @@ const sum = function(a, b) {
 sum(2, 3); // devuelve 5
 ```
 
-> **NOTA:** os acordáis que hasta ahora hemos estudiado 3 tipos de variables: number, string y undefined. Pues aquí estamos asignando a la variable `sum` un valor que es una función. Así que aqui tenemos un cuarto tipo de variable. Si ejecutamos el código `console.log('El tipo de sum es: ' + typeof(sum));` éste mostrará en la consola `"El tipo de sum es: function"`.
+> **NOTA:** os acordáis que hasta ahora hemos estudiado 3 tipos de variables: number, string y undefined. Pues aquí estamos asignando a la variable `sum` un valor que es una función. Así que aquí tenemos un cuarto tipo de variable. Si ejecutamos el código `console.log('El tipo de sum es: ' + typeof(sum));` se mostrará en la consola `"El tipo de sum es: function"`.
 
 ## Parámetros y valores de retorno
 
