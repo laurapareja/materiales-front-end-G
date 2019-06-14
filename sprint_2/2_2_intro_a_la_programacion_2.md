@@ -37,11 +37,11 @@ En las herramientas para desarrolladoras de Chrome (las DevTools) hay una pesta�
 Tenemos que abrirla y:
 
 - Realizar una suma sencilla con nuestro número favorito y el de nuestra compañera.
-- Hacer la mismo, pero guardando los números en constantes y utilizando estas para sumar.
+- Hacer lo mismo, pero guardando los números en constantes y utilizando estas para sumar.
 
 * * *
 
-Con la consola también podemos interactuar desde nuestro programa JavaScript, es decir, desde el código que escribimos en nuestro fichero `.js`. Una de las cosas que podemos hacer es escribir información, esto se denomina comúnmente *loguear* información. Lo hacemos mediante la función `console.log()`, en la que lo que pongamos entre paréntesis será lo que se escriba en la consola. 
+Con la consola también podemos interactuar desde nuestro programa JavaScript, es decir, desde el código que escribimos en nuestro fichero `.js`. Una de las cosas que podemos hacer es escribir información, esto se denomina comúnmente *loguear* información. Lo hacemos mediante la función `console.log()`, en la que lo que pongamos entre paréntesis será lo que se escriba en la consola.
 
 ```js
 console.log('Hola');
@@ -104,7 +104,7 @@ Y de este JavaScript:
 
 ```js
 const superWave = document.querySelector('.super-wave');
-``` 
+```
 
 Tenemos que crear una clase nueva para destacar el texto `OLA!` y añadirla con JavaScript al elemento con clase `super-wave`.
 A por ello!
@@ -119,7 +119,7 @@ Cada uno de ellos, según sus características, se utilizará para representar u
 
 ### Number
 
-Cómo su nombre indica, el tipo de valor _number_ comprende cualquier tipo de número utilizado en JavaScript. Hay varios subtipos de números en JavaScript pero de momento aprenderemos los más importantes, números enteros o _integers_ y números decimales o _floating point numbers_.
+Cómo su nombre indica, el tipo de valor _number_ comprende cualquier tipo de número utilizado en JavaScript. Hay varios subtipos de números en JavaScript pero de momento aprenderemos los más importantes, números enteros o _integers_ y números decimales o _floating point numbers (comúnmente llamados float)_.
 
 En JavaScript los números enteros se representan directamente con cifras, por lo que es totalmente válido escribir `14232` o `-42` en nuestro código. Por otro lado, los números decimales se escriben igual que en inglés, es decir, utilizando puntos en vez de comas. Por ejemplo, podemos representar el número _1,32_ escribiendo `1.32`.
 
@@ -322,7 +322,7 @@ const firstDogName = 'Dina';
 const secondDogImage = 'https://dog.ceo/api/img/collie-border/n02106166_355.jpg';
 const secondDogName = 'Luna';
 
-const thirdDogImage = 'https://dog.ceo/api/img/schipperke/n02104365_8156.jpg';
+const thirdDogImage = 'https://dog.ceo/api/img/affenpinscher/n02110627_7065.jpg';
 const thirdDogName = 'Lana';
 ```
 En este caso para añadir cada uno de los elementos utilizaremos la propiedad `innerHTML` y la interpolación de cadenas.
@@ -339,7 +339,7 @@ const browserName = 'Mozilla';
 console.log('Mozilla is ' + browserName.length + ' code units long');
 ```
 
-* * * 
+* * *
 
 #### EJERCICIO 9
 
@@ -412,6 +412,28 @@ Compara y comenta los resultado con tu compañera.
 
 * * *
 
+### Type of
+
+En JavaScript existe una función muy útil para saber de qué tipo es una variable en cada momento. Se llama `typeof`. Y se puede usar con o sin paréntesis:
+
+```javascript
+const text = '¿De qué tipo soy?'
+console.log('Soy de tipo:', typeof(text)) // con paréntesis
+console.log('Soy de tipo:', typeof text) // sin paréntesis
+
+```
+
+Vamos a copiar y pegar este código en la consola del navegador a ver qué pasa:
+
+```javascript
+let text = '¿De qué tipo soy?'
+console.log(text + ' es del tipo ' + typeof(text))
+text = 123
+console.log('ahora ' + text + ' es del tipo ' + typeof(text))
+text = undefined
+console.log('y ahora ' + text + ' es del tipo ' + typeof(text))
+```
+
 ### NaN
 
 Es un valor de tipo numérico un poco especial, ya que su nombre los describe como Not-a-Number. `NaN` es el valor que JavaScript devuelve cuando intentamos realizar operaciones matemáticas con valores no numéricos o que no se pueden convertir a número. Veamos ejemplos:
@@ -426,9 +448,21 @@ Es un valor de tipo numérico un poco especial, ya que su nombre los describe co
 
 ```
 
+Para saber si podemos hacer operaciones matemáticas con las variables adecuadas existe una función que se llama `isNaN` que nos indica si una variable es `NaN` o no.
+
+Imaginemos que en un formulario tenemos un input para que la usuaria introduzca su edad y en vez de escribir "65" escribe "¡¡A una dama no se le pregunta la edad!!". No vamos a poder trabajar con ese valor, pero gracias a `isNaN` vamos a saber que no podemos trabajar con ese valor.
+
+Haríamos lo siguiente:
+
+```javascript
+let userAge = document.querySelector('.user__age');
+userAge = parseInt(userAge);
+console.log('La usuaria no ha introducido una edad válida:', isNaN(userAge));
+```
+
 ## Resumen
 
-En esta sesión hemos visto como apoyarnos en la consola del navegador cuando programamos para la web. 
+En esta sesión hemos visto como apoyarnos en la consola del navegador cuando programamos para la web.
 
 También hemos conocido algunos de los tipos de valores que se usan en JavaScript, como `string` y `number` y cómo operar con ellos para obtener distintos resultados. Y el valor de una variable vacía, cuyo tipo se llama igual que el valor, `undefined`.
 
