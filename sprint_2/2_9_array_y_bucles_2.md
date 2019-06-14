@@ -6,10 +6,9 @@
 - [EJERCICIO 2](#ejercicio-2)
 - [EJERCICIO 3](#ejercicio-3)
 - [EJERCICIO 4](#ejercicio-4)
-- [EJERCICIO 5](#ejercicio-5)
+- [EJERCICIO 5 BONUS](#ejercicio-5-bonus)
 - [EJERCICIO 6 BONUS](#ejercicio-6-bonus)
 - [EJERCICIO 7 BONUS](#ejercicio-7-bonus)
-- [EJERCICIO 8 BONUS](#ejercicio-8-bonus)
 
 <!-- /TOC -->
 
@@ -112,7 +111,7 @@ Para comprobar que los tenemos todos, vamos a ejecutar la función y a loguearlo
 
 ---
 
-#### EJERCICIO 5
+#### EJERCICIO 4
 
 **REPASO: Mi lista de tareas**
 
@@ -192,7 +191,7 @@ Investiga más acerca de [`splice()` aquí](https://developer.mozilla.org/es/doc
 
 ## BONUS
 
-#### EJERCICIO 6 BONUS
+#### EJERCICIO 5 BONUS
 
 **Crea tu árbol de Navidad**
 
@@ -208,7 +207,7 @@ Para que no nos pille el toro esta Navidad, vamos a crear un código que muestre
 
 ---
 
-#### EJERCICIO 7 BONUS
+#### EJERCICIO 6 BONUS
 
 **Mejora tu árbol de Navidad**
 
@@ -226,7 +225,7 @@ Intenta ponerle una estrella y un tronco al árbol para que quede mucho más mon
 
 ---
 
-#### EJERCICIO 8 BONUS
+#### EJERCICIO 7 BONUS
 
 **¡Esto es un abeto!**
 
