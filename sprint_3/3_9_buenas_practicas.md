@@ -40,7 +40,8 @@ En este ejemplo, partimos de un conjunto de números, sobre los que queremos rea
 
 - incrementarlos en 1
 - filtrar los pares
-  Hemos realizado ambas operaciones encadenando un `map` que añade 1 a cada número con un `filter` para quedarnos solo con los números pares resultado de la operación anterior.
+
+Hemos realizado ambas operaciones encadenando un `map` que añade 1 a cada número con un `filter` para quedarnos solo con los números pares resultado de la operación anterior.
 
 ---
 
@@ -94,7 +95,7 @@ En este ejemplo dejamos la primera comprobación de que `data` no sea null, y lu
 
 ### `null` no pinta nada
 
-Para terminar estos ejemplos sencillo de pintado condicional, debemos saber que si una expresión dentro de JSX devuelve `null` no se pintará nada en pantalla.
+Para terminar estos ejemplos sencillos de pintado condicional, debemos saber que si una expresión dentro de JSX devuelve `null` no se pintará nada en pantalla.
 
 ```js
 const { quixoteFan } = this.state;
@@ -135,7 +136,7 @@ return (
 Cuando no tenemos un identificador único, como último recurso podemos hacer uso del índice del elemento dentro del array.
 
 ```js
-const fruits = ['orange', 'pear', 'apple', 'orange];
+const fruits = ['orange', 'pear', 'apple', 'orange'];
 
 return (
   <ul>
