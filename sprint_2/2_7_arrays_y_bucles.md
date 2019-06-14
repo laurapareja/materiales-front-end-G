@@ -505,13 +505,6 @@ for (let i = 0; i < paragraphs.length; i++) {
 
 Vamos a partir de un HTML que tiene 3 botones con el texto ALARMA en un fondo blanco. Vamos a hacer que al pulsar en cualquiera de ellos, el fondo de la pantalla se ponga rojo. Si volvemos a pulsar en cualquiera de ellos, el fondo se pondrá blanco. Y así sucesivamente. Vamos a hacer uso de `querySelectorAll` para evitar repetir mucho código.
 
-## Recursos externos adicionales
-
-- [3.05. Arrays I de Ada Lovelace](https://youtu.be/idhclogNzMU)
-- [3.06. Arrays II de Ada Lovelace](https://youtu.be/nVNLcw70cso)
-- [Sintaxis Básica V Arrays, Matrices, Arreglos. Píldoras informáticas](https://youtu.be/hTeFMke6F6Q)
-- [Sintaxis Básica V. Arrays, Matrices, Arreglos II. Píldoras informáticas](https://youtu.be/yn-o0rxXW0o)
-
 #### EJERCICIO 9
 
 Vamos a practicar un poco más con el método `querySelectorAll`:
@@ -541,6 +534,14 @@ const items = [
   }
 ]
 ```
+
 Escribid un script que recorra los datos de este array y pinte en consola por cada elemento: "El dato VALOR está en la posición X y es de tipo TIPO".
 
 Por ejemplo "El dato Ada está en la posición 0 y es de tipo string".
+
+## Recursos externos adicionales
+
+- [3.05. Arrays I de Ada Lovelace](https://youtu.be/idhclogNzMU)
+- [3.06. Arrays II de Ada Lovelace](https://youtu.be/nVNLcw70cso)
+- [Sintaxis Básica V Arrays, Matrices, Arreglos. Píldoras informáticas](https://youtu.be/hTeFMke6F6Q)
+- [Sintaxis Básica V. Arrays, Matrices, Arreglos II. Píldoras informáticas](https://youtu.be/yn-o0rxXW0o)
