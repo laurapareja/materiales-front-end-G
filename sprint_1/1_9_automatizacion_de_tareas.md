@@ -7,6 +7,7 @@
 - [EJERCICIO 3](#ejercicio-3)
 - [EJERCICIO 4](#ejercicio-4)
 - [EJERCICIO 5](#ejercicio-5)
+- [EJERCICIO 6](#ejercicio-6)
 
 <!-- /TOC -->
 
@@ -307,6 +308,44 @@ Seguiremos los pasos anteriores para crear un nuevo proyecto usando el kit de Ad
 Una vez terminado, vamos a probar una opción muy chula del kit: la posibilidad de trabajar con ficheros parciales de HTML. Para eso, mirad el ejemplo de la carpeta `_src/templates` donde hay un fichero `index.html` que carga 2 ficheros parciales con trozos de HTML. En vuestro proyecto cread esta misma estructura y sacad la cabecera y el pie de página de la web a un parcial.
 
 Para terminar, vamos a publicar la web usando GitHub Pages. Para eso usaremos la tarea `gulp docs` que general una carpeta docs con la web preparada para subirla a GitHub Pages.
+
+## Rutas de ficheros en Starter Kit
+
+Las rutas que escribimos en un fichero, por ejemplo en un scss escribimos `background-image: url('../images/logo-adalab-80px.png')`, nos sirven para relacionar dos ficheros. En el fichero de origen se indica donde está el fichero de destino. Si las rutas están bien, el navegador sabrá dónde ir a buscar el fichero de destino.
+
+Con las rutas se puede trabajar de dos maneras:
+
+**Con rutas absolutas:** para mostrar la imagen de fondo, en `_src/assets/scss/main.scss` podríamos poner la ruta absoluta `http://localhost:3000/assets/images/logo-adalab-80px.png`. Esta es una ruta absoluta porque indica la dirección completa del fichero.
+
+**O con rutas relativas:** en el fichero `_src/assets/scss/main.scss` tenemos la ruta relativa `../images/logo-adalab-80px.png`. Esto nos indica el siguiente camino o ruta:
+
+1. Estamos el fichero `main.scss`.
+1. `../` indica que subimos a la carpeta madre, es decir `assets/`.
+1. Desde `assets/` buscamos el fichero `images/logo-adalab-80px.png`.
+
+Esta ruta es relativa porque relaciona ficheros de la carpeta `sccs/` con ficheros de la carpeta `images/`, independientemente de dónde estén estas dos carpetas. Siempre que estas dos carpetas sean hermanas, la ruta funcionará y el navegador encontrará la ruta de destino.
+
+Siempre preferimos rutas relativas porque las rutas absolutas solo funcionan en el servidor local `localhost:3000`. Si publicamos nuestro proyecto en un servidor para todo el mundo la web no se vería correctamente.
+
+Como ya hemos visto, al hacer `gulp` en la terminal se crea una carpeta dentro de nuestro proyecto llamada `public/` con todos nuestras carpetas y ficheros. La carpeta `public/` funciona como servidor web. Con los ficheros `config.json` y `gulpfile.js` hemos hecho que la estructura de carpetas y ficheros de `_src/` se replique exactamente igual en `public/`.
+
+Pero esto no siempre es así :(
+
+A veces queremos (o necesitamos) que la estructura de carpetas en `public/` sea diferente. Y por ello tenemos que cambiar las rutas en nuestro código.
+
+> **IMPORTANTE**: las rutas deben estar correctamente escritas en el código que esté en `public/`, porque ese es el código que estará en el servidor, esos son los ficheros que verán las usuarias de la web.
+
+### EJERCICIO 6
+
+Hoy a venido la desarrolladora DevOps de la empresa y nos pide que la carpeta de imágenes se tiene que llamar `img/` porque así está en el resto de proyectos de la empresa, y le simplifica la gestión de los servidores. Para ello:
+
+1. Arranca el proyecto con `gulp` y busca la carpeta `images/` dentro de la carpeta `public/`. Observa dónde se ha creado.
+1. Para `gulp` y borra la carpeta `public/`.
+1. Edita el fichero `config.json` > `images` > `dest` cambiando `public/assets/images/` por `public/assets/img/`.
+1. Vuelve a arrancar el proyecto y busca en qué carpeta se han creado ahora las imágenes.
+1. Como siempre, después de cualquier cambio tenemos que comprobar que no se ha roto nada. Mira la página en el navegador y verás que la imagen de fondo con el logotipo de Adalab ha desaparecido. OMG!! pues tenemos que arreglarlo.
+1. Abre el _Devtools_ de _Chrome_, entra en la pestaña de _Console_ y mira el mensaje de error que aparece. ¿Qué nos está diciendo?
+1. Arregla este error sin modificar el fichero `config.json`.
 
 ---
 
