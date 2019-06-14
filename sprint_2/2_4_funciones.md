@@ -114,6 +114,8 @@ const sum = function(a, b) {
 sum(2, 3); // devuelve 5
 ```
 
+> **NOTA:** os acordáis que hasta ahora hemos estudiado 3 tipos de variables: number, string y undefined. Pues aquí estamos asignando a la variable `sum` un valor que es una función. Así que aquí tenemos un cuarto tipo de variable. Si ejecutamos el código `console.log('El tipo de sum es: ' + typeof(sum));` se mostrará en la consola `"El tipo de sum es: function"`.
+
 ## Parámetros y valores de retorno
 
 Los _parámetros_ son los datos que definimos en una función y que, a la hora de ejecutarla, serán sustituidos por los _argumentos_ que le pasemos. Por tanto, en la declaración de la función le llamamos parámetros y en la ejecución le llamamos argumentos. Las funciones pueden tener 0, 1 o más parámetros separados por comas `,`.
@@ -440,10 +442,10 @@ Vamos a rehacer alguno de los ejercicios anteriores con funciones flecha. ¡A lo
 
 Como hemos visto en las clases anteriores, en CSS tenemos dos tipos de cálculo para las dimensiones de un elemento: `border-box` y `content-box`. Vamos a realizar un calculador al que le pasaremos 4 parámetros y nos devolverá el ancho del contenido, y el ancho total de la caja en una cadena como esta: `El ancho del contenido es: 30px y el ancho total de la caja es: 34px`.
 
-La función tendrá 4 parámetros: 
+La función tendrá 4 parámetros:
 - el primero será un booleano para especificar si es `border-box` o no.
-- el segundo será un número con el `width` de la caja
-- el tercero será un número con el `padding` 
+- el segundo será un número con el `width` de la caja.
+- el tercero será un número con el `padding`.
 - el cuarto será un número con el `border-size`.
 
 Para probar que funciona, ejecuta la función recogiendo el resultado en una variable e imprímela en la consola.
