@@ -148,7 +148,7 @@ La primera línea del archivo JavaScript (`'use strict';`) sirve para mejorar la
 
 La segunda línea (`document.querySelector('h1').innerHTML = '¡Hola mundo!';`) es una sentencia que describe una acción. En programación una sentencia (_statement_) es la unidad mínima que expresa una acción a llevar a cabo, en este caso, por el navegador. Básicamente le decimos "Hey navegador, haz esto."
 
-De momento para la sintaxis utilizada en `document.querySelector('h1').innerHTML = '¡Hola mundo!';`, solo comentaremos que permite cambiar el texto de una etiqueta de HTML determinada, en este caso el primer `h1` de nuestro documento HTML. 
+De momento para la sintaxis utilizada en `document.querySelector('h1').innerHTML = '¡Hola mundo!';`, solo comentaremos que permite cambiar el texto de una etiqueta de HTML determinada, en este caso el primer `h1` de nuestro documento HTML.
 
 Otro aspecto a destacar es que escribimos cada orden en una línea y ponemos un punto y coma al final de ésta. En JavaScript se pueden escribir varias sentencias en una misma línea si se separan por un punto y coma (`;`), por ejemplo `'use strict';document.querySelector('h1').innerHTML='¡Hola mundo!';` sería válido. Esto es totalmente desaconsejable y evitaremos hacerlo para que nuestro código sea más fácil de leer. Escribiremos como máximo una orden por línea y siempre añadiremos el punto y coma al final de esta para evitar posibles problemas.
 
@@ -165,7 +165,7 @@ Una vez que lo hayáis realizado podéis enviárselo a algún amigo o familiar y
 
 ## Variables
 
-Uno de los problemas que no sabemos resolver aún es como guardar los datos de una operación o un texto para poder utilizarlo en otra operación posterior. JavaScript tiene un recurso para poder hacer esto, las variables. 
+Uno de los problemas que no sabemos resolver aún es como guardar los datos de una operación o un texto para poder utilizarlo en otra operación posterior. JavaScript tiene un recurso para poder hacer esto, las variables.
 
 Para tener una idea de qué es una variable, podríamos pensar en ella como si fuese una caja con una etiqueta que describe su contenido, en la que guardamos algo.
 
@@ -179,9 +179,9 @@ Veamos cómo trabajar con variables en JavaScript.
 
 ### Crear o declarar una variable
 
-A la creación de una variable se le llama declaración. 
+A la creación de una variable se le llama declaración.
 
-El primer paso a la hora de utilizar variables es declararlas. 
+El primer paso a la hora de utilizar variables es declararlas.
 Para declarar una variable, escribimos `let` seguido de un espacio y posteriormente del nombre que queremos dar a la variable. Vamos a declarar, por ejemplo una variable para la dirección postal de una oficina y la llamaremos `officeAddress`:
 
 ```js
@@ -249,14 +249,14 @@ En el momento en el que se ejecuta el código, las variables se sustituyen por l
 
 Una "variable" cuyo valor nunca varía recibe el nombre de **constante**.
 
-Las constantes funcionan de manera similar a las variables, pero su valor no puede ser reasignado. 
-En JavaScript utilizamos `const` para declarar y asignar valor a una constante. 
+Las constantes funcionan de manera similar a las variables, pero su valor no puede ser reasignado.
+En JavaScript utilizamos `const` para declarar y asignar valor a una constante.
 
 ```js
 const officeAddress = 'Calle Leganitos, 24';
 ```
 
-A veces no tendremos claro cuando utilizar una variable y cuando una constante, ya que puede ser que a priori no estemos seguras de si el valor que vamos a guardar va a cambiar en algún momento o no. 
+A veces no tendremos claro cuando utilizar una variable y cuando una constante, ya que puede ser que a priori no estemos seguras de si el valor que vamos a guardar va a cambiar en algún momento o no.
 Ante la duda, es una buena práctica usar `const`. Si en algún momento intentamos reasignar el valor de una constante, JavaScript no lo permitirá y nos mostrará un error. Esto nos permitirá: evitar errores si no era nuestra intención cambiar el valor, o cambiar ese `const` por un `let` si finalmente decidimos que nuestro valor no debería ser constante.
 
 Con esto tendríamos la información necesaria para poder trabajar con variables y constantes sin problemas.
@@ -288,15 +288,15 @@ En este caso el código es mucho más verboso y más largo pero se entiende much
 
 Vamos a declarar una constante y a asignarle como valor nuestra dirección. En la siguiente linea, tenemos que reasignar su valor con la dirección de nuestra compañera.
 
-Ahora abrimos las herramientas para desarrolladoras de Chrome (DevTools) y seleccionamos la pestaña `Consola`. Debería aparecer un mensaje en rojo similar a este: `Uncaught TypeError: <aquí explicación de que está causando el error>`. 
+Ahora abrimos las herramientas para desarrolladoras de Chrome (DevTools) y seleccionamos la pestaña `Consola`. Debería aparecer un mensaje en rojo similar a este: `Uncaught TypeError: <aquí explicación de que está causando el error>`.
 
-Hay que leer la explicación y cambiar el código para que desaparezca el error. 
+Hay que leer la explicación y cambiar el código para que desaparezca el error.
 
 * * *
 
 ## Programación en la web
 
-Ahora que hemos visto como funcionan las constantes y las variables para trabajar con valores, vamos a continuar aprendiendo como utilizar JavaScript para modificar el contenido y los estilos de nuestras páginas de formar ordenada. 
+Ahora que hemos visto cómo funcionan las constantes y las variables para trabajar con valores, vamos a continuar aprendiendo como utilizar JavaScript para modificar el contenido y los estilos de nuestras páginas de formar ordenada.
 
 La operación más básica a la hora de trabajar con nuestra página web es obtener información acerca de una etiqueta bien sea para añadir algo a su contenido, modificarlo o eliminarlo directamente. En JavaScript nos referimos a las etiquetas de HTML como elementos ( en futuras lecciones veremos el porqué de esto ).
 
@@ -402,7 +402,7 @@ Una vez hecho cambia el código para que el nombre sea el del segundo `li`.
 
 **Protege ese password**
 
-A partir de una página HTML en la que ponga "Mi contraseña es: Ada2018" y, usando JavaScript, tenemos que cambiar el texto 'Ada2018' por '****'.
+A partir de una página HTML en la que ponga "Mi contraseña es: Ada2019" y, usando JavaScript, tenemos que cambiar el texto 'Ada2019' por '****'.
 
 * * *
 
@@ -503,7 +503,7 @@ Crear dos botones sencillos con los mismos estilos (padding, borde, color) y, us
 
 * * *
 
-## Bonus 
+## Bonus
 
 ### getElementById
 

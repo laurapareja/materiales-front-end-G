@@ -34,16 +34,16 @@ Es importante entender que nosotros no creamos eventos desde JavaScript sino que
 - expira un temporizador
 - llegan los datos del servidor
 
-Lo que podemos hacer desde JavaScript es responder a estos eventos. ¿Cómo? Creando una función que se va a ejecutar cuando el evento sucede. 
+Lo que podemos hacer desde JavaScript es escuchar y responder a estos eventos. ¿Cómo? Creando una función que se va a ejecutar cuando el evento sucede.
 
 Vamos a entender cómo actuamos en JavaScript con los ejemplos anteriores:
-- cuando la usuaria hace click en el botón *más info*, ejecutamos una función que muestra un información que estaba escondida
-- cuando el usuario hace scroll en la página, ejecutamos una función que comprueba si la posición de la pantalla es mayor que x y en caso afirmativo aplica una clase CSS a la cabecera
+- cuando la usuaria hace click en el botón *más info*, ejecutamos una función que muestra una información que estaba escondida
+- cuando el usuario hace scroll en la página, ejecutamos una función que comprueba si la posición de la pantalla es mayor que _x_ y en caso afirmativo aplica una clase CSS a la cabecera
 
 ## Escuchando eventos desde JavaScript
 
-Vamos a ver cómo traducimos lo anterior a JavaScript. Escuchar un evento es decirle al navegador: vigila un determinado elemento de HTML, y cuando alguien haga `click` sobre él, ejecuta esta función que he preparado. 
-Técnicamente, registramos en el navegador una `función escuchadora` o `listener` sobre un elemento para que ejecute una `función manejadora de eventos` o `handler` cuando el evento suceda. 
+Vamos a ver cómo traducimos lo anterior a JavaScript. Escuchar un evento es decirle al navegador: vigila un determinado elemento de HTML, y cuando alguien haga `click` sobre él, ejecuta esta función que he preparado.
+Técnicamente, registramos en el navegador una `función escuchadora` o `listener` sobre un elemento para que ejecute una `función manejadora de eventos` o `handler` cuando el evento suceda.
 
 Vamos a ver el ejemplo de mostrar una alerta pulsando un botón.
 
@@ -75,8 +75,8 @@ A continuación, vamos a usar el método `addEventListener` de los elementos de 
 const button = document.querySelector('.alert');
 
 // handler
-function showAlert() { 
-  console.log('Alerta'); 
+function showAlert() {
+  console.log('Alerta');
 }
 
 // listener sobre el elemento, con tipo de evento y handler
@@ -184,9 +184,9 @@ Cambiar el color de fondo de la página cuando se haga scroll. Para ello tenemos
 
 ## Información sobre el evento
 
-Como hemos visto, cuando registramos un listener para escuchar un evento, es el navegador quien ejecuta la función `handler`. 
+Como hemos visto, cuando registramos un listener para escuchar un evento, es el navegador quien ejecuta la función `handler`.
 
-Al ejecutarla, le pasa unos argumentos que podremos recoger si definimos parámetros en nuestra función `handler`. El primero de ellos es un objeto que se suele denominar `event` y que contiene información acerca del evento. 
+Al ejecutarla, le pasa unos argumentos que podremos recoger si definimos parámetros en nuestra función `handler`. El primero de ellos es un objeto que se suele denominar `event` y que contiene información acerca del evento.
 Aún no hemos visto los objetos, pero ahora mismo basta decir que son como una variable con muchas variables dentro.
 
 ```js
@@ -250,7 +250,7 @@ Vamos a preparar un botón y una clase de CSS. La clase tiene que cambiar alguno
 
 * * *
 
-`event.currentTarget` es muy útil cuando queremos que varios elementos tengan el mismo handler. 
+`event.currentTarget` es muy útil cuando queremos que varios elementos tengan el mismo handler.
 
 Por ejemplo, pensemos en un listado en el cual al pinchar sobre un elemento este cambia de estilo indicando que ha sido seleccionado.
 
@@ -282,11 +282,11 @@ const banana = document.querySelector('.fruit-banana');
 const kiwi = document.querySelector('.fruit-kiwi');
 
 function handleFruitClick(event) {
-  // Asignamos a una constante el elemento 
+  // Asignamos a una constante el elemento
   // sobre el que pusimos el `listener`
   // para trabajar cómodamente con él
   const selectedFruit = event.currentTarget;
-  
+
   selectedFruit.classList.toggle('fruit--selected');
 }
 
@@ -304,7 +304,7 @@ Así podemos tener una sola `función manejadora` para dominarlos a todos :)
 
 **Más botones**
 
-Partiendo del ejercicio anterior vamos a añadir un nuevo botón a nuestra página. Tenemos que ponerle un listener y a reutilizar el handler que ya teníamos. Es decir, los dos botones deben tener el mismo handler. 
+Partiendo del ejercicio anterior vamos a añadir un nuevo botón a nuestra página. Tenemos que ponerle un listener y a reutilizar el handler que ya teníamos. Es decir, los dos botones deben tener el mismo handler.
 
 Cuando la usuaria pulse un botón el cambio de clase sucederá solamente sobre el botón pulsado.
 
@@ -314,13 +314,13 @@ Cuando la usuaria pulse un botón el cambio de clase sucederá solamente sobre e
 
 **Favoritos**
 
-Hemos preparado un [HTML](https://codepen.io/adalab/pen/xyEwVj) con tres tarjetas. 
+Hemos preparado un [HTML](https://codepen.io/adalab/pen/xyEwVj) con tres tarjetas.
 Al pinchar en un elemento del listado tenemos que:
 
 - Añadir la clase `.teacher--selected` si no la tiene, o quitarla si la tiene.
 - Modificar el texto del span `.favorite` sustituyéndolo por 'Quitar' si en ese momento contiene 'Añadir', o por 'Añadir' si contiene 'Quitar'.
 
-> **Nota**: con `querySelector` buscamos un elemento dentro de otro. Hasta ahora lo habíamos usado para buscar dentro de `document` (todo nuestro documento HTML), con `document.querySelector()`. 
+> **Nota**: con `querySelector` buscamos un elemento dentro de otro. Hasta ahora lo habíamos usado para buscar dentro de `document` (todo nuestro documento HTML), con `document.querySelector()`.
 
 > Si tuviéramos una constante llamada, por ejemplo, `sectionAboutElement` en la que hemos guardado un elemento de HTML, podríamos buscar dentro él otro elemento, tal que así `sectionAboutElement.querySelector()`.
 
@@ -366,10 +366,10 @@ Aunque aún no hemos visto como enviar un formulario desde JavaScript, prevenir 
 
 **Para ese link**
 
-¿Recuerdas el proyecto del módulo uno? Los enlaces de la cabecera de nuestra página tenían un problema, como nuestra cabecera era flotante, al navegar a una sección parte del contenido de quedaba oculto tras la cabecera. 
+¿Recuerdas el proyecto del módulo uno? Los enlaces de la cabecera de nuestra página tenían un problema, como nuestra cabecera era flotante, al navegar a una sección parte del contenido de quedaba oculto tras la cabecera.
 
 Vamos a animarnos y a preparar un HTML muy sencillo con:
-- una cabecera flotante que contenga un menu con tres enlaces 
+- una cabecera flotante que contenga un menu con tres enlaces
 - tres secciones con bastante 'lorem ipsum' para que haya un scroll generoso
 
 El primer paso para arreglar este comportamiento es escuchar el click en los enlaces y prevenir el comportamiento por defecto.
@@ -423,7 +423,7 @@ const handleBtnClick = (event) => {
 btnEl.addEventListener('click', handleBtnClick);
 ```
 
-Si pruebas el ejemplo anterior al hacer click sobre el texto y después sobre la estrella podrás ver la diferencia entre `target` y `currentTarget`. 
+Si pruebas el ejemplo anterior al hacer click sobre el texto y después sobre la estrella podrás ver la diferencia entre `target` y `currentTarget`.
 
 - `currentTarget` nunca cambia, es el elemento al que le pusimos el listener. Por lo tanto siempre es el elemento que escribimos antes del punto de `addEventListener`.
 
@@ -451,7 +451,7 @@ Vamos a *refactorizar* el [EJERCICIO 9](#ejercicio-9) para mejorarlo. Tenemos qu
 
 Cada vez que sucede un evento sobre un elemento de HTML, este 'burbujea' hacia arriba. Esto quiere decir que el evento sucede en ese elemento, y después en el elemento padre, y después en el abuelo, y así hasta llegar al último ancestro, `html`.
 
-Aunque no lo vemos, esto está sucediendo continuamente en el navegador, por ejemplo cada vez que movemos el ratón, o hacemos click en cualquier sitio. 
+Aunque no lo vemos, esto está sucediendo continuamente en el navegador, por ejemplo cada vez que movemos el ratón, o hacemos click en cualquier sitio.
 Los eventos suceden, independientemente de que los estemos escuchando o no.
 
 Este comportamiento hace que:
@@ -487,7 +487,7 @@ En esta sesión hemos visto: como hacer nuestras webs interactivas de verdad, es
 - `event.target`: elemento sobre el que sucede el evento
 - `event.preventDefault()`: método para prevenir el comportamiento por defecto de un evento sobre un elemento
 
-También, nos hemos acercado a los conceptos: 
+También, nos hemos acercado a los conceptos:
 
 - `event bubbling`: los eventos pasan de unos elementos a otros de manera ascendente
 - `event delegation`: gracias al burbujeo de los eventos podemos poner `listeners` a elementos padres para controlar eventos en hijos

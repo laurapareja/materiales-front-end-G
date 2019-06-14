@@ -19,7 +19,7 @@
 
 ## Introducción
 
-**Debugging** es el proceso de encontrar y eliminar errores en piezas de software. Literalmente significa quitar "bichos" o "bugs". Puede sonar un poco raro, pero en los programas de software, sobre todo los complejos, _siempre_ hay errores. Es decir, que por mucho esfuerzo que hagamos para que nuestro programa no tenga errores, siempre habrá casos límite o condiciones que hagan que nuestro programa falle. Por tanto, vamos a tener que asumir que siempre habrá errores y vivir con ello, y tener siempre una herramienta donde tener un listado de errores (o _issues_) por solucionar.
+**Debugging** (o depuración) es el proceso de encontrar y eliminar errores en piezas de software. Literalmente significa quitar "bichos" o "bugs". Puede sonar un poco raro, pero en los programas de software, sobre todo los complejos, _siempre_ hay errores. Es decir, que por mucho esfuerzo que hagamos para que nuestro programa no tenga errores, siempre habrá casos límite o condiciones que hagan que nuestro programa falle. Por tanto, vamos a tener que asumir que siempre habrá errores y vivir con ello, y tener siempre una herramienta donde tener un listado de errores (o _issues_) por solucionar.
 
 Los errores se introducen en nuestro programa por muy diversas causas. Ya sea por desconocimiento del lenguaje y sus peculiaridades. Y por desconocimiento de otras herramientas o librerías usadas en nuestro programa. Por otro lado, podemos introducir errores también por no entender bien los requisitos de la aplicación, sucediendo esto mucho más a menudo de lo que se pudiera esperar. A veces el propio dominio del problema tiene mucha complejidad, o aunque no sea muy complejo el desarrollador siempre puede tener despistes de forma habitual o puntual por tema de cansancio.
 
@@ -188,7 +188,7 @@ const html = '<html>';
 
 3. **Errores de estructuras de datos**
 
-Cuando manejamos estructuras de datos complejas, como arrays y objetos, también solemos encontrarnos con errores. Alguno típicos son
+Cuando manejamos estructuras de datos complejas, como arrays y objetos, también solemos encontrarnos con errores. Alguno típicos son:
 
 - error en la inicialización
 - acceso a posiciones del array fuera de los límites

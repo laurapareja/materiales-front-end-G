@@ -35,7 +35,7 @@ En esta sesión aprenderemos también cómo trabajar en casos de asincronía com
 
 Veamos algunos casos de ejemplo donde es necesario ejecutar *peticiones encadenadas*:
 - en una web sobre perros, hago una primera petición al servidor sobre las razas disponibles y después hago una segunda petición para pedir información de perros de una raza concreta
-- en una web con área privada, cuando la usuaria introduce su email y su contraseña, hago una petición al servidor para *autenticarla*, el servidor me devuelve un `string` que identifica a la usuaria, con el hago una petición para pedir sus datos privados y mostrarlos en el área privada.
+- en una web con área privada, cuando la usuaria introduce su email y su contraseña, hago una petición al servidor para *autenticarla*, el servidor me devuelve un `string` que identifica a la usuaria, con él hago una petición para pedir sus datos privados y mostrarlos en el área privada.
 
 Veamos algunos ejemplos en la web de *peticiones que se ejecutan en paralelo*:
 - cuando buscamos en una app de transporte cuál es la ruta más rápida entre dos puntos y necesitamos obtener información de distintas APIs web (taxis, EMT, Uber, Cabify...) y esperar a recibir la respuesta de todas para reflejar cual será la opción más rápida entre ellas
@@ -62,7 +62,7 @@ fetch('https://api.rand.fun/games/rockpaperscissorslizardspock')
   .then(function(response) {
     return response.json();
   })
-  .then(function(data) { 
+  .then(function(data) {
     document.body.innerHTML = data.result;
   });
 ```
@@ -91,7 +91,7 @@ Tenéis el código del ejemplo ([en este codepen](https://codepen.io/adalab/pen/
 
 **Numero aleatorio**
 
-Vamos a jugar un poco con el código en codepen del ejemplo anterior. Mirando la [documentación de 'rand.fun'](https://rand.fun/), vamos a pedir un número entero (`integer`). 
+Vamos a jugar un poco con el código en codepen del ejemplo anterior. Mirando la [documentación de 'rand.fun'](https://rand.fun/), vamos a pedir un número entero (`integer`).
 
 Podemos jugar añadiendo parámetros a la URL del tipo `clave=valor`, siempre después de character `?` y separados por `&`, por ejemplo si quisieras pedir un `string` con determinada longitud, la url quedaría así `https://api.rand.fun/text/password?length=20`
 
@@ -101,7 +101,7 @@ Podemos jugar añadiendo parámetros a la URL del tipo `clave=valor`, siempre de
 Es formato muy habitual para el intercambio de información en la web (pronunciado en inglés como *Jason*). Son las siglas de JavaScript Object Notation, es decir, que es muy similar a como se definen los objetos literales en JavaScript... **¡¡¡algo que ya sabemos!!!** Aunque hay pequeñas diferencias:
 
 - Las claves siempre van entre comillas `{"userName": "Paco"}`
-- Los valores permitidos son: `string`, `number`, `boolean`, `array` y `json object`. Esto quiere decir que un `JSON` no podemos almacenar funciones por lo tanto nunca tendrá métodos. 
+- Los valores permitidos son: `string`, `number`, `boolean`, `array`, `null` y `json object`. Esto quiere decir que un `JSON` no podemos almacenar funciones por lo tanto nunca tendrá métodos.
 
 Esto es un ejemplo de JSON sencillo que devuelve el [Dog CEO API](https://dog.ceo/dog-api/):
 
@@ -124,9 +124,9 @@ fetch('https://dog.ceo/api/breeds/image/random')
   });
 ```
 
-Vamos a ver los cambios respecto al ejemplo anterior de los emojis. 
+Vamos a ver los cambios respecto al ejemplo anterior de los emojis.
 
-En primer lugar, la URL en el `fetch` cambia para usar la URL de Dog API que nos da una imagen de perro aleatoria. 
+En primer lugar, la URL en el `fetch` cambia para usar la URL de Dog API que nos da una imagen de perro aleatoria.
 
 El segundo cambio está en la función del segundo `then()`, en el ejemplo de *emojis* el objeto `data` contenía una clave `result` con un `emoji`, y en este caso `data` tiene una clave `message` con la url de la imagen de un perro. Esto ocurre porque el **_schema_ de la respuesta** (cómo es el objeto JSON que nos devuelve el servidor, cómo se llaman sus claves, y qué contienen) lo ha definido y desarrollado una programadora como nosotras, así que debemos asumir que diferentes APIs tendrán diferentes *schemas*. De esta manera, leer la documentación y `loguear` el `JSON` que nos llega del servidor antes de operar con el siempre es una buena idea.
 
@@ -168,7 +168,7 @@ fetch('https://dog.ceo/api/breeds/list')
   .then(response => response.json())
   .then(data => {
     console.log('Breeds data response: ', data);
-    
+
     const ul = document.querySelector('ul');
     const breeds = data.message;
     let ulContent = '';
@@ -198,12 +198,12 @@ fetch('https://dog.ceo/api/breeds/list')
   });
 
 ```
-Una de las características principales de las promesas es que nos facilitan encadenar peticiones como en este caso, y el código resultante es muy sencillo. En el código hemos encadenado hasta 4 promesas: 
+Una de las características principales de las promesas es que nos facilitan encadenar peticiones como en este caso, y el código resultante es muy sencillo. En el código hemos encadenado hasta 4 promesas:
  1. petición al servidor de las razas
  2. convertir a JSON la respuesta
  3. segunda petición de la foto de una raza
  4. convertir la segunda respuesta a JSON
- 
+
 Como hemos indicado antes, es importante que al final de los `then()` devolvamos una promesa para pasar los datos al siguiente `then()`. Así que en el segundo `then()` tenemos que devolver la promesa de `fetch`.
 
 ***
@@ -232,7 +232,7 @@ Para ello vamos a hacer lo siguiente:
 **La raza del perro**
 
 Vamos a realizar un ejercicio con la API de 'https://dog.ceo/dog-api/' y la api de 'https://rand.fun/'. Tenemos que pedir un listado de razas de perros, y con un número aleatorio elegir una raza del listado:
-- pintar un mensaje que muestre la raza elegida al azar. 
+- pintar un mensaje que muestre la raza elegida al azar.
 - pedir una imagen aleatoria de un perro de esa raza y pintarla.
 
 Si has llegado hasta aquí te proponemos otro reto, intenta que la última función sea la única que se encargue de interactuar con `html`, y sea esta la que pinte la raza y la imagen.
@@ -247,7 +247,7 @@ Ya hemos visto la utilidad de tener peticiones encadenadas, en las que una petic
 Para trabajar con varias promesas en paralelo usamos el método `Promise.all` que toma como parámetro un array de promesas y devuelve otra promesa que se resuelve cuando todas las del array se han resuelto. Por tanto, sobre el resultado podremos hacer un `then()` que recibe como parámetro un array con todos los resultados de las promesas anteriores, es decir, donde tendremos todos los `JSON` de la respuesta del servidor. [Veamos el ejemplo de codepen](https://codepen.io/adalab/pen/xpXGaG?editors=1010).
 
 ```js
-const createPromise = () => 
+const createPromise = () =>
   fetch('https://dog.ceo/api/breeds/image/random')
     .then(response => response.json());
 
@@ -262,9 +262,9 @@ Promise.all(promises)
   });
 
 ```
-Hemos creado una función `createPromise` que crea las promesas de las peticiones al servidor con `fetch` y parsea a JSON en el `then()`. 
-Luego creamos el array de promesas ejecutando 2 veces la función anterior. 
-Después ejecutamos `Promise.all` pasándole como argumento el array de promesas, cuando todas las peticiones al servidor hayan terminado, se ejecutará la función del `then()` a la que le llegan todos los resultados mediante el parámetro  `responses`. 
+Hemos creado una función `createPromise` que crea las promesas de las peticiones al servidor con `fetch` y parsea a JSON en el `then()`.
+Luego creamos el array de promesas ejecutando 2 veces la función anterior.
+Después ejecutamos `Promise.all` pasándole como argumento el array de promesas, cuando todas las peticiones al servidor hayan terminado, se ejecutará la función del `then()` a la que le llegan todos los resultados mediante el parámetro  `responses`.
 Finalmente recorremos el array que se encuentra en responses para ir pintando las imágenes en los `img` del HTML.
 
 ***
@@ -288,7 +288,7 @@ fetch('https://dog.ceo/api/breeds/list')
   .then(response => response.json())
   .then(data => {
     console.log('Breeds data response: ', data);
-    
+
     const ul = document.querySelector('ul');
     const breeds = data.message;
     let ulContent = '';
@@ -313,7 +313,7 @@ Partiendo del ejercicio 1 vamos a modificarlo para en lugar de parsear la respue
 
 Este error nos indica que ha sucedido un error en una de las promesas y que no lo hemos cazado, también nos da algo de información sobre el error. En este caso hemos intentado parsear a `html` la respuesta de la api de `rand.fun` que solo es parseable a `JSON`.
 
-Vamos a ponerle un `catch` a nuestra promesa y a `loguear` el error. 
+Vamos a ponerle un `catch` a nuestra promesa y a `loguear` el error.
 
 * * *
 
