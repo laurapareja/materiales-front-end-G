@@ -9,6 +9,9 @@
 - [EJERCICIO 5](#ejercicio-5)
 - [EJERCICIO 6](#ejercicio-6)
 - [EJERCICIO 7](#ejercicio-7)
+- [EJERCICIO 8](#ejercicio-8)
+- [EJERCICIO 9](#ejercicio-9)
+- [EJERCICIO 10](#ejercicio-10)
 
 <!-- /TOC -->
 
@@ -91,7 +94,7 @@ const madrid = {
 
 ## Trabajando con arrays
 
-A continuación vamos a ver cómo trabajar con arrays, cuales son sus principales propiedades y métodos y cómo realizar operaciones básicas con ellos.
+A continuación vamos a ver cómo trabajar con arrays, cuáles son sus principales propiedades y métodos y cómo realizar operaciones básicas con ellos.
 
 ### Declaración de un array
 
@@ -247,6 +250,19 @@ console.log(arr.length); // Mostrará un mensaje con la longitud del array (3)
 
 > **NOTA:** Un error que suele producirse a menudo es que escribimos _lenght_ en lugar de _length_. La segunda sería la forma correcta. Es importante tener cuidado, y cuando sea posible utilizar el autocompletado de nuestro editor, porque es un error que es difícil de percibir y bastante molesto.
 
+### La función isArray
+
+Hasta ahora ya conocíamos la función `typeof()` que nos devolvía el tipo de una variable. Para saber si una variable es un array o no, existe el método `Array.isArray()` que nos devuelve `true` o `false` dependiendo de qué variable le pasemos. Con un ejemplo se entiende mucho mejor:
+
+```javascript
+const list = [1, 2, 3];
+Array.isArray(list); // true
+const name = 'Ada';
+Array.isArray(name); // false
+```
+
+Para más información leed la defición del [método `Array.isArray()` (2 minutos)](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/isArray).
+
 ## Bucles
 
 Sirven para ejecutar un mismo código un número determinado de veces. _Haz esto x veces_.
@@ -257,7 +273,7 @@ Tiene la siguiente estructura:
 
 - podemos identificarlo por usar al comienzo la palabra `for`
 - después irá la _configuración_ del bucle entre paréntesis `( )` que tiene 3 partes, separadas por punto y coma `;`:
-  - _inicialización_ será una declaración y asignación de variable (ej: `let i = 1`)
+  - _inicialización_ será una declaración y asignación de variable (ej: `let i = 1`, se suele usar `i` por la palabra index)
   - _condición_ será la condición que debe cumplirse para que se ejecute el bloque de código (ej: `i < 20`)
   - _actualización_ será la operación que se realizará al final de cada iteración del bucle (ej: `i++`, que es la abreviación de `i = i + 1`)
 - al final definimos un _bloque de código_ entre llaves `{ }` que se va a ejecutar si se cumple la condición
@@ -458,6 +474,70 @@ Después, vamos a crear varias funciones en JavaScript que nos permitan calcular
 4. Una función `countDesigners` que devuelve el número de adalabers que son diseñadoras.
 
 Según vayáis creando las funciones, debéis ir probando que funcionan invocándolas con nuestra estrucutra de datos como argumento. Al final, modificad la estructura de datos para añadir, modificar o quitar adalabers. Y probad que las funciones siguen devolviendo el valor correcto.
+
+## `querySelectorAll`
+
+Hay muchas funciones nativas de JavaScript que retornan arrays. Son aquellas funciones que devuelven un listado de elementos, propiedades u otras cosas... Una de estas funciones es `querySelectorAll`.
+
+Como hemos visto en sesiones anteriores, para recoger un elemento de HTML utilizamos el método `querySelector`. Pero ¿y si queremos recoger más de uno, por ejemplo todas las etiquetas que tengan una determinada clase? `querySelectorAll` al rescate.
+Este método devuelve una lista de elementos que funciona de manera similar a un array. Podríamos hacer lo siguiente:
+
+```js
+// Guardamos una lista de todos los parrafos de la página
+const paragraphs = document.querySelectorAll('p');
+
+// Modificamos el primer párrafo
+paragraphs[0].innerHTML = 'Soy el primero';
+
+// Muestra el número de parráfos que hay en nuestra web
+console.log(paragraphs.length);
+
+// Iteramos sobre todos los párrafos para asignarles a todos una clase
+for (let i = 0; i < paragraphs.length; i++) {
+  paragraphs[i].classList.add('highlight');
+}
+```
+---
+
+#### EJERCICIO 8
+
+**Botones de alarma**
+
+Vamos a partir de un HTML que tiene 3 botones con el texto ALARMA en un fondo blanco. Vamos a hacer que al pulsar en cualquiera de ellos, el fondo de la pantalla se ponga rojo. Si volvemos a pulsar en cualquiera de ellos, el fondo se pondrá blanco. Y así sucesivamente. Vamos a hacer uso de `querySelectorAll` para evitar repetir mucho código.
+
+#### EJERCICIO 9
+
+Vamos a practicar un poco más con el método `querySelectorAll`:
+
+1. En esta misma página abrimos las herramientas para desarrolladoras de Chrome (DevTools) y seleccionamos la pestaña `Consola`.
+1. Escribimos el siguiente código: `document.querySelectorAll('h1')`. ¿Qué está devolviendo este método?
+1. Y si escribimos `document.querySelectorAll('h1')[0]` ¿qué está mostrando en consola este código?
+1. Ahora escribimos `document.querySelectorAll('h1')[0].className`. ¿qué información nos muestra? ¿Y el código `document.querySelectorAll('h1')[0].innerText`?
+1. Y por último ¿qué muestra el código `document.querySelectorAll('asdf')` y por qué?
+
+#### EJERCICIO 10
+
+Para finalizar la lección de hoy queremos hacer un ejercicio que muestre en consola el tipo datos que hay en un array. Dado el siguiente array:
+
+```javascript
+const items = [
+  'Ada',
+  1815,
+  [
+    'Informática',
+    'Matemática',
+    'Escritora'
+  ],
+  {
+    mother: 'Anna Isabella',
+    father: 'Lord Byron'
+  }
+]
+```
+
+Escribid un script que recorra los datos de este array y pinte en consola por cada elemento: "El dato VALOR está en la posición X y es de tipo TIPO".
+
+Por ejemplo "El dato Ada está en la posición 0 y es de tipo string".
 
 ## Recursos externos adicionales
 
