@@ -323,7 +323,7 @@ No primitivos:
 
 ### BONUS: Los objetos son un tipo de datos especial
 
-Cuando asignamos un objeto a una variable, realmente no estamos guardando su valor en la caja de la variable, como sucede con los números o los strings. En este caso lo que sucede es que se crea un objeto y en la variable guardamos un _enlace a ese objeto_. Por lo tanto, si guardamos esa variable en otra variable lo que estaremos haciendo es crear un nuevo enlace que apunta al mismo objeto. Vamos a entenderlo mucho mejor con un ejemplo:
+Cuando asignamos un objeto a una variable, realmente no estamos guardando su valor en la caja de la variable, como sucede con los números o los strings. En este caso lo que sucede es que se crea un objeto y en la variable guardamos _una referencia o un enlace a ese objeto_. Por lo tanto, si guardamos esa variable en otra variable lo que estaremos haciendo es crear un nuevo enlace que apunta al mismo objeto. Vamos a entenderlo mucho mejor con un ejemplo:
 
 ```js
 const adalaber = {
@@ -366,11 +366,22 @@ Puedes consultar el [listado completo de propiedades y métodos de los números 
 
 #### EJERCICIO 6
 
-**Crear un contador**
+**Crear una cesta de peras**
 
-Vamos a crear un contador con los datos que comentamos en la introducción de esta sesión. Este contador deberá tener como propiedades un valor máximo, un valor mínimo, un valor actual y un valor inicial y como métodos deberá tener un aumentar, disminuir y restablecer.
+Vamos a crear un objeto que sea una cesta de peras y que debe tener varias propiedades:
 
-Con la ayuda de `console.log` probaremos a usar varios métodos distintos y comprobar el estado actual para ver si funciona correctamente.
+- Número máximo de peras
+- Número mínimo de peras
+- Número actual de peras
+- Número inicial de peras
+
+Y varios métodos que hagan:
+
+- Añadir al cesto una pera
+- Sacar del cesto una pera
+- Restablecer el número de peras al valor inicial.
+
+Con la ayuda de `console.log` probaremos a usar varios métodos distintos y comprobar el número actual de peras para ver si funciona correctamente.
 
 ---
 
