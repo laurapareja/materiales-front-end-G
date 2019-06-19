@@ -59,11 +59,14 @@
 - [3.14 Refactoring](sprint_3/3_14_refactoring.md)
 - [Preguntas entrevista](sprint_3/3_questions.md)
 - [Repaso](sprint_3/3_repaso.md)
+-->
 
 ## Proyectos
 
 - [Proyecto 1. Web grupal](proyectos/P1_proyecto_modulo_1.md)
 - [Anexo. Diseña tu web desde cero](proyectos/P1_anexo_diseno.md)
+
+<!--
 - [Proyecto 2. Awesome profile-cards](proyectos/P2_proyecto_sprint_2.md)
 - [Anexo. Documentación del API de Awesome Profile Cards](proyectos/P2_anexo.md)
 - [Proyecto 3. Un caso de código heredado](proyectos/P3_proyecto_sprint_3.md)
@@ -86,10 +89,9 @@
 
 - [Instalación de ordenadores](guias/instalacion_ordenadores.md)
 - [Guía para enfrentarse a problemas técnicos de manera autónoma](guias/busqueda_de_soluciones.md)
+- [Scrum](guias/scrum.md)
 
 <!--
-- [Scrum](guias/scrum.md)
 - [Buenas prácticas para tener un portfolio atractivo en GitHub](guias/github_como_portfolio.md)
-
 - [Pruebas técnicas](guias/pruebas_tecnicas.md)
 -->
