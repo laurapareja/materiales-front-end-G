@@ -376,7 +376,7 @@ Las pseudo clases son palabras claves que añadidas a alguno de los selectores a
 
 Las pseudo clases se escriben usando el selector, seguido de `:` y la palabra clave para el estado.
 
-Por ejemplo, como en uno de los ejemplos anteriores, tenemos un enlace al cual le vamos a poner el texto de color rojo, pero al pasar el cursor encima invertiremos los colores y lo mostraremos con fondo blanco y color rojo. Partimos del mismo `html` que anteriormente.
+Por ejemplo, como en uno de los ejemplos anteriores, tenemos un enlace al cual le vamos a poner el texto de color rojo, pero al pasar el cursor encima invertiremos los colores y lo mostraremos con fondo rojo y color blanco. Partimos del mismo `html` que anteriormente.
 
 ```html
 <a href="#" class="text-link">Enlace de texto</a>
