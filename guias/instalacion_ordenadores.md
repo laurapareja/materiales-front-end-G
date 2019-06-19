@@ -43,6 +43,8 @@ Programas a instalar:
 - git, versión 2.x (https://git-scm.com/downloads)
 - nodejs, versión 10.x LTS (https://nodejs.org/en/)
 
+Para instalar la versión 10 en ubuntu 18, [seguid este tutorial](https://joshtronic.com/2018/05/08/how-to-install-nodejs-10-on-ubuntu-1804-lts/).
+
 Para comprobar que se ha instalado bien, ejecutar desde la terminal:
 
 `node --version`
