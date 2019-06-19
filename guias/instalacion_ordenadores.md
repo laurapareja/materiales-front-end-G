@@ -1,6 +1,6 @@
 # Instalación de ordenadores para el curso de Adalab
 
-En el curso de programación front-end de Adalab necesitaremos usar un ordenador. Para poder realizar el curso de forma fluida, el ordenador debería tener estas características:
+En el curso de programación front-end de Adalab necesitaremos usar un ordenador. Para poder realizar el curso de forma fluida, el ordenador debería tener estas características (no es obligatorio que las tenga, pero para que tengáis una orientación):
 
 - Al menos 8GB de RAM (con 4GB irá algo más lento pero también se puede)
 - Procesador i5 o similar con velocidad superior a 1GHz
@@ -26,7 +26,13 @@ Si queremos mantener Windows, tendremos que hacer una partición:
 
 > NOTA: Al elegir instalar ubuntu, seleccionamos la opción de "opciones adicionales" para elegir en qué partición hacerlo. Una vez seleccionada la partición donde instalar Ubuntu, elegir que el gestor de arranque (bootloader) se instale en el disco duro principal en un desplegable abajo de la pantalla.
 
-Además, puede que haya incompatibilidades de nuestro hardware (ordenador) con Ubuntu, [como esta que nos ha sucedido](https://askubuntu.com/questions/38780/how-do-i-set-nomodeset-after-ive-already-installed-ubuntu).
+## Problemas en la instalación de Ubuntu
+
+En equipos de la marca MSI, [suele haber problemas con los drivers de teclado / ratón en la instalación, de la tarjeta gráfico y/o de la conexión WiFi](https://gist.github.com/mari-linhares/cef4cb3440408e44963d1447a7db5ae0).
+
+En algunos Asus, no funciona la conexión Wifi, y [hay que instalar los drivers](https://askubuntu.com/questions/990378/wi-fi-not-working-on-lenovo-thinkpad-e570-realtek-rtl8821ce) que podéis pasar en un pendrive o con una conexión a Internet a través de vuestro móvil.
+
+También encontramos otras incompatibilidades de hardware (ordenador) con Ubuntu, [como esta que nos ha sucedido](https://askubuntu.com/questions/38780/how-do-i-set-nomodeset-after-ive-already-installed-ubuntu).
 
 ## Instalación de los programas
 
@@ -41,7 +47,11 @@ Para comprobar que se ha instalado bien, ejecutar desde la terminal:
 
 `node --version`
 
+La versión de node debe ser la 10.x
+
 `git --version`
+
+La versión de git debe ser la 2.x
 
 Desde el instalador visual, podremos instalar el resto (última versión de todos):
 
