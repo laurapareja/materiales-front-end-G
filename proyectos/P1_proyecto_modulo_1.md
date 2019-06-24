@@ -156,13 +156,15 @@ De manera adicional, se deberá activar "GitHub Pages" en el proyecto para que e
 
 El último día del módulo presentaréis la versión final de este proyecto a vuestras compañeras y al equipo de Adalab en el Meetup Space. Cada equipo realizará una presentación de 10 minutos y posteriormente habrá 10 minutos de feedback por parte del público.
 
-El día 25 de marzo, Alicia Ro asesorará a cada equipo durante 30 minutos sobre la presentación del proyecto grupal (grupo mañana de 12.00-14.00 y grupo tarde de 17.00-19.00). Para aprovechar bien este espacio, es necesario que antes cada equipo haya decidido las cuestiones clave para la presentación.
+Durante los días de feedback cada equipo tendrá asesoramiento durante 30 minutos sobre la presentación del proyecto grupal. Para aprovechar bien este espacio, es necesario que antes cada equipo haya decidido las cuestiones clave para la presentación.
 
 A continuación algunos elementos que os pueden ayudar a enfocar la presentación:
 
 - En el público habrá personas con conocimientos técnicos y no técnicos.
 - El objetivo de la presentación es dar a conocer el producto creado, a las integrantes de cada equipo así como el proceso que habéis seguido para crear la web.
 - Todas las participantes del equipo deben hablar en la presentación (sin práctica no hay mejora).
+
+En este módulo os proponemos que de los diferentes elementos a incluir en la presentación os centréis un poco más en **presentar a las integrantes del equipo desde un punto de vista profesional**.
 
 Otros elementos que podríais incluir (son solo ideas, sentíos libres de innovar y ser creativas):
 

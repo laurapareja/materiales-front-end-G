@@ -84,6 +84,8 @@ A continuación algunos elementos que os pueden ayudar a enfocar la presentació
 - El objetivo de la presentación es dar a conocer el producto creado, a las integrantes de cada equipo así como el proceso que habéis seguido para crear la web.
 - Todas las participantes del equipo deben hablar en la presentación (sin práctica no hay mejora).
 
+En este módulo os proponemos que de los diferentes elementos a incluir en la presentación os centréis un poco más en **explicar las tecnologías y el código que habéis desarrollado**.
+
 Otros elementos que podríais incluir (son solo ideas, sentíos libres de innovar y ser creativas):
 
 - Presentación de las integrantes del equipo desde un punto de vista profesional: se tratar de practicar vuestro "relato" profesional en versión muy corta. Que las personas asistentes conozcan quienes sois como profesionales.
@@ -99,5 +101,3 @@ Otros elementos que podríais incluir (son solo ideas, sentíos libres de innova
 - No habléis en primera persona de lo que habéis hecho, hablad del equipo.
 - No mencionéis problemas, sino "retos" que os han hecho aprender y crecer.
 - Os aconsejamos utilizar un lenguaje ni demasiado formal y técnico, ni demasiado informal. Nuestra audiencia puede ser muy variada.
-
-En este módulo os proponemos que de los diferentes elementos a incluir en la presentación os centréis un poco más en explicar las tecnologías y el código que habéis desarrollado.
