@@ -16,7 +16,7 @@
 
 ## Introducción
 
-Durante esta sesión veremos 
+Durante esta sesión veremos
 
 - Algunas unidades de medida nuevas: `%`, `vh` y `vw`.
 - Las propiedades `min-width`, `max-width`, `min-height` y `max-height`.
@@ -137,7 +137,7 @@ Teniendo una lista de 10 a 15 imágenes de 200x100 px, hacer un bloque flexbox d
 
 * * *
 
-#### EJERCICIO 5 
+#### EJERCICIO 5
 
 **FLEX/GROW/SHRINK/BASIS**
 
@@ -170,7 +170,7 @@ Convertir la imagen anterior a código usando HTML y CSS y lo que habéis aprend
 Convertir la imagen anterior a código usando HTML y CSS y lo que habéis aprendido hoy de Flexbox. Los requisitos son los siguientes:
 
 * En este caso si el tamaño de la ventana aumenta solo aumentará el tamaño del bloque central, el bloque gris de la izquierda y el grupo que compone la puntuación, texto y estrella de la derecha siempre tendrán el mismo tamaño (ejemplo abajo)
-* El ancho del conjunto entero debe ser del	 100% con un ancho máximo de 840px
+* El ancho del conjunto entero debe ser del 100% con un ancho máximo de 840px
 Para el bloque gris de la izquierda debéis buscar una imagen cuadrada y colocarla ahí
 * No os preocupeis por el tamaño de cada elemento, lo importante es que el resultado tenga una composición similar
 * Para redondear los bordes debéis usar border-radius con unidades en píxel (por ejemplo, border-radius: 5px)

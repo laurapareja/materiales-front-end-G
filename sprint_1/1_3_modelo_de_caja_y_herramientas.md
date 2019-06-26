@@ -106,7 +106,7 @@ Debido a que los elementos en línea solo ocupan el ancho de su contenido, estos
 
 Como norma general, los elementos `inline` no deberían contener elementos de bloque.
 
-Una regla muy importante que se aplica sobre los elementos en línea es que estos no pueden cambiar su ancho ni su alto, no pueden tener márgenes horizontales y se puede aplicar margen y padding vertical pero este no se tiene en cuenta a la hora de definir su altura y su posición vertical. Esto los diferencia de los elementos en bloque, que permiten tener un ancho y un alto específico y márgenes y padding tanto vertical como horizontal. Veremos la importancia de esto en esta misma sesión, cuando hablemos del modelo de cajas.
+Una regla muy importante que se aplica sobre los elementos en línea es que estos no pueden cambiar su ancho ni su alto, no pueden tener márgenes verticales y se puede aplicar margen y padding horizontal pero este no se tiene en cuenta a la hora de definir su altura y su posición vertical. Esto los diferencia de los elementos en bloque, que permiten tener un ancho y un alto específico y márgenes y padding tanto vertical como horizontal. Veremos la importancia de esto en esta misma sesión, cuando hablemos del modelo de cajas.
 
 > **Nota:**
 > Las imágenes son un tipo especial de elemento en línea que por sus características actúa como una mezcla de elemento en línea y elemento en bloque, ya que pueden tener márgenes y padding verticales y se les pueden asignar un ancho y un alto.
@@ -284,7 +284,7 @@ El inspector es una de las muchas herramientas de desarrollo que incluye el nave
 ### ¿Cómo lo abrimos?
 
 Para abrir el inspector tenemos varias opciones:
-* Pulsando en el menú de tres botones de la derecha superior de Chrome > más herramientas > herramientas para desarrolladores
+* Pulsando en el menú de tres puntos de la derecha superior de Chrome > más herramientas > herramientas para desarrolladores
 * Usar `Ctrl+Shift+I` en Ubuntu o Windows y `Cmd+Opción+I` en Mac
 * Pulsar con el botón derecho sobre un elemento de nuestra página y seleccionar la opción *Inspeccionar*
 
@@ -430,7 +430,7 @@ Para lanzar el servidor, podemos usar los shortcuts (`Alt+L Alt+O`), hacerlo a t
 ## Recursos externos
 
 ### Sobre el modelo de caja
-- [Libro Introducción a CSS - 4. Modelo de cajas](https://librosweb.es/libro/css/capitulo_4.html)
+- [Libro de Introducción a CSS - 4. Modelo de cajas](https://librosweb.es/libro/css/capitulo_4.html)
 - [Libro de Introducción a CSS - 4.1. Anchura y altura](https://librosweb.es/libro/css/capitulo_4/anchura_y_altura.html)
 
 ### Sobre las DevTools
