@@ -268,6 +268,8 @@ Esto se consigue con un contenedor con una clase concreta que va incluido en tod
 
 Puedes ver un ejemplo en [este codepen](https://codepen.io/adalab/pen/WmerMe).
 
+Un nuevo ejemplo de cómo maquetar la columna central es [este vídeo](https://www.youtube.com/watch?v=LbYSpU5I-9o).
+
 ###### EJERCICIO 6
 
 Vamos a hacer algo más "real" y probamos a implementar esta "columna central". En un HTML tendremos un contenedor con:
@@ -381,4 +383,4 @@ Probar a diferentes valores de píxels para el font-size del elemento `.icon`:
 * 50px
 * 100px
 
-* * * 
+* * *
