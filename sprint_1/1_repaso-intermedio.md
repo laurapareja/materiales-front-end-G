@@ -31,6 +31,6 @@ Para llevar a cabo este primer prototipo pondremos en uso todo lo que hemos apre
 ![Resumen del módulo](assets/repaso/modulo-1-intermedio-resumen.png)
 
 ## Librerías
-La fuente oficial para este proyecto es la Montserrta, que la podemos encontrar en [Google fonts](https://fonts.google.com/specimen/Montserrat)
+La fuente oficial para este proyecto es la Montserrat, que la podemos encontrar en [Google fonts](https://fonts.google.com/specimen/Montserrat)
 
 **¡Al turrón!**
