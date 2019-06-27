@@ -11,6 +11,7 @@
 - [1.5 Posicionamiento](sprint_1/1_5_posicionamiento.md)
 - [1.6 Diseño responsive](sprint_1/1_6_responsive_design.md)
 - [1.7 Publicando nuestra web](sprint_1/1_7_publicando_nuestra_web.md)
+- [Repaso intermedio](sprint_1/1_repaso-intermedio.md)
 - [1.8 Control de versiones](sprint_1/1_8_control_de_versiones.md)
 - [1.9 Automatización de tareas](sprint_1/1_9_automatizacion_de_tareas.md)
 - [1.10 SASS](sprint_1/1_10_sass.md)
