@@ -365,9 +365,10 @@ A partir de este momento, cada vez que hagamos cambios, git sabrá qué archivos
 En cualquier momento podremos pedir que nos diga en qué estado está el proyecto con `git status`, lo que nos dirá si hemos cambiado archivos.
 
 Normalmente trabajaremos con cambios cortos o tareas pequeñas, y cuando hayamos terminado, querremos indicarle a git que ya hemos terminado un paquete de cambios, para lo que tenemos dos comandos:
+
 1. `git add -A` para añadir los archivos que hemos modificado. Una vez añadidos git sabrá qué cambios hemos hecho.
-2. `git commit -m "Mensaje"` nos permite crear como un paquete de cambios y "guardarlo en nuestro sistema de versiones", nos dejará escribir un mensaje corto para asociarlo al paquete de cambios o *commit*.
-3. Si queremos ver la lista de commits realizados en un proyecto usaremos `git log`. Para salir del listado usamos la tecla `q`.
+1. `git commit -m "Mensaje"` nos permite crear como un paquete de cambios y "guardarlo en nuestro sistema de versiones", nos dejará escribir un mensaje corto para asociarlo al paquete de cambios o *commit*.
+1. Si queremos ver la lista de commits realizados en un proyecto usaremos `git log`. Para salir del listado usamos la tecla `q`.
 
 En el video que añadimos a continuación se explican los comandos básicos para empezar a trabajar con git.
 
