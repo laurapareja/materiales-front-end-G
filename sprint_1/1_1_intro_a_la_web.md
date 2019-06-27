@@ -521,7 +521,7 @@ Para la estructura del proyecto usaremos estas carpetas:
 
 ## La paleta de comandos de Code
 
-Code tiene una paleta de comandos que nos permite acceder a los comandos del editor mediante el teclado. La podemos abrir con `Ctrl+Shift+P` o `⌘S+Shift+P`.
+Code tiene una paleta de comandos que nos permite acceder a los comandos del editor mediante el teclado. La podemos abrir con `Ctrl+Shift+P` o `⌘+Shift+P`.
 
 ---
 
