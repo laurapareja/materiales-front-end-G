@@ -6,10 +6,9 @@
 - [EJERCICIO 2](#ejercicio-2)
 - [EJERCICIO 3](#ejercicio-3)
 - [EJERCICIO 4](#ejercicio-4)
-- [EJERCICIO 5](#ejercicio-5)
+- [EJERCICIO 5 BONUS](#ejercicio-5-bonus)
 - [EJERCICIO 6 BONUS](#ejercicio-6-bonus)
 - [EJERCICIO 7 BONUS](#ejercicio-7-bonus)
-- [EJERCICIO 8 BONUS](#ejercicio-8-bonus)
 
 <!-- /TOC -->
 
@@ -42,6 +41,7 @@ Como podemos ver, para agregar elementos, pasaremos estos como argumentos del m�
 var arr = [1, 2, 3];
 arr.push(3, 5, 6, 7, 23, 34, 35, 34, 54, 34, 3434, 34); // Esto es totalmente válido
 ```
+> **NOTA:** ¿si `push` mete un elemento al final de un array qué método hará lo contrario? Si quieres saberlo investiga el método [`pop`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/pop).
 
 ---
 
@@ -104,45 +104,14 @@ const lostNumbers = [4, 8, 15, 16, 23, 42];
 Vamos a crear una función `bestLostNomber` que nos devuelve algunos números del array de [los números de la serie Lost](https://lostpedia.fandom.com/wiki/The_Numbers) que tenemos arriba. La función, debe seguir estos pasos:
 
 1. Crear un nuevo array que contiene solo los números pares que hay en `lostNumbers`. Para conseguirlo vamos a crear un nuevo array vacío y recorrer el array `lostNumbers` para al encontrar un número par, meterlo en el nuevo array.
-2. Crear un nuevo array que contiene solo los númper múltiplos de 3 que hay en `lostNumbers`, de una forma similar al anterior.
+2. Crear un nuevo array que contiene solo los números múltiplos de 3 que hay en `lostNumbers`, de una forma similar al anterior.
 3. Devolver una concatenación de los 2 arrays anteriores, es decir, que tendrá primero los números pares y luego los múltiplos de 3.
 
 Para comprobar que los tenemos todos, vamos a ejecutar la función y a loguearlos (con `console.log`) uno a uno en la consola en orden.
 
 ---
 
-## `querySelectorAll`
-
-Como hemos visto en sesiones anteriores, para recoger un elemento de HTML utilizamos el método `querySelector`. Pero ¿y si queremos recoger más de uno, por ejemplo todas las etiquetas que tengan una determinada clase? `querySelectorAll` al rescate.
-Este método devuelve una lista de elementos que funciona de manera similar a un array. Podríamos hacer lo siguiente:
-
-```js
-// Guardamos una lista de todos los parrafos de la página
-const paragraphs = document.querySelectorAll('p');
-
-// Modificamos el primer párrafo
-paragraphs[0].innerHTML = 'Soy el primero';
-
-// Muestra el número de parráfos que hay en nuestra web
-console.log(paragraphs.length);
-
-// Iteramos sobre todos los párrafos para asignarles a todos una clase
-for (let i = 0; i < paragraphs.length; i++) {
-  paragraphs[i].classList.add('highlight');
-}
-```
-
----
-
 #### EJERCICIO 4
-
-**Botones de alarma**
-
-Vamos a partir de un HTML que tiene 3 botones con el texto ALARMA en un fondo blanco. Vamos a hacer que al pulsar en cualquiera de ellos, el fondo de la pantalla se ponga rojo. Si volvemos a pulsar en cualquiera de ellos, el fondo se pondrá blanco. Y así sucesivamente. Vamos a hacer uso de `querySelectorAll` para evitar repetir mucho código.
-
----
-
-#### EJERCICIO 5
 
 **REPASO: Mi lista de tareas**
 
@@ -182,9 +151,47 @@ d) **Tareas totales.** No nos podemos olvidar de los detalles. Añadamos por enc
 
 ---
 
+### `slice`
+
+El método `slice()` devuelve parte de un array sin modificarlo. Este método recibe 2 parámetros: la posición inicial y la posición final (no incluida en lo que se devuelve). Ejemplo:
+
+```javascript
+const names = ['Rita', 'María', 'Lucía', 'Ana', 'Vanesa'];
+console.log(names.slice(1, 3)); // ["María", "Lucía"]
+```
+
+¿Te atreves a adivinar qué devolverá este método si no le pasamos el segundo argumento? ¿Y si el segundo argumento es un número negativo? Todas las respuestas en la [documentación oficial de slice](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/slice).
+
+---
+
+### `splice`
+
+El método `splice()` cambia el contenido de un array eliminando elementos existentes y/o agregando nuevos elementos.
+
+Para eliminar elementos debemos indicar la posición inicial desde la que borramos y cuántos elementos queremos borrar:
+
+```javascript
+const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+const springMonths = months.splice(2, 4);
+console.log(months)
+console.log(springMonths)
+```
+
+Si además queremos añadir elementos en la posición en la que hemos borrado haremos:
+
+```javascript
+const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+const springMonths = months.splice(2, 4, 'MARCH', 'APRIL', 'MAY', 'JUNE');
+console.log(months)
+console.log(springMonths)
+```
+
+Investiga más acerca de [`splice()` aquí](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/splice).
+---
+
 ## BONUS
 
-#### EJERCICIO 6 BONUS
+#### EJERCICIO 5 BONUS
 
 **Crea tu árbol de Navidad**
 
@@ -200,7 +207,7 @@ Para que no nos pille el toro esta Navidad, vamos a crear un código que muestre
 
 ---
 
-#### EJERCICIO 7 BONUS
+#### EJERCICIO 6 BONUS
 
 **Mejora tu árbol de Navidad**
 
@@ -218,7 +225,7 @@ Intenta ponerle una estrella y un tronco al árbol para que quede mucho más mon
 
 ---
 
-#### EJERCICIO 8 BONUS
+#### EJERCICIO 7 BONUS
 
 **¡Esto es un abeto!**
 
@@ -239,6 +246,8 @@ Intenta cambiar el código para que aparezca el árbol completo.
 ### Trabajar con arrays anidados
 
 Algunas estructuras como una array de coordenadas requieren crear arrays dentro de otros arrays, o lo que es lo mismo, arrays anidados. Si pensamos en ese caso concreto de arrays de coordenadas, vemos que tenemos un array y cada elemento posee dos coordenadas que también se pueden mostrar en array. Esto es posible de llevar a cabo en JavaScript y es una práctica común. En este apartado veremos cómo crear arrays anidados, cómo obtener un valor de ellos y cómo modificarlos.
+
+> **NOTA:** ¿para qué nos sirven los arrays anidados? El típico ejemplo son las tablas de datos, como un horario semanal. El horario de clases que tienes cada semana en Adalab es un listado de días (de lunes a viernes) y dentro de cada día un listado de tareas (desarrollo personal, descanso, pair programming, descanso, proyecto...). Y un listado de listas no es otra cosa que un array de arrays.
 
 ### Crear un array anidado
 
@@ -296,5 +305,41 @@ coordinates = [
 ];
 */
 ```
+---
 
-## Recursos adicionales
+## Recorrer elementos anidados
+
+Imaginemos que tenemos un horario de clase declarados en arrays anidados y queremos pintar en consola cada una de las clases que tenemos a lo largo de la semana:
+
+```javascript
+const schedule = [
+  [
+    'Kahoot',
+    'Pair programming'
+  ],
+  [
+    'Kahoot',
+    'Project'
+  ],
+  [
+    'Pair programming',
+    'Kahoot'
+  ],
+  [
+    'Agile',
+    'Interviews'
+  ],
+  [
+    'Project',
+    'Beers'
+  ]
+];
+
+for (let day = 0; day < schedule.length; day += 1) {
+  for (let hour = 0; hour < schedule[day].length; hour += 1) {
+    console.log(`On day ${day} at hour ${hour} we have ${schedule[day][hour]}`);
+  }
+}
+```
+
+Ejecuta este código en la consola de Chrome y explica cómo funciona.
