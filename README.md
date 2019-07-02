@@ -17,19 +17,19 @@
 
 ## Acerca del programa
 
-Este repositorio recoge los materiales utilizados dentro del curso intensivo de programación front-end impartido en Adalab. El curso está enfocado a mujeres sin conocimientos previos de programación pero que sepan manejar equipos informáticos sin complicaciones. La idea es brindar la oportunidad de aprender los detalles de la profesión a personas con menos oportunidades y crear diversificación en las profesiones digitales.
+Este repositorio recoge los materiales técnicos utilizados dentro del curso intensivo de programación front-end impartido en Adalab. El curso está enfocado a mujeres sin conocimientos previos de programación pero que sepan manejar equipos informáticos sin complicaciones.
 
-El objetivo principal del curso es que las participantes adquieran las habilidades y conocimientos básicos necesarios para trabajar, de forma profesional, en el mundo de la programación web front-end. Intentamos que todas ellas acaben obteniendo una oportunidad laboral de calidad.
+El objetivo principal del curso es que las participantes adquieran las habilidades y conocimientos básicos necesarios para trabajar, de forma profesional como programadoras front-end junior. La duración del programa es de 12 semanas.e partirá del aprendizaje acerca de cómo funciona la web y el proceso de desarrollo de un producto, posteriormente se empezará con el aprendizaje y la práctica de programación, continuaremos con el aprendizaje de programación en JavaScript, haremos posteriormente un repaso de las técnicas, herramientas y procesos que utilizan los desarrolladores profesionales hoy en día y, finalmente, aprenderemos a utilizar un framework de JavaScript.
 
-La duración del programa es de cuatro meses. Durante estos meses se partirá del aprendizaje acerca de cómo funciona la web y el proceso de desarrollo de un producto, posteriormente se empezará con el aprendizaje y la práctica de programación, continuaremos con el aprendizaje de programación en JavaScript, haremos posteriormente un repaso de las técnicas, herramientas y procesos que utilizan los desarrolladores profesionales hoy en día y, finalmente, aprenderemos a utilizar un framework de JavaScript.
-
-El fin del curso es que todas las participantes sean capaces de realizar todas las tareas reflejadas en los [Objetivos generales](#objetivos-generales)
+El fin último del curso es que todas las participantes sean capaces de realizar todas las tareas reflejadas en los [Objetivos generales](#objetivos-generales)
 
 ## Sobre Adalab
 
-Adalab es una startup social centrada en crear diversidad en el sector digital, impulsando a mujeres jóvenes con talento de entornos con pocas oportunidades, para que se conviertan en profesionales digitales y accedan a un futuro mejor.
+En Adalab impulsamos a mujeres jóvenes con dificultades de empleabilidad, para que se conviertan en programadoras. Lo hacemos a través de un programa integral que incluye formación técnica, desarrollo profesional y facilitamos su inserción laboral.
 
-Identificamos los perfiles digitales que necesitan las empresas y formamos a nuestras alumnas para que accedan a los puestos demandados.
+Lo que nos motiva es promover la diversidad en el sector tecnológico, reduciendo la brecha de género actual, a la vez que ayudamos a disminuir la tasa de desempleo.
+
+Actualmente tenemos una tasa de inserción laboral del 95%.
 
 ## Objetivos generales
 
