@@ -376,8 +376,9 @@ Ahora vamos a trabajar de una manera menos habitual y un poco más complicada, p
 - Un html básico con una sonrisa centrada en la ventana -> :) o :D
 
 Una vez conseguido vamos a:
+
 1. Inicializar un repositorio local `git init`
-2. Hacer algún cambio y un commit.
+1. Hacer algún cambio y un commit.
 
 Y ahora, ¿no sería genial conectarlo con un repositorio remoto y tenerlo siempre accesible en Github? Claro que sí.
 
