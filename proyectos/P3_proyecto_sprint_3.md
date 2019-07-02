@@ -18,10 +18,12 @@ En este proyecto vamos a trabajar con un caso muy típico que se suele producir 
 ## Objetivos
 
 1. Lidiar con código heredado y ser capaces de refactorizarlo
-2. Saber identificar y generar los componentes de una página, separarlos y crear componentes visualmente similares a partir de estos
-3. Aprender a usar React para crear una aplicación web sencilla
-4. Exponer en la sesión final y seguir adquiriendo habilidades de desarrollo personal
-5. Aprender a buscar información en la documentación de librerías externas
+1. Saber identificar y generar los componentes de una página, separarlos y crear componentes visualmente similares a partir de estos
+1. Aprender a usar React para crear una aplicación web sencilla
+1. Aprender a buscar información en la documentación de librerías externas
+1. Implementar Scrum como marco de referencia para el desarrollo del producto, basándonos siempre en los valores de Agile como puntos clave del trabajo en equipo y la mejora continua
+1. Mejorar la comunicación entre los miembros del equipo
+1. Mejorar vuestras habilidades de comunicación en público al exponer el proyecto en la sesión final
 
 ## Caso de uso
 
@@ -74,30 +76,29 @@ De manera adicional, se deberá activar "GitHub Pages" en el proyecto para que e
 
 ## Presentación
 
-El último día del módulo presentaréis la versión final de este proyecto a vuestras compañeras y al equipo de Adalab en el Meetup Space. Cada equipo realizará una presentación de 10 minutos y posteriormente habrá 10 minutos de feedback por parte del público.
+El último día del módulo presentaréis la versión final de este proyecto a vuestras compañeras y al equipo de Adalab. Cada equipo realizará una presentación de 10 minutos y posteriormente habrá 10 minutos de feedback por parte del público.
 
-Durante los días de feedback cada equipo tendrá asesoramiento durante 30 minutos sobre la presentación del proyecto grupal. Para aprovechar bien este espacio, es necesario que antes cada equipo haya decidido las cuestiones clave para la presentación.
+El objetivo es que practiquéis la realización de las demos del trabajo que estáis realizando que posteriormente tendréis que realizar en las empresas, y también que mejoréis vuestras habilidades de exposición en público, objetivo de desarrollo profesional del curso.
+
+Para que la presentación salga bien es imprescindible una buena preparación. Por ello, durante el segundo sprint del módulo tendréis que asignar responsabilidades dentro del equipo relacionadas con la preparación de esta. Durante los dos últimos días de la evaluación final del módulo cada equipo tendrá asesoramiento durante 30 minutos por parte de la Especialista en Comunicación sobre la presentación del proyecto grupal. Para aprovechar bien este espacio, es necesario que antes cada equipo haya decidido las cuestiones clave para la presentación.
 
 A continuación algunos elementos que os pueden ayudar a enfocar la presentación:
 
 - En el público habrá personas con conocimientos técnicos y no técnicos.
-- El objetivo de la presentación es dar a conocer el producto creado, a las integrantes de cada equipo así como el proceso que habéis seguido para crear la web.
+- La parte central de la presentación será mostrar el software desarrollado funcionando, a ser posible en directo de forma dinámica o a través de un vídeo si no fuera posible.
+- En este módulo, de los diferentes elementos adicionales que os proponemos, incluid la explicación de algunas tecnologías qué habéis utilizado y para qué sirven, y algunas partes del código que habéis desarrollado que merezca la pena resaltar.
 - Todas las participantes del equipo deben hablar en la presentación (sin práctica no hay mejora).
 
-En este módulo os proponemos que de los diferentes elementos a incluir en la presentación os centréis un poco más en **explicar las tecnologías y el código que habéis desarrollado**.
+Además de esto, para mejorar vuestras habilidades de exposición en público y hacer la presentación más rica, podréis incorporar otros elementos adicionales (son solo ideas, sentíos libres de innovar y ser creativas):
 
-Otros elementos que podríais incluir (son solo ideas, sentíos libres de innovar y ser creativas):
-
-- Presentación de las integrantes del equipo desde un punto de vista profesional: se tratar de practicar vuestro "relato" profesional en versión muy corta. Que las personas asistentes conozcan quienes sois como profesionales.
 - Dejar muy claro quién ha sido vuestro cliente y qué fue lo que os pidió.
-- Explicar qué necesidades cubre o qué problemas soluciona el producto, cuál es el beneficio principal que aporta y qué lo hace único comparado con otros productos parecidos del mercado.
-- Os aconsejamos incluir una demo (ya sea mostrar la web online o hacer un vídeo).
+- Presentación de los diferentes integrantes del equipo desde un punto de vista profesionales. Se trata de practicar vuestro "relato" profesional en versión muy corta. Que las personas asistentes conozcan quienes sois como profesionales.
+- Qué necesidades cubre o qué problemas soluciona el producto, cuál es el beneficio principal que aporta y qué lo hace único comparado con otros productos parecidos del mercado
 - Aportaciones "únicas" de cada equipo al proyecto.
-- La estructura del código y las partes que se quieran destacar.
 - Cómo ha sido la organización del equipo, el reparto de tareas y la coordinación a la hora de trabajar todas en el mismo código.
 - Cuál de las tareas o los puntos ha sido el que más esfuerzo ha requerido.
 - Cuál de las tareas o partes de la web es la que hace que el equipo esté más orgulloso.
-- La presentación debe tener un "buen cierre" que nos haga a todos aplaudir... ahí os dejamos que echéis a volar vuestra imaginación.
+- La presentación debe tener un "buen inicio y un buen cierre" que nos haga a todos estar atentos y aplaudir... ahí os dejamos que echéis a volar vuestra imaginación.
 - No habléis en primera persona de lo que habéis hecho, hablad del equipo.
 - No mencionéis problemas, sino "retos" que os han hecho aprender y crecer.
 - Os aconsejamos utilizar un lenguaje ni demasiado formal y técnico, ni demasiado informal. Nuestra audiencia puede ser muy variada.
