@@ -29,17 +29,16 @@ Hoy vamos a ver cómo trabajar en grupo sobre el mismo proyecto y sus archivos.
 
 ### Inicio de un repositorio desde Github
 Lo más sencillo es crear el proyecto de cero desde nuestro servicio de Git, en este caso, GitHub:
-
 1. Vamos a nuestro perfil
-1. Creamos un nuevo repositorio
-1. Rellenamos el nombre y la descripción
-1. Ahora podemos elegir tres acciones (se pueden elegir las tres, alguna o ninguna):
+2. Creamos un nuevo repositorio
+3. Rellenamos el nombre y la descripción
+4. Ahora podemos elegir tres acciones (se pueden elegir las tres, alguna o ninguna):
 	1. Añadir un archivo `README.md`
-	1. Añadir un archivo `.gitignore`
-	1. Añadir una licencia
-1. Una vez creado solo faltaría clonarlo a nuestro ordenador para trabajar con él, hay dos formas:
+	2. Añadir un archivo `.gitignore`
+	3. Añadir una licencia
+5. Una vez creado solo faltaría clonarlo a nuestro ordenador para trabajar con él, hay dos formas:
 	1. Desde la terminal voy a la carpeta donde quiero clonar el proyecto y, con la url que me da GitHub para clonar, escribo: `git clone url-del-repositorio-que-me-da-github`.
-	1. Si quiero clonarlo y usar un nombre específico para la carpeta de mi repositorio sigo el paso uno pero escribo: `git clone url-del-repositorio-que-me-da-github nuevo-nombre-de-carpeta`
+	2. Si quiero clonarlo y usar un nombre específico para la carpeta de mi repositorio sigo el paso uno pero escribo: `git clone url-del-repositorio-que-me-da-github nuevo-nombre-de-carpeta`
 
 ### Inicio de repositorio desde un proyecto existente
 ¿Cómo? ¿Que ya teníamos un proyecto local y queremos subirlo a GitHub? Bueno, tampoco es tan malo:
