@@ -54,13 +54,42 @@ La webapp deberá tener las siguientes nuevas características:
 
 Para la realización de este proyecto trabajaremos en _2 sprints_ (2 iteraciones) de 7 sesiones cada uno. Siguiendo los principios ágiles estableceremos pequeños ciclos iterativos de forma que al final de cada uno generemos valor perceptible por nuestros usuarios (los visitantes de la web). Dedicaremos el primer día a la planificación del sprint (_sprint planning_) y el resto a trabajar en el desarrollo del proyecto. Al final de cada sprint haremos una _demo_ del proyecto para presentar los resultados conseguidos, y una _retrospectiva_ (_retro_) para evaluar nuestro trabajo en equipo y mejorar en el siguiente sprint.
 
-Al final del primer sprint haremos una demo corta de 5 minutos para presentar el resultado del trabajo al resto de las compañeras y a las profesoras. También haremos una retro corta revisando los _working agreements_ que hemos acordado al inicio del proyecto.
+Al final del primer sprint haremos una demo corta de 10 minutos (incluidas preguntas) para presentar el resultado del trabajo al resto de las compañeras y a las profesoras. También haremos una retro corta revisando los _working agreements_ que hemos acordado al inicio del proyecto.
 
-Al final del segundo sprint (final del proyecto), haremos una demo de 10 minutos con preguntas, y una retrospectiva usando una dinámica similar a las usadas en los equipos de desarrollo que usan SCRUM.
+Al final del segundo sprint (final del proyecto), haremos una demo de 10 minutos más preguntas, y una retrospectiva usando una dinámica similar a las usadas en los equipos de desarrollo que usan Scrum.
 
 ### Historias de usuario
 
-Para la gestión del proyecto, usaremos _historias de usuario_, que es una herramienta para definir las características de un producto que veremos en detalle durante el curso. Usaremos las historias de usuario que ya tenemos definidas del proyecto anterior.
+Para la gestión del proyecto, usaremos _historias de usuario_, que es una herramienta para definir las características de un producto. Usaremos las mismas historias de usuario que ya tenemos definidas del proyecto anterior. Aunque os daremos una planificación técnica para ayudaros a realizar organizaros.
+
+### Planificación técnica
+
+#### Primero paso. Análisis del proyecto
+
+- En este proyecto usaremos 2 repos: 1) el repo del proyecto que nos hayan asignado, donde trabajaremos en una rama para entender y mejorar el código heredado; 2) un nuevo repo con el proyecto de React
+- Analizar y probar el código y entender su estructura para poder adaptarla a nuestras necesidades y conocimientos
+- Solucionar errores detectados en el código
+- Implementar mejoras en el código heredado, sin modificar la funcionalidad (hacer las funciones más pequeñas, usar métodos funcionales, mejorar el nombrado, etc.)
+
+#### Segundo paso. Maquetación con React de la página de la herramienta
+
+- Definir la estructura de componentes React de la aplicación
+- Generar los componentes del proyecto y comunicar información mediante props
+
+> **NOTA**: No debéis copiar código de vuestro proyecto anterior, sino esforzaros por entender el que han creado otras compañeras. Para partes incompletas o que no funcionen podéis arreglarlas pero no re-hacerlas desde cero.
+
+#### Tercero. Versión completa con React
+
+- Realizar la interactividad, usando el estado y los eventos de React
+- Usar este [componente que os pasamos para la foto de perfil](https://github.com/Adalab/Componente-react-de-foto-de-perfil)
+- Implementar la comunicación con el backend, la función de compartir y offline
+
+#### Cuarta. Mejoras finales
+
+- Crear la página de landing
+- Implementar las rutas con React router
+- Revisión del código y pruebas
+- Podrán implementarse otras mejoras visuales si todo ya está terminado y acordado con el PO
 
 ## Entrega
 
