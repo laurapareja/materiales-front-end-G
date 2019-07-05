@@ -29,7 +29,7 @@ En este proyecto vamos a realizar una aplicación web que nos permite crear una 
 
 ## Caso de uso
 
-Con esta web podréis mostrar que, a parte de maquetar, podéis crear una página web con la que interactuar y sacar algo que vaya más allá de una página que solo muestra información. Esto os permitirá mostrar vuestras habilidades a la hora de trabajar con JavaScript en GitHub, algo que en las empresas se valora bastante a la hora de escoger candidatos para puestos de programador front-end.
+Con esta web podréis mostrar que, a parte de maquetar, podéis crear una página web con la que interactuar y sacar algo que vaya más allá de una página que solo muestra información. Esto os permitirá mostrar vuestras habilidades a la hora de trabajar con JavaScript en GitHub, algo que en las empresas se valora bastante a la hora de escoger candidatos para puestos de programadora front-end.
 
 ## Especificaciones
 
@@ -39,14 +39,14 @@ En el desarrollo de esta aplicación web usaremos las siguientes tecnologías:
 - Maquetación usando CSS avanzado, como flex y grid
 - Uso de mediaqueries para que el diseño sea adaptable al dispositivo usando la estrategia mobile first
 - Gestión de eventos en el navegador (al hacer click, pasa x, etc.)
-- Acceso y envío de datos en Internet mediante peticiones al servidor
+- Acceso y envío de datos a un servidor
 - Almacenamiento en local usando LocalStorage
 - Uso de git para el control de versiones del proyecto
 - Publicación del resultado en Internet usando GitHub Pages
 
 El proyecto consta de 2 páginas
 
-- una página de bienvenida
+- una página landing de bienvenida
 - una página con la aplicación de crear tarjetas
 
 La aplicación funciona siguiendo estos pasos:
@@ -72,7 +72,7 @@ Respecto a la interacción con la web:
 
 - Los campos deberán tener restricciones para su formato indicado. Campo de teléfono para el móvil, mail para el correo, etc.
 - Las modificaciones que hacemos en el formulario (diseño y contenido), aparecen automáticamente en la vista previa de la tarjeta
-- Las 3 partes del proceso de creación serán elementos colapsables, que al hacer clic en el título se mostrará/ocultará solo mostrando una sección de a la vez
+- Las 3 partes del proceso de creación serán elementos colapsables, que al hacer clic en el título se mostrará/ocultará solo mostrando una sección a la vez
 - Toda la información del formulario debe almacenarse en LocalStorage (almacenamiento local del navegador), de forma que al recargar la página siga disponible y podamos borrarla con un botón de _Reset_. Para esto, debemos definir una estructura de datos compleja (con arrays y objetos) que es lo que guardaremos en el navegador
 - Para compartir en Twitter seguiremos 2 pasos
   1. Al hacer clic en el botón de "Enviar" enviaremos el formulario (_submit_) a un API que devolverá la URL de una web con la tarjeta de visita con la información rellena
@@ -95,7 +95,7 @@ Aunque el diseño del proyecto está cerrado, hemos dejado algunos aspectos que 
 
 - usar un logo personalizado del equipo (o nombre del equipo) en el pie de página, tras la información de copyright
 - utilizar un fondo personalizado en la previsualización de la tarjeta
-- añadir más paletas y fuentes a las definidas en el diseño, pero no eliminar las que os proponemos ;)
+- añadir más paletas a las definidas en el diseño, pero no eliminar las que os proponemos ;)
 
 ## Planificación del proyecto
 
@@ -103,13 +103,13 @@ Aunque el diseño del proyecto está cerrado, hemos dejado algunos aspectos que 
 
 Para la realización de este proyecto trabajaremos en _2 sprints_ (2 iteraciones) de 7 sesiones cada uno. Siguiendo los principios ágiles estableceremos pequeños ciclos iterativos de forma que al final de cada uno generemos valor perceptible por nuestros usuarios (los visitantes de la web). Dedicaremos el primer día a la planificación del sprint (_sprint planning_) y el resto a trabajar en el desarrollo del proyecto. Al final de cada sprint haremos una _demo_ del proyecto para presentar los resultados conseguidos, y una _retrospectiva_ (_retro_) para evaluar nuestro trabajo en equipo y mejorar en el siguiente sprint.
 
-Al final del primer sprint haremos una demo corta de 5 minutos para presentar el resultado del trabajo al resto de las compañeras y a las profesoras. También haremos una retro corta revisando los _working agreements_ que hemos acordado al inicio del proyecto.
+Al final del primer sprint haremos una demo corta de 10 minutos (incluidas preguntas) para presentar el resultado del trabajo al resto de las compañeras y a las profesoras. También haremos una retro corta revisando los _working agreements_ que hemos acordado al inicio del proyecto.
 
-Al final del segundo sprint (final del proyecto), haremos una demo de 10 minutos con preguntas, y una retrospectiva usando una dinámica similar a las usadas en los equipos de desarrollo que usan SCRUM.
+Al final del segundo sprint (final del proyecto), haremos una demo de 10 minutos más preguntas, y una retrospectiva usando una dinámica similar a las usadas en los equipos de desarrollo que usan Scrum.
 
 ### Historias de usuario
 
-Para la gestión del proyecto, usaremos _historias de usuario_, que es una herramienta para definir las características de un producto que veremos en detalle durante el curso.
+Para la gestión del proyecto, usaremos _historias de usuario_, que es una herramienta para definir las características de un producto.
 
 ### Primera. Landing y UI de la herramienta
 
@@ -121,16 +121,17 @@ Para la gestión del proyecto, usaremos _historias de usuario_, que es una herra
 
 ### Segunda. Versión interactiva
 
-- Formulario interactivo: al modificar un campo del formulario, tanto del diseño de la tarjeta como de los datos de usuario, se actualiza la vista previa
+- Formulario interactivo: al modificar un campo del formulario, tanto del diseño de la tarjeta como de los datos de usuario (excepto la foto), se actualiza la vista previa
 - Realizar validaciones de datos del formulario: campos obligatorios, email, etc.
-
-### Tercera. Versión offline
-
-- Hacer que el contenido se almacene en LocalStorage del navegador
 
 ### Tercera. Compartir
 
+- Actualización de la foto en la vista previa de la tarjeta, usando [el componente proporcionado](https://github.com/Adalab/Componente-de-foto-de-perfil-js)
 - Añadir la funcionalidad de compartir en Twitter, enviando primero los datos al servidor para obtener la URL para compartir
+
+### Cuarta. Versión offline
+
+- Hacer que el contenido se almacene en LocalStorage del navegador
 
 ## Entrega
 
