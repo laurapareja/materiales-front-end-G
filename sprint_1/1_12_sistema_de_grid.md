@@ -241,7 +241,7 @@ Con suficientes divs (las cajas verdes) vamos a mostrar las columnas y opciones 
 2. 6 columnas
 3. 3 columnas
 4. 2 columnas
-5. 1 columnas
+5. 1 columna
 
 ---
 
@@ -277,7 +277,7 @@ Ahora iremos a un paso más y, vamos a crear una página simple que se ajuste a 
 
 #### EJERCICIO 10
 
-Ahora vamos a explorar las posibilidades de Bootstrap que, además del sistema de columnas, nos ofrece una serie de c[omponentes ya definidos](https://getbootstrap.com/docs/4.1/components/buttons/) para que apliquemos clases CSS pre-diseñadas a nuestros elementos. Vamos a usar al menos los componentes de botones (buttons) y tarjetas (cards).
+Ahora vamos a explorar las posibilidades de Bootstrap que, además del sistema de columnas, nos ofrece una serie de [componentes ya definidos](https://getbootstrap.com/docs/4.1/components/buttons/) para que apliquemos clases CSS pre-diseñadas a nuestros elementos. Vamos a usar al menos los componentes de botones (buttons) y tarjetas (cards).
 
 ![Página de pricing con bootstrap](assets/images/1-12/bootstrap-pricing.png)
 
