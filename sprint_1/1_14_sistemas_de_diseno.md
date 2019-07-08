@@ -158,7 +158,9 @@ Lo bueno de esta técnica es que si en el futuro nos da por cambiar el color que
 
 **Colores**
 
-Vamos a descargarnos una solución al [ejercicio de evaluación intermedia del primer módulo de Adalab](https://github.com/Adalab/e-s1-evaluacion-intermedia-nasivuela).
+Vamos a descargarnos una solución al [ejercicio de evaluación intermedia del primer módulo de Adalab](https://github.com/Adalab/e-s1-evaluacion-intermedia-nasivuela). Y a continuación nos descargamos nuestro [Web starter kit](https://github.com/Adalab/Adalab-web-starter-kit).
+
+Fichero a fichero vamos a pasar los HTMLs, CSSs e imágenes del ejercicio de evaluación a la carpeta del starter kit, para tener funcionando el ejercicio de evalución con SASS, Gulp...
 
 A continuación, vamos a reestructurar el archivo siguiendo la estructura que hemos aprendido para organizar nuestros archivos de Sass. Por ejemplo, crearemos un archivo en la ruta `scss/layout/_header.scss` donde meteremos los estilos de la cabecera.
 
