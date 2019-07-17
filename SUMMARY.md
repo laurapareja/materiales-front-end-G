@@ -22,7 +22,7 @@
 - [Preguntas entrevista](sprint_1/1_questions.md)
 - [Repaso](sprint_1/1_repaso.md)
 
-<!--
+
 ## Módulo 2. Programando la web
 
 - [2.1 Intro a la programación](sprint_2/2_1_intro_a_la_programacion.md)
@@ -42,6 +42,7 @@
 - [Preguntas entrevista](sprint_2/2_questions.md)
 - [Repaso](sprint_2/2_repaso.md)
 
+<!--
 ## Módulo 3. React
 
 - [3.1 Métodos funcionales de array](sprint_3/3_1_metodos_funcionales_array.md)
@@ -67,9 +68,9 @@
 - [Proyecto 1. Web grupal](proyectos/P1_proyecto_modulo_1.md)
 - [Anexo. Diseña tu web desde cero](proyectos/P1_anexo_diseno.md)
 
-<!--
 - [Proyecto 2. Awesome profile-cards](proyectos/P2_proyecto_sprint_2.md)
 - [Anexo. Documentación del API de Awesome Profile Cards](proyectos/P2_anexo.md)
+<!--
 - [Proyecto 3. Un caso de código heredado](proyectos/P3_proyecto_sprint_3.md)
 -->
 <!--
@@ -92,7 +93,7 @@
 - [Guía para enfrentarse a problemas técnicos de manera autónoma](guias/busqueda_de_soluciones.md)
 - [Scrum](guias/scrum.md)
 
-<!--
 - [Buenas prácticas para tener un portfolio atractivo en GitHub](guias/github_como_portfolio.md)
+<!--
 - [Pruebas técnicas](guias/pruebas_tecnicas.md)
 -->
