@@ -80,7 +80,7 @@ Respecto a la interacción con la web:
 
 ## Diseño
 
-El diseño lo podéis inspeccionar en [este proyecto de zeplin](https://zpl.io/bJ78X13). También podéis probar cómo funciona en este [prototipo online](https://sketch.cloud/s/MLK7m/g0PKWVJ/play).
+El diseño lo podéis inspeccionar en [este proyecto de zeplin](https://zpl.io/bJ78X13). También podéis probar cómo funciona en este [prototipo online](https://sketch.cloud/s/O28AG/a/qkjwo3/play).
 
 ### Archivos
 
