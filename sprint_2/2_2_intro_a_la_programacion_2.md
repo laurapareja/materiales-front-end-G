@@ -314,7 +314,6 @@ Hay que reescribir el [ejercicio 6](#ejercicio-6) utilizando la interpolación d
 **Lista de perretas**
 
 El objetivo de este ejercicio es pintar tres elementos dentro de una lista. Cada uno de ellos contendrá una imagen. Las imágenes y textos los obtendremos a partir de los siguientes datos:
-Marta Isabel García del Río [9:37 AM]
 
 ```js
 const firstDogImage = 'https://images.dog.ceo/breeds/schipperke/n02104365_8156.jpg';
