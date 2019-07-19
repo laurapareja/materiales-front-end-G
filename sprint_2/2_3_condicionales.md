@@ -233,7 +233,9 @@ const moderatorText = isModerator && 'moderadora';
 welcomeMessageElement.innerHTML = `Bienvenida ${adminText ||
   moderatorText}. ¡Es genial verte de nuevo!`;
 ```
+
 > **Nota**: Aunque no lo hemos puesto en los ejemplos se pueden evaluar más de 2 condiciones seguidas, por ejemplo: `name === 'María' && age >= 30 && career === 'adalaber' && favoriteLanguaje === 'JavaScript'`
+
 ---
 
 #### EJERCICIO 1
