@@ -377,7 +377,7 @@ Con `parseInt()` podemos convertir una cadena en un número entero.
 
 ```js
 const userAge = document.querySelector('.user__age');
-const yearsToRetirement = 67 - parseInt(userAge);
+const yearsToRetirement = 67 - parseInt(userAge.innerHTML);
 
 console.log(`Te quedan ${yearsToRetirement} años para jubilarte`);
 
