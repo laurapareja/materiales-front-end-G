@@ -68,6 +68,8 @@ Ya que estamos creando los partials de SASS, es un buen momento para crear otros
 
 Al finalizar tendremos nuestro código muy limpio y ordenado. Nuestra mente entrará en modo zen ;) -->
 
+---
+
 ## Durante todo el proceso de maquetación
 
 Durante todo el proceso de maquetación tenemos que seguir las siguientes pautas:
