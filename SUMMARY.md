@@ -37,7 +37,7 @@
 - [2.11 Peticiones al servidor 2](sprint_2/2_11_peticiones_al_servidor_2.md)
 - [2.12 DOM avanzado](sprint_2/2_12_dom_avanzado.md)
 - [2.13 Asincronía y temporizadores](sprint_2/2_13_asincronia.md)
-- [2.14 Debugging](sprint_2/2_13_debugging.md)
+- [2.14 Debugging](sprint_2/2_14_debugging.md)
 - [Preguntas entrevista](sprint_2/2_questions.md)
 - [Repaso](sprint_2/2_repaso.md)
 
