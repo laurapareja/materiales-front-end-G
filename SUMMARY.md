@@ -31,6 +31,7 @@
 - [2.5 Eventos](sprint_2/2_5_eventos.md)
 - [2.6 Objetos](sprint_2/2_6_objetos.md)
 - [2.7 Arrays y bucles](sprint_2/2_7_arrays_y_bucles.md)
+- [Repaso intermedio](sprint_2/2_repaso-intermedio.md)
 - [2.8 Trabajo colaborativo en git](sprint_2/2_8_trabajo_colaborativo_en_git.md)
 - [2.9 Arrays y bucles 2](sprint_2/2_9_array_y_bucles_2.md)
 - [2.10 Peticiones al servidor](sprint_2/2_10_peticiones_al_servidor.md)
