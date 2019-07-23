@@ -11,7 +11,9 @@ Dispondremos de toda la ventana del navegador para pintar una carilla con un fon
 Por defecto vamos a intentar ir de buenas y se mostrará a la criatura sonriente sobre un fondo de un amarillo correcto #ffcc00.
 
 - Con el select podremos cambiar nuestro estado de ánimo
-- El boton `Update` hará varias cosas: - Recogerá el nuevo estado del select y lo pintará en lugar del actual - Generará un número aleatorio de 100 como máximo y si es un número par colocará el color de fondo del amarillo correcto (#ffcc00) y si es impar, usaremos el naranja fuego chileno (#ff9900).
+- El boton `Update` hará varias cosas:
+  - Recogerá el nuevo estado del select y lo pintará en lugar del actual
+  - Generará un número aleatorio de 100 como máximo y si es un número par colocará el color de fondo del amarillo correcto (#ffcc00) y si es impar, usaremos el naranja fuego chileno (#ff9900).
 
 **¿Cómo va lo del número aleatorio?**
 
