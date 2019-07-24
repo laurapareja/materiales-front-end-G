@@ -221,6 +221,8 @@ adalaber.sayHello = function() {
 console.log(adalaber.sayHello());
 ```
 
+> NOTA: una cosa importante que debemos saber es que si queremos usar `this` en un método de un objeto tenemos que usar una función anónima y no una arrow function. Dicho de otro modo, tenemos que escribir la palabra `function` y no `=>`.
+
 > NOTA: El concepto de `this` en JavaScript es mucho más complejo de lo que hemos aprendido aquí. Por el momento con lo que hemos visto nos sirve para empezar a trabajar con él, pero sabiendo que alberga muchas más posibilidades.
 
 ---
